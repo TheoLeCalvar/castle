@@ -61,36 +61,6 @@ int main () {
     cam = new Camera(0.0f, 1.0f, 0.0f);
 
 
-
-    // float points[] = {
-    //     -0.5f, -0.5f, 0.5f,
-    //     0.5f, -0.5f, 0.5f,
-    //     0.0, 0.0f, 0.0f,
-
-    //     0.5f, -0.5f, 0.5f,
-    //     0.0f, -0.5f, -0.5f,
-    //     0.0, 0.0f, 0.0f,
-
-    //     0.5f, -0.5f, 0.5f,
-    //     -0.5f, -0.5f, 0.5f,
-    //     0.0, 0.0f, 0.0f
-    // };
-
-
-
-    // float points[] =
-    // {
-    //     -0.5f, -0.5f, 0.5f,
-    //     0.5f, -0.5f, 0.5f, 
-    //     0.5f, 0.5f, 0.5f, 
-    //     -0.5f, 0.5f, 0.5f, 
-
-    //     -0.5f, -0.5f, -0.5f,
-    //     0.5f, -0.5f, -0.5f, 
-    //     0.5f, 0.5f, -0.5f, 
-    //     -0.5f, 0.5f, -0.5f
-    // };
-
     float points[] = 
     {
         -0.5f, -0.5f, 0.5f,     0.5f, -0.5f, 0.5f,      0.5f, 0.5f, 0.5f,       
@@ -112,18 +82,47 @@ int main () {
         -0.5f, -0.5f, 0.5f,     0.5f, -0.5f, -0.5f,      0.5f, -0.5f, 0.5f
     };
 
-    unsigned int vbo = 0;
-    glGenBuffers (1, &vbo);
-    glBindBuffer (GL_ARRAY_BUFFER, vbo);
+    float normals[] = 
+    {
+        0.0f,  0.0f, 1.0f,     0.0f,  0.0f, 1.0f,      0.0f,  0.0f, 1.0f,       
+        0.0f,  0.0f, 1.0f,     0.0f,  0.0f, 1.0f,      0.0f,  0.0f, 1.0f, 
+
+        1.0f,  0.0f, 00.0f,     1.0f,  0.0f, 00.0f,      1.0f,  0.0f, 00.0f,       
+        1.0f,  0.0f, 00.0f,     1.0f,  0.0f, 00.0f,      1.0f,  0.0f, 00.0f,
+
+        0.0f,  0.0f, -1.0f,     0.0f,  0.0f, 1.0f,      0.0f,  0.0f, 1.0f,       
+        0.0f,  0.0f, -1.0f,     0.0f,  0.0f, 1.0f,      0.0f,  0.0f, 1.0f,
+
+        -1.0f,  0.0f, 0.0f,     -1.0f,  0.0f, 0.0f,      -1.0f,  0.0f, 0.0f,       
+        -1.0f,  0.0f, 0.0f,     -1.0f,  0.0f, 0.0f,      -1.0f,  0.0f, 0.0f,
+
+        0.0f,  1.0f, 0.0f,     0.0f,  1.0f, 0.0f,      0.0f,  1.0f, 0.0f,       
+        0.0f,  1.0f, 0.0f,     0.0f,  1.0f, 0.0f,      0.0f,  1.0f, 0.0f,
+
+        0.0f,  -1.0f, 0.0f,     0.0f,  -1.0f, 0.0f,      0.0f,  -1.0f, 0.0f,       
+        0.0f,  -1.0f, 0.0f,     0.0f,  -1.0f, 0.0f,      0.0f,  -1.0f, 0.0f,
+    };
+
+    unsigned int vbo_point = 0;
+    glGenBuffers (1, &vbo_point);
+    glBindBuffer (GL_ARRAY_BUFFER, vbo_point);
+    glBufferData (GL_ARRAY_BUFFER, 6* 6*3 * sizeof (float), points, GL_STATIC_DRAW);
+
+    unsigned int vbo_normals = 0;
+    glGenBuffers (1, &vbo_normals);
+    glBindBuffer (GL_ARRAY_BUFFER, vbo_normals);
     glBufferData (GL_ARRAY_BUFFER, 6* 6*3 * sizeof (float), points, GL_STATIC_DRAW);
 
     unsigned int vao = 0;
     glGenVertexArrays (1, &vao);
     glBindVertexArray (vao);
     glEnableVertexAttribArray (0);
-    glBindBuffer (GL_ARRAY_BUFFER, vbo);
+    glBindBuffer (GL_ARRAY_BUFFER, vbo_point);
     glVertexAttribPointer (0, 3, GL_FLOAT, GL_FALSE, 0, NULL);
 
+    glEnableVertexAttribArray (1);
+    glBindBuffer (GL_ARRAY_BUFFER, vbo_normals);
+    glVertexAttribPointer (1, 3, GL_FLOAT, GL_FALSE, 0, NULL);
 
 
     GLuint vs = Shader::loadVertexShader("test.vert");
@@ -136,18 +135,13 @@ int main () {
 
     glUseProgram (shader_programme);
 
-    GLuint resolution_loc = glGetUniformLocation(shader_programme, "resolution");
-    glUniform2f(resolution_loc, 640, 480);
     
     mat4 projection = projectionMatrix(70.0, 640.0f/480.0f, 0.1f, 100.0f);
-
     GLuint projection_loc = glGetUniformLocation(shader_programme, "projection");
     glUniformMatrix4fv(projection_loc, 1, GL_FALSE, projection.m);
 
     GLuint model_loc = glGetUniformLocation(shader_programme, "model");
 
-
-    glBindFragDataLocation(shader_programme, 0, "color_out");
 
     GLuint view_location = glGetUniformLocation(shader_programme, "view");
     cam->setProjection(view_location);
@@ -156,30 +150,38 @@ int main () {
 
     while (!glfwWindowShouldClose (window)) 
     {
-        static float angle = 0;
+        // static float angle = 0;
 
-        mat4 rotation = YrotationMatrix(angle);
+        // mat4 rotation = YrotationMatrix(angle);
 
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         cam->display();
 
-        glUniformMatrix4fv(model_loc, 1, GL_FALSE, rotation.m);
 
+        for (int i = 0; i < 8; ++i)
+        {
+            mat4 model = translationMatrix(1.5f, 0.0f, 0.0f);
+            model = Yrotate(model, i * 45 * (M_PI)/180.0f);
 
-        glBindVertexArray (vao);
-        // draw points 0-3 from the currently bound VAO with current in-use shader
-        glDrawArrays (GL_TRIANGLES, 0, 6*6);
+            glUniformMatrix4fv(model_loc, 1, GL_FALSE, model.m);
 
-        glBindVertexArray(0);
+            glBindVertexArray (vao);
+            // draw points 0-3 from the currently bound VAO with current in-use shader
+            glDrawArrays (GL_TRIANGLES, 0, 6*6);
+
+            glBindVertexArray(0);
+
+        }
+
 
         // // update other events like input handling 
         glfwPollEvents ();
         // put the stuff we've been drawing onto the display
         glfwSwapBuffers (window);
 
-        angle += 0.01;
+        // angle += 0.01;
     }
 
 
