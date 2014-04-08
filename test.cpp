@@ -150,9 +150,11 @@ int main () {
 
     while (!glfwWindowShouldClose (window)) 
     {
-        // static float angle = 0;
+        static float angle = 0;
 
-        // mat4 rotation = YrotationMatrix(angle);
+        mat4 rotation = YrotationMatrix(angle);
+        mat4 transUp = translationMatrix(0.0f, 1.0f, 0.0f);
+        mat4 transUpTotal(1);
 
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -163,7 +165,12 @@ int main () {
         for (int i = 0; i < 8; ++i)
         {
             mat4 model = translationMatrix(1.5f, 0.0f, 0.0f);
-            model = Yrotate(model, i * 45 * (M_PI)/180.0f);
+            model = Yrotate(model, i * 45 * (M_PI)/180.0f);         
+
+            model = rotation * transUpTotal * model;
+
+            transUpTotal *= transUp;
+            
 
             glUniformMatrix4fv(model_loc, 1, GL_FALSE, model.m);
 
@@ -172,7 +179,7 @@ int main () {
             glDrawArrays (GL_TRIANGLES, 0, 6*6);
 
             glBindVertexArray(0);
-
+            
         }
 
 
@@ -181,7 +188,7 @@ int main () {
         // put the stuff we've been drawing onto the display
         glfwSwapBuffers (window);
 
-        // angle += 0.01;
+        angle += 0.01;
     }
 
 
