@@ -1,0 +1,89 @@
+
+<!ELEMENT scene (materiaux, lumieres, pieces) >
+<!ATTLIST scene nom CDATA #REQUIRED >
+
+
+<!ELEMENT materiaux (material+) >
+
+<!ELEMENT material (ambient, diffuse, specular, emissive, texture?) >
+<!ATTLIST material nom ID #REQUIRED >
+
+<!ELEMENT ambient EMPTY >
+<!ATTLIST ambient 
+			r CDATA #REQUIRED
+			g CDATA #REQUIRED
+			b CDATA #REQUIRED
+			a CDATA #IMPLIED >
+
+<!ELEMENT diffuse EMPTY >
+<!ATTLIST diffuse 
+			r CDATA #REQUIRED
+			g CDATA #REQUIRED
+			b CDATA #REQUIRED
+			a CDATA #IMPLIED >			
+
+<!ELEMENT specular EMPTY >
+<!ATTLIST specular 
+			r CDATA #REQUIRED
+			g CDATA #REQUIRED
+			b CDATA #REQUIRED
+			a CDATA #IMPLIED 
+			s CDATA #REQUIRED >
+
+<!ELEMENT emissive EMPTY >
+<!ATTLIST emissive 
+			r CDATA #REQUIRED
+			g CDATA #REQUIRED
+			b CDATA #REQUIRED
+			a CDATA #IMPLIED >
+
+<!ELEMENT texture EMPTY >
+<!ATTLIST texture src CDATA #REQUIRED >
+
+<!ELEMENT lumieres (lumiere+) >
+
+<!ELEMENT lumiere (position) >
+<!ATTLIST lumiere 
+			nom ID #REQUIRED 
+			mat IDREF "defaut"	>
+
+
+<!ELEMENT position EMPTY >
+<!ATTLIST position 
+			repere (world|model|view) #IMPLIED
+			relatif IDREF #IMPLIED
+			x CDATA #REQUIRED
+			y CDATA #REQUIRED
+			z CDATA #REQUIRED >
+
+<!ELEMENT pieces (piece+) >
+
+<!ELEMENT piece (dimension, position, murs, objets) >
+<!ATTLIST piece nom ID #REQUIRED >
+
+<!ELEMENT dimension EMPTY >
+<!ATTLIST dimension 
+			longueur CDATA #REQUIRED
+			largeur CDATA #REQUIRED
+			hauteur CDATA #REQUIRED >
+			
+<!ELEMENT murs (mur) >
+
+<!ELEMENT mur EMPTY >
+<!ATTLIST mur 
+			cote (avant|arriere|gauche|droit|haut|bas) #REQUIRED
+			mat IDREF "defaut" >
+
+<!ELEMENT objets (objet+) >
+
+<!ELEMENT objet (position, objet*) >
+<!ATTLIST objet 
+			nom ID #REQUIRED
+			mat IDREF "defaut"
+			modele CDATA #REQUIRED
+			Xrot CDATA #IMPLIED
+			Yrot CDATA #IMPLIED
+			Zrot CDATA #IMPLIED >
+
+
+
