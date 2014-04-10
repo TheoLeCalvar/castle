@@ -1,0 +1,18 @@
+lundi 7 avril:
+	écriture d'une base de librairie mathématique pour les shaders (vec2/3/4, mat3/4)
+
+
+mardi 8 avril:
+	apprentissage des bases des shaders, passage de variables d'une étape du pipeline à la suivante, envoie de variable du code C à la carte graphique
+	révision des étapes du pipeline ainsi que des différents repère et leurs matrices associées (view, model, projection, …)
+
+
+mercredi 9 avril:
+	première syntaxe xml de la description de la salle, mise en un place d'un dtd
+
+
+jeudi 10 avril:
+	reprise du modèle de classe du côté reader, partage du travail en deux, interface de visualisation/modification (si le temps) Baptiste, lecture du xml, code openGl Théo
+	choix de la librairie pour l'interface graphique, Qt, simple, permet des interfaces complexes et propose un module de l'ecture/écriture de fichiers XML
+
+vendredi 11 avril

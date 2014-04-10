@@ -1,2 +1,4 @@
 exe
 *.o
+castle.sublime-project
+castle.sublime-workspace

@@ -3,6 +3,12 @@
 #include <stdio.h>
 #include <cmath>
 
+#include <QtCore/QDebug>
+#include <QtCore/QFile>
+#include <QtXml/QDomDocument>
+#include <QtXml/QDomElement>
+#include <QtXml/QDomAttr>
+
 #include "camera.hpp"
 #include "shader.hpp"
 
@@ -10,11 +16,48 @@ GLFWwindow* window = NULL;
 Camera * cam = NULL;
 
 
-void keyboard_handler(GLFWwindow *, int key, int, int action, int);
+void    keyboard_handler(GLFWwindow *, int key, int, int action, int);
+int     openGL();
 
-int main () {
-//*
-      // start GL context and O/S window using the GLFW helper library
+
+int main (int argc, char** argv) 
+{
+    if (argc < 2)
+    {
+        return openGL();
+    }
+    else
+    {
+        QDomDocument dom("scene");
+        QFile  file(argv[1]);
+
+        dom.setContent(&file);
+
+        QDomElement root = dom.documentElement();
+
+        QDomNode n = root.firstChild();
+
+        while(!n.isNull())
+        {
+            QDomElement e = n.toElement();
+
+            if(!e.isNull())
+            {
+                qDebug() << e.tagName();
+            }
+
+            n = n.nextSibling();
+        }
+
+        qDebug() << dom.toString();
+
+    }
+ 
+}
+
+int openGL()
+{
+    // start GL context and O/S window using the GLFW helper library
       if (!glfwInit ()) {
         fprintf (stderr, "ERROR: could not start GLFW3\n");
         return 1;
@@ -194,10 +237,8 @@ int main () {
 
     // close GL context and any other GLFW resources
     glfwTerminate();
-    return 0;
-//*/
+    return 0;   
 }
-
 
 void keyboard_handler(GLFWwindow *, int key, int, int action, int)
 {

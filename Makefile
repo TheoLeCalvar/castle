@@ -5,12 +5,12 @@ UNAME = $(shell uname)
 
 ifeq ($(UNAME), Darwin)
 CXXFLAGS = -g
-LDFLAGS = -framework OpenGL -framework ApplicationServices -lSOIL -lglew -lglfw3
+LDFLAGS = -lSOIL -lglew -lglfw3 -F/usr/local/lib -framework OpenGL -framework ApplicationServices -framework QtCore -framework QtXml
 endif
 
 ifeq ($(UNAME), Linux)
 CXXFLAGS = -Wall -std=c++0x
-LDFLAGS = -lSOIL -lGL -lglfw3 -lGLEW -lX11 -lXxf86vm -lXrandr -lpthread -lXi
+LDFLAGS = -lSOIL -lGL -lglfw3 -lGLEW -lX11 -lXxf86vm -lXrandr -lpthread -lXi -lQtCore -lQtXml
 endif
 
 OBJDIR = obj
