@@ -2,3 +2,5 @@ exe
 *.o
 castle.sublime-project
 castle.sublime-workspace
+castle.app
+moc_*.cpp

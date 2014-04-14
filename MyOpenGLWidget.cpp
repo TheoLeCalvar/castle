@@ -1,9 +1,11 @@
 #include "MyOpenGLWidget.hpp"
 
-MyOpenGLWidget::MyOpenGLWidget(const QGLFormat & format, QWidget * parent = 0, const QGLWidget * shareWidget = 0, Qt::WindowFlags f = 0):
-	QGLWidget(format, parent, shareWidget, f), QGLFunctions(context())
+MyOpenGLWidget::MyOpenGLWidget(const QGLFormat & format, QWidget * parent, const QGLWidget * shareWidget, Qt::WindowFlags f):
+	QGLWidget(format, parent, shareWidget, f)
 {
-
+     QTimer *timer = new QTimer(this);
+     connect(timer, SIGNAL(timeout()), this, SLOT(updateGL()));
+     timer->start(1000/60);
 }
 
 MyOpenGLWidget::~MyOpenGLWidget()
@@ -22,8 +24,13 @@ QSize MyOpenGLWidget::sizeHint() const
 }
 
 
-virtual void	MyOpenGLWidget::initializeGL()
+void	MyOpenGLWidget::initializeGL()
 {
+    initializeOpenGLFunctions();
+
+
+	_cam = new Camera();
+
     float points[] = 
     {
         -0.5f, -0.5f, 0.5f,     0.5f, -0.5f, 0.5f,      0.5f, 0.5f, 0.5f,       
@@ -74,7 +81,7 @@ virtual void	MyOpenGLWidget::initializeGL()
     unsigned int vbo_normals = 0;
     glGenBuffers (1, &vbo_normals);
     glBindBuffer (GL_ARRAY_BUFFER, vbo_normals);
-    glBufferData (GL_ARRAY_BUFFER, 6* 6*3 * sizeof (float), points, GL_STATIC_DRAW);
+    glBufferData (GL_ARRAY_BUFFER, 6* 6*3 * sizeof (float), normals, GL_STATIC_DRAW);
 
     glGenVertexArrays (1, &_vao);
     glBindVertexArray (_vao);
@@ -104,9 +111,11 @@ virtual void	MyOpenGLWidget::initializeGL()
 }
 
 
-virtual void	MyOpenGLWidget::paintGL()
+void	MyOpenGLWidget::paintGL()
 {
 	static float angle = 0;
+
+    makeCurrent();
 
 	mat4 rotation = YrotationMatrix(angle);
 	mat4 transUp = translationMatrix(0.0f, 1.0f, 0.0f);
@@ -115,7 +124,7 @@ virtual void	MyOpenGLWidget::paintGL()
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	cam->display();
+	_cam->display();
 
 
 	for (int i = 0; i < 8; ++i)
@@ -130,7 +139,7 @@ virtual void	MyOpenGLWidget::paintGL()
 
 	    glUniformMatrix4fv(model_loc, 1, GL_FALSE, model.m);
 
-	    glBindVertexArray (vao);
+	    glBindVertexArray (_vao);
 	    // draw points 0-3 from the currently bound VAO with current in-use shader
 	    glDrawArrays (GL_TRIANGLES, 0, 6*6);
 
@@ -139,15 +148,14 @@ virtual void	MyOpenGLWidget::paintGL()
 	}
 
 
-	swapBuffers();
-
+	// swapBuffers();
 	angle += 0.01;
 }
 
-virtual void	MyOpenGLWidget::resizeGL(int width, int height)
+void	MyOpenGLWidget::resizeGL(int width, int height)
 {
     mat4 projection = projectionMatrix(70.0, width/(float)height, 0.1f, 100.0f);
     glUniformMatrix4fv(projection_loc, 1, GL_FALSE, projection.m);
 
-    cam->setProjection(view_location);
+    _cam->setProjection(view_location);
 }

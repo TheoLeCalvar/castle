@@ -13,26 +13,28 @@ GLuint Shader::loadFragmentShader(const std::string & fileName)
 
 GLuint Shader::loadFile(const std::string & fileName, GLenum shaderType)
 {
+	QOpenGLFunctions_3_2_Core func;
+	func.initializeOpenGLFunctions();
 	GLuint shaderId;
 	char * shaderSource = readFile(fileName);
 	char * errorMessage = NULL;
 	int shaderCompiled = 0;
 	int errorLength = 0;
 
-    shaderId = glCreateShader (shaderType);
+    shaderId = func.glCreateShader (shaderType);
 
-    glShaderSource (shaderId, 1, (const GLchar **) &shaderSource, NULL);
-    glCompileShader (shaderId);
-    glGetShaderiv(shaderId, GL_COMPILE_STATUS, &shaderCompiled);
+    func.glShaderSource (shaderId, 1, (const GLchar **) &shaderSource, NULL);
+    func.glCompileShader (shaderId);
+    func.glGetShaderiv(shaderId, GL_COMPILE_STATUS, &shaderCompiled);
 
 
     if (shaderCompiled != GL_TRUE)
     {
-    	glGetShaderiv(shaderId, GL_INFO_LOG_LENGTH, &errorLength);
+    	func.glGetShaderiv(shaderId, GL_INFO_LOG_LENGTH, &errorLength);
 
     	errorMessage  = new char[errorLength];
 
-    	glGetShaderInfoLog(shaderId, errorLength, &errorLength, errorMessage);
+    	func.glGetShaderInfoLog(shaderId, errorLength, &errorLength, errorMessage);
 
     	std::cout << '"' << fileName << "\" : " << errorMessage << std::endl;
 
@@ -46,7 +48,7 @@ GLuint Shader::loadFile(const std::string & fileName, GLenum shaderType)
 }
 char * Shader::readFile(const std::string & fileName)
 {
-	std::ifstream inFile(fileName);
+	std::ifstream inFile(fileName.c_str());
 	std::string ligne;
 	std::ostringstream os;
 	char * ret;

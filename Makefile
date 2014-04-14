@@ -51,14 +51,17 @@ SOURCES       = camera.cpp \
 		math.cpp \
 		MyOpenGLWidget.cpp \
 		scene.cpp \
-		shader.cpp 
+		shader.cpp \
+		main.cpp moc_MyOpenGLWidget.cpp
 OBJECTS       = camera.o \
 		light.o \
 		material.o \
 		math.o \
 		MyOpenGLWidget.o \
 		scene.o \
-		shader.o
+		shader.o \
+		main.o \
+		moc_MyOpenGLWidget.o
 DIST          = /usr/local/Cellar/qt5/5.2.1/mkspecs/features/spec_pre.prf \
 		/usr/local/Cellar/qt5/5.2.1/mkspecs/qdevice.pri \
 		/usr/local/Cellar/qt5/5.2.1/mkspecs/features/device_config.prf \
@@ -146,6 +149,7 @@ DIST          = /usr/local/Cellar/qt5/5.2.1/mkspecs/features/spec_pre.prf \
 		/usr/local/Cellar/qt5/5.2.1/mkspecs/features/qt_config.prf \
 		/usr/local/Cellar/qt5/5.2.1/mkspecs/macx-clang/qmake.conf \
 		/usr/local/Cellar/qt5/5.2.1/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/local/Cellar/qt5/5.2.1/mkspecs/features/exclusive_builds.prf \
 		/usr/local/Cellar/qt5/5.2.1/mkspecs/features/default_pre.prf \
 		/usr/local/Cellar/qt5/5.2.1/mkspecs/features/mac/default_pre.prf \
@@ -298,6 +302,7 @@ Makefile: castle.pro /usr/local/Cellar/qt5/5.2.1/mkspecs/macx-clang/qmake.conf /
 		/usr/local/Cellar/qt5/5.2.1/mkspecs/features/qt_config.prf \
 		/usr/local/Cellar/qt5/5.2.1/mkspecs/macx-clang/qmake.conf \
 		/usr/local/Cellar/qt5/5.2.1/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/local/Cellar/qt5/5.2.1/mkspecs/features/exclusive_builds.prf \
 		/usr/local/Cellar/qt5/5.2.1/mkspecs/features/default_pre.prf \
 		/usr/local/Cellar/qt5/5.2.1/mkspecs/features/mac/default_pre.prf \
@@ -412,6 +417,7 @@ Makefile: castle.pro /usr/local/Cellar/qt5/5.2.1/mkspecs/macx-clang/qmake.conf /
 /usr/local/Cellar/qt5/5.2.1/mkspecs/features/qt_config.prf:
 /usr/local/Cellar/qt5/5.2.1/mkspecs/macx-clang/qmake.conf:
 /usr/local/Cellar/qt5/5.2.1/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /usr/local/Cellar/qt5/5.2.1/mkspecs/features/exclusive_builds.prf:
 /usr/local/Cellar/qt5/5.2.1/mkspecs/features/default_pre.prf:
 /usr/local/Cellar/qt5/5.2.1/mkspecs/features/mac/default_pre.prf:
@@ -457,7 +463,7 @@ castle.app/Contents/Info.plist:
 	@sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,@TYPEINFO@,????,g" -e "s,@ICON@,,g" -e "s,@BUNDLEIDENTIFIER@,com.yourcompany.castle,g" -e "s,@EXECUTABLE@,castle,g" -e "s,@TYPEINFO@,????,g" /usr/local/Cellar/qt5/5.2.1/mkspecs/macx-clang/Info.plist.app >castle.app/Contents/Info.plist
 dist: 
 	@test -d .tmp/castle1.0.0 || mkdir -p .tmp/castle1.0.0
-	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/castle1.0.0/ && $(COPY_FILE) --parents camera.hpp light.hpp material.hpp math.hpp MyOpenGLWidget.hpp objet.hpp readers.hpp scene.hpp shader.hpp .tmp/castle1.0.0/ && $(COPY_FILE) --parents camera.cpp light.cpp material.cpp math.cpp MyOpenGLWidget.cpp scene.cpp shader.cpp .tmp/castle1.0.0/ && (cd `dirname .tmp/castle1.0.0` && $(TAR) castle1.0.0.tar castle1.0.0 && $(COMPRESS) castle1.0.0.tar) && $(MOVE) `dirname .tmp/castle1.0.0`/castle1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/castle1.0.0
+	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/castle1.0.0/ && $(COPY_FILE) --parents camera.hpp light.hpp material.hpp math.hpp MyOpenGLWidget.hpp objet.hpp readers.hpp scene.hpp shader.hpp .tmp/castle1.0.0/ && $(COPY_FILE) --parents camera.cpp light.cpp material.cpp math.cpp MyOpenGLWidget.cpp scene.cpp shader.cpp main.cpp .tmp/castle1.0.0/ && (cd `dirname .tmp/castle1.0.0` && $(TAR) castle1.0.0.tar castle1.0.0 && $(COMPRESS) castle1.0.0.tar) && $(MOVE) `dirname .tmp/castle1.0.0`/castle1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/castle1.0.0
 
 
 clean:compiler_clean 
@@ -482,8 +488,25 @@ compiler_objective_c_make_all:
 compiler_objective_c_clean:
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all:
+compiler_moc_header_make_all: moc_MyOpenGLWidget.cpp
 compiler_moc_header_clean:
+	-$(DEL_FILE) moc_MyOpenGLWidget.cpp
+moc_MyOpenGLWidget.cpp: /usr/local/Cellar/qt5/5.2.1/lib/QtOpenGL.framework/Versions/5/Headers/QGLWidget \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtOpenGL.framework/Versions/5/Headers/qgl.h \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/QOpenGLVertexArrayObject \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/qopenglvertexarrayobject.h \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/QOpenGLBuffer \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/qopenglbuffer.h \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/QOpenGLFunctions_3_2_Core \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/qopenglfunctions_3_2_core.h \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtCore.framework/Versions/5/Headers/QTimer \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtCore.framework/Versions/5/Headers/qtimer.h \
+		math.hpp \
+		camera.hpp \
+		shader.hpp \
+		MyOpenGLWidget.hpp
+	/usr/local/Cellar/qt5/5.2.1/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 $(INCPATH) -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include/c++/4.2.1 -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include/c++/4.2.1/backward -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include MyOpenGLWidget.hpp -o moc_MyOpenGLWidget.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
 compiler_uic_make_all:
@@ -496,19 +519,25 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: 
+compiler_clean: compiler_moc_header_clean 
 
 ####### Compile
 
 camera.o: camera.cpp camera.hpp \
-		math.hpp
+		math.hpp \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/QOpenGLFunctions_3_2_Core \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/qopenglfunctions_3_2_core.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o camera.o camera.cpp
 
 light.o: light.cpp light.hpp \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/QOpenGLFunctions_3_2_Core \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/qopenglfunctions_3_2_core.h \
 		math.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o light.o light.cpp
 
 material.o: material.cpp material.hpp \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/QOpenGLFunctions_3_2_Core \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/qopenglfunctions_3_2_core.h \
 		math.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o material.o material.cpp
 
@@ -522,6 +551,10 @@ MyOpenGLWidget.o: MyOpenGLWidget.cpp MyOpenGLWidget.hpp \
 		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/qopenglvertexarrayobject.h \
 		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/QOpenGLBuffer \
 		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/qopenglbuffer.h \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/QOpenGLFunctions_3_2_Core \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/qopenglfunctions_3_2_core.h \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtCore.framework/Versions/5/Headers/QTimer \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtCore.framework/Versions/5/Headers/qtimer.h \
 		math.hpp \
 		camera.hpp \
 		shader.hpp
@@ -530,12 +563,38 @@ MyOpenGLWidget.o: MyOpenGLWidget.cpp MyOpenGLWidget.hpp \
 scene.o: scene.cpp scene.hpp \
 		math.hpp \
 		camera.hpp \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/QOpenGLFunctions_3_2_Core \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/qopenglfunctions_3_2_core.h \
 		light.hpp \
 		material.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o scene.o scene.cpp
 
-shader.o: shader.cpp shader.hpp
+shader.o: shader.cpp shader.hpp \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/QOpenGLFunctions_3_2_Core \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/qopenglfunctions_3_2_core.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o shader.o shader.cpp
+
+main.o: main.cpp /usr/local/Cellar/qt5/5.2.1/lib/QtWidgets.framework/Versions/5/Headers/QApplication \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtOpenGL.framework/Versions/5/Headers/QGLFormat \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtOpenGL.framework/Versions/5/Headers/qgl.h \
+		MyOpenGLWidget.hpp \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtOpenGL.framework/Versions/5/Headers/QGLWidget \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/QOpenGLVertexArrayObject \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/qopenglvertexarrayobject.h \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/QOpenGLBuffer \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/qopenglbuffer.h \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/QOpenGLFunctions_3_2_Core \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtGui.framework/Versions/5/Headers/qopenglfunctions_3_2_core.h \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtCore.framework/Versions/5/Headers/QTimer \
+		/usr/local/Cellar/qt5/5.2.1/lib/QtCore.framework/Versions/5/Headers/qtimer.h \
+		math.hpp \
+		camera.hpp \
+		shader.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
+
+moc_MyOpenGLWidget.o: moc_MyOpenGLWidget.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_MyOpenGLWidget.o moc_MyOpenGLWidget.cpp
 
 ####### Install
 

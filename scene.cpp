@@ -2,12 +2,14 @@
 
 Scene::Scene()
 {
+	initializeOpenGLFunctions();
 	_camera = new Camera();
 }
 
 Scene::Scene(const QString & fileName):
 	_xml("scene")
 {
+	initializeOpenGLFunctions();
 	QFile file;
 	file.setFileName(fileName);
 

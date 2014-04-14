@@ -3,8 +3,8 @@
 
 #include "math.hpp"
 
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include <QOpenGLFunctions_3_2_Core>
+
 #ifdef __APPLE__
 	#include <ApplicationServices/ApplicationServices.h>
 #endif
@@ -12,7 +12,7 @@
 
 
 
-class Camera
+class Camera: protected QOpenGLFunctions_3_2_Core
 {
 private:
 	static Camera * 	_activeCamera;
@@ -60,7 +60,7 @@ public:
 
 	void setProjection(GLuint p){_view_location = p;}
 
-	static void mouse_event(GLFWwindow *, double x, double y);
+	// static void mouse_event(GLFWwindow *, double x, double y);
 	static void setActiveCamera(Camera * c){_activeCamera = c;}
 	
 };

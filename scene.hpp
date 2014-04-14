@@ -1,9 +1,6 @@
 #ifndef SCENE_H
 #define SCENE_H
 
-
-#include <GL/glew.h>
-
 #include <iostream>
 #include <map>
 
@@ -12,6 +9,7 @@
 #include "light.hpp"
 #include "material.hpp"
 
+#include <QOpenGLFunctions_3_2_Core>
 #include <QtCore/QDebug>
 #include <QtCore/QFile>
 #include <QtCore/QString>
@@ -23,7 +21,7 @@
 
 class Object;
 
-class Scene
+class Scene: protected QOpenGLFunctions_3_2_Core
 {
 private:
 	QDomDocument 								_xml;

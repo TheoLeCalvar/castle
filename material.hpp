@@ -2,11 +2,11 @@
 #define MATERIAL_H
 
 
-#include <GL/glew.h>
+#include <QOpenGLFunctions_3_2_Core>
 
 #include "math.hpp"
 
-class Material
+class Material: protected QOpenGLFunctions_3_2_Core
 {
 private:
 	vec4 			_ambient;

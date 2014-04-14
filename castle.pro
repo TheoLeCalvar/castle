@@ -5,7 +5,7 @@
 TEMPLATE = app
 TARGET = castle
 INCLUDEPATH += .
-QT += opengl xml
+QT += opengl xml gui
 
 
 # Input
@@ -24,4 +24,5 @@ SOURCES += camera.cpp \
            math.cpp \
            MyOpenGLWidget.cpp \
            scene.cpp \
-           shader.cpp
+           shader.cpp \
+           main.cpp

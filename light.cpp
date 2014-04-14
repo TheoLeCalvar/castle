@@ -8,7 +8,9 @@ Light::Light(
 	GLuint shader)
 	:
 	_position(position), _ambient(ambient), _diffuse(diffuse), _specular(specular), _shader(shader)
-{}
+{
+	initializeOpenGLFunctions();
+}
 
 Light::~Light()
 {}

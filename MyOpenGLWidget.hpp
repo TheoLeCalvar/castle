@@ -4,21 +4,26 @@
 #include <QGLWidget>
 #include <QOpenGLVertexArrayObject>
 #include <QOpenGLBuffer>
+#include <QOpenGLFunctions_3_2_Core>
+#include <QTimer>
 
 #include "math.hpp"
 #include "camera.hpp"
 #include "shader.hpp"
 
 
-class MyOpenGLWidget: public QGLWidget, protected QGLFunctions
+class MyOpenGLWidget: public QGLWidget, protected QOpenGLFunctions_3_2_Core
 {
+Q_OBJECT
+
 private:
+	Camera * _cam;
 	GLuint _vao;
 	GLuint shader_programme;
 
 	GLuint model_loc;
 	GLuint view_location;
-	GLuint projection_loc
+	GLuint projection_loc;
 
 
 public:
@@ -31,7 +36,7 @@ public:
 	virtual void	initializeGL();
 	virtual void	paintGL();
 	virtual void	resizeGL(int width, int height);
-	
+
 };
 
 

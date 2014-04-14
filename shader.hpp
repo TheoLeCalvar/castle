@@ -2,7 +2,8 @@
 #define SHADER_H
 
 
-#include <GL/glew.h> 
+#include <QOpenGLFunctions_3_2_Core>
+
 #include <iostream>
 #include <fstream>
 #include <sstream>

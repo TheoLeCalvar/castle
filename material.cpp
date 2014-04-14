@@ -6,7 +6,9 @@ Material::Material(
 		vec4 emissive, 
 		GLuint shader):
 	_ambient(ambient), _diffuse(diffuse), _specular(specular), _shininess(shininess), _emissive(emissive), _shader(shader)
-{}
+{
+	initializeOpenGLFunctions();
+}
 
 Material::~Material()
 {}

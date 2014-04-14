@@ -13,6 +13,7 @@ Camera::Camera( float eyeX, float eyeY, float eyeZ):
     {
         _activeCamera = this;
     }
+    initializeOpenGLFunctions();
     vectorFromAngle();
 }
 
@@ -54,34 +55,34 @@ void Camera::go(float x, float y, float z)
     _center = _eye + _avant;
 }
 
-void Camera::mouse_event(GLFWwindow * w, double x, double y)
-{
-    int width, height;
-    glfwGetWindowSize(w, &width, &height);
-    width /= 2;
-    height /= 2;
+// void Camera::mouse_event(GLFWwindow * w, double x, double y)
+// {
+//     int width, height;
+//     glfwGetWindowSize(w, &width, &height);
+//     width /= 2;
+//     height /= 2;
 
 
-    if ((x - width != 0) ||  (y - height != 0))
-    {
+//     if ((x - width != 0) ||  (y - height != 0))
+//     {
 
-        _activeCamera->_theta    += (x - width)*0.2f;
-        _activeCamera->_phi      -= (y - height)*0.2f;
+//         _activeCamera->_theta    += (x - width)*0.2f;
+//         _activeCamera->_phi      -= (y - height)*0.2f;
 
-        _activeCamera->vectorFromAngle();
+//         _activeCamera->vectorFromAngle();
 
-        #ifdef __APPLE__    
-            int xpos, ypos;
-            glfwGetWindowPos(w, &xpos, &ypos);
+//         #ifdef __APPLE__    
+//             int xpos, ypos;
+//             glfwGetWindowPos(w, &xpos, &ypos);
 
-            CGPoint warpPoint = CGPointMake(width + xpos, height + ypos);
-            CGWarpMouseCursorPosition(warpPoint);
-            CGAssociateMouseAndMouseCursorPosition(true);
-        #else
-            glfwSetCursorPos (w, width, height);
-        #endif
-    }
-}
+//             CGPoint warpPoint = CGPointMake(width + xpos, height + ypos);
+//             CGWarpMouseCursorPosition(warpPoint);
+//             CGAssociateMouseAndMouseCursorPosition(true);
+//         #else
+//             glfwSetCursorPos (w, width, height);
+//         #endif
+//     }
+// }
 
 void Camera::vectorFromAngle()
 {
