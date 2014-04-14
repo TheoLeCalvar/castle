@@ -5,24 +5,35 @@
 #include <GL/glew.h>
 
 #include <iostream>
-#include <stdio.h>
-#include <cmath>
+#include <map>
+
+#include "math.hpp"
+#include "camera.hpp"
+#include "light.hpp"
+#include "material.hpp"
 
 #include <QtCore/QDebug>
 #include <QtCore/QFile>
+#include <QtCore/QString>
 #include <QtXml/QDomDocument>
 #include <QtXml/QDomElement>
+#include <QtXml/QDomNode>
+#include <QtXml/QDomNodeList>
 
+
+class Object;
 
 class Scene
 {
 private:
 	QDomDocument 								_xml;
 
-	std::map<const std::string, Object *>		_objects;
-	std::map<const std::string, Light *> 		_lights;
-	std::map<const std::string, Material *>		_materials;
-	std::map<const std::string, GLuint> 		_shaders;
+	std::map<const QString, Object *>		_objects;
+	std::map<const QString, Light *> 		_lights;
+	std::map<const QString, Material *>		_materials;
+	std::map<const QString, GLuint> 		_shaders;
+
+	mat4 										_projectionMatrix;
 
 public:
 	Camera *									_camera;
@@ -30,29 +41,31 @@ public:
 
 public:
 	Scene();
-	Scene(const std::string & fileName);
+	Scene(const QString & fileName);
 	
 	~Scene();
 
 	void draw();
 
-	Object * 	getObject(const std::string & name);
-	Light * 	getLight(const std::string & name);
-	Material *	getMaterial(const std::string & name);
-	GLuint		getShader(const std::string & name);
+	Object * 	getObject(const QString & name);
+	Light * 	getLight(const QString & name);
+	Material *	getMaterial(const QString & name);
+	GLuint		getShader(const QString & name);
 
-	void 		addObject(const std::string & name, Object * o);
-	void 		addLight(const std::string & name, Light * l);
-	void 		addMaterial(const std::string & name, Material * m);
-	void 		addShader(const std::string & name, GLuint * s);
+	void 		setProjectionMatrix(mat4 m);
 
-	void 		saveAsXML(const std::string & fileName);
+	void 		addObject(const QString & name, Object * o);
+	void 		addLight(const QString & name, Light * l);
+	void 		addMaterial(const QString & name, Material * m);
+	void 		addShader(const QString & name, GLuint s);
+
+	void 		saveAsXML(const QString & fileName);
 
 
 private:
-	void 		loadLights(const QDomNode &);
-	void 		loadMaterials(const QDomNode &);
-	void 		loadPieces(const QDomNode &);
+	void 		loadLights(const QDomElement &);
+	void 		loadMaterials(const QDomElement &);
+	void 		loadPieces(const QDomElement &);
 	
 };
 

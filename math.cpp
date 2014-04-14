@@ -1,6 +1,7 @@
 #include "math.hpp"
 #include <cmath>
-#include <iostream>
+
+std::stack<mat4> matrix_stack;
 
 /****************************************************
 						vec2
@@ -842,6 +843,21 @@ mat4 mat4::inverse()const
 		Utility
 *****************************/
 
+void popMatrix()
+{
+	matrix_stack.pop();
+}
+
+void pushMatrix(mat4 m)
+{
+	matrix_stack.push(m);
+}
+
+mat4 currentMatrix()
+{
+	return matrix_stack.top();
+}
+
 mat4 translationMatrix(float x, float y, float z)
 {
 	return mat4(
@@ -983,9 +999,23 @@ mat4 projectionMatrix(float fovy, float aspect, float near, float far) {
 	return m;
 }
 
+template <typename charT, typename traits>
+std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits> & os, const vec2 & vv)
+{
+   os << "(" << vv[0] << "," << vv[1] << ")" << std::endl;
+   return os;
+}
+
 void print(const vec2 & vv)
 {
 	std::cout << "(" << vv[0] << "," << vv[1] << ")" << std::endl;
+}
+
+template <typename charT, typename traits>
+std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits> & os, const vec3 & vv)
+{
+   os << "(" << vv[0] << "," << vv[1] << "," << vv[2] << ")" << std::endl;
+   return os;
 }
 
 void print(const vec3 & vv)
@@ -993,9 +1023,26 @@ void print(const vec3 & vv)
 	std::cout << "(" << vv[0] << "," << vv[1] << "," << vv[2] << ")" << std::endl;
 }
 
+template <typename charT, typename traits>
+std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits> & os, const vec4 & vv)
+{
+   os << "(" << vv[0] << "," << vv[1] << "," << vv[2] << "," << vv[3] <<  ")" << std::endl;
+   return os;
+}
+
 void print(const vec4 & vv)
 {
 	std::cout << "(" << vv[0] << "," << vv[1] << "," << vv[2] << "," << vv[3] << ")" << std::endl;
+}
+
+template <typename charT, typename traits>
+std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits> & os, const mat3 & mm)
+{
+	os << "[" << mm[0] << "][" << mm[3] << "][" << mm[6] << "]" << std::endl;
+	os << "[" << mm[1] << "][" << mm[4] << "][" << mm[7] << "]" << std::endl;
+	os << "[" << mm[2] << "][" << mm[5] << "][" << mm[8] << "]" << std::endl;
+
+	return os;
 }
 
 void print(const mat3 & mm)
@@ -1004,6 +1051,18 @@ void print(const mat3 & mm)
 	std::cout << "[" << mm[1] << "][" << mm[4] << "][" << mm[7] << "]" << std::endl;
 	std::cout << "[" << mm[2] << "][" << mm[5] << "][" << mm[8] << "]" << std::endl;
 }
+
+template <typename charT, typename traits>
+std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits> & os, const mat4 & mm)
+{
+	os << "[" << mm[0] << "][" << mm[4] << "][" << mm[8] << "][" << mm[12] << "]" << std::endl;
+	os << "[" << mm[1] << "][" << mm[5] << "][" << mm[9] << "][" << mm[13] << "]" << std::endl;
+	os << "[" << mm[2] << "][" << mm[6] << "][" << mm[10] << "][" << mm[14] << "]" << std::endl;
+	os << "[" << mm[3] << "][" << mm[7] << "][" << mm[11] << "][" << mm[15] << "]" << std::endl;
+
+	return os;
+}
+
 
 void print(const mat4 & mm)
 {

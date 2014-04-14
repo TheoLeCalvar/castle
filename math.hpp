@@ -1,6 +1,10 @@
 #ifndef MATH_HELPER
 #define MATH_HELPER
 
+#include <iostream>
+#include <stack>
+
+
 struct vec3;
 struct vec4;
 
@@ -195,6 +199,15 @@ typedef struct vec4 vec4;
 typedef struct mat3 mat3;
 typedef struct mat4 mat4;
 
+
+
+void popMatrix();
+void pushMatrix(mat4);
+
+mat4 currentMatrix();
+
+
+
 mat4 translationMatrix(float x, float y, float z);
 mat4 translationMatrix(const vec3 &);
 
@@ -216,10 +229,20 @@ mat4 scale(const mat4 &, const vec3 &);
 mat4 viewMatrix(const vec3 & eye, const vec3 & center, const vec3 & up);
 mat4 projectionMatrix(float fov, float aspect, float zNear, float zFar);
 
+template <typename charT, typename traits>
+std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits> & os, const vec2 &);
 void print(const vec2 &);
+template <typename charT, typename traits>
+std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits> & os, const vec3 &);
 void print(const vec3 &);
+template <typename charT, typename traits>
+std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits> & os, const vec4 &);
 void print(const vec4 &);
+template <typename charT, typename traits>
+std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits> & os, const mat3 &);
 void print(const mat3 &);
+template <typename charT, typename traits>
+std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits> & os, const mat4 &);
 void print(const mat4 &);
 
 #endif

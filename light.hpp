@@ -12,6 +12,7 @@ private:
 	vec3	_ambient;
 	vec3	_diffuse;
 	vec3 	_specular;
+
 	GLuint 	_shader;
 
 
@@ -23,6 +24,7 @@ public:
 		vec3 specular = vec3(0.8, 0.8, 0.8), 
 		GLuint shader = 0);
 	~Light();
+	Light * clone() const;
 
 
 	void set(GLenum type, vec3 value);

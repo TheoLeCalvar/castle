@@ -14,6 +14,12 @@ Light::~Light()
 {}
 
 
+Light * Light::clone() const
+{
+	return new Light(_position, _ambient, _diffuse, _specular, _shader);
+}
+
+
 void Light::set(GLenum type, vec3 value)
 {
 	switch (type)

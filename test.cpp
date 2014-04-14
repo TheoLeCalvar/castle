@@ -9,8 +9,10 @@
 #include <QtXml/QDomElement>
 #include <QtXml/QDomAttr>
 
+
 #include "camera.hpp"
 #include "shader.hpp"
+#include "scene.hpp"
 
 GLFWwindow* window = NULL;
 Camera * cam = NULL;
@@ -28,29 +30,8 @@ int main (int argc, char** argv)
     }
     else
     {
-        QDomDocument dom("scene");
-        QFile  file(argv[1]);
-
-        dom.setContent(&file);
-
-        QDomElement root = dom.documentElement();
-
-        QDomNode n = root.firstChild();
-
-        while(!n.isNull())
-        {
-            QDomElement e = n.toElement();
-
-            if(!e.isNull())
-            {
-                qDebug() << e.tagName();
-            }
-
-            n = n.nextSibling();
-        }
-
-        qDebug() << dom.toString();
-
+        Scene * s = new Scene(argv[1]);
+        delete s;
     }
  
 }
@@ -89,7 +70,7 @@ int openGL()
 
     // start GLEW extension handler
     glewExperimental = GL_TRUE;
-    glewInit ();
+    glewInit();
 
     // get version info
     const GLubyte* renderer = glGetString (GL_RENDERER); // get renderer string

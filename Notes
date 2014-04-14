@@ -16,3 +16,9 @@ jeudi 10 avril:
 	choix de la librairie pour l'interface graphique, Qt, simple, permet des interfaces complexes et propose un module de l'ecture/écriture de fichiers XML
 
 vendredi 11 avril
+	Parsage parciel du XML, lecture des matériaux
+	Découverte Qt OpenGL
+
+lundi 14 avril
+	Parsage des lumières
+	Toujours du Qt

@@ -2,6 +2,8 @@
 <!ELEMENT scene (materiaux, lumieres, pieces) >
 <!ATTLIST scene nom CDATA #REQUIRED >
 
+<!ELEMENT camera (position) >
+
 
 <!ELEMENT materiaux (material+) >
 

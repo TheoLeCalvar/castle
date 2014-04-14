@@ -27,9 +27,12 @@ public:
 		GLuint 	location = 0
 	);
 	~Material();
+	Material * clone() const;
 
 	void set(GLenum type, vec4 value);
 	void set(float shininess);
+	vec4 get(GLenum type);
+	float shininess();
 	void set(GLuint shader);
 
 	void update();

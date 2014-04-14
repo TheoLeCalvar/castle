@@ -11,6 +11,11 @@ Material::Material(
 Material::~Material()
 {}
 
+Material * Material::clone() const
+{
+	return new Material(_ambient, _diffuse, _specular, _shininess, _emissive, _shader);
+}
+
 void Material::set(GLenum type, vec4 value)
 {
 	switch (type)
@@ -41,6 +46,32 @@ void Material::set(const float shininess)
 void Material::set(GLuint shader)
 {
 	_shader = shader;
+}
+
+vec4 Material::get(GLenum type)
+{
+	switch (type)
+	{
+		case GL_AMBIENT:
+			return _ambient;
+
+		case GL_DIFFUSE:
+			return _diffuse;
+
+		case GL_SPECULAR:
+			return _specular;
+
+		case GL_EMISSION:
+			return _emissive;
+
+		default:
+			return vec4();
+	}
+}
+
+float Material::shininess()
+{
+	return _shininess;
 }
 
 void Material::update()
