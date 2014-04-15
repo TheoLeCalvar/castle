@@ -5,6 +5,7 @@
 
 #include <QOpenGLFunctions_3_2_Core>
 
+
 #ifdef __APPLE__
 	#include <ApplicationServices/ApplicationServices.h>
 #endif
@@ -14,9 +15,6 @@
 
 class Camera: protected QOpenGLFunctions_3_2_Core
 {
-private:
-	static Camera * 	_activeCamera;
-
 protected:
 	vec3 	 _eye;
 	vec3   _center;
@@ -60,8 +58,7 @@ public:
 
 	void setProjection(GLuint p){_view_location = p;}
 
-	// static void mouse_event(GLFWwindow *, double x, double y);
-	static void setActiveCamera(Camera * c){_activeCamera = c;}
+	void mouseMoveEvent(int x, int y, int width, int height);
 	
 };
 

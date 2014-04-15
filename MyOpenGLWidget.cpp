@@ -1,32 +1,39 @@
 #include "MyOpenGLWidget.hpp"
 
 MyOpenGLWidget::MyOpenGLWidget(const QGLFormat & format, QWidget * parent, const QGLWidget * shareWidget, Qt::WindowFlags f):
-	QGLWidget(format, parent, shareWidget, f)
+	QGLWidget(format, parent, shareWidget, f), _captureMouse(false)
 {
+    //refresh tout les 1/60eme de seconde
      QTimer *timer = new QTimer(this);
      connect(timer, SIGNAL(timeout()), this, SLOT(updateGL()));
      timer->start(1000/60);
+
+
+     setFocusPolicy(Qt::StrongFocus);
+     setMouseTracking(true);
 }
 
 MyOpenGLWidget::~MyOpenGLWidget()
 {
-
 }
 
 QSize MyOpenGLWidget::minimumSizeHint() const
 {
-	return QSize(400, 400);
+	return QSize(600, 600);
 }
 
 QSize MyOpenGLWidget::sizeHint() const
 {
-	return QSize(400, 400);
+	return QSize(600, 600);
 }
 
 
 void	MyOpenGLWidget::initializeGL()
 {
     initializeOpenGLFunctions();
+
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LESS);
 
 
 	_cam = new Camera();
@@ -105,8 +112,10 @@ void	MyOpenGLWidget::initializeGL()
     glUseProgram (shader_programme);
 
 	model_loc = glGetUniformLocation(shader_programme, "model");
-    view_location = glGetUniformLocation(shader_programme, "view");
+    view_loc = glGetUniformLocation(shader_programme, "view");
     projection_loc = glGetUniformLocation(shader_programme, "projection");
+
+    _cam->setProjection(view_loc);
 
 }
 
@@ -115,7 +124,6 @@ void	MyOpenGLWidget::paintGL()
 {
 	static float angle = 0;
 
-    makeCurrent();
 
 	mat4 rotation = YrotationMatrix(angle);
 	mat4 transUp = translationMatrix(0.0f, 1.0f, 0.0f);
@@ -156,6 +164,124 @@ void	MyOpenGLWidget::resizeGL(int width, int height)
 {
     mat4 projection = projectionMatrix(70.0, width/(float)height, 0.1f, 100.0f);
     glUniformMatrix4fv(projection_loc, 1, GL_FALSE, projection.m);
+}
 
-    _cam->setProjection(view_location);
+void    MyOpenGLWidget::keyPressEvent(QKeyEvent * event)
+{
+
+    if (event->modifiers() & (Qt::AltModifier | Qt::ShiftModifier))
+    {
+        _captureMouse = false;
+        setCursor(Qt::ArrowCursor);
+    }
+
+
+    switch (event->key())
+    {
+        case Qt::Key_Escape:
+            close();
+            goto action;
+
+        case Qt::Key_Up:
+        case Qt::Key_Z:
+            _cam->_avant_presse = true;
+            goto action;
+
+        case Qt::Key_Down:
+        case Qt::Key_S:
+            _cam->_arriere_presse = true;
+            goto action;
+
+        case Qt::Key_Right:
+        case Qt::Key_D:
+            _cam->_droite_presse = true;
+            goto action;
+
+        case Qt::Key_Left:
+        case Qt::Key_Q:
+            _cam->_gauche_presse = true;
+            goto action;
+
+        case Qt::Key_PageUp:
+        case Qt::Key_A:
+            _cam->_haut_presse = true;
+            goto action;
+
+        case Qt::Key_PageDown:
+        case Qt::Key_W:
+            _cam->_bas_presse = true;
+            goto action;
+    }
+
+noAction:
+    QWidget::keyPressEvent(event);
+
+action:
+    return;
+
+}
+
+void    MyOpenGLWidget::keyReleaseEvent(QKeyEvent * event)
+{
+    switch (event->key())
+    {
+        case Qt::Key_Up:
+        case Qt::Key_Z:
+            _cam->_avant_presse = false;
+            goto action;
+
+        case Qt::Key_Down:
+        case Qt::Key_S:
+            _cam->_arriere_presse = false;
+            goto action;
+
+        case Qt::Key_Right:
+        case Qt::Key_D:
+            _cam->_droite_presse = false;
+            goto action;
+
+        case Qt::Key_Left:
+        case Qt::Key_Q:
+            _cam->_gauche_presse = false;
+            goto action;
+
+        case Qt::Key_PageUp:
+        case Qt::Key_A:
+            _cam->_haut_presse = false;
+            goto action;
+
+        case Qt::Key_PageDown:
+        case Qt::Key_W:
+            _cam->_bas_presse = false;
+            goto action;
+    }
+
+noAction:
+    QWidget::keyReleaseEvent(event);
+
+action:
+    return;
+}
+
+void    MyOpenGLWidget::mouseMoveEvent(QMouseEvent * event)
+{
+    if (_captureMouse)
+    {
+        _cam->mouseMoveEvent(event->x(), event->y(), width(), height());
+
+        QPoint glob = mapToGlobal(QPoint(width()/2,height()/2));
+        QCursor::setPos(glob);
+    }
+
+
+    QWidget::mouseMoveEvent(event);
+}
+
+void    MyOpenGLWidget::mousePressEvent(QMouseEvent * event)
+{
+    if(!_captureMouse){
+        _captureMouse = true;
+
+        setCursor(Qt::BlankCursor);
+    }
 }

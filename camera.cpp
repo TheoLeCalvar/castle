@@ -1,7 +1,6 @@
 #include "camera.hpp"
 #include <cmath>
 
-Camera * Camera::_activeCamera = NULL;
 
 Camera::Camera( float eyeX, float eyeY, float eyeZ):
     _eye(eyeX, eyeY, eyeZ),
@@ -9,10 +8,6 @@ Camera::Camera( float eyeX, float eyeY, float eyeZ):
     _avant_presse(false), _arriere_presse(false), _gauche_presse(false), _droite_presse(false), _haut_presse(false), _bas_presse(false),
     _vitesse(0.10f), _view_location(0)
 {
-    if (!_activeCamera)
-    {
-        _activeCamera = this;
-    }
     initializeOpenGLFunctions();
     vectorFromAngle();
 }
@@ -55,34 +50,21 @@ void Camera::go(float x, float y, float z)
     _center = _eye + _avant;
 }
 
-// void Camera::mouse_event(GLFWwindow * w, double x, double y)
-// {
-//     int width, height;
-//     glfwGetWindowSize(w, &width, &height);
-//     width /= 2;
-//     height /= 2;
+void Camera::mouseMoveEvent(int x, int y, int width, int height)
+{
+    width /= 2;
+    height /= 2;
 
 
-//     if ((x - width != 0) ||  (y - height != 0))
-//     {
+    if ((x - width != 0) ||  (y - height != 0))
+    {
 
-//         _activeCamera->_theta    += (x - width)*0.2f;
-//         _activeCamera->_phi      -= (y - height)*0.2f;
+        _theta    += (x - width)*0.2f;
+        _phi      -= (y - height)*0.2f;
 
-//         _activeCamera->vectorFromAngle();
-
-//         #ifdef __APPLE__    
-//             int xpos, ypos;
-//             glfwGetWindowPos(w, &xpos, &ypos);
-
-//             CGPoint warpPoint = CGPointMake(width + xpos, height + ypos);
-//             CGWarpMouseCursorPosition(warpPoint);
-//             CGAssociateMouseAndMouseCursorPosition(true);
-//         #else
-//             glfwSetCursorPos (w, width, height);
-//         #endif
-//     }
-// }
+        vectorFromAngle();
+    }
+}
 
 void Camera::vectorFromAngle()
 {
