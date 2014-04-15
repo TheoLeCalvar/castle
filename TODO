@@ -1,0 +1,15 @@
+TODO:
+
+Objets primitifs :
+	pyramide à base carrée
+	pyramide à base triangulaire
+	carré "smooth" avec normales au sommet "propre"
+	si tu as le courage, sphère et tore
+
+Objets non primitifs:
+	charger l'obj associé à partir
+	Regarder Assimp (http://assimp.sourceforge.net/main_downloads.html)
+
+
+Interface:
+	une interface Qt jolie

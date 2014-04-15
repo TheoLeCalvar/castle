@@ -21,4 +21,7 @@ vendredi 11 avril
 
 lundi 14 avril
 	Parsage des lumières
-	Toujours du Qt
+	Création d'un widget Qt avec context openGL 3.2 core
+
+mardi 15 avril
+	Gestion du clavier et de la souris, capture du curseur

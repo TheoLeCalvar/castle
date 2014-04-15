@@ -855,6 +855,10 @@ void pushMatrix(mat4 m)
 
 mat4 currentMatrix()
 {
+	if (matrix_stack.empty())
+	{
+		return mat4(1);
+	}
 	return matrix_stack.top();
 }
 

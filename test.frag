@@ -26,7 +26,7 @@ float specular_exponent = 100.0; // specular 'power'
 
 
 void main () {
-	color_out = vec4 (abs(vertexIn.position_eye.xyz), 1.0);
+	// color_out = vec4 (abs(vertexIn.position_eye.xyz), 1.0);
 
 
 	// ambient intensity
@@ -50,5 +50,5 @@ void main () {
 	vec3 Is = Ls * Ks * specular_factor; // final specular intensity
 	
 	// final colour
-	// color_out = vec4 (Is + Id + Ia, 1.0);
+	color_out = vec4 (Is + Id + Ia, 1.0);
 }

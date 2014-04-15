@@ -1,40 +1,64 @@
 #ifndef OBJET
 #define OBJET
 
+#include <QOpenGLFunctions_3_2_Core>
 #include "material.hpp"
 #include "math.hpp"
 
 
-class Objet
+class Objet: protected QOpenGLFunctions_3_2_Core
 {
-private:
+protected:
 	Material * 	_mat;
 	vec3 		_rotation;
 	vec3 		_position;
 	mat4		_model;
 
-	GLuint 		_shader;
+	GLuint 		_model_location;
 
 
 public:
-	Objet(Material * = NULL, vec3 rotation = vec3(), vec3 position = vec3());
-	~Objet();
+	Objet(Material * mat = NULL, vec3 rotation = vec3(), vec3 position = vec3())
+		:_mat(mat), _rotation(rotation), _position(position), _model(1)
+		{initializeOpenGLFunctions();}
 
-	virtual void 	draw() const;
+	virtual ~Objet(){};
 
-	vec3 & 			position();
-	vec3 			position() const;
-	void			position(vec3 p);
+	virtual void 	draw() = 0;
 
-	vec3 & 			rotation();
-	vec3 			rotation() const;
-	void			rotation(vec3 r);	
+	vec3 & 			position(){return _position;};
+	vec3 			position() const{return _position;}
+	void			position(vec3 p)
+	{
+		_position = p;
+		updateModel();
+	}
 
-	mat4 & 			model();
-	mat4 			model() const;
-	void			model(mat4 m);
+	vec3 & 			rotation(){return _rotation;}
+	vec3 			rotation() const{return _rotation;}
+	void			rotation(vec3 r)
+	{
+		_rotation = r;
+		updateModel();
+	}
 
-	
+	mat4 			model() const{return _model;}
+
+	void 			modelLocation(GLuint s){_model_location = s;}
+
+	Material *		material(){ return _mat;}
+	void 			material(Material * m){_mat = m;}
+
+private:
+	void 			updateModel()
+	{
+		_model = XrotationMatrix(_rotation[0]);
+		_model = Yrotate(_model, _rotation[1]);
+		_model = Zrotate(_model, _rotation[2]);
+
+		_model = translate(_model, _position);
+	}	
+
 };
 
 #endif

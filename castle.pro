@@ -10,6 +10,7 @@ QT += opengl xml gui
 
 # Input
 HEADERS += camera.hpp \
+           cube.hpp \
            light.hpp \
            material.hpp \
            math.hpp \
@@ -19,6 +20,7 @@ HEADERS += camera.hpp \
            scene.hpp \
            shader.hpp
 SOURCES += camera.cpp \
+           cube.cpp \
            light.cpp \
            material.cpp \
            math.cpp \

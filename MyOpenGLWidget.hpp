@@ -17,6 +17,8 @@
 #include "camera.hpp"
 #include "shader.hpp"
 
+#include "cube.hpp"
+
 
 class MyOpenGLWidget: public QGLWidget, protected QOpenGLFunctions_3_2_Core
 {
@@ -24,7 +26,6 @@ Q_OBJECT
 
 private:
 	Camera * 	_cam;
-	GLuint 		_vao;
 	GLuint 		shader_programme;
 
 	GLuint 		model_loc;
@@ -32,6 +33,8 @@ private:
 	GLuint 		projection_loc;
 
 	bool   		_captureMouse;
+
+	Cube * 		cube;
 
 
 public:
