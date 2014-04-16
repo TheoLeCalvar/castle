@@ -1,6 +1,7 @@
 #ifndef MYOPENGLWIDGET_H
 #define MYOPENGLWIDGET_H
 
+#include <QDir>
 #include <QGLWidget>
 #include <QOpenGLVertexArrayObject>
 #include <QOpenGLBuffer>

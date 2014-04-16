@@ -5,6 +5,10 @@
 #include <stack>
 
 
+#ifndef M_PI
+#define M_PI 3.141592
+#endif
+
 struct vec3;
 struct vec4;
 

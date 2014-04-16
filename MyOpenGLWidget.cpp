@@ -42,7 +42,7 @@ void	MyOpenGLWidget::initializeGL()
 	_cam = new Camera();
     cube = new Cube();
 
-
+    qDebug() << QDir::current();
 
     GLuint vs = Shader::loadVertexShader("test.vert");
     GLuint fs = Shader::loadFragmentShader("test.frag");

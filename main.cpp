@@ -2,6 +2,7 @@
 #include <QGLFormat>
 #include "MyOpenGLWidget.hpp"
 
+
 int main(int argc, char **argv)
 {
 	QApplication app(argc, argv);	
@@ -13,7 +14,6 @@ int main(int argc, char **argv)
 	MyOpenGLWidget w(f);
 
 	w.show();
-
 
 	return app.exec();
 }

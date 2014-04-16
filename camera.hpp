@@ -6,11 +6,6 @@
 #include <QOpenGLFunctions_3_2_Core>
 
 
-#ifdef __APPLE__
-	#include <ApplicationServices/ApplicationServices.h>
-#endif
-
-
 
 
 class Camera: protected QOpenGLFunctions_3_2_Core
