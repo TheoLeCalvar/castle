@@ -1,8 +1,8 @@
 #version 410
 
+layout (location=0) in vec3 vertex_position;
+layout (location=1) in vec3 vertex_normal;
 
-in vec3 vertex_position;
-in vec3 vertex_normal;
 
 
 out VertexData
@@ -23,7 +23,8 @@ void main ()
 	vertexOut.normal_eye = vec3 (view * model * vec4 (vertex_normal, 0.0));
 
 
-	gl_Position = projection * vec4(view * model * vec4(vertex_position, 1.0));
+
+	gl_Position = projection * view * model * vec4(vertex_position, 1.0);
 
 
 }

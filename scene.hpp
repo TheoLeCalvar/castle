@@ -9,29 +9,30 @@
 #include "light.hpp"
 #include "material.hpp"
 
+#include "objet.hpp"
+
 #include <QOpenGLFunctions_3_2_Core>
-#include <QtCore/QDebug>
-#include <QtCore/QFile>
-#include <QtCore/QString>
-#include <QtXml/QDomDocument>
-#include <QtXml/QDomElement>
-#include <QtXml/QDomNode>
-#include <QtXml/QDomNodeList>
+#include <QOpenGLShaderProgram>
+#include <QDebug>
+#include <QFile>
+#include <QString>
+#include <QDomDocument>
+#include <QDomElement>
+#include <QDomNode>
+#include <QDomNodeList>
 
 
-class Object;
 
 class Scene: protected QOpenGLFunctions_3_2_Core
 {
 private:
 	QDomDocument 								_xml;
 
-	std::map<const QString, Object *>		_objects;
-	std::map<const QString, Light *> 		_lights;
-	std::map<const QString, Material *>		_materials;
-	std::map<const QString, GLuint> 		_shaders;
+	std::map<const QString, Objet *>			_objets;
+	std::map<const QString, Light *> 			_lights;
+	std::map<const QString, Material *>			_materials;
+	std::map<const QString, GLuint> 			_shaders;
 
-	mat4 										_projectionMatrix;
 
 public:
 	Camera *									_camera;
@@ -45,14 +46,13 @@ public:
 
 	void draw();
 
-	Object * 	getObject(const QString & name);
+	Objet * 	getObjet(const QString & name);
 	Light * 	getLight(const QString & name);
 	Material *	getMaterial(const QString & name);
-	GLuint		getShader(const QString & name);
+	GLuint 		getShader(const QString & name);
 
-	void 		setProjectionMatrix(mat4 m);
 
-	void 		addObject(const QString & name, Object * o);
+	void 		addObjet(const QString & name, Objet * o);
 	void 		addLight(const QString & name, Light * l);
 	void 		addMaterial(const QString & name, Material * m);
 	void 		addShader(const QString & name, GLuint s);
@@ -64,6 +64,7 @@ private:
 	void 		loadLights(const QDomElement &);
 	void 		loadMaterials(const QDomElement &);
 	void 		loadPieces(const QDomElement &);
+	void 		loadShaders(const QDomElement &);
 	
 };
 

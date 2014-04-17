@@ -1,5 +1,8 @@
 #include "MyOpenGLWidget.hpp"
 
+#include <QRectF>
+#include <vector>
+
 MyOpenGLWidget::MyOpenGLWidget(const QGLFormat & format, QWidget * parent, const QGLWidget * shareWidget, Qt::WindowFlags f):
 	QGLWidget(format, parent, shareWidget, f), _captureMouse(false)
 {
@@ -41,17 +44,28 @@ void	MyOpenGLWidget::initializeGL()
 
 	_cam = new Camera();
     cube = new Cube();
+    plan = new Plan(10, 10, 40, 20, std::vector<QRectF> {QRectF(1, 1, 1, 1), QRectF(4,2,1,2)});
 
-    qDebug() << QDir::current();
+    qDebug() << QDir::current().entryList();
 
-    GLuint vs = Shader::loadVertexShader("test.vert");
-    GLuint fs = Shader::loadFragmentShader("test.frag");
+    QOpenGLShaderProgram program;
 
-    shader_programme = glCreateProgram();
-    glAttachShader (shader_programme, fs);
-    glAttachShader (shader_programme, vs);
+
+    if(!program.addShaderFromSourceFile(QOpenGLShader::Fragment, "test.frag"))
+    {
+        qFatal("Erreur de chargement du shader test.frag\nLogs : %s", program.log().toStdString().c_str());
+    }
+
+    if(!program.addShaderFromSourceFile(QOpenGLShader::Vertex, "test.vert"))
+    {
+        qFatal("Erreur de chargement du shader test.vert\nLogs : %s", program.log().toStdString().c_str());
+    }
+
+
+    shader_programme = program.programId();
+
+
     glLinkProgram (shader_programme);
-
     glUseProgram (shader_programme);
 
 	model_loc =        glGetUniformLocation(shader_programme, "model");
@@ -60,6 +74,9 @@ void	MyOpenGLWidget::initializeGL()
 
     _cam->setProjection(view_loc);
     cube->modelLocation(model_loc);
+    plan->modelLocation(model_loc);
+
+    // Scene s("scene.xml");
 
 }
 
@@ -79,26 +96,27 @@ void	MyOpenGLWidget::paintGL()
 	_cam->display();
 
 
-	for (int i = 0; i < 8; ++i)
-	{
-	    mat4 model = translationMatrix(1.5f, 0.0f, 0.0f);
-	    model = Yrotate(model, i * 45 * (M_PI)/180.0f);         
-
-	    model = rotation * transUpTotal * model;
-
-	    transUpTotal *= transUp;
 
 
-        pushMatrix(model);
+	// for (int i = 0; i < 8; ++i)
+	// {
+	//     mat4 model = translationMatrix(1.5f, 0.0f, 0.0f);
+	//     model = Yrotate(model, i * 45 * (M_PI)/180.0f);         
+
+	//     model = rotation * transUpTotal * model;
+
+	//     transUpTotal *= transUp;
+
+        // pushMatrix(model);
         
-            cube->draw();    
+            plan->draw();
+            // cube->draw();    
 
-        popMatrix();   
+        // popMatrix();   
 	    
-	}
+	// }
 
 
-	// swapBuffers();
 	angle += 0.01;
 }
 
@@ -106,12 +124,14 @@ void	MyOpenGLWidget::resizeGL(int width, int height)
 {
     mat4 projection = projectionMatrix(70.0, width/(float)height, 0.1f, 100.0f);
     glUniformMatrix4fv(projection_loc, 1, GL_FALSE, projection.m);
+
+    glViewport(0,0, width, height);
 }
 
 void    MyOpenGLWidget::keyPressEvent(QKeyEvent * event)
 {
 
-    if (event->modifiers() & (Qt::AltModifier | Qt::ShiftModifier))
+    if (event->modifiers() == (Qt::AltModifier | Qt::ShiftModifier))
     {
         _captureMouse = false;
         setCursor(Qt::ArrowCursor);
@@ -155,7 +175,7 @@ void    MyOpenGLWidget::keyPressEvent(QKeyEvent * event)
             goto action;
     }
 
-noAction:
+
     QWidget::keyPressEvent(event);
 
 action:
@@ -198,7 +218,6 @@ void    MyOpenGLWidget::keyReleaseEvent(QKeyEvent * event)
             goto action;
     }
 
-noAction:
     QWidget::keyReleaseEvent(event);
 
 action:
@@ -224,7 +243,6 @@ void    MyOpenGLWidget::mousePressEvent(QMouseEvent *)
     if(!_captureMouse){
         _captureMouse = true;
 
-        qDebug() << "Blank cursor";
 
         setCursor(Qt::BlankCursor);
     }

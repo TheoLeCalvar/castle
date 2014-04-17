@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <stack>
+#include <cmath>
 
 
 #ifndef M_PI

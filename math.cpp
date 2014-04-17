@@ -1,5 +1,4 @@
 #include "math.hpp"
-#include <cmath>
 
 std::stack<mat4> matrix_stack;
 

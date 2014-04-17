@@ -1,13 +1,13 @@
 #version 410
 
+layout (location=0) out vec4 color_out;
+
 in VertexData
 {
 	vec3 position_eye;
 	vec3 normal_eye;
 } vertexIn;
 
-
-out vec4 color_out;
 
 
 uniform mat4 view;
@@ -26,8 +26,6 @@ float specular_exponent = 100.0; // specular 'power'
 
 
 void main () {
-	color_out = vec4 (abs(vertexIn.position_eye.xyz), 1.0);
-
 
 	// ambient intensity
 	vec3 Ia = La * Ka;
@@ -51,4 +49,7 @@ void main () {
 	
 	// final colour
 	// color_out = vec4 (Is + Id + Ia, 1.0);
+
+	color_out = normalize(vec4 (vertexIn.position_eye, 1.0));
+
 }

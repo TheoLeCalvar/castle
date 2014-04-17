@@ -6,6 +6,7 @@ TEMPLATE = app
 TARGET = castle
 INCLUDEPATH += .
 QT += opengl xml gui
+CONFIG += c++11
 
 
 # Input
@@ -15,16 +16,16 @@ HEADERS += camera.hpp \
            material.hpp \
            math.hpp \
            MyOpenGLWidget.hpp \
+           plan.hpp \
            objet.hpp \
            readers.hpp \
-           scene.hpp \
-           shader.hpp
+           scene.hpp
 SOURCES += camera.cpp \
            cube.cpp \
            light.cpp \
            material.cpp \
            math.cpp \
            MyOpenGLWidget.cpp \
+           plan.cpp \
            scene.cpp \
-           shader.cpp \
            main.cpp

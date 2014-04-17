@@ -28,12 +28,13 @@ Scene::Scene(const QString & fileName):
 
 	root = _xml.documentElement();
 
-	QDomElement materiaux, lumieres, camera, pieces;
+	QDomElement materiaux, lumieres, camera, pieces, shaders;
 
 	camera = root.firstChildElement("camera");
 	materiaux = root.firstChildElement("materiaux");
 	lumieres = root.firstChildElement("lumieres");
 	pieces = root.firstChildElement("pieces");
+	shaders = root.firstChildElement("shaders");
 
 	QDomElement camera_position = camera.firstChild().toElement();
 
@@ -52,6 +53,9 @@ Scene::Scene(const QString & fileName):
 	loadLights(lumieres);
 	qDebug() << "Lumieres chargées avec succes";
 
+	loadShaders(shaders);
+	qDebug() << "Shaders chargés avec succès";
+
 	// loadPieces(pieces);
 	// qDebug() << "Pièces chargées avec succès";
 
@@ -60,6 +64,17 @@ Scene::Scene(const QString & fileName):
 Scene::~Scene()
 {
 
+}
+
+
+void 	Scene::draw()
+{
+	std::map<const QString, Objet *>::iterator i;
+
+	for (i = _objets.begin(); i != _objets.end(); ++i)
+	{
+		i->second->draw();
+	}
 }
 
 void 	Scene::addMaterial(const QString & name, Material * v)
@@ -84,16 +99,16 @@ void 	Scene::addLight(const QString & name, Light * v)
 	}
 }
 
-// void 	Scene::addObject(const QString & name, Object * v)
-// {
-// 	std::pair<const QString, Object *> p(name, v->clone());
-// 	std::pair<std::map<const QString, Object *>::iterator , bool> res = _objects.insert(p);
+void 	Scene::addObjet(const QString & name, Objet * v)
+{
+	std::pair<const QString, Objet *> p(name, v->clone());
+	std::pair<std::map<const QString, Objet *>::iterator , bool> res = _objets.insert(p);
 
-// 	if (!res.second)
-// 	{
-// 		qWarning() << "Objet deja present";
-// 	}
-// }
+	if (!res.second)
+	{
+		qWarning() << "Objet deja present";
+	}
+}
 
 void 	Scene::addShader(const QString & name, GLuint v)
 {
@@ -202,6 +217,7 @@ void 	Scene::loadLights(const QDomElement & dom)
 		Light tmp;
 		QString nom = light.attribute("nom"), mat = light.attribute("mat");
 		std::map<const QString, Material *>::const_iterator res = _materials.find(mat);
+
 		
 		qDebug() << light.attribute("nom");
 
@@ -250,10 +266,58 @@ void 	Scene::loadLights(const QDomElement & dom)
 	}
 }
 
+void 	Scene::loadShaders(const QDomElement & dom)
+{
+	QDomElement shader = dom.firstChildElement("shader");
+
+	while(!shader.isNull())
+	{
+		QOpenGLShaderProgram prog;
+		QString nom = shader.attribute("nom");
+
+		if(!prog.addShaderFromSourceFile(QOpenGLShader::Fragment, shader.attribute("fragment")))
+		{
+			qFatal("Erreur de chargement du shader %s\nLogs : %s", shader.attribute("fragment").toStdString().c_str(), prog.log().toStdString().c_str());
+		}
+
+		if(!prog.addShaderFromSourceFile(QOpenGLShader::Vertex, shader.attribute("vertex")))
+		{
+			qFatal("Erreur de chargement du shader %s\nLogs : %s", shader.attribute("vertex").toStdString().c_str(), prog.log().toStdString().c_str());
+		}
+
+		if (!prog.link())
+		{
+			qFatal("Erreur de linkage du shader %s\nLogs  : %s", nom.toStdString().c_str(), prog.log().toStdString().c_str());
+		}
+
+		addShader(nom, prog.programId());
+
+		shader = shader.nextSiblingElement("shader");
+	}
+}
+
+void 	Scene::loadPieces(const QDomElement & dom)
+{
+	QDomElement piece = dom.firstChildElement("piece");
+
+
+	while (!piece.isNull())
+	{
+		QString nom = piece.attribute("nom");
+		Objet * tmp = NULL;
+
+
+
+
+
+		addObjet(nom, tmp);
+
+		piece = piece.nextSiblingElement("piece");
+	}
+}
+
 void Scene::saveAsXML(const QString & fileName)
 {
 	QFile  file;
 	file.setFileName(fileName);
-
-
 }

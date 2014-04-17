@@ -14,15 +14,18 @@ protected:
 	vec3 		_position;
 	mat4		_model;
 
+	GLuint 		_shaderId;
 	GLuint 		_model_location;
 
 
 public:
 	Objet(Material * mat = NULL, vec3 rotation = vec3(), vec3 position = vec3())
 		:_mat(mat), _rotation(rotation), _position(position), _model(1)
-		{initializeOpenGLFunctions();}
+		{initializeOpenGLFunctions(); updateModel();}
 
-	virtual ~Objet(){};
+	virtual ~Objet(){}
+
+	virtual Objet* clone() = 0;
 
 	virtual void 	draw() = 0;
 
@@ -44,6 +47,7 @@ public:
 
 	mat4 			model() const{return _model;}
 
+	void 			shaderId(GLuint s){_shaderId = s;}
 	void 			modelLocation(GLuint s){_model_location = s;}
 
 	Material *		material(){ return _mat;}

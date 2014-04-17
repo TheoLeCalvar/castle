@@ -8,42 +8,30 @@
 
 	<materiaux>
 		<material nom="Mat1">
-			<ambient r="10" g="10" b="10" a="1.0" />
-			<diffuse r="124" g="120" b="0" a="1.0" />
-			<specular r="12" g="123" b="24" a="1.0" s="32" />
-			<emissive r="123" g="145" b="12" a="125" />
+			<ambient r="0.2" g="0.2" b="0.2" a="1.0" />
+			<diffuse r="0.8" g="0.8" b="0.8" a="1.0" />
+			<specular r="0.8" g="0.8" b="0.8" a="1.0" s="32" />
+			<emissive r="0.0" g="0.0" b="0.0" a="0.0" />
 			<texture src="path" /> 
-		</material>
-		<material nom="Mat2">
-			<ambient r="10" g="10" b="10" a="1.0" />
-			<diffuse r="124" g="120" b="0" a="1.0" />
-			<specular r="12" g="123" b="24" a="1.0" s="32" />
-			<emissive r="123" g="145" b="12" a="125" />
-		</material>
-		<material nom="Mat2">
-			<ambient r="10" g="10" b="10" a="1.0" />
-			<diffuse r="124" g="120" b="0" a="1.0" />
-			<specular r="12" g="123" b="24" a="1.0" s="32" />
-			<emissive r="123" g="145" b="12" a="125" />
 		</material>
 	</materiaux>
 
 	<lumieres>
-		<lumiere nom="Light1" mat="Mat2" >
-<!-- 			<position repere="world|eye|model" x="1" y="1" z="1" /> -->
-			<position repere="world" x="1" y="1" z="1" />
-		</lumiere>
 		<lumiere nom="Light2" mat="Mat1" >
 			<position repere="world" x="1" y="1" z="4" />
 		</lumiere>
 	</lumieres>
+
+	<shaders>
+		<shader nom="test" fragment="test.frag" vertex="test.vert" />
+	</shaders>
 
 	<pieces>
 		<piece nom="pièce1">
 			<dimension largeur="12" longueur="1" hauteur="3" />
 			<position repere="world" x="0" y="0" z="0" />
 			<murs>
-<!--				<mur cote="avant|arriere|droite|gauche|haut|bas" mat="Mat1" /> -->
+				<!-- <mur cote="avant|arriere|droite|gauche|haut|bas" mat="Mat1" />  -->
 					<mur cote="avant" mat="Mat1" />
 			</murs>
 

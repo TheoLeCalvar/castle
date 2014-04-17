@@ -1,4 +1,4 @@
-#include "Cube.hpp"
+#include "cube.hpp"
 #include <QDebug>
 
 GLuint Cube::_vao = 0;
@@ -14,6 +14,14 @@ Cube::Cube(Material * mat, vec3 rotation, vec3 position)
 
 Cube::~Cube()
 {}
+
+Objet * Cube::clone()
+{
+    Objet * tmp = new Cube(_mat, _rotation, _position);
+    tmp->modelLocation(_model_location);
+
+    return tmp;
+}
 
 void Cube::genVao()
 {
@@ -82,6 +90,8 @@ void Cube::genVao()
 
 void Cube::draw()
 {
+    glUseProgram(_shaderId);
+
 	mat4 model = currentMatrix();
 
 	model = _model * model;

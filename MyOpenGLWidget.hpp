@@ -6,6 +6,7 @@
 #include <QOpenGLVertexArrayObject>
 #include <QOpenGLBuffer>
 #include <QOpenGLFunctions_3_2_Core>
+#include <QOpenGLShaderProgram>
 #include <QTimer>
 #include <QKeyEvent>
 #include <QMouseEvent>
@@ -16,9 +17,11 @@
 
 #include "math.hpp"
 #include "camera.hpp"
-#include "shader.hpp"
 
 #include "cube.hpp"
+#include "plan.hpp"
+
+#include "scene.hpp"
 
 
 class MyOpenGLWidget: public QGLWidget, protected QOpenGLFunctions_3_2_Core
@@ -36,6 +39,7 @@ private:
 	bool   		_captureMouse;
 
 	Cube * 		cube;
+	Plan * 		plan;
 
 
 public:

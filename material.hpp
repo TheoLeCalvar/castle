@@ -3,6 +3,7 @@
 
 
 #include <QOpenGLFunctions_3_2_Core>
+#include <QOpenGLTexture>
 
 #include "math.hpp"
 
