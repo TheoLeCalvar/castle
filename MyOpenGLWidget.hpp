@@ -13,13 +13,15 @@
 #include <QPoint>
 #include <QCursor>
 #include <QDebug>
+#include <QOpenGLDebugLogger>
 
 
-#include "math.hpp"
+#include "helper.hpp"
 #include "camera.hpp"
 
 #include "cube.hpp"
 #include "plan.hpp"
+#include "material.hpp"
 
 #include "scene.hpp"
 
@@ -40,6 +42,7 @@ private:
 
 	Cube * 		cube;
 	Plan * 		plan;
+	Plan *  	plan2;
 
 
 public:

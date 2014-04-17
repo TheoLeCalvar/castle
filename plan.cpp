@@ -5,7 +5,7 @@
 Plan::Plan(
 		int width, int height, 
 		int widthDivision, int heightDivision,
-		std::vector<QRectF> rects, 
+		const std::vector<QRectF>& rects, 
 		Material * mat, vec3 rotation, vec3 position
 		)
 			:	Objet(mat, rotation, position), 
@@ -39,7 +39,7 @@ Plan::Plan(
 		{
 			bool insert = true;
 
-			for (std::vector<QRectF>::iterator k = rects.begin(); k != rects.end(); ++k)
+			for (std::vector<QRectF>::const_iterator k = rects.begin(); k != rects.end(); ++k)
 			{
 				if (k->contains(points[3*(j + i*(widthDivision+1))], points[3*(j + i*(widthDivision+1)) + 1]))
 				{
@@ -47,6 +47,8 @@ Plan::Plan(
 					break;
 				}
 			}
+
+			
 
 			if (insert)
 			{
@@ -63,37 +65,36 @@ Plan::Plan(
 	}
 
 
-	indices.shrink_to_fit();
 	_nbVertices = indices.size();
 
 
 
-	unsigned int vbo_vertices = 0, vbo_normals = 0, vbo_indices = 0;
+	
 
-	glGenBuffers(1, &vbo_vertices);
-	glBindBuffer(GL_ARRAY_BUFFER, vbo_vertices);
+	glGenBuffers(1, &_vbo_vertices);
+	glBindBuffer(GL_ARRAY_BUFFER, _vbo_vertices);
 	glBufferData(GL_ARRAY_BUFFER, points.size() * sizeof(float), points.data(), GL_STATIC_DRAW);
 
-	glGenBuffers(1, &vbo_normals);
-	glBindBuffer(GL_ARRAY_BUFFER, vbo_normals);
+	glGenBuffers(1, &_vbo_normals);
+	glBindBuffer(GL_ARRAY_BUFFER, _vbo_normals);
 	glBufferData(GL_ARRAY_BUFFER, normals.size() * sizeof(float), normals.data(), GL_STATIC_DRAW);	
 
-	glGenBuffers(1, &vbo_indices);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vbo_indices);
+	glGenBuffers(1, &_vbo_indices);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _vbo_indices);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, _nbVertices * sizeof(unsigned int), indices.data(), GL_STATIC_DRAW);
 
 
 	glGenVertexArrays (1, &_vao);
     glBindVertexArray (_vao);
     glEnableVertexAttribArray (0);
-    glBindBuffer (GL_ARRAY_BUFFER, vbo_vertices);
+    glBindBuffer (GL_ARRAY_BUFFER, _vbo_vertices);
     glVertexAttribPointer (0, 3, GL_FLOAT, GL_FALSE, 0, NULL);
 
     glEnableVertexAttribArray (1);
-    glBindBuffer (GL_ARRAY_BUFFER, vbo_normals);
+    glBindBuffer (GL_ARRAY_BUFFER, _vbo_normals);
     glVertexAttribPointer (1, 3, GL_FLOAT, GL_FALSE, 0, NULL);
 
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vbo_indices);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _vbo_indices);
 
     glBindVertexArray(0);
 
@@ -101,7 +102,12 @@ Plan::Plan(
 }
 
 Plan::~Plan()
-{}
+{
+	glDeleteBuffers(1, &_vao);
+	glDeleteBuffers(1, &_vbo_vertices);
+	glDeleteBuffers(1, &_vbo_normals);
+	glDeleteBuffers(1, &_vbo_indices);
+}
 
 Objet * Plan::clone()
 {}
@@ -109,11 +115,14 @@ Objet * Plan::clone()
 
 void Plan::draw()
 {
-	glUseProgram(_shaderId);
+	Objet::draw();
+	
 
 	mat4 model = currentMatrix();
 
+
 	model = _model * model;
+
 
 	glUniformMatrix4fv(_model_location, 1, GL_FALSE, model.m);
 
@@ -122,4 +131,6 @@ void Plan::draw()
 	glDrawElements(GL_TRIANGLES, _nbVertices, GL_UNSIGNED_SHORT, 0);
 
 	glBindVertexArray(0);	
+
+	openGL_check_error();
 }

@@ -41,10 +41,9 @@ void	MyOpenGLWidget::initializeGL()
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
 
+    glClearColor(0.3, 0.3, 0.3, 1.0);
 
-	_cam = new Camera();
-    cube = new Cube();
-    plan = new Plan(10, 10, 40, 20, std::vector<QRectF> {QRectF(1, 1, 1, 1), QRectF(4,2,1,2)});
+
 
     qDebug() << QDir::current().entryList();
 
@@ -68,15 +67,29 @@ void	MyOpenGLWidget::initializeGL()
     glLinkProgram (shader_programme);
     glUseProgram (shader_programme);
 
+
+    // Scene s("scene.xml");
+    Material *mat  = new Material();
+    mat->set(shader_programme);
+
+    _cam = new Camera();
+    cube = new Cube();
+
+    
+    plan = new Plan(10, 10, 40, 20, std::vector<QRectF> {QRectF(1, 1, 1, 1), QRectF(4,2,1,2)}, mat);
+    plan2 = new Plan(40, 40, 400, 200, std::vector<QRectF>(), NULL, vec3(), vec3(0, 0, 4));
+
 	model_loc =        glGetUniformLocation(shader_programme, "model");
     view_loc =         glGetUniformLocation(shader_programme, "view");
     projection_loc =   glGetUniformLocation(shader_programme, "projection");
 
     _cam->setProjection(view_loc);
     cube->modelLocation(model_loc);
+    cube->shaderId(shader_programme);
     plan->modelLocation(model_loc);
-
-    // Scene s("scene.xml");
+    plan->shaderId(shader_programme);
+    plan2->modelLocation(model_loc);
+    plan2->shaderId(shader_programme);
 
 }
 
@@ -98,23 +111,30 @@ void	MyOpenGLWidget::paintGL()
 
 
 
-	// for (int i = 0; i < 8; ++i)
-	// {
-	//     mat4 model = translationMatrix(1.5f, 0.0f, 0.0f);
-	//     model = Yrotate(model, i * 45 * (M_PI)/180.0f);         
+	for (int i = 0; i < 8; ++i)
+	{
+	    mat4 model = translationMatrix(1.5f, 0.0f, 0.0f);
+	    model = Yrotate(model, i * 45 * (M_PI)/180.0f);         
 
-	//     model = rotation * transUpTotal * model;
+	    model = rotation * transUpTotal * model;
 
-	//     transUpTotal *= transUp;
+	    transUpTotal *= transUp;
 
-        // pushMatrix(model);
-        
-            plan->draw();
-            // cube->draw();    
+        pushMatrix(model);
 
-        // popMatrix();   
+
+            cube->draw();   
+            plan->draw(); 
+
+        popMatrix();   
 	    
-	// }
+	}
+
+
+    plan2->draw();
+
+
+
 
 
 	angle += 0.01;
@@ -173,6 +193,15 @@ void    MyOpenGLWidget::keyPressEvent(QKeyEvent * event)
         case Qt::Key_W:
             _cam->_bas_presse = true;
             goto action;
+
+        case Qt::Key_F1:
+        {
+            static bool wire = true;
+
+            glPolygonMode(GL_FRONT_AND_BACK, wire ? GL_LINE : GL_FILL);
+
+            wire = !wire;
+        }
     }
 
 

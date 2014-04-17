@@ -4,7 +4,7 @@
 #include <iostream>
 #include <map>
 
-#include "math.hpp"
+#include "helper.hpp"
 #include "camera.hpp"
 #include "light.hpp"
 #include "material.hpp"

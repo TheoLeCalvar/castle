@@ -7,25 +7,26 @@ TARGET = castle
 INCLUDEPATH += .
 QT += opengl xml gui
 CONFIG += c++11
+QMAKE_CXXFLAGS += -g
 
 
 # Input
 HEADERS += camera.hpp \
            cube.hpp \
+           helper.hpp \
            light.hpp \
            material.hpp \
-           math.hpp \
            MyOpenGLWidget.hpp \
            plan.hpp \
            objet.hpp \
-           readers.hpp \
            scene.hpp
 SOURCES += camera.cpp \
            cube.cpp \
+           helper.cpp \
            light.cpp \
            material.cpp \
-           math.cpp \
            MyOpenGLWidget.cpp \
+           objet.cpp \
            plan.cpp \
            scene.cpp \
            main.cpp

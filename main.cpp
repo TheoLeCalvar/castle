@@ -1,6 +1,7 @@
 #include <QApplication>
 #include <QDir>
 #include <QGLFormat>
+#include <QSurface>
 #include "MyOpenGLWidget.hpp"
 
 

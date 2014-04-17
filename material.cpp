@@ -79,15 +79,17 @@ float Material::shininess()
 void Material::update()
 {
 	if (_shader)
-	{
-		GLuint ambient_location = glGetUniformLocation(_shader, "ambient_material");
-		GLuint diffuse_location = glGetUniformLocation(_shader, "diffuse_material");
-		GLuint specular_location = glGetUniformLocation(_shader, "specular_material");
-		GLuint emissive_location = glGetUniformLocation(_shader, "emissive_material");
+	{		
+		GLuint ambient_location = glGetUniformLocation(_shader, "Ka");
+		GLuint diffuse_location = glGetUniformLocation(_shader, "Kd");
+		GLuint specular_location = glGetUniformLocation(_shader, "Ks");
+		GLuint specular_exponnent_location = glGetUniformLocation(_shader, "specular_exponent");
+		// GLuint emissive_location = glGetUniformLocation(_shader, "Ke");
 
 		glUniform3fv(ambient_location, 1, _ambient.v);
 		glUniform3fv(diffuse_location, 1, _diffuse.v);
-		glUniform3fv(emissive_location, 1, _emissive.v);
-		glUniform3fv(specular_location, 1, vec4(_specular, _shininess).v);
+		glUniform3fv(specular_location, 1, _specular.v);
+		glUniform1f(specular_exponnent_location, _shininess);
+		// glUniform3fv(emissive_location, 1, _emissive.v);
 	}
 }

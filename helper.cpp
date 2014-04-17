@@ -1,6 +1,7 @@
-#include "math.hpp"
+#include "helper.hpp"
 
-std::stack<mat4> matrix_stack;
+
+static std::stack<mat4> matrix_stack;
 
 /****************************************************
 						vec2
@@ -844,7 +845,10 @@ mat4 mat4::inverse()const
 
 void popMatrix()
 {
-	matrix_stack.pop();
+	if (!matrix_stack.empty())
+	{
+		matrix_stack.pop();
+	}
 }
 
 void pushMatrix(mat4 m)
@@ -1073,5 +1077,30 @@ void print(const mat4 & mm)
 	std::cout << "[" << mm[1] << "][" << mm[5] << "][" << mm[9] << "][" << mm[13] << "]" << std::endl;
 	std::cout << "[" << mm[2] << "][" << mm[6] << "][" << mm[10] << "][" << mm[14] << "]" << std::endl;
 	std::cout << "[" << mm[3] << "][" << mm[7] << "][" << mm[11] << "][" << mm[15] << "]" << std::endl;
+}
+
+void __openGL_check_error(const char * file, int line)
+{
+	QOpenGLFunctions_3_2_Core f;
+	f.initializeOpenGLFunctions();
+
+	GLenum error = f.glGetError();
+
+	while(error != GL_NO_ERROR) 
+	{
+        std::string errorString;
+
+        switch(error) {
+                case GL_INVALID_OPERATION:				errorString="INVALID_OPERATION";      		break;
+                case GL_INVALID_ENUM:					errorString="INVALID_ENUM";           		break;
+                case GL_INVALID_VALUE:					errorString="INVALID_VALUE";          		break;
+                case GL_OUT_OF_MEMORY:					errorString="OUT_OF_MEMORY";          		break;
+                case GL_INVALID_FRAMEBUFFER_OPERATION:  errorString="INVALID_FRAMEBUFFER_OPERATION";  break;
+        }
+
+        qWarning() << "GL_" << errorString.c_str() << " - " << file << ":" << line;
+
+        error = f.glGetError();
+    }
 }
 

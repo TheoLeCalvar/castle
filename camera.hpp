@@ -1,7 +1,7 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
-#include "math.hpp"
+#include "helper.hpp"
 
 #include <QOpenGLFunctions_3_2_Core>
 

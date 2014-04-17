@@ -5,7 +5,7 @@
 #include <QOpenGLFunctions_3_2_Core>
 #include <QOpenGLTexture>
 
-#include "math.hpp"
+#include "helper.hpp"
 
 class Material: protected QOpenGLFunctions_3_2_Core
 {
@@ -37,6 +37,8 @@ public:
 	void set(GLuint shader);
 
 	void update();
+
+	void apply();
 	
 };
 

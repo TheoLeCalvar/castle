@@ -3,7 +3,7 @@
 
 #include <QOpenGLFunctions_3_2_Core>
 
-#include "math.hpp"
+#include "helper.hpp"
 
 class Light: protected QOpenGLFunctions_3_2_Core
 {

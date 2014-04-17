@@ -3,7 +3,7 @@
 
 #include <QOpenGLFunctions_3_2_Core>
 #include "material.hpp"
-#include "math.hpp"
+#include "helper.hpp"
 
 
 class Objet: protected QOpenGLFunctions_3_2_Core
@@ -19,31 +19,21 @@ protected:
 
 
 public:
-	Objet(Material * mat = NULL, vec3 rotation = vec3(), vec3 position = vec3())
-		:_mat(mat), _rotation(rotation), _position(position), _model(1)
-		{initializeOpenGLFunctions(); updateModel();}
+	Objet(Material * mat = NULL, vec3 rotation = vec3(), vec3 position = vec3());
 
 	virtual ~Objet(){}
 
 	virtual Objet* clone() = 0;
 
-	virtual void 	draw() = 0;
+	virtual void 	draw();
 
 	vec3 & 			position(){return _position;};
 	vec3 			position() const{return _position;}
-	void			position(vec3 p)
-	{
-		_position = p;
-		updateModel();
-	}
+	void			position(vec3 p);
 
 	vec3 & 			rotation(){return _rotation;}
 	vec3 			rotation() const{return _rotation;}
-	void			rotation(vec3 r)
-	{
-		_rotation = r;
-		updateModel();
-	}
+	void			rotation(vec3 r);
 
 	mat4 			model() const{return _model;}
 
@@ -54,14 +44,7 @@ public:
 	void 			material(Material * m){_mat = m;}
 
 private:
-	void 			updateModel()
-	{
-		_model = XrotationMatrix(_rotation[0]);
-		_model = Yrotate(_model, _rotation[1]);
-		_model = Zrotate(_model, _rotation[2]);
-
-		_model = translate(_model, _position);
-	}	
+	void 			updateModel();
 
 };
 

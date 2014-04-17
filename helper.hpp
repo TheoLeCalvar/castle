@@ -1,13 +1,20 @@
-#ifndef MATH_HELPER
-#define MATH_HELPER
+#ifndef HELPER_H
+#define HELPER_H
 
 #include <iostream>
 #include <stack>
 #include <cmath>
-
+#include <QDebug>
+#include <QOpenGLFunctions_3_2_core>
 
 #ifndef M_PI
 #define M_PI 3.141592
+#endif
+
+
+#ifndef openGL_check_error
+void __openGL_check_error(const char * file, int line);
+#define openGL_check_error() __openGL_check_error(__FILE__, __LINE__) 
 #endif
 
 struct vec3;

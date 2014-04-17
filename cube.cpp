@@ -92,9 +92,12 @@ void Cube::draw()
 {
     glUseProgram(_shaderId);
 
+
+
 	mat4 model = currentMatrix();
 
 	model = _model * model;
+
 
 	glUniformMatrix4fv(_model_location, 1, GL_FALSE, model.m);
 
