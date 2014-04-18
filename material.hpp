@@ -2,11 +2,11 @@
 #define MATERIAL_H
 
 
-#include <QOpenGLFunctions_3_2_Core>
+#include <QOpenGLFunctions_4_1_Core>
 
 #include "math.hpp"
 
-class Material: protected QOpenGLFunctions_3_2_Core
+class Material: protected QOpenGLFunctions_4_1_Core
 {
 private:
 	vec4 			_ambient;

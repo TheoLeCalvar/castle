@@ -5,7 +5,7 @@
 #include <QGLWidget>
 #include <QOpenGLVertexArrayObject>
 #include <QOpenGLBuffer>
-#include <QOpenGLFunctions_3_2_Core>
+#include <QOpenGLFunctions_4_1_Core>
 #include <QTimer>
 #include <QKeyEvent>
 #include <QMouseEvent>
@@ -21,7 +21,7 @@
 #include "cube.hpp"
 
 
-class MyOpenGLWidget: public QGLWidget, protected QOpenGLFunctions_3_2_Core
+class MyOpenGLWidget: public QGLWidget, protected QOpenGLFunctions_4_1_Core
 {
 Q_OBJECT
 

@@ -2,7 +2,7 @@
 #define SHADER_H
 
 
-#include <QOpenGLFunctions_3_2_Core>
+#include <QOpenGLFunctions_4_1_Core>
 
 #include <iostream>
 #include <fstream>

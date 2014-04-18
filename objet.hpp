@@ -1,12 +1,12 @@
 #ifndef OBJET
 #define OBJET
 
-#include <QOpenGLFunctions_3_2_Core>
+#include <QOpenGLFunctions_4_1_Core>
 #include "material.hpp"
 #include "math.hpp"
 
 
-class Objet: protected QOpenGLFunctions_3_2_Core
+class Objet: protected QOpenGLFunctions_4_1_Core
 {
 protected:
 	Material * 	_mat;

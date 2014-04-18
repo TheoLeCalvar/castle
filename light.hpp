@@ -1,11 +1,11 @@
 #ifndef LIGHT_H
 #define LIGHT_H 
 
-#include <QOpenGLFunctions_3_2_Core>
+#include <QOpenGLFunctions_4_1_Core>
 
 #include "math.hpp"
 
-class Light: protected QOpenGLFunctions_3_2_Core
+class Light: protected QOpenGLFunctions_4_1_Core
 {
 private:
 	vec3 	_position;

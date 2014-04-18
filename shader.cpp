@@ -13,7 +13,7 @@ GLuint Shader::loadFragmentShader(const std::string & fileName)
 
 GLuint Shader::loadFile(const std::string & fileName, GLenum shaderType)
 {
-	QOpenGLFunctions_3_2_Core func;
+    QOpenGLFunctions_4_1_Core func;
 	func.initializeOpenGLFunctions();
 	GLuint shaderId;
 	char * shaderSource = readFile(fileName);

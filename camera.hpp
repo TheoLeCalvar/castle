@@ -3,12 +3,12 @@
 
 #include "math.hpp"
 
-#include <QOpenGLFunctions_3_2_Core>
+#include <QOpenGLFunctions_4_1_Core>
 
 
 
 
-class Camera: protected QOpenGLFunctions_3_2_Core
+class Camera: protected QOpenGLFunctions_4_1_Core
 {
 protected:
 	vec3 	 _eye;

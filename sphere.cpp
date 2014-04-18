@@ -29,14 +29,12 @@ void Sphere::genVao()
 
     std::vector<float> points;
     std::vector<float> normals;
+    std::vector<unsigned int> indices;
 
 
-    int cptphi=0;
-    int cpttheta=0;
+    for (int cptphi=0 ; cptphi<=m_slices ; cptphi++){
 
-    for (cptphi=0 ; cptphi<m_slices ; cptphi++){
-
-                for(cpttheta=0 ; cpttheta<m_stacks ; cpttheta++) {
+                for( int cpttheta=0 ; cpttheta<=m_stacks ; cpttheta++) {
 
                    normals.push_back(cos(2*M_PI/m_stacks*cpttheta) * cos(2*M_PI/m_slices*cptphi));
                    points.push_back (m_radius * normals.back());
@@ -50,49 +48,33 @@ void Sphere::genVao()
 
                 }
            }
-//float angle;
 
-//                for(angle=0 ; angle<2*M_PI ; angle+=(M_PI/100)) {
+//remplit le tableau d'indice
 
-//                   normals.push_back(cos(angle));
-//                   points.push_back (m_radius * normals.back());
+     for (int i=0 ; i< m_slices ; i++){
+            for(int j =0 ; j<m_stacks ;j++){
 
-//                   normals.push_back(0);
-//                   points.push_back (m_radius * normals.back());
+            indices.push_back(j+(1+i)*m_stacks);
+            indices.push_back(j+(1+i)*m_stacks+1);
+            indices.push_back(j+(i*m_stacks));
 
-//                   normals.push_back(sin(angle));
-//                   points.push_back (m_radius * normals.back());
+            indices.push_back(j+(1+i)*m_stacks+1);
+            indices.push_back(j+(i*m_stacks)+1);
+            indices.push_back(j+(i*m_stacks));
 
+            }
 
-//                }
-
-
-//float angle = 2*M_PI / 1000;
-
-//    for(int i = 0; i < 1000; ++i)
-//    {
-//        normals.push_back(sin(i*angle));
-//        points.push_back (m_radius * normals.back());
-
-//        normals.push_back(0);
-//        points.push_back (0);
-
-//        normals.push_back(cos(i*angle));
-//        points.push_back (m_radius * normals.back());
-//    }
+     }
 
 
 
+    nbvertex=(GLsizei) indices.size();
 
+    unsigned int vbo_indice = 0 ;
+    glGenBuffers(1,&vbo_indice);
+    glBindBuffer (GL_ELEMENT_ARRAY_BUFFER, vbo_indice);
+    glBufferData (GL_ELEMENT_ARRAY_BUFFER,  indices.size() * sizeof (unsigned int), indices.data(), GL_STATIC_DRAW);
 
-
-
-
-
-
-
-
-    nbvertex=(GLsizei) normals.size();
 
     unsigned int vbo_point = 0;
     glGenBuffers (1, &vbo_point);
@@ -114,6 +96,9 @@ void Sphere::genVao()
 
     glBindBuffer (GL_ARRAY_BUFFER, vbo_normals);
     glVertexAttribPointer (1, 3, GL_FLOAT, GL_FALSE, 0, NULL);
+
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vbo_indice);
+
 }
 
 void Sphere::draw()
@@ -125,9 +110,10 @@ void Sphere::draw()
     glUniformMatrix4fv(_model_location, 1, GL_FALSE, model.m);
 
     glBindVertexArray (_vao);
+
     // draw points 0-3 from the currently bound VAO with current in-use shader
 
-    glDrawArrays (GL_POINTS, 0,  nbvertex/3);
+    glDrawElements (GL_TRIANGLES,nbvertex,GL_UNSIGNED_INT,0);
 
     glBindVertexArray(0);
 

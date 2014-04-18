@@ -1,4 +1,4 @@
-#include "Cube.hpp"
+#include "cube.hpp"
 #include <QDebug>
 
 GLuint Cube::_vao = 0;

@@ -9,7 +9,7 @@
 #include "light.hpp"
 #include "material.hpp"
 
-#include <QOpenGLFunctions_3_2_Core>
+#include <QOpenGLFunctions_4_1_Core>
 #include <QtCore/QDebug>
 #include <QtCore/QFile>
 #include <QtCore/QString>
@@ -21,7 +21,7 @@
 
 class Object;
 
-class Scene: protected QOpenGLFunctions_3_2_Core
+class Scene: protected QOpenGLFunctions_4_1_Core
 {
 private:
 	QDomDocument 								_xml;
