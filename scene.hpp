@@ -26,6 +26,7 @@
 
 
 
+
 class Scene: protected QOpenGLFunctions_3_2_Core
 {
 private:

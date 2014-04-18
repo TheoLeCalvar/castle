@@ -44,7 +44,6 @@ void	MyOpenGLWidget::initializeGL()
     glClearColor(0.3, 0.3, 0.3, 1.0);
 
 
-
     qDebug() << QDir::current().entryList();
 
     QOpenGLShaderProgram program;

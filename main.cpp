@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 
 	QGLFormat f;
 
-	f.setVersion(3, 2);
+    f.setVersion(3, 2);
 	f.setProfile(QGLFormat::CoreProfile);
 
 	MyOpenGLWidget w(f);

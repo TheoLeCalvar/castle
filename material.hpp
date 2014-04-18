@@ -2,8 +2,10 @@
 #define MATERIAL_H
 
 
+
 #include <QOpenGLFunctions_3_2_Core>
 #include <QOpenGLTexture>
+
 
 #include "helper.hpp"
 
