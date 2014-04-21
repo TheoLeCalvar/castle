@@ -7,7 +7,7 @@
 class Donuts: public Objet
 {
 private:
-    static GLuint 	_vao;
+    GLuint 	_vao;
 
 
     GLdouble m_radius;
