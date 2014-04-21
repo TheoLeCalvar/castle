@@ -7,9 +7,10 @@
 class Sphere: public Objet
 {
 private:
-    static GLuint 	_vao;
+    GLuint 	_vao;
 
     GLdouble m_radius;
+    GLdouble m_radius2;
     GLint m_slices;
     GLint m_stacks;
 
@@ -17,11 +18,13 @@ private:
     GLsizei nbvertex;
 
 public:
-    Sphere(GLdouble m_radius =1, GLint m_slices=1, GLint m_stacks=1,
+    //rayon horizontal, rayon vertical, nb division vertical, nb division horizontal
+    Sphere(GLdouble m_radius =1,GLdouble m_radius2 =1, GLint m_slices=1, GLint m_stacks=1,
            Material * mat = NULL, vec3 rotation = vec3(), vec3 position = vec3());
 
     ~Sphere();
 
+   // GLuint Sphere::_vao = 0;
     void draw();
 
 };

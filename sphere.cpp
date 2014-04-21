@@ -3,16 +3,15 @@
 #include <cmath>
 #include <vector>
 
-GLuint Sphere::_vao = 0;
 
-
-
-Sphere::Sphere(GLdouble radius, GLint slices, GLint stacks ,Material * mat, vec3 rotation, vec3 position)
+Sphere::Sphere(GLdouble radius, GLdouble radius2, GLint slices, GLint stacks ,Material * mat, vec3 rotation, vec3 position)
     :Objet(mat, rotation, position)
 {
-    m_radius=radius;
-    m_slices=slices;
-    m_stacks=stacks;
+    m_radius = radius;
+    m_radius2 = radius2;
+    m_slices = slices;
+    m_stacks = stacks;
+    _vao=0;
 
     if (!_vao)
     {
@@ -40,7 +39,7 @@ void Sphere::genVao()
                    points.push_back (m_radius * normals.back());
 
                    normals.push_back(sin(2*M_PI/m_stacks*cpttheta)*cos(2*M_PI/m_slices*cptphi));
-                   points.push_back (m_radius * normals.back());
+                   points.push_back (m_radius2 * normals.back());
 
                    normals.push_back(sin(2*M_PI/m_slices*cptphi));
                    points.push_back (m_radius * normals.back());
