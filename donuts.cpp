@@ -42,13 +42,13 @@ void Donuts::genVao()
 
             for (phi=0 ; phi < (2*M_PI) ;phi+=((2*M_PI)/m_stacks)){
 
-                   normals.push_back( xcentre +m_radius_donuts*     cos(phi)*xcentre );
+                   normals.push_back( xcentre +   cos(phi)*cos(theta) );
                    points.push_back(m_radius_donuts * normals.back());
 
-                   normals.push_back(ycentre+m_radius_donuts*         sin(phi));
+                   normals.push_back(ycentre+    sin(phi));
                    points.push_back (m_radius_donuts * normals.back());
 
-                   normals.push_back(zcentre+m_radius_donuts*           cos(phi)*zcentre);
+                   normals.push_back(zcentre+  cos(phi)*sin(theta));
                    points.push_back (m_radius_donuts * normals.back());
            }
 
