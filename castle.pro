@@ -4,33 +4,37 @@
 
 TEMPLATE = app
 TARGET = castle
-INCLUDEPATH += .
+INCLUDEPATH += . scene/ objets/
 QT += opengl xml gui
 CONFIG += c++11
 QMAKE_CXXFLAGS += -g
+OBJECTS_DIR = build
+MOC_DIR = build
 
 
 # Input
 HEADERS += camera.hpp \
-           cube.hpp \
+           objets/cube.hpp \
+           objets/donuts.hpp \
            helper.hpp \
-           light.hpp \
-           material.hpp \
+           scene/light.hpp \
+           scene/material.hpp \
            MyOpenGLWidget.hpp \
-           plan.hpp \
-           piece.hpp \
-           objet.hpp \
-           scene.hpp \
-           sphere.hpp
+           objets/plan.hpp \
+           scene/piece.hpp \
+           objets/objet.hpp \
+           scene/scene.hpp \
+           objets/sphere.hpp
 SOURCES += camera.cpp \
-           cube.cpp \
+           objets/cube.cpp \
+           objets/donuts.cpp \
            helper.cpp \
-           light.cpp \
-           material.cpp \
+           scene/light.cpp \
+           scene/material.cpp \
            MyOpenGLWidget.cpp \
-           objet.cpp \
-           piece.cpp \
-           plan.cpp \
-           scene.cpp \
-           sphere.cpp \
+           objets/objet.cpp \
+           scene/piece.cpp \
+           objets/plan.cpp \
+           scene/scene.cpp \
+           objets/sphere.cpp \
            main.cpp

@@ -1,16 +1,16 @@
-#include "donuts.hpp"
+#include "sphere.hpp"
 #include <QDebug>
 #include <cmath>
 #include <vector>
 
 
-Donuts::Donuts(GLdouble radius,GLdouble radius_donuts, GLint slices, GLint stacks ,Material * mat, vec3 rotation, vec3 position)
+Sphere::Sphere(GLdouble radius, GLdouble radius2, GLint slices, GLint stacks ,Material * mat, vec3 rotation, vec3 position)
     :Objet(mat, rotation, position)
 {
-    m_radius=radius;
-    m_slices=slices;
-    m_stacks=stacks;
-    m_radius_donuts=radius_donuts;
+    m_radius = radius;
+    m_radius2 = radius2;
+    m_slices = slices;
+    m_stacks = stacks;
     _vao=0;
 
     if (!_vao)
@@ -20,10 +20,13 @@ Donuts::Donuts(GLdouble radius,GLdouble radius_donuts, GLint slices, GLint stack
 
 }
 
-Donuts::~Donuts()
+Sphere::~Sphere()
 {}
 
-void Donuts::genVao()
+Objet * Sphere::clone() const
+{}
+
+void Sphere::genVao()
 {
 
     std::vector<float> points;
@@ -31,55 +34,49 @@ void Donuts::genVao()
     std::vector<unsigned int> indices;
 
 
-    float theta;
-    float phi;
+    for (int cptphi=0 ; cptphi<=m_slices ; cptphi++){
 
-    for (theta=0 ; theta <= (2*M_PI) ; theta+=((2*M_PI)/m_slices)){
+                for( int cpttheta=0 ; cpttheta<=m_stacks ; cpttheta++) {
 
-        float xcentre=cos(theta)*m_radius;
-        float ycentre=0;
-        float zcentre=sin(theta)*m_radius;
+                   normals.push_back(cos(2*M_PI/m_stacks*cpttheta) * cos(2*M_PI/m_slices*cptphi));
+                   points.push_back (m_radius * normals.back());
 
-            for (phi=0 ; phi < (2*M_PI) ;phi+=((2*M_PI)/m_stacks)){
+                   normals.push_back(sin(2*M_PI/m_stacks*cpttheta)*cos(2*M_PI/m_slices*cptphi));
+                   points.push_back (m_radius2 * normals.back());
 
-                   normals.push_back( xcentre +   cos(phi)*cos(theta) );
-                   points.push_back(m_radius_donuts * normals.back());
+                   normals.push_back(sin(2*M_PI/m_slices*cptphi));
+                   points.push_back (m_radius * normals.back());
 
-                   normals.push_back(ycentre+    sin(phi));
-                   points.push_back (m_radius_donuts * normals.back());
-
-                   normals.push_back(zcentre+  cos(phi)*sin(theta));
-                   points.push_back (m_radius_donuts * normals.back());
-           }
-
-        }
-
-    //remplit le tableau d'indice
-
-         for (int i=0 ; i<= m_slices ; i++){
-                for(int j =0 ; j<m_stacks ;j++){
-
-                indices.push_back(j+(1+i)*m_stacks);
-                indices.push_back(j+(1+i)*m_stacks+1);
-                indices.push_back(j+(i*m_stacks));
-
-                indices.push_back(j+(1+i)*m_stacks+1);
-                indices.push_back(j+(i*m_stacks)+1);
-                indices.push_back(j+(i*m_stacks));
 
                 }
+           }
 
-         }
+//remplit le tableau d'indice
+
+     for (int i=0 ; i<= m_slices ; i++){
+            for(int j =0 ; j<=m_stacks ;j++){
+
+            indices.push_back(j+(1+i)*m_stacks);
+            indices.push_back(j+(1+i)*m_stacks+1);
+            indices.push_back(j+(i*m_stacks));
+
+            indices.push_back(j+(1+i)*m_stacks+1);
+            indices.push_back(j+(i*m_stacks)+1);
+            indices.push_back(j+(i*m_stacks));
+
+            }
+
+     }
 
 
 
-        nbvertex=(GLsizei) indices.size();
-
+    nbvertex=(GLsizei) indices.size();
 
     unsigned int vbo_indice = 0 ;
     glGenBuffers(1,&vbo_indice);
     glBindBuffer (GL_ELEMENT_ARRAY_BUFFER, vbo_indice);
     glBufferData (GL_ELEMENT_ARRAY_BUFFER,  indices.size() * sizeof (unsigned int), indices.data(), GL_STATIC_DRAW);
+
 
     unsigned int vbo_point = 0;
     glGenBuffers (1, &vbo_point);
@@ -106,7 +103,7 @@ void Donuts::genVao()
 
 }
 
-void Donuts::draw()
+void Sphere::draw()
 {
     mat4 model = currentMatrix();
 
@@ -122,4 +119,6 @@ void Donuts::draw()
 
     glBindVertexArray(0);
 
+
 }
+

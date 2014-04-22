@@ -23,6 +23,7 @@
 #include "cube.hpp"
 #include "plan.hpp"
 #include "sphere.hpp"
+#include "donuts.hpp"
 #include "material.hpp"
 
 #include "scene.hpp"
@@ -46,6 +47,7 @@ private:
 	Plan * 		plan;
 	Plan *  	plan2;
 	Sphere * 	sphere;
+	Donuts * 	donuts;
 
 
 public:

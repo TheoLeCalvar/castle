@@ -76,7 +76,7 @@ void	MyOpenGLWidget::initializeGL()
     
     plan = new Plan(10, 10, 40, 20, std::vector<QRectF> {QRectF(1, 1, 1, 1), QRectF(4,2,1,2)}, mat);
     plan2 = new Plan(40, 40, 400, 200, std::vector<QRectF>(), NULL, vec3(), vec3(0, 0, 4));
-    sphere = new Sphere(5, 5, 40, 40);
+
 
 	model_loc =        glGetUniformLocation(shader_programme, "model");
     view_loc =         glGetUniformLocation(shader_programme, "view");
@@ -89,11 +89,10 @@ void	MyOpenGLWidget::initializeGL()
     plan->shaderId(shader_programme);
     plan2->modelLocation(model_loc);
     plan2->shaderId(shader_programme);
-    sphere->modelLocation(model_loc);
-    sphere->shaderId(shader_programme);
 
 
-    Scene s("scene.xml");
+
+    // Scene s("scene.xml");
 
 }
 
@@ -101,7 +100,6 @@ void	MyOpenGLWidget::initializeGL()
 void	MyOpenGLWidget::paintGL()
 {
 	static float angle = 0;
-
 
 	mat4 rotation = YrotationMatrix(angle);
 	mat4 transUp = translationMatrix(0.0f, 1.0f, 0.0f);
@@ -115,29 +113,32 @@ void	MyOpenGLWidget::paintGL()
 
 
 
-	// for (int i = 0; i < 8; ++i)
-	// {
-	//     mat4 model = translationMatrix(1.5f, 0.0f, 0.0f);
-	//     model = Yrotate(model, i * 45);         
+	for (int i = 0; i < 8; ++i)
+	{
+	    mat4 model = translationMatrix(1.5f, 0.0f, 0.0f);
+	    model = Yrotate(model, i * 45);         
 
-	//     model = rotation * transUpTotal * model;
+	    model = rotation * transUpTotal * model;
 
-	//     transUpTotal *= transUp;
+	    transUpTotal *= transUp;
 
- //        pushMatrix(model);
+        pushMatrix(model);
 
 
- //            cube->draw();   
- //            plan->draw(); 
+            cube->draw();   
+            plan->draw(); 
 
- //        popMatrix();   
+        popMatrix();   
 	    
-	// }
+	}
 
 
- //    plan2->draw();
+    plan2->draw();
 
-    sphere->draw();
+
+    openGL_check_error();
+
+
 
 
 
