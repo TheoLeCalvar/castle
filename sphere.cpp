@@ -3,13 +3,11 @@
 #include <cmath>
 #include <vector>
 
-GLuint Sphere::_vao = 0;
 
-
-
-Sphere::Sphere(GLdouble radius, GLint slices, GLint stacks ,Material * mat, vec3 rotation, vec3 position)
-    :Objet(mat, rotation, position), m_radius(radius), m_slices(slices), m_stacks(stacks)
+Sphere::Sphere(GLdouble radius, GLdouble radius2, GLint slices, GLint stacks ,Material * mat, vec3 rotation, vec3 position)
+    :Objet(mat, rotation, position), m_radius(radius), m_radius2(radius2), m_slices(slices), m_stacks(stacks), _vao(0)
 {
+
 
     if (!_vao)
     {
@@ -21,6 +19,9 @@ Sphere::Sphere(GLdouble radius, GLint slices, GLint stacks ,Material * mat, vec3
 Sphere::~Sphere()
 {}
 
+Objet * Sphere::clone() const
+{}
+
 void Sphere::genVao()
 {
 
@@ -29,27 +30,27 @@ void Sphere::genVao()
     std::vector<unsigned int> indices;
 
 
-    for (int cptphi=0 ; cptphi<=m_slices ; cptphi++){
+    for (int cptphi=0 ; cptphi<=m_slices ; cptphi++)
+    {
+        for( int cpttheta=0 ; cpttheta<=m_stacks ; cpttheta++) 
+        {
+            normals.push_back(cos(2*M_PI/m_stacks*cpttheta) * cos(2*M_PI/m_slices*cptphi));
+            points.push_back (m_radius * normals.back());
 
-            for( int cpttheta=0 ; cpttheta<=m_stacks ; cpttheta++) {
+            normals.push_back(sin(2*M_PI/m_stacks*cpttheta)*cos(2*M_PI/m_slices*cptphi));
+            points.push_back (m_radius2 * normals.back());
 
-               normals.push_back(cos(2*M_PI/m_stacks*cpttheta) * cos(2*M_PI/m_slices*cptphi));
-               points.push_back (m_radius * normals.back());
-
-               normals.push_back(sin(2*M_PI/m_stacks*cpttheta)*cos(2*M_PI/m_slices*cptphi));
-               points.push_back (m_radius * normals.back());
-
-               normals.push_back(sin(2*M_PI/m_slices*cptphi));
-               points.push_back (m_radius * normals.back());
-
-            }
-       }
+            normals.push_back(sin(2*M_PI/m_slices*cptphi));
+            points.push_back (m_radius * normals.back());
+        }
+    }
 
 //remplit le tableau d'indice
 
-     for (int i=0 ; i< m_slices ; i++){
-            for(int j =0 ; j<m_stacks ;j++){
-
+     for (int i=0 ; i< m_slices ; i++)
+     {
+        for(int j =0 ; j<m_stacks ;j++)
+        {
             indices.push_back(j+(1+i)*m_stacks);
             indices.push_back(j+(1+i)*m_stacks+1);
             indices.push_back(j+(i*m_stacks));
@@ -57,9 +58,7 @@ void Sphere::genVao()
             indices.push_back(j+(1+i)*m_stacks+1);
             indices.push_back(j+(i*m_stacks)+1);
             indices.push_back(j+(i*m_stacks));
-
-            }
-
+        }
      }
 
 
@@ -97,9 +96,6 @@ void Sphere::genVao()
 
 }
 
-Objet * Sphere::clone() const
-{}
-
 void Sphere::draw()
 {
     mat4 model = currentMatrix();
@@ -110,9 +106,7 @@ void Sphere::draw()
 
     glBindVertexArray (_vao);
 
-    // draw points 0-3 from the currently bound VAO with current in-use shader
-
-    glDrawElements (GL_TRIANGLES,nbvertex,GL_UNSIGNED_INT,0);
+    glDrawElements (GL_LINES, nbvertex, GL_UNSIGNED_INT, 0);
 
     glBindVertexArray(0);
 

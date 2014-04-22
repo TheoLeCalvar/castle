@@ -67,7 +67,6 @@ void	MyOpenGLWidget::initializeGL()
     glUseProgram (shader_programme);
 
 
-    // Scene s("scene.xml");
     Material *mat  = new Material();
     mat->set(shader_programme);
 
@@ -77,7 +76,7 @@ void	MyOpenGLWidget::initializeGL()
     
     plan = new Plan(10, 10, 40, 20, std::vector<QRectF> {QRectF(1, 1, 1, 1), QRectF(4,2,1,2)}, mat);
     plan2 = new Plan(40, 40, 400, 200, std::vector<QRectF>(), NULL, vec3(), vec3(0, 0, 4));
-    sphere = new Sphere(5, 40, 40);
+    sphere = new Sphere(5, 5, 40, 40);
 
 	model_loc =        glGetUniformLocation(shader_programme, "model");
     view_loc =         glGetUniformLocation(shader_programme, "view");
@@ -116,27 +115,27 @@ void	MyOpenGLWidget::paintGL()
 
 
 
-	for (int i = 0; i < 8; ++i)
-	{
-	    mat4 model = translationMatrix(1.5f, 0.0f, 0.0f);
-	    model = Yrotate(model, i * 45 * (M_PI)/180.0f);         
+	// for (int i = 0; i < 8; ++i)
+	// {
+	//     mat4 model = translationMatrix(1.5f, 0.0f, 0.0f);
+	//     model = Yrotate(model, i * 45);         
 
-	    model = rotation * transUpTotal * model;
+	//     model = rotation * transUpTotal * model;
 
-	    transUpTotal *= transUp;
+	//     transUpTotal *= transUp;
 
-        pushMatrix(model);
+ //        pushMatrix(model);
 
 
-            cube->draw();   
-            plan->draw(); 
+ //            cube->draw();   
+ //            plan->draw(); 
 
-        popMatrix();   
+ //        popMatrix();   
 	    
-	}
+	// }
 
 
-    plan2->draw();
+ //    plan2->draw();
 
     sphere->draw();
 
@@ -144,7 +143,7 @@ void	MyOpenGLWidget::paintGL()
 
 
 
-	angle += 0.01;
+	angle += 1;
 }
 
 void	MyOpenGLWidget::resizeGL(int width, int height)

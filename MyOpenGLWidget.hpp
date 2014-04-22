@@ -28,7 +28,7 @@
 #include "scene.hpp"
 
 
-class MyOpenGLWidget: public QGLWidget, protected QOpenGLFunctions_4_1_Core
+class MyOpenGLWidget: public QGLWidget, protected QOpenGLFunctions_3_2_Core
 {
 Q_OBJECT
 
