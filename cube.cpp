@@ -15,7 +15,7 @@ Cube::Cube(Material * mat, vec3 rotation, vec3 position)
 Cube::~Cube()
 {}
 
-Objet * Cube::clone()
+Objet * Cube::clone() const
 {
     Objet * tmp = new Cube(_mat, _rotation, _position);
     tmp->modelLocation(_model_location);
@@ -90,7 +90,7 @@ void Cube::genVao()
 
 void Cube::draw()
 {
-    glUseProgram(_shaderId);
+    Objet::draw();
 
 
 

@@ -27,12 +27,14 @@
 	</shaders>
 
 	<pieces>
-		<piece nom="pièce1">
-			<dimension largeur="12" longueur="1" hauteur="3" />
+		<piece nom="pièce1" shader="test">
+			<dimension width="12" length="5" height="3" />
 			<position repere="world" x="0" y="0" z="0" />
 			<murs>
 				<!-- <mur cote="avant|arriere|droite|gauche|haut|bas" mat="Mat1" />  -->
-					<mur cote="avant" mat="Mat1" />
+					<mur cote="avant" mat="Mat1" >
+						<fenetre x="2" y="3" width="1" height="2" />
+					</mur>
 			</murs>
 
 			<objets>
@@ -43,6 +45,8 @@
 					<position relatif="objet1" x="1" y="5" z="0" />
 				</objet>
 			</objets>
+		</piece>
+		<piece nom="piece2" >
 		</piece>
 	</pieces>
 </scene>

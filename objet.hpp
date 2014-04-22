@@ -9,6 +9,7 @@
 class Objet: protected QOpenGLFunctions_3_2_Core
 {
 protected:
+	Objet * 	_parent;
 	Material * 	_mat;
 	vec3 		_rotation;
 	vec3 		_position;
@@ -19,11 +20,11 @@ protected:
 
 
 public:
-	Objet(Material * mat = NULL, vec3 rotation = vec3(), vec3 position = vec3());
+	Objet(Material * mat = NULL, vec3 rotation = vec3(), vec3 position = vec3(), Objet * parent = NULL);
 
 	virtual ~Objet(){}
 
-	virtual Objet* clone() = 0;
+	virtual Objet* clone() const = 0;
 
 	virtual void 	draw();
 

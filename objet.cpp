@@ -1,7 +1,7 @@
 #include "objet.hpp"
 
-Objet::Objet(Material * mat, vec3 rotation, vec3 position)
-		:_mat(mat), _rotation(rotation), _position(position), _model(1)
+Objet::Objet(Material * mat, vec3 rotation, vec3 position, Objet * parent)
+		:_parent(parent), _mat(mat), _rotation(rotation), _position(position), _model(1)
 {
 	initializeOpenGLFunctions(); 
 	updateModel();
@@ -18,6 +18,8 @@ void 	Objet::draw()
 
 	if (_mat)
 		_mat->update();
+	else if(_parent && _parent->_mat)
+		_parent->_mat->update();
 }
 
 void	Objet::position(vec3 p)

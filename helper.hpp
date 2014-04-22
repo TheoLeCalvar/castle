@@ -5,12 +5,16 @@
 #include <stack>
 #include <cmath>
 #include <QDebug>
-#include <QOpenGLFunctions_3_2_core>
+#include <QOpenGLFunctions_3_2_Core>
 
 #ifndef M_PI
 #define M_PI 3.141592
 #endif
 
+
+#ifndef to_rad
+#define to_rad(alpha) (alpha * (M_PI / 180.0f))
+#endif
 
 #ifndef openGL_check_error
 void __openGL_check_error(const char * file, int line);

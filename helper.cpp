@@ -894,25 +894,25 @@ mat4 XrotationMatrix(float alpha)
 {
 	return mat4(
 			1.0f, 0.0f, 0.0f, 0.0f,
-			0.0f, cos(alpha),  sin(alpha), 0.0f,
-			0.0f, -sin(alpha), cos(alpha), 0.0f,
+			0.0f, cos(to_rad(alpha)),  sin(to_rad(alpha)), 0.0f,
+			0.0f, -sin(to_rad(alpha)), cos(to_rad(alpha)), 0.0f,
 			0.0f, 0.0f, 0.0f, 1.0f
 		);
 }
 mat4 YrotationMatrix(float alpha)
 {
 	return mat4(
-			cos(alpha), 0.0f, -sin(alpha), 0.0f,
+			cos(to_rad(alpha)), 0.0f, -sin(to_rad(alpha)), 0.0f,
 			0.0f, 1.0f, 0.0f, 0.0f,
-			sin(alpha), 0.0f, cos(alpha), 0.0f,
+			sin(to_rad(alpha)), 0.0f, cos(to_rad(alpha)), 0.0f,
 			0.0f, 0.0f, 0.0f, 1.0f
 		);
 }
 mat4 ZrotationMatrix(float alpha)
 {
 	return mat4(
-			cos(alpha), sin(alpha), 0.0f, 0.0f,
-			-sin(alpha), cos(alpha), 0.0f, 0.0f,
+			cos(to_rad(alpha)), sin(to_rad(alpha)), 0.0f, 0.0f,
+			-sin(to_rad(alpha)), cos(to_rad(alpha)), 0.0f, 0.0f,
 			0.0f, 0.0f, 1.0f, 0.0f,
 			0.0f, 0.0f, 0.0f, 1.0f
 		);

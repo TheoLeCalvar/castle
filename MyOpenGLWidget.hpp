@@ -21,6 +21,7 @@
 
 #include "cube.hpp"
 #include "plan.hpp"
+#include "sphere.hpp"
 #include "material.hpp"
 
 #include "scene.hpp"
@@ -43,6 +44,7 @@ private:
 	Cube * 		cube;
 	Plan * 		plan;
 	Plan *  	plan2;
+	Sphere * 	sphere;
 
 
 public:

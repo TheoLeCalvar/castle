@@ -16,7 +16,7 @@ public:
 	Cube(Material * mat = NULL, vec3 rotation = vec3(), vec3 position = vec3());
 	~Cube();
 
-	Objet * clone();
+	Objet * clone() const;
 
 	void draw();
 	

@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <map>
+#include <vector>
 
 #include "helper.hpp"
 #include "camera.hpp"
@@ -10,6 +11,7 @@
 #include "material.hpp"
 
 #include "objet.hpp"
+#include "piece.hpp"
 
 #include <QOpenGLFunctions_3_2_Core>
 #include <QOpenGLShaderProgram>
@@ -20,18 +22,19 @@
 #include <QDomElement>
 #include <QDomNode>
 #include <QDomNodeList>
+#include <QRectF>
 
 
 
 class Scene: protected QOpenGLFunctions_3_2_Core
 {
 private:
-	QDomDocument 								_xml;
-
-	std::map<const QString, Objet *>			_objets;
-	std::map<const QString, Light *> 			_lights;
-	std::map<const QString, Material *>			_materials;
-	std::map<const QString, GLuint> 			_shaders;
+	QDomDocument 										_xml;
+//Scene take the ownership of all Objet, Light, Material and Shader it get
+	std::map<const QString, Objet *>					_objets;
+	std::map<const QString, Light *> 					_lights;
+	std::map<const QString, Material *>					_materials;
+	std::map<const QString, QOpenGLShaderProgram *> 	_shaders;
 
 
 public:
@@ -55,7 +58,7 @@ public:
 	void 		addObjet(const QString & name, Objet * o);
 	void 		addLight(const QString & name, Light * l);
 	void 		addMaterial(const QString & name, Material * m);
-	void 		addShader(const QString & name, GLuint s);
+	void 		addShader(const QString & name, QOpenGLShaderProgram * s);
 
 	void 		saveAsXML(const QString & fileName);
 

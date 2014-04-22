@@ -2,21 +2,34 @@
 #define PIECE_H
 
 #include "objet.hpp"
+#include "plan.hpp"
+
+#include <list>
 
 
 class Piece: public Objet
 {
 private:
-	unsigned int width;
-	unsigned int height;
+	vec3 _dimensions;
 	
-	GLuint 	_vao;
+	std::list<Plan *> _murs;
+	std::list<Objet *> _objets;
+
 public:
-	Piece();
+	Piece(vec3 dimension = vec3(1,1,1), vec3 rotation = vec3(), vec3 position = vec3(), Material * mat = NULL, Objet * parent = NULL);
 	~Piece();
 
+	Objet * clone() const;
 
+	void draw();
+
+	void addWall(Plan *);
+	void addObjet(Objet *);
 	
+	const vec3 dimensions() const;
+	vec3 & dimensions();
+	void dimensions(const vec3 v);
+
 };
 
 #endif

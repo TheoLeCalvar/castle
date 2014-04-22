@@ -18,8 +18,10 @@ HEADERS += camera.hpp \
            material.hpp \
            MyOpenGLWidget.hpp \
            plan.hpp \
+           piece.hpp \
            objet.hpp \
-           scene.hpp
+           scene.hpp \
+           sphere.hpp
 SOURCES += camera.cpp \
            cube.cpp \
            helper.cpp \
@@ -27,6 +29,8 @@ SOURCES += camera.cpp \
            material.cpp \
            MyOpenGLWidget.cpp \
            objet.cpp \
+           piece.cpp \
            plan.cpp \
            scene.cpp \
+           sphere.cpp \
            main.cpp

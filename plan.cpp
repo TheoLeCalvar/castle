@@ -12,7 +12,7 @@ Plan::Plan(
 				_vao(0), _nbVertices(0)
 {
 	std::vector<float> points, normals;
-	std::vector<unsigned short> indices;
+	std::vector<unsigned int> indices;
 
 	float widthCell = width/(float)widthDivision;
 	float heightCell = height/(float)heightDivision;
@@ -68,9 +68,6 @@ Plan::Plan(
 	_nbVertices = indices.size();
 
 
-
-	
-
 	glGenBuffers(1, &_vbo_vertices);
 	glBindBuffer(GL_ARRAY_BUFFER, _vbo_vertices);
 	glBufferData(GL_ARRAY_BUFFER, points.size() * sizeof(float), points.data(), GL_STATIC_DRAW);
@@ -101,16 +98,35 @@ Plan::Plan(
 
 }
 
+Plan::Plan(GLuint vao, GLuint vbo_vertices, GLuint vbo_normals, GLuint vbo_indice, unsigned int nbVertices, Material * mat, vec3 rotation, vec3 position)
+:Objet(mat, rotation, position), _vao(vao), _vbo_vertices(vbo_vertices), _vbo_normals(vbo_normals), _vbo_indices(vbo_indice), _nbVertices(nbVertices)
+{}
+
 Plan::~Plan()
 {
-	glDeleteBuffers(1, &_vao);
-	glDeleteBuffers(1, &_vbo_vertices);
-	glDeleteBuffers(1, &_vbo_normals);
-	glDeleteBuffers(1, &_vbo_indices);
+	//Posera problème quand suppression d'un plan puis utilisation d'un plan issu d'une copie, les vaos/vbos n'existeront plus
+	// if (glIsVertexArray(_vao) == GL_TRUE)
+	// {
+	// 	glDeleteBuffers(1, &_vao);
+	// }
+	// if (glIsBuffer(_vbo_vertices) == GL_TRUE)
+	// {
+	// 	glDeleteBuffers(1, &_vbo_vertices);
+	// }
+	// if (glIsBuffer(_vbo_normals))
+	// {
+	// 	glDeleteBuffers(1, &_vbo_normals);
+	// }
+	// if (glIsBuffer(_vbo_indices))
+	// {
+	// 	glDeleteBuffers(1, &_vbo_indices);
+	// }
 }
 
-Objet * Plan::clone()
-{}
+Objet * Plan::clone() const
+{
+	return new Plan(_vao, _vbo_vertices, _vbo_normals, _vbo_indices, _nbVertices, _mat, _rotation, _position);
+}
 
 
 void Plan::draw()
@@ -128,7 +144,7 @@ void Plan::draw()
 
 	glBindVertexArray (_vao);
 
-	glDrawElements(GL_TRIANGLES, _nbVertices, GL_UNSIGNED_SHORT, 0);
+	glDrawElements(GL_TRIANGLES, _nbVertices, GL_UNSIGNED_INT, 0);
 
 	glBindVertexArray(0);	
 
