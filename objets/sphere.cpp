@@ -9,8 +9,8 @@ Sphere::Sphere(GLdouble radius, GLdouble radius2, GLint slices, GLint stacks ,Ma
 {
     m_radius = radius;
     m_radius2 = radius2;
-    m_slices = slices;
-    m_stacks = stacks;
+    m_slices = 2*slices;
+    m_stacks = 2*stacks;
     _vao=0;
 
     if (!_vao)
@@ -23,7 +23,7 @@ Sphere::Sphere(GLdouble radius, GLdouble radius2, GLint slices, GLint stacks ,Ma
 Sphere::~Sphere()
 {}
 
-Objet * Sphere::clone() const
+Objet* Sphere::clone() const
 {}
 
 void Sphere::genVao()
@@ -40,12 +40,11 @@ void Sphere::genVao()
 
                    normals.push_back(cos(2*M_PI/m_stacks*cpttheta) * cos(2*M_PI/m_slices*cptphi));
                    points.push_back (m_radius * normals.back());
-
+                   normals.push_back(sin(2*M_PI/m_slices*cptphi));
+                   points.push_back (m_radius * normals.back());
                    normals.push_back(sin(2*M_PI/m_stacks*cpttheta)*cos(2*M_PI/m_slices*cptphi));
                    points.push_back (m_radius2 * normals.back());
 
-                   normals.push_back(sin(2*M_PI/m_slices*cptphi));
-                   points.push_back (m_radius * normals.back());
 
 
                 }
@@ -53,8 +52,8 @@ void Sphere::genVao()
 
 //remplit le tableau d'indice
 
-     for (int i=0 ; i<= m_slices ; i++){
-            for(int j =0 ; j<=m_stacks ;j++){
+     for (int i=0 ; i< m_slices ; i++){
+            for(int j =0 ; j< m_stacks ;j++){
 
             indices.push_back(j+(1+i)*m_stacks);
             indices.push_back(j+(1+i)*m_stacks+1);

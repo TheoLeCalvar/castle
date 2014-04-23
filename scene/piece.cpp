@@ -19,11 +19,17 @@ Objet * Piece::clone() const
 
 void Piece::draw()
 {
-	for(auto i: _murs)
+	// qDebug() << "Début pièce";
+
+	for(auto i: _murs){
+		// qDebug() << "Mur";
 		i->draw();
+	}
 
 	for(auto i: _objets)
 		i->draw();
+
+	// qDebug() << "Fin pièce";
 }
 
 void Piece::addWall(Plan * p)

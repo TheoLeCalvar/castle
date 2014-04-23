@@ -43,74 +43,79 @@ void	MyOpenGLWidget::initializeGL()
 
     glClearColor(0.3, 0.3, 0.3, 1.0);
 
+    glCullFace(GL_BACK);
+    glEnable(GL_CULL_FACE);
+
 
     qDebug() << QDir::current().entryList();
 
-    QOpenGLShaderProgram program;
+    // QOpenGLShaderProgram program;
 
 
-    if(!program.addShaderFromSourceFile(QOpenGLShader::Fragment, "test.frag"))
-    {
-        qFatal("Erreur de chargement du shader test.frag\nLogs : %s", program.log().toStdString().c_str());
-    }
+    // if(!program.addShaderFromSourceFile(QOpenGLShader::Fragment, "test.frag"))
+    // {
+    //     qFatal("Erreur de chargement du shader test.frag\nLogs : %s", program.log().toStdString().c_str());
+    // }
 
-    if(!program.addShaderFromSourceFile(QOpenGLShader::Vertex, "test.vert"))
-    {
-        qFatal("Erreur de chargement du shader test.vert\nLogs : %s", program.log().toStdString().c_str());
-    }
-
-
-    shader_programme = program.programId();
+    // if(!program.addShaderFromSourceFile(QOpenGLShader::Vertex, "test.vert"))
+    // {
+    //     qFatal("Erreur de chargement du shader test.vert\nLogs : %s", program.log().toStdString().c_str());
+    // }
 
 
-    glLinkProgram (shader_programme);
-    glUseProgram (shader_programme);
+    // shader_programme = program.programId();
 
 
-    Material *mat  = new Material();
-    mat->set(shader_programme);
+    // glLinkProgram (shader_programme);
+    // glUseProgram (shader_programme);
 
-    _cam = new Camera();
-    cube = new Cube();
+
+    // Material *mat  = new Material();
+    // mat->set(shader_programme);
+
+ //    cube = new Cube();
 
     
-    plan = new Plan(10, 10, 40, 20, std::vector<QRectF> {QRectF(1, 1, 1, 1), QRectF(4,2,1,2)}, mat);
-    plan2 = new Plan(40, 40, 400, 200, std::vector<QRectF>(), NULL, vec3(), vec3(0, 0, 4));
+ //    plan = new Plan(10, 10, 40, 20, std::vector<QRectF> {QRectF(1, 1, 1, 1), QRectF(4,2,1,2)}, mat);
+ //    plan2 = new Plan(40, 40, 400, 200, std::vector<QRectF>(), NULL, vec3(), vec3(0, 0, 4));
+
+ //    sphere = new Sphere(5, 5, 7, 27);
+
+    scene = new Scene("scene.xml");
 
 
-	model_loc =        glGetUniformLocation(shader_programme, "model");
-    view_loc =         glGetUniformLocation(shader_programme, "view");
-    projection_loc =   glGetUniformLocation(shader_programme, "projection");
+	// model_loc =        glGetUniformLocation(shader_programme, "model");
+ //    view_loc =         glGetUniformLocation(shader_programme, "view");
+ //    projection_loc =   glGetUniformLocation(shader_programme, "projection");
 
-    _cam->setProjection(view_loc);
-    cube->modelLocation(model_loc);
-    cube->shaderId(shader_programme);
-    plan->modelLocation(model_loc);
-    plan->shaderId(shader_programme);
-    plan2->modelLocation(model_loc);
-    plan2->shaderId(shader_programme);
+ //    cube->modelLocation(model_loc);
+ //    cube->shaderId(shader_programme);
+ //    plan->modelLocation(model_loc);
+ //    plan->shaderId(shader_programme);
+ //    plan2->modelLocation(model_loc);
+ //    plan2->shaderId(shader_programme);
 
+ //    sphere->modelLocation(model_loc);
+ //    sphere->shaderId(shader_programme);
 
-
-    // Scene s("scene.xml");
 
 }
 
 
 void	MyOpenGLWidget::paintGL()
 {
-	static float angle = 0;
-
-	mat4 rotation = YrotationMatrix(angle);
-	mat4 transUp = translationMatrix(0.0f, 1.0f, 0.0f);
-	mat4 transUpTotal(1);
-
-
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	_cam->display();
 
 
+/* 
+    static float angle = 0;
+
+    mat4 rotation = YrotationMatrix(angle);
+    mat4 transUp = translationMatrix(0.0f, 1.0f, 0.0f);
+    mat4 transUpTotal(1);
+
+	_camera->display();
 
 
 	for (int i = 0; i < 8; ++i)
@@ -131,28 +136,29 @@ void	MyOpenGLWidget::paintGL()
         popMatrix();   
 	    
 	}
-
-
     plan2->draw();
 
 
     openGL_check_error();
 
-
-
-
-
+    sphere->draw();
 
 
 	angle += 1;
+//*/
+
+    scene->draw();
+
+    openGL_check_error();
 }
 
 void	MyOpenGLWidget::resizeGL(int width, int height)
 {
-    mat4 projection = projectionMatrix(70.0, width/(float)height, 0.1f, 100.0f);
-    glUniformMatrix4fv(projection_loc, 1, GL_FALSE, projection.m);
+
+    scene->setProjectionMatrix(projectionMatrix(70.0, width/(float)height, 0.1f, 100.0f));
 
     glViewport(0,0, width, height);
+
 }
 
 void    MyOpenGLWidget::keyPressEvent(QKeyEvent * event)
@@ -173,32 +179,32 @@ void    MyOpenGLWidget::keyPressEvent(QKeyEvent * event)
 
         case Qt::Key_Up:
         case Qt::Key_Z:
-            _cam->_avant_presse = true;
+            scene->_camera->_avant_presse = true;
             goto action;
 
         case Qt::Key_Down:
         case Qt::Key_S:
-            _cam->_arriere_presse = true;
+            scene->_camera->_arriere_presse = true;
             goto action;
 
         case Qt::Key_Right:
         case Qt::Key_D:
-            _cam->_droite_presse = true;
+            scene->_camera->_droite_presse = true;
             goto action;
 
         case Qt::Key_Left:
         case Qt::Key_Q:
-            _cam->_gauche_presse = true;
+            scene->_camera->_gauche_presse = true;
             goto action;
 
         case Qt::Key_PageUp:
         case Qt::Key_A:
-            _cam->_haut_presse = true;
+            scene->_camera->_haut_presse = true;
             goto action;
 
         case Qt::Key_PageDown:
         case Qt::Key_W:
-            _cam->_bas_presse = true;
+            scene->_camera->_bas_presse = true;
             goto action;
 
         case Qt::Key_F1:
@@ -208,7 +214,28 @@ void    MyOpenGLWidget::keyPressEvent(QKeyEvent * event)
             glPolygonMode(GL_FRONT_AND_BACK, wire ? GL_LINE : GL_FILL);
 
             wire = !wire;
+
+            goto action;
         }
+
+        case Qt::Key_F2:
+        {
+            static bool cullface = false;
+
+            if (cullface)  
+            {
+                glEnable(GL_CULL_FACE);
+            }
+            else
+            {
+                glDisable(GL_CULL_FACE);
+            }
+
+            cullface = !cullface;
+
+            goto action;
+        }
+
     }
 
 
@@ -225,32 +252,32 @@ void    MyOpenGLWidget::keyReleaseEvent(QKeyEvent * event)
     {
         case Qt::Key_Up:
         case Qt::Key_Z:
-            _cam->_avant_presse = false;
+            scene->_camera->_avant_presse = false;
             goto action;
 
         case Qt::Key_Down:
         case Qt::Key_S:
-            _cam->_arriere_presse = false;
+            scene->_camera->_arriere_presse = false;
             goto action;
 
         case Qt::Key_Right:
         case Qt::Key_D:
-            _cam->_droite_presse = false;
+            scene->_camera->_droite_presse = false;
             goto action;
 
         case Qt::Key_Left:
         case Qt::Key_Q:
-            _cam->_gauche_presse = false;
+            scene->_camera->_gauche_presse = false;
             goto action;
 
         case Qt::Key_PageUp:
         case Qt::Key_A:
-            _cam->_haut_presse = false;
+            scene->_camera->_haut_presse = false;
             goto action;
 
         case Qt::Key_PageDown:
         case Qt::Key_W:
-            _cam->_bas_presse = false;
+            scene->_camera->_bas_presse = false;
             goto action;
     }
 
@@ -264,7 +291,7 @@ void    MyOpenGLWidget::mouseMoveEvent(QMouseEvent * event)
 {
     if (_captureMouse)
     {
-        _cam->mouseMoveEvent(event->x(), event->y(), width(), height());
+        scene->_camera->mouseMoveEvent(event->x(), event->y(), width(), height());
 
         QPoint glob = mapToGlobal(QPoint(width()/2,height()/2));
         QCursor::setPos(glob);

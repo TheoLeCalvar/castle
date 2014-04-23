@@ -25,6 +25,8 @@ HEADERS += camera.hpp \
            objets/objet.hpp \
            scene/scene.hpp \
            objets/sphere.hpp
+
+           
 SOURCES += camera.cpp \
            objets/cube.cpp \
            objets/donuts.cpp \

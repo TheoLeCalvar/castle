@@ -37,6 +37,8 @@ private:
 	std::map<const QString, Material *>					_materials;
 	std::map<const QString, QOpenGLShaderProgram *> 	_shaders;
 
+	mat4 												_projectionMatrix;
+
 
 public:
 	Camera *									_camera;
@@ -49,6 +51,8 @@ public:
 	~Scene();
 
 	void draw();
+
+	void 		setProjectionMatrix(const mat4 &);
 
 	Objet * 	getObjet(const QString & name);
 	Light * 	getLight(const QString & name);

@@ -14,10 +14,8 @@ private:
     GLint m_slices;
     GLint m_stacks;
 
-    GLsizei nbvertex;
-
-
     void genVao();
+    GLsizei nbvertex;
 
 public:
     //rayon horizontal, rayon vertical, nb division vertical, nb division horizontal

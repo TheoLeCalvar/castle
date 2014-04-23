@@ -34,7 +34,6 @@ class MyOpenGLWidget: public QGLWidget, protected QOpenGLFunctions_3_2_Core
 Q_OBJECT
 
 private:
-	Camera * 	_cam;
 	GLuint 		shader_programme;
 
 	GLuint 		model_loc;
@@ -48,6 +47,7 @@ private:
 	Plan *  	plan2;
 	Sphere * 	sphere;
 	Donuts * 	donuts;
+	Scene * 	scene;
 
 
 public:

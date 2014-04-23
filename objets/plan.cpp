@@ -132,7 +132,6 @@ Objet * Plan::clone() const
 void Plan::draw()
 {
 	Objet::draw();
-	
 
 	mat4 model = currentMatrix();
 
@@ -147,6 +146,4 @@ void Plan::draw()
 	glDrawElements(GL_TRIANGLES, _nbVertices, GL_UNSIGNED_INT, 0);
 
 	glBindVertexArray(0);	
-
-	openGL_check_error();
 }

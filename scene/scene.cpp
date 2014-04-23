@@ -30,11 +30,11 @@ Scene::Scene(const QString & fileName):
 
 	QDomElement materiaux, lumieres, camera, pieces, shaders;
 
-	camera = root.firstChildElement("camera");
-	materiaux = root.firstChildElement("materiaux");
-	lumieres = root.firstChildElement("lumieres");
-	pieces = root.firstChildElement("pieces");
-	shaders = root.firstChildElement("shaders");
+	camera 		= root.firstChildElement("camera");
+	materiaux 	= root.firstChildElement("materiaux");
+	lumieres 	= root.firstChildElement("lumieres");
+	pieces 		= root.firstChildElement("pieces");
+	shaders 	= root.firstChildElement("shaders");
 
 	QDomElement camera_position = camera.firstChild().toElement();
 
@@ -78,12 +78,33 @@ Scene::~Scene()
 
 void 	Scene::draw()
 {
+	GLint active_shader;
+	GLuint projection_location, view_location;
+	glGetIntegerv(GL_CURRENT_PROGRAM, &active_shader);
+
+	projection_location = glGetUniformLocation(active_shader, "projection");
+	view_location = glGetUniformLocation(active_shader, "view");
+
+	_camera->setProjection(view_location);
+	glUniformMatrix4fv(projection_location, 1, GL_FALSE, _projectionMatrix.m);
+
+
+
 	std::map<const QString, Objet *>::iterator i;
+
+
+	_camera->display();
 
 	for (i = _objets.begin(); i != _objets.end(); ++i)
 	{
 		i->second->draw();
+		openGL_check_error();
 	}
+}
+
+void 		Scene::setProjectionMatrix(const mat4 & m)
+{
+	_projectionMatrix = m;
 }
 
 Objet * 	Scene::getObjet(const QString & name)
@@ -115,7 +136,6 @@ GLuint 		Scene::getShader(const QString & name)
 
 	return (res != _shaders.end()) ? res->second->programId() : 0;
 }
-
 
 void 	Scene::addMaterial(const QString & name, Material * v)
 {
@@ -392,11 +412,14 @@ void 	Scene::loadPieces(const QDomElement & dom)
 
 		if (!murs.isNull())
 		{
+
 			QDomElement mur = murs.firstChildElement("mur");
 			Plan * plan = NULL;
 
 			while(!mur.isNull())
 			{
+				qDebug() << "Un mur !";
+
 				QString cote = mur.attribute("cote");
 				QString material = mur.attribute("mat");
 				std::vector<QRectF> fenetres;
@@ -439,15 +462,17 @@ void 	Scene::loadPieces(const QDomElement & dom)
 				}
 				else if (cote == "droite")
 				{
-					plan = new Plan(length, height, 10*length, 10*height, fenetres, getMaterial(material), vec3(0.0f, 90.0f, 0.0f), vec3(width, 0.0f, 0.0f));	
+					plan = new Plan(length, height, 10*length, 10*height, fenetres, getMaterial(material), vec3(0.0f, 90.0f, 0.0f), vec3(0.0f, 0.0f, length));	
 				}
 				else if (cote == "gauche")
 				{
-					plan = new Plan(length, height, 10*length, 10*height, fenetres, getMaterial(material), vec3(0.0f, -90.0f, 0.0f), vec3(0.0f, 0.0f, length));
+					plan = new Plan(length, height, 10*length, 10*height, fenetres, getMaterial(material), vec3(0.0f, -90.0f, 0.0f), vec3(width, 0.0f, 0.0f));
 				}
 
 				if (plan)
 				{
+
+					plan->shaderId(shader_id);
 					dynamic_cast<Piece *>(tmp)->addWall(plan);
 
 					plan = NULL;

@@ -41,6 +41,12 @@
 					</mur>
 					<mur cote="haut" mat="Mat1" >
 					</mur>
+					<mur cote="arriere" >
+					</mur>
+					<mur cote="droite" />
+					<mur cote="gauche" >
+						<fenetre x="5" y="0" width="2" height="1" />
+					</mur>
 			</murs>
 
 			<objets>
