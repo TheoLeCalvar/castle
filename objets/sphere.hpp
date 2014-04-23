@@ -26,7 +26,6 @@ public:
 
     Objet * clone() const;
 
-   // GLuint Sphere::_vao = 0;
     void draw();
 
 };

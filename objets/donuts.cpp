@@ -59,9 +59,10 @@ void Donuts::genVao()
 
     //remplit le tableau d'indice
 
-         for (int i=0 ; i<= m_slices ; i++){
-                for(int j =0 ; j<m_stacks ;j++){
-
+         for (int i=0 ; i<= m_slices ; i++)
+         {
+            for(int j =0 ; j<m_stacks ;j++)
+            {
                 indices.push_back(j+(1+i)*m_stacks);
                 indices.push_back(j+(1+i)*m_stacks+1);
                 indices.push_back(j+(i*m_stacks));
@@ -69,10 +70,8 @@ void Donuts::genVao()
                 indices.push_back(j+(1+i)*m_stacks+1);
                 indices.push_back(j+(i*m_stacks)+1);
                 indices.push_back(j+(i*m_stacks));
-
-                }
-
-         }
+            }
+        }
 
 
 

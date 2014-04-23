@@ -11,6 +11,7 @@ Sphere::Sphere(GLdouble radius, GLdouble radius2, GLint slices, GLint stacks ,Ma
     m_radius2 = radius2;
     m_slices = 2*slices;
     m_stacks = 2*stacks;
+
     _vao=0;
 
     if (!_vao)
@@ -38,10 +39,13 @@ void Sphere::genVao()
 
                 for( int cpttheta=0 ; cpttheta<=m_stacks ; cpttheta++) {
 
-                   normals.push_back(cos(2*M_PI/m_stacks*cpttheta) * cos(2*M_PI/m_slices*cptphi));
-                   points.push_back (m_radius * normals.back());
+
+                   normals.push_back(sin(2*M_PI/m_stacks*cpttheta)*cos(2*M_PI/m_slices*cptphi));
+                   points.push_back (m_radius2 * normals.back());
+
                    normals.push_back(sin(2*M_PI/m_slices*cptphi));
                    points.push_back (m_radius * normals.back());
+
                    normals.push_back(sin(2*M_PI/m_stacks*cpttheta)*cos(2*M_PI/m_slices*cptphi));
                    points.push_back (m_radius2 * normals.back());
 
@@ -54,6 +58,24 @@ void Sphere::genVao()
 
      for (int i=0 ; i< m_slices ; i++){
             for(int j =0 ; j< m_stacks ;j++){
+
+            indices.push_back(j+(1+i)*m_stacks);
+            indices.push_back(j+(1+i)*m_stacks+1);
+            indices.push_back(j+(i*m_stacks));
+
+            indices.push_back(j+(1+i)*m_stacks+1);
+            indices.push_back(j+(i*m_stacks)+1);
+            indices.push_back(j+(i*m_stacks));
+
+            }
+
+     }
+
+
+//remplit le tableau d'indice
+
+     for (int i=0 ; i< m_slices ; i++){
+            for(int j =0 ; j<m_stacks ;j++){
 
             indices.push_back(j+(1+i)*m_stacks);
             indices.push_back(j+(1+i)*m_stacks+1);
@@ -112,7 +134,6 @@ void Sphere::draw()
 
     glBindVertexArray (_vao);
 
-    // draw points 0-3 from the currently bound VAO with current in-use shader
 
     glDrawElements (GL_TRIANGLES,nbvertex,GL_UNSIGNED_INT,0);
 
