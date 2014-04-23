@@ -19,10 +19,10 @@ vec3 Ld = vec3 (0.7, 0.7, 0.7); // dull white diffuse light colour
 vec3 La = vec3 (0.2, 0.2, 0.2); // grey ambient colour
 
 // surface reflectance
-vec3 Ks = vec3 (1.0, 1.0, 1.0); // fully reflect specular light
-vec3 Kd = vec3 (1.0, 0.5, 0.0); // orange diffuse surface reflectance
-vec3 Ka = vec3 (1.0, 1.0, 1.0); // fully reflect ambient light
-float specular_exponent = 100.0; // specular 'power'
+uniform vec3 Ks = vec3 (1.0, 1.0, 1.0); // fully reflect specular light
+uniform vec3 Kd = vec3 (1.0, 0.5, 0.0); // orange diffuse surface reflectance
+uniform vec3 Ka = vec3 (1.0, 1.0, 1.0); // fully reflect ambient light
+uniform float specular_exponent = 100.0; // specular 'power'
 
 
 void main () {
@@ -48,8 +48,8 @@ void main () {
 	vec3 Is = Ls * Ks * specular_factor; // final specular intensity
 	
 	// final colour
-	// color_out = vec4 (Is + Id + Ia, 1.0);
+	color_out = vec4 (Is + Id + Ia, 1.0);
 
-	color_out = normalize(vec4 (vertexIn.position_eye, 1.0));
+	// color_out = normalize(vec4 (vertexIn.position_eye, 1.0));
 
 }

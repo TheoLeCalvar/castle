@@ -120,7 +120,6 @@ Light * 	Scene::getLight(const QString & name)
 	auto res = _lights.find(name);
 
 	return (res != _lights.end()) ? res->second : NULL;
-
 }
 
 Material *	Scene::getMaterial(const QString & name)
@@ -135,6 +134,46 @@ GLuint 		Scene::getShader(const QString & name)
 	auto res = _shaders.find(name);
 
 	return (res != _shaders.end()) ? res->second->programId() : 0;
+}
+
+QStringList Scene::getObjetsNames() const
+{
+	QStringList list;
+
+	for(auto i : _objets)
+		list << i.first;
+
+	return list;
+}
+
+QStringList Scene::getLightsNames() const
+{
+	QStringList list;
+
+	for(auto i : _lights)
+		list << i.first;
+
+	return list;
+}
+
+QStringList Scene::getMaterialsNames() const
+{
+	QStringList list;
+
+	for(auto i : _materials)
+		list << i.first;
+
+	return list;
+}
+
+QStringList Scene::getShadersNames() const
+{
+	QStringList list;
+
+	for(auto i : _shaders)
+		list << i.first;
+
+	return list;
 }
 
 void 	Scene::addMaterial(const QString & name, Material * v)
@@ -446,27 +485,27 @@ void 	Scene::loadPieces(const QDomElement & dom)
 
 				if (cote == "avant")
 				{
-					plan = new Plan(width, height, 10*width, 10*height, fenetres, getMaterial(material), vec3(0.0f, 180.0f, 0.0f), vec3(width, 0.0f, length));
+					plan = new Plan(width, height, 20, 20, fenetres, getMaterial(material), vec3(0.0f, 180.0f, 0.0f), vec3(width, 0.0f, length));
 				}
 				else if (cote == "arriere")
 				{
-					plan = new Plan(width, height, 10*width, 10*height, fenetres, getMaterial(material), vec3(), vec3());
+					plan = new Plan(width, height, 20, 20, fenetres, getMaterial(material), vec3(), vec3());
 				}
 				else if (cote == "haut")
 				{
-					plan = new Plan(width, length, 10*width, 10*length, fenetres, getMaterial(material), vec3(90.0f, 0.0f, 0.0f), vec3(0.0f, height, 0.0f));
+					plan = new Plan(width, length, 20, 20, fenetres, getMaterial(material), vec3(90.0f, 0.0f, 0.0f), vec3(0.0f, height, 0.0f));
 				}
 				else if (cote == "bas")
 				{
-					plan = new Plan(width, length, 10*width, 10*length, fenetres, getMaterial(material), vec3(-90.0f, 0.0f, 0.0f), vec3(0.0f, 0.0f, length));
+					plan = new Plan(width, length, 20, 20, fenetres, getMaterial(material), vec3(-90.0f, 0.0f, 0.0f), vec3(0.0f, 0.0f, length));
 				}
 				else if (cote == "droite")
 				{
-					plan = new Plan(length, height, 10*length, 10*height, fenetres, getMaterial(material), vec3(0.0f, 90.0f, 0.0f), vec3(0.0f, 0.0f, length));	
+					plan = new Plan(length, height, 20, 20, fenetres, getMaterial(material), vec3(0.0f, 90.0f, 0.0f), vec3(0.0f, 0.0f, length));	
 				}
 				else if (cote == "gauche")
 				{
-					plan = new Plan(length, height, 10*length, 10*height, fenetres, getMaterial(material), vec3(0.0f, -90.0f, 0.0f), vec3(width, 0.0f, 0.0f));
+					plan = new Plan(length, height, 20, 20, fenetres, getMaterial(material), vec3(0.0f, -90.0f, 0.0f), vec3(width, 0.0f, 0.0f));
 				}
 
 				if (plan)

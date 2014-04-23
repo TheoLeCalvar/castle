@@ -23,10 +23,11 @@ void 	Objet::draw()
 	}
 	
 
-	if (_mat)
-		_mat->update();
+	if (_mat){
+		_mat->update(_shaderId);
+	}
 	else if(_parent && _parent->_mat)
-		_parent->_mat->update();
+		_parent->_mat->update(_parent->_shaderId);
 }
 
 void	Objet::position(vec3 p)

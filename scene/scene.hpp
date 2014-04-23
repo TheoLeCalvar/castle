@@ -18,11 +18,13 @@
 #include <QDebug>
 #include <QFile>
 #include <QString>
+#include <QStringList>
 #include <QDomDocument>
 #include <QDomElement>
 #include <QDomNode>
 #include <QDomNodeList>
 #include <QRectF>
+
 
 
 
@@ -58,6 +60,11 @@ public:
 	Light * 	getLight(const QString & name);
 	Material *	getMaterial(const QString & name);
 	GLuint 		getShader(const QString & name);
+
+	QStringList getObjetsNames() const;
+	QStringList getLightsNames() const;
+	QStringList getMaterialsNames() const;
+	QStringList getShadersNames() const;
 
 
 	void 		addObjet(const QString & name, Objet * o);

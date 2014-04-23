@@ -136,7 +136,7 @@ void Plan::draw()
 	mat4 model = currentMatrix();
 
 
-	model = _model * model;
+	model = model * _model;
 
 
 	glUniformMatrix4fv(_model_location, 1, GL_FALSE, model.m);

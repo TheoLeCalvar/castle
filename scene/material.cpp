@@ -3,9 +3,8 @@
 Material::Material(
 		vec4 ambient, vec4 diffuse, vec4 specular, 
 		float shininess, 
-		vec4 emissive, 
-		GLuint shader):
-	_ambient(ambient), _diffuse(diffuse), _specular(specular), _shininess(shininess), _emissive(emissive), _shader(shader)
+		vec4 emissive):
+	_ambient(ambient), _diffuse(diffuse), _specular(specular), _shininess(shininess), _emissive(emissive)
 {
 	initializeOpenGLFunctions();
 }
@@ -15,7 +14,7 @@ Material::~Material()
 
 Material * Material::clone() const
 {
-	return new Material(_ambient, _diffuse, _specular, _shininess, _emissive, _shader);
+	return new Material(_ambient, _diffuse, _specular, _shininess, _emissive);
 }
 
 void Material::set(GLenum type, vec4 value)
@@ -45,11 +44,6 @@ void Material::set(const float shininess)
 	_shininess = shininess;
 }
 
-void Material::set(GLuint shader)
-{
-	_shader = shader;
-}
-
 vec4 Material::get(GLenum type)
 {
 	switch (type)
@@ -76,15 +70,15 @@ float Material::shininess()
 	return _shininess;
 }
 
-void Material::update()
+void Material::update(GLuint shader)
 {
-	if (_shader)
+	if (shader)
 	{		
-		GLuint ambient_location = glGetUniformLocation(_shader, "Ka");
-		GLuint diffuse_location = glGetUniformLocation(_shader, "Kd");
-		GLuint specular_location = glGetUniformLocation(_shader, "Ks");
-		GLuint specular_exponnent_location = glGetUniformLocation(_shader, "specular_exponent");
-		// GLuint emissive_location = glGetUniformLocation(_shader, "Ke");
+		GLuint ambient_location = glGetUniformLocation(shader, "Ka");
+		GLuint diffuse_location = glGetUniformLocation(shader, "Kd");
+		GLuint specular_location = glGetUniformLocation(shader, "Ks");
+		GLuint specular_exponnent_location = glGetUniformLocation(shader, "specular_exponent");
+		// GLuint emissive_location = glGetUniformLocation(shader, "Ke");
 
 		glUniform3fv(ambient_location, 1, _ambient.v);
 		glUniform3fv(diffuse_location, 1, _diffuse.v);

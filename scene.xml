@@ -9,7 +9,7 @@
 	<materiaux>
 		<material nom="Mat1">
 			<ambient r="0.2" g="0.2" b="0.2" a="1.0" />
-			<diffuse r="0.8" g="0.8" b="0.8" a="1.0" />
+			<diffuse r="0.4" g="0.8" b="0.8" a="1.0" />
 			<specular r="0.8" g="0.8" b="0.8" a="1.0" s="32" />
 			<emissive r="0.0" g="0.0" b="0.0" a="0.0" />
 			<texture src="path" /> 
@@ -58,7 +58,27 @@
 				</objet>
 			</objets>
 		</piece>
-		<piece nom="piece2" >
+		<piece nom="piece2" shader="test" >
+			<dimension width="20" length="30" height="20" />
+			<position repere="world" x="10" y="3" z="20" />
+			<murs>
+				<!-- <mur cote="avant|arriere|droite|gauche|haut|bas" mat="Mat1" />  -->
+					<mur cote="avant" mat="Mat1" >
+						<fenetre x="1" y="2" width="1" height="2" />
+					</mur>
+					<mur cote="bas" mat="Mat1" >
+						<fenetre x="4" y="6" width="1" height="2" />
+					</mur>
+					<mur cote="haut" mat="Mat1" >
+						<fenetre x="2" y="3" width="1" height="2" />
+					</mur>
+					<mur cote="arriere" >
+					</mur>
+					<mur cote="droite" />
+					<mur cote="gauche" >
+						<fenetre x="5" y="0" width="2" height="1" />
+					</mur>
+			</murs>
 		</piece>
 	</pieces>
 </scene>
