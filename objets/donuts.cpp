@@ -23,9 +23,6 @@ Donuts::Donuts(GLdouble radius,GLdouble radius_donuts, GLint slices, GLint stack
 Donuts::~Donuts()
 {}
 
-Objet * Donuts::clone() const
-{}
-
 void Donuts::genVao()
 {
 
@@ -110,11 +107,14 @@ void Donuts::genVao()
 
 void Donuts::draw()
 {
+    Objet::draw(); 
+    
     mat4 model = currentMatrix();
 
     model = _model * model;
 
-    glUniformMatrix4fv(_model_location, 1, GL_FALSE, model.m);
+
+    setModelMatrix(model);
 
     glBindVertexArray (_vao);
 

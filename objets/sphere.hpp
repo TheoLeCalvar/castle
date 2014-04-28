@@ -24,8 +24,6 @@ public:
 
     ~Sphere();
 
-    Objet * clone() const;
-
     void draw();
 
 };

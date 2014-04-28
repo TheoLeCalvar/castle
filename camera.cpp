@@ -6,9 +6,8 @@ Camera::Camera( float eyeX, float eyeY, float eyeZ):
     _eye(eyeX, eyeY, eyeZ),
     _phi(0), _theta(0), _haut(0.0f,1.0f,0.0f), 
     _avant_presse(false), _arriere_presse(false), _gauche_presse(false), _droite_presse(false), _haut_presse(false), _bas_presse(false),
-    _vitesse(0.10f), _view_location(0)
+    _vitesse(0.10f)
 {
-    initializeOpenGLFunctions();
     vectorFromAngle();
 }
 
@@ -100,9 +99,7 @@ void Camera::display()
     mat4 view = viewMatrix(_eye, _center, vec3(0.0f, 1.0f, 0.0f));
 
 
-    if (_view_location)
-    {
-        glUniformMatrix4fv(_view_location, 1, GL_FALSE, view.m);
-    }
+    setViewMatrix(view);
+
 
 }

@@ -12,11 +12,6 @@ Piece::~Piece()
 		delete *i;
 }
 
-Objet * Piece::clone() const
-{
-
-}
-
 void Piece::draw()
 {
 	pushMatrix(currentMatrix() * _model);

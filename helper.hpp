@@ -261,4 +261,18 @@ template <typename charT, typename traits>
 std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits> & os, const mat4 &);
 void print(const mat4 &);
 
+
+
+/*******************************************************
+Matrices et shader
+*******************************************************/
+
+void setProjectionMatrix(mat4 projection);
+void setModelMatrix(mat4 model);
+void setViewMatrix(mat4 view);
+void setActiveShader(GLuint shader);
+GLuint getActiveShader();
+
+
+
 #endif

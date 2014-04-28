@@ -36,7 +36,7 @@ public:
 	vec4 get(GLenum type);
 	float shininess();
 
-	void update(GLuint shader);
+	void update();
 
 	void apply();
 	

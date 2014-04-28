@@ -3,12 +3,10 @@
 
 #include "helper.hpp"
 
-#include <QOpenGLFunctions_3_2_Core>
 
 
 
-
-class Camera: protected QOpenGLFunctions_3_2_Core
+class Camera
 {
 protected:
 	vec3 	 _eye;
@@ -34,7 +32,7 @@ public:
 protected:
 	float _vitesse;
 
-	GLuint _view_location;
+
 
 
 
@@ -50,8 +48,6 @@ protected:
 
 public:
 	virtual void display();
-
-	void setProjection(GLuint p){_view_location = p;}
 
 	void mouseMoveEvent(int x, int y, int width, int height);
 	

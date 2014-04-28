@@ -4,6 +4,9 @@
 #include <QSurface>
 #include "MyOpenGLWidget.hpp"
 
+#include <QString>
+#include <QDebug>
+
 
 int main(int argc, char **argv)
 {
@@ -19,7 +22,7 @@ int main(int argc, char **argv)
 
 	QGLFormat f;
 
-    f.setVersion(3, 2);
+	f.setVersion(3, 2);
 	f.setProfile(QGLFormat::CoreProfile);
 
 	MyOpenGLWidget w(f);
@@ -27,4 +30,5 @@ int main(int argc, char **argv)
 	w.show();
 
 	return app.exec();
+
 }

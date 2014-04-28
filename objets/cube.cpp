@@ -15,14 +15,6 @@ Cube::Cube(Material * mat, vec3 rotation, vec3 position)
 Cube::~Cube()
 {}
 
-Objet * Cube::clone() const
-{
-    Objet * tmp = new Cube(_mat, _rotation, _position);
-    tmp->modelLocation(_model_location);
-
-    return tmp;
-}
-
 void Cube::genVao()
 {
     float points[] = 
@@ -98,8 +90,8 @@ void Cube::draw()
 
 	model = _model * model;
 
+    setModelMatrix(model);
 
-	glUniformMatrix4fv(_model_location, 1, GL_FALSE, model.m);
 
 	glBindVertexArray (_vao);
 	// draw points 0-3 from the currently bound VAO with current in-use shader

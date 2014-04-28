@@ -12,31 +12,42 @@ OBJECTS_DIR = build
 MOC_DIR = build
 
 
+macx
+{
+  LIBS += -L/usr/local/lib
+  INCLUDEPATH += /usr/local/include/
+}
+
+LIBS += -lassimp
+
+
 # Input
 HEADERS += camera.hpp \
+           helper.hpp \
+           MyOpenGLWidget.hpp \
            objets/cube.hpp \
            objets/donuts.hpp \
-           helper.hpp \
+           objets/mesh.hpp \
+           objets/plan.hpp \
+           objets/objet.hpp \
+           objets/sphere.hpp \
            scene/light.hpp \
            scene/material.hpp \
-           MyOpenGLWidget.hpp \
-           objets/plan.hpp \
            scene/piece.hpp \
-           objets/objet.hpp \
-           scene/scene.hpp \
-           objets/sphere.hpp
+           scene/scene.hpp 
 
            
 SOURCES += camera.cpp \
+           helper.cpp \
+           MyOpenGLWidget.cpp \
            objets/cube.cpp \
            objets/donuts.cpp \
-           helper.cpp \
+           objets/mesh.cpp \
+           objets/objet.cpp \
+           objets/plan.cpp \
+           objets/sphere.cpp \
            scene/light.cpp \
            scene/material.cpp \
-           MyOpenGLWidget.cpp \
-           objets/objet.cpp \
            scene/piece.cpp \
-           objets/plan.cpp \
            scene/scene.cpp \
-           objets/sphere.cpp \
            main.cpp

@@ -47,3 +47,10 @@ mardi 23 avril
 	recherche informations pour chargement des modèles 3D assimp
 	Matériaux fonctionnels 
 	
+jeudi 24 avril
+	lecture des modèles par assimp, si modèle déjà chargé ne pas le recharger et réutiliser les vao/vbo
+
+lundi 28 avril
+	gestion des matrices des shaders centralisé dans helper
+	gestion matériaux corrigée, si nn présent appel du matériaux du parent
+	héritage des matériaux/shader

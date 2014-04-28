@@ -13,6 +13,7 @@
 #include "objet.hpp"
 #include "piece.hpp"
 
+
 #include <QOpenGLFunctions_3_2_Core>
 #include <QOpenGLShaderProgram>
 #include <QDebug>
@@ -26,8 +27,7 @@
 #include <QRectF>
 
 
-
-
+class Mesh;
 
 class Scene: protected QOpenGLFunctions_3_2_Core
 {
@@ -41,7 +41,6 @@ private:
 
 	mat4 												_projectionMatrix;
 
-
 public:
 	Camera *									_camera;
 
@@ -53,8 +52,6 @@ public:
 	~Scene();
 
 	void draw();
-
-	void 		setProjectionMatrix(const mat4 &);
 
 	Objet * 	getObjet(const QString & name);
 	Light * 	getLight(const QString & name);

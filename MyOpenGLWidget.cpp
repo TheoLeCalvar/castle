@@ -37,66 +37,19 @@ void	MyOpenGLWidget::initializeGL()
 
     qDebug("Vendor : %s\nRenderer : %s\nVersion : %s", glGetString( GL_VENDOR), glGetString(GL_RENDERER), glGetString(GL_VERSION));
     qDebug() << "Current context : " << format(); 
+    qDebug() << QDir::current().entryList();
+
 
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
 
-    glClearColor(0.3, 0.3, 0.3, 1.0);
-
     glCullFace(GL_BACK);
     glEnable(GL_CULL_FACE);
 
-
-    qDebug() << QDir::current().entryList();
-
-    // QOpenGLShaderProgram program;
-
-
-    // if(!program.addShaderFromSourceFile(QOpenGLShader::Fragment, "test.frag"))
-    // {
-    //     qFatal("Erreur de chargement du shader test.frag\nLogs : %s", program.log().toStdString().c_str());
-    // }
-
-    // if(!program.addShaderFromSourceFile(QOpenGLShader::Vertex, "test.vert"))
-    // {
-    //     qFatal("Erreur de chargement du shader test.vert\nLogs : %s", program.log().toStdString().c_str());
-    // }
-
-
-    // shader_programme = program.programId();
-
-
-    // glLinkProgram (shader_programme);
-    // glUseProgram (shader_programme);
-
-
-    // Material *mat  = new Material();
-    // mat->set(shader_programme);
-
- //    cube = new Cube();
-
-    
- //    plan = new Plan(10, 10, 40, 20, std::vector<QRectF> {QRectF(1, 1, 1, 1), QRectF(4,2,1,2)}, mat);
- //    plan2 = new Plan(40, 40, 400, 200, std::vector<QRectF>(), NULL, vec3(), vec3(0, 0, 4));
-
- //    sphere = new Sphere(5, 5, 7, 27);
+    glClearColor(0.3, 0.3, 0.3, 1.0);
+   
 
     scene = new Scene("scene.xml");
-
-
-	// model_loc =        glGetUniformLocation(shader_programme, "model");
- //    view_loc =         glGetUniformLocation(shader_programme, "view");
- //    projection_loc =   glGetUniformLocation(shader_programme, "projection");
-
- //    cube->modelLocation(model_loc);
- //    cube->shaderId(shader_programme);
- //    plan->modelLocation(model_loc);
- //    plan->shaderId(shader_programme);
- //    plan2->modelLocation(model_loc);
- //    plan2->shaderId(shader_programme);
-
- //    sphere->modelLocation(model_loc);
- //    sphere->shaderId(shader_programme);
 
 
 }
@@ -104,60 +57,30 @@ void	MyOpenGLWidget::initializeGL()
 
 void	MyOpenGLWidget::paintGL()
 {
+    QElapsedTimer timer;
+    timer.start();
+
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-
-
-/* 
-    static float angle = 0;
-
-    mat4 rotation = YrotationMatrix(angle);
-    mat4 transUp = translationMatrix(0.0f, 1.0f, 0.0f);
-    mat4 transUpTotal(1);
-
-	_camera->display();
-
-
-	for (int i = 0; i < 8; ++i)
-	{
-	    mat4 model = translationMatrix(1.5f, 0.0f, 0.0f);
-	    model = Yrotate(model, i * 45);         
-
-	    model = rotation * transUpTotal * model;
-
-	    transUpTotal *= transUp;
-
-        pushMatrix(model);
-
-
-            cube->draw();   
-            plan->draw(); 
-
-        popMatrix();   
-	    
-	}
-    plan2->draw();
-
-
-    openGL_check_error();
-
-    sphere->draw();
-
-
-	angle += 1;
-//*/
 
     scene->draw();
 
     openGL_check_error();
+
+
+    if (timer.elapsed() > 1000/16)
+    {
+        qDebug() << "Moins de 60 fps !";
+        qDebug() << "Elapsed time : " << timer.nsecsElapsed();
+    }
 }
 
 void	MyOpenGLWidget::resizeGL(int width, int height)
 {
 
-    scene->setProjectionMatrix(projectionMatrix(70.0, width/(float)height, 0.1f, 100.0f));
-
     glViewport(0,0, width, height);
+
+    setProjectionMatrix(projectionMatrix(70.0, width/(float)height, 0.1f, 100.0f));
 
 }
 

@@ -14,6 +14,24 @@
 			<emissive r="0.0" g="0.0" b="0.0" a="0.0" />
 			<texture src="path" /> 
 		</material>
+		<material nom="Mat2">
+			<ambient r="0.2" g="0.2" b="0.2" a="1.0" />
+			<diffuse r="0.8" g="0.8" b="0.2" a="1.0" />
+			<specular r="0.8" g="0.8" b="0.8" a="1.0" s="32" />
+			<emissive r="0.0" g="0.0" b="0.0" a="0.0" /> 
+		</material>
+		<material nom="Mat3">
+			<ambient r="0.2" g="0.2" b="0.2" a="1.0" />
+			<diffuse r="0.8" g="0.2" b="0.8" a="1.0" />
+			<specular r="0.8" g="0.0" b="0.2" a="1.0" s="32" />
+			<emissive r="0.0" g="0.0" b="0.0" a="0.0" /> 
+		</material>
+		<material nom="neutre">
+			<ambient r="0.2" g="0.2" b="0.2" a="1.0" />
+			<diffuse r="0.8" g="0.8" b="0.8" a="1.0" />
+			<specular r="0.8" g="0.8" b="0.8" a="1.0" s="32" />
+			<emissive r="0.0" g="0.0" b="0.0" a="0.0" /> 
+		</material>
 	</materiaux>
 
 	<lumieres>
@@ -27,21 +45,20 @@
 	</shaders>
 
 	<pieces>
-		<piece nom="pièce1" shader="test">
+		<piece nom="pièce1" shader="test" mat="Mat1">
 			<dimension width="12" length="10" height="10" />
 			<position repere="world" x="0" y="0" z="0" />
 			<murs>
-				<!-- <mur cote="avant|arriere|droite|gauche|haut|bas" mat="Mat1" />  -->
-					<mur cote="avant" mat="Mat1" >
+					<mur cote="avant" mat="Mat2" >
 						<fenetre x="2" y="3" width="1" height="2" />
 					</mur>
-					<mur cote="bas" mat="Mat1" >
+					<mur cote="bas" mat="Mat2" >
 						<fenetre x="1" y="2" width="1" height="2" />
 						<fenetre x="4" y="6" width="1" height="2" />
 					</mur>
-					<mur cote="haut" mat="Mat1" >
+					<mur cote="haut" mat="Mat2" >
 					</mur>
-					<mur cote="arriere" >
+					<mur cote="arriere" mat="Mat3" >
 					</mur>
 					<mur cote="droite" />
 					<mur cote="gauche" >
@@ -50,26 +67,34 @@
 			</murs>
 
 			<objets>
-				<objet nom="objet1" mat="Mat2" modele="chaise" Xrot="12" Yrot="3" Zrot="0" >
-					<position x="12" y="1" z="0" />
+				<objet nom="objet1" mat="Mat1" modele="dragon_vrip.ply" Xrot="90" Yrot="90" Zrot="0" >
+					<position x="5" y="7" z="0" />
 				</objet>
-				<objet nom="objet2" mat="Mat2" modele="lavabo" >
+
+				<objet nom="objet2" mat="Mat2" modele="dragon_vrip.ply" Xrot="0" Yrot="90" Zrot="0" >
+					<position x="0" y="0" z="0" />
+				</objet>
+
+				<objet nom="objet3" mat="Mat3" modele="susanne.obj" >
+					<position x="1" y="5" z="7" />
+				</objet>
+
+<!-- 				<objet nom="objet2" mat="Mat2" modele="lavabo" >
 					<position relatif="objet1" x="1" y="5" z="0" />
-				</objet>
+				</objet> -->
 			</objets>
 		</piece>
-		<piece nom="piece2" shader="test" >
+		<piece nom="piece2" shader="test" mat="Mat2">
 			<dimension width="20" length="30" height="20" />
 			<position repere="world" x="10" y="3" z="20" />
 			<murs>
-				<!-- <mur cote="avant|arriere|droite|gauche|haut|bas" mat="Mat1" />  -->
-					<mur cote="avant" mat="Mat1" >
+					<mur cote="avant" mat="Mat2" >
 						<fenetre x="1" y="2" width="1" height="2" />
 					</mur>
 					<mur cote="bas" mat="Mat1" >
 						<fenetre x="4" y="6" width="1" height="2" />
 					</mur>
-					<mur cote="haut" mat="Mat1" >
+					<mur cote="haut" mat="Mat2" >
 						<fenetre x="2" y="3" width="1" height="2" />
 					</mur>
 					<mur cote="arriere" >

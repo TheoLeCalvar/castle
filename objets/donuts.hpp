@@ -24,7 +24,6 @@ public:
 
     ~Donuts();
 
-    Objet * clone() const;
 
     void draw();
 
