@@ -73,13 +73,13 @@ void	MyOpenGLWidget::initializeGL()
     // Material *mat  = new Material();
     // mat->set(shader_programme);
 
- //    cube = new Cube();
+     dodo = new Donuts();
 
     
  //    plan = new Plan(10, 10, 40, 20, std::vector<QRectF> {QRectF(1, 1, 1, 1), QRectF(4,2,1,2)}, mat);
  //    plan2 = new Plan(40, 40, 400, 200, std::vector<QRectF>(), NULL, vec3(), vec3(0, 0, 4));
 
- //    sphere = new Sphere(5, 5, 7, 27);
+     dodo = new Donuts(5, 5, 7, 27);
 
     scene = new Scene("scene.xml");
 
@@ -141,12 +141,12 @@ void	MyOpenGLWidget::paintGL()
 
     openGL_check_error();
 
-    sphere->draw();
+    dodo->draw();
 
 
 	angle += 1;
 //*/
-
+    dodo->draw();
     scene->draw();
 
     openGL_check_error();

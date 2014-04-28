@@ -24,7 +24,8 @@ HEADERS += camera.hpp \
            scene/piece.hpp \
            objets/objet.hpp \
            scene/scene.hpp \
-           objets/sphere.hpp
+           objets/sphere.hpp \
+    mainwindows.hpp
 
            
 SOURCES += camera.cpp \
@@ -39,4 +40,5 @@ SOURCES += camera.cpp \
            objets/plan.cpp \
            scene/scene.cpp \
            objets/sphere.cpp \
-           main.cpp
+           main.cpp \
+    mainwindows.cpp

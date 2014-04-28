@@ -47,7 +47,7 @@ private:
 	Plan * 		plan;
 	Plan *  	plan2;
 	Sphere * 	sphere;
-	Donuts * 	donuts;
+    Donuts * 	dodo;
 	Scene * 	scene;
 
 

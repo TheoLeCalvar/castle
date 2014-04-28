@@ -2,7 +2,7 @@
 #include <QDir>
 #include <QGLFormat>
 #include <QSurface>
-#include "MyOpenGLWidget.hpp"
+#include "mainwindows.hpp"
 
 
 int main(int argc, char **argv)
@@ -15,16 +15,11 @@ int main(int argc, char **argv)
 		dir.cd("Resources");
 	#endif
 
-	QDir::setCurrent(dir.absolutePath());
 
-	QGLFormat f;
+        MainWindow window;
+        window.show();
+        return app.exec();
 
-    f.setVersion(3, 2);
-	f.setProfile(QGLFormat::CoreProfile);
-
-	MyOpenGLWidget w(f);
-
-	w.show();
 
 	return app.exec();
 }
