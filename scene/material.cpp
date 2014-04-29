@@ -1,21 +1,23 @@
 #include "material.hpp"
 
+#include <QDebug>
+
+std::map<const QString, QOpenGLTexture *> Material::_texturesLoaded;
+
 Material::Material(
 		vec4 ambient, vec4 diffuse, vec4 specular, 
 		float shininess, 
-		vec4 emissive):
-	_ambient(ambient), _diffuse(diffuse), _specular(specular), _shininess(shininess), _emissive(emissive)
+		vec4 emissive,
+		const QString & texFile):
+	_ambient(ambient), _diffuse(diffuse), _specular(specular), _shininess(shininess), _emissive(emissive), _texture(0)
 {
 	initializeOpenGLFunctions();
+
+	set(texFile);
 }
 
 Material::~Material()
 {}
-
-Material * Material::clone() const
-{
-	return new Material(_ambient, _diffuse, _specular, _shininess, _emissive);
-}
 
 void Material::set(GLenum type, vec4 value)
 {
@@ -44,6 +46,29 @@ void Material::set(const float shininess)
 	_shininess = shininess;
 }
 
+void Material::set(const QString & texFile)
+{
+	if (texFile != "")
+	{
+		auto res = _texturesLoaded.find(texFile);
+
+		if (res != _texturesLoaded.end())
+		{
+			_texture = res->second;
+			qDebug() << "Texture found";
+		}
+		else
+		{
+			//inverse l'image sur les y pour l'avoir dans le sens intuitif
+			_texture = new QOpenGLTexture(QImage(texFile).mirrored());
+
+			qDebug() << "Texture loaded" << _texture;
+
+			_texturesLoaded.insert(std::make_pair(texFile, _texture));
+		}
+	}	
+}
+
 vec4 Material::get(GLenum type)
 {
 	switch (type)
@@ -65,9 +90,14 @@ vec4 Material::get(GLenum type)
 	}
 }
 
-float Material::shininess()
+float Material::shininess() const
 {
 	return _shininess;
+}
+
+bool Material::hasTexture() const
+{
+	return (_texture != NULL);
 }
 
 void Material::update()
@@ -85,5 +115,11 @@ void Material::update()
 	glUniform3fv(specular_location, 1, _specular.v);
 	glUniform1f(specular_exponnent_location, _shininess);
 	// glUniform3fv(emissive_location, 1, _emissive.v);
+
+	if (_texture)
+	{
+		// qDebug() << _texture;
+		glBindTexture(GL_TEXTURE_2D, _texture->textureId());
+	}
 	
 }

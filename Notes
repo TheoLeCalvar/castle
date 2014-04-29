@@ -54,3 +54,7 @@ lundi 28 avril
 	gestion des matrices des shaders centralisé dans helper
 	gestion matériaux corrigée, si nn présent appel du matériaux du parent
 	héritage des matériaux/shader
+
+mardi 29 avril
+	gestion de plusieurs lumières, voir si performant
+	début gestion texture

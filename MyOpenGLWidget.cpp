@@ -46,6 +46,8 @@ void	MyOpenGLWidget::initializeGL()
     glCullFace(GL_BACK);
     glEnable(GL_CULL_FACE);
 
+    glActiveTexture(GL_TEXTURE0);
+
     glClearColor(0.3, 0.3, 0.3, 1.0);
    
 

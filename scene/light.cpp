@@ -1,26 +1,24 @@
 #include "light.hpp"
 
+#include <QDebug>
+
+vec3 Light::_ambient;
+
 Light::Light(
 	vec3 position, 
-	vec3 ambient, 
 	vec3 diffuse, 
-	vec3 specular, 
-	GLuint shader)
+	vec3 specular,
+	char number)
 	:
-	_position(position), _ambient(ambient), _diffuse(diffuse), _specular(specular), _shader(shader)
+	_position(position), _diffuse(diffuse), _specular(specular), _lightNum(number)
 {
 	initializeOpenGLFunctions();
+
+
 }
 
 Light::~Light()
 {}
-
-
-Light * Light::clone() const
-{
-	return new Light(_position, _ambient, _diffuse, _specular, _shader);
-}
-
 
 void Light::set(GLenum type, vec3 value)
 {
@@ -37,27 +35,43 @@ void Light::set(GLenum type, vec3 value)
 		case GL_SPECULAR:
 			_specular = value;
 			break;
+
+		case GL_POSITION:
+			_position = value;
+			break;
 	}
 }
 
-void Light::set(GLuint shader)
+void Light::setNumber(char num)
 {
-	_shader = shader;
+	_lightNum = num;
 }
 
 
 void Light::update()
 {
-	if (_shader)
-	{
-		GLuint ambient_location = glGetUniformLocation(_shader, "ambient_light");
-		GLuint diffuse_location = glGetUniformLocation(_shader, "diffuse_light");
-		GLuint specular_location = glGetUniformLocation(_shader, "specular_light");
-		GLuint position_location = glGetUniformLocation(_shader, "position_light");
+	GLuint 	shader = getActiveShader();
+	char	name[] = "Lights[0].Ld";
+	char 	enable[] = "enabledLights[0]";
+	//modification du 0 pour avoir le bon indice
+	enable[14] += _lightNum;
+	name[7] += _lightNum;
 
-		glUniform3fv(ambient_location, 1, _ambient.v);
-		glUniform3fv(diffuse_location, 1, _diffuse.v);
-		glUniform3fv(specular_location, 1, _specular.v);
-		glUniform3fv(position_location, 1, _position.v);
-	}
+	GLint enabled_location = glGetUniformLocation(shader, enable);
+	GLint ambient_location = glGetUniformLocation(shader, "La");
+	GLint diffuse_location = glGetUniformLocation(shader, name);
+
+	name[11] = 's';
+	GLint specular_location = glGetUniformLocation(shader, name);
+
+	name[11] = 'p';
+	GLint position_location = glGetUniformLocation(shader, name);
+
+
+	glUniform1i(enabled_location, 1);
+	glUniform3fv(ambient_location, 1, _ambient.v);
+	glUniform3fv(diffuse_location, 1, _diffuse.v);
+	glUniform3fv(specular_location, 1, _specular.v);
+	glUniform3fv(position_location, 1, _position.v);
+
 }

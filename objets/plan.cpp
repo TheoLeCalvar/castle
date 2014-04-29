@@ -11,7 +11,7 @@ Plan::Plan(
 			:	Objet(mat, rotation, position), 
 				_vao(0), _nbVertices(0)
 {
-	std::vector<float> points, normals;
+	std::vector<float> points, normals, texCoord;
 	std::vector<unsigned int> indices;
 
 	float widthCell = width/(float)widthDivision;
@@ -29,6 +29,9 @@ Plan::Plan(
 			normals.push_back(0.0f);
 			normals.push_back(0.0f);
 			normals.push_back(1.0f);
+
+			texCoord.push_back(j * 1/(float)widthDivision);
+			texCoord.push_back(i * 1/(float)heightDivision);
 
 		}
 	}
@@ -80,6 +83,10 @@ Plan::Plan(
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _vbo_indices);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, _nbVertices * sizeof(unsigned int), indices.data(), GL_STATIC_DRAW);
 
+	glGenBuffers(1, &_vbo_texCoord);
+	glBindBuffer(GL_ARRAY_BUFFER, _vbo_texCoord);
+	glBufferData(GL_ARRAY_BUFFER, texCoord.size() * sizeof(float), texCoord.data(), GL_STATIC_DRAW);
+
 
 	glGenVertexArrays (1, &_vao);
     glBindVertexArray (_vao);
@@ -90,6 +97,12 @@ Plan::Plan(
     glEnableVertexAttribArray (1);
     glBindBuffer (GL_ARRAY_BUFFER, _vbo_normals);
     glVertexAttribPointer (1, 3, GL_FLOAT, GL_FALSE, 0, NULL);
+
+	glEnableVertexAttribArray (2);
+    glBindBuffer (GL_ARRAY_BUFFER, _vbo_texCoord);
+    glVertexAttribPointer (2, 2, GL_FLOAT, GL_FALSE, 0, NULL);
+
+
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _vbo_indices);
 

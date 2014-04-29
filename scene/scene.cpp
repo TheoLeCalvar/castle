@@ -82,10 +82,15 @@ void 	Scene::draw()
 {
 	_camera->display();
 
-
 	for(auto i : _objets)
 	{
 		i.second->draw();
+		openGL_check_error();
+	}
+
+	for(auto i : _lights)
+	{
+		i.second->update();
 		openGL_check_error();
 	}
 
@@ -275,9 +280,7 @@ void 	Scene::loadMaterials(const QDomElement & dom)
 					{
 						path = var2.attribute("src", "");
 
-
-
-						qDebug() << "Texture" << "TODO !";
+						tmp->set(path);
 					}
 				}
 				
@@ -299,8 +302,10 @@ void 	Scene::loadLights(const QDomElement & dom)
 	{
 		Light * tmp = new Light;
 		QString nom = light.attribute("nom"), mat = light.attribute("mat");
-		std::map<const QString, Material *>::const_iterator res = _materials.find(mat);
+		int lightNum = light.attribute("num", "0").toInt();
+		auto res = _materials.find(mat);
 
+		tmp->setNumber(lightNum);
 		
 		qDebug() << light.attribute("nom");
 
@@ -312,36 +317,36 @@ void 	Scene::loadLights(const QDomElement & dom)
 		}
 
 
-			QDomNode var = light.firstChild();
+		QDomNode var = light.firstChild();
 
 
-			while(!var.isNull())
-			{
-				float x, y, z;
-				QString repere, path;
+		while(!var.isNull())
+		{
+			float x, y, z;
+			QString repere, path;
 
-				if (var.isElement())
-				{	
-					QDomElement var2 = var.toElement();
+			if (var.isElement())
+			{	
+				QDomElement var2 = var.toElement();
 
-					if (var2.tagName() == "position")
-					{
-						x = var2.attribute("x", "0").toFloat();
-						y = var2.attribute("y", "0").toFloat();
-						z = var2.attribute("z", "0").toFloat();
-						repere = var2.attribute("repere", "world");
+				if (var2.tagName() == "position")
+				{
+					x = var2.attribute("x", "0").toFloat();
+					y = var2.attribute("y", "0").toFloat();
+					z = var2.attribute("z", "0").toFloat();
+					repere = var2.attribute("repere", "world");
 
-						qDebug() << "Repere a gerer";
+					qDebug() << "Repere a gerer " << x << y << z;
 
-						tmp->set(GL_POSITION, vec3(x, y, z));
+					tmp->set(GL_POSITION, vec3(x, y, z));
 
-						qDebug() << "Position";
+					qDebug() << "Position";
 
-						break;
-					}
+					break;
 				}
-				var = var.nextSibling();
 			}
+			var = var.nextSibling();
+		}
 
 		addLight(nom, tmp);
 
