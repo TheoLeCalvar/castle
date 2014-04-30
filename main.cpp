@@ -4,6 +4,9 @@
 #include <QSurface>
 #include "mainwindows.hpp"
 
+#include <QString>
+#include <QDebug>
+
 
 int main(int argc, char **argv)
 {
@@ -21,5 +24,5 @@ int main(int argc, char **argv)
         return app.exec();
 
 
-	return app.exec();
+
 }

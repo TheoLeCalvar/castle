@@ -18,8 +18,6 @@ public:
 	Plan(int width = 1, int height = 1, int widthDivision = 1, int heightDivision = 1, const std::vector<QRectF> & rects = std::vector<QRectF>(), Material * mat = NULL, vec3 rotation = vec3(), vec3 position = vec3());
 	~Plan();
 
-	Objet * clone() const;
-
 
 	void 	draw();
 

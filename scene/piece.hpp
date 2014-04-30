@@ -19,8 +19,6 @@ public:
 	Piece(vec3 dimension = vec3(1,1,1), vec3 rotation = vec3(), vec3 position = vec3(), Material * mat = NULL, Objet * parent = NULL);
 	~Piece();
 
-	Objet * clone() const;
-
 	void draw();
 
 	void addWall(Plan *);

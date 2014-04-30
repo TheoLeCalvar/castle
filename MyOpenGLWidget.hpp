@@ -9,25 +9,21 @@
 #include <QOpenGLShaderProgram>
 
 
+#include <QElapsedTimer>
 #include <QTimer>
 #include <QKeyEvent>
 #include <QMouseEvent>
 #include <QPoint>
 #include <QCursor>
 #include <QDebug>
-#include <QOpenGLDebugLogger>
-
 
 #include "helper.hpp"
 #include "camera.hpp"
 
-#include "cube.hpp"
-#include "plan.hpp"
-#include "sphere.hpp"
-#include "donuts.hpp"
 #include "material.hpp"
 
 #include "scene.hpp"
+
 
 
 class MyOpenGLWidget: public QGLWidget, protected QOpenGLFunctions_3_2_Core
@@ -35,19 +31,9 @@ class MyOpenGLWidget: public QGLWidget, protected QOpenGLFunctions_3_2_Core
 Q_OBJECT
 
 private:
-	GLuint 		shader_programme;
-
-	GLuint 		model_loc;
-	GLuint 		view_loc;
-	GLuint 		projection_loc;
-
 	bool   		_captureMouse;
 
-	Cube * 		cube;
-	Plan * 		plan;
-	Plan *  	plan2;
-	Sphere * 	sphere;
-    Donuts * 	dodo;
+
 	Scene * 	scene;
 
 

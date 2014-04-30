@@ -24,8 +24,6 @@ Sphere::Sphere(GLdouble radius, GLdouble radius2, GLint slices, GLint stacks ,Ma
 Sphere::~Sphere()
 {}
 
-Objet* Sphere::clone() const
-{}
 
 void Sphere::genVao()
 {
@@ -126,11 +124,14 @@ void Sphere::genVao()
 
 void Sphere::draw()
 {
+    Objet::draw();
+    
     mat4 model = currentMatrix();
 
     model = _model * model;
 
-    glUniformMatrix4fv(_model_location, 1, GL_FALSE, model.m);
+
+    setModelMatrix(model);
 
     glBindVertexArray (_vao);
 

@@ -10,7 +10,11 @@
 #include "MyOpenGLWidget.hpp"
 #include <QStatusBar>
 #include <QDockWidget>
-
+#include <QToolBar>
+#include <QFileSystemModel>
+#include <QDirModel>
+#include <QTreeView>
+#include <QApplication>
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -79,11 +83,16 @@ public:
 /* ************************************** */
 //               Toolbars                 //
 /* ************************************** */
+       QToolBar     *fileToolBar;
 //fin toolbars
 
 /* ************************************** */
 //              Dock widgets              //
 /* ************************************** */
+       QDirModel *modele;
+       QTreeView *vue;
+       QDockWidget* dock;
+       QDockWidget* dock1;
 //fin dock widgets
 
 /* ************************************** */

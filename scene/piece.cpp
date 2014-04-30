@@ -12,24 +12,18 @@ Piece::~Piece()
 		delete *i;
 }
 
-Objet * Piece::clone() const
-{
-
-}
-
 void Piece::draw()
 {
-	// qDebug() << "Début pièce";
+	pushMatrix(currentMatrix() * _model);
 
 	for(auto i: _murs){
-		// qDebug() << "Mur";
 		i->draw();
 	}
 
 	for(auto i: _objets)
 		i->draw();
 
-	// qDebug() << "Fin pièce";
+	popMatrix();
 }
 
 void Piece::addWall(Plan * p)

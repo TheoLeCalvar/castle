@@ -18,7 +18,6 @@ private:
 	vec4			_specular;
 	float			_shininess;
 	vec4			_emissive;
-	GLuint		 	_shader;
 
 
 public:
@@ -27,8 +26,7 @@ public:
 		vec4 	diffuse = vec4(0.8, 0.8, 0.8, 1.0),
 		vec4 	specular = vec4(0.8, 0.8, 0.8, 1.0),
 		float 	shininess = 0.0f,
-		vec4 	emissive = vec4(0.0, 0.0, 0.0, 1.0),
-		GLuint 	location = 0
+		vec4 	emissive = vec4(0.0, 0.0, 0.0, 1.0)
 	);
 	~Material();
 	Material * clone() const;
@@ -37,7 +35,6 @@ public:
 	void set(float shininess);
 	vec4 get(GLenum type);
 	float shininess();
-	void set(GLuint shader);
 
 	void update();
 

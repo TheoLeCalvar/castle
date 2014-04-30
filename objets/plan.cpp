@@ -104,28 +104,22 @@ Plan::Plan(GLuint vao, GLuint vbo_vertices, GLuint vbo_normals, GLuint vbo_indic
 
 Plan::~Plan()
 {
-	//Posera problème quand suppression d'un plan puis utilisation d'un plan issu d'une copie, les vaos/vbos n'existeront plus
-	// if (glIsVertexArray(_vao) == GL_TRUE)
-	// {
-	// 	glDeleteBuffers(1, &_vao);
-	// }
-	// if (glIsBuffer(_vbo_vertices) == GL_TRUE)
-	// {
-	// 	glDeleteBuffers(1, &_vbo_vertices);
-	// }
-	// if (glIsBuffer(_vbo_normals))
-	// {
-	// 	glDeleteBuffers(1, &_vbo_normals);
-	// }
-	// if (glIsBuffer(_vbo_indices))
-	// {
-	// 	glDeleteBuffers(1, &_vbo_indices);
-	// }
-}
-
-Objet * Plan::clone() const
-{
-	return new Plan(_vao, _vbo_vertices, _vbo_normals, _vbo_indices, _nbVertices, _mat, _rotation, _position);
+	if (glIsVertexArray(_vao) == GL_TRUE)
+	{
+		glDeleteBuffers(1, &_vao);
+	}
+	if (glIsBuffer(_vbo_vertices) == GL_TRUE)
+	{
+		glDeleteBuffers(1, &_vbo_vertices);
+	}
+	if (glIsBuffer(_vbo_normals))
+	{
+		glDeleteBuffers(1, &_vbo_normals);
+	}
+	if (glIsBuffer(_vbo_indices))
+	{
+		glDeleteBuffers(1, &_vbo_indices);
+	}
 }
 
 
@@ -136,10 +130,11 @@ void Plan::draw()
 	mat4 model = currentMatrix();
 
 
-	model = _model * model;
+	model = model * _model;
 
 
-	glUniformMatrix4fv(_model_location, 1, GL_FALSE, model.m);
+
+	setModelMatrix(model);
 
 	glBindVertexArray (_vao);
 

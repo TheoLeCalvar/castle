@@ -1,4 +1,5 @@
 #include "scene.hpp"
+#include "mesh.hpp"
 
 Scene::Scene()
 {
@@ -58,6 +59,7 @@ Scene::Scene(const QString & fileName):
 
 	loadPieces(pieces);
 	qDebug() << "Pièces chargées avec succès";
+
 }
 
 Scene::~Scene()
@@ -78,33 +80,15 @@ Scene::~Scene()
 
 void 	Scene::draw()
 {
-	GLint active_shader;
-	GLuint projection_location, view_location;
-	glGetIntegerv(GL_CURRENT_PROGRAM, &active_shader);
-
-	projection_location = glGetUniformLocation(active_shader, "projection");
-	view_location = glGetUniformLocation(active_shader, "view");
-
-	_camera->setProjection(view_location);
-	glUniformMatrix4fv(projection_location, 1, GL_FALSE, _projectionMatrix.m);
-
-
-
-	std::map<const QString, Objet *>::iterator i;
-
-
 	_camera->display();
 
-	for (i = _objets.begin(); i != _objets.end(); ++i)
+
+	for(auto i : _objets)
 	{
-		i->second->draw();
+		i.second->draw();
 		openGL_check_error();
 	}
-}
 
-void 		Scene::setProjectionMatrix(const mat4 & m)
-{
-	_projectionMatrix = m;
 }
 
 Objet * 	Scene::getObjet(const QString & name)
@@ -120,7 +104,6 @@ Light * 	Scene::getLight(const QString & name)
 	auto res = _lights.find(name);
 
 	return (res != _lights.end()) ? res->second : NULL;
-
 }
 
 Material *	Scene::getMaterial(const QString & name)
@@ -135,6 +118,46 @@ GLuint 		Scene::getShader(const QString & name)
 	auto res = _shaders.find(name);
 
 	return (res != _shaders.end()) ? res->second->programId() : 0;
+}
+
+QStringList Scene::getObjetsNames() const
+{
+	QStringList list;
+
+	for(auto i : _objets)
+		list << i.first;
+
+	return list;
+}
+
+QStringList Scene::getLightsNames() const
+{
+	QStringList list;
+
+	for(auto i : _lights)
+		list << i.first;
+
+	return list;
+}
+
+QStringList Scene::getMaterialsNames() const
+{
+	QStringList list;
+
+	for(auto i : _materials)
+		list << i.first;
+
+	return list;
+}
+
+QStringList Scene::getShadersNames() const
+{
+	QStringList list;
+
+	for(auto i : _shaders)
+		list << i.first;
+
+	return list;
 }
 
 void 	Scene::addMaterial(const QString & name, Material * v)
@@ -359,23 +382,25 @@ void 	Scene::loadShaders(const QDomElement & dom)
 void 	Scene::loadPieces(const QDomElement & dom)
 {
 	QDomElement piece = dom.firstChildElement("piece");
-	Objet * tmp = NULL;
+	Objet * pieceTmp = NULL;
 
 
 	while (!piece.isNull())
 	{
 		QString nom = piece.attribute("nom");
-
-		qDebug() << "Traitement de " << nom;
-
-		QString shader_name = piece.attribute("shader");
-		GLuint 	shader_id = getShader(shader_name);
+		QString materialPiece = piece.attribute("mat", "");
+		QString shaderName = piece.attribute("shader");
+		GLuint 	shaderId = getShader(shaderName);
 		int width, height, length;
 		int x, y, z;
 
 		QDomElement dim = piece.firstChildElement("dimension");
 		QDomElement pos = piece.firstChildElement("position");
 		QDomElement murs = piece.firstChildElement("murs");
+		QDomElement objets = piece.firstChildElement("objets");
+
+		qDebug() << "Traitement de " << nom;
+
 
 		if (!dim.isNull())
 		{
@@ -407,8 +432,13 @@ void 	Scene::loadPieces(const QDomElement & dom)
 			qDebug() << "Pas de position trouvée pour" << nom << "valeur par défaut (0,0,0)";
 		}
 
-		tmp = new Piece(vec3(width, height, length), vec3(), vec3(x, y, z), NULL, NULL);
+		pieceTmp = new Piece(vec3(width, height, length), vec3(), vec3(x, y, z), NULL, NULL);
+		pieceTmp->shaderId(shaderId);
 
+		if (materialPiece != "")
+		{
+			pieceTmp->material(getMaterial(materialPiece));
+		}
 
 		if (!murs.isNull())
 		{
@@ -421,7 +451,7 @@ void 	Scene::loadPieces(const QDomElement & dom)
 				qDebug() << "Un mur !";
 
 				QString cote = mur.attribute("cote");
-				QString material = mur.attribute("mat");
+				QString material = mur.attribute("mat", "");
 				std::vector<QRectF> fenetres;
 
 				QDomElement fenetre = mur.firstChildElement("fenetre");
@@ -446,34 +476,33 @@ void 	Scene::loadPieces(const QDomElement & dom)
 
 				if (cote == "avant")
 				{
-					plan = new Plan(width, height, 10*width, 10*height, fenetres, getMaterial(material), vec3(0.0f, 180.0f, 0.0f), vec3(width, 0.0f, length));
+					plan = new Plan(width, height, 20, 20, fenetres, getMaterial(material), vec3(0.0f, 180.0f, 0.0f), vec3(width, 0.0f, length));
 				}
 				else if (cote == "arriere")
 				{
-					plan = new Plan(width, height, 10*width, 10*height, fenetres, getMaterial(material), vec3(), vec3());
+					plan = new Plan(width, height, 20, 20, fenetres, getMaterial(material), vec3(), vec3());
 				}
 				else if (cote == "haut")
 				{
-					plan = new Plan(width, length, 10*width, 10*length, fenetres, getMaterial(material), vec3(90.0f, 0.0f, 0.0f), vec3(0.0f, height, 0.0f));
+					plan = new Plan(width, length, 20, 20, fenetres, getMaterial(material), vec3(90.0f, 0.0f, 0.0f), vec3(0.0f, height, 0.0f));
 				}
 				else if (cote == "bas")
 				{
-					plan = new Plan(width, length, 10*width, 10*length, fenetres, getMaterial(material), vec3(-90.0f, 0.0f, 0.0f), vec3(0.0f, 0.0f, length));
+					plan = new Plan(width, length, 20, 20, fenetres, getMaterial(material), vec3(-90.0f, 0.0f, 0.0f), vec3(0.0f, 0.0f, length));
 				}
 				else if (cote == "droite")
 				{
-					plan = new Plan(length, height, 10*length, 10*height, fenetres, getMaterial(material), vec3(0.0f, 90.0f, 0.0f), vec3(0.0f, 0.0f, length));	
+					plan = new Plan(length, height, 20, 20, fenetres, getMaterial(material), vec3(0.0f, 90.0f, 0.0f), vec3(0.0f, 0.0f, length));	
 				}
 				else if (cote == "gauche")
 				{
-					plan = new Plan(length, height, 10*length, 10*height, fenetres, getMaterial(material), vec3(0.0f, -90.0f, 0.0f), vec3(width, 0.0f, 0.0f));
+					plan = new Plan(length, height, 20, 20, fenetres, getMaterial(material), vec3(0.0f, -90.0f, 0.0f), vec3(width, 0.0f, 0.0f));
 				}
 
 				if (plan)
 				{
-
-					plan->shaderId(shader_id);
-					dynamic_cast<Piece *>(tmp)->addWall(plan);
+					plan->parent(pieceTmp);
+					dynamic_cast<Piece *>(pieceTmp)->addWall(plan);
 
 					plan = NULL;
 				}
@@ -487,12 +516,79 @@ void 	Scene::loadPieces(const QDomElement & dom)
 		}
 
 
-		
+		if (!objets.isNull())
+		{
+			qDebug() << "Des objets cool !";
+
+			QDomElement objet = objets.firstChildElement("objet");
+
+			while(!objet.isNull())
+			{
+				float xRot, yRot, zRot;
+				xRot = objet.attribute("Xrot", "0").toFloat();
+				yRot = objet.attribute("Yrot", "0").toFloat();
+				zRot = objet.attribute("Zrot", "0").toFloat();
+				QString nomObjet = objets.attribute("nom");
+				QString modeleObjet = objet.attribute("modele");
+				QString matObjet = objet.attribute("mat", "");
+				QString shaderObjet = objet.attribute("shader", "");
+
+
+				Mesh * mesh = Mesh::load("modeles/" + modeleObjet, this);
+
+				if (!mesh)
+				{
+					qFatal("Stop, erreur de chargement");
+				}
+
+				mesh->parent(pieceTmp);
+				mesh->rotation(vec3(xRot, yRot, zRot));
+
+				if (matObjet == "")
+				{
+					qDebug() << "Pas de matériaux, utilisera le matérial précédent";
+				}
+				else
+				{
+					mesh->material(getMaterial(matObjet));
+				}
+
+				if (shaderObjet == "")
+				{
+					qDebug() << "Pas de shader pour cet objet";
+				}
+				else
+				{
+					mesh->shaderId(getShader(shaderObjet));
+				}
+
+
+				QDomElement position = objet.firstChildElement("position");
+
+				if (!position.isNull())
+				{
+					qDebug() << "On a une position en plus !";
+
+					float x, y, z;
+
+					x = position.attribute("x", "0").toFloat();
+					y = position.attribute("y", "0").toFloat();
+					z = position.attribute("z", "0").toFloat();
+
+					mesh->position(vec3(x, y, z));
+				}
+
+
+				dynamic_cast<Piece *>(pieceTmp)->addObjet(mesh);
+
+				objet = objet.nextSiblingElement("objet");
+			}
+		}
 
 
 
 
-		addObjet(nom, tmp);
+		addObjet(nom, pieceTmp);
 
 		piece = piece.nextSiblingElement("piece");
 	}

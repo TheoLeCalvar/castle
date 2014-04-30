@@ -1104,3 +1104,65 @@ void __openGL_check_error(const char * file, int line)
     }
 }
 
+/*************************************
+Matrices et shader
+*************************************/
+
+static mat4 currentProjectionMatrix;
+static mat4 currentViewMatrix;
+static mat4 currentModelMatrix;
+static GLuint activeShader = 0;
+
+void setProjectionMatrix(mat4 projection)
+{
+	QOpenGLFunctions_3_2_Core f;
+	f.initializeOpenGLFunctions();
+
+	currentProjectionMatrix = projection;
+
+	f.glUniformMatrix4fv(f.glGetUniformLocation(activeShader, "projection"), 1, GL_FALSE, currentProjectionMatrix.m);
+}
+
+void setModelMatrix(mat4 model)
+{
+	QOpenGLFunctions_3_2_Core f;
+	f.initializeOpenGLFunctions();
+
+	currentModelMatrix = model;
+
+	f.glUniformMatrix4fv(f.glGetUniformLocation(activeShader, "model"), 1, GL_FALSE, currentModelMatrix.m);
+}
+
+void setViewMatrix(mat4 view)
+{
+	QOpenGLFunctions_3_2_Core f;
+	f.initializeOpenGLFunctions();
+
+	currentViewMatrix = view;
+
+	f.glUniformMatrix4fv(f.glGetUniformLocation(activeShader, "view"), 1, GL_FALSE, currentViewMatrix.m);
+}
+
+void setActiveShader(GLuint shader)
+{
+	QOpenGLFunctions_3_2_Core f;
+	f.initializeOpenGLFunctions();
+
+	if (activeShader != shader)
+	{
+		activeShader = shader;
+
+		f.glUseProgram(activeShader);
+
+		f.glUniformMatrix4fv(f.glGetUniformLocation(activeShader, "projection"), 1, GL_FALSE, currentProjectionMatrix.m);
+		f.glUniformMatrix4fv(f.glGetUniformLocation(activeShader, "view"), 1, GL_FALSE, currentViewMatrix.m);
+		f.glUniformMatrix4fv(f.glGetUniformLocation(activeShader, "model"), 1, GL_FALSE, currentModelMatrix.m);	
+	}
+}
+
+GLuint getActiveShader()
+{
+	return activeShader;
+}
+
+
