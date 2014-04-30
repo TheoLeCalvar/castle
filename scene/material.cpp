@@ -55,14 +55,14 @@ void Material::set(const QString & texFile)
 		if (res != _texturesLoaded.end())
 		{
 			_texture = res->second;
-			qDebug() << "Texture found";
 		}
 		else
 		{
+			glActiveTexture(GL_TEXTURE0);
 			//inverse l'image sur les y pour l'avoir dans le sens intuitif
 			_texture = new QOpenGLTexture(QImage(texFile).mirrored());
+			_texture->setMinMagFilters(QOpenGLTexture::Nearest, QOpenGLTexture::Nearest);
 
-			qDebug() << "Texture loaded" << _texture;
 
 			_texturesLoaded.insert(std::make_pair(texFile, _texture));
 		}
@@ -104,6 +104,7 @@ void Material::update()
 {
 	GLuint shader = getActiveShader();
 
+	GLuint useTexture_location = glGetUniformLocation(shader, "useTexture");
 	GLuint ambient_location = glGetUniformLocation(shader, "Ka");
 	GLuint diffuse_location = glGetUniformLocation(shader, "Kd");
 	GLuint specular_location = glGetUniformLocation(shader, "Ks");
@@ -118,8 +119,14 @@ void Material::update()
 
 	if (_texture)
 	{
-		// qDebug() << _texture;
-		glBindTexture(GL_TEXTURE_2D, _texture->textureId());
+		glUniform1f(useTexture_location, 1.0);
+		glActiveTexture(GL_TEXTURE0);
+		_texture->bind();
+
+	}
+	else
+	{
+		glUniform1f(useTexture_location, 0.0);
 	}
 	
 }

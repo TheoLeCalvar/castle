@@ -30,8 +30,8 @@ Plan::Plan(
 			normals.push_back(0.0f);
 			normals.push_back(1.0f);
 
-			texCoord.push_back(j * 1/(float)widthDivision);
-			texCoord.push_back(i * 1/(float)heightDivision);
+			texCoord.push_back(j);
+			texCoord.push_back(i);
 
 		}
 	}

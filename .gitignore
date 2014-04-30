@@ -7,3 +7,4 @@ moc_*.cpp
 Makefile
 scene-orig.xml
 castle.zip
+build

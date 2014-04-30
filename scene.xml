@@ -19,12 +19,14 @@
 			<diffuse r="0.8" g="0.8" b="0.2" a="1.0" />
 			<specular r="0.8" g="0.8" b="0.8" a="1.0" s="32" />
 			<emissive r="0.0" g="0.0" b="0.0" a="0.0" /> 
+			<texture src="textures/stonebrick_mossy.png" />
 		</material>
 		<material nom="Mat3">
 			<ambient r="0.2" g="0.2" b="0.2" a="1.0" />
 			<diffuse r="0.8" g="0.2" b="0.8" a="1.0" />
 			<specular r="0.8" g="0.0" b="0.2" a="1.0" s="32" />
-			<emissive r="0.0" g="0.0" b="0.0" a="0.0" /> 
+			<emissive r="0.0" g="0.0" b="0.0" a="0.0" />
+			<!-- <texture src="textures/stonebrick.png" />  -->
 		</material>
 		<material nom="neutre">
 			<ambient r="0.2" g="0.2" b="0.2" a="1.0" />
@@ -45,6 +47,7 @@
 
 	<shaders>
 		<shader nom="test" fragment="test.frag" vertex="test.vert" />
+		<shader nom="test2" fragment="test.frag" vertex="test.vert" />
 	</shaders>
 
 	<pieces>
@@ -62,6 +65,7 @@
 					<mur cote="haut" mat="Mat2" >
 					</mur>
 					<mur cote="arriere" mat="Mat3" >
+						<fenetre x="0" y="0" width="1" height="1" />
 					</mur>
 					<mur cote="droite" />
 					<mur cote="gauche" >
@@ -87,7 +91,7 @@
 				</objet> -->
 			</objets>
 		</piece>
-		<piece nom="piece2" shader="test" mat="Mat2">
+		<piece nom="piece2" shader="test2" mat="Mat2">
 			<dimension width="20" length="30" height="20" />
 			<position repere="world" x="10" y="3" z="20" />
 			<murs>
@@ -107,6 +111,10 @@
 						<fenetre x="5" y="0" width="2" height="1" />
 					</mur>
 			</murs>
+			<objets>
+				<objet nom="plante1" modele="sphere.obj" >
+					<position x="10" y="10" z="4" />
+				</objet>
 		</piece>
 	</pieces>
 </scene>

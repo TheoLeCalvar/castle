@@ -19,12 +19,18 @@ struct light
 
 
 uniform sampler2D tex;
+uniform bool useTexture;
 uniform mat4 view;
 
 uniform bool enabledLights[8];
 uniform vec3 La = vec3(0.2, 0.2, 0.2);
 
 uniform light Lights[8];
+
+uniform float constAtt = 1.0;
+uniform float linearAtt = 0.25;
+uniform float quadraAtt = 0.0;
+
 
 
 // surface reflectance
@@ -34,16 +40,29 @@ uniform vec3 Ka = vec3 (1.0, 1.0, 1.0); // fully reflect ambient light
 uniform float specular_exponent = 100.0; // specular 'power'
 
 
-void main () {
+vec4 lights();
 
+void main () 
+{
+	color_out = lights();
+
+	if(useTexture){
+		color_out += texture(tex, vertexIn.texCoord);
+	}
+
+
+	// color_out = normalize(vec4 (vertexIn.position_eye, 1.0));
+
+}
+
+vec4 lights()
+{
 	vec3 Ia = La * Ka;
 
-	color_out = vec4(Ia, 1.0);
+	vec4 color = vec4(Ia, 1.0);
 
 	for(int i = 0; enabledLights[i]; ++i)
 	{
-
-		// ambient intensity
 
 		// raise light position to eye space
 		vec3 light_position_eye = vec3 (view * vec4 (Lights[i].Lp, 1.0));
@@ -63,14 +82,14 @@ void main () {
 		float specular_factor = pow (dot_prod_specular, specular_exponent);
 		vec3 Is = Lights[i].Ls * Ks * specular_factor; // final specular intensity
 		
+
+		float d = distance(vertexIn.position_eye, light_position_eye);
+		float att = 1 / (constAtt + linearAtt * d + quadraAtt * d * d);
+
 		// final colour
-		color_out += vec4 (Is + Id, 1.0);
+		color += att * vec4 (Is + Id, 1.0);
 
 	}
 
-	color_out = texture(tex, vertexIn.texCoord);
-
-
-	// color_out = normalize(vec4 (vertexIn.position_eye, 1.0));
-
+	return color;
 }

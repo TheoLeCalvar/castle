@@ -80,7 +80,9 @@ Scene::~Scene()
 
 void 	Scene::draw()
 {
+
 	_camera->display();
+	
 
 	for(auto i : _objets)
 	{
@@ -88,10 +90,15 @@ void 	Scene::draw()
 		openGL_check_error();
 	}
 
-	for(auto i : _lights)
+	for(auto i: _shaders)
 	{
-		i.second->update();
-		openGL_check_error();
+		i.second->bind();
+
+		for(auto j : _lights)
+		{
+			j.second->update();
+			openGL_check_error();
+		}
 	}
 
 }
@@ -238,8 +245,6 @@ void 	Scene::loadMaterials(const QDomElement & dom)
 						a = var2.attribute("a", "0").toFloat();
 
 						tmp->set(GL_AMBIENT, vec4(r,g,b,a));
-
-						qDebug() << "Ambient";
 					}
 					else if (var2.tagName() == "diffuse")
 					{
@@ -249,8 +254,6 @@ void 	Scene::loadMaterials(const QDomElement & dom)
 						a = var2.attribute("a", "0").toFloat();
 
 						tmp->set(GL_DIFFUSE, vec4(r,g,b,a));
-
-						qDebug() << "Diffuse";
 					}
 					else if (var2.tagName() == "specular")
 					{
@@ -262,8 +265,6 @@ void 	Scene::loadMaterials(const QDomElement & dom)
 
 						tmp->set(GL_SPECULAR, vec4(r,g,b,a));
 						tmp->set(s);
-
-						qDebug() << "Specular";
 					}
 					else if (var2.tagName() == "emissive")
 					{
@@ -273,8 +274,6 @@ void 	Scene::loadMaterials(const QDomElement & dom)
 						a = var2.attribute("a", "0").toFloat();
 
 						tmp->set(GL_EMISSION, vec4(r,g,b,a));
-
-						qDebug() << "Emissive";
 					}
 					else if (var2.tagName() == "texture")
 					{
@@ -339,8 +338,6 @@ void 	Scene::loadLights(const QDomElement & dom)
 					qDebug() << "Repere a gerer " << x << y << z;
 
 					tmp->set(GL_POSITION, vec3(x, y, z));
-
-					qDebug() << "Position";
 
 					break;
 				}
@@ -439,11 +436,7 @@ void 	Scene::loadPieces(const QDomElement & dom)
 
 		pieceTmp = new Piece(vec3(width, height, length), vec3(), vec3(x, y, z), NULL, NULL);
 		pieceTmp->shaderId(shaderId);
-
-		if (materialPiece != "")
-		{
-			pieceTmp->material(getMaterial(materialPiece));
-		}
+		pieceTmp->material(getMaterial(materialPiece));
 
 		if (!murs.isNull())
 		{
@@ -453,8 +446,6 @@ void 	Scene::loadPieces(const QDomElement & dom)
 
 			while(!mur.isNull())
 			{
-				qDebug() << "Un mur !";
-
 				QString cote = mur.attribute("cote");
 				QString material = mur.attribute("mat", "");
 				std::vector<QRectF> fenetres;
@@ -472,11 +463,6 @@ void 	Scene::loadPieces(const QDomElement & dom)
 									));
 
 					fenetre = fenetre.nextSiblingElement("fenetre");
-				}
-
-				for(auto q : fenetres)
-				{
-					qDebug() << q;
 				}
 
 				if (cote == "avant")
@@ -523,8 +509,6 @@ void 	Scene::loadPieces(const QDomElement & dom)
 
 		if (!objets.isNull())
 		{
-			qDebug() << "Des objets cool !";
-
 			QDomElement objet = objets.firstChildElement("objet");
 
 			while(!objet.isNull())
@@ -548,32 +532,14 @@ void 	Scene::loadPieces(const QDomElement & dom)
 
 				mesh->parent(pieceTmp);
 				mesh->rotation(vec3(xRot, yRot, zRot));
-
-				if (matObjet == "")
-				{
-					qDebug() << "Pas de matériaux, utilisera le matérial précédent";
-				}
-				else
-				{
-					mesh->material(getMaterial(matObjet));
-				}
-
-				if (shaderObjet == "")
-				{
-					qDebug() << "Pas de shader pour cet objet";
-				}
-				else
-				{
-					mesh->shaderId(getShader(shaderObjet));
-				}
+				mesh->material(getMaterial(matObjet));
+				mesh->shaderId(getShader(shaderObjet));
 
 
 				QDomElement position = objet.firstChildElement("position");
 
 				if (!position.isNull())
 				{
-					qDebug() << "On a une position en plus !";
-
 					float x, y, z;
 
 					x = position.attribute("x", "0").toFloat();
