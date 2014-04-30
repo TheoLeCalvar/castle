@@ -5,6 +5,8 @@
 
 #include <QOpenGLFunctions_3_2_Core>
 #include <QOpenGLTexture>
+#include <QImage>
+#include <map>
 
 
 
@@ -18,6 +20,9 @@ private:
 	vec4			_specular;
 	float			_shininess;
 	vec4			_emissive;
+	QOpenGLTexture* _texture;
+
+	static std::map<const QString, QOpenGLTexture *> _texturesLoaded;
 
 
 public:
@@ -26,15 +31,18 @@ public:
 		vec4 	diffuse = vec4(0.8, 0.8, 0.8, 1.0),
 		vec4 	specular = vec4(0.8, 0.8, 0.8, 1.0),
 		float 	shininess = 0.0f,
-		vec4 	emissive = vec4(0.0, 0.0, 0.0, 1.0)
+		vec4 	emissive = vec4(0.0, 0.0, 0.0, 1.0),
+		const QString & texFile = ""
 	);
 	~Material();
-	Material * clone() const;
 
 	void set(GLenum type, vec4 value);
+	void set(const QString &);
 	void set(float shininess);
 	vec4 get(GLenum type);
-	float shininess();
+	float shininess() const;
+
+	bool hasTexture() const;
 
 	void update();
 

@@ -80,13 +80,25 @@ Scene::~Scene()
 
 void 	Scene::draw()
 {
-	_camera->display();
 
+	_camera->display();
+	
 
 	for(auto i : _objets)
 	{
 		i.second->draw();
 		openGL_check_error();
+	}
+
+	for(auto i: _shaders)
+	{
+		i.second->bind();
+
+		for(auto j : _lights)
+		{
+			j.second->update();
+			openGL_check_error();
+		}
 	}
 
 }
@@ -233,8 +245,6 @@ void 	Scene::loadMaterials(const QDomElement & dom)
 						a = var2.attribute("a", "0").toFloat();
 
 						tmp->set(GL_AMBIENT, vec4(r,g,b,a));
-
-						qDebug() << "Ambient";
 					}
 					else if (var2.tagName() == "diffuse")
 					{
@@ -244,8 +254,6 @@ void 	Scene::loadMaterials(const QDomElement & dom)
 						a = var2.attribute("a", "0").toFloat();
 
 						tmp->set(GL_DIFFUSE, vec4(r,g,b,a));
-
-						qDebug() << "Diffuse";
 					}
 					else if (var2.tagName() == "specular")
 					{
@@ -257,8 +265,6 @@ void 	Scene::loadMaterials(const QDomElement & dom)
 
 						tmp->set(GL_SPECULAR, vec4(r,g,b,a));
 						tmp->set(s);
-
-						qDebug() << "Specular";
 					}
 					else if (var2.tagName() == "emissive")
 					{
@@ -268,16 +274,12 @@ void 	Scene::loadMaterials(const QDomElement & dom)
 						a = var2.attribute("a", "0").toFloat();
 
 						tmp->set(GL_EMISSION, vec4(r,g,b,a));
-
-						qDebug() << "Emissive";
 					}
 					else if (var2.tagName() == "texture")
 					{
 						path = var2.attribute("src", "");
 
-
-
-						qDebug() << "Texture" << "TODO !";
+						tmp->set(path);
 					}
 				}
 				
@@ -299,8 +301,10 @@ void 	Scene::loadLights(const QDomElement & dom)
 	{
 		Light * tmp = new Light;
 		QString nom = light.attribute("nom"), mat = light.attribute("mat");
-		std::map<const QString, Material *>::const_iterator res = _materials.find(mat);
+		int lightNum = light.attribute("num", "0").toInt();
+		auto res = _materials.find(mat);
 
+		tmp->setNumber(lightNum);
 		
 		qDebug() << light.attribute("nom");
 
@@ -312,36 +316,34 @@ void 	Scene::loadLights(const QDomElement & dom)
 		}
 
 
-			QDomNode var = light.firstChild();
+		QDomNode var = light.firstChild();
 
 
-			while(!var.isNull())
-			{
-				float x, y, z;
-				QString repere, path;
+		while(!var.isNull())
+		{
+			float x, y, z;
+			QString repere, path;
 
-				if (var.isElement())
-				{	
-					QDomElement var2 = var.toElement();
+			if (var.isElement())
+			{	
+				QDomElement var2 = var.toElement();
 
-					if (var2.tagName() == "position")
-					{
-						x = var2.attribute("x", "0").toFloat();
-						y = var2.attribute("y", "0").toFloat();
-						z = var2.attribute("z", "0").toFloat();
-						repere = var2.attribute("repere", "world");
+				if (var2.tagName() == "position")
+				{
+					x = var2.attribute("x", "0").toFloat();
+					y = var2.attribute("y", "0").toFloat();
+					z = var2.attribute("z", "0").toFloat();
+					repere = var2.attribute("repere", "world");
 
-						qDebug() << "Repere a gerer";
+					qDebug() << "Repere a gerer " << x << y << z;
 
-						tmp->set(GL_POSITION, vec3(x, y, z));
+					tmp->set(GL_POSITION, vec3(x, y, z));
 
-						qDebug() << "Position";
-
-						break;
-					}
+					break;
 				}
-				var = var.nextSibling();
 			}
+			var = var.nextSibling();
+		}
 
 		addLight(nom, tmp);
 
@@ -434,11 +436,7 @@ void 	Scene::loadPieces(const QDomElement & dom)
 
 		pieceTmp = new Piece(vec3(width, height, length), vec3(), vec3(x, y, z), NULL, NULL);
 		pieceTmp->shaderId(shaderId);
-
-		if (materialPiece != "")
-		{
-			pieceTmp->material(getMaterial(materialPiece));
-		}
+		pieceTmp->material(getMaterial(materialPiece));
 
 		if (!murs.isNull())
 		{
@@ -448,8 +446,6 @@ void 	Scene::loadPieces(const QDomElement & dom)
 
 			while(!mur.isNull())
 			{
-				qDebug() << "Un mur !";
-
 				QString cote = mur.attribute("cote");
 				QString material = mur.attribute("mat", "");
 				std::vector<QRectF> fenetres;
@@ -467,11 +463,6 @@ void 	Scene::loadPieces(const QDomElement & dom)
 									));
 
 					fenetre = fenetre.nextSiblingElement("fenetre");
-				}
-
-				for(auto q : fenetres)
-				{
-					qDebug() << q;
 				}
 
 				if (cote == "avant")
@@ -518,8 +509,6 @@ void 	Scene::loadPieces(const QDomElement & dom)
 
 		if (!objets.isNull())
 		{
-			qDebug() << "Des objets cool !";
-
 			QDomElement objet = objets.firstChildElement("objet");
 
 			while(!objet.isNull())
@@ -543,32 +532,14 @@ void 	Scene::loadPieces(const QDomElement & dom)
 
 				mesh->parent(pieceTmp);
 				mesh->rotation(vec3(xRot, yRot, zRot));
-
-				if (matObjet == "")
-				{
-					qDebug() << "Pas de matériaux, utilisera le matérial précédent";
-				}
-				else
-				{
-					mesh->material(getMaterial(matObjet));
-				}
-
-				if (shaderObjet == "")
-				{
-					qDebug() << "Pas de shader pour cet objet";
-				}
-				else
-				{
-					mesh->shaderId(getShader(shaderObjet));
-				}
+				mesh->material(getMaterial(matObjet));
+				mesh->shaderId(getShader(shaderObjet));
 
 
 				QDomElement position = objet.firstChildElement("position");
 
 				if (!position.isNull())
 				{
-					qDebug() << "On a une position en plus !";
-
 					float x, y, z;
 
 					x = position.attribute("x", "0").toFloat();

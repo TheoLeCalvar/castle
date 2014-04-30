@@ -18,6 +18,10 @@ MyOpenGLWidget::MyOpenGLWidget(const QGLFormat & format, QWidget * parent, const
 
 MyOpenGLWidget::~MyOpenGLWidget()
 {
+    if (_scene)
+    {
+        delete _scene;
+    }
 }
 
 QSize MyOpenGLWidget::minimumSizeHint() const
@@ -30,6 +34,20 @@ QSize MyOpenGLWidget::sizeHint() const
 	return QSize(600, 600);
 }
 
+Scene * MyOpenGLWidget::getScene()
+{
+    return _scene;
+}
+
+void    MyOpenGLWidget::setScene(Scene * scene)
+{
+    if (_scene)
+    {
+        delete _scene;
+    }
+
+    _scene = scene;
+}
 
 void	MyOpenGLWidget::initializeGL()
 {
@@ -47,11 +65,12 @@ void	MyOpenGLWidget::initializeGL()
     glEnable(GL_CULL_FACE);
 
 
+
     glClearColor(0.3, 0.3, 0.3, 1.0);
    
 
+    _scene = new Scene("scene.xml");
 
-    scene = new Scene("scene.xml");
 
 
 }
@@ -65,13 +84,13 @@ void	MyOpenGLWidget::paintGL()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 
-    scene->draw();
+    _scene->draw();
 
     openGL_check_error();
 
 
 
-    if (timer.elapsed() > 1000/16)
+    if (timer.elapsed() > 1000/16.0)
     {
         qDebug() << "Moins de 60 fps !";
         qDebug() << "Elapsed time : " << timer.nsecsElapsed();
@@ -102,32 +121,32 @@ void    MyOpenGLWidget::keyPressEvent(QKeyEvent * event)
 
         case Qt::Key_Up:
         case Qt::Key_Z:
-            scene->_camera->_avant_presse = true;
+            _scene->_camera->_avant_presse = true;
             goto action;
 
         case Qt::Key_Down:
         case Qt::Key_S:
-            scene->_camera->_arriere_presse = true;
+            _scene->_camera->_arriere_presse = true;
             goto action;
 
         case Qt::Key_Right:
         case Qt::Key_D:
-            scene->_camera->_droite_presse = true;
+            _scene->_camera->_droite_presse = true;
             goto action;
 
         case Qt::Key_Left:
         case Qt::Key_Q:
-            scene->_camera->_gauche_presse = true;
+            _scene->_camera->_gauche_presse = true;
             goto action;
 
         case Qt::Key_PageUp:
         case Qt::Key_A:
-            scene->_camera->_haut_presse = true;
+            _scene->_camera->_haut_presse = true;
             goto action;
 
         case Qt::Key_PageDown:
         case Qt::Key_W:
-            scene->_camera->_bas_presse = true;
+            _scene->_camera->_bas_presse = true;
             goto action;
 
         case Qt::Key_F1:
@@ -175,32 +194,32 @@ void    MyOpenGLWidget::keyReleaseEvent(QKeyEvent * event)
     {
         case Qt::Key_Up:
         case Qt::Key_Z:
-            scene->_camera->_avant_presse = false;
+            _scene->_camera->_avant_presse = false;
             goto action;
 
         case Qt::Key_Down:
         case Qt::Key_S:
-            scene->_camera->_arriere_presse = false;
+            _scene->_camera->_arriere_presse = false;
             goto action;
 
         case Qt::Key_Right:
         case Qt::Key_D:
-            scene->_camera->_droite_presse = false;
+            _scene->_camera->_droite_presse = false;
             goto action;
 
         case Qt::Key_Left:
         case Qt::Key_Q:
-            scene->_camera->_gauche_presse = false;
+            _scene->_camera->_gauche_presse = false;
             goto action;
 
         case Qt::Key_PageUp:
         case Qt::Key_A:
-            scene->_camera->_haut_presse = false;
+            _scene->_camera->_haut_presse = false;
             goto action;
 
         case Qt::Key_PageDown:
         case Qt::Key_W:
-            scene->_camera->_bas_presse = false;
+            _scene->_camera->_bas_presse = false;
             goto action;
     }
 
@@ -214,7 +233,7 @@ void    MyOpenGLWidget::mouseMoveEvent(QMouseEvent * event)
 {
     if (_captureMouse)
     {
-        scene->_camera->mouseMoveEvent(event->x(), event->y(), width(), height());
+        _scene->_camera->mouseMoveEvent(event->x(), event->y(), width(), height());
 
         QPoint glob = mapToGlobal(QPoint(width()/2,height()/2));
         QCursor::setPos(glob);

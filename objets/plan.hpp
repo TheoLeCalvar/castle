@@ -12,6 +12,7 @@ private:
 	GLuint _vbo_vertices;
 	GLuint _vbo_normals;
 	GLuint _vbo_indices;
+	GLuint _vbo_texCoord;
 	unsigned int _nbVertices;
 
 public:

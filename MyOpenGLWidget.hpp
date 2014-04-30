@@ -34,7 +34,7 @@ private:
 	bool   		_captureMouse;
 
 
-	Scene * 	scene;
+	Scene * 	_scene;
 
 
 public:
@@ -43,6 +43,9 @@ public:
 
     QSize minimumSizeHint() const;
     QSize sizeHint() const;
+
+    Scene * 		getScene();
+    void 			setScene(Scene * scene);
 
 	virtual void	initializeGL();
 	virtual void	paintGL();
