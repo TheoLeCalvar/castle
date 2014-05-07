@@ -1,0 +1,144 @@
+\hypertarget{class_plan}{\section{Plan Class Reference}
+\label{class_plan}\index{Plan@{Plan}}
+}
+
+
+\hyperlink{class_plan}{Plan} utilisé par la \hyperlink{class_piece}{Piece}.  
+
+
+
+
+{\ttfamily \#include $<$plan.\+hpp$>$}
+
+Inheritance diagram for Plan\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_plan}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_plan_a1cdbbb75d0a7a9aeaeb9d72abdf9ccf6}{Plan} (int width=1, int height=1, int width\+Division=1, int height\+Division=1, const std\+::vector$<$ Q\+Rect\+F $>$ \&rects=std\+::vector$<$ Q\+Rect\+F $>$(), \hyperlink{class_material}{Material} $\ast$mat=N\+U\+L\+L, \hyperlink{structvec3}{vec3} \hyperlink{class_objet_ac69a1b459bcb4433099c8cfbff06b209}{rotation}=\hyperlink{structvec3}{vec3}(), \hyperlink{structvec3}{vec3} \hyperlink{class_objet_a0e109bc790b14328202dd2546b04e2fd}{position}=\hyperlink{structvec3}{vec3}())
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\hyperlink{class_plan_a4df05d0211ed4572125f79cbfaafa626}{$\sim$\+Plan} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+void \hyperlink{class_plan_a513c3dec0ce9043a9e1d3b5b18a6d698}{draw} ()
+\begin{DoxyCompactList}\small\item\em Affiche le plan. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+G\+Luint \hyperlink{class_plan_ab4efe8532b73dd0efca80000afb0027d}{\+\_\+vao}
+\item 
+G\+Luint \hyperlink{class_plan_a7b203dc36964da663836cf7614fe711a}{\+\_\+vbo\+\_\+vertices}
+\item 
+G\+Luint \hyperlink{class_plan_aa5db33661be2dfcecf68683c33eb22b9}{\+\_\+vbo\+\_\+normals}
+\item 
+G\+Luint \hyperlink{class_plan_ad8791ad67d66ac1b24792dc72ec00c64}{\+\_\+vbo\+\_\+indices}
+\item 
+G\+Luint \hyperlink{class_plan_a3c16becd29f35260b79af8b9cb6fa892}{\+\_\+vbo\+\_\+tex\+Coord}
+\item 
+unsigned int \hyperlink{class_plan_af3d9228c1b7dc91c0cb00d4c8fa5a550}{\+\_\+nb\+Vertices}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_plan}{Plan} utilisé par la \hyperlink{class_piece}{Piece}. 
+
+Gère un plan, avec des trous pour les fenêtres 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_plan_a1cdbbb75d0a7a9aeaeb9d72abdf9ccf6}{\index{Plan@{Plan}!Plan@{Plan}}
+\index{Plan@{Plan}!Plan@{Plan}}
+\subsubsection[{Plan}]{\setlength{\rightskip}{0pt plus 5cm}Plan\+::\+Plan (
+\begin{DoxyParamCaption}
+\item[{int}]{width = {\ttfamily 1}, }
+\item[{int}]{height = {\ttfamily 1}, }
+\item[{int}]{width\+Division = {\ttfamily 1}, }
+\item[{int}]{height\+Division = {\ttfamily 1}, }
+\item[{const std\+::vector$<$ Q\+Rect\+F $>$ \&}]{rects = {\ttfamily std\+:\+:vector$<$QRectF$>$()}, }
+\item[{{\bf Material} $\ast$}]{mat = {\ttfamily NULL}, }
+\item[{{\bf vec3}}]{rotation = {\ttfamily {\bf vec3}()}, }
+\item[{{\bf vec3}}]{position = {\ttfamily {\bf vec3}()}}
+\end{DoxyParamCaption}
+)}}\label{class_plan_a1cdbbb75d0a7a9aeaeb9d72abdf9ccf6}
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & largeur du plan \\
+\hline
+{\em height} & hauteur du plan \\
+\hline
+{\em width\+Division} & nombre de division selon width \\
+\hline
+{\em height\+Division} & nombre de division selon height \\
+\hline
+{\em rects} & Q\+Rect\+F rectangles définissant les fenêtres du plan \\
+\hline
+{\em mat} & \hyperlink{class_material}{Material} à utiliser \\
+\hline
+{\em rotation} & rotation à appliquer au plan \\
+\hline
+{\em position} & position du plan dans le monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_plan_a4df05d0211ed4572125f79cbfaafa626}{\index{Plan@{Plan}!````~Plan@{$\sim$\+Plan}}
+\index{````~Plan@{$\sim$\+Plan}!Plan@{Plan}}
+\subsubsection[{$\sim$\+Plan}]{\setlength{\rightskip}{0pt plus 5cm}Plan\+::$\sim$\+Plan (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_plan_a4df05d0211ed4572125f79cbfaafa626}
+
+
+Destructeur. 
+
+Détruit le plan et libère les vbo/vba 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_plan_a513c3dec0ce9043a9e1d3b5b18a6d698}{\index{Plan@{Plan}!draw@{draw}}
+\index{draw@{draw}!Plan@{Plan}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Plan\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_plan_a513c3dec0ce9043a9e1d3b5b18a6d698}
+
+
+Affiche le plan. 
+
+
+
+Reimplemented from \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Objet}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_plan_af3d9228c1b7dc91c0cb00d4c8fa5a550}{\index{Plan@{Plan}!\+\_\+nb\+Vertices@{\+\_\+nb\+Vertices}}
+\index{\+\_\+nb\+Vertices@{\+\_\+nb\+Vertices}!Plan@{Plan}}
+\subsubsection[{\+\_\+nb\+Vertices}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Plan\+::\+\_\+nb\+Vertices\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plan_af3d9228c1b7dc91c0cb00d4c8fa5a550}
+\hypertarget{class_plan_ab4efe8532b73dd0efca80000afb0027d}{\index{Plan@{Plan}!\+\_\+vao@{\+\_\+vao}}
+\index{\+\_\+vao@{\+\_\+vao}!Plan@{Plan}}
+\subsubsection[{\+\_\+vao}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Plan\+::\+\_\+vao\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plan_ab4efe8532b73dd0efca80000afb0027d}
+\hypertarget{class_plan_ad8791ad67d66ac1b24792dc72ec00c64}{\index{Plan@{Plan}!\+\_\+vbo\+\_\+indices@{\+\_\+vbo\+\_\+indices}}
+\index{\+\_\+vbo\+\_\+indices@{\+\_\+vbo\+\_\+indices}!Plan@{Plan}}
+\subsubsection[{\+\_\+vbo\+\_\+indices}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Plan\+::\+\_\+vbo\+\_\+indices\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plan_ad8791ad67d66ac1b24792dc72ec00c64}
+\hypertarget{class_plan_aa5db33661be2dfcecf68683c33eb22b9}{\index{Plan@{Plan}!\+\_\+vbo\+\_\+normals@{\+\_\+vbo\+\_\+normals}}
+\index{\+\_\+vbo\+\_\+normals@{\+\_\+vbo\+\_\+normals}!Plan@{Plan}}
+\subsubsection[{\+\_\+vbo\+\_\+normals}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Plan\+::\+\_\+vbo\+\_\+normals\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plan_aa5db33661be2dfcecf68683c33eb22b9}
+\hypertarget{class_plan_a3c16becd29f35260b79af8b9cb6fa892}{\index{Plan@{Plan}!\+\_\+vbo\+\_\+tex\+Coord@{\+\_\+vbo\+\_\+tex\+Coord}}
+\index{\+\_\+vbo\+\_\+tex\+Coord@{\+\_\+vbo\+\_\+tex\+Coord}!Plan@{Plan}}
+\subsubsection[{\+\_\+vbo\+\_\+tex\+Coord}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Plan\+::\+\_\+vbo\+\_\+tex\+Coord\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plan_a3c16becd29f35260b79af8b9cb6fa892}
+\hypertarget{class_plan_a7b203dc36964da663836cf7614fe711a}{\index{Plan@{Plan}!\+\_\+vbo\+\_\+vertices@{\+\_\+vbo\+\_\+vertices}}
+\index{\+\_\+vbo\+\_\+vertices@{\+\_\+vbo\+\_\+vertices}!Plan@{Plan}}
+\subsubsection[{\+\_\+vbo\+\_\+vertices}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Plan\+::\+\_\+vbo\+\_\+vertices\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plan_a7b203dc36964da663836cf7614fe711a}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+objets/\hyperlink{plan_8hpp}{plan.\+hpp}\item 
+objets/\hyperlink{plan_8cpp}{plan.\+cpp}\end{DoxyCompactItemize}

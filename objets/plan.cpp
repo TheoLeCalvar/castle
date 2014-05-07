@@ -8,7 +8,7 @@ Plan::Plan(
 		const std::vector<QRectF>& rects, 
 		Material * mat, vec3 rotation, vec3 position
 		)
-			:	Objet(mat, rotation, position), 
+			:	Objet("", mat, rotation, position), 
 				_vao(0), _nbVertices(0)
 {
 	std::vector<float> points, normals, texCoord;
@@ -111,28 +111,13 @@ Plan::Plan(
 
 }
 
-Plan::Plan(GLuint vao, GLuint vbo_vertices, GLuint vbo_normals, GLuint vbo_indice, unsigned int nbVertices, Material * mat, vec3 rotation, vec3 position)
-:Objet(mat, rotation, position), _vao(vao), _vbo_vertices(vbo_vertices), _vbo_normals(vbo_normals), _vbo_indices(vbo_indice), _nbVertices(nbVertices)
-{}
 
 Plan::~Plan()
 {
-	if (glIsVertexArray(_vao) == GL_TRUE)
-	{
-		glDeleteBuffers(1, &_vao);
-	}
-	if (glIsBuffer(_vbo_vertices) == GL_TRUE)
-	{
-		glDeleteBuffers(1, &_vbo_vertices);
-	}
-	if (glIsBuffer(_vbo_normals))
-	{
-		glDeleteBuffers(1, &_vbo_normals);
-	}
-	if (glIsBuffer(_vbo_indices))
-	{
-		glDeleteBuffers(1, &_vbo_indices);
-	}
+	glDeleteBuffers(1, &_vao);
+	glDeleteBuffers(1, &_vbo_vertices);
+	glDeleteBuffers(1, &_vbo_normals);
+	glDeleteBuffers(1, &_vbo_indices);
 }
 
 

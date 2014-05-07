@@ -4,28 +4,78 @@
 #include "objet.hpp"
 #include "plan.hpp"
 
-#include <list>
+#include <QStringList>
 
-
+/**
+ * @brief Pièce, contient un ensemble d'objet qu'elle contient
+ * @class Piece
+ * 
+ */
 class Piece: public Objet
 {
 private:
-	vec3 _dimensions;
-	
-	std::list<Plan *> _murs;
-	std::list<Objet *> _objets;
+
+	vec3 _dimensions; /**< Contient les dimensions de la pièces */
+
+	QList<Objet *> _children; /** Liste des objets fils de la pièces, contient au moins les murs */
 
 public:
-	Piece(vec3 dimension = vec3(1,1,1), vec3 rotation = vec3(), vec3 position = vec3(), Material * mat = NULL, Objet * parent = NULL);
+	/**
+	 * @brief Constructeur
+	 * 
+	 */
+	Piece(vec3 dimension = vec3(1,1,1), vec3 rotation = vec3(), vec3 position = vec3(), Material * mat = NULL);
+
+	/**
+	 * @brief Destructeur
+	 */
 	~Piece();
 
+	/**
+	 * @brief Affiche l'ensemble des fils
+	 */
 	void draw();
 
-	void addWall(Plan *);
-	void addObjet(Objet *);
-	
+	/**
+	 * @brief Ajoute un fils à la pièce
+	 * @details Se charge de la destruction de l'objet
+	 * 
+	 * @param objet objet à ajouter
+	 */
+	void addChild(Objet * objet);
+
+	/**
+	 * @brief Récupère la liste des noms des objets fils
+     * @warning A revoir !
+	 * @return liste des noms des objets
+	 */
+	QStringList getChildren() const;
+
+	/**
+	 * @brief Renvoie un pointeur sur un objet fils
+	 * @details Récupère un pointeur sur un objet fils de la pièce
+	 * 
+	 * @param name nom de l'objet
+	 * @return un pointeur valide si l'objet est un fils de la pièce, NULL sinon
+	 */
+	Objet * 	getChild(const QString & name);
+
+	/**
+	 * @brief Retourne les dimensions de la pièce
+	 * @return vec3 contenant les dimensions de la pièce
+	 */
 	const vec3 dimensions() const;
+
+	/**
+	 * @brief Retourne les dimensions de la pièce
+	 * @return vec3 contenant les dimensions de la pièce
+	 */
 	vec3 & dimensions();
+
+	/**
+	 * @brief Edite les dimensions de la pièce
+	 * @param v nouvelles dimensions de la pièce
+	 */
 	void dimensions(const vec3 v);
 
 };

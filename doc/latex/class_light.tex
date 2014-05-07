@@ -1,0 +1,178 @@
+\hypertarget{class_light}{\section{Light Class Reference}
+\label{class_light}\index{Light@{Light}}
+}
+
+
+Lumière pour la \hyperlink{class_scene}{Scene}.  
+
+
+
+
+{\ttfamily \#include $<$light.\+hpp$>$}
+
+Inheritance diagram for Light\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_light}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_light_a661826269046b9f5d0e7eb8415e6fd12}{Light} (\hyperlink{structvec3}{vec3} position=\hyperlink{structvec3}{vec3}(0.\+0, 0.\+0, 0.\+0), \hyperlink{structvec3}{vec3} diffuse=\hyperlink{structvec3}{vec3}(0.\+8, 0.\+8, 0.\+8), \hyperlink{structvec3}{vec3} specular=\hyperlink{structvec3}{vec3}(0.\+8, 0.\+8, 0.\+8), char number=0)
+\begin{DoxyCompactList}\small\item\em Constructeur d'une lumière. \end{DoxyCompactList}\item 
+\hyperlink{class_light_ad0e59fad13bb6cfadc25b2c477e9ddc7}{$\sim$\+Light} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+void \hyperlink{class_light_a9fcc4b3ffdeedbe214ee8384c7d311b9}{set} (G\+Lenum type, \hyperlink{structvec3}{vec3} value)
+\begin{DoxyCompactList}\small\item\em Met à jour une composante de la lumière. \end{DoxyCompactList}\item 
+void \hyperlink{class_light_a985e67a0b88ba49ec8da5d5b205d06ed}{set\+Number} (char num)
+\begin{DoxyCompactList}\small\item\em Change le slot de la lumière. \end{DoxyCompactList}\item 
+void \hyperlink{class_light_a295eaf1ef5ebd30fa4997d4f7ccbb7e1}{update} ()
+\begin{DoxyCompactList}\small\item\em Met à jour le shader avec les infos de la lumière. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structvec3}{vec3} \hyperlink{class_light_a3af8c823a869606782bd9e1872586b72}{\+\_\+position}
+\item 
+\hyperlink{structvec3}{vec3} \hyperlink{class_light_a32445f2054766ef532c29eb514b2599d}{\+\_\+diffuse}
+\item 
+\hyperlink{structvec3}{vec3} \hyperlink{class_light_a36414dc1e8a75b36652bc5a12b2ea43d}{\+\_\+specular}
+\item 
+char \hyperlink{class_light_a072b63fbb9a1269db4241e09db7588b1}{\+\_\+light\+Num}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structvec3}{vec3} \hyperlink{class_light_ab139b739498b75944c99203027332ad9}{\+\_\+ambient}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Lumière pour la \hyperlink{class_scene}{Scene}. 
+
+Gère une lumière pour la scène
+
+\begin{DoxyWarning}{Warning}
+seul les lumières positionnelles sont gérées pour l'instant 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]attenuation de la lumière par lumière et plus globale \end{DoxyRefDesc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_light_a661826269046b9f5d0e7eb8415e6fd12}{\index{Light@{Light}!Light@{Light}}
+\index{Light@{Light}!Light@{Light}}
+\subsubsection[{Light}]{\setlength{\rightskip}{0pt plus 5cm}Light\+::\+Light (
+\begin{DoxyParamCaption}
+\item[{{\bf vec3}}]{position = {\ttfamily {\bf vec3}(0.0,~0.0,~0.0)}, }
+\item[{{\bf vec3}}]{diffuse = {\ttfamily {\bf vec3}(0.8,~0.8,~0.8)}, }
+\item[{{\bf vec3}}]{specular = {\ttfamily {\bf vec3}(0.8,~0.8,~0.8)}, }
+\item[{char}]{number = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_light_a661826269046b9f5d0e7eb8415e6fd12}
+
+
+Constructeur d'une lumière. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & position de la lumière \\
+\hline
+{\em diffuse} & composante diffuse de la lumière \\
+\hline
+{\em specular} & composante spéculaire de la lumière \\
+\hline
+{\em number} & correspond au slot de la lumière qui sera utilisé dans le shader\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+number doit appartenir à \mbox{[}0,7\mbox{]} 
+\end{DoxyWarning}
+\hypertarget{class_light_ad0e59fad13bb6cfadc25b2c477e9ddc7}{\index{Light@{Light}!````~Light@{$\sim$\+Light}}
+\index{````~Light@{$\sim$\+Light}!Light@{Light}}
+\subsubsection[{$\sim$\+Light}]{\setlength{\rightskip}{0pt plus 5cm}Light\+::$\sim$\+Light (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_light_ad0e59fad13bb6cfadc25b2c477e9ddc7}
+
+
+Destructeur. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000002}{Todo}]Vérifier que la lumière est désactivée dans tout les shader \end{DoxyRefDesc}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_light_a9fcc4b3ffdeedbe214ee8384c7d311b9}{\index{Light@{Light}!set@{set}}
+\index{set@{set}!Light@{Light}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void Light\+::set (
+\begin{DoxyParamCaption}
+\item[{G\+Lenum}]{type, }
+\item[{{\bf vec3}}]{value}
+\end{DoxyParamCaption}
+)}}\label{class_light_a9fcc4b3ffdeedbe214ee8384c7d311b9}
+
+
+Met à jour une composante de la lumière. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & composante à modifier, doit être parmis (G\+L\+\_\+\+P\+O\+S\+I\+T\+I\+O\+N, G\+L\+\_\+\+A\+M\+B\+I\+E\+N\+T, G\+L\+\_\+\+D\+I\+F\+F\+U\+S\+E, G\+L\+\_\+\+S\+P\+E\+C\+U\+L\+A\+R) \\
+\hline
+{\em value} & valeur \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_light_a985e67a0b88ba49ec8da5d5b205d06ed}{\index{Light@{Light}!set\+Number@{set\+Number}}
+\index{set\+Number@{set\+Number}!Light@{Light}}
+\subsubsection[{set\+Number}]{\setlength{\rightskip}{0pt plus 5cm}void Light\+::set\+Number (
+\begin{DoxyParamCaption}
+\item[{char}]{num}
+\end{DoxyParamCaption}
+)}}\label{class_light_a985e67a0b88ba49ec8da5d5b205d06ed}
+
+
+Change le slot de la lumière. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & nouveau slot de la lumière \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]désactiver la lumière dans l'ancien slot \end{DoxyRefDesc}
+\hypertarget{class_light_a295eaf1ef5ebd30fa4997d4f7ccbb7e1}{\index{Light@{Light}!update@{update}}
+\index{update@{update}!Light@{Light}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Light\+::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_light_a295eaf1ef5ebd30fa4997d4f7ccbb7e1}
+
+
+Met à jour le shader avec les infos de la lumière. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_light_ab139b739498b75944c99203027332ad9}{\index{Light@{Light}!\+\_\+ambient@{\+\_\+ambient}}
+\index{\+\_\+ambient@{\+\_\+ambient}!Light@{Light}}
+\subsubsection[{\+\_\+ambient}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Light\+::\+\_\+ambient\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{class_light_ab139b739498b75944c99203027332ad9}
+La composante ambient est commune à toutes les lumières \hypertarget{class_light_a32445f2054766ef532c29eb514b2599d}{\index{Light@{Light}!\+\_\+diffuse@{\+\_\+diffuse}}
+\index{\+\_\+diffuse@{\+\_\+diffuse}!Light@{Light}}
+\subsubsection[{\+\_\+diffuse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Light\+::\+\_\+diffuse\hspace{0.3cm}{\ttfamily [private]}}}\label{class_light_a32445f2054766ef532c29eb514b2599d}
+\hypertarget{class_light_a072b63fbb9a1269db4241e09db7588b1}{\index{Light@{Light}!\+\_\+light\+Num@{\+\_\+light\+Num}}
+\index{\+\_\+light\+Num@{\+\_\+light\+Num}!Light@{Light}}
+\subsubsection[{\+\_\+light\+Num}]{\setlength{\rightskip}{0pt plus 5cm}char Light\+::\+\_\+light\+Num\hspace{0.3cm}{\ttfamily [private]}}}\label{class_light_a072b63fbb9a1269db4241e09db7588b1}
+\hypertarget{class_light_a3af8c823a869606782bd9e1872586b72}{\index{Light@{Light}!\+\_\+position@{\+\_\+position}}
+\index{\+\_\+position@{\+\_\+position}!Light@{Light}}
+\subsubsection[{\+\_\+position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Light\+::\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}}\label{class_light_a3af8c823a869606782bd9e1872586b72}
+\hypertarget{class_light_a36414dc1e8a75b36652bc5a12b2ea43d}{\index{Light@{Light}!\+\_\+specular@{\+\_\+specular}}
+\index{\+\_\+specular@{\+\_\+specular}!Light@{Light}}
+\subsubsection[{\+\_\+specular}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Light\+::\+\_\+specular\hspace{0.3cm}{\ttfamily [private]}}}\label{class_light_a36414dc1e8a75b36652bc5a12b2ea43d}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+scene/\hyperlink{light_8hpp}{light.\+hpp}\item 
+scene/\hyperlink{light_8cpp}{light.\+cpp}\end{DoxyCompactItemize}

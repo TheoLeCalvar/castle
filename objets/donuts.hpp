@@ -3,7 +3,12 @@
 
 #include "objet.hpp"
 
-
+/**
+ * @class Donuts
+ * @brief Primitive tore
+ * @warning Peut être plus utilisable
+ * @see  Cube
+ */
 class Donuts: public Objet
 {
 private:

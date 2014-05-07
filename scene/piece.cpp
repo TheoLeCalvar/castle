@@ -2,38 +2,55 @@
 
 
 
-Piece::Piece(vec3 dimension, vec3 rotation, vec3 position, Material * mat, Objet * parent)
-:Objet(mat, rotation, position, parent), _dimensions(dimension)
+Piece::Piece(vec3 dimension, vec3 rotation, vec3 position, Material * mat)
+:Objet("", mat, rotation, position, NULL), _dimensions(dimension)
 {}
 
 Piece::~Piece()
 {
-	for(std::list<Plan *>::iterator i = _murs.begin(); i != _murs.end(); ++i)
-		delete *i;
+	for(auto i: _children)
+		delete i;
 }
 
 void Piece::draw()
 {
 	pushMatrix(currentMatrix() * _model);
 
-	for(auto i: _murs){
-		i->draw();
-	}
-
-	for(auto i: _objets)
+	for(auto i: _children)
 		i->draw();
 
 	popMatrix();
 }
 
-void Piece::addWall(Plan * p)
+
+void Piece::addChild(Objet * o)
 {
-	_murs.push_front(p);
+	if (o)
+	{
+		_children << o;
+	}
 }
 
-void Piece::addObjet(Objet * o)
+QStringList Piece::getChildren() const
 {
-	_objets.push_front(o);
+	QStringList l;
+
+	for(auto i : _children)
+		l << i->name();
+
+	return l;
+}
+
+Objet * 	Piece::getChild(const QString & name)
+{
+	for(auto i : _children)
+		if (i->name() == name)
+		{
+			return i;
+		}
+
+	return NULL;
+
 }
 
 const vec3 Piece::dimensions() const

@@ -1,7 +1,7 @@
 #include "objet.hpp"
 
-Objet::Objet(Material * mat, vec3 rotation, vec3 position, Objet * parent)
-		:_parent(parent), _mat(mat), _rotation(rotation), _position(position), _model(1), _shaderId(0)
+Objet::Objet(const QString & name, Material * mat, vec3 rotation, vec3 position, Objet * parent)
+		:_parent(parent), _mat(mat), _name(name), _rotation(rotation), _position(position), _model(1), _shaderId(0)
 {
 	initializeOpenGLFunctions(); 
 	updateModel();
@@ -28,6 +28,7 @@ void	Objet::rotation(vec3 r)
 	_rotation = r;
 	updateModel();
 }
+
 
 void 	Objet::applyMaterial()
 {

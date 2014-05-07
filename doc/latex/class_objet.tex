@@ -1,0 +1,386 @@
+\hypertarget{class_objet}{\section{Objet Class Reference}
+\label{class_objet}\index{Objet@{Objet}}
+}
+
+
+Classe de base affichable.  
+
+
+
+
+{\ttfamily \#include $<$objet.\+hpp$>$}
+
+Inheritance diagram for Objet\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.435897cm]{class_objet}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_objet_aea29e90dc963beb399d3028b7322039f}{Objet} (const Q\+String \&\hyperlink{class_objet_a4a702c189bedcbf1e65da6aec72c8e44}{name}=Q\+String(), \hyperlink{class_material}{Material} $\ast$mat=N\+U\+L\+L, \hyperlink{structvec3}{vec3} \hyperlink{class_objet_ac69a1b459bcb4433099c8cfbff06b209}{rotation}=\hyperlink{structvec3}{vec3}(), \hyperlink{structvec3}{vec3} \hyperlink{class_objet_a0e109bc790b14328202dd2546b04e2fd}{position}=\hyperlink{structvec3}{vec3}(), \hyperlink{class_objet}{Objet} $\ast$\hyperlink{class_objet_a95e63a98dc9dc485fe874df30f2069ee}{parent}=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_objet_a77a195bb1452ef4221b5080632cd7757}{$\sim$\+Objet} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{draw} ()
+\begin{DoxyCompactList}\small\item\em Affichage de l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\item 
+\hyperlink{structvec3}{vec3} \& \hyperlink{class_objet_a0e109bc790b14328202dd2546b04e2fd}{position} ()
+\begin{DoxyCompactList}\small\item\em Récupère la position de l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\item 
+\hyperlink{structvec3}{vec3} \hyperlink{class_objet_a79051e09eb1aa72dcd338ed033e9f3f1}{position} () const 
+\begin{DoxyCompactList}\small\item\em Récupère la position de l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\item 
+void \hyperlink{class_objet_a89ed090c598f087792ee81c40ff46f75}{position} (\hyperlink{structvec3}{vec3} p)
+\begin{DoxyCompactList}\small\item\em Change la position de l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\item 
+\hyperlink{structvec3}{vec3} \& \hyperlink{class_objet_ac69a1b459bcb4433099c8cfbff06b209}{rotation} ()
+\begin{DoxyCompactList}\small\item\em Récupère la rotation de l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\item 
+\hyperlink{structvec3}{vec3} \hyperlink{class_objet_a0325e52c600e8de17312287b4f7a3e67}{rotation} () const 
+\begin{DoxyCompactList}\small\item\em Récupère la rotation de l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\item 
+void \hyperlink{class_objet_a2d37f15368f40615a8bc58622623d991}{rotation} (\hyperlink{structvec3}{vec3} r)
+\begin{DoxyCompactList}\small\item\em Change la rotation de l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\item 
+void \hyperlink{class_objet_a13f08bf7d1265bbf4ade92b755b27c1b}{shader\+Id} (G\+Luint s)
+\begin{DoxyCompactList}\small\item\em Change l'id du shader. \end{DoxyCompactList}\item 
+\hyperlink{class_material}{Material} $\ast$ \hyperlink{class_objet_a5b8f371853435fb08bba5163cb4dbe09}{material} ()
+\begin{DoxyCompactList}\small\item\em Récupère le material de l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\item 
+void \hyperlink{class_objet_a470e028ee53141cf9d11d107317989b7}{material} (\hyperlink{class_material}{Material} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Change le \hyperlink{class_material}{Material} de l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\item 
+void \hyperlink{class_objet_a95e63a98dc9dc485fe874df30f2069ee}{parent} (\hyperlink{class_objet}{Objet} $\ast$o)
+\begin{DoxyCompactList}\small\item\em Change l'\hyperlink{class_objet}{Objet} père. \end{DoxyCompactList}\item 
+\hyperlink{class_objet}{Objet} $\ast$ \hyperlink{class_objet_aaa3c3290e5bb742363263600fcdb3e5e}{parent} ()
+\begin{DoxyCompactList}\small\item\em Récupère l'\hyperlink{class_objet}{Objet} père. \end{DoxyCompactList}\item 
+const Q\+String \& \hyperlink{class_objet_a4a702c189bedcbf1e65da6aec72c8e44}{name} () const 
+\begin{DoxyCompactList}\small\item\em Récupère le nom de l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\item 
+void \hyperlink{class_objet_a9fcc9af481f4e13f46ab7d1b40cf91fc}{name} (const Q\+String \&n)
+\begin{DoxyCompactList}\small\item\em Change le nom de l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_objet}{Objet} $\ast$ \hyperlink{class_objet_a91c5a50011c3fe9233a645aa767a275f}{\+\_\+parent}
+\item 
+\hyperlink{class_material}{Material} $\ast$ \hyperlink{class_objet_aefea82be8c63504190ac63d5e44ff61a}{\+\_\+mat}
+\item 
+Q\+String \hyperlink{class_objet_ac19f568a794dd9387386ee71914a868e}{\+\_\+name}
+\item 
+\hyperlink{structvec3}{vec3} \hyperlink{class_objet_a1d8675e88cc98ba740292af1421c2ee1}{\+\_\+rotation}
+\item 
+\hyperlink{structvec3}{vec3} \hyperlink{class_objet_a6c1a10fa5f4c5cd0e0617d93f42d927b}{\+\_\+position}
+\item 
+\hyperlink{structmat4}{mat4} \hyperlink{class_objet_a1963cca59f62c7a6f69a9c2c461ad9ea}{\+\_\+model}
+\item 
+G\+Luint \hyperlink{class_objet_af0d545a506dbfa377c8ca5a499fdf755}{\+\_\+shader\+Id}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_objet_a0960722f5ddb16f2c245dca4e6584f25}{update\+Model} ()
+\begin{DoxyCompactList}\small\item\em Met à jour la matrice de model. \end{DoxyCompactList}\item 
+void \hyperlink{class_objet_a5c21e68142ae5b7c880cbd80336fb43e}{apply\+Material} ()
+\begin{DoxyCompactList}\small\item\em Transmet les information du \hyperlink{class_material}{Material} au shader. \end{DoxyCompactList}\item 
+void \hyperlink{class_objet_a995e953fb2f3d1a472aa04d2c5848f0a}{activate\+Shader} ()
+\begin{DoxyCompactList}\small\item\em Change le shader actif. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe de base affichable. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_objet_aea29e90dc963beb399d3028b7322039f}{\index{Objet@{Objet}!Objet@{Objet}}
+\index{Objet@{Objet}!Objet@{Objet}}
+\subsubsection[{Objet}]{\setlength{\rightskip}{0pt plus 5cm}Objet\+::\+Objet (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name = {\ttfamily QString()}, }
+\item[{{\bf Material} $\ast$}]{mat = {\ttfamily NULL}, }
+\item[{{\bf vec3}}]{rotation = {\ttfamily {\bf vec3}()}, }
+\item[{{\bf vec3}}]{position = {\ttfamily {\bf vec3}()}, }
+\item[{{\bf Objet} $\ast$}]{parent = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{class_objet_aea29e90dc963beb399d3028b7322039f}
+
+
+Constructeur. 
+
+\hypertarget{class_objet_a77a195bb1452ef4221b5080632cd7757}{\index{Objet@{Objet}!````~Objet@{$\sim$\+Objet}}
+\index{````~Objet@{$\sim$\+Objet}!Objet@{Objet}}
+\subsubsection[{$\sim$\+Objet}]{\setlength{\rightskip}{0pt plus 5cm}virtual Objet\+::$\sim$\+Objet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_objet_a77a195bb1452ef4221b5080632cd7757}
+
+
+Destructeur. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_objet_a995e953fb2f3d1a472aa04d2c5848f0a}{\index{Objet@{Objet}!activate\+Shader@{activate\+Shader}}
+\index{activate\+Shader@{activate\+Shader}!Objet@{Objet}}
+\subsubsection[{activate\+Shader}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::activate\+Shader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_objet_a995e953fb2f3d1a472aa04d2c5848f0a}
+
+
+Change le shader actif. 
+
+Active le shader de l'\hyperlink{class_objet}{Objet}, reporte les matrices de view et projection \hypertarget{class_objet_a5c21e68142ae5b7c880cbd80336fb43e}{\index{Objet@{Objet}!apply\+Material@{apply\+Material}}
+\index{apply\+Material@{apply\+Material}!Objet@{Objet}}
+\subsubsection[{apply\+Material}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::apply\+Material (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_objet_a5c21e68142ae5b7c880cbd80336fb43e}
+
+
+Transmet les information du \hyperlink{class_material}{Material} au shader. 
+
+Si l'\hyperlink{class_objet}{Objet} ne possède pas de \hyperlink{class_material}{Material} celui de son père est appliqué, s'il ne possède pas de père le dernier \hyperlink{class_material}{Material} est utilisé \hypertarget{class_objet_a5cc323f562964e00b947b2d908e206e7}{\index{Objet@{Objet}!draw@{draw}}
+\index{draw@{draw}!Objet@{Objet}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_objet_a5cc323f562964e00b947b2d908e206e7}
+
+
+Affichage de l'\hyperlink{class_objet}{Objet}. 
+
+Active le shader de l'\hyperlink{class_objet}{Objet} et applique le material 
+
+Reimplemented in \hyperlink{class_mesh_a996a8668fa2ca7d95d6d10744c833bc8}{Mesh}, \hyperlink{class_plan_a513c3dec0ce9043a9e1d3b5b18a6d698}{Plan}, \hyperlink{class_cube_ab26b72a81376fd5dc4fcc7f0b715b087}{Cube}, \hyperlink{class_piece_aee937e57fbfe4717aab14e1e892aed2e}{Piece}, \hyperlink{class_donuts_a5a7932c8494905ba09bb515a01e6c91d}{Donuts}, and \hyperlink{class_sphere_a34a34167b7544c95155d3ff30638d045}{Sphere}.
+
+\hypertarget{class_objet_a5b8f371853435fb08bba5163cb4dbe09}{\index{Objet@{Objet}!material@{material}}
+\index{material@{material}!Objet@{Objet}}
+\subsubsection[{material}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Material}$\ast$ Objet\+::material (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_objet_a5b8f371853435fb08bba5163cb4dbe09}
+
+
+Récupère le material de l'\hyperlink{class_objet}{Objet}. 
+
+\begin{DoxyReturn}{Returns}
+un pointeur valide ou N\+U\+L\+L 
+\end{DoxyReturn}
+\hypertarget{class_objet_a470e028ee53141cf9d11d107317989b7}{\index{Objet@{Objet}!material@{material}}
+\index{material@{material}!Objet@{Objet}}
+\subsubsection[{material}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::material (
+\begin{DoxyParamCaption}
+\item[{{\bf Material} $\ast$}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_objet_a470e028ee53141cf9d11d107317989b7}
+
+
+Change le \hyperlink{class_material}{Material} de l'\hyperlink{class_objet}{Objet}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & pointeur sur le nouveau \hyperlink{class_material}{Material} \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_objet_a4a702c189bedcbf1e65da6aec72c8e44}{\index{Objet@{Objet}!name@{name}}
+\index{name@{name}!Objet@{Objet}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}const Q\+String\& Objet\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_objet_a4a702c189bedcbf1e65da6aec72c8e44}
+
+
+Récupère le nom de l'\hyperlink{class_objet}{Objet}. 
+
+\begin{DoxyReturn}{Returns}
+nom de l'\hyperlink{class_objet}{Objet} 
+\end{DoxyReturn}
+\hypertarget{class_objet_a9fcc9af481f4e13f46ab7d1b40cf91fc}{\index{Objet@{Objet}!name@{name}}
+\index{name@{name}!Objet@{Objet}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::name (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_objet_a9fcc9af481f4e13f46ab7d1b40cf91fc}
+
+
+Change le nom de l'\hyperlink{class_objet}{Objet}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & nouveau nom de l'\hyperlink{class_objet}{Objet} \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_objet_a95e63a98dc9dc485fe874df30f2069ee}{\index{Objet@{Objet}!parent@{parent}}
+\index{parent@{parent}!Objet@{Objet}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::parent (
+\begin{DoxyParamCaption}
+\item[{{\bf Objet} $\ast$}]{o}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_objet_a95e63a98dc9dc485fe874df30f2069ee}
+
+
+Change l'\hyperlink{class_objet}{Objet} père. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em o} & père \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_objet_aaa3c3290e5bb742363263600fcdb3e5e}{\index{Objet@{Objet}!parent@{parent}}
+\index{parent@{parent}!Objet@{Objet}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Objet}$\ast$ Objet\+::parent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_objet_aaa3c3290e5bb742363263600fcdb3e5e}
+
+
+Récupère l'\hyperlink{class_objet}{Objet} père. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_objet}{Objet} père ou N\+U\+L\+L 
+\end{DoxyReturn}
+\hypertarget{class_objet_a0e109bc790b14328202dd2546b04e2fd}{\index{Objet@{Objet}!position@{position}}
+\index{position@{position}!Objet@{Objet}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3}\& Objet\+::position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_objet_a0e109bc790b14328202dd2546b04e2fd}
+
+
+Récupère la position de l'\hyperlink{class_objet}{Objet}. 
+
+\begin{DoxyReturn}{Returns}
+position de l'\hyperlink{class_objet}{Objet} 
+\end{DoxyReturn}
+\hypertarget{class_objet_a79051e09eb1aa72dcd338ed033e9f3f1}{\index{Objet@{Objet}!position@{position}}
+\index{position@{position}!Objet@{Objet}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Objet\+::position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_objet_a79051e09eb1aa72dcd338ed033e9f3f1}
+
+
+Récupère la position de l'\hyperlink{class_objet}{Objet}. 
+
+\begin{DoxyReturn}{Returns}
+position de l'\hyperlink{class_objet}{Objet} 
+\end{DoxyReturn}
+\hypertarget{class_objet_a89ed090c598f087792ee81c40ff46f75}{\index{Objet@{Objet}!position@{position}}
+\index{position@{position}!Objet@{Objet}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::position (
+\begin{DoxyParamCaption}
+\item[{{\bf vec3}}]{p}
+\end{DoxyParamCaption}
+)}}\label{class_objet_a89ed090c598f087792ee81c40ff46f75}
+
+
+Change la position de l'\hyperlink{class_objet}{Objet}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & nouvelle position \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_objet_ac69a1b459bcb4433099c8cfbff06b209}{\index{Objet@{Objet}!rotation@{rotation}}
+\index{rotation@{rotation}!Objet@{Objet}}
+\subsubsection[{rotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3}\& Objet\+::rotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_objet_ac69a1b459bcb4433099c8cfbff06b209}
+
+
+Récupère la rotation de l'\hyperlink{class_objet}{Objet}. 
+
+\begin{DoxyReturn}{Returns}
+rotation de l'\hyperlink{class_objet}{Objet} 
+\end{DoxyReturn}
+\hypertarget{class_objet_a0325e52c600e8de17312287b4f7a3e67}{\index{Objet@{Objet}!rotation@{rotation}}
+\index{rotation@{rotation}!Objet@{Objet}}
+\subsubsection[{rotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Objet\+::rotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_objet_a0325e52c600e8de17312287b4f7a3e67}
+
+
+Récupère la rotation de l'\hyperlink{class_objet}{Objet}. 
+
+\begin{DoxyReturn}{Returns}
+rotation de l'\hyperlink{class_objet}{Objet} 
+\end{DoxyReturn}
+\hypertarget{class_objet_a2d37f15368f40615a8bc58622623d991}{\index{Objet@{Objet}!rotation@{rotation}}
+\index{rotation@{rotation}!Objet@{Objet}}
+\subsubsection[{rotation}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::rotation (
+\begin{DoxyParamCaption}
+\item[{{\bf vec3}}]{r}
+\end{DoxyParamCaption}
+)}}\label{class_objet_a2d37f15368f40615a8bc58622623d991}
+
+
+Change la rotation de l'\hyperlink{class_objet}{Objet}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & nouvelle rotation de l'\hyperlink{class_objet}{Objet} \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_objet_a13f08bf7d1265bbf4ade92b755b27c1b}{\index{Objet@{Objet}!shader\+Id@{shader\+Id}}
+\index{shader\+Id@{shader\+Id}!Objet@{Objet}}
+\subsubsection[{shader\+Id}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::shader\+Id (
+\begin{DoxyParamCaption}
+\item[{G\+Luint}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_objet_a13f08bf7d1265bbf4ade92b755b27c1b}
+
+
+Change l'id du shader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & nouvel id du shader de l'\hyperlink{class_objet}{Objet} \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_objet_a0960722f5ddb16f2c245dca4e6584f25}{\index{Objet@{Objet}!update\+Model@{update\+Model}}
+\index{update\+Model@{update\+Model}!Objet@{Objet}}
+\subsubsection[{update\+Model}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::update\+Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_objet_a0960722f5ddb16f2c245dca4e6584f25}
+
+
+Met à jour la matrice de model. 
+
+Appellée lors d'une modification des vecteurs position ou rotation 
+
+\subsection{Member Data Documentation}
+\hypertarget{class_objet_aefea82be8c63504190ac63d5e44ff61a}{\index{Objet@{Objet}!\+\_\+mat@{\+\_\+mat}}
+\index{\+\_\+mat@{\+\_\+mat}!Objet@{Objet}}
+\subsubsection[{\+\_\+mat}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Material}$\ast$ Objet\+::\+\_\+mat\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_objet_aefea82be8c63504190ac63d5e44ff61a}
+\hypertarget{class_objet_a1963cca59f62c7a6f69a9c2c461ad9ea}{\index{Objet@{Objet}!\+\_\+model@{\+\_\+model}}
+\index{\+\_\+model@{\+\_\+model}!Objet@{Objet}}
+\subsubsection[{\+\_\+model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat4} Objet\+::\+\_\+model\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_objet_a1963cca59f62c7a6f69a9c2c461ad9ea}
+\hypertarget{class_objet_ac19f568a794dd9387386ee71914a868e}{\index{Objet@{Objet}!\+\_\+name@{\+\_\+name}}
+\index{\+\_\+name@{\+\_\+name}!Objet@{Objet}}
+\subsubsection[{\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Objet\+::\+\_\+name\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_objet_ac19f568a794dd9387386ee71914a868e}
+\hypertarget{class_objet_a91c5a50011c3fe9233a645aa767a275f}{\index{Objet@{Objet}!\+\_\+parent@{\+\_\+parent}}
+\index{\+\_\+parent@{\+\_\+parent}!Objet@{Objet}}
+\subsubsection[{\+\_\+parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Objet}$\ast$ Objet\+::\+\_\+parent\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_objet_a91c5a50011c3fe9233a645aa767a275f}
+\hypertarget{class_objet_a6c1a10fa5f4c5cd0e0617d93f42d927b}{\index{Objet@{Objet}!\+\_\+position@{\+\_\+position}}
+\index{\+\_\+position@{\+\_\+position}!Objet@{Objet}}
+\subsubsection[{\+\_\+position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Objet\+::\+\_\+position\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_objet_a6c1a10fa5f4c5cd0e0617d93f42d927b}
+\hypertarget{class_objet_a1d8675e88cc98ba740292af1421c2ee1}{\index{Objet@{Objet}!\+\_\+rotation@{\+\_\+rotation}}
+\index{\+\_\+rotation@{\+\_\+rotation}!Objet@{Objet}}
+\subsubsection[{\+\_\+rotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Objet\+::\+\_\+rotation\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_objet_a1d8675e88cc98ba740292af1421c2ee1}
+\hypertarget{class_objet_af0d545a506dbfa377c8ca5a499fdf755}{\index{Objet@{Objet}!\+\_\+shader\+Id@{\+\_\+shader\+Id}}
+\index{\+\_\+shader\+Id@{\+\_\+shader\+Id}!Objet@{Objet}}
+\subsubsection[{\+\_\+shader\+Id}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Objet\+::\+\_\+shader\+Id\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_objet_af0d545a506dbfa377c8ca5a499fdf755}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+objets/\hyperlink{objet_8hpp}{objet.\+hpp}\item 
+objets/\hyperlink{objet_8cpp}{objet.\+cpp}\end{DoxyCompactItemize}

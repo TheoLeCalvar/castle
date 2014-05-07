@@ -8,12 +8,15 @@ Material::Material(
 		vec4 ambient, vec4 diffuse, vec4 specular, 
 		float shininess, 
 		vec4 emissive,
-		const QString & texFile):
-	_ambient(ambient), _diffuse(diffuse), _specular(specular), _shininess(shininess), _emissive(emissive), _texture(0)
+		const QList<QString> & texFile):
+	_ambient(ambient), _diffuse(diffuse), _specular(specular), _shininess(shininess), _emissive(emissive)
 {
 	initializeOpenGLFunctions();
 
-	set(texFile);
+	for(auto i : texFile)
+	{
+		addTexture(i);
+	}
 }
 
 Material::~Material()
@@ -46,7 +49,7 @@ void Material::set(const float shininess)
 	_shininess = shininess;
 }
 
-void Material::set(const QString & texFile)
+void Material::addTexture(const QString & texFile)
 {
 	if (texFile != "")
 	{
@@ -54,17 +57,19 @@ void Material::set(const QString & texFile)
 
 		if (res != _texturesLoaded.end())
 		{
-			_texture = res->second;
+			_textures << res->second;
 		}
 		else
 		{
-			glActiveTexture(GL_TEXTURE0);
+			glActiveTexture(GL_TEXTURE0 + _textures.count());
+			QOpenGLTexture *texture = new QOpenGLTexture(QImage(texFile).mirrored());
 			//inverse l'image sur les y pour l'avoir dans le sens intuitif
-			_texture = new QOpenGLTexture(QImage(texFile).mirrored());
-			_texture->setMinMagFilters(QOpenGLTexture::Nearest, QOpenGLTexture::Nearest);
 
+			texture->setMinMagFilters(QOpenGLTexture::Nearest, QOpenGLTexture::Nearest);
 
-			_texturesLoaded.insert(std::make_pair(texFile, _texture));
+			_textures << texture;
+
+			_texturesLoaded.insert(std::make_pair(texFile, texture));
 		}
 	}	
 }
@@ -97,7 +102,7 @@ float Material::shininess() const
 
 bool Material::hasTexture() const
 {
-	return (_texture != NULL);
+	return (!_textures.empty());
 }
 
 void Material::update()
@@ -117,11 +122,16 @@ void Material::update()
 	glUniform1f(specular_exponnent_location, _shininess);
 	// glUniform3fv(emissive_location, 1, _emissive.v);
 
-	if (_texture)
+	if (!_textures.empty())
 	{
+		unsigned int i = 0;
 		glUniform1f(useTexture_location, 1.0);
-		glActiveTexture(GL_TEXTURE0);
-		_texture->bind();
+
+		for (auto tex : _textures)
+		{
+			glActiveTexture(GL_TEXTURE0 + i++);
+			tex->bind();
+		}
 
 	}
 	else

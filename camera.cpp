@@ -4,9 +4,8 @@
 
 Camera::Camera( float eyeX, float eyeY, float eyeZ):
     _eye(eyeX, eyeY, eyeZ),
-    _phi(0), _theta(0), _haut(0.0f,1.0f,0.0f), 
-    _avant_presse(false), _arriere_presse(false), _gauche_presse(false), _droite_presse(false), _haut_presse(false), _bas_presse(false),
-    _vitesse(0.10f)
+    _phi(0), _theta(0), _haut(0.0f,1.0f,0.0f), _vitesse(0.10f),
+    _avant_presse(false), _arriere_presse(false), _gauche_presse(false), _droite_presse(false), _haut_presse(false), _bas_presse(false)
 {
     vectorFromAngle();
 }

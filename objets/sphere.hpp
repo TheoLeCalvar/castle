@@ -3,7 +3,12 @@
 
 #include "objet.hpp"
 
-
+/**
+ * @class Sphere
+ * @brief Primitive tore
+ * @warning Peut être plus utilisable
+ * @see  Cube
+ */
 class Sphere: public Objet
 {
 private:

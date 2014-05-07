@@ -1,0 +1,134 @@
+\hypertarget{class_sphere}{\section{Sphere Class Reference}
+\label{class_sphere}\index{Sphere@{Sphere}}
+}
+
+
+Primitive tore.  
+
+
+
+
+{\ttfamily \#include $<$sphere.\+hpp$>$}
+
+Inheritance diagram for Sphere\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_sphere}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sphere_ae6811ba8643126e4f3a7443d752c49b0}{Sphere} (G\+Ldouble \hyperlink{class_sphere_a4b019bb4bf74ac28ab56d5ae2c9ca6ea}{m\+\_\+radius}=1, G\+Ldouble \hyperlink{class_sphere_aa3ec1c07df539131c0fb886fe9c619fd}{m\+\_\+radius2}=1, G\+Lint \hyperlink{class_sphere_a6ddad99936fa616fa04862aa92e20105}{m\+\_\+slices}=1, G\+Lint \hyperlink{class_sphere_aef79b7beb9d008e8dcc0849fbe691072}{m\+\_\+stacks}=1, \hyperlink{class_material}{Material} $\ast$mat=N\+U\+L\+L, \hyperlink{structvec3}{vec3} \hyperlink{class_objet_ac69a1b459bcb4433099c8cfbff06b209}{rotation}=\hyperlink{structvec3}{vec3}(), \hyperlink{structvec3}{vec3} \hyperlink{class_objet_a0e109bc790b14328202dd2546b04e2fd}{position}=\hyperlink{structvec3}{vec3}())
+\item 
+\hyperlink{class_sphere_a569c071e50a3e11f678630ee1a17737e}{$\sim$\+Sphere} ()
+\item 
+void \hyperlink{class_sphere_a34a34167b7544c95155d3ff30638d045}{draw} ()
+\begin{DoxyCompactList}\small\item\em Affichage de l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_sphere_aacaf4cf9d7810dffd8c81c8c8298a95b}{gen\+Vao} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+G\+Luint \hyperlink{class_sphere_a18d31b1d011d5c5e452b9b9b6f54b10f}{\+\_\+vao}
+\item 
+G\+Ldouble \hyperlink{class_sphere_a4b019bb4bf74ac28ab56d5ae2c9ca6ea}{m\+\_\+radius}
+\item 
+G\+Ldouble \hyperlink{class_sphere_aa3ec1c07df539131c0fb886fe9c619fd}{m\+\_\+radius2}
+\item 
+G\+Lint \hyperlink{class_sphere_a6ddad99936fa616fa04862aa92e20105}{m\+\_\+slices}
+\item 
+G\+Lint \hyperlink{class_sphere_aef79b7beb9d008e8dcc0849fbe691072}{m\+\_\+stacks}
+\item 
+G\+Lsizei \hyperlink{class_sphere_a4e8e9f5ba889e700b7244bc70232a271}{nbvertex}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Primitive tore. 
+
+\begin{DoxyWarning}{Warning}
+Peut être plus utilisable 
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_cube}{Cube} 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_sphere_ae6811ba8643126e4f3a7443d752c49b0}{\index{Sphere@{Sphere}!Sphere@{Sphere}}
+\index{Sphere@{Sphere}!Sphere@{Sphere}}
+\subsubsection[{Sphere}]{\setlength{\rightskip}{0pt plus 5cm}Sphere\+::\+Sphere (
+\begin{DoxyParamCaption}
+\item[{G\+Ldouble}]{m\+\_\+radius = {\ttfamily 1}, }
+\item[{G\+Ldouble}]{m\+\_\+radius2 = {\ttfamily 1}, }
+\item[{G\+Lint}]{m\+\_\+slices = {\ttfamily 1}, }
+\item[{G\+Lint}]{m\+\_\+stacks = {\ttfamily 1}, }
+\item[{{\bf Material} $\ast$}]{mat = {\ttfamily NULL}, }
+\item[{{\bf vec3}}]{rotation = {\ttfamily {\bf vec3}()}, }
+\item[{{\bf vec3}}]{position = {\ttfamily {\bf vec3}()}}
+\end{DoxyParamCaption}
+)}}\label{class_sphere_ae6811ba8643126e4f3a7443d752c49b0}
+\hypertarget{class_sphere_a569c071e50a3e11f678630ee1a17737e}{\index{Sphere@{Sphere}!````~Sphere@{$\sim$\+Sphere}}
+\index{````~Sphere@{$\sim$\+Sphere}!Sphere@{Sphere}}
+\subsubsection[{$\sim$\+Sphere}]{\setlength{\rightskip}{0pt plus 5cm}Sphere\+::$\sim$\+Sphere (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_sphere_a569c071e50a3e11f678630ee1a17737e}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_sphere_a34a34167b7544c95155d3ff30638d045}{\index{Sphere@{Sphere}!draw@{draw}}
+\index{draw@{draw}!Sphere@{Sphere}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Sphere\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_sphere_a34a34167b7544c95155d3ff30638d045}
+
+
+Affichage de l'\hyperlink{class_objet}{Objet}. 
+
+Active le shader de l'\hyperlink{class_objet}{Objet} et applique le material 
+
+Reimplemented from \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Objet}.
+
+\hypertarget{class_sphere_aacaf4cf9d7810dffd8c81c8c8298a95b}{\index{Sphere@{Sphere}!gen\+Vao@{gen\+Vao}}
+\index{gen\+Vao@{gen\+Vao}!Sphere@{Sphere}}
+\subsubsection[{gen\+Vao}]{\setlength{\rightskip}{0pt plus 5cm}void Sphere\+::gen\+Vao (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_sphere_aacaf4cf9d7810dffd8c81c8c8298a95b}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_sphere_a18d31b1d011d5c5e452b9b9b6f54b10f}{\index{Sphere@{Sphere}!\+\_\+vao@{\+\_\+vao}}
+\index{\+\_\+vao@{\+\_\+vao}!Sphere@{Sphere}}
+\subsubsection[{\+\_\+vao}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Sphere\+::\+\_\+vao\hspace{0.3cm}{\ttfamily [private]}}}\label{class_sphere_a18d31b1d011d5c5e452b9b9b6f54b10f}
+\hypertarget{class_sphere_a4b019bb4bf74ac28ab56d5ae2c9ca6ea}{\index{Sphere@{Sphere}!m\+\_\+radius@{m\+\_\+radius}}
+\index{m\+\_\+radius@{m\+\_\+radius}!Sphere@{Sphere}}
+\subsubsection[{m\+\_\+radius}]{\setlength{\rightskip}{0pt plus 5cm}G\+Ldouble Sphere\+::m\+\_\+radius\hspace{0.3cm}{\ttfamily [private]}}}\label{class_sphere_a4b019bb4bf74ac28ab56d5ae2c9ca6ea}
+\hypertarget{class_sphere_aa3ec1c07df539131c0fb886fe9c619fd}{\index{Sphere@{Sphere}!m\+\_\+radius2@{m\+\_\+radius2}}
+\index{m\+\_\+radius2@{m\+\_\+radius2}!Sphere@{Sphere}}
+\subsubsection[{m\+\_\+radius2}]{\setlength{\rightskip}{0pt plus 5cm}G\+Ldouble Sphere\+::m\+\_\+radius2\hspace{0.3cm}{\ttfamily [private]}}}\label{class_sphere_aa3ec1c07df539131c0fb886fe9c619fd}
+\hypertarget{class_sphere_a6ddad99936fa616fa04862aa92e20105}{\index{Sphere@{Sphere}!m\+\_\+slices@{m\+\_\+slices}}
+\index{m\+\_\+slices@{m\+\_\+slices}!Sphere@{Sphere}}
+\subsubsection[{m\+\_\+slices}]{\setlength{\rightskip}{0pt plus 5cm}G\+Lint Sphere\+::m\+\_\+slices\hspace{0.3cm}{\ttfamily [private]}}}\label{class_sphere_a6ddad99936fa616fa04862aa92e20105}
+\hypertarget{class_sphere_aef79b7beb9d008e8dcc0849fbe691072}{\index{Sphere@{Sphere}!m\+\_\+stacks@{m\+\_\+stacks}}
+\index{m\+\_\+stacks@{m\+\_\+stacks}!Sphere@{Sphere}}
+\subsubsection[{m\+\_\+stacks}]{\setlength{\rightskip}{0pt plus 5cm}G\+Lint Sphere\+::m\+\_\+stacks\hspace{0.3cm}{\ttfamily [private]}}}\label{class_sphere_aef79b7beb9d008e8dcc0849fbe691072}
+\hypertarget{class_sphere_a4e8e9f5ba889e700b7244bc70232a271}{\index{Sphere@{Sphere}!nbvertex@{nbvertex}}
+\index{nbvertex@{nbvertex}!Sphere@{Sphere}}
+\subsubsection[{nbvertex}]{\setlength{\rightskip}{0pt plus 5cm}G\+Lsizei Sphere\+::nbvertex\hspace{0.3cm}{\ttfamily [private]}}}\label{class_sphere_a4e8e9f5ba889e700b7244bc70232a271}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+objets/\hyperlink{sphere_8hpp}{sphere.\+hpp}\item 
+objets/\hyperlink{sphere_8cpp}{sphere.\+cpp}\end{DoxyCompactItemize}

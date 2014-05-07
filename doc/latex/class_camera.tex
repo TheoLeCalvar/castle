@@ -1,0 +1,221 @@
+\hypertarget{class_camera}{\section{Camera Class Reference}
+\label{class_camera}\index{Camera@{Camera}}
+}
+
+
+\hyperlink{class_camera}{Camera} pour \hyperlink{class_scene}{Scene}.  
+
+
+
+
+{\ttfamily \#include $<$camera.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_camera_a415d689f1cf61b90da28f53dc232f232}{Camera} (float eye\+X=0.\+0f, float eye\+Y=0.\+0f, float eye\+Z=0.\+0f)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\hyperlink{class_camera_ad1897942d0ccf91052386388a497349f}{$\sim$\+Camera} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+void \hyperlink{class_camera_adbfdac30f082ddea86183c1c31493946}{display} ()
+\begin{DoxyCompactList}\small\item\em Actualise la caméra. \end{DoxyCompactList}\item 
+void \hyperlink{class_camera_a22aaf20b581d402e5c3952655b830c0f}{mouse\+Move\+Event} (int x, int y, int width, int height)
+\begin{DoxyCompactList}\small\item\em Fonction de déplacement de la caméra à la souris. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_camera_a4cab15e35a96fdcb2a8599fea13a9b8f}{\+\_\+avant\+\_\+presse}
+\item 
+bool \hyperlink{class_camera_a0ce12f74953fcd53192e48f8b4164e2e}{\+\_\+arriere\+\_\+presse}
+\item 
+bool \hyperlink{class_camera_ac2a5c37c4f9603a14e3616d6a75f7998}{\+\_\+gauche\+\_\+presse}
+\item 
+bool \hyperlink{class_camera_a61b2e438537b99ba1f0a97e5586b7f45}{\+\_\+droite\+\_\+presse}
+\item 
+bool \hyperlink{class_camera_a43b59b53cb182906d56e6e4d2c31139c}{\+\_\+haut\+\_\+presse}
+\item 
+bool \hyperlink{class_camera_aaba6828f97c9ef07b6b135a665bd3008}{\+\_\+bas\+\_\+presse}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structvec3}{vec3} \hyperlink{class_camera_ad4c22c27bd247f4411c4166220ba6e82}{\+\_\+eye}
+\item 
+\hyperlink{structvec3}{vec3} \hyperlink{class_camera_ad80a82cbc81e6d8ba04c7cc1ac7ba0d7}{\+\_\+center}
+\item 
+float \hyperlink{class_camera_a288df53a3ff446ee4367ee47b8499fcd}{\+\_\+phi}
+\item 
+float \hyperlink{class_camera_aeb3c859c3c254c8296420451259e5629}{\+\_\+theta}
+\item 
+\hyperlink{structvec3}{vec3} \hyperlink{class_camera_ab7cf8c1eae6b2f35a20e8abd1f0570c9}{\+\_\+avant}
+\item 
+\hyperlink{structvec3}{vec3} \hyperlink{class_camera_aaf97dba7663b99065d8d508b589224de}{\+\_\+gauche}
+\item 
+\hyperlink{structvec3}{vec3} \hyperlink{class_camera_af860db197a7abbf0284df4e32a95a347}{\+\_\+haut}
+\item 
+float \hyperlink{class_camera_a9062fdde515a49bf8db963ac46be9942}{\+\_\+vitesse}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_camera_a8414e6d74d3f6259fa5ea1f037e9d8bd}{move} ()
+\begin{DoxyCompactList}\small\item\em Calcul le déplacement de la \hyperlink{class_camera}{Camera}. \end{DoxyCompactList}\item 
+void \hyperlink{class_camera_abde0ff477fb0baea7515767dcd7a7cf7}{go} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Déplace la caméra aux coordonnées données. \end{DoxyCompactList}\item 
+void \hyperlink{class_camera_aa4e815462a964caa6b10804e33119cf2}{vector\+From\+Angle} ()
+\begin{DoxyCompactList}\small\item\em Recalcul les vecteurs avant/côté pour le mouvement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_camera}{Camera} pour \hyperlink{class_scene}{Scene}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_camera_a415d689f1cf61b90da28f53dc232f232}{\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\subsubsection[{Camera}]{\setlength{\rightskip}{0pt plus 5cm}Camera\+::\+Camera (
+\begin{DoxyParamCaption}
+\item[{float}]{eye\+X = {\ttfamily 0.0f}, }
+\item[{float}]{eye\+Y = {\ttfamily 0.0f}, }
+\item[{float}]{eye\+Z = {\ttfamily 0.0f}}
+\end{DoxyParamCaption}
+)}}\label{class_camera_a415d689f1cf61b90da28f53dc232f232}
+
+
+Constructeur. 
+
+\hypertarget{class_camera_ad1897942d0ccf91052386388a497349f}{\index{Camera@{Camera}!````~Camera@{$\sim$\+Camera}}
+\index{````~Camera@{$\sim$\+Camera}!Camera@{Camera}}
+\subsubsection[{$\sim$\+Camera}]{\setlength{\rightskip}{0pt plus 5cm}Camera\+::$\sim$\+Camera (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_camera_ad1897942d0ccf91052386388a497349f}
+
+
+Destructeur. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_camera_adbfdac30f082ddea86183c1c31493946}{\index{Camera@{Camera}!display@{display}}
+\index{display@{display}!Camera@{Camera}}
+\subsubsection[{display}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::display (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_camera_adbfdac30f082ddea86183c1c31493946}
+
+
+Actualise la caméra. 
+
+Met à jour la position de la caméra en fonction des booléens de déplacement et actualise la matrice view \hypertarget{class_camera_abde0ff477fb0baea7515767dcd7a7cf7}{\index{Camera@{Camera}!go@{go}}
+\index{go@{go}!Camera@{Camera}}
+\subsubsection[{go}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::go (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{z}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_camera_abde0ff477fb0baea7515767dcd7a7cf7}
+
+
+Déplace la caméra aux coordonnées données. 
+
+\hypertarget{class_camera_a22aaf20b581d402e5c3952655b830c0f}{\index{Camera@{Camera}!mouse\+Move\+Event@{mouse\+Move\+Event}}
+\index{mouse\+Move\+Event@{mouse\+Move\+Event}!Camera@{Camera}}
+\subsubsection[{mouse\+Move\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::mouse\+Move\+Event (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}}\label{class_camera_a22aaf20b581d402e5c3952655b830c0f}
+
+
+Fonction de déplacement de la caméra à la souris. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & position en X du curseur de la souris \\
+\hline
+{\em y} & position en Y du curseur de la souris \\
+\hline
+{\em width} & largeur de la fenêtre \\
+\hline
+{\em height} & hauteur de la fenêtre \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_camera_a8414e6d74d3f6259fa5ea1f037e9d8bd}{\index{Camera@{Camera}!move@{move}}
+\index{move@{move}!Camera@{Camera}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::move (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_camera_a8414e6d74d3f6259fa5ea1f037e9d8bd}
+
+
+Calcul le déplacement de la \hyperlink{class_camera}{Camera}. 
+
+\hypertarget{class_camera_aa4e815462a964caa6b10804e33119cf2}{\index{Camera@{Camera}!vector\+From\+Angle@{vector\+From\+Angle}}
+\index{vector\+From\+Angle@{vector\+From\+Angle}!Camera@{Camera}}
+\subsubsection[{vector\+From\+Angle}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::vector\+From\+Angle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_camera_aa4e815462a964caa6b10804e33119cf2}
+
+
+Recalcul les vecteurs avant/côté pour le mouvement. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_camera_a0ce12f74953fcd53192e48f8b4164e2e}{\index{Camera@{Camera}!\+\_\+arriere\+\_\+presse@{\+\_\+arriere\+\_\+presse}}
+\index{\+\_\+arriere\+\_\+presse@{\+\_\+arriere\+\_\+presse}!Camera@{Camera}}
+\subsubsection[{\+\_\+arriere\+\_\+presse}]{\setlength{\rightskip}{0pt plus 5cm}bool Camera\+::\+\_\+arriere\+\_\+presse}}\label{class_camera_a0ce12f74953fcd53192e48f8b4164e2e}
+Indique si la caméra doit reculer au prochain affichage \hypertarget{class_camera_ab7cf8c1eae6b2f35a20e8abd1f0570c9}{\index{Camera@{Camera}!\+\_\+avant@{\+\_\+avant}}
+\index{\+\_\+avant@{\+\_\+avant}!Camera@{Camera}}
+\subsubsection[{\+\_\+avant}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Camera\+::\+\_\+avant\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_camera_ab7cf8c1eae6b2f35a20e8abd1f0570c9}
+\hypertarget{class_camera_a4cab15e35a96fdcb2a8599fea13a9b8f}{\index{Camera@{Camera}!\+\_\+avant\+\_\+presse@{\+\_\+avant\+\_\+presse}}
+\index{\+\_\+avant\+\_\+presse@{\+\_\+avant\+\_\+presse}!Camera@{Camera}}
+\subsubsection[{\+\_\+avant\+\_\+presse}]{\setlength{\rightskip}{0pt plus 5cm}bool Camera\+::\+\_\+avant\+\_\+presse}}\label{class_camera_a4cab15e35a96fdcb2a8599fea13a9b8f}
+Indique si la caméra doit avancer au prochain affichage \hypertarget{class_camera_aaba6828f97c9ef07b6b135a665bd3008}{\index{Camera@{Camera}!\+\_\+bas\+\_\+presse@{\+\_\+bas\+\_\+presse}}
+\index{\+\_\+bas\+\_\+presse@{\+\_\+bas\+\_\+presse}!Camera@{Camera}}
+\subsubsection[{\+\_\+bas\+\_\+presse}]{\setlength{\rightskip}{0pt plus 5cm}bool Camera\+::\+\_\+bas\+\_\+presse}}\label{class_camera_aaba6828f97c9ef07b6b135a665bd3008}
+Indique si la caméra doit descendre au prochain affichage \hypertarget{class_camera_ad80a82cbc81e6d8ba04c7cc1ac7ba0d7}{\index{Camera@{Camera}!\+\_\+center@{\+\_\+center}}
+\index{\+\_\+center@{\+\_\+center}!Camera@{Camera}}
+\subsubsection[{\+\_\+center}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Camera\+::\+\_\+center\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_camera_ad80a82cbc81e6d8ba04c7cc1ac7ba0d7}
+\hypertarget{class_camera_a61b2e438537b99ba1f0a97e5586b7f45}{\index{Camera@{Camera}!\+\_\+droite\+\_\+presse@{\+\_\+droite\+\_\+presse}}
+\index{\+\_\+droite\+\_\+presse@{\+\_\+droite\+\_\+presse}!Camera@{Camera}}
+\subsubsection[{\+\_\+droite\+\_\+presse}]{\setlength{\rightskip}{0pt plus 5cm}bool Camera\+::\+\_\+droite\+\_\+presse}}\label{class_camera_a61b2e438537b99ba1f0a97e5586b7f45}
+Indique si la caméra doit aller à droite au prochain affichage \hypertarget{class_camera_ad4c22c27bd247f4411c4166220ba6e82}{\index{Camera@{Camera}!\+\_\+eye@{\+\_\+eye}}
+\index{\+\_\+eye@{\+\_\+eye}!Camera@{Camera}}
+\subsubsection[{\+\_\+eye}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Camera\+::\+\_\+eye\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_camera_ad4c22c27bd247f4411c4166220ba6e82}
+\hypertarget{class_camera_aaf97dba7663b99065d8d508b589224de}{\index{Camera@{Camera}!\+\_\+gauche@{\+\_\+gauche}}
+\index{\+\_\+gauche@{\+\_\+gauche}!Camera@{Camera}}
+\subsubsection[{\+\_\+gauche}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Camera\+::\+\_\+gauche\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_camera_aaf97dba7663b99065d8d508b589224de}
+\hypertarget{class_camera_ac2a5c37c4f9603a14e3616d6a75f7998}{\index{Camera@{Camera}!\+\_\+gauche\+\_\+presse@{\+\_\+gauche\+\_\+presse}}
+\index{\+\_\+gauche\+\_\+presse@{\+\_\+gauche\+\_\+presse}!Camera@{Camera}}
+\subsubsection[{\+\_\+gauche\+\_\+presse}]{\setlength{\rightskip}{0pt plus 5cm}bool Camera\+::\+\_\+gauche\+\_\+presse}}\label{class_camera_ac2a5c37c4f9603a14e3616d6a75f7998}
+Indique si la caméra doit aller à gauche au prochain affichage \hypertarget{class_camera_af860db197a7abbf0284df4e32a95a347}{\index{Camera@{Camera}!\+\_\+haut@{\+\_\+haut}}
+\index{\+\_\+haut@{\+\_\+haut}!Camera@{Camera}}
+\subsubsection[{\+\_\+haut}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Camera\+::\+\_\+haut\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_camera_af860db197a7abbf0284df4e32a95a347}
+\hypertarget{class_camera_a43b59b53cb182906d56e6e4d2c31139c}{\index{Camera@{Camera}!\+\_\+haut\+\_\+presse@{\+\_\+haut\+\_\+presse}}
+\index{\+\_\+haut\+\_\+presse@{\+\_\+haut\+\_\+presse}!Camera@{Camera}}
+\subsubsection[{\+\_\+haut\+\_\+presse}]{\setlength{\rightskip}{0pt plus 5cm}bool Camera\+::\+\_\+haut\+\_\+presse}}\label{class_camera_a43b59b53cb182906d56e6e4d2c31139c}
+Indique si la caméra doit monter au prochain affichage \hypertarget{class_camera_a288df53a3ff446ee4367ee47b8499fcd}{\index{Camera@{Camera}!\+\_\+phi@{\+\_\+phi}}
+\index{\+\_\+phi@{\+\_\+phi}!Camera@{Camera}}
+\subsubsection[{\+\_\+phi}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::\+\_\+phi\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_camera_a288df53a3ff446ee4367ee47b8499fcd}
+\hypertarget{class_camera_aeb3c859c3c254c8296420451259e5629}{\index{Camera@{Camera}!\+\_\+theta@{\+\_\+theta}}
+\index{\+\_\+theta@{\+\_\+theta}!Camera@{Camera}}
+\subsubsection[{\+\_\+theta}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::\+\_\+theta\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_camera_aeb3c859c3c254c8296420451259e5629}
+\hypertarget{class_camera_a9062fdde515a49bf8db963ac46be9942}{\index{Camera@{Camera}!\+\_\+vitesse@{\+\_\+vitesse}}
+\index{\+\_\+vitesse@{\+\_\+vitesse}!Camera@{Camera}}
+\subsubsection[{\+\_\+vitesse}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::\+\_\+vitesse\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_camera_a9062fdde515a49bf8db963ac46be9942}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{camera_8hpp}{camera.\+hpp}\item 
+\hyperlink{camera_8cpp}{camera.\+cpp}\end{DoxyCompactItemize}

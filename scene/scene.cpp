@@ -45,7 +45,7 @@ Scene::Scene(const QString & fileName):
 		camera_position.attribute("y").toFloat(),
 		camera_position.attribute("z").toFloat()
 		);
-	qDebug() << "Camera chargee avec succes";
+	qDebug() << "Camera chargée avec succes";
 
 
 	loadMaterials(materiaux);
@@ -64,7 +64,7 @@ Scene::Scene(const QString & fileName):
 
 Scene::~Scene()
 {
-	for(auto i : _objets)
+	for(auto i : _pieces)
 		delete i.second;
 
 	for(auto i : _lights)
@@ -84,7 +84,7 @@ void 	Scene::draw()
 	_camera->display();
 	
 
-	for(auto i : _objets)
+	for(auto i : _pieces)
 	{
 		i.second->draw();
 		openGL_check_error();
@@ -103,12 +103,12 @@ void 	Scene::draw()
 
 }
 
-Objet * 	Scene::getObjet(const QString & name)
+Objet * 	Scene::getPiece(const QString & name)
 {
-	auto res = _objets.find(name);
+	auto res = _pieces.find(name);
 
 
-	return (res != _objets.end()) ? res->second : NULL;
+	return (res != _pieces.end()) ? res->second : NULL;
 }
 
 Light * 	Scene::getLight(const QString & name)
@@ -132,14 +132,20 @@ GLuint 		Scene::getShader(const QString & name)
 	return (res != _shaders.end()) ? res->second->programId() : 0;
 }
 
-QStringList Scene::getObjetsNames() const
+QStringList Scene::getPiecesName() const
 {
 	QStringList list;
 
-	for(auto i : _objets)
+	for(auto i : _pieces)
 		list << i.first;
 
 	return list;
+}
+
+
+QStringList Scene::getObjetsNames() const
+{
+	//TODO !!
 }
 
 QStringList Scene::getLightsNames() const
@@ -194,14 +200,14 @@ void 	Scene::addLight(const QString & name, Light * v)
 	}
 }
 
-void 	Scene::addObjet(const QString & name, Objet * v)
+void 	Scene::addPiece(const QString & name, Piece * v)
 {
-	std::pair<const QString, Objet *> p(name, v);
-	std::pair<std::map<const QString, Objet *>::iterator , bool> res = _objets.insert(p);
+	std::pair<const QString, Piece *> p(name, v);
+	std::pair<std::map<const QString, Piece *>::iterator , bool> res = _pieces.insert(p);
 
 	if (!res.second)
 	{
-		qWarning() << "Objet deja present";
+		qWarning() << "Piece deja present";
 	}
 }
 
@@ -279,7 +285,7 @@ void 	Scene::loadMaterials(const QDomElement & dom)
 					{
 						path = var2.attribute("src", "");
 
-						tmp->set(path);
+						tmp->addTexture(path);
 					}
 				}
 				
@@ -384,7 +390,7 @@ void 	Scene::loadShaders(const QDomElement & dom)
 void 	Scene::loadPieces(const QDomElement & dom)
 {
 	QDomElement piece = dom.firstChildElement("piece");
-	Objet * pieceTmp = NULL;
+	Piece * pieceTmp = NULL;
 
 
 	while (!piece.isNull())
@@ -434,9 +440,10 @@ void 	Scene::loadPieces(const QDomElement & dom)
 			qDebug() << "Pas de position trouvée pour" << nom << "valeur par défaut (0,0,0)";
 		}
 
-		pieceTmp = new Piece(vec3(width, height, length), vec3(), vec3(x, y, z), NULL, NULL);
+		pieceTmp = new Piece(vec3(width, height, length), vec3(), vec3(x, y, z), NULL);
 		pieceTmp->shaderId(shaderId);
 		pieceTmp->material(getMaterial(materialPiece));
+		pieceTmp->name(nom);
 
 		if (!murs.isNull())
 		{
@@ -492,8 +499,9 @@ void 	Scene::loadPieces(const QDomElement & dom)
 
 				if (plan)
 				{
+					plan->name(nom + "_" + cote);
 					plan->parent(pieceTmp);
-					dynamic_cast<Piece *>(pieceTmp)->addWall(plan);
+					pieceTmp->addChild(plan);
 
 					plan = NULL;
 				}
@@ -517,13 +525,13 @@ void 	Scene::loadPieces(const QDomElement & dom)
 				xRot = objet.attribute("Xrot", "0").toFloat();
 				yRot = objet.attribute("Yrot", "0").toFloat();
 				zRot = objet.attribute("Zrot", "0").toFloat();
-				QString nomObjet = objets.attribute("nom");
 				QString modeleObjet = objet.attribute("modele");
+				QString nomObjet = objets.attribute("nom", nom + "_" + modeleObjet);
 				QString matObjet = objet.attribute("mat", "");
 				QString shaderObjet = objet.attribute("shader", "");
 
 
-				Mesh * mesh = Mesh::load("modeles/" + modeleObjet, this);
+				Mesh * mesh = Mesh::load(modeleObjet, this);
 
 				if (!mesh)
 				{
@@ -534,6 +542,7 @@ void 	Scene::loadPieces(const QDomElement & dom)
 				mesh->rotation(vec3(xRot, yRot, zRot));
 				mesh->material(getMaterial(matObjet));
 				mesh->shaderId(getShader(shaderObjet));
+				mesh->name(nomObjet);
 
 
 				QDomElement position = objet.firstChildElement("position");
@@ -550,7 +559,7 @@ void 	Scene::loadPieces(const QDomElement & dom)
 				}
 
 
-				dynamic_cast<Piece *>(pieceTmp)->addObjet(mesh);
+				pieceTmp->addChild(mesh);
 
 				objet = objet.nextSiblingElement("objet");
 			}
@@ -559,7 +568,7 @@ void 	Scene::loadPieces(const QDomElement & dom)
 
 
 
-		addObjet(nom, pieceTmp);
+		addPiece(nom, pieceTmp);
 
 		piece = piece.nextSiblingElement("piece");
 	}

@@ -61,3 +61,14 @@ mardi 29 avril
 
 mercredi 30 avril
 	textures gérées correctement, pas de libération pour l'instant, à voir plus tard
+
+lundi 5 et mardi 6 mai
+	génération de la documentation avec doxygen
+
+mercredi 7 mai
+	gestion multi texture pour les matériaux, shader bump maping
+	à faire, spécifier quel slot texture pour les matériaux
+
+Amélioration à faire
+	héritage père/fils dans objet, gestion des textures/matériaux dans modèle 3D
+	collision !

@@ -25,12 +25,12 @@ LIBS += -lassimp
 HEADERS += camera.hpp \
            helper.hpp \
            MyOpenGLWidget.hpp \
-           objets/cube.hpp \
-           objets/donuts.hpp \
+#           objets/cube.hpp \
+#           objets/donuts.hpp \
            objets/mesh.hpp \
            objets/plan.hpp \
            objets/objet.hpp \
-           objets/sphere.hpp \
+#           objets/sphere.hpp \
            scene/light.hpp \
            scene/material.hpp \
            scene/piece.hpp \
@@ -40,12 +40,12 @@ HEADERS += camera.hpp \
 SOURCES += camera.cpp \
            helper.cpp \
            MyOpenGLWidget.cpp \
-           objets/cube.cpp \
-           objets/donuts.cpp \
+#           objets/cube.cpp \
+#           objets/donuts.cpp \
            objets/mesh.cpp \
            objets/objet.cpp \
            objets/plan.cpp \
-           objets/sphere.cpp \
+#           objets/sphere.cpp \
            scene/light.cpp \
            scene/material.cpp \
            scene/piece.cpp \

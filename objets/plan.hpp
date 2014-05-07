@@ -5,6 +5,11 @@
 #include <QRectF>
 #include <vector>
 
+
+/**
+ * @brief Plan utilisé par la Piece
+ * @details Gère un plan, avec des trous pour les fenêtres
+ */
 class Plan: public Objet
 {
 private:
@@ -16,15 +21,31 @@ private:
 	unsigned int _nbVertices;
 
 public:
+	/**
+	 * @brief Constructeur
+	 * 
+	 * @param width largeur du plan
+	 * @param height hauteur du plan
+	 * @param widthDivision nombre de division selon width
+	 * @param heightDivision nombre de division selon height
+	 * @param rects QRectF rectangles définissant les fenêtres du plan
+	 * @param mat Material à utiliser
+	 * @param rotation rotation à appliquer au plan
+	 * @param position position du plan dans le monde
+	 */
 	Plan(int width = 1, int height = 1, int widthDivision = 1, int heightDivision = 1, const std::vector<QRectF> & rects = std::vector<QRectF>(), Material * mat = NULL, vec3 rotation = vec3(), vec3 position = vec3());
+	
+	/**
+	 * @brief Destructeur
+	 * @details Détruit le plan et libère les vbo/vba
+	 */
 	~Plan();
 
-
+	/**
+	 * @brief Affiche le plan
+	 */
 	void 	draw();
 
-private:
-	Plan(GLuint vao, GLuint vbo_vertices, GLuint vbo_normals, GLuint vbo_indice, unsigned int nbVertices, Material * mat, vec3 rotation, vec3 position);
-	
 };
 
 #endif

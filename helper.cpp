@@ -1098,7 +1098,7 @@ void __openGL_check_error(const char * file, int line)
                 case GL_INVALID_FRAMEBUFFER_OPERATION:  errorString="INVALID_FRAMEBUFFER_OPERATION";  break;
         }
 
-        qWarning() << "GL_" << errorString.c_str() << " - " << file << ":" << line;
+        std::cout << "GL_" << errorString << " - " << file << ":" << line << std::endl;
 
         error = f.glGetError();
     }

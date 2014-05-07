@@ -52,9 +52,9 @@ void Light::update()
 {
 	GLuint 	shader = getActiveShader();
 	char	name[] = "Lights[0].Ld";
-	char 	enable[] = "enabledLights[0]";
+	char 	enable[] = "Lights[0].enabled";
 	//modification du 0 pour avoir le bon indice
-	enable[14] += _lightNum;
+	enable[7] += _lightNum;
 	name[7] += _lightNum;
 
 	GLint enabled_location = glGetUniformLocation(shader, enable);

@@ -1,0 +1,503 @@
+\hypertarget{class_scene}{\section{Scene Class Reference}
+\label{class_scene}\index{Scene@{Scene}}
+}
+
+
+Classe principale.  
+
+
+
+
+{\ttfamily \#include $<$scene.\+hpp$>$}
+
+Inheritance diagram for Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_scene}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_scene_ad10176d75a9cc0da56626f682d083507}{Scene} ()
+\begin{DoxyCompactList}\small\item\em Constructeur vide. \end{DoxyCompactList}\item 
+\hyperlink{class_scene_a31c9409af2f7f8f592519eb4a3029624}{Scene} (const Q\+String \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Charge une scène à partir d'un fichier xml la décrivant. \end{DoxyCompactList}\item 
+\hyperlink{class_scene_a3b8cec2e32546713915f8c6303c951f1}{$\sim$\+Scene} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la scène. \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_ac0e3d2c98ba6063a086467fb2c19142f}{draw} ()
+\begin{DoxyCompactList}\small\item\em Affiche la scène. \end{DoxyCompactList}\item 
+\hyperlink{class_objet}{Objet} $\ast$ \hyperlink{class_scene_a9b9010182265cbbd1870fd45a4759d0f}{get\+Piece} (const Q\+String \&name)
+\begin{DoxyCompactList}\small\item\em Récupère un pointeur sur une pièce. \end{DoxyCompactList}\item 
+\hyperlink{class_light}{Light} $\ast$ \hyperlink{class_scene_ae75e1e0573b52c2c960e8afe77fead94}{get\+Light} (const Q\+String \&name)
+\begin{DoxyCompactList}\small\item\em Récupère un pointeur sur une lumière. \end{DoxyCompactList}\item 
+\hyperlink{class_material}{Material} $\ast$ \hyperlink{class_scene_a6c54f74841e986a80b03866dbed21d33}{get\+Material} (const Q\+String \&name)
+\begin{DoxyCompactList}\small\item\em Récupère un pointeur sur un material. \end{DoxyCompactList}\item 
+G\+Luint \hyperlink{class_scene_a002dee3b17da628be382679c99d78c8f}{get\+Shader} (const Q\+String \&name)
+\begin{DoxyCompactList}\small\item\em Récupère l'id d'un shader. \end{DoxyCompactList}\item 
+Q\+String\+List \hyperlink{class_scene_a2ea5207a5d9ec6e4081f12896b01d9d5}{get\+Pieces\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Retourne la liste des noms des pièces dans la scène. \end{DoxyCompactList}\item 
+Q\+String\+List \hyperlink{class_scene_a8ad3eeaf9d9968a31c64a257230cfc22}{get\+Objets\+Names} () const 
+\begin{DoxyCompactList}\small\item\em Retourne la liste des noms des objets dans la scène. \end{DoxyCompactList}\item 
+Q\+String\+List \hyperlink{class_scene_a215d616b6132f30a6bfc66ea4a3cfb95}{get\+Lights\+Names} () const 
+\begin{DoxyCompactList}\small\item\em Retourne la liste des noms des lumières dans la scène. \end{DoxyCompactList}\item 
+Q\+String\+List \hyperlink{class_scene_a481bf791889936bf3521c849bc4c7c2f}{get\+Materials\+Names} () const 
+\begin{DoxyCompactList}\small\item\em Retourne la liste des noms des matériaux dans la scène. \end{DoxyCompactList}\item 
+Q\+String\+List \hyperlink{class_scene_ae8045c3444b367c070988b30d69e5a36}{get\+Shaders\+Names} () const 
+\begin{DoxyCompactList}\small\item\em Retourne la liste des noms des shaders dans la scène. \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_a6c40a38ef472e73ddee697f813b8e587}{add\+Piece} (const Q\+String \&name, \hyperlink{class_piece}{Piece} $\ast$o)
+\begin{DoxyCompactList}\small\item\em Ajoute une pièce à la scène. \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_aedf1b6729e0feda58666662c349ffed1}{add\+Light} (const Q\+String \&name, \hyperlink{class_light}{Light} $\ast$l)
+\begin{DoxyCompactList}\small\item\em Ajoute une lumière à la scène. \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_a68761479fea650973d31e2d9565f8aca}{add\+Material} (const Q\+String \&name, \hyperlink{class_material}{Material} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Ajoute un material à la scène. \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_ad15253a331423b1e3c3fb2484b10509c}{add\+Shader} (const Q\+String \&name, Q\+Open\+G\+L\+Shader\+Program $\ast$s)
+\begin{DoxyCompactList}\small\item\em Ajoute un shadder à la scène. \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_ae87e88cbefc16640354acc8ec11b5e1e}{save\+As\+X\+M\+L} (const Q\+String \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Sauvegarde de la scène au format xml. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_camera}{Camera} $\ast$ \hyperlink{class_scene_a8cce9e0f96edc8655a9b9a885e2c26bf}{\+\_\+camera}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_scene_a34446952ed460f5a66a90649d6f743ec}{load\+Lights} (const Q\+Dom\+Element \&dom)
+\begin{DoxyCompactList}\small\item\em Charge les lumières. \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_a8fe39b5221775362f28c78129292e162}{load\+Materials} (const Q\+Dom\+Element \&dom)
+\begin{DoxyCompactList}\small\item\em Charge les materials. \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_aa6d40bab1b160afc7bb84841d056a07d}{load\+Pieces} (const Q\+Dom\+Element \&dom)
+\begin{DoxyCompactList}\small\item\em Charge les pièces. \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_a1deb5bb022836f4b585c8580246b26cb}{load\+Shaders} (const Q\+Dom\+Element \&dom)
+\begin{DoxyCompactList}\small\item\em Charge les shaders. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Dom\+Document \hyperlink{class_scene_a72a13a904d01e99834ba24ca655b9813}{\+\_\+xml}
+\item 
+std\+::map$<$ const Q\+String, \hyperlink{class_piece}{Piece} $\ast$ $>$ \hyperlink{class_scene_afd5f6ed4171e34cd2d185cd7638ed40f}{\+\_\+pieces}
+\item 
+std\+::map$<$ const Q\+String, \hyperlink{class_light}{Light} $\ast$ $>$ \hyperlink{class_scene_ab1c7bd9112003b236d22dd2d1b58600e}{\+\_\+lights}
+\item 
+std\+::map$<$ const Q\+String, \\*
+\hyperlink{class_material}{Material} $\ast$ $>$ \hyperlink{class_scene_a274f93689f4fc827fe6fb215081898d6}{\+\_\+materials}
+\item 
+std\+::map$<$ const Q\+String, \\*
+Q\+Open\+G\+L\+Shader\+Program $\ast$ $>$ \hyperlink{class_scene_aee3789138ea10dca4999644ca8565541}{\+\_\+shaders}
+\item 
+\hyperlink{structmat4}{mat4} \hyperlink{class_scene_a7db3394191c0a07e6bdc456a53ac8ece}{\+\_\+projection\+Matrix}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe principale. 
+
+Se charge de lire le xml et de générer la scène. Nécessite un context Open\+G\+L 3.\+2 au minimum 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_scene_ad10176d75a9cc0da56626f682d083507}{\index{Scene@{Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Scene@{Scene}}
+\subsubsection[{Scene}]{\setlength{\rightskip}{0pt plus 5cm}Scene\+::\+Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_scene_ad10176d75a9cc0da56626f682d083507}
+
+
+Constructeur vide. 
+
+Construit une scène vide \hypertarget{class_scene_a31c9409af2f7f8f592519eb4a3029624}{\index{Scene@{Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Scene@{Scene}}
+\subsubsection[{Scene}]{\setlength{\rightskip}{0pt plus 5cm}Scene\+::\+Scene (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name}
+\end{DoxyParamCaption}
+)}}\label{class_scene_a31c9409af2f7f8f592519eb4a3029624}
+
+
+Charge une scène à partir d'un fichier xml la décrivant. 
+
+La scène est chargée à partir d'un fichier xml la décrivant, si le fichier n'est pas trouvé l'exécution s'arrête
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Chemin vers le fichier \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_scene_a3b8cec2e32546713915f8c6303c951f1}{\index{Scene@{Scene}!````~Scene@{$\sim$\+Scene}}
+\index{````~Scene@{$\sim$\+Scene}!Scene@{Scene}}
+\subsubsection[{$\sim$\+Scene}]{\setlength{\rightskip}{0pt plus 5cm}Scene\+::$\sim$\+Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_scene_a3b8cec2e32546713915f8c6303c951f1}
+
+
+Destructeur de la scène. 
+
+Destructeur de la scène 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_scene_aedf1b6729e0feda58666662c349ffed1}{\index{Scene@{Scene}!add\+Light@{add\+Light}}
+\index{add\+Light@{add\+Light}!Scene@{Scene}}
+\subsubsection[{add\+Light}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+::add\+Light (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name, }
+\item[{{\bf Light} $\ast$}]{l}
+\end{DoxyParamCaption}
+)}}\label{class_scene_aedf1b6729e0feda58666662c349ffed1}
+
+
+Ajoute une lumière à la scène. 
+
+Ajoute une lumière à la scène, le nom doit être unique, sinon elle ne sera pas ajoutée
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & nom de la lumière à ajouter \\
+\hline
+{\em l} & pointeur du la lumière \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_scene_a68761479fea650973d31e2d9565f8aca}{\index{Scene@{Scene}!add\+Material@{add\+Material}}
+\index{add\+Material@{add\+Material}!Scene@{Scene}}
+\subsubsection[{add\+Material}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+::add\+Material (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name, }
+\item[{{\bf Material} $\ast$}]{m}
+\end{DoxyParamCaption}
+)}}\label{class_scene_a68761479fea650973d31e2d9565f8aca}
+
+
+Ajoute un material à la scène. 
+
+Ajoute un material à la scène, le nom doit être unique, autrement il ne sera pas ajouté
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & nom du material à ajouter \\
+\hline
+{\em m} & pointeur sur le material \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_scene_a6c40a38ef472e73ddee697f813b8e587}{\index{Scene@{Scene}!add\+Piece@{add\+Piece}}
+\index{add\+Piece@{add\+Piece}!Scene@{Scene}}
+\subsubsection[{add\+Piece}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+::add\+Piece (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name, }
+\item[{{\bf Piece} $\ast$}]{o}
+\end{DoxyParamCaption}
+)}}\label{class_scene_a6c40a38ef472e73ddee697f813b8e587}
+
+
+Ajoute une pièce à la scène. 
+
+Ajoute une pièce à la scène, le nom ne doit pas être déjà présent dans la scène, si l'est la pièce n'est pas ajoutée
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & nom de l'objet à ajouter \\
+\hline
+{\em o} & pointeur sur l'objet à ajouter \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_scene_ad15253a331423b1e3c3fb2484b10509c}{\index{Scene@{Scene}!add\+Shader@{add\+Shader}}
+\index{add\+Shader@{add\+Shader}!Scene@{Scene}}
+\subsubsection[{add\+Shader}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+::add\+Shader (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name, }
+\item[{Q\+Open\+G\+L\+Shader\+Program $\ast$}]{s}
+\end{DoxyParamCaption}
+)}}\label{class_scene_ad15253a331423b1e3c3fb2484b10509c}
+
+
+Ajoute un shadder à la scène. 
+
+Ajoute un shader à la scène, le nom doit être unique, autrement il ne sera pas ajouté
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & nom du shader à ajouter \\
+\hline
+{\em s} & id du shader \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_scene_ac0e3d2c98ba6063a086467fb2c19142f}{\index{Scene@{Scene}!draw@{draw}}
+\index{draw@{draw}!Scene@{Scene}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_scene_ac0e3d2c98ba6063a086467fb2c19142f}
+
+
+Affiche la scène. 
+
+\hypertarget{class_scene_ae75e1e0573b52c2c960e8afe77fead94}{\index{Scene@{Scene}!get\+Light@{get\+Light}}
+\index{get\+Light@{get\+Light}!Scene@{Scene}}
+\subsubsection[{get\+Light}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Light} $\ast$ Scene\+::get\+Light (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+)}}\label{class_scene_ae75e1e0573b52c2c960e8afe77fead94}
+
+
+Récupère un pointeur sur une lumière. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & nom de la lumière \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne un pointeur valide si le nom est présent, N\+U\+L\+L autrement 
+\end{DoxyReturn}
+\hypertarget{class_scene_a215d616b6132f30a6bfc66ea4a3cfb95}{\index{Scene@{Scene}!get\+Lights\+Names@{get\+Lights\+Names}}
+\index{get\+Lights\+Names@{get\+Lights\+Names}!Scene@{Scene}}
+\subsubsection[{get\+Lights\+Names}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List Scene\+::get\+Lights\+Names (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_scene_a215d616b6132f30a6bfc66ea4a3cfb95}
+
+
+Retourne la liste des noms des lumières dans la scène. 
+
+\begin{DoxyReturn}{Returns}
+Q\+String\+List contenant les noms des lumières de la scène 
+\end{DoxyReturn}
+\hypertarget{class_scene_a6c54f74841e986a80b03866dbed21d33}{\index{Scene@{Scene}!get\+Material@{get\+Material}}
+\index{get\+Material@{get\+Material}!Scene@{Scene}}
+\subsubsection[{get\+Material}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Material} $\ast$ Scene\+::get\+Material (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+)}}\label{class_scene_a6c54f74841e986a80b03866dbed21d33}
+
+
+Récupère un pointeur sur un material. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & nom du material \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne un pointeur valide si le nom est présent, N\+U\+L\+L autrement 
+\end{DoxyReturn}
+\hypertarget{class_scene_a481bf791889936bf3521c849bc4c7c2f}{\index{Scene@{Scene}!get\+Materials\+Names@{get\+Materials\+Names}}
+\index{get\+Materials\+Names@{get\+Materials\+Names}!Scene@{Scene}}
+\subsubsection[{get\+Materials\+Names}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List Scene\+::get\+Materials\+Names (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_scene_a481bf791889936bf3521c849bc4c7c2f}
+
+
+Retourne la liste des noms des matériaux dans la scène. 
+
+\begin{DoxyReturn}{Returns}
+Q\+String\+List contenant les noms des matériaux de la scène 
+\end{DoxyReturn}
+\hypertarget{class_scene_a8ad3eeaf9d9968a31c64a257230cfc22}{\index{Scene@{Scene}!get\+Objets\+Names@{get\+Objets\+Names}}
+\index{get\+Objets\+Names@{get\+Objets\+Names}!Scene@{Scene}}
+\subsubsection[{get\+Objets\+Names}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List Scene\+::get\+Objets\+Names (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_scene_a8ad3eeaf9d9968a31c64a257230cfc22}
+
+
+Retourne la liste des noms des objets dans la scène. 
+
+Les objets fils des Pièces sont aussi enregistrés, à voir si cela est pertinent \begin{DoxyReturn}{Returns}
+Q\+String\+List contenant les noms des objets de la scène 
+\end{DoxyReturn}
+\hypertarget{class_scene_a9b9010182265cbbd1870fd45a4759d0f}{\index{Scene@{Scene}!get\+Piece@{get\+Piece}}
+\index{get\+Piece@{get\+Piece}!Scene@{Scene}}
+\subsubsection[{get\+Piece}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Objet} $\ast$ Scene\+::get\+Piece (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+)}}\label{class_scene_a9b9010182265cbbd1870fd45a4759d0f}
+
+
+Récupère un pointeur sur une pièce. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & nom de la pièce \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne le pointeur si le nom est trouvé, N\+U\+L\+L autrement 
+\end{DoxyReturn}
+\hypertarget{class_scene_a2ea5207a5d9ec6e4081f12896b01d9d5}{\index{Scene@{Scene}!get\+Pieces\+Name@{get\+Pieces\+Name}}
+\index{get\+Pieces\+Name@{get\+Pieces\+Name}!Scene@{Scene}}
+\subsubsection[{get\+Pieces\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List Scene\+::get\+Pieces\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_scene_a2ea5207a5d9ec6e4081f12896b01d9d5}
+
+
+Retourne la liste des noms des pièces dans la scène. 
+
+\begin{DoxyReturn}{Returns}
+Q\+String\+List contenant les noms des pièces de la scène 
+\end{DoxyReturn}
+\hypertarget{class_scene_a002dee3b17da628be382679c99d78c8f}{\index{Scene@{Scene}!get\+Shader@{get\+Shader}}
+\index{get\+Shader@{get\+Shader}!Scene@{Scene}}
+\subsubsection[{get\+Shader}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Scene\+::get\+Shader (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+)}}\label{class_scene_a002dee3b17da628be382679c99d78c8f}
+
+
+Récupère l'id d'un shader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & nom du shader \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne l'id d'un shader valide si le nom est présent, 0 autrement 
+\end{DoxyReturn}
+\hypertarget{class_scene_ae8045c3444b367c070988b30d69e5a36}{\index{Scene@{Scene}!get\+Shaders\+Names@{get\+Shaders\+Names}}
+\index{get\+Shaders\+Names@{get\+Shaders\+Names}!Scene@{Scene}}
+\subsubsection[{get\+Shaders\+Names}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List Scene\+::get\+Shaders\+Names (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_scene_ae8045c3444b367c070988b30d69e5a36}
+
+
+Retourne la liste des noms des shaders dans la scène. 
+
+\begin{DoxyReturn}{Returns}
+Q\+String\+List contenant les noms des shaders de la scène 
+\end{DoxyReturn}
+\hypertarget{class_scene_a34446952ed460f5a66a90649d6f743ec}{\index{Scene@{Scene}!load\+Lights@{load\+Lights}}
+\index{load\+Lights@{load\+Lights}!Scene@{Scene}}
+\subsubsection[{load\+Lights}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+::load\+Lights (
+\begin{DoxyParamCaption}
+\item[{const Q\+Dom\+Element \&}]{dom}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_a34446952ed460f5a66a90649d6f743ec}
+
+
+Charge les lumières. 
+
+Charge les lumières à partir du X\+M\+L
+
+
+\begin{DoxyParams}{Parameters}
+{\em dom} & noeud X\+M\+L correspondant à $<$lumieres$>$ \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_scene_a8fe39b5221775362f28c78129292e162}{\index{Scene@{Scene}!load\+Materials@{load\+Materials}}
+\index{load\+Materials@{load\+Materials}!Scene@{Scene}}
+\subsubsection[{load\+Materials}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+::load\+Materials (
+\begin{DoxyParamCaption}
+\item[{const Q\+Dom\+Element \&}]{dom}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_a8fe39b5221775362f28c78129292e162}
+
+
+Charge les materials. 
+
+Charge les materials à partir du X\+M\+L
+
+
+\begin{DoxyParams}{Parameters}
+{\em dom} & noeud X\+M\+L correspondant à $<$materiaux$>$ \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_scene_aa6d40bab1b160afc7bb84841d056a07d}{\index{Scene@{Scene}!load\+Pieces@{load\+Pieces}}
+\index{load\+Pieces@{load\+Pieces}!Scene@{Scene}}
+\subsubsection[{load\+Pieces}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+::load\+Pieces (
+\begin{DoxyParamCaption}
+\item[{const Q\+Dom\+Element \&}]{dom}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_aa6d40bab1b160afc7bb84841d056a07d}
+
+
+Charge les pièces. 
+
+Charge les pièces à partir du X\+M\+L
+
+
+\begin{DoxyParams}{Parameters}
+{\em dom} & noeud X\+M\+L correspondant à $<$pieces$>$ \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_scene_a1deb5bb022836f4b585c8580246b26cb}{\index{Scene@{Scene}!load\+Shaders@{load\+Shaders}}
+\index{load\+Shaders@{load\+Shaders}!Scene@{Scene}}
+\subsubsection[{load\+Shaders}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+::load\+Shaders (
+\begin{DoxyParamCaption}
+\item[{const Q\+Dom\+Element \&}]{dom}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_a1deb5bb022836f4b585c8580246b26cb}
+
+
+Charge les shaders. 
+
+Charge les shaders à partir du X\+M\+L
+
+
+\begin{DoxyParams}{Parameters}
+{\em dom} & noeud X\+M\+L correspondant à $<$shaders$>$ \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_scene_ae87e88cbefc16640354acc8ec11b5e1e}{\index{Scene@{Scene}!save\+As\+X\+M\+L@{save\+As\+X\+M\+L}}
+\index{save\+As\+X\+M\+L@{save\+As\+X\+M\+L}!Scene@{Scene}}
+\subsubsection[{save\+As\+X\+M\+L}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+::save\+As\+X\+M\+L (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name}
+\end{DoxyParamCaption}
+)}}\label{class_scene_ae87e88cbefc16640354acc8ec11b5e1e}
+
+
+Sauvegarde de la scène au format xml. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & nom du fichier dans lequel sauvegarde \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Pas encore implémenté 
+\end{DoxyWarning}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_scene_a8cce9e0f96edc8655a9b9a885e2c26bf}{\index{Scene@{Scene}!\+\_\+camera@{\+\_\+camera}}
+\index{\+\_\+camera@{\+\_\+camera}!Scene@{Scene}}
+\subsubsection[{\+\_\+camera}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Camera}$\ast$ Scene\+::\+\_\+camera}}\label{class_scene_a8cce9e0f96edc8655a9b9a885e2c26bf}
+Caméra de la scène \hypertarget{class_scene_ab1c7bd9112003b236d22dd2d1b58600e}{\index{Scene@{Scene}!\+\_\+lights@{\+\_\+lights}}
+\index{\+\_\+lights@{\+\_\+lights}!Scene@{Scene}}
+\subsubsection[{\+\_\+lights}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$const Q\+String, {\bf Light} $\ast$$>$ Scene\+::\+\_\+lights\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_ab1c7bd9112003b236d22dd2d1b58600e}
+Map des lumières constituant la scène, identifiées par leur nom, doit être unique \hypertarget{class_scene_a274f93689f4fc827fe6fb215081898d6}{\index{Scene@{Scene}!\+\_\+materials@{\+\_\+materials}}
+\index{\+\_\+materials@{\+\_\+materials}!Scene@{Scene}}
+\subsubsection[{\+\_\+materials}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$const Q\+String, {\bf Material} $\ast$$>$ Scene\+::\+\_\+materials\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_a274f93689f4fc827fe6fb215081898d6}
+Map des matériaux constituant la scène, identifiés par leur nom, doit être unique \hypertarget{class_scene_afd5f6ed4171e34cd2d185cd7638ed40f}{\index{Scene@{Scene}!\+\_\+pieces@{\+\_\+pieces}}
+\index{\+\_\+pieces@{\+\_\+pieces}!Scene@{Scene}}
+\subsubsection[{\+\_\+pieces}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$const Q\+String, {\bf Piece} $\ast$$>$ Scene\+::\+\_\+pieces\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_afd5f6ed4171e34cd2d185cd7638ed40f}
+Map des pièces constituant la scène, identifiées par leur nom, doit être unique \hypertarget{class_scene_a7db3394191c0a07e6bdc456a53ac8ece}{\index{Scene@{Scene}!\+\_\+projection\+Matrix@{\+\_\+projection\+Matrix}}
+\index{\+\_\+projection\+Matrix@{\+\_\+projection\+Matrix}!Scene@{Scene}}
+\subsubsection[{\+\_\+projection\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat4} Scene\+::\+\_\+projection\+Matrix\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_a7db3394191c0a07e6bdc456a53ac8ece}
+Matrice de projection, recalculée à chaque redimensionnement du widget \hypertarget{class_scene_aee3789138ea10dca4999644ca8565541}{\index{Scene@{Scene}!\+\_\+shaders@{\+\_\+shaders}}
+\index{\+\_\+shaders@{\+\_\+shaders}!Scene@{Scene}}
+\subsubsection[{\+\_\+shaders}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$const Q\+String, Q\+Open\+G\+L\+Shader\+Program $\ast$$>$ Scene\+::\+\_\+shaders\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_aee3789138ea10dca4999644ca8565541}
+Map des shader constituant la scène, identifiés par leur nom, doit être unique \hypertarget{class_scene_a72a13a904d01e99834ba24ca655b9813}{\index{Scene@{Scene}!\+\_\+xml@{\+\_\+xml}}
+\index{\+\_\+xml@{\+\_\+xml}!Scene@{Scene}}
+\subsubsection[{\+\_\+xml}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Dom\+Document Scene\+::\+\_\+xml\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_a72a13a904d01e99834ba24ca655b9813}
+Encore utile ? 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+scene/\hyperlink{scene_8hpp}{scene.\+hpp}\item 
+scene/\hyperlink{scene_8cpp}{scene.\+cpp}\end{DoxyCompactItemize}

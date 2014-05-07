@@ -178,7 +178,6 @@ void    MyOpenGLWidget::keyPressEvent(QKeyEvent * event)
 
             goto action;
         }
-
     }
 
 
