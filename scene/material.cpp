@@ -9,9 +9,10 @@ Material::Material(
 		float shininess, 
 		vec4 emissive,
 		const QList<QString> & texFile):
-	_ambient(ambient), _diffuse(diffuse), _specular(specular), _shininess(shininess), _emissive(emissive)
+	_ambient(ambient), _diffuse(diffuse), _specular(specular), _shininess(shininess), _emissive(emissive), _textures(8, NULL)
 {
 	initializeOpenGLFunctions();
+
 
 	for(auto i : texFile)
 	{
@@ -65,9 +66,40 @@ void Material::addTexture(const QString & texFile)
 			QOpenGLTexture *texture = new QOpenGLTexture(QImage(texFile).mirrored());
 			//inverse l'image sur les y pour l'avoir dans le sens intuitif
 
-			texture->setMinMagFilters(QOpenGLTexture::Nearest, QOpenGLTexture::Nearest);
+			texture->setMinMagFilters(QOpenGLTexture::Linear, QOpenGLTexture::Linear);
 
-			_textures << texture;
+			for(int i = 0; i < 8; ++i)
+				if (!_textures.at(i)){
+					_textures[i] = texture;
+					break;
+				}
+
+			_texturesLoaded.insert(std::make_pair(texFile, texture));
+		}
+	}	
+}
+
+void Material::addTextureAt(const QString & texFile, unsigned int indice)
+{
+	if (texFile != "")
+	{
+		auto res = _texturesLoaded.find(texFile);
+
+		if (res != _texturesLoaded.end())
+		{
+			_textures << res->second;
+		}
+		else
+		{
+			glActiveTexture(GL_TEXTURE0 + _textures.count());
+			QOpenGLTexture *texture = new QOpenGLTexture(QImage(texFile).mirrored());
+			//inverse l'image sur les y pour l'avoir dans le sens intuitif
+
+			texture->setMinMagFilters(QOpenGLTexture::Linear, QOpenGLTexture::Linear);
+
+
+			_textures[indice < 8 ? indice : 7] = texture;
+
 
 			_texturesLoaded.insert(std::make_pair(texFile, texture));
 		}
@@ -129,8 +161,11 @@ void Material::update()
 
 		for (auto tex : _textures)
 		{
-			glActiveTexture(GL_TEXTURE0 + i++);
-			tex->bind();
+			if (tex)
+			{
+				glActiveTexture(GL_TEXTURE0 + i++);
+				tex->bind();
+			}
 		}
 
 	}

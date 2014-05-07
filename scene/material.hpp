@@ -28,7 +28,7 @@ private:
 	vec4			_specular;
 	float			_shininess;
 	vec4			_emissive;
-	QList<QOpenGLTexture*> _textures;
+	QVector<QOpenGLTexture*> _textures;
 
 	static std::map<const QString, QOpenGLTexture *> _texturesLoaded; /**< Ensemble des textures déjà chargées pour réutilisation */
 
@@ -65,11 +65,22 @@ public:
 	/**
 	 * @brief Charge une texture
 	 * @details Charge une texture et l'ajoute aux texture du Material
+	 * @warning Par défault la texture prendra le premier slot disponnible
 	 * 
 	 * @param texFile fichier de texture à charger
 	 * @warning  pas de libération des textures
 	 */
 	void addTexture(const QString & texFile);
+
+	/**
+	 * @brief Charge une texture et l'associe à un slot
+	 * @details Charge une texture et l'associe à un slot pour le passage au shader
+	 * 
+	 * @param texFile fichier de texture à charger
+	 * @param int indice que la texture doit occuper
+	 * @warning Ecrase la texture à l'indice choisie
+	 */
+	void addTextureAt(const QString & texFile, unsigned int indice);
 
 	/**
 	 * @brief Met à jour la shniness du Material

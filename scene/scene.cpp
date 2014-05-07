@@ -238,6 +238,7 @@ void 	Scene::loadMaterials(const QDomElement & dom)
 			while(!var.isNull())
 			{
 				float r, b, g, a, s;
+				unsigned int location;
 				QString path;
 				if (var.isElement())
 				{	
@@ -284,8 +285,13 @@ void 	Scene::loadMaterials(const QDomElement & dom)
 					else if (var2.tagName() == "texture")
 					{
 						path = var2.attribute("src", "");
+						location = var2.attribute("location", "500").toUInt();
 
-						tmp->addTexture(path);
+						if (location < 8)
+							tmp->addTextureAt(path, location);
+						
+						else
+							tmp->addTexture(path);
 					}
 				}
 				
