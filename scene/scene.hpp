@@ -1,16 +1,9 @@
 #ifndef SCENE_H
 #define SCENE_H
 
-/*!
-*	\file scene.hpp
-*	\brief Classe principale, charge le fichier xml et dessine la scène
-* 	\author Théo Le Calvar
-*	\version 0.1
-*/
 
 #include <iostream>
 #include <map>
-#include <vector>
 
 #include "helper.hpp"
 #include "camera.hpp"
@@ -52,10 +45,10 @@ private:
 	QDomDocument 										_xml; /**< Encore utile ? */
 
 
-	std::map<const QString, Piece *>					_pieces; /**< Map des pièces constituant la scène, identifiées par leur nom, doit être unique */ 
-	std::map<const QString, Light *> 					_lights; /**< Map des lumières constituant la scène, identifiées par leur nom, doit être unique */
-	std::map<const QString, Material *>					_materials; /**< Map des matériaux constituant la scène, identifiés par leur nom, doit être unique */
-	std::map<const QString, QOpenGLShaderProgram *> 	_shaders; /**< Map des shader constituant la scène, identifiés par leur nom, doit être unique */
+	QMap<QString, Piece *>						_pieces; /**< Map des pièces constituant la scène, identifiées par leur nom, doit être unique */ 
+	QMap<QString, Light *> 						_lights; /**< Map des lumières constituant la scène, identifiées par leur nom, doit être unique */
+	QMap<QString, Material *>						_materials; /**< Map des matériaux constituant la scène, identifiés par leur nom, doit être unique */
+	QMap<QString, QOpenGLShaderProgram *> 		_shaders; /**< Map des shader constituant la scène, identifiés par leur nom, doit être unique */
 
 	mat4 												_projectionMatrix; /**< Matrice de projection, recalculée à chaque redimensionnement du widget */
 
@@ -96,7 +89,7 @@ public:
 	 * @param name nom de la pièce
 	 * @return Retourne le pointeur si le nom est trouvé, NULL autrement
 	 */
-	Objet * 	getPiece(const QString & name);
+	Piece * 	getPiece(const QString & name);
 
 
 	/**
@@ -132,13 +125,6 @@ public:
 	*/
 	QStringList getPiecesName() const;
 
-	/**
-	* @brief Retourne la liste des noms des objets dans la scène
-	*
-	* Les objets fils des Pièces sont aussi enregistrés, à voir si cela est pertinent
-	* @return QStringList contenant les noms des objets de la scène
-	*/
-	QStringList getObjetsNames() const;
 
 	/**
 	* @brief Retourne la liste des noms des lumières dans la scène

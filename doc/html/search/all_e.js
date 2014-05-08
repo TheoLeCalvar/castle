@@ -6,7 +6,7 @@ var searchData=
   ['scene',['Scene',['../class_scene.html',1,'Scene'],['../class_scene.html#ad10176d75a9cc0da56626f682d083507',1,'Scene::Scene()'],['../class_scene.html#a31c9409af2f7f8f592519eb4a3029624',1,'Scene::Scene(const QString &amp;fileName)']]],
   ['scene_2ecpp',['scene.cpp',['../scene_8cpp.html',1,'']]],
   ['scene_2ehpp',['scene.hpp',['../scene_8hpp.html',1,'']]],
-  ['set',['set',['../class_light.html#a9fcc4b3ffdeedbe214ee8384c7d311b9',1,'Light::set()'],['../class_material.html#a2ab92e03d9c90294cd28fff9b6a8cde0',1,'Material::set(GLenum type, vec4 value)'],['../class_material.html#a8d214d9967f8526ccc6048e6f323bdd5',1,'Material::set(const QString &amp;texFile)'],['../class_material.html#a3de47a95f13dc6f6306493516814762c',1,'Material::set(float shininess)']]],
+  ['set',['set',['../class_light.html#a9fcc4b3ffdeedbe214ee8384c7d311b9',1,'Light::set()'],['../class_material.html#a2ab92e03d9c90294cd28fff9b6a8cde0',1,'Material::set(GLenum type, vec4 value)'],['../class_material.html#a3de47a95f13dc6f6306493516814762c',1,'Material::set(float shininess)']]],
   ['setactiveshader',['setActiveShader',['../helper_8cpp.html#a28ba5b22ef41a9bb69e40ad84904e46e',1,'setActiveShader(GLuint shader):&#160;helper.cpp'],['../helper_8hpp.html#a28ba5b22ef41a9bb69e40ad84904e46e',1,'setActiveShader(GLuint shader):&#160;helper.cpp']]],
   ['setmodelmatrix',['setModelMatrix',['../helper_8cpp.html#a132d93b3fc0307fada75ad6f7d57bfd6',1,'setModelMatrix(mat4 model):&#160;helper.cpp'],['../helper_8hpp.html#a132d93b3fc0307fada75ad6f7d57bfd6',1,'setModelMatrix(mat4 model):&#160;helper.cpp']]],
   ['setnumber',['setNumber',['../class_light.html#a985e67a0b88ba49ec8da5d5b205d06ed',1,'Light']]],

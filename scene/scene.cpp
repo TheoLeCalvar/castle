@@ -60,21 +60,26 @@ Scene::Scene(const QString & fileName):
 	loadPieces(pieces);
 	qDebug() << "Pièces chargées avec succès";
 
+	qDebug() << _materials;
+	qDebug() << _lights;
+	qDebug() << _pieces;
+	qDebug() << _shaders;
+
 }
 
 Scene::~Scene()
 {
 	for(auto i : _pieces)
-		delete i.second;
+		delete i;
 
 	for(auto i : _lights)
-		delete i.second;
+		delete i;
 
 	for(auto i : _materials)
-		delete i.second;
+		delete i;
 
 	for(auto i : _shaders)
-		delete i.second;
+		delete i;
 }
 
 
@@ -86,139 +91,111 @@ void 	Scene::draw()
 
 	for(auto i : _pieces)
 	{
-		i.second->draw();
+		i->draw();
 		openGL_check_error();
 	}
 
 	for(auto i: _shaders)
 	{
-		i.second->bind();
+		i->bind();
 
 		for(auto j : _lights)
 		{
-			j.second->update();
+			j->update();
 			openGL_check_error();
 		}
 	}
 
 }
 
-Objet * 	Scene::getPiece(const QString & name)
+Piece * 	Scene::getPiece(const QString & name)
 {
-	auto res = _pieces.find(name);
-
-
-	return (res != _pieces.end()) ? res->second : NULL;
+	return _pieces.value(name);
 }
 
 Light * 	Scene::getLight(const QString & name)
 {
-	auto res = _lights.find(name);
-
-	return (res != _lights.end()) ? res->second : NULL;
+	return _lights.value(name);
 }
 
 Material *	Scene::getMaterial(const QString & name)
 {
-	auto res = _materials.find(name);
-
-	return (res != _materials.end()) ? res->second : NULL;
+	return _materials.value(name);
 }
 
 GLuint 		Scene::getShader(const QString & name)
 {
-	auto res = _shaders.find(name);
-
-	return (res != _shaders.end()) ? res->second->programId() : 0;
+	auto shader = _shaders.value(name);
+	return (shader ? shader->programId() : 0);
 }
 
 QStringList Scene::getPiecesName() const
 {
-	QStringList list;
-
-	for(auto i : _pieces)
-		list << i.first;
-
-	return list;
+	return _pieces.keys();
 }
 
-
-QStringList Scene::getObjetsNames() const
-{
-	//TODO !!
-}
 
 QStringList Scene::getLightsNames() const
 {
-	QStringList list;
-
-	for(auto i : _lights)
-		list << i.first;
-
-	return list;
+	return _lights.keys();
 }
 
 QStringList Scene::getMaterialsNames() const
 {
-	QStringList list;
-
-	for(auto i : _materials)
-		list << i.first;
-
-	return list;
+	return _materials.keys();
 }
 
 QStringList Scene::getShadersNames() const
 {
-	QStringList list;
-
-	for(auto i : _shaders)
-		list << i.first;
-
-	return list;
+	return _shaders.keys();
 }
 
 void 	Scene::addMaterial(const QString & name, Material * v)
 {
-	std::pair<const QString, Material *> p(name, v);
-	std::pair<std::map<const QString, Material *>::iterator , bool> res = _materials.insert(p);
-
-	if (!res.second)
+	if (_materials.contains(name))
 	{
 		qWarning() << "Materiaux deja present";
+	}
+	else
+	{
+		_materials[name] = v;
 	}
 }
 
 void 	Scene::addLight(const QString & name, Light * v)
 {
-	std::pair<const QString, Light *> p(name, v);
-	std::pair<std::map<const QString, Light *>::iterator , bool> res = _lights.insert(p);
-
-	if (!res.second)
+	if (_lights.contains(name))
 	{
 		qWarning() << "Lumiere deja presente";
+	}
+	else
+	{
+		_lights[name] = v;
 	}
 }
 
 void 	Scene::addPiece(const QString & name, Piece * v)
 {
-	std::pair<const QString, Piece *> p(name, v);
-	std::pair<std::map<const QString, Piece *>::iterator , bool> res = _pieces.insert(p);
-
-	if (!res.second)
+	if (_pieces.contains(name))
 	{
 		qWarning() << "Piece deja present";
+	}
+	else
+	{
+		_pieces[name] = v;
 	}
 }
 
 void 	Scene::addShader(const QString & name, QOpenGLShaderProgram * v)
 {
-	std::pair<const QString, QOpenGLShaderProgram *> p(name, v);
-	std::pair<std::map<const QString, QOpenGLShaderProgram *>::iterator , bool> res = _shaders.insert(p);
-
-	if (!res.second)
+	qDebug() << "Ajout shader " << name << v;
+	if (_shaders.contains(name))
 	{
 		qWarning() << "Shader deja present";
+	}
+	else
+	{
+		_shaders[name] = v;
 	}
 }
 
@@ -314,17 +291,17 @@ void 	Scene::loadLights(const QDomElement & dom)
 		Light * tmp = new Light;
 		QString nom = light.attribute("nom"), mat = light.attribute("mat");
 		int lightNum = light.attribute("num", "0").toInt();
-		auto res = _materials.find(mat);
+		Material * res = _materials[mat];
 
 		tmp->setNumber(lightNum);
 		
 		qDebug() << light.attribute("nom");
 
-		if (res != _materials.end())
+		if (res)
 		{
-			tmp->set(GL_AMBIENT, res->second->get(GL_AMBIENT));
-			tmp->set(GL_DIFFUSE, res->second->get(GL_DIFFUSE));
-			tmp->set(GL_SPECULAR, res->second->get(GL_SPECULAR));
+			tmp->set(GL_AMBIENT, res->get(GL_AMBIENT));
+			tmp->set(GL_DIFFUSE, res->get(GL_DIFFUSE));
+			tmp->set(GL_SPECULAR, res->get(GL_SPECULAR));
 		}
 
 
@@ -461,19 +438,18 @@ void 	Scene::loadPieces(const QDomElement & dom)
 			{
 				QString cote = mur.attribute("cote");
 				QString material = mur.attribute("mat", "");
-				std::vector<QRectF> fenetres;
+				QList<QRectF> fenetres;
 
 				QDomElement fenetre = mur.firstChildElement("fenetre");
 
 				while(!fenetre.isNull())
 				{
-					fenetres.push_back(
-								QRectF(	
+					fenetres <<	QRectF(	
 										fenetre.attribute("x", "1.0").toFloat(), 
 										fenetre.attribute("y", "1.0").toFloat(), 
 										fenetre.attribute("width", "1.0").toFloat(), 
 										fenetre.attribute("height", "1.0").toFloat()
-									));
+									);
 
 					fenetre = fenetre.nextSiblingElement("fenetre");
 				}

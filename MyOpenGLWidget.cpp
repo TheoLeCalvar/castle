@@ -7,9 +7,9 @@ MyOpenGLWidget::MyOpenGLWidget(const QGLFormat & format, QWidget * parent, const
 	QGLWidget(format, parent, shareWidget, f), _captureMouse(false)
 {
     //refresh tout les 1/60eme de seconde
-     QTimer *timer = new QTimer(this);
-     connect(timer, SIGNAL(timeout()), this, SLOT(updateGL()));
-     timer->start(1000/60);
+     _timer = new QTimer(this);
+     connect(_timer, SIGNAL(timeout()), this, SLOT(updateGL()));
+     _timer->start(0);
 
 
      setFocusPolicy(Qt::StrongFocus);
@@ -22,6 +22,8 @@ MyOpenGLWidget::~MyOpenGLWidget()
     {
         delete _scene;
     }
+
+    delete _timer;
 }
 
 QSize MyOpenGLWidget::minimumSizeHint() const
@@ -87,12 +89,7 @@ void	MyOpenGLWidget::paintGL()
 
     openGL_check_error();
 
-
-    if (timer.elapsed() > 1000/16.0)
-    {
-        qDebug() << "Moins de 60 fps !";
-        qDebug() << "Elapsed time : " << timer.nsecsElapsed();
-    }
+    setWindowTitle(QString("Castle | %1 fps | %2 ms").arg(1 / (timer.elapsed() / 1000.0)).arg(timer.elapsed()));
 }
 
 void	MyOpenGLWidget::resizeGL(int width, int height)

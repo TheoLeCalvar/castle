@@ -5,7 +5,7 @@
 Plan::Plan(
 		int width, int height, 
 		int widthDivision, int heightDivision,
-		const std::vector<QRectF>& rects, 
+		const QList<QRectF> rects, 
 		Material * mat, vec3 rotation, vec3 position
 		)
 			:	Objet("", mat, rotation, position), 
@@ -42,9 +42,9 @@ Plan::Plan(
 		{
 			bool insert = true;
 
-			for (std::vector<QRectF>::const_iterator k = rects.begin(); k != rects.end(); ++k)
+			for (auto k : rects)
 			{
-				if (k->contains(points[3*(j + i*(widthDivision+1))], points[3*(j + i*(widthDivision+1)) + 1]))
+				if (k.contains(points[3*(j + i*(widthDivision+1))], points[3*(j + i*(widthDivision+1)) + 1]))
 				{
 					insert = false;
 					break;

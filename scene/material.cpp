@@ -132,9 +132,9 @@ float Material::shininess() const
 	return _shininess;
 }
 
-bool Material::hasTexture() const
+bool Material::hasTexture(unsigned int indice) const
 {
-	return (!_textures.empty());
+	return (indice  < 8 ? (_textures.at(indice) != NULL) : false);
 }
 
 void Material::update()

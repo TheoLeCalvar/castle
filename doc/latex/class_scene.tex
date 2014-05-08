@@ -27,7 +27,7 @@ Inheritance diagram for Scene\+:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Destructeur de la scène. \end{DoxyCompactList}\item 
 void \hyperlink{class_scene_ac0e3d2c98ba6063a086467fb2c19142f}{draw} ()
 \begin{DoxyCompactList}\small\item\em Affiche la scène. \end{DoxyCompactList}\item 
-\hyperlink{class_objet}{Objet} $\ast$ \hyperlink{class_scene_a9b9010182265cbbd1870fd45a4759d0f}{get\+Piece} (const Q\+String \&name)
+\hyperlink{class_piece}{Piece} $\ast$ \hyperlink{class_scene_a8571f97120d3d7826b0689a0e3351f45}{get\+Piece} (const Q\+String \&name)
 \begin{DoxyCompactList}\small\item\em Récupère un pointeur sur une pièce. \end{DoxyCompactList}\item 
 \hyperlink{class_light}{Light} $\ast$ \hyperlink{class_scene_ae75e1e0573b52c2c960e8afe77fead94}{get\+Light} (const Q\+String \&name)
 \begin{DoxyCompactList}\small\item\em Récupère un pointeur sur une lumière. \end{DoxyCompactList}\item 
@@ -37,8 +37,6 @@ G\+Luint \hyperlink{class_scene_a002dee3b17da628be382679c99d78c8f}{get\+Shader} 
 \begin{DoxyCompactList}\small\item\em Récupère l'id d'un shader. \end{DoxyCompactList}\item 
 Q\+String\+List \hyperlink{class_scene_a2ea5207a5d9ec6e4081f12896b01d9d5}{get\+Pieces\+Name} () const 
 \begin{DoxyCompactList}\small\item\em Retourne la liste des noms des pièces dans la scène. \end{DoxyCompactList}\item 
-Q\+String\+List \hyperlink{class_scene_a8ad3eeaf9d9968a31c64a257230cfc22}{get\+Objets\+Names} () const 
-\begin{DoxyCompactList}\small\item\em Retourne la liste des noms des objets dans la scène. \end{DoxyCompactList}\item 
 Q\+String\+List \hyperlink{class_scene_a215d616b6132f30a6bfc66ea4a3cfb95}{get\+Lights\+Names} () const 
 \begin{DoxyCompactList}\small\item\em Retourne la liste des noms des lumières dans la scène. \end{DoxyCompactList}\item 
 Q\+String\+List \hyperlink{class_scene_a481bf791889936bf3521c849bc4c7c2f}{get\+Materials\+Names} () const 
@@ -76,15 +74,14 @@ void \hyperlink{class_scene_a1deb5bb022836f4b585c8580246b26cb}{load\+Shaders} (c
 \item 
 Q\+Dom\+Document \hyperlink{class_scene_a72a13a904d01e99834ba24ca655b9813}{\+\_\+xml}
 \item 
-std\+::map$<$ const Q\+String, \hyperlink{class_piece}{Piece} $\ast$ $>$ \hyperlink{class_scene_afd5f6ed4171e34cd2d185cd7638ed40f}{\+\_\+pieces}
+Q\+Map$<$ Q\+String, \hyperlink{class_piece}{Piece} $\ast$ $>$ \hyperlink{class_scene_aa3a488d4be41fe6a187488e1e7a1035c}{\+\_\+pieces}
 \item 
-std\+::map$<$ const Q\+String, \hyperlink{class_light}{Light} $\ast$ $>$ \hyperlink{class_scene_ab1c7bd9112003b236d22dd2d1b58600e}{\+\_\+lights}
+Q\+Map$<$ Q\+String, \hyperlink{class_light}{Light} $\ast$ $>$ \hyperlink{class_scene_a0ef33120973d6afc1754d2154d7c338a}{\+\_\+lights}
 \item 
-std\+::map$<$ const Q\+String, \\*
-\hyperlink{class_material}{Material} $\ast$ $>$ \hyperlink{class_scene_a274f93689f4fc827fe6fb215081898d6}{\+\_\+materials}
+Q\+Map$<$ Q\+String, \hyperlink{class_material}{Material} $\ast$ $>$ \hyperlink{class_scene_a5b96810fdeb47632d5ce6c2c47f41691}{\+\_\+materials}
 \item 
-std\+::map$<$ const Q\+String, \\*
-Q\+Open\+G\+L\+Shader\+Program $\ast$ $>$ \hyperlink{class_scene_aee3789138ea10dca4999644ca8565541}{\+\_\+shaders}
+Q\+Map$<$ Q\+String, \\*
+Q\+Open\+G\+L\+Shader\+Program $\ast$ $>$ \hyperlink{class_scene_abde34dc03c8d3a07b3177041ab195f07}{\+\_\+shaders}
 \item 
 \hyperlink{structmat4}{mat4} \hyperlink{class_scene_a7db3394191c0a07e6bdc456a53ac8ece}{\+\_\+projection\+Matrix}
 \end{DoxyCompactItemize}
@@ -300,27 +297,13 @@ Retourne la liste des noms des matériaux dans la scène.
 \begin{DoxyReturn}{Returns}
 Q\+String\+List contenant les noms des matériaux de la scène 
 \end{DoxyReturn}
-\hypertarget{class_scene_a8ad3eeaf9d9968a31c64a257230cfc22}{\index{Scene@{Scene}!get\+Objets\+Names@{get\+Objets\+Names}}
-\index{get\+Objets\+Names@{get\+Objets\+Names}!Scene@{Scene}}
-\subsubsection[{get\+Objets\+Names}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List Scene\+::get\+Objets\+Names (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const}}\label{class_scene_a8ad3eeaf9d9968a31c64a257230cfc22}
-
-
-Retourne la liste des noms des objets dans la scène. 
-
-Les objets fils des Pièces sont aussi enregistrés, à voir si cela est pertinent \begin{DoxyReturn}{Returns}
-Q\+String\+List contenant les noms des objets de la scène 
-\end{DoxyReturn}
-\hypertarget{class_scene_a9b9010182265cbbd1870fd45a4759d0f}{\index{Scene@{Scene}!get\+Piece@{get\+Piece}}
+\hypertarget{class_scene_a8571f97120d3d7826b0689a0e3351f45}{\index{Scene@{Scene}!get\+Piece@{get\+Piece}}
 \index{get\+Piece@{get\+Piece}!Scene@{Scene}}
-\subsubsection[{get\+Piece}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Objet} $\ast$ Scene\+::get\+Piece (
+\subsubsection[{get\+Piece}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Piece} $\ast$ Scene\+::get\+Piece (
 \begin{DoxyParamCaption}
 \item[{const Q\+String \&}]{name}
 \end{DoxyParamCaption}
-)}}\label{class_scene_a9b9010182265cbbd1870fd45a4759d0f}
+)}}\label{class_scene_a8571f97120d3d7826b0689a0e3351f45}
 
 
 Récupère un pointeur sur une pièce. 
@@ -477,21 +460,21 @@ Pas encore implémenté
 \hypertarget{class_scene_a8cce9e0f96edc8655a9b9a885e2c26bf}{\index{Scene@{Scene}!\+\_\+camera@{\+\_\+camera}}
 \index{\+\_\+camera@{\+\_\+camera}!Scene@{Scene}}
 \subsubsection[{\+\_\+camera}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Camera}$\ast$ Scene\+::\+\_\+camera}}\label{class_scene_a8cce9e0f96edc8655a9b9a885e2c26bf}
-Caméra de la scène \hypertarget{class_scene_ab1c7bd9112003b236d22dd2d1b58600e}{\index{Scene@{Scene}!\+\_\+lights@{\+\_\+lights}}
+Caméra de la scène \hypertarget{class_scene_a0ef33120973d6afc1754d2154d7c338a}{\index{Scene@{Scene}!\+\_\+lights@{\+\_\+lights}}
 \index{\+\_\+lights@{\+\_\+lights}!Scene@{Scene}}
-\subsubsection[{\+\_\+lights}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$const Q\+String, {\bf Light} $\ast$$>$ Scene\+::\+\_\+lights\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_ab1c7bd9112003b236d22dd2d1b58600e}
-Map des lumières constituant la scène, identifiées par leur nom, doit être unique \hypertarget{class_scene_a274f93689f4fc827fe6fb215081898d6}{\index{Scene@{Scene}!\+\_\+materials@{\+\_\+materials}}
+\subsubsection[{\+\_\+lights}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Map$<$Q\+String, {\bf Light} $\ast$$>$ Scene\+::\+\_\+lights\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_a0ef33120973d6afc1754d2154d7c338a}
+Map des lumières constituant la scène, identifiées par leur nom, doit être unique \hypertarget{class_scene_a5b96810fdeb47632d5ce6c2c47f41691}{\index{Scene@{Scene}!\+\_\+materials@{\+\_\+materials}}
 \index{\+\_\+materials@{\+\_\+materials}!Scene@{Scene}}
-\subsubsection[{\+\_\+materials}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$const Q\+String, {\bf Material} $\ast$$>$ Scene\+::\+\_\+materials\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_a274f93689f4fc827fe6fb215081898d6}
-Map des matériaux constituant la scène, identifiés par leur nom, doit être unique \hypertarget{class_scene_afd5f6ed4171e34cd2d185cd7638ed40f}{\index{Scene@{Scene}!\+\_\+pieces@{\+\_\+pieces}}
+\subsubsection[{\+\_\+materials}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Map$<$Q\+String, {\bf Material} $\ast$$>$ Scene\+::\+\_\+materials\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_a5b96810fdeb47632d5ce6c2c47f41691}
+Map des matériaux constituant la scène, identifiés par leur nom, doit être unique \hypertarget{class_scene_aa3a488d4be41fe6a187488e1e7a1035c}{\index{Scene@{Scene}!\+\_\+pieces@{\+\_\+pieces}}
 \index{\+\_\+pieces@{\+\_\+pieces}!Scene@{Scene}}
-\subsubsection[{\+\_\+pieces}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$const Q\+String, {\bf Piece} $\ast$$>$ Scene\+::\+\_\+pieces\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_afd5f6ed4171e34cd2d185cd7638ed40f}
+\subsubsection[{\+\_\+pieces}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Map$<$Q\+String, {\bf Piece} $\ast$$>$ Scene\+::\+\_\+pieces\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_aa3a488d4be41fe6a187488e1e7a1035c}
 Map des pièces constituant la scène, identifiées par leur nom, doit être unique \hypertarget{class_scene_a7db3394191c0a07e6bdc456a53ac8ece}{\index{Scene@{Scene}!\+\_\+projection\+Matrix@{\+\_\+projection\+Matrix}}
 \index{\+\_\+projection\+Matrix@{\+\_\+projection\+Matrix}!Scene@{Scene}}
 \subsubsection[{\+\_\+projection\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat4} Scene\+::\+\_\+projection\+Matrix\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_a7db3394191c0a07e6bdc456a53ac8ece}
-Matrice de projection, recalculée à chaque redimensionnement du widget \hypertarget{class_scene_aee3789138ea10dca4999644ca8565541}{\index{Scene@{Scene}!\+\_\+shaders@{\+\_\+shaders}}
+Matrice de projection, recalculée à chaque redimensionnement du widget \hypertarget{class_scene_abde34dc03c8d3a07b3177041ab195f07}{\index{Scene@{Scene}!\+\_\+shaders@{\+\_\+shaders}}
 \index{\+\_\+shaders@{\+\_\+shaders}!Scene@{Scene}}
-\subsubsection[{\+\_\+shaders}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$const Q\+String, Q\+Open\+G\+L\+Shader\+Program $\ast$$>$ Scene\+::\+\_\+shaders\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_aee3789138ea10dca4999644ca8565541}
+\subsubsection[{\+\_\+shaders}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Map$<$Q\+String, Q\+Open\+G\+L\+Shader\+Program $\ast$$>$ Scene\+::\+\_\+shaders\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_abde34dc03c8d3a07b3177041ab195f07}
 Map des shader constituant la scène, identifiés par leur nom, doit être unique \hypertarget{class_scene_a72a13a904d01e99834ba24ca655b9813}{\index{Scene@{Scene}!\+\_\+xml@{\+\_\+xml}}
 \index{\+\_\+xml@{\+\_\+xml}!Scene@{Scene}}
 \subsubsection[{\+\_\+xml}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Dom\+Document Scene\+::\+\_\+xml\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_a72a13a904d01e99834ba24ca655b9813}

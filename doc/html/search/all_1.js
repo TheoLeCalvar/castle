@@ -7,5 +7,7 @@ var searchData=
   ['addmaterial',['addMaterial',['../class_scene.html#a68761479fea650973d31e2d9565f8aca',1,'Scene']]],
   ['addpiece',['addPiece',['../class_scene.html#a6c40a38ef472e73ddee697f813b8e587',1,'Scene']]],
   ['addshader',['addShader',['../class_scene.html#ad15253a331423b1e3c3fb2484b10509c',1,'Scene']]],
+  ['addtexture',['addTexture',['../class_material.html#aa51a12a59906542a7e66ff1d62547ad5',1,'Material']]],
+  ['addtextureat',['addTextureAt',['../class_material.html#ae94ef957c20e02555a2e870f38aea904',1,'Material']]],
   ['applymaterial',['applyMaterial',['../class_objet.html#a5c21e68142ae5b7c880cbd80336fb43e',1,'Objet']]]
 ];

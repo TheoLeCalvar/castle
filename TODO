@@ -13,3 +13,6 @@ Objets non primitifs:
 
 Interface:
 	une interface Qt jolie
+
+Collision:
+	trouver objets proches, les stockers et ensuite calculer les collisions sur ces objets proches

@@ -30,6 +30,7 @@ private:
 	vec4			_emissive;
 	QVector<QOpenGLTexture*> _textures;
 
+
 	static std::map<const QString, QOpenGLTexture *> _texturesLoaded; /**< Ensemble des textures déjà chargées pour réutilisation */
 
 
@@ -104,8 +105,8 @@ public:
 	 */
 	float shininess() const;
 
-
-	bool hasTexture() const;
+	
+	bool hasTexture(unsigned int indice) const;
 
 	/**
 	 * @brief Met à jour le Material courant dans le shader actif

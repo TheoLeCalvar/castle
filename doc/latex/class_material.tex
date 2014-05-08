@@ -19,21 +19,23 @@ Inheritance diagram for Material\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_material_a0a67c5d6335d0030d439d16280e7f6ff}{Material} (\hyperlink{structvec4}{vec4} ambient=\hyperlink{structvec4}{vec4}(0.\+2, 0.\+2, 0.\+2, 1.\+0), \hyperlink{structvec4}{vec4} diffuse=\hyperlink{structvec4}{vec4}(0.\+8, 0.\+8, 0.\+8, 1.\+0), \hyperlink{structvec4}{vec4} specular=\hyperlink{structvec4}{vec4}(0.\+8, 0.\+8, 0.\+8, 1.\+0), float \hyperlink{class_material_a9a938aa96f0d5a5dc4d17d43cfd4b42b}{shininess}=0.\+0f, vec4 emissive=vec4(0.\+0, 0.\+0, 0.\+0, 1.\+0), const Q\+String \&tex\+File=\char`\"{}\char`\"{})
+\hyperlink{class_material_a93afc9b0f0a6ce06f294fa6b33b2e85c}{Material} (\hyperlink{structvec4}{vec4} ambient=\hyperlink{structvec4}{vec4}(0.\+2, 0.\+2, 0.\+2, 1.\+0), \hyperlink{structvec4}{vec4} diffuse=\hyperlink{structvec4}{vec4}(0.\+8, 0.\+8, 0.\+8, 1.\+0), \hyperlink{structvec4}{vec4} specular=\hyperlink{structvec4}{vec4}(0.\+8, 0.\+8, 0.\+8, 1.\+0), float \hyperlink{class_material_a9a938aa96f0d5a5dc4d17d43cfd4b42b}{shininess}=0.\+0f, vec4 emissive=vec4(0.\+0, 0.\+0, 0.\+0, 1.\+0), const Q\+List$<$ Q\+String $>$ \&tex\+File=\+Q\+List$<$ Q\+String $>$())
 \begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
 \hyperlink{class_material_a2c19452d71f54075df8f5405b03129f4}{$\sim$\+Material} ()
 \begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
 void \hyperlink{class_material_a2ab92e03d9c90294cd28fff9b6a8cde0}{set} (G\+Lenum type, \hyperlink{structvec4}{vec4} value)
 \begin{DoxyCompactList}\small\item\em Met à jour la composante du matériaux. \end{DoxyCompactList}\item 
-void \hyperlink{class_material_a8d214d9967f8526ccc6048e6f323bdd5}{set} (const Q\+String \&tex\+File)
+void \hyperlink{class_material_aa51a12a59906542a7e66ff1d62547ad5}{add\+Texture} (const Q\+String \&tex\+File)
 \begin{DoxyCompactList}\small\item\em Charge une texture. \end{DoxyCompactList}\item 
+void \hyperlink{class_material_ae94ef957c20e02555a2e870f38aea904}{add\+Texture\+At} (const Q\+String \&tex\+File, unsigned int indice)
+\begin{DoxyCompactList}\small\item\em Charge une texture et l'associe à un slot. \end{DoxyCompactList}\item 
 void \hyperlink{class_material_a3de47a95f13dc6f6306493516814762c}{set} (float \hyperlink{class_material_a9a938aa96f0d5a5dc4d17d43cfd4b42b}{shininess})
 \begin{DoxyCompactList}\small\item\em Met à jour la shniness du \hyperlink{class_material}{Material}. \end{DoxyCompactList}\item 
 \hyperlink{structvec4}{vec4} \hyperlink{class_material_a87434a8797bb6e758d764a4d7350ac38}{get} (G\+Lenum type)
 \begin{DoxyCompactList}\small\item\em Récupère la valeur d'un champ. \end{DoxyCompactList}\item 
 float \hyperlink{class_material_a9a938aa96f0d5a5dc4d17d43cfd4b42b}{shininess} () const 
 \begin{DoxyCompactList}\small\item\em Valeur du shininess. \end{DoxyCompactList}\item 
-bool \hyperlink{class_material_a57ea70765a4884a2500ebb51359cc79d}{has\+Texture} () const 
+bool \hyperlink{class_material_afa706ac6c8b21153d0742222bf3372fa}{has\+Texture} (unsigned int indice) const 
 \item 
 void \hyperlink{class_material_a3f43fe7bcfa721fd8156adb151adf45c}{update} ()
 \begin{DoxyCompactList}\small\item\em Met à jour le \hyperlink{class_material}{Material} courant dans le shader actif. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -50,7 +52,7 @@ float \hyperlink{class_material_ae3f666b9de93b770232ebb5b1b3ee47e}{\+\_\+shinine
 \item 
 \hyperlink{structvec4}{vec4} \hyperlink{class_material_a48f498add75d2e7b0022b3f34271e22b}{\+\_\+emissive}
 \item 
-Q\+Open\+G\+L\+Texture $\ast$ \hyperlink{class_material_a4e94f174d1785f0912574fee4ae2fbc2}{\+\_\+texture}
+Q\+Vector$<$ Q\+Open\+G\+L\+Texture $\ast$ $>$ \hyperlink{class_material_a0cccab80c654d9506bd1fff36ee47bd6}{\+\_\+textures}
 \end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
@@ -66,7 +68,7 @@ Matériaux pour la \hyperlink{class_scene}{Scene}.
 Contient les informations nécessaire à la gestion d'un material pour la scène 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_material_a0a67c5d6335d0030d439d16280e7f6ff}{\index{Material@{Material}!Material@{Material}}
+\hypertarget{class_material_a93afc9b0f0a6ce06f294fa6b33b2e85c}{\index{Material@{Material}!Material@{Material}}
 \index{Material@{Material}!Material@{Material}}
 \subsubsection[{Material}]{\setlength{\rightskip}{0pt plus 5cm}Material\+::\+Material (
 \begin{DoxyParamCaption}
@@ -75,9 +77,9 @@ Contient les informations nécessaire à la gestion d'un material pour la scène
 \item[{{\bf vec4}}]{specular = {\ttfamily {\bf vec4}(0.8,~0.8,~0.8,~1.0)}, }
 \item[{float}]{shininess = {\ttfamily 0.0f}, }
 \item[{{\bf vec4}}]{emissive = {\ttfamily {\bf vec4}(0.0,~0.0,~0.0,~1.0)}, }
-\item[{const Q\+String \&}]{tex\+File = {\ttfamily \char`\"{}\char`\"{}}}
+\item[{const Q\+List$<$ Q\+String $>$ \&}]{tex\+File = {\ttfamily QList$<$QString$>$()}}
 \end{DoxyParamCaption}
-)}}\label{class_material_a0a67c5d6335d0030d439d16280e7f6ff}
+)}}\label{class_material_a93afc9b0f0a6ce06f294fa6b33b2e85c}
 
 
 Constructeur. 
@@ -101,6 +103,52 @@ Destructeur.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_material_aa51a12a59906542a7e66ff1d62547ad5}{\index{Material@{Material}!add\+Texture@{add\+Texture}}
+\index{add\+Texture@{add\+Texture}!Material@{Material}}
+\subsubsection[{add\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}void Material\+::add\+Texture (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{tex\+File}
+\end{DoxyParamCaption}
+)}}\label{class_material_aa51a12a59906542a7e66ff1d62547ad5}
+
+
+Charge une texture. 
+
+Charge une texture et l'ajoute aux texture du \hyperlink{class_material}{Material} \begin{DoxyWarning}{Warning}
+Par défault la texture prendra le premier slot disponnible
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em tex\+File} & fichier de texture à charger \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+pas de libération des textures 
+\end{DoxyWarning}
+\hypertarget{class_material_ae94ef957c20e02555a2e870f38aea904}{\index{Material@{Material}!add\+Texture\+At@{add\+Texture\+At}}
+\index{add\+Texture\+At@{add\+Texture\+At}!Material@{Material}}
+\subsubsection[{add\+Texture\+At}]{\setlength{\rightskip}{0pt plus 5cm}void Material\+::add\+Texture\+At (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{tex\+File, }
+\item[{unsigned int}]{indice}
+\end{DoxyParamCaption}
+)}}\label{class_material_ae94ef957c20e02555a2e870f38aea904}
+
+
+Charge une texture et l'associe à un slot. 
+
+Charge une texture et l'associe à un slot pour le passage au shader
+
+
+\begin{DoxyParams}{Parameters}
+{\em tex\+File} & fichier de texture à charger \\
+\hline
+{\em int} & indice que la texture doit occuper \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Ecrase la texture à l'indice choisie 
+\end{DoxyWarning}
 \hypertarget{class_material_a87434a8797bb6e758d764a4d7350ac38}{\index{Material@{Material}!get@{get}}
 \index{get@{get}!Material@{Material}}
 \subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec4} Material\+::get (
@@ -120,13 +168,13 @@ Récupère la valeur d'un champ.
 \begin{DoxyReturn}{Returns}
 dans le cas de G\+L\+\_\+\+A\+M\+B\+I\+E\+N\+T, G\+L\+\_\+\+D\+I\+F\+F\+U\+S\+E, G\+L\+\_\+\+S\+P\+E\+C\+U\+L\+A\+R retourne un \hyperlink{structvec4}{vec4} correspondant à la composante, retourne \hyperlink{helper_8hpp_a8d45e9fbe94ddf3c3291116b8fce15c5}{vec4()} autrement 
 \end{DoxyReturn}
-\hypertarget{class_material_a57ea70765a4884a2500ebb51359cc79d}{\index{Material@{Material}!has\+Texture@{has\+Texture}}
+\hypertarget{class_material_afa706ac6c8b21153d0742222bf3372fa}{\index{Material@{Material}!has\+Texture@{has\+Texture}}
 \index{has\+Texture@{has\+Texture}!Material@{Material}}
 \subsubsection[{has\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}bool Material\+::has\+Texture (
 \begin{DoxyParamCaption}
-{}
+\item[{unsigned int}]{indice}
 \end{DoxyParamCaption}
-) const}}\label{class_material_a57ea70765a4884a2500ebb51359cc79d}
+) const}}\label{class_material_afa706ac6c8b21153d0742222bf3372fa}
 \hypertarget{class_material_a2ab92e03d9c90294cd28fff9b6a8cde0}{\index{Material@{Material}!set@{set}}
 \index{set@{set}!Material@{Material}}
 \subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void Material\+::set (
@@ -146,25 +194,6 @@ Met à jour la composante du matériaux.
 {\em value} & valeur \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_material_a8d214d9967f8526ccc6048e6f323bdd5}{\index{Material@{Material}!set@{set}}
-\index{set@{set}!Material@{Material}}
-\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void Material\+::set (
-\begin{DoxyParamCaption}
-\item[{const Q\+String \&}]{tex\+File}
-\end{DoxyParamCaption}
-)}}\label{class_material_a8d214d9967f8526ccc6048e6f323bdd5}
-
-
-Charge une texture. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em tex\+File} & fichier de texture à charger \\
-\hline
-\end{DoxyParams}
-\begin{DoxyWarning}{Warning}
-pas de libération des textures 
-\end{DoxyWarning}
 \hypertarget{class_material_a3de47a95f13dc6f6306493516814762c}{\index{Material@{Material}!set@{set}}
 \index{set@{set}!Material@{Material}}
 \subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void Material\+::set (
@@ -224,9 +253,9 @@ Met à jour le \hyperlink{class_material}{Material} courant dans le shader actif
 \hypertarget{class_material_aa86eef19901a701e22ef3ddd7b9c8ec2}{\index{Material@{Material}!\+\_\+specular@{\+\_\+specular}}
 \index{\+\_\+specular@{\+\_\+specular}!Material@{Material}}
 \subsubsection[{\+\_\+specular}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec4} Material\+::\+\_\+specular\hspace{0.3cm}{\ttfamily [private]}}}\label{class_material_aa86eef19901a701e22ef3ddd7b9c8ec2}
-\hypertarget{class_material_a4e94f174d1785f0912574fee4ae2fbc2}{\index{Material@{Material}!\+\_\+texture@{\+\_\+texture}}
-\index{\+\_\+texture@{\+\_\+texture}!Material@{Material}}
-\subsubsection[{\+\_\+texture}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Open\+G\+L\+Texture$\ast$ Material\+::\+\_\+texture\hspace{0.3cm}{\ttfamily [private]}}}\label{class_material_a4e94f174d1785f0912574fee4ae2fbc2}
+\hypertarget{class_material_a0cccab80c654d9506bd1fff36ee47bd6}{\index{Material@{Material}!\+\_\+textures@{\+\_\+textures}}
+\index{\+\_\+textures@{\+\_\+textures}!Material@{Material}}
+\subsubsection[{\+\_\+textures}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$Q\+Open\+G\+L\+Texture$\ast$$>$ Material\+::\+\_\+textures\hspace{0.3cm}{\ttfamily [private]}}}\label{class_material_a0cccab80c654d9506bd1fff36ee47bd6}
 \hypertarget{class_material_a9ccbb6b22b224284050b4d6c172829fc}{\index{Material@{Material}!\+\_\+textures\+Loaded@{\+\_\+textures\+Loaded}}
 \index{\+\_\+textures\+Loaded@{\+\_\+textures\+Loaded}!Material@{Material}}
 \subsubsection[{\+\_\+textures\+Loaded}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$ const Q\+String, Q\+Open\+G\+L\+Texture $\ast$ $>$ Material\+::\+\_\+textures\+Loaded\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{class_material_a9ccbb6b22b224284050b4d6c172829fc}

@@ -32,6 +32,7 @@ Q_OBJECT
 
 private:
 	bool   		_captureMouse;
+	QTimer 	*	_timer;
 
 
 	Scene * 	_scene;

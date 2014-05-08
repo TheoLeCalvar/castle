@@ -3,6 +3,7 @@
 
 #include "objet.hpp"
 #include <QRectF>
+#include <QList>
 #include <vector>
 
 
@@ -33,7 +34,7 @@ public:
 	 * @param rotation rotation à appliquer au plan
 	 * @param position position du plan dans le monde
 	 */
-	Plan(int width = 1, int height = 1, int widthDivision = 1, int heightDivision = 1, const std::vector<QRectF> & rects = std::vector<QRectF>(), Material * mat = NULL, vec3 rotation = vec3(), vec3 position = vec3());
+	Plan(int width = 1, int height = 1, int widthDivision = 1, int heightDivision = 1, const QList<QRectF> rects = QList<QRectF>(), Material * mat = NULL, vec3 rotation = vec3(), vec3 position = vec3());
 	
 	/**
 	 * @brief Destructeur

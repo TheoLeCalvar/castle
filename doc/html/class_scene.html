@@ -120,9 +120,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac0e3d2c98ba6063a086467fb2c19142f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ac0e3d2c98ba6063a086467fb2c19142f">draw</a> ()</td></tr>
 <tr class="memdesc:ac0e3d2c98ba6063a086467fb2c19142f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la scène.  <a href="#ac0e3d2c98ba6063a086467fb2c19142f">More...</a><br /></td></tr>
 <tr class="separator:ac0e3d2c98ba6063a086467fb2c19142f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b9010182265cbbd1870fd45a4759d0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_objet.html">Objet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a9b9010182265cbbd1870fd45a4759d0f">getPiece</a> (const QString &amp;name)</td></tr>
-<tr class="memdesc:a9b9010182265cbbd1870fd45a4759d0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère un pointeur sur une pièce.  <a href="#a9b9010182265cbbd1870fd45a4759d0f">More...</a><br /></td></tr>
-<tr class="separator:a9b9010182265cbbd1870fd45a4759d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8571f97120d3d7826b0689a0e3351f45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_piece.html">Piece</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a8571f97120d3d7826b0689a0e3351f45">getPiece</a> (const QString &amp;name)</td></tr>
+<tr class="memdesc:a8571f97120d3d7826b0689a0e3351f45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère un pointeur sur une pièce.  <a href="#a8571f97120d3d7826b0689a0e3351f45">More...</a><br /></td></tr>
+<tr class="separator:a8571f97120d3d7826b0689a0e3351f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae75e1e0573b52c2c960e8afe77fead94"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_light.html">Light</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ae75e1e0573b52c2c960e8afe77fead94">getLight</a> (const QString &amp;name)</td></tr>
 <tr class="memdesc:ae75e1e0573b52c2c960e8afe77fead94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère un pointeur sur une lumière.  <a href="#ae75e1e0573b52c2c960e8afe77fead94">More...</a><br /></td></tr>
 <tr class="separator:ae75e1e0573b52c2c960e8afe77fead94"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,9 +135,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2ea5207a5d9ec6e4081f12896b01d9d5"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a2ea5207a5d9ec6e4081f12896b01d9d5">getPiecesName</a> () const </td></tr>
 <tr class="memdesc:a2ea5207a5d9ec6e4081f12896b01d9d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la liste des noms des pièces dans la scène.  <a href="#a2ea5207a5d9ec6e4081f12896b01d9d5">More...</a><br /></td></tr>
 <tr class="separator:a2ea5207a5d9ec6e4081f12896b01d9d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ad3eeaf9d9968a31c64a257230cfc22"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a8ad3eeaf9d9968a31c64a257230cfc22">getObjetsNames</a> () const </td></tr>
-<tr class="memdesc:a8ad3eeaf9d9968a31c64a257230cfc22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la liste des noms des objets dans la scène.  <a href="#a8ad3eeaf9d9968a31c64a257230cfc22">More...</a><br /></td></tr>
-<tr class="separator:a8ad3eeaf9d9968a31c64a257230cfc22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a215d616b6132f30a6bfc66ea4a3cfb95"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a215d616b6132f30a6bfc66ea4a3cfb95">getLightsNames</a> () const </td></tr>
 <tr class="memdesc:a215d616b6132f30a6bfc66ea4a3cfb95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la liste des noms des lumières dans la scène.  <a href="#a215d616b6132f30a6bfc66ea4a3cfb95">More...</a><br /></td></tr>
 <tr class="separator:a215d616b6132f30a6bfc66ea4a3cfb95"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -187,16 +184,15 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a72a13a904d01e99834ba24ca655b9813"><td class="memItemLeft" align="right" valign="top">QDomDocument&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a72a13a904d01e99834ba24ca655b9813">_xml</a></td></tr>
 <tr class="separator:a72a13a904d01e99834ba24ca655b9813"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd5f6ed4171e34cd2d185cd7638ed40f"><td class="memItemLeft" align="right" valign="top">std::map&lt; const QString, <a class="el" href="class_piece.html">Piece</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#afd5f6ed4171e34cd2d185cd7638ed40f">_pieces</a></td></tr>
-<tr class="separator:afd5f6ed4171e34cd2d185cd7638ed40f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1c7bd9112003b236d22dd2d1b58600e"><td class="memItemLeft" align="right" valign="top">std::map&lt; const QString, <a class="el" href="class_light.html">Light</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ab1c7bd9112003b236d22dd2d1b58600e">_lights</a></td></tr>
-<tr class="separator:ab1c7bd9112003b236d22dd2d1b58600e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a274f93689f4fc827fe6fb215081898d6"><td class="memItemLeft" align="right" valign="top">std::map&lt; const QString, <br class="typebreak" />
-<a class="el" href="class_material.html">Material</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a274f93689f4fc827fe6fb215081898d6">_materials</a></td></tr>
-<tr class="separator:a274f93689f4fc827fe6fb215081898d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee3789138ea10dca4999644ca8565541"><td class="memItemLeft" align="right" valign="top">std::map&lt; const QString, <br class="typebreak" />
-QOpenGLShaderProgram * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#aee3789138ea10dca4999644ca8565541">_shaders</a></td></tr>
-<tr class="separator:aee3789138ea10dca4999644ca8565541"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3a488d4be41fe6a187488e1e7a1035c"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, <a class="el" href="class_piece.html">Piece</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#aa3a488d4be41fe6a187488e1e7a1035c">_pieces</a></td></tr>
+<tr class="separator:aa3a488d4be41fe6a187488e1e7a1035c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ef33120973d6afc1754d2154d7c338a"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, <a class="el" href="class_light.html">Light</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a0ef33120973d6afc1754d2154d7c338a">_lights</a></td></tr>
+<tr class="separator:a0ef33120973d6afc1754d2154d7c338a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b96810fdeb47632d5ce6c2c47f41691"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, <a class="el" href="class_material.html">Material</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a5b96810fdeb47632d5ce6c2c47f41691">_materials</a></td></tr>
+<tr class="separator:a5b96810fdeb47632d5ce6c2c47f41691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abde34dc03c8d3a07b3177041ab195f07"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, <br class="typebreak" />
+QOpenGLShaderProgram * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#abde34dc03c8d3a07b3177041ab195f07">_shaders</a></td></tr>
+<tr class="separator:abde34dc03c8d3a07b3177041ab195f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7db3394191c0a07e6bdc456a53ac8ece"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmat4.html">mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a7db3394191c0a07e6bdc456a53ac8ece">_projectionMatrix</a></td></tr>
 <tr class="separator:a7db3394191c0a07e6bdc456a53ac8ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -513,30 +509,12 @@ QOpenGLShaderProgram * &gt;&#160;</td><td class="memItemRight" valign="bottom"><
 
 </div>
 </div>
-<a class="anchor" id="a8ad3eeaf9d9968a31c64a257230cfc22"></a>
+<a class="anchor" id="a8571f97120d3d7826b0689a0e3351f45"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QStringList Scene::getObjetsNames </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retourne la liste des noms des objets dans la scène. </p>
-<p>Les objets fils des Pièces sont aussi enregistrés, à voir si cela est pertinent </p><dl class="section return"><dt>Returns</dt><dd>QStringList contenant les noms des objets de la scène </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a9b9010182265cbbd1870fd45a4759d0f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_objet.html">Objet</a> * Scene::getPiece </td>
+          <td class="memname"><a class="el" href="class_piece.html">Piece</a> * Scene::getPiece </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -788,7 +766,7 @@ QOpenGLShaderProgram * &gt;&#160;</td><td class="memItemRight" valign="bottom"><
 
 </div>
 </div>
-<a class="anchor" id="ab1c7bd9112003b236d22dd2d1b58600e"></a>
+<a class="anchor" id="a0ef33120973d6afc1754d2154d7c338a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -796,7 +774,7 @@ QOpenGLShaderProgram * &gt;&#160;</td><td class="memItemRight" valign="bottom"><
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;const QString, <a class="el" href="class_light.html">Light</a> *&gt; Scene::_lights</td>
+          <td class="memname">QMap&lt;QString, <a class="el" href="class_light.html">Light</a> *&gt; Scene::_lights</td>
         </tr>
       </table>
   </td>
@@ -809,7 +787,7 @@ QOpenGLShaderProgram * &gt;&#160;</td><td class="memItemRight" valign="bottom"><
 
 </div>
 </div>
-<a class="anchor" id="a274f93689f4fc827fe6fb215081898d6"></a>
+<a class="anchor" id="a5b96810fdeb47632d5ce6c2c47f41691"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -817,7 +795,7 @@ QOpenGLShaderProgram * &gt;&#160;</td><td class="memItemRight" valign="bottom"><
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;const QString, <a class="el" href="class_material.html">Material</a> *&gt; Scene::_materials</td>
+          <td class="memname">QMap&lt;QString, <a class="el" href="class_material.html">Material</a> *&gt; Scene::_materials</td>
         </tr>
       </table>
   </td>
@@ -830,7 +808,7 @@ QOpenGLShaderProgram * &gt;&#160;</td><td class="memItemRight" valign="bottom"><
 
 </div>
 </div>
-<a class="anchor" id="afd5f6ed4171e34cd2d185cd7638ed40f"></a>
+<a class="anchor" id="aa3a488d4be41fe6a187488e1e7a1035c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -838,7 +816,7 @@ QOpenGLShaderProgram * &gt;&#160;</td><td class="memItemRight" valign="bottom"><
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;const QString, <a class="el" href="class_piece.html">Piece</a> *&gt; Scene::_pieces</td>
+          <td class="memname">QMap&lt;QString, <a class="el" href="class_piece.html">Piece</a> *&gt; Scene::_pieces</td>
         </tr>
       </table>
   </td>
@@ -872,7 +850,7 @@ QOpenGLShaderProgram * &gt;&#160;</td><td class="memItemRight" valign="bottom"><
 
 </div>
 </div>
-<a class="anchor" id="aee3789138ea10dca4999644ca8565541"></a>
+<a class="anchor" id="abde34dc03c8d3a07b3177041ab195f07"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -880,7 +858,7 @@ QOpenGLShaderProgram * &gt;&#160;</td><td class="memItemRight" valign="bottom"><
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;const QString, QOpenGLShaderProgram *&gt; Scene::_shaders</td>
+          <td class="memname">QMap&lt;QString, QOpenGLShaderProgram *&gt; Scene::_shaders</td>
         </tr>
       </table>
   </td>
@@ -921,7 +899,7 @@ QOpenGLShaderProgram * &gt;&#160;</td><td class="memItemRight" valign="bottom"><
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 6 2014 20:24:52 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 8 2014 15:23:20 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>
