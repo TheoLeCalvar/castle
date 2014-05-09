@@ -1,22 +1,24 @@
 #include "mesh.hpp"
 
-std::map<const QString, std::pair<GLuint, unsigned int> > Mesh::_loadedModels;
+QMap<QString, Mesh::MeshInfo*> Mesh::_loadedModels;
 
 Mesh::Mesh()
 {}
 
-Mesh * Mesh::load(const QString & file, Scene * scene)
+QList<Mesh *> Mesh::loadMesh(const QString & file, Scene * scene)
 {
-	Mesh *ret = NULL;
-	auto res = _loadedModels.find(file);
+	QList<Mesh *> list;
 
-	if (res != _loadedModels.end())
+	MeshInfo* res = _loadedModels.value(file);
+
+	if (res)
 	{
-		qDebug() << "Model déjà chargé, on récupère le vao depuis la map.";
+		qDebug() << "Model déjà chargé, on récupère les infos depuis la map.";
 
-		ret = new Mesh();
-		ret->_nbVertices = res->second.second;
-		ret->_vao = res->second.first;
+		Mesh * tmp = new Mesh();
+		tmp->_infos = res;
+		list << tmp;
+		res->nbReferences++;
 	}
 	else
 	{
@@ -50,43 +52,92 @@ Mesh * Mesh::load(const QString & file, Scene * scene)
 			if (file.endsWith(".ply"))
 			{
 				qDebug() << "Load ply : " << file;
-				ret = loadPly(pScene, file);
+				list << load(pScene->mMeshes[pScene->mRootNode->mMeshes[0]], file);
 			}
 			else if (file.endsWith(".obj"))
 			{
+				aiNode * root = pScene->mRootNode;
 				qDebug() << "Load obj : " << file;
-				ret = loadObj(pScene, file);
+				for(unsigned int i = 0; i < pScene->mRootNode->mNumChildren; ++i){
+					Mesh * mesh = load(pScene->mMeshes[root->mChildren[i]->mMeshes[0]], file);
+					Material * mat = loadMaterial(pScene->mMaterials[pScene->mMeshes[root->mChildren[i]->mMeshes[0]]->mMaterialIndex]);
+
+					mesh->material(mat);
+					scene->addMaterial(file + '_' + QString::number(i),mat);
+
+					list << mesh;
+				}
 			}
 
 		}
 	}
 
-	return ret;
+
+	return list;
 }
 
-Mesh* Mesh::loadObj(const aiScene * pScene, const QString & file)
+Material * Mesh::loadMaterial(const aiMaterial * mtl)
+{
+	Material * mat = new Material();
+
+	aiColor4t<float> color;
+	float shininess;
+/*
+AI_MATKEY_NAME
+AI_MATKEY_COLOR_AMBIENT 
+AI_MATKEY_COLOR_DIFFUSE
+AI_MATKEY_COLOR_SPECULAR
+AI_MATKEY_COLOR_EMISSIVE
+AI_MATKEY_SHININESS 
+*/
+	if(AI_SUCCESS == mtl->Get(AI_MATKEY_COLOR_AMBIENT, color)){
+		mat->set(GL_AMBIENT, vec4(color.r, color.g, color.b, color.a));
+	}
+
+	if(AI_SUCCESS == mtl->Get(AI_MATKEY_COLOR_DIFFUSE, color)){
+		mat->set(GL_DIFFUSE, vec4(color.r, color.g, color.b, color.a));
+	}
+
+	if(AI_SUCCESS == mtl->Get(AI_MATKEY_COLOR_SPECULAR, color)){
+		mat->set(GL_SPECULAR, vec4(color.r, color.g, color.b, color.a));
+	}
+
+	if(AI_SUCCESS == mtl->Get(AI_MATKEY_COLOR_EMISSIVE, color))
+		mat->set(GL_EMISSION, vec4(color.r, color.g, color.b, color.a));
+
+	if (AI_SUCCESS == mtl->Get(AI_MATKEY_SHININESS, shininess)){
+		mat->set(shininess);
+	}
+
+	return mat;
+}
+
+Mesh* Mesh::load(const aiMesh * mesh, const QString & file)
 {
 	QOpenGLFunctions_3_2_Core func;
 	Mesh * ret = new Mesh;
+	MeshInfo * info = new MeshInfo;
 	std::vector<float> vertices;
 	std::vector<float> normals;
-	std::vector<unsigned int> indices;
-	aiNode * node = pScene->mRootNode->mChildren[0];
-	aiMesh * mesh = pScene->mMeshes[node->mMeshes[0]];
+	std::vector<float> texCoord;
 
 
 	func.initializeOpenGLFunctions();
-	ret->_nbVertices = mesh->mNumVertices;
+
+	ret->_infos = info;
+
+	info->nbVertices = mesh->mNumVertices;
+	info->nbReferences = 1;
 
 
 
 
-	qDebug() << "Nombre de vertices : " <<  ret->_nbVertices; 
+	qDebug() << "Nombre de vertices : " <<  info->nbVertices; 
 
 	if (mesh->HasPositions())
 	{
 		qDebug() << "Y'a des vertices !";
-		for (unsigned int i = 0; i < ret->_nbVertices; ++i)
+		for (unsigned int i = 0; i < info->nbVertices; ++i)
 		{
 			const aiVector3D* vp = &(mesh->mVertices[i]);
 
@@ -99,7 +150,7 @@ Mesh* Mesh::loadObj(const aiScene * pScene, const QString & file)
 	if (mesh->HasNormals())	
 	{
 		qDebug() << "Y'a des normales !";
-		for (unsigned int i = 0; i < ret->_nbVertices; ++i)
+		for (unsigned int i = 0; i < info->nbVertices; ++i)
 		{
 			const aiVector3D* vp = &(mesh->mNormals[i]);
 
@@ -109,8 +160,21 @@ Mesh* Mesh::loadObj(const aiScene * pScene, const QString & file)
 		}
 	}
 
-	func.glGenVertexArrays(1, &(ret->_vao));
-	func.glBindVertexArray(ret->_vao);
+	if (mesh->HasTextureCoords(0))
+	{
+		qDebug() << "Texture !";
+
+		for (unsigned int i = 0; i < info->nbVertices; ++i)
+		{
+			aiVector3D* vp = &(mesh->mTextureCoords[0][i]);
+
+			texCoord.push_back(vp->x);
+			texCoord.push_back(vp->y);
+		}
+	}
+
+	func.glGenVertexArrays(1, &(info->vao));
+	func.glBindVertexArray(info->vao);
 
 
 
@@ -125,7 +189,7 @@ Mesh* Mesh::loadObj(const aiScene * pScene, const QString & file)
 		func.glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, NULL);
 		func.glEnableVertexAttribArray(0);
 
-		ret->_vbo.push_back(vbo);
+		info->vbos << vbo;
 	}
 
 	if (mesh->HasNormals())
@@ -138,103 +202,46 @@ Mesh* Mesh::loadObj(const aiScene * pScene, const QString & file)
 		func.glBufferData(GL_ARRAY_BUFFER, normals.size() * sizeof(float), normals.data(), GL_STATIC_DRAW);
 		func.glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, NULL);
 		func.glEnableVertexAttribArray(1);
-		ret->_vbo.push_back(vbo);
+		info->vbos << vbo;
 	}
 
-	func.glBindVertexArray(0);
-
-
-	_loadedModels.insert(std::make_pair(file, std::make_pair(ret->_vao, ret->_nbVertices)));	
-
-	return ret;
-}
-
-Mesh * Mesh::loadPly(const aiScene * pScene, const QString & file)
-{
-	QOpenGLFunctions_3_2_Core func;
-	Mesh * ret = new Mesh;
-	std::vector<float> vertices;
-	std::vector<float> normals;
-	std::vector<unsigned int> indices;
-	aiMesh * mesh = pScene->mMeshes[pScene->mRootNode->mMeshes[0]];
-
-
-	func.initializeOpenGLFunctions();
-	ret->_nbVertices = mesh->mNumVertices;
-
-
-
-
-	qDebug() << "Nombre de vertices : " <<  ret->_nbVertices; 
-
-	if (mesh->HasPositions())
-	{
-		qDebug() << "Y'a des vertices !";
-		for (unsigned int i = 0; i < ret->_nbVertices; ++i)
-		{
-			const aiVector3D* vp = &(mesh->mVertices[i]);
-
-			vertices.push_back(vp->x);
-			vertices.push_back(vp->y);
-			vertices.push_back(vp->z);
-		}
-	}
-
-	if (mesh->HasNormals())	
-	{
-		qDebug() << "Y'a des normales !";
-		for (unsigned int i = 0; i < ret->_nbVertices; ++i)
-		{
-			const aiVector3D* vp = &(mesh->mNormals[i]);
-
-			normals.push_back(vp->x);
-			normals.push_back(vp->y);
-			normals.push_back(vp->z);
-		}
-	}
-
-	func.glGenVertexArrays(1, &(ret->_vao));
-	func.glBindVertexArray(ret->_vao);
-
-
-
-	if (mesh->HasPositions())
+	if (mesh->HasTextureCoords(0))
 	{
 		GLuint vbo;
 
 		func.glGenBuffers(1, &vbo);
 		func.glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
-		func.glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), vertices.data(), GL_STATIC_DRAW);
-		func.glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, NULL);
-		func.glEnableVertexAttribArray(0);
-
-		ret->_vbo.push_back(vbo);
-	}
-
-	if (mesh->HasNormals())
-	{
-		GLuint vbo;
-
-		func.glGenBuffers(1, &vbo);
-		func.glBindBuffer(GL_ARRAY_BUFFER, vbo);
-
-		func.glBufferData(GL_ARRAY_BUFFER, normals.size() * sizeof(float), normals.data(), GL_STATIC_DRAW);
-		func.glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, NULL);
-		func.glEnableVertexAttribArray(1);
-		ret->_vbo.push_back(vbo);
+		func.glBufferData(GL_ARRAY_BUFFER, texCoord.size() * sizeof(float), texCoord.data(), GL_STATIC_DRAW);
+		func.glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 0, NULL);
+		func.glEnableVertexAttribArray(2);
+		info->vbos << vbo;
 	}
 
 	func.glBindVertexArray(0);
 
 
-	_loadedModels.insert(std::make_pair(file, std::make_pair(ret->_vao, ret->_nbVertices)));	
+	_loadedModels.insert(file, info);	
 
 	return ret;
 }
 
 Mesh::~Mesh()
-{}
+{
+	_infos->nbReferences--;
+
+	if (_infos->nbReferences == 0)
+	{
+		for (auto i : _infos->vbos)
+		{
+			glDeleteBuffers(1, &i);
+		}
+
+		glDeleteBuffers(1, &_infos->vao);
+
+		delete _infos;
+	}
+}
 
 void Mesh::draw()
 {
@@ -251,9 +258,9 @@ void Mesh::draw()
 	  	openGL_check_error();
 
 
-	glBindVertexArray (_vao);
+	glBindVertexArray (_infos->vao);
 
-  	glDrawArrays (GL_TRIANGLES, 0, _nbVertices);
+  	glDrawArrays (GL_TRIANGLES, 0, _infos->nbVertices);
 
   	openGL_check_error();
 }

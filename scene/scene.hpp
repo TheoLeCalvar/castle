@@ -1,10 +1,6 @@
 #ifndef SCENE_H
 #define SCENE_H
 
-
-#include <iostream>
-#include <map>
-
 #include "helper.hpp"
 #include "camera.hpp"
 #include "light.hpp"

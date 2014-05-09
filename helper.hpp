@@ -181,6 +181,7 @@ struct mat4
 			float e, float f, float g, float h, 
 			float i, float j, float k, float l,
 			float m, float n, float o, float p);
+	mat4(float * v);
 	mat4(const mat4 &);
 
 	mat4 operator+(const mat4 &) const;
@@ -247,18 +248,23 @@ mat4 projectionMatrix(float fov, float aspect, float zNear, float zFar);
 
 template <typename charT, typename traits>
 std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits> & os, const vec2 &);
+QDebug operator<<(QDebug dbg, const vec2 &v);
 void print(const vec2 &);
 template <typename charT, typename traits>
 std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits> & os, const vec3 &);
+QDebug operator<<(QDebug dbg, const vec3 &v);
 void print(const vec3 &);
 template <typename charT, typename traits>
 std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits> & os, const vec4 &);
+QDebug operator<<(QDebug dbg, const vec4 &v);
 void print(const vec4 &);
 template <typename charT, typename traits>
 std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits> & os, const mat3 &);
+QDebug operator<<(QDebug dbg, const mat3 &m);
 void print(const mat3 &);
 template <typename charT, typename traits>
 std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits> & os, const mat4 &);
+QDebug operator<<(QDebug dbg, const mat4 &m);
 void print(const mat4 &);
 
 

@@ -69,6 +69,10 @@ mercredi 7 mai
 	gestion multi texture pour les matériaux, shader bump maping
 	à faire, spécifier quel slot texture pour les matériaux
 
+jeudi 8 mai
+	passage à QMap pour la scène
+	ça devrait charger les UV, devrait, faute de pouvoir tester
+
 Amélioration à faire
-	héritage père/fils dans objet, gestion des textures/matériaux dans modèle 3D
+	gestion des textures/matériaux dans modèle 3D
 	collision !

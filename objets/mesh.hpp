@@ -9,8 +9,9 @@
 #include <QString>
 #include <QDebug>
 
-#include <map>
-#include <utility>
+#include <QList>
+#include <QMap>
+#include <QPair>
 
 #include "objet.hpp"
 #include "scene.hpp"
@@ -27,11 +28,17 @@ class Mesh: public Objet
 {
 private:
 
-	static std::map<const QString, std::pair<GLuint, unsigned int> > _loadedModels; /**< Ensemble des VAO des modèles chargés */
+	typedef struct
+	{
+		GLuint vao;
+		QList<GLuint> vbos;
+		GLuint nbVertices;
+		unsigned int nbReferences;
+	} MeshInfo;
 
-	GLuint _vao; /**< VAO du model */
-	std::list<GLuint> _vbo; /**< VBOs du model */
-	unsigned int _nbVertices; /**< Nombre de vertices du model, tuilisé pour glDraw */
+	static QMap<QString, MeshInfo*> _loadedModels; /**< Ensemble des VAO des modèles chargés */
+
+	MeshInfo * _infos; /**< Information sur le model représenté par ce Mesh */
 
 	/**
 	 * @brief Constructeur privé
@@ -41,25 +48,23 @@ private:
 	Mesh();
 
 	/**
-	 * @brief Charge un modèle 3D au format obj
-	 * @warning Ne gère pas tout les obj, les groupes ne sont pas géré, seul le premier mesh est chargé, ne gère pas les matériaux
+	 * @brief Charge un mesh
 	 * 
 	 * @param scene scène générée par assimp
 	 * @param fileName nom du fichier
 	 * 
 	 * @return un pointeur sur Mesh, NULL si erreur
 	 */
-	static Mesh * loadObj(const aiScene* scene, const QString & fileName);
+	static Mesh * load(const aiMesh* scene, const QString & fileName);
 
 	/**
-	 * @brief Charge un modèle 3D au format ply
+	 * @brief Charge un Material
 	 * 
-	 * @param scene scène générée par assimp
-	 * @param fileName nom du fichier
-	 * 
-	 * @return un pointeur sur Mesh, NULL si erreur
+	 * @param mat material à charger
+	 * @return NULL si erreur
 	 */
-	static Mesh * loadPly(const aiScene* scene, const QString & fileName);
+	static Material * loadMaterial(const aiMaterial * mat);
+
 	
 public:
 
@@ -74,7 +79,7 @@ public:
 	 * 
 	 * @return un pointeur sur Mesh ou NULL si une erreur s'est produite, peut aussi stoper le programme
 	 */
-	static Mesh * load(const QString & fileName, Scene * scene);
+	static QList<Mesh *> loadMesh(const QString & fileName, Scene * scene);
 
 
 	/**

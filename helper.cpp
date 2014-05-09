@@ -658,6 +658,14 @@ mat4::mat4(	float a, float b, float c, float d,
 	m[3] = d;   m[7] = h;	m[11] = l;	m[15] = p;
 }
 
+mat4::mat4(float * v)
+{
+	m[0] = v[0]; 	m[1] = v[1]; 	m[2] = v[2]; 	m[3] = v[3]; 
+	m[4] = v[4]; 	m[5] = v[5]; 	m[6] = v[6]; 	m[7] = v[7]; 
+	m[8] = v[8]; 	m[9] = v[9]; 	m[10] = v[10]; 	m[11] = v[11]; 
+	m[12] = v[12]; 	m[13] = v[13]; 	m[14] = v[14]; 	m[15] = v[15]; 	
+}
+
 mat4::mat4(const mat4 & mm)
 {
 	m[0] = mm.m[0]; 	m[1] = mm.m[1]; 	m[2] = mm.m[2]; 	m[3] = mm.m[3]; 
@@ -1013,6 +1021,13 @@ std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits>
    return os;
 }
 
+QDebug operator<<(QDebug dbg, const vec2 &v)
+{
+    dbg.nospace() << "(" << v[0] << "," << v[1] << ")";
+
+    return dbg;	
+}
+
 void print(const vec2 & vv)
 {
 	std::cout << "(" << vv[0] << "," << vv[1] << ")" << std::endl;
@@ -1025,6 +1040,13 @@ std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits>
    return os;
 }
 
+QDebug operator<<(QDebug dbg, const vec3 &v)
+{
+    dbg.nospace() << "(" << v[0] << "," << v[1] << ',' << v[2] << ")";
+
+    return dbg;	
+}
+
 void print(const vec3 & vv)
 {
 	std::cout << "(" << vv[0] << "," << vv[1] << "," << vv[2] << ")" << std::endl;
@@ -1035,6 +1057,13 @@ std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits>
 {
    os << "(" << vv[0] << "," << vv[1] << "," << vv[2] << "," << vv[3] <<  ")" << std::endl;
    return os;
+}
+
+QDebug operator<<(QDebug dbg, const vec4 &v)
+{
+    dbg.nospace() << "(" << v[0] << "," << v[1] << ',' << v[2] << "," << v[3] << ")";
+
+    return dbg;	
 }
 
 void print(const vec4 & vv)
@@ -1050,6 +1079,15 @@ std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits>
 	os << "[" << mm[2] << "][" << mm[5] << "][" << mm[8] << "]" << std::endl;
 
 	return os;
+}
+
+QDebug operator<<(QDebug dbg, const mat3 &v)
+{
+    dbg.nospace() << "[" << v[0] << "][" << v[3] << "][" << v[6] << "]";
+    dbg.nospace() << "[" << v[1] << "][" << v[4] << "][" << v[7] << "]";
+    dbg.nospace() << "[" << v[2] << "][" << v[5] << "][" << v[8] << "]";
+
+    return dbg.space();	
 }
 
 void print(const mat3 & mm)
@@ -1070,6 +1108,15 @@ std::basic_ostream<charT,traits> & operator << (std::basic_ostream<charT,traits>
 	return os;
 }
 
+QDebug operator<<(QDebug dbg, const mat4 &v)
+{
+    dbg.nospace() << "[" << v[0] << "][" << v[4] << "][" << v[8] << "][" << v[12] << "]";
+    dbg.nospace() << "[" << v[1] << "][" << v[5] << "][" << v[9] << "][" << v[13] << "]";
+    dbg.nospace() << "[" << v[2] << "][" << v[6] << "][" << v[10] << "][" << v[14] << "]";
+    dbg.nospace() << "[" << v[3] << "][" << v[7] << "][" << v[11] << "][" << v[15] << "]";
+
+    return dbg.space();	
+}
 
 void print(const mat4 & mm)
 {

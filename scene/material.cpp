@@ -7,17 +7,11 @@ std::map<const QString, QOpenGLTexture *> Material::_texturesLoaded;
 Material::Material(
 		vec4 ambient, vec4 diffuse, vec4 specular, 
 		float shininess, 
-		vec4 emissive,
-		const QList<QString> & texFile):
-	_ambient(ambient), _diffuse(diffuse), _specular(specular), _shininess(shininess), _emissive(emissive), _textures(8, NULL)
+		vec4 emissive
+		):
+	_ambient(ambient), _diffuse(diffuse), _specular(specular), _shininess(shininess), _emissive(emissive), _diffuse_texture(NULL), _specular_texture(NULL), _normal_texture(NULL)
 {
 	initializeOpenGLFunctions();
-
-
-	for(auto i : texFile)
-	{
-		addTexture(i);
-	}
 }
 
 Material::~Material()
@@ -50,7 +44,7 @@ void Material::set(const float shininess)
 	_shininess = shininess;
 }
 
-void Material::addTexture(const QString & texFile)
+void Material::addTexture(const QString & texFile, unsigned char type)
 {
 	if (texFile != "")
 	{
@@ -58,47 +52,43 @@ void Material::addTexture(const QString & texFile)
 
 		if (res != _texturesLoaded.end())
 		{
-			_textures << res->second;
-		}
-		else
-		{
-			glActiveTexture(GL_TEXTURE0 + _textures.count());
-			QOpenGLTexture *texture = new QOpenGLTexture(QImage(texFile).mirrored());
-			//inverse l'image sur les y pour l'avoir dans le sens intuitif
-
-			texture->setMinMagFilters(QOpenGLTexture::Linear, QOpenGLTexture::Linear);
-
-			for(int i = 0; i < 8; ++i)
-				if (!_textures.at(i)){
-					_textures[i] = texture;
+			switch(type)
+			{
+				case 0:
+					_diffuse_texture = res->second;
 					break;
-				}
 
-			_texturesLoaded.insert(std::make_pair(texFile, texture));
-		}
-	}	
-}
+				case 1:
+					_specular_texture = res->second;
+					break;
 
-void Material::addTextureAt(const QString & texFile, unsigned int indice)
-{
-	if (texFile != "")
-	{
-		auto res = _texturesLoaded.find(texFile);
-
-		if (res != _texturesLoaded.end())
-		{
-			_textures << res->second;
+				case 2:
+					_normal_texture = res->second;
+					break;
+			}
 		}
 		else
 		{
-			glActiveTexture(GL_TEXTURE0 + _textures.count());
 			QOpenGLTexture *texture = new QOpenGLTexture(QImage(texFile).mirrored());
 			//inverse l'image sur les y pour l'avoir dans le sens intuitif
 
 			texture->setMinMagFilters(QOpenGLTexture::Linear, QOpenGLTexture::Linear);
 
 
-			_textures[indice < 8 ? indice : 7] = texture;
+			switch(type)
+			{
+				case 0:
+					_diffuse_texture = texture;
+					break;
+
+				case 1:
+					_specular_texture = texture;
+					break;
+
+				case 2:
+					_normal_texture = texture;
+					break;
+			}
 
 
 			_texturesLoaded.insert(std::make_pair(texFile, texture));
@@ -132,21 +122,60 @@ float Material::shininess() const
 	return _shininess;
 }
 
-bool Material::hasTexture(unsigned int indice) const
+bool Material::hasTexture(unsigned char type) const
 {
-	return (indice  < 8 ? (_textures.at(indice) != NULL) : false);
+	switch(type)
+	{
+		case 0:
+			return (_diffuse_texture != NULL);
+			break;
+
+		case 1:
+			return (_specular_texture != NULL);
+			break;
+
+		case 2:
+			return (_normal_texture != NULL);
+			break;
+	}
+
+	return false;
+}
+
+bool Material::hasDiffuseTexture() const
+{
+	return (_diffuse_texture != NULL);
+}
+
+bool Material::hasSpecularTexture() const
+{
+	return (_specular_texture != NULL);
+}
+
+bool Material::hasNormalTexture() const
+{
+	return (_normal_texture != NULL);
 }
 
 void Material::update()
 {
 	GLuint shader = getActiveShader();
 
-	GLuint useTexture_location = glGetUniformLocation(shader, "useTexture");
-	GLuint ambient_location = glGetUniformLocation(shader, "Ka");
-	GLuint diffuse_location = glGetUniformLocation(shader, "Kd");
-	GLuint specular_location = glGetUniformLocation(shader, "Ks");
-	GLuint specular_exponnent_location = glGetUniformLocation(shader, "specular_exponent");
-	// GLuint emissive_location = glGetUniformLocation(shader, "Ke");
+	GLint 	ambient_location = glGetUniformLocation(shader, "Ka");
+	GLint 	diffuse_location = glGetUniformLocation(shader, "Kd");
+	GLint 	specular_location = glGetUniformLocation(shader, "Ks");
+	GLint 	specular_exponnent_location = glGetUniformLocation(shader, "specular_exponent");
+	// GLint 	emissive_location = glGetUniformLocation(shader, "Ke");
+
+	GLint 	use_diffuse_texture_location = glGetUniformLocation(shader, "use_diffuse_tex");
+	GLint   diffuse_texture_location = glGetUniformLocation(shader, "diffuse_tex");
+
+	GLint 	use_specular_texture_location = glGetUniformLocation(shader, "use_specular_tex");
+	GLint   specular_texture_location = glGetUniformLocation(shader, "specular_tex");
+
+	GLint 	use_normal_texture_location = glGetUniformLocation(shader, "use_normal_tex");
+	GLint   normal_texture_location = glGetUniformLocation(shader, "normal_tex");
+	
 
 	glUniform3fv(ambient_location, 1, _ambient.v);
 	glUniform3fv(diffuse_location, 1, _diffuse.v);
@@ -154,24 +183,52 @@ void Material::update()
 	glUniform1f(specular_exponnent_location, _shininess);
 	// glUniform3fv(emissive_location, 1, _emissive.v);
 
-	if (!_textures.empty())
+	if (hasDiffuseTexture() && (diffuse_texture_location >=0))
 	{
-		unsigned int i = 0;
-		glUniform1f(useTexture_location, 1.0);
+		glUniform1f(use_diffuse_texture_location, 1.0);
 
-		for (auto tex : _textures)
-		{
-			if (tex)
-			{
-				glActiveTexture(GL_TEXTURE0 + i++);
-				tex->bind();
-			}
-		}
-
+		glActiveTexture(GL_TEXTURE0);
+		glUniform1i (diffuse_texture_location, 0);
+		_diffuse_texture->bind();
 	}
 	else
 	{
-		glUniform1f(useTexture_location, 0.0);
+		glUniform1f(use_diffuse_texture_location, 0.0);
 	}
+
+	if (hasSpecularTexture() && (specular_texture_location >=0))
+	{
+		glUniform1f(use_specular_texture_location, 1.0);
+
+		glActiveTexture(GL_TEXTURE0 + 1);
+		glUniform1i (specular_texture_location, 1);
+		_specular_texture->bind();
+	}
+	else
+	{
+		glUniform1f(use_specular_texture_location, 0.0);
+	}
+
+	if (hasNormalTexture() && (normal_texture_location >=0))
+	{
+		glUniform1f(use_normal_texture_location, 1.0);
+
+		glActiveTexture(GL_TEXTURE0 + 2);
+		glUniform1i (normal_texture_location, 2);
+		_normal_texture->bind();
+	}
+	else
+	{
+		glUniform1f(use_normal_texture_location, 0.0);
+	}
+
+	openGL_check_error();
 	
+}
+
+QDebug operator<<(QDebug dbg, const Material &m)
+{
+	dbg.nospace() << "(Material " << &m <<" (ambiant" << m._ambient << ", diffuse" << m._diffuse << ", specular" << m._specular << ", emissive" << m._emissive << ", shininess(" <<m._shininess <<"))";
+
+	return dbg.space();
 }

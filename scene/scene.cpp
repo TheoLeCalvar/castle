@@ -60,11 +60,6 @@ Scene::Scene(const QString & fileName):
 	loadPieces(pieces);
 	qDebug() << "Pièces chargées avec succès";
 
-	qDebug() << _materials;
-	qDebug() << _lights;
-	qDebug() << _pieces;
-	qDebug() << _shaders;
-
 }
 
 Scene::~Scene()
@@ -97,7 +92,9 @@ void 	Scene::draw()
 
 	for(auto i: _shaders)
 	{
-		i->bind();
+		setActiveShader(i->programId());
+
+		openGL_check_error();
 
 		for(auto j : _lights)
 		{
@@ -215,7 +212,7 @@ void 	Scene::loadMaterials(const QDomElement & dom)
 			while(!var.isNull())
 			{
 				float r, b, g, a, s;
-				unsigned int location;
+				unsigned char location;
 				QString path;
 				if (var.isElement())
 				{	
@@ -264,11 +261,11 @@ void 	Scene::loadMaterials(const QDomElement & dom)
 						path = var2.attribute("src", "");
 						location = var2.attribute("location", "500").toUInt();
 
-						if (location < 8)
-							tmp->addTextureAt(path, location);
-						
+						if (location < 3)
+							tmp->addTexture(path, location);
 						else
-							tmp->addTexture(path);
+							tmp->addTexture(path, 0);
+						
 					}
 				}
 				
@@ -513,18 +510,20 @@ void 	Scene::loadPieces(const QDomElement & dom)
 				QString shaderObjet = objet.attribute("shader", "");
 
 
-				Mesh * mesh = Mesh::load(modeleObjet, this);
+				QList<Mesh *> meshs = Mesh::loadMesh(modeleObjet, this);
 
-				if (!mesh)
+				if (meshs.empty())
 				{
 					qFatal("Stop, erreur de chargement");
 				}
-
-				mesh->parent(pieceTmp);
-				mesh->rotation(vec3(xRot, yRot, zRot));
-				mesh->material(getMaterial(matObjet));
-				mesh->shaderId(getShader(shaderObjet));
-				mesh->name(nomObjet);
+				for(auto mesh : meshs)
+				{
+					mesh->parent(pieceTmp);
+					mesh->rotation(vec3(xRot, yRot, zRot));
+					mesh->material(getMaterial(matObjet));
+					mesh->shaderId(getShader(shaderObjet));
+					mesh->name(nomObjet);
+				}
 
 
 				QDomElement position = objet.firstChildElement("position");
@@ -537,11 +536,12 @@ void 	Scene::loadPieces(const QDomElement & dom)
 					y = position.attribute("y", "0").toFloat();
 					z = position.attribute("z", "0").toFloat();
 
-					mesh->position(vec3(x, y, z));
+					for(auto mesh: meshs)
+						mesh->position(vec3(x, y, z));
 				}
 
-
-				pieceTmp->addChild(mesh);
+				for(auto mesh: meshs)
+					pieceTmp->addChild(mesh);
 
 				objet = objet.nextSiblingElement("objet");
 			}

@@ -175,6 +175,10 @@ void    MyOpenGLWidget::keyPressEvent(QKeyEvent * event)
 
             goto action;
         }
+
+        case Qt::Key_F3:
+            qDebug() << _scene->getMaterialsNames();
+            goto action;
     }
 
 

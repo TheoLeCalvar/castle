@@ -74,4 +74,6 @@ void Light::update()
 	glUniform3fv(specular_location, 1, _specular.v);
 	glUniform3fv(position_location, 1, _position.v);
 
+	openGL_check_error();
+
 }
