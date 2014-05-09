@@ -42,6 +42,45 @@ void Light::set(GLenum type, vec3 value)
 	}
 }
 
+vec3 Light::get(GLenum type) const
+{
+	switch (type)
+	{
+		case GL_AMBIENT:
+			return _ambient;
+
+		case GL_DIFFUSE:
+			return 	_diffuse;
+
+		case GL_SPECULAR:
+			return _specular;
+
+		case GL_POSITION:
+			return _position;
+
+		default:
+			return vec3();
+	}
+}
+
+vec3& Light::get(GLenum type)
+{
+	switch (type)
+	{
+		case GL_AMBIENT:
+			return _ambient;
+
+		case GL_DIFFUSE:
+			return 	_diffuse;
+
+		case GL_SPECULAR:
+			return _specular;
+
+		case GL_POSITION:
+			return _position;
+	}
+}
+
 void Light::setNumber(char num)
 {
 	_lightNum = num;

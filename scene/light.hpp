@@ -55,6 +55,23 @@ public:
 	void set(GLenum type, vec3 value);
 
 	/**
+	 * @brief Récupère la valeur d'une composante de la lumière
+	 * 
+	 * @param type composante voulu, doit être parmis (GL_POSITION, GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR)
+	 * @return valeur
+	 */
+	vec3 get(GLenum type) const;
+
+	/**
+	 * @brief Récupère la valeur d'une composante de la lumière
+	 * 
+	 * @param type composante voulu, doit être parmis (GL_POSITION, GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR)
+	 * @return valeur
+	 * @warning si le type n'est pas dans les 4 gérés résultat imprévisible
+	 */
+	vec3 & get(GLenum type);
+
+	/**
 	 * @brief Change le slot de la lumière
 	 * 
 	 * @param num nouveau slot de la lumière
