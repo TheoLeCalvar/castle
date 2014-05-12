@@ -54,15 +54,15 @@ void Material::addTexture(const QString & texFile, unsigned char type)
 		{
 			switch(type)
 			{
-				case 0:
+				case DIFFUSE:
 					_diffuse_texture = res->second;
 					break;
 
-				case 1:
+				case SPECULAR:
 					_specular_texture = res->second;
 					break;
 
-				case 2:
+				case NORMAL:
 					_normal_texture = res->second;
 					break;
 			}
@@ -77,15 +77,15 @@ void Material::addTexture(const QString & texFile, unsigned char type)
 
 			switch(type)
 			{
-				case 0:
+				case DIFFUSE:
 					_diffuse_texture = texture;
 					break;
 
-				case 1:
+				case SPECULAR:
 					_specular_texture = texture;
 					break;
 
-				case 2:
+				case NORMAL:
 					_normal_texture = texture;
 					break;
 			}
@@ -97,6 +97,27 @@ void Material::addTexture(const QString & texFile, unsigned char type)
 }
 
 vec4 Material::get(GLenum type)
+{
+	switch (type)
+	{
+		case GL_AMBIENT:
+			return _ambient;
+
+		case GL_DIFFUSE:
+			return _diffuse;
+
+		case GL_SPECULAR:
+			return _specular;
+
+		case GL_EMISSION:
+			return _emissive;
+
+		default:
+			return vec4();
+	}
+}
+
+vec4& Material::get(GLenum type)
 {
 	switch (type)
 	{
@@ -228,7 +249,7 @@ void Material::update()
 
 QDebug operator<<(QDebug dbg, const Material &m)
 {
-	dbg.nospace() << "(Material " << &m <<" (ambiant" << m._ambient << ", diffuse" << m._diffuse << ", specular" << m._specular << ", emissive" << m._emissive << ", shininess(" <<m._shininess <<"))";
+	dbg.nospace() << "(Material " << &m <<" (ambiant" << m._ambient << ", diffuse" << m._diffuse << ", specular" << m._specular << ", emissive" << m._emissive << ", shininess(" <<m._shininess <<"), "<< m._diffuse_texture << "))";
 
 	return dbg.space();
 }

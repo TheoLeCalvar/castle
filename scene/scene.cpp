@@ -518,9 +518,11 @@ void 	Scene::loadPieces(const QDomElement & dom)
 				{
 					mesh->parent(pieceTmp);
 					mesh->rotation(vec3(xRot, yRot, zRot));
-					mesh->material(getMaterial(matObjet));
+					if (matObjet != "")
+					{
+						mesh->material(getMaterial(matObjet));
+					}
 					mesh->shaderId(getShader(shaderObjet));
-					mesh->name(nomObjet);
 				}
 
 

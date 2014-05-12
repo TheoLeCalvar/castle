@@ -102,6 +102,14 @@ public:
 	vec4 get(GLenum type);
 
 	/**
+	 * @brief Récupère la valeur d'un champ
+	 * 
+	 * @param type doit être parmis GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR
+	 * @return dans le cas de GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR retourne un vec4 correspondant à la composante, retourne vec4() autrement
+	 */
+	vec4 &get(GLenum type);
+
+	/**
 	 * @brief Valeur du shininess
 	 * 
 	 * @return valeur du GL_SHININESS
