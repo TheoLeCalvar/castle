@@ -242,7 +242,7 @@ void MainWindow::createToolBar()
                     material = new QStandardItem("Material");
                     modele->appendRow(material);
 
-                        for (int i = 0; i < listtemplight.size(); ++i)
+                        for (int i = 0; i < listtempmaterial.size(); ++i)
                                 {
                                    material->appendRow(new QStandardItem(listtempmaterial.at(i)));
                                 }
@@ -250,15 +250,25 @@ void MainWindow::createToolBar()
                     objet = new QStandardItem("Objet");
                     modele->appendRow(objet);
 
-                        for (int i = 0; i < listtemplight.size(); ++i)
+                        for (int i = 0; i < listtempobjet.size(); ++i)
                                 {
-                                   objet->appendRow(new QStandardItem(listtempobjet.at(i)));
+                                  Piece * objtemp = scenetemp->getPiece(listtempobjet.at(i));
+                                  QStringList listobjfils = objtemp->getChildren();
+
+                                  QStandardItem * item =  new QStandardItem(listtempobjet.at(i));
+                                  objet->appendRow(item);
+
+                                  for(int j=0 ; j < listobjfils.size();j++)
+                                          {
+                                           QStandardItem * itemfils =  new QStandardItem(listobjfils.at(j));
+                                           item->appendRow(itemfils); ;
+                                          }
                                 }
                     //shader
                     shader = new QStandardItem("Shader");
                     modele->appendRow(shader);
 
-                        for (int i = 0; i < listtemplight.size(); ++i)
+                        for (int i = 0; i < listtemshader.size(); ++i)
                                 {
                                    shader->appendRow(new QStandardItem(listtemshader.at(i)));
                                 }

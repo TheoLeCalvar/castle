@@ -1,5 +1,5 @@
 #include<mondock.hpp>
-
+#include<iostream>
 Mondock::Mondock(const QString & title, QWidget * parent, Qt::WindowFlags flags):
     QDockWidget(title,parent,flags)
 {
@@ -24,6 +24,10 @@ Mondock:: ~Mondock(){
          if (elementSelectionneParent.toString()=="Light")
                      {
                        traitementlumiere();
+                     }
+         if (elementSelectionneParent.toString()=="Material")
+                     {
+                       traitementmaterial();
                      }
      }
 
@@ -125,6 +129,70 @@ Mondock:: ~Mondock(){
             {
             _light->get(GL_POSITION)[2]=x/25.5;
             }
+
+    //materiaux
+        void Mondock::emimaterialfuncx(int x)
+            {
+            }
+
+        void Mondock::emimaterialfuncy(int x)
+            {
+            }
+
+        void Mondock::emimaterialfuncz(int x)
+            {
+            }
+
+        void Mondock::ambmaterialfuncx(int x)
+            {
+            _materiaux->get(GL_AMBIENT)[0]=x/25.5;
+            }
+
+        void Mondock::ambmaterialfuncy(int x)
+            {
+            _materiaux->get(GL_AMBIENT)[1]=x/25.5;
+            }
+
+        void Mondock::ambmaterialfuncz(int x)
+            {
+            _materiaux->get(GL_AMBIENT)[2]=x/25.5;
+            }
+
+        void Mondock::difmaterialfuncx(int x)
+            {
+            _materiaux->get(GL_DIFFUSE)[0]=x/25.5;
+            }
+
+        void Mondock::difmaterialfuncy(int x)
+            {
+            _materiaux->get(GL_DIFFUSE)[1]=x/25.5;
+            }
+
+        void Mondock::difmaterialfuncz(int x)
+            {
+             _materiaux->get(GL_DIFFUSE)[2]=x/25.5;
+            }
+
+        void Mondock::spematerialfuncx(int x)
+            {
+            _materiaux->get(GL_SPECULAR)[0]=x/25.5;
+            }
+
+        void Mondock::spematerialfuncy(int x)
+            {
+            _materiaux->get(GL_SPECULAR)[1]=x/25.5;
+            }
+
+        void Mondock::spematerialfuncz(int x)
+            {
+            _materiaux->get(GL_SPECULAR)[2]=x/25.5;
+            }
+
+        void Mondock::spematerialtfunca(int x)
+            {
+            _materiaux->get(GL_SPECULAR)[0]=x/25.5;
+            }
+
 //_____slots_________________________//
 
 
@@ -374,3 +442,150 @@ Mondock:: ~Mondock(){
         this->setWidget(tablight);
         this->show();
         }
+/* ************************************ */
+//             material                 //
+/* ************************************ */
+
+        void Mondock::traitementmaterial()
+            {
+
+            indexmaterialSelectionne = selection->currentIndex();
+            materialselectioner = dockmodele->data(indexmaterialSelectionne, Qt::DisplayRole);
+
+            //renome le dockwidget
+
+            this->setWindowTitle(materialselectioner.toString());
+
+            this->_materiaux= dockscene->getMaterial(materialselectioner.toString());
+
+            //creation qtabwidget
+            tabmaterial = new QTabWidget();
+
+            //creation 4 widget
+
+            //widget1
+            tabmaterialemi = new QWidget();
+                materialspinboxemix = new QSpinBox(this);
+                materialspinboxemix->setPrefix("X = ");
+                materialspinboxemix->setRange(0,255);
+                connect(materialspinboxemix, SIGNAL(valueChanged(int)),this, SLOT(emimaterialfuncx(int)));
+
+                materialspinboxemiy = new QSpinBox(this);
+                materialspinboxemiy->setPrefix("Y = ");
+                materialspinboxemiy->setRange(0,255);
+                connect(materialspinboxemiy, SIGNAL(valueChanged(int)),this, SLOT(emimaterialfuncy(int)));
+
+                materialspinboxemiz = new QSpinBox(this);
+                materialspinboxemiz->setPrefix("Z = ");
+                materialspinboxemiz->setRange(0,255);
+                connect(materialspinboxemiz, SIGNAL(valueChanged(int)),this, SLOT(emimaterialfuncz(int)));
+
+                //partie layout
+                tabmaterialemilayout = new QHBoxLayout();
+                    tabmaterialemilayout->addWidget(materialspinboxemix);
+                    tabmaterialemilayout->addWidget(materialspinboxemiy);
+                    tabmaterialemilayout->addWidget(materialspinboxemiz);
+
+              tabmaterialemi->setLayout(tabmaterialemilayout);
+
+              //widget2
+              tabmaterialdif = new QWidget();
+                  materialspinboxdifx = new QSpinBox(this);
+                  materialspinboxdifx->setPrefix("X = ");
+                  materialspinboxdifx->setRange(0,255);
+                  materialspinboxdifx->setValue(this->_materiaux->get(GL_DIFFUSE)[0]*25.5);
+                  connect(materialspinboxdifx, SIGNAL(valueChanged(int)),this, SLOT(difmaterialfuncx(int)));
+
+                  materialspinboxdify = new QSpinBox(this);
+                  materialspinboxdify->setPrefix("Y = ");
+                  materialspinboxdify->setRange(0,255);
+                  materialspinboxdify->setValue(this->_materiaux->get(GL_DIFFUSE)[1]*25.5);
+                  connect(materialspinboxdify, SIGNAL(valueChanged(int)),this, SLOT(difmaterialfuncy(int)));
+
+                  materialspinboxdifz = new QSpinBox(this);
+                  materialspinboxdifz->setPrefix("Z = ");
+                  materialspinboxdifz->setRange(0,255);
+                  materialspinboxdifz->setValue(this->_materiaux->get(GL_DIFFUSE)[3]*25.5);
+                  connect(materialspinboxdifz, SIGNAL(valueChanged(int)),this, SLOT(difmaterialfuncz(int)));
+
+                  //partie layout
+                  tabmaterialdiflayout = new QHBoxLayout();
+                      tabmaterialdiflayout->addWidget(materialspinboxdifx);
+                      tabmaterialdiflayout->addWidget(materialspinboxdify);
+                      tabmaterialdiflayout->addWidget(materialspinboxdifz);
+
+                tabmaterialdif->setLayout(tabmaterialdiflayout);
+
+                //widget3
+                tabmaterialamb = new QWidget();
+                    materialspinboxambx = new QSpinBox(this);
+                    materialspinboxambx->setPrefix("X = ");
+                    materialspinboxambx->setRange(0,255);
+                    materialspinboxambx->setValue(this->_materiaux->get(GL_AMBIENT)[0]*25.5);
+                    connect(materialspinboxambx, SIGNAL(valueChanged(int)),this, SLOT(ambmaterialfuncx(int)));
+
+                    materialspinboxamby = new QSpinBox(this);
+                    materialspinboxamby->setPrefix("Y = ");
+                    materialspinboxamby->setRange(0,255);
+                    materialspinboxamby->setValue(this->_materiaux->get(GL_AMBIENT)[1]*25.5);
+                    connect(materialspinboxamby, SIGNAL(valueChanged(int)),this, SLOT(ambmaterialfuncy(int)));
+
+                    materialspinboxambz = new QSpinBox(this);
+                    materialspinboxambz->setPrefix("Z = ");
+                    materialspinboxambz->setRange(0,255);
+                    materialspinboxambz->setValue(this->_materiaux->get(GL_AMBIENT)[2]*25.5);
+                    connect(materialspinboxambz, SIGNAL(valueChanged(int)),this, SLOT(ambmaterialfuncz(int)));
+
+                    //partie layout
+                    tabmaterialamblayout = new QHBoxLayout();
+                        tabmaterialamblayout->addWidget(materialspinboxambx);
+                        tabmaterialamblayout->addWidget(materialspinboxamby);
+                        tabmaterialamblayout->addWidget(materialspinboxambz);
+
+                  tabmaterialamb->setLayout(tabmaterialamblayout);
+
+                  //widget4
+                  tabmaterialspe = new QWidget();
+                      materialspinboxspex = new QSpinBox(this);
+                      materialspinboxspex->setPrefix("X = ");
+                      materialspinboxspex->setRange(0,255);
+                      materialspinboxspex->setValue(this->_materiaux->get(GL_SPECULAR)[0]*25.5);
+                      connect(materialspinboxspex, SIGNAL(valueChanged(int)),this, SLOT(spematerialfuncx(int)));
+
+                      materialspinboxspey = new QSpinBox(this);
+                      materialspinboxspey->setPrefix("Y = ");
+                      materialspinboxspey->setRange(0,255);
+                      materialspinboxspey->setValue(this->_materiaux->get(GL_SPECULAR)[1]*25.5);
+                      connect(materialspinboxspey, SIGNAL(valueChanged(int)),this, SLOT(spematerialfuncy(int)));
+
+                      materialspinboxspez = new QSpinBox(this);
+                      materialspinboxspez->setPrefix("Z = ");
+                      materialspinboxspez->setRange(0,255);
+                      materialspinboxspez->setValue(this->_materiaux->get(GL_SPECULAR)[2]*25.5);
+                      connect(materialspinboxspez, SIGNAL(valueChanged(int)),this, SLOT(spematerialfuncz(int)));
+
+                      materialspinboxspea = new QSpinBox(this);
+                      materialspinboxspea->setPrefix("a = ");
+                      materialspinboxspea->setRange(0,255);
+                      materialspinboxspea->setValue(this->_materiaux->get(GL_SPECULAR)[3]*25.5);
+                      connect(materialspinboxspea, SIGNAL(valueChanged(int)),this, SLOT(spematerialtfunca(int)));
+
+                      //partie layout
+                      tabmaterialspelayout = new QHBoxLayout();
+                          tabmaterialspelayout->addWidget(materialspinboxspex);
+                          tabmaterialspelayout->addWidget(materialspinboxspey);
+                          tabmaterialspelayout->addWidget(materialspinboxspez);
+                          tabmaterialspelayout->addWidget(materialspinboxspea);
+
+                    tabmaterialspe->setLayout(tabmaterialspelayout);
+
+            //assosiation des 4widget au tab
+            tabmaterial->addTab(tabmaterialemi , "Emissive");
+            tabmaterial->addTab(tabmaterialdif , "Difuse");
+            tabmaterial->addTab(tabmaterialamb , "Ambiante");
+            tabmaterial->addTab(tabmaterialspe , "Speculaire");
+
+            //fixe de widget et afiche le dockwidget
+            this->setWidget(tabmaterial);
+            this->show();
+            }

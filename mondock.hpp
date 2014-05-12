@@ -45,8 +45,15 @@ private:
              QItemSelectionModel *selection;
              QModelIndex indexElementSelectionne;
              QVariant elementSelectionneParent;
+
              QModelIndex indexlightSelectionne;
              QVariant lightselectioner;
+
+             QModelIndex indexmaterialSelectionne;
+             QVariant materialselectioner;
+/* ******************************************************** */
+             //lumiere
+/* ******************************************************** */
 
              //contien les 4 widget ( pos , amb , spe, dif)
              QTabWidget * tablight;
@@ -96,8 +103,45 @@ private:
                     QLabel *labelambx;
                     QLabel *labelamby;
                     QLabel *labelambz;
+/* ******************************************************** */
+                      //materiaux
+/* ******************************************************** */
+
+                    //contien les 4 widget ( emisive , ambiante , spe, dif)
+                    QTabWidget * tabmaterial;
+
+                    //ambiante
+                    QWidget * tabmaterialamb;
+                    QHBoxLayout *tabmaterialamblayout;
+                       QSpinBox *materialspinboxambx;
+                       QSpinBox *materialspinboxamby;
+                       QSpinBox *materialspinboxambz;
+
+                    //difuse
+                    QWidget * tabmaterialdif;
+                    QHBoxLayout *tabmaterialdiflayout;
+                       QSpinBox *materialspinboxdifx;
+                       QSpinBox *materialspinboxdify;
+                       QSpinBox *materialspinboxdifz;
+
+                    //speculaire
+                       QWidget * tabmaterialspe;
+                       QHBoxLayout *tabmaterialspelayout;
+                          QSpinBox *materialspinboxspex;
+                          QSpinBox *materialspinboxspey;
+                          QSpinBox *materialspinboxspez;
+                          QSpinBox *materialspinboxspea;
+
+                    //emisive
+                          QWidget * tabmaterialemi;
+                          QHBoxLayout *tabmaterialemilayout;
+                             QSpinBox *materialspinboxemix;
+                             QSpinBox *materialspinboxemiy;
+                             QSpinBox *materialspinboxemiz;
+
 
                 void traitementlumiere();
+                void traitementmaterial();
 
 private slots:
     void selectionlight();
@@ -117,5 +161,23 @@ private slots:
     void spelightfuncx(int x);
     void spelightfuncy(int x);
     void spelightfuncz(int x);
+
+//materiaux
+    void emimaterialfuncx(int x);
+    void emimaterialfuncy(int x);
+    void emimaterialfuncz(int x);
+
+    void ambmaterialfuncx(int x);
+    void ambmaterialfuncy(int x);
+    void ambmaterialfuncz(int x);
+
+    void difmaterialfuncx(int x);
+    void difmaterialfuncy(int x);
+    void difmaterialfuncz(int x);
+
+    void spematerialfuncx(int x);
+    void spematerialfuncy(int x);
+    void spematerialfuncz(int x);
+    void spematerialtfunca(int x);
 };
 #endif
