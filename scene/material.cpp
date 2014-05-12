@@ -96,7 +96,7 @@ void Material::addTexture(const QString & texFile, unsigned char type)
 	}	
 }
 
-vec4 Material::get(GLenum type)
+vec4 Material::get(GLenum type) const
 {
 	switch (type)
 	{
@@ -132,9 +132,6 @@ vec4& Material::get(GLenum type)
 
 		case GL_EMISSION:
 			return _emissive;
-
-		default:
-			return vec4();
 	}
 }
 
