@@ -73,6 +73,13 @@ jeudi 8 mai
 	passage à QMap pour la scène
 	ça devrait charger les UV, devrait, faute de pouvoir tester
 
+vendredi 9 mai
+	correction de la lumière
+	gestion des slots pour textures
+	remise au propre des utilisations des textures dans le frag
+
+dimanche 11 mai
+	lecture des textures à partir des matériaux inclus aux modèles
+
 Amélioration à faire
-	gestion des textures/matériaux dans modèle 3D
 	collision !

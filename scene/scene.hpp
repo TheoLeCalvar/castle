@@ -43,13 +43,13 @@ private:
 
 	QMap<QString, Piece *>						_pieces; /**< Map des pièces constituant la scène, identifiées par leur nom, doit être unique */ 
 	QMap<QString, Light *> 						_lights; /**< Map des lumières constituant la scène, identifiées par leur nom, doit être unique */
-	QMap<QString, Material *>						_materials; /**< Map des matériaux constituant la scène, identifiés par leur nom, doit être unique */
+	QMap<QString, Material *>					_materials; /**< Map des matériaux constituant la scène, identifiés par leur nom, doit être unique */
 	QMap<QString, QOpenGLShaderProgram *> 		_shaders; /**< Map des shader constituant la scène, identifiés par leur nom, doit être unique */
 
-	mat4 												_projectionMatrix; /**< Matrice de projection, recalculée à chaque redimensionnement du widget */
+	mat4 										_projectionMatrix; /**< Matrice de projection, recalculée à chaque redimensionnement du widget */
 
 public:
-	Camera *											_camera; /**< Caméra de la scène */
+	Camera *									_camera; /**< Caméra de la scène */
 
 
 public:

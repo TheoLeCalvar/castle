@@ -17,7 +17,7 @@ private:
 
 	vec3 _dimensions; /**< Contient les dimensions de la pièces */
 
-	QList<Objet *> _children; /** Liste des objets fils de la pièces, contient au moins les murs */
+	QMap<QString, Objet *> _children; /** Liste des objets fils de la pièces, contient au moins les murs */
 
 public:
 	/**
@@ -40,13 +40,21 @@ public:
 	 * @brief Ajoute un fils à la pièce
 	 * @details Se charge de la destruction de l'objet
 	 * 
+	 * @param name nom de l'objet
 	 * @param objet objet à ajouter
 	 */
-	void addChild(Objet * objet);
+	void addChild(const QString & name, Objet * objet);
+
+	/**
+	 * @brief Ajoute un fils à la pièce
+	 * 
+	 * @param o objet à ajouter
+	 */
+	void addChild(Objet * o);
 
 	/**
 	 * @brief Récupère la liste des noms des objets fils
-     * @warning A revoir !
+     * @todo A revoir !
 	 * @return liste des noms des objets
 	 */
 	QStringList getChildren() const;

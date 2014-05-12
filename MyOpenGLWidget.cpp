@@ -85,6 +85,7 @@ void	MyOpenGLWidget::paintGL()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 
+
     _scene->draw();
 
     openGL_check_error();

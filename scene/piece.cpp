@@ -22,34 +22,38 @@ void Piece::draw()
 	popMatrix();
 }
 
-
 void Piece::addChild(Objet * o)
 {
-	if (o)
+	if (_children.contains(o->name()))
 	{
-		_children << o;
+		qDebug() << "Objet ayant le même nom déjà présent";
+	}
+	else
+	{
+		_children[o->name()] = o;
+	}
+}
+
+void Piece::addChild(const QString & name, Objet * o)
+{
+	if (_children.contains(name))
+	{
+		qDebug() << "Objet ayant le même nom déjà présent";
+	}
+	else
+	{
+		_children[name] = o;
 	}
 }
 
 QStringList Piece::getChildren() const
 {
-	QStringList l;
-
-	for(auto i : _children)
-		l << i->name();
-
-	return l;
+	return _children.keys();
 }
 
 Objet * 	Piece::getChild(const QString & name)
 {
-	for(auto i : _children)
-		if (i->name() == name)
-		{
-			return i;
-		}
-
-	return NULL;
+	return _children.value(name);
 
 }
 

@@ -62,6 +62,7 @@ QList<Mesh *> Mesh::loadMesh(const QString & file, Scene * scene)
 					Mesh * mesh = load(pScene->mMeshes[root->mChildren[i]->mMeshes[0]], file);
 					Material * mat = loadMaterial(pScene->mMaterials[pScene->mMeshes[root->mChildren[i]->mMeshes[0]]->mMaterialIndex]);
 
+					mesh->name(QString::fromUtf8(root->mChildren[i]->mName.C_Str()));
 					mesh->material(mat);
 					scene->addMaterial(file + '_' + QString::number(i),mat);
 
@@ -80,6 +81,7 @@ Material * Mesh::loadMaterial(const aiMaterial * mtl)
 {
 	Material * mat = new Material();
 
+	aiString path;
 	aiColor4t<float> color;
 	float shininess;
 /*
@@ -89,6 +91,9 @@ AI_MATKEY_COLOR_DIFFUSE
 AI_MATKEY_COLOR_SPECULAR
 AI_MATKEY_COLOR_EMISSIVE
 AI_MATKEY_SHININESS 
+aiTextureType_DIFFUSE 
+aiTextureType_SPECULAR
+aiTextureType_NORMAL 
 */
 	if(AI_SUCCESS == mtl->Get(AI_MATKEY_COLOR_AMBIENT, color)){
 		mat->set(GL_AMBIENT, vec4(color.r, color.g, color.b, color.a));
@@ -107,6 +112,11 @@ AI_MATKEY_SHININESS
 
 	if (AI_SUCCESS == mtl->Get(AI_MATKEY_SHININESS, shininess)){
 		mat->set(shininess);
+	}
+
+	if (AI_SUCCESS == mtl->GetTexture(aiTextureType_DIFFUSE, 0, &path))
+	{
+		mat->addTexture(QString::fromUtf8(path.C_Str()), DIFFUSE);
 	}
 
 	return mat;
