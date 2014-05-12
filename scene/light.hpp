@@ -7,7 +7,7 @@
 
 class Light: protected QOpenGLFunctions_3_2_Core
 {
-private:
+public:
 	vec3 	_position;
 	static vec3	_ambient;
 	vec3	_diffuse;

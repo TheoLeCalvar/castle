@@ -14,6 +14,7 @@ MyOpenGLWidget::MyOpenGLWidget(const QGLFormat & format, QWidget * parent, const
 
      setFocusPolicy(Qt::StrongFocus);
      setMouseTracking(true);
+
 }
 
 MyOpenGLWidget::~MyOpenGLWidget()
@@ -149,34 +150,6 @@ void    MyOpenGLWidget::keyPressEvent(QKeyEvent * event)
             _scene->_camera->_bas_presse = true;
             goto action;
 
-        case Qt::Key_F1:
-        {
-            static bool wire = true;
-
-            glPolygonMode(GL_FRONT_AND_BACK, wire ? GL_LINE : GL_FILL);
-
-            wire = !wire;
-
-            goto action;
-        }
-
-        case Qt::Key_F2:
-        {
-            static bool cullface = false;
-
-            if (cullface)  
-            {
-                glEnable(GL_CULL_FACE);
-            }
-            else
-            {
-                glDisable(GL_CULL_FACE);
-            }
-
-            cullface = !cullface;
-
-            goto action;
-        }
 
     }
 

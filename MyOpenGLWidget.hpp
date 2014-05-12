@@ -24,6 +24,7 @@
 
 #include "scene.hpp"
 
+#include "QMessageBox"
 
 
 class MyOpenGLWidget: public QGLWidget, protected QOpenGLFunctions_3_2_Core

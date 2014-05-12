@@ -35,7 +35,8 @@ HEADERS += camera.hpp \
            scene/light.hpp \
            scene/material.hpp \
            scene/piece.hpp \
-           scene/scene.hpp 
+           scene/scene.hpp \ 
+    mondock.hpp
 
 
            
@@ -53,5 +54,6 @@ SOURCES += camera.cpp \
            scene/material.cpp \
            scene/piece.cpp \
            scene/scene.cpp \
-           main.cpp
+           main.cpp \
+    mondock.cpp
 

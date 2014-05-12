@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_HPP
 #define MAINWINDOW_HPP
 
+#include <mondock.hpp>
 #include <QMainWindow>
 #include <QAction>
 #include <QMenuBar>
@@ -12,9 +13,17 @@
 #include <QDockWidget>
 #include <QToolBar>
 #include <QFileSystemModel>
-#include <QDirModel>
-#include <QTreeView>
 #include <QApplication>
+#include <QStringListModel>
+#include <QStringList>
+#include <QHeaderView>
+#include <QTreeView>
+#include <QVBoxLayout>
+#include <QStandardItemModel>
+#include <QPushButton>
+#include <QTabWidget>
+#include <QSlider>
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -23,11 +32,11 @@ public:
     MainWindow();
     ~MainWindow();
 
-
-    private slots:
+//___slots_________________________________//
+private slots:
 
  /* ************************************** */
- //          slots  menu bar               //
+ //           menu bar                     //
  /* ************************************** */
         //fichier
         void Nouveau();
@@ -35,27 +44,37 @@ public:
         void Enregistrer();
         void Kiter();
 
+        //edition
+        void Annuler();
+        void Retablir();
+
         //affichage
-        void Edition();
         void Apercut();
+        void Culface();
         void Grille();
 
         //outil
-        void Lumiere();
         void Importation3D();
 
         //aide
         void Racourcit();
 //fin slots menu bar
 
+
+//__fin___slots___________________________//
+
+
     private:
         void createActions();
         void createMenus();
+        void createListeDockwidget();
+        void createToolBar();
 
 /* ************************************** */
 //               menu bar                 //
 /* ************************************** */
         QMenu *Fichier;
+        QMenu *Edition;
         QMenu *Affichage;
         QMenu *Outil;
         QMenu *Aide;
@@ -66,13 +85,16 @@ public:
         QAction *enregistrerAct;
         QAction *kiterAct;
 
+        //edition
+        QAction *annulerAct;
+        QAction *retablirAct;
+
         //affichage
-        QAction *editionAct;
         QAction *apercutAct;
+        QAction *culfaceAct;
         QAction *grilleAct;
 
         //outil
-        QAction *lumiereAct;
         QAction *importation3DAct;
 
         //aide
@@ -89,10 +111,37 @@ public:
 /* ************************************** */
 //              Dock widgets              //
 /* ************************************** */
-       QDirModel *modele;
+
+       //liste element scene
+       QDockWidget* dock_list_elements;
+
+       QPushButton* boutonlisteelement;
+
+       Scene * scenetemp;
+
+       QStringList listtempobjet;
+       QStringList listtemplight;
+       QStringList listtempmaterial;
+       QStringList listtemshader;
+
+       QStandardItemModel *modele;
+
+       QStandardItem *light;
+       QStandardItem *material;
+       QStandardItem *objet;
+       QStandardItem *shader;
+
        QTreeView *vue;
-       QDockWidget* dock;
-       QDockWidget* dock1;
+
+       QVBoxLayout *layoutlistescene;
+
+       QWidget * widgetdocklistscene;
+       //fin liste element scene
+
+       //widget element selectioner
+       Mondock *dock_light;
+       //fin element selectioner
+
 //fin dock widgets
 
 /* ************************************** */
@@ -100,13 +149,6 @@ public:
 /* ************************************** */
         MyOpenGLWidget *widget;
 //fin central Widget
-
-/* ************************************** */
-//            Status bars                 //
-/* ************************************** */
-
-//fin status bars
-
 };
 
 #endif // MAINWINDOW_HPP

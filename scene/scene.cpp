@@ -1,6 +1,5 @@
 #include "scene.hpp"
 #include "mesh.hpp"
-
 Scene::Scene()
 {
 	initializeOpenGLFunctions();
@@ -59,7 +58,6 @@ Scene::Scene(const QString & fileName):
 
 	loadPieces(pieces);
 	qDebug() << "Pièces chargées avec succès";
-
 }
 
 Scene::~Scene()
