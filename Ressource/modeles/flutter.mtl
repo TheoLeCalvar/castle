@@ -1,0 +1,129 @@
+# Blender MTL File: 'None'
+# Material Count: 13
+
+newmtl Material.000
+Ns 84.313725
+Ka 0.000000 0.000000 0.000000
+Kd 0.262144 0.262144 0.262144
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd modeles/flutter/fluttershy_body.png
+
+newmtl Material.004
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Material.005
+Ns 741.176471
+Ka 0.000000 0.000000 0.000000
+Kd 0.262144 0.262144 0.262144
+Ks 0.428571 0.428571 0.428571
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd modeles/flutter/fluttershy_eyes.png
+
+newmtl None.001
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd modeles/flutter/BaseNeckTex.png
+
+
+newmtl _FlutterGemTex.png.001
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.512000 0.512000 0.512000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd modeles/flutter/FlutterGemTex.png
+
+
+newmtl defaultMat.001
+Ns 84.313725
+Ka 0.000000 0.000000 0.000000
+Kd 0.262144 0.262144 0.262144
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd modeles/flutter/fluttershy_hair_back.png
+
+newmtl defaultMat.002
+Ns 84.313725
+Ka 0.000000 0.000000 0.000000
+Kd 0.262144 0.262144 0.262144
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd modeles/flutter/fluttershy_hair_front.png
+
+newmtl defaultMat.003
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl defaultMat.004
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.512000 0.512000 0.512000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl defaultMat.005
+Ns 84.313725
+Ka 0.000000 0.000000 0.000000
+Kd 0.262144 0.262144 0.262144
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd modeles/flutter/fluttershy_tail.png
+
+newmtl defaultMat.006
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.512000 0.512000 0.512000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl defaultMat.007
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.512000 0.220071 0.114409
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl initialShadingGroup.001
+Ns 84.313725
+Ka 0.000000 0.000000 0.000000
+Kd 0.262144 0.262144 0.262144
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd modeles/flutter/fluttershy_wings.png
