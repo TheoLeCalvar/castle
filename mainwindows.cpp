@@ -404,36 +404,44 @@ void MainWindow::createToolBar()
     void MainWindow::validajoutlumiere(){
         Scene * scenetemp = widget->getScene();
 
-//        if (lineeditnomajoutlumiere->text()=="")
-//        {
+        if (lineeditnomajoutlumiere->text()==NULL)
+        {
+            QMessageBox msgBox;
+            msgBox.setText("le champ nom , ne peut etre vide");
+            msgBox.exec();
+         dockajoutlumiere->close();
+        }
+        else
+        {
+            scenetemp->addLight(
+                lineeditnomajoutlumiere->text(),//nom
 
-//         }
+                    new Light//lumiere
+                        (
+                            vec3(//position
+                            spinpositionajoutlumierex->value(),
+                            spinpositionajoutlumierey->value(),
+                            spinpositionajoutlumierez->value()
+                            ),
 
-        scenetemp->addLight(
-                                lineeditnomajoutlumiere->text(),//nom
+                            vec3(
+                            spindifajoutlumierex->value(),//difuse
+                            spindifajoutlumierey->value(),
+                            spindifajoutlumierez->value()
+                            ),
 
-                               new Light(                          //lumiere
-                                             vec3(//position
-                                                 spinpositionajoutlumierex->value(),
-                                                 spinpositionajoutlumierey->value(),
-                                                 spinpositionajoutlumierez->value()
-                                                 ),
+                            vec3(//ambiante
+                            spinspeajoutlumierex->value(), //ambiante
+                            spinspeajoutlumierey->value(),
+                            spinspeajoutlumierez->value()
+                            ),
 
-                                             vec3(
-                                                 spindifajoutlumierex->value(),//difuse
-                                                 spindifajoutlumierey->value(),
-                                                 spindifajoutlumierez->value()
-                                                 ),
-
-                                             vec3(//ambiante
-                                                 spinspeajoutlumierex->value(), //ambiante
-                                                 spinspeajoutlumierey->value(),
-                                                 spinspeajoutlumierez->value()
-                                                 ),
-
-                                            '2'
-                                      )
-                            );
+                            2
+                        )
+                    );
+            dockajoutlumiere->close();
+            light->appendRow(new QStandardItem(lineeditnomajoutlumiere->text()));
+        }//fin else
     }
 
     //aide

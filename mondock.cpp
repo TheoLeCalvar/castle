@@ -33,7 +33,7 @@ Mondock:: ~Mondock(){
 
     void Mondock::amblightfuncx(int x)
             {
-            _light->get(GL_AMBIENT)[0]=x/255;
+            _light->get(GL_AMBIENT)[0]=x/255.0;
 
             QString tmp = QString::number((double)x);
 
@@ -43,7 +43,7 @@ Mondock:: ~Mondock(){
     void Mondock::amblightfuncy(int x)
             {
 
-            _light->get(GL_AMBIENT)[1]=x/255;
+            _light->get(GL_AMBIENT)[1]=x/255.0;
 
             QString tmp = QString::number((double)x);
 
@@ -52,7 +52,7 @@ Mondock:: ~Mondock(){
 
     void Mondock::amblightfuncz(int x)
             {
-            _light->get(GL_AMBIENT)[2]=x/255;
+            _light->get(GL_AMBIENT)[2]=x/255.0;
 
             QString tmp = QString::number((double)x);
 
@@ -62,7 +62,7 @@ Mondock:: ~Mondock(){
     void Mondock::diflightfuncx(int x)
             {
 
-            _light->get(GL_DIFFUSE)[0]=x/255;
+            _light->get(GL_DIFFUSE)[0]=x/255.0;
 
             QString tmp = QString::number((double)x);
 
@@ -71,7 +71,7 @@ Mondock:: ~Mondock(){
 
     void Mondock::diflightfuncy(int x)
             {
-            _light->get(GL_DIFFUSE)[1]=x/255;
+            _light->get(GL_DIFFUSE)[1]=x/255.0;
 
             QString tmp = QString::number((double)x);
 
@@ -80,7 +80,7 @@ Mondock:: ~Mondock(){
 
     void Mondock::diflightfuncz(int x)
             {
-            _light->get(GL_DIFFUSE)[2]=x/255;
+            _light->get(GL_DIFFUSE)[2]=x/255.0;
 
             QString tmp = QString::number((double)x);
 
@@ -89,7 +89,7 @@ Mondock:: ~Mondock(){
 
     void Mondock::spelightfuncx(int x)
             {
-            _light->get(GL_SPECULAR)[0]=x/255;
+            _light->get(GL_SPECULAR)[0]=x/255.0;
 
             QString tmp = QString::number((double)x);
 
@@ -98,7 +98,7 @@ Mondock:: ~Mondock(){
 
     void Mondock::spelightfuncy(int x)
             {
-            _light->get(GL_SPECULAR)[1]=x/255;
+            _light->get(GL_SPECULAR)[1]=x/255.0;
 
             QString tmp = QString::number((double)x);
 
@@ -107,7 +107,7 @@ Mondock:: ~Mondock(){
 
     void Mondock::spelightfuncz(int x)
             {
-            _light->get(GL_SPECULAR)[2]=x/255;
+            _light->get(GL_SPECULAR)[2]=x/255.0;
 
              QString tmp = QString::number((double)x);
 
