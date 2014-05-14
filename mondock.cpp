@@ -33,7 +33,7 @@ Mondock:: ~Mondock(){
 
     void Mondock::amblightfuncx(int x)
             {
-            _light->get(GL_AMBIENT)[0]=x/25.5;
+            _light->get(GL_AMBIENT)[0]=x/255;
 
             QString tmp = QString::number((double)x);
 
@@ -43,7 +43,7 @@ Mondock:: ~Mondock(){
     void Mondock::amblightfuncy(int x)
             {
 
-            _light->get(GL_AMBIENT)[1]=x/25.5;
+            _light->get(GL_AMBIENT)[1]=x/255;
 
             QString tmp = QString::number((double)x);
 
@@ -52,7 +52,7 @@ Mondock:: ~Mondock(){
 
     void Mondock::amblightfuncz(int x)
             {
-            _light->get(GL_AMBIENT)[2]=x/25.5;
+            _light->get(GL_AMBIENT)[2]=x/255;
 
             QString tmp = QString::number((double)x);
 
@@ -62,7 +62,7 @@ Mondock:: ~Mondock(){
     void Mondock::diflightfuncx(int x)
             {
 
-            _light->get(GL_DIFFUSE)[0]=x/25.5;
+            _light->get(GL_DIFFUSE)[0]=x/255;
 
             QString tmp = QString::number((double)x);
 
@@ -71,7 +71,7 @@ Mondock:: ~Mondock(){
 
     void Mondock::diflightfuncy(int x)
             {
-            _light->get(GL_DIFFUSE)[1]=x/25.5;
+            _light->get(GL_DIFFUSE)[1]=x/255;
 
             QString tmp = QString::number((double)x);
 
@@ -80,7 +80,7 @@ Mondock:: ~Mondock(){
 
     void Mondock::diflightfuncz(int x)
             {
-            _light->get(GL_DIFFUSE)[2]=x/25.5;
+            _light->get(GL_DIFFUSE)[2]=x/255;
 
             QString tmp = QString::number((double)x);
 
@@ -89,7 +89,7 @@ Mondock:: ~Mondock(){
 
     void Mondock::spelightfuncx(int x)
             {
-            _light->get(GL_SPECULAR)[0]=x/25.5;
+            _light->get(GL_SPECULAR)[0]=x/255;
 
             QString tmp = QString::number((double)x);
 
@@ -98,7 +98,7 @@ Mondock:: ~Mondock(){
 
     void Mondock::spelightfuncy(int x)
             {
-            _light->get(GL_SPECULAR)[1]=x/25.5;
+            _light->get(GL_SPECULAR)[1]=x/255;
 
             QString tmp = QString::number((double)x);
 
@@ -107,7 +107,7 @@ Mondock:: ~Mondock(){
 
     void Mondock::spelightfuncz(int x)
             {
-            _light->get(GL_SPECULAR)[2]=x/25.5;
+            _light->get(GL_SPECULAR)[2]=x/255;
 
              QString tmp = QString::number((double)x);
 
@@ -117,17 +117,17 @@ Mondock:: ~Mondock(){
 
     void Mondock::poslightfuncx(double x)
             {
-            _light->get(GL_POSITION)[0]=x/25.5;
+            _light->get(GL_POSITION)[0]=x;
             }
 
     void Mondock::poslightfuncy(double x)
             {
-            _light->get(GL_POSITION)[1]=x/25.5;
+            _light->get(GL_POSITION)[1]=x;
             }
 
     void Mondock::poslightfuncz(double x)
             {
-            _light->get(GL_POSITION)[2]=x/25.5;
+            _light->get(GL_POSITION)[2]=x;
             }
 
     //materiaux
@@ -145,52 +145,52 @@ Mondock:: ~Mondock(){
 
         void Mondock::ambmaterialfuncx(int x)
             {
-            _materiaux->get(GL_AMBIENT)[0]=x/25.5;
+            _materiaux->get(GL_AMBIENT)[0]=x/255;
             }
 
         void Mondock::ambmaterialfuncy(int x)
             {
-            _materiaux->get(GL_AMBIENT)[1]=x/25.5;
+            _materiaux->get(GL_AMBIENT)[1]=x/255;
             }
 
         void Mondock::ambmaterialfuncz(int x)
             {
-            _materiaux->get(GL_AMBIENT)[2]=x/25.5;
+            _materiaux->get(GL_AMBIENT)[2]=x/255;
             }
 
         void Mondock::difmaterialfuncx(int x)
             {
-            _materiaux->get(GL_DIFFUSE)[0]=x/25.5;
+            _materiaux->get(GL_DIFFUSE)[0]=x/255;
             }
 
         void Mondock::difmaterialfuncy(int x)
             {
-            _materiaux->get(GL_DIFFUSE)[1]=x/25.5;
+            _materiaux->get(GL_DIFFUSE)[1]=x/255;
             }
 
         void Mondock::difmaterialfuncz(int x)
             {
-             _materiaux->get(GL_DIFFUSE)[2]=x/25.5;
+             _materiaux->get(GL_DIFFUSE)[2]=x/255;
             }
 
         void Mondock::spematerialfuncx(int x)
             {
-            _materiaux->get(GL_SPECULAR)[0]=x/25.5;
+            _materiaux->get(GL_SPECULAR)[0]=x/255;
             }
 
         void Mondock::spematerialfuncy(int x)
             {
-            _materiaux->get(GL_SPECULAR)[1]=x/25.5;
+            _materiaux->get(GL_SPECULAR)[1]=x/255;
             }
 
         void Mondock::spematerialfuncz(int x)
             {
-            _materiaux->get(GL_SPECULAR)[2]=x/25.5;
+            _materiaux->get(GL_SPECULAR)[2]=x/255;
             }
 
         void Mondock::spematerialtfunca(int x)
             {
-            _materiaux->get(GL_SPECULAR)[0]=x/25.5;
+            _materiaux->get(GL_SPECULAR)[0]=x/255;
             }
 
 //_____slots_________________________//
@@ -261,19 +261,19 @@ Mondock:: ~Mondock(){
              sliderdifx = new QSlider(Qt::Horizontal);
                     sliderdifx->setMinimum(0);
                     sliderdifx->setMaximum(255);
-                    sliderdifx->setValue((int)((this->_light->get(GL_DIFFUSE)[0])*25.5));
+                    sliderdifx->setValue((int)((this->_light->get(GL_DIFFUSE)[0])*255));
              connect(sliderdifx, SIGNAL(valueChanged ( int )), this, SLOT(diflightfuncx(int)));
 
              sliderdify = new QSlider(Qt::Horizontal);
                      sliderdify->setMinimum(0);
                      sliderdify->setMaximum(255);
-                     sliderdify->setValue((int)((this->_light->get(GL_DIFFUSE)[1])*25.5));
+                     sliderdify->setValue((int)((this->_light->get(GL_DIFFUSE)[1])*255));
              connect(sliderdify, SIGNAL(valueChanged ( int )), this, SLOT(diflightfuncy(int)));
 
              sliderdifz = new QSlider(Qt::Horizontal);
                      sliderdifz->setMinimum(0);
                      sliderdifz->setMaximum(255);
-                     sliderdifz->setValue((int)((this->_light->get(GL_DIFFUSE)[2])*25.5));
+                     sliderdifz->setValue((int)((this->_light->get(GL_DIFFUSE)[2])*255));
              connect(sliderdifz, SIGNAL(valueChanged ( int )), this, SLOT(diflightfuncz(int)));
 
              //partie label
@@ -281,9 +281,9 @@ Mondock:: ~Mondock(){
                  labeldify = new QLabel();
                  labeldifz = new QLabel();
 
-                 xtmp = ((this->_light->get(GL_DIFFUSE)[0])*25.5);
-                 ytmp = ((this->_light->get(GL_DIFFUSE)[1])*25.5);
-                 ztmp = ((this->_light->get(GL_DIFFUSE)[2])*25.5);
+                 xtmp = ((this->_light->get(GL_DIFFUSE)[0])*255);
+                 ytmp = ((this->_light->get(GL_DIFFUSE)[1])*255);
+                 ztmp = ((this->_light->get(GL_DIFFUSE)[2])*255);
 
                  sxtmp = QString::number(xtmp);
                  sytmp = QString::number(ytmp);
@@ -320,20 +320,20 @@ Mondock:: ~Mondock(){
              sliderspex = new QSlider(Qt::Horizontal);
                     sliderspex->setMinimum(0);
                     sliderspex->setMaximum(255);
-                    sliderspex->setValue((int)((this->_light->get(GL_SPECULAR)[0])*25.5));
+                    sliderspex->setValue((int)((this->_light->get(GL_SPECULAR)[0])*255));
               connect(sliderspex, SIGNAL(valueChanged ( int )), this, SLOT(spelightfuncx(int)));
 
 
              sliderspey = new QSlider(Qt::Horizontal);
                      sliderspey->setMinimum(0);
                      sliderspey->setMaximum(255);
-                     sliderspey->setValue((int)((this->_light->get(GL_SPECULAR)[1])*25.5));
+                     sliderspey->setValue((int)((this->_light->get(GL_SPECULAR)[1])*255));
               connect(sliderspey, SIGNAL(valueChanged ( int )), this, SLOT(spelightfuncy(int)));
 
              sliderspez = new QSlider(Qt::Horizontal);
                      sliderspez->setMinimum(0);
                      sliderspez->setMaximum(255);
-                     sliderspez->setValue((int)((this->_light->get(GL_SPECULAR)[2])*25.5));
+                     sliderspez->setValue((int)((this->_light->get(GL_SPECULAR)[2])*255));
               connect(sliderspez, SIGNAL(valueChanged ( int )), this, SLOT(spelightfuncz(int)));
 
               //partie label
@@ -341,9 +341,9 @@ Mondock:: ~Mondock(){
                   labelspey = new QLabel();
                   labelspez = new QLabel();
 
-                  xtmp = ((this->_light->get(GL_SPECULAR)[0])*25.5);
-                  ytmp = ((this->_light->get(GL_SPECULAR)[1])*25.5);
-                  ztmp = ((this->_light->get(GL_SPECULAR)[2])*25.5);
+                  xtmp = ((this->_light->get(GL_SPECULAR)[0])*255);
+                  ytmp = ((this->_light->get(GL_SPECULAR)[1])*255);
+                  ztmp = ((this->_light->get(GL_SPECULAR)[2])*255);
 
                   sxtmp = QString::number(xtmp);
                   sytmp = QString::number(ytmp);
@@ -379,28 +379,28 @@ Mondock:: ~Mondock(){
              sliderambx = new QSlider(Qt::Horizontal);
                     sliderambx->setMinimum(0);
                     sliderambx->setMaximum(255);
-                    sliderambx->setValue((int)((this->_light->get(GL_AMBIENT)[0])*25.5));
+                    sliderambx->setValue((int)((this->_light->get(GL_AMBIENT)[0])*255));
               connect(sliderambx, SIGNAL(valueChanged ( int )), this, SLOT(amblightfuncx(int)));
 
              slideramby = new QSlider(Qt::Horizontal);
                      slideramby->setMinimum(0);
                      slideramby->setMaximum(255);
-                     slideramby->setValue((int)((this->_light->get(GL_AMBIENT)[1])*25.5));
+                     slideramby->setValue((int)((this->_light->get(GL_AMBIENT)[1])*255));
               connect(slideramby, SIGNAL(valueChanged ( int )), this, SLOT(amblightfuncy(int)));
 
              sliderambz = new QSlider(Qt::Horizontal);
                      sliderambz->setMinimum(0);
                      sliderambz->setMaximum(255);
-                     sliderambz->setValue((int)((this->_light->get(GL_AMBIENT)[2])*25.5));
+                     sliderambz->setValue((int)((this->_light->get(GL_AMBIENT)[2])*255));
               connect(sliderambz, SIGNAL(valueChanged ( int )), this, SLOT(amblightfuncz(int)));
               //partie label
                   labelambx = new QLabel();
                   labelamby = new QLabel();
                   labelambz = new QLabel();
 
-                  xtmp = ((this->_light->get(GL_AMBIENT)[0])*25.5);
-                  ytmp = ((this->_light->get(GL_AMBIENT)[1])*25.5);
-                  ztmp = ((this->_light->get(GL_AMBIENT)[2])*25.5);
+                  xtmp = ((this->_light->get(GL_AMBIENT)[0])*255);
+                  ytmp = ((this->_light->get(GL_AMBIENT)[1])*255);
+                  ztmp = ((this->_light->get(GL_AMBIENT)[2])*255);
 
                   sxtmp = QString::number(xtmp);
                   sytmp = QString::number(ytmp);
@@ -493,19 +493,19 @@ Mondock:: ~Mondock(){
                   materialspinboxdifx = new QSpinBox(this);
                   materialspinboxdifx->setPrefix("X = ");
                   materialspinboxdifx->setRange(0,255);
-                  materialspinboxdifx->setValue(this->_materiaux->get(GL_DIFFUSE)[0]*25.5);
+                  materialspinboxdifx->setValue(this->_materiaux->get(GL_DIFFUSE)[0]*255);
                   connect(materialspinboxdifx, SIGNAL(valueChanged(int)),this, SLOT(difmaterialfuncx(int)));
 
                   materialspinboxdify = new QSpinBox(this);
                   materialspinboxdify->setPrefix("Y = ");
                   materialspinboxdify->setRange(0,255);
-                  materialspinboxdify->setValue(this->_materiaux->get(GL_DIFFUSE)[1]*25.5);
+                  materialspinboxdify->setValue(this->_materiaux->get(GL_DIFFUSE)[1]*255);
                   connect(materialspinboxdify, SIGNAL(valueChanged(int)),this, SLOT(difmaterialfuncy(int)));
 
                   materialspinboxdifz = new QSpinBox(this);
                   materialspinboxdifz->setPrefix("Z = ");
                   materialspinboxdifz->setRange(0,255);
-                  materialspinboxdifz->setValue(this->_materiaux->get(GL_DIFFUSE)[3]*25.5);
+                  materialspinboxdifz->setValue(this->_materiaux->get(GL_DIFFUSE)[3]*255);
                   connect(materialspinboxdifz, SIGNAL(valueChanged(int)),this, SLOT(difmaterialfuncz(int)));
 
                   //partie layout
@@ -521,19 +521,19 @@ Mondock:: ~Mondock(){
                     materialspinboxambx = new QSpinBox(this);
                     materialspinboxambx->setPrefix("X = ");
                     materialspinboxambx->setRange(0,255);
-                    materialspinboxambx->setValue(this->_materiaux->get(GL_AMBIENT)[0]*25.5);
+                    materialspinboxambx->setValue(this->_materiaux->get(GL_AMBIENT)[0]*255);
                     connect(materialspinboxambx, SIGNAL(valueChanged(int)),this, SLOT(ambmaterialfuncx(int)));
 
                     materialspinboxamby = new QSpinBox(this);
                     materialspinboxamby->setPrefix("Y = ");
                     materialspinboxamby->setRange(0,255);
-                    materialspinboxamby->setValue(this->_materiaux->get(GL_AMBIENT)[1]*25.5);
+                    materialspinboxamby->setValue(this->_materiaux->get(GL_AMBIENT)[1]*255);
                     connect(materialspinboxamby, SIGNAL(valueChanged(int)),this, SLOT(ambmaterialfuncy(int)));
 
                     materialspinboxambz = new QSpinBox(this);
                     materialspinboxambz->setPrefix("Z = ");
                     materialspinboxambz->setRange(0,255);
-                    materialspinboxambz->setValue(this->_materiaux->get(GL_AMBIENT)[2]*25.5);
+                    materialspinboxambz->setValue(this->_materiaux->get(GL_AMBIENT)[2]*255);
                     connect(materialspinboxambz, SIGNAL(valueChanged(int)),this, SLOT(ambmaterialfuncz(int)));
 
                     //partie layout
@@ -549,25 +549,25 @@ Mondock:: ~Mondock(){
                       materialspinboxspex = new QSpinBox(this);
                       materialspinboxspex->setPrefix("X = ");
                       materialspinboxspex->setRange(0,255);
-                      materialspinboxspex->setValue(this->_materiaux->get(GL_SPECULAR)[0]*25.5);
+                      materialspinboxspex->setValue(this->_materiaux->get(GL_SPECULAR)[0]*255);
                       connect(materialspinboxspex, SIGNAL(valueChanged(int)),this, SLOT(spematerialfuncx(int)));
 
                       materialspinboxspey = new QSpinBox(this);
                       materialspinboxspey->setPrefix("Y = ");
                       materialspinboxspey->setRange(0,255);
-                      materialspinboxspey->setValue(this->_materiaux->get(GL_SPECULAR)[1]*25.5);
+                      materialspinboxspey->setValue(this->_materiaux->get(GL_SPECULAR)[1]*255);
                       connect(materialspinboxspey, SIGNAL(valueChanged(int)),this, SLOT(spematerialfuncy(int)));
 
                       materialspinboxspez = new QSpinBox(this);
                       materialspinboxspez->setPrefix("Z = ");
                       materialspinboxspez->setRange(0,255);
-                      materialspinboxspez->setValue(this->_materiaux->get(GL_SPECULAR)[2]*25.5);
+                      materialspinboxspez->setValue(this->_materiaux->get(GL_SPECULAR)[2]*255);
                       connect(materialspinboxspez, SIGNAL(valueChanged(int)),this, SLOT(spematerialfuncz(int)));
 
                       materialspinboxspea = new QSpinBox(this);
                       materialspinboxspea->setPrefix("a = ");
                       materialspinboxspea->setRange(0,255);
-                      materialspinboxspea->setValue(this->_materiaux->get(GL_SPECULAR)[3]*25.5);
+                      materialspinboxspea->setValue(this->_materiaux->get(GL_SPECULAR)[3]*255);
                       connect(materialspinboxspea, SIGNAL(valueChanged(int)),this, SLOT(spematerialtfunca(int)));
 
                       //partie layout

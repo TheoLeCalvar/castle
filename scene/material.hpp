@@ -99,7 +99,7 @@ public:
 	 * @param type doit être parmis GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR
 	 * @return dans le cas de GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR retourne un vec4 correspondant à la composante, retourne vec4() autrement
 	 */
-	vec4 get(GLenum type);
+    vec4 get(GLenum type)const;
 
 	/**
 	 * @brief Récupère la valeur d'un champ

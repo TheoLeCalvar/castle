@@ -23,7 +23,6 @@
 #include <QDoubleSpinBox>
 #include<QLabel>
 #include<QString>
-
 class Mondock:public QDockWidget
 {
 Q_OBJECT

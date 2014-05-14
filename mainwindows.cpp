@@ -15,8 +15,8 @@ MainWindow::MainWindow()
 //fin central Widget
 
     createActions();
-    createMenus();
     createListeDockwidget();
+    createMenus();
     createToolBar();
 }
 
@@ -67,6 +67,11 @@ void MainWindow::createActions()
          connect( importation3DAct, SIGNAL(triggered()), this, SLOT(Importation3D()));
          importation3DAct->setCheckable(true);
 
+     ajoutelement = new QMenu(tr("&Ajout"));
+        ajoutlumierAct = new QAction(tr("&Lumiere"),this);
+            connect(ajoutlumierAct,SIGNAL(triggered()),this , SLOT(ajoutlumiere()));
+        ajoutmaterialAct = new QAction(tr("&Materiaux"),this);
+
      //aide
      racourcitAct = new QAction(tr("&Racourcit"), this);
          connect(racourcitAct, SIGNAL(triggered()), this, SLOT(Racourcit()));
@@ -105,6 +110,89 @@ void MainWindow::createMenus()
     Outil = menuBar()->addMenu(tr("&Outil"));
         Outil->addAction(importation3DAct);
             importation3DAct->setIcon(QIcon("icones/value_list.png"));
+        Outil->addMenu(ajoutelement);
+            //ajout lumiere
+            ajoutelement->addAction(ajoutlumierAct);
+
+            widgetajoutlumiere = new QWidget;
+
+            //nom
+            nomajoutlumiere = new QLabel("Nom:");
+            lineeditnomajoutlumiere = new QLineEdit(this);
+            layoutnomajoutlumiere = new QHBoxLayout();
+                layoutnomajoutlumiere->addWidget(nomajoutlumiere);
+                layoutnomajoutlumiere->addWidget(lineeditnomajoutlumiere);
+            //position
+            positionajoutlumiere = new QLabel("Position: ");
+            spinpositionajoutlumierex = new QDoubleSpinBox;
+                spinpositionajoutlumierex->setRange(-1000 , 1000);
+            spinpositionajoutlumierey = new QDoubleSpinBox;
+                spinpositionajoutlumierey->setRange(-1000 , 1000);
+            spinpositionajoutlumierez = new QDoubleSpinBox;
+                spinpositionajoutlumierez->setRange(-1000 , 1000);
+
+            layoutposajoutlumiere = new QHBoxLayout();
+                 layoutposajoutlumiere->addWidget(positionajoutlumiere);
+                 layoutposajoutlumiere->addWidget(spinpositionajoutlumierex);
+                 layoutposajoutlumiere->addWidget(spinpositionajoutlumierey);
+                 layoutposajoutlumiere->addWidget(spinpositionajoutlumierez);
+
+            //difuse
+            difajoutlumiere = new QLabel("Difuse: ");
+            spindifajoutlumierex = new QDoubleSpinBox;
+                spindifajoutlumierex->setRange(0 , 1);
+                spindifajoutlumierex->setSingleStep(0.01);
+            spindifajoutlumierey = new QDoubleSpinBox;
+                 spindifajoutlumierey->setRange(0 , 1);
+                 spindifajoutlumierey->setSingleStep(0.01);
+            spindifajoutlumierez = new QDoubleSpinBox;
+                 spindifajoutlumierez->setRange(0 , 1);
+                 spindifajoutlumierez->setSingleStep(0.01);
+
+            layoutdifajoutlumiere = new QHBoxLayout();
+                layoutdifajoutlumiere->addWidget(difajoutlumiere);
+                layoutdifajoutlumiere->addWidget(spindifajoutlumierex);
+                layoutdifajoutlumiere->addWidget(spindifajoutlumierey);
+                layoutdifajoutlumiere->addWidget(spindifajoutlumierez);
+
+             //speculaire
+             speajoutlumiere = new QLabel("Speculaire: ");
+             spinspeajoutlumierex = new QDoubleSpinBox;
+                spinspeajoutlumierex->setRange(0 , 1);
+                spinspeajoutlumierex->setSingleStep(0.01);
+             spinspeajoutlumierey = new QDoubleSpinBox;
+                spinspeajoutlumierey->setRange(0 , 1);
+                spinspeajoutlumierey->setSingleStep(0.01);
+             spinspeajoutlumierez = new QDoubleSpinBox;
+                spinspeajoutlumierez->setRange(0 , 1);
+                spinspeajoutlumierez->setSingleStep(0.01);
+
+             layoutspeajoutlumiere = new QHBoxLayout();
+                layoutspeajoutlumiere->addWidget(speajoutlumiere);
+                layoutspeajoutlumiere->addWidget(spinspeajoutlumierex);
+                layoutspeajoutlumiere->addWidget(spinspeajoutlumierey);
+                layoutspeajoutlumiere->addWidget(spinspeajoutlumierez);
+
+
+            //bouton
+             boutonajoutlumiere = new QPushButton("ajouter");
+                      connect(racourcitAct, SIGNAL(triggered()), this, SLOT(Racourcit()));
+             connect(boutonajoutlumiere,SIGNAL(clicked()), this ,SLOT(validajoutlumiere()));
+
+             layoutajoutlumiere=new QVBoxLayout;
+                layoutajoutlumiere->addLayout(layoutnomajoutlumiere);
+                layoutajoutlumiere->addLayout(layoutposajoutlumiere);
+                layoutajoutlumiere->addLayout(layoutdifajoutlumiere);
+                layoutajoutlumiere->addLayout(layoutspeajoutlumiere);
+                layoutajoutlumiere->addWidget(boutonajoutlumiere);
+
+                widgetajoutlumiere->setLayout(layoutajoutlumiere);
+
+                dockajoutlumiere->setWidget(widgetajoutlumiere);
+
+            //ajout material
+            ajoutelement->addAction(ajoutmaterialAct);
+
 
     Aide = menuBar()->addMenu(tr("&Aide"));
         Aide->addAction(racourcitAct);
@@ -113,14 +201,19 @@ void MainWindow::createMenus()
 void MainWindow::createListeDockwidget()
 {
     dock_list_elements = new QDockWidget(tr("liste elements"), this);
-    dock_list_elements->setAllowedAreas(Qt::LeftDockWidgetArea);
-    addDockWidget(Qt::LeftDockWidgetArea, dock_list_elements);
-    dock_list_elements->hide();
+        dock_list_elements->setAllowedAreas(Qt::LeftDockWidgetArea);
+        addDockWidget(Qt::LeftDockWidgetArea, dock_list_elements);
+        dock_list_elements->hide();
 
     dock_light = new Mondock(tr("vide"),this);
-    dock_light->setAllowedAreas(Qt::LeftDockWidgetArea);
-    addDockWidget(Qt::LeftDockWidgetArea, dock_light);
-    dock_light->hide();
+        dock_light->setAllowedAreas(Qt::LeftDockWidgetArea);
+        addDockWidget(Qt::LeftDockWidgetArea, dock_light);
+        dock_light->hide();
+
+    dockajoutlumiere =new QDockWidget(tr("Ajout d'une lumiere"), this);
+        dock_light->setAllowedAreas(Qt::LeftDockWidgetArea);
+        addDockWidget(Qt::LeftDockWidgetArea, dockajoutlumiere);
+        dockajoutlumiere->hide();
 }
 
 void MainWindow::createToolBar()
@@ -302,6 +395,45 @@ void MainWindow::createToolBar()
             connect(boutonlisteelement, SIGNAL(clicked()), dock_light, SLOT(selectionlight()));
 
            }//fin else
+    }
+
+    void MainWindow::ajoutlumiere(){
+        dockajoutlumiere->show();
+    }
+
+    void MainWindow::validajoutlumiere(){
+        Scene * scenetemp = widget->getScene();
+
+//        if (lineeditnomajoutlumiere->text()=="")
+//        {
+
+//         }
+
+        scenetemp->addLight(
+                                lineeditnomajoutlumiere->text(),//nom
+
+                               new Light(                          //lumiere
+                                             vec3(//position
+                                                 spinpositionajoutlumierex->value(),
+                                                 spinpositionajoutlumierey->value(),
+                                                 spinpositionajoutlumierez->value()
+                                                 ),
+
+                                             vec3(
+                                                 spindifajoutlumierex->value(),//difuse
+                                                 spindifajoutlumierey->value(),
+                                                 spindifajoutlumierez->value()
+                                                 ),
+
+                                             vec3(//ambiante
+                                                 spinspeajoutlumierex->value(), //ambiante
+                                                 spinspeajoutlumierey->value(),
+                                                 spinspeajoutlumierez->value()
+                                                 ),
+
+                                            '2'
+                                      )
+                            );
     }
 
     //aide

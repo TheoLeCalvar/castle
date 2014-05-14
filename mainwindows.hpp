@@ -23,6 +23,7 @@
 #include <QPushButton>
 #include <QTabWidget>
 #include <QSlider>
+#include <QLineEdit>
 
 class MainWindow : public QMainWindow
 {
@@ -55,6 +56,8 @@ private slots:
 
         //outil
         void Importation3D();
+        void ajoutlumiere();
+        void validajoutlumiere();
 
         //aide
         void Racourcit();
@@ -96,6 +99,43 @@ private slots:
 
         //outil
         QAction *importation3DAct;
+
+        QMenu *ajoutelement ;
+            QAction *ajoutlumierAct;
+            QAction *ajoutmaterialAct;
+
+        QDockWidget * dockajoutlumiere;
+            //contenu dock ajout lumiere
+            QWidget * widgetajoutlumiere;
+
+            QPushButton * boutonajoutlumiere;
+
+            QLineEdit *lineeditnomajoutlumiere;
+            QLabel *nomajoutlumiere;
+
+            QDoubleSpinBox *spinpositionajoutlumierex;
+            QDoubleSpinBox *spinpositionajoutlumierey;
+            QDoubleSpinBox *spinpositionajoutlumierez;
+            QLabel *positionajoutlumiere;
+
+            QDoubleSpinBox *spindifajoutlumierex;
+            QDoubleSpinBox *spindifajoutlumierey;
+            QDoubleSpinBox *spindifajoutlumierez;
+            QLabel *difajoutlumiere;
+
+            QDoubleSpinBox *spinspeajoutlumierex;
+            QDoubleSpinBox *spinspeajoutlumierey;
+            QDoubleSpinBox *spinspeajoutlumierez;
+            QLabel *speajoutlumiere;
+
+
+            QHBoxLayout * layoutnomajoutlumiere;
+            QHBoxLayout * layoutposajoutlumiere;
+            QHBoxLayout * layoutdifajoutlumiere;
+            QHBoxLayout * layoutspeajoutlumiere;
+            QHBoxLayout * layoutambajoutlumiere;
+
+            QVBoxLayout * layoutajoutlumiere;
 
         //aide
         QAction *racourcitAct;
