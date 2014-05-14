@@ -190,7 +190,7 @@ Mondock:: ~Mondock(){
 
         void Mondock::spematerialtfunca(int x)
             {
-            _materiaux->get(GL_SPECULAR)[0]=x/255;
+            _materiaux->set(x);
             }
 
 //_____slots_________________________//
@@ -567,7 +567,7 @@ Mondock:: ~Mondock(){
                       materialspinboxspea = new QSpinBox(this);
                       materialspinboxspea->setPrefix("a = ");
                       materialspinboxspea->setRange(0,255);
-                      materialspinboxspea->setValue(this->_materiaux->get(GL_SPECULAR)[3]*255);
+                      materialspinboxspea->setValue(this->_materiaux->shininess());
                       connect(materialspinboxspea, SIGNAL(valueChanged(int)),this, SLOT(spematerialtfunca(int)));
 
                       //partie layout

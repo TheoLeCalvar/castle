@@ -16,6 +16,7 @@ var searchData=
   ['shaderid',['shaderId',['../class_objet.html#a13f08bf7d1265bbf4ade92b755b27c1b',1,'Objet']]],
   ['shininess',['shininess',['../class_material.html#a9a938aa96f0d5a5dc4d17d43cfd4b42b',1,'Material']]],
   ['sizehint',['sizeHint',['../class_my_open_g_l_widget.html#abacca5d710f6a81b5edfd164f0148ed6',1,'MyOpenGLWidget']]],
+  ['specular',['SPECULAR',['../material_8hpp.html#ae66495ddeaf63c9920920a26ccd7738a',1,'material.hpp']]],
   ['sphere',['Sphere',['../class_sphere.html',1,'Sphere'],['../class_sphere.html#ae6811ba8643126e4f3a7443d752c49b0',1,'Sphere::Sphere()']]],
   ['sphere_2ecpp',['sphere.cpp',['../sphere_8cpp.html',1,'']]],
   ['sphere_2ehpp',['sphere.hpp',['../sphere_8hpp.html',1,'']]]

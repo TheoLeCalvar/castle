@@ -26,9 +26,11 @@
  */
 class Mesh: public Objet
 {
+friend class Node;
+
 private:
 
-	typedef struct
+	typedef struct 
 	{
 		GLuint vao;
 		QList<GLuint> vbos;
@@ -36,51 +38,34 @@ private:
 		unsigned int nbReferences;
 	} MeshInfo;
 
-	static QMap<QString, MeshInfo*> _loadedModels; /**< Ensemble des VAO des modèles chargés */
-
-	MeshInfo * _infos; /**< Information sur le model représenté par ce Mesh */
+	MeshInfo * _infos;
 
 	/**
 	 * @brief Constructeur privé
-	 * @details Utiliser load(const QString & fileName, Scene * scene)
-	 * @see load
+	 * @details Utiliser Node::load(const QString & fileName, Scene * scene)
+	 * @see Node::loadModel()
 	 */
 	Mesh();
+
+
+	/**
+	 * @brief Constructeur par recopie
+	 * 
+	 */
+	Mesh(const Mesh & m);
 
 	/**
 	 * @brief Charge un mesh
 	 * 
 	 * @param scene scène générée par assimp
-	 * @param fileName nom du fichier
 	 * 
 	 * @return un pointeur sur Mesh, NULL si erreur
 	 */
-	static Mesh * load(const aiMesh* scene, const QString & fileName);
+	static Mesh * loadMesh(const aiMesh* scene);
 
-	/**
-	 * @brief Charge un Material
-	 * 
-	 * @param mat material à charger
-	 * @return NULL si erreur
-	 */
-	static Material * loadMaterial(const aiMaterial * mat);
 
 	
 public:
-
-	/**
-	 * @brief Charge un modèle 3D
-	 * @details Charge un modèle 3D et retourne le Mesh * associé
-	 * 
-	 * @param fileName nom du fichier à charger
-	 * @param scene Scene à laquelle ajouté les matériaux (pas encore géré)
-	 * 
-	 * @warning Ne gère pas les matériaux contenus dans la scène
-	 * 
-	 * @return un pointeur sur Mesh ou NULL si une erreur s'est produite, peut aussi stoper le programme
-	 */
-	static QList<Mesh *> loadMesh(const QString & fileName, Scene * scene);
-
 
 	/**
 	 * @brief Destructeur

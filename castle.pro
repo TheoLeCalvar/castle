@@ -29,6 +29,7 @@ HEADERS += camera.hpp \
 #           objets/donuts.hpp \
            mainwindows.hpp \
            objets/mesh.hpp \
+           objets/node.hpp \
            objets/plan.hpp \
            objets/objet.hpp \
 #           objets/sphere.hpp \
@@ -47,6 +48,7 @@ SOURCES += camera.cpp \
 #           objets/donuts.cpp \
            mainwindows.cpp \
            objets/mesh.cpp \
+           objets/node.cpp \
            objets/objet.cpp \
            objets/plan.cpp \
 #           objets/sphere.cpp \

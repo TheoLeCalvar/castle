@@ -1,128 +1,16 @@
 #include "mesh.hpp"
 
-QMap<QString, Mesh::MeshInfo*> Mesh::_loadedModels;
 
 Mesh::Mesh()
 {}
 
-QList<Mesh *> Mesh::loadMesh(const QString & file, Scene * scene)
+Mesh::Mesh(const Mesh & m):Objet(m),_infos(m._infos)
 {
-	QList<Mesh *> list;
-
-	MeshInfo* res = _loadedModels.value(file);
-
-	if (res)
-	{
-		qDebug() << "Model déjà chargé, on récupère les infos depuis la map.";
-
-		Mesh * tmp = new Mesh();
-		tmp->_infos = res;
-		list << tmp;
-		res->nbReferences++;
-	}
-	else
-	{
-		Assimp::Importer importer;
-
-
-
-		const aiScene* pScene = importer.ReadFile(file.toStdString(), 
-				aiProcess_Triangulate | aiProcess_GenSmoothNormals );
-
-		if (!pScene)
-		{
-			qFatal("Impossible de charger le fichier %s", file.toStdString().c_str());
-		}
-		else
-		{
-			qDebug() << "Bingo ça charge";
-
-			qDebug() << "Has Animations : " << pScene->HasAnimations() << pScene->mNumAnimations;
-			qDebug() << "Has Cameras : " << pScene->HasCameras() << pScene->mNumCameras;
-			qDebug() << "Has Lights : " << pScene->HasLights() << pScene->mNumLights;
-			qDebug() << "Has Materials : " << pScene->HasMaterials() << pScene->mNumMaterials;
-			qDebug() << "Has Meshes : " << pScene->HasMeshes() << pScene->mNumMeshes;
-			qDebug() << "Has Textures : " << pScene->HasTextures() << pScene->mNumTextures;
-
-
-			qDebug() << "Root node :";
-			qDebug() << "Number of children : " << pScene->mRootNode->mNumChildren;
-			qDebug() << "Number of meshes : " << pScene->mRootNode->mNumMeshes;
-
-			if (file.endsWith(".ply"))
-			{
-				qDebug() << "Load ply : " << file;
-				list << load(pScene->mMeshes[pScene->mRootNode->mMeshes[0]], file);
-			}
-			else if (file.endsWith(".obj"))
-			{
-				aiNode * root = pScene->mRootNode;
-				qDebug() << "Load obj : " << file;
-				for(unsigned int i = 0; i < pScene->mRootNode->mNumChildren; ++i){
-					Mesh * mesh = load(pScene->mMeshes[root->mChildren[i]->mMeshes[0]], file);
-					Material * mat = loadMaterial(pScene->mMaterials[pScene->mMeshes[root->mChildren[i]->mMeshes[0]]->mMaterialIndex]);
-
-					mesh->name(QString::fromUtf8(root->mChildren[i]->mName.C_Str()));
-					mesh->material(mat);
-					scene->addMaterial(file + '_' + QString::number(i),mat);
-
-					list << mesh;
-				}
-			}
-
-		}
-	}
-
-
-	return list;
+	_infos->nbReferences++;
 }
 
-Material * Mesh::loadMaterial(const aiMaterial * mtl)
-{
-	Material * mat = new Material();
 
-	aiString path;
-	aiColor4t<float> color;
-	float shininess;
-/*
-AI_MATKEY_NAME
-AI_MATKEY_COLOR_AMBIENT 
-AI_MATKEY_COLOR_DIFFUSE
-AI_MATKEY_COLOR_SPECULAR
-AI_MATKEY_COLOR_EMISSIVE
-AI_MATKEY_SHININESS 
-aiTextureType_DIFFUSE 
-aiTextureType_SPECULAR
-aiTextureType_NORMAL 
-*/
-	if(AI_SUCCESS == mtl->Get(AI_MATKEY_COLOR_AMBIENT, color)){
-		mat->set(GL_AMBIENT, vec4(color.r, color.g, color.b, color.a));
-	}
-
-	if(AI_SUCCESS == mtl->Get(AI_MATKEY_COLOR_DIFFUSE, color)){
-		mat->set(GL_DIFFUSE, vec4(color.r, color.g, color.b, color.a));
-	}
-
-	if(AI_SUCCESS == mtl->Get(AI_MATKEY_COLOR_SPECULAR, color)){
-		mat->set(GL_SPECULAR, vec4(color.r, color.g, color.b, color.a));
-	}
-
-	if(AI_SUCCESS == mtl->Get(AI_MATKEY_COLOR_EMISSIVE, color))
-		mat->set(GL_EMISSION, vec4(color.r, color.g, color.b, color.a));
-
-	if (AI_SUCCESS == mtl->Get(AI_MATKEY_SHININESS, shininess)){
-		mat->set(shininess);
-	}
-
-	if (AI_SUCCESS == mtl->GetTexture(aiTextureType_DIFFUSE, 0, &path))
-	{
-		mat->addTexture(QString::fromUtf8(path.C_Str()), DIFFUSE);
-	}
-
-	return mat;
-}
-
-Mesh* Mesh::load(const aiMesh * mesh, const QString & file)
+Mesh* Mesh::loadMesh(const aiMesh * mesh)
 {
 	QOpenGLFunctions_3_2_Core func;
 	Mesh * ret = new Mesh;
@@ -230,11 +118,9 @@ Mesh* Mesh::load(const aiMesh * mesh, const QString & file)
 
 	func.glBindVertexArray(0);
 
-
-	_loadedModels.insert(file, info);	
-
 	return ret;
 }
+
 
 Mesh::~Mesh()
 {
@@ -256,7 +142,7 @@ Mesh::~Mesh()
 void Mesh::draw()
 {
 	Objet::draw();
-	  	openGL_check_error();
+	openGL_check_error();
 
 
 	mat4 model = currentMatrix();
@@ -265,7 +151,7 @@ void Mesh::draw()
 
 
 	setModelMatrix(model);
-	  	openGL_check_error();
+	openGL_check_error();
 
 
 	glBindVertexArray (_infos->vao);

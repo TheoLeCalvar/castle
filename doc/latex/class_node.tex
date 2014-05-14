@@ -1,0 +1,136 @@
+\hypertarget{class_node}{\section{Node Class Reference}
+\label{class_node}\index{Node@{Node}}
+}
+
+
+{\ttfamily \#include $<$node.\+hpp$>$}
+
+Inheritance diagram for Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_node}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_node_aa0840c3cb5c7159be6d992adecd2097c}{$\sim$\+Node} ()
+\item 
+void \hyperlink{class_node_ab88c83ced58700a56de568f5b1e3c473}{draw} ()
+\begin{DoxyCompactList}\small\item\em Affichage de l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_node}{Node} $\ast$ \hyperlink{class_node_ac2140ddf8f06f8b5620e6743c945c482}{load\+Model} (const Q\+String \&path, \hyperlink{class_scene}{Scene} $\ast$scene)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_node_ad7a34779cad45d997bfd6d3d8043c75f}{Node} ()
+\item 
+\hyperlink{class_node_a4bf5930c1238505203c3dcf6e4573bad}{Node} (const \hyperlink{class_node}{Node} \&node)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_material}{Material} $\ast$ \hyperlink{class_node_a0684a35524cc1e276bfefdd28cd452cf}{load\+Material} (const ai\+Material $\ast$mtl)
+\item 
+static \hyperlink{class_node}{Node} $\ast$ \hyperlink{class_node_acf6db74c5840b203f4eee1239539ce31}{load\+Node} (const ai\+Node $\ast$node, const ai\+Scene $\ast$p\+Scene, \hyperlink{class_scene}{Scene} $\ast$scene)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+List$<$ \hyperlink{class_mesh}{Mesh} $\ast$ $>$ \hyperlink{class_node_aad5e459a1ed03d6e09ad7054f2014f5a}{\+\_\+meshs}
+\item 
+Q\+Map$<$ Q\+String, \hyperlink{class_node}{Node} $\ast$ $>$ \hyperlink{class_node_aac0c3b4b1f41b26ec5a22d77f067ec5b}{\+\_\+children}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Q\+Map$<$ Q\+String, \hyperlink{class_node}{Node} $\ast$ $>$ \hyperlink{class_node_a082b475f17808deeb73c07d311f45073}{\+\_\+loaded\+Models}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_node_ad7a34779cad45d997bfd6d3d8043c75f}{\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}Node\+::\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_node_ad7a34779cad45d997bfd6d3d8043c75f}
+\hypertarget{class_node_a4bf5930c1238505203c3dcf6e4573bad}{\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}Node\+::\+Node (
+\begin{DoxyParamCaption}
+\item[{const {\bf Node} \&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_node_a4bf5930c1238505203c3dcf6e4573bad}
+\hypertarget{class_node_aa0840c3cb5c7159be6d992adecd2097c}{\index{Node@{Node}!````~Node@{$\sim$\+Node}}
+\index{````~Node@{$\sim$\+Node}!Node@{Node}}
+\subsubsection[{$\sim$\+Node}]{\setlength{\rightskip}{0pt plus 5cm}Node\+::$\sim$\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_node_aa0840c3cb5c7159be6d992adecd2097c}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_node_ab88c83ced58700a56de568f5b1e3c473}{\index{Node@{Node}!draw@{draw}}
+\index{draw@{draw}!Node@{Node}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Node\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_node_ab88c83ced58700a56de568f5b1e3c473}
+
+
+Affichage de l'\hyperlink{class_objet}{Objet}. 
+
+Active le shader de l'\hyperlink{class_objet}{Objet} et applique le material 
+
+Reimplemented from \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Objet}.
+
+\hypertarget{class_node_a0684a35524cc1e276bfefdd28cd452cf}{\index{Node@{Node}!load\+Material@{load\+Material}}
+\index{load\+Material@{load\+Material}!Node@{Node}}
+\subsubsection[{load\+Material}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Material} $\ast$ Node\+::load\+Material (
+\begin{DoxyParamCaption}
+\item[{const ai\+Material $\ast$}]{mtl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{class_node_a0684a35524cc1e276bfefdd28cd452cf}
+\hypertarget{class_node_ac2140ddf8f06f8b5620e6743c945c482}{\index{Node@{Node}!load\+Model@{load\+Model}}
+\index{load\+Model@{load\+Model}!Node@{Node}}
+\subsubsection[{load\+Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node} $\ast$ Node\+::load\+Model (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{path, }
+\item[{{\bf Scene} $\ast$}]{scene}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_node_ac2140ddf8f06f8b5620e6743c945c482}
+\hypertarget{class_node_acf6db74c5840b203f4eee1239539ce31}{\index{Node@{Node}!load\+Node@{load\+Node}}
+\index{load\+Node@{load\+Node}!Node@{Node}}
+\subsubsection[{load\+Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node} $\ast$ Node\+::load\+Node (
+\begin{DoxyParamCaption}
+\item[{const ai\+Node $\ast$}]{node, }
+\item[{const ai\+Scene $\ast$}]{p\+Scene, }
+\item[{{\bf Scene} $\ast$}]{scene}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{class_node_acf6db74c5840b203f4eee1239539ce31}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_node_aac0c3b4b1f41b26ec5a22d77f067ec5b}{\index{Node@{Node}!\+\_\+children@{\+\_\+children}}
+\index{\+\_\+children@{\+\_\+children}!Node@{Node}}
+\subsubsection[{\+\_\+children}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Map$<$Q\+String, {\bf Node} $\ast$$>$ Node\+::\+\_\+children\hspace{0.3cm}{\ttfamily [private]}}}\label{class_node_aac0c3b4b1f41b26ec5a22d77f067ec5b}
+\hypertarget{class_node_a082b475f17808deeb73c07d311f45073}{\index{Node@{Node}!\+\_\+loaded\+Models@{\+\_\+loaded\+Models}}
+\index{\+\_\+loaded\+Models@{\+\_\+loaded\+Models}!Node@{Node}}
+\subsubsection[{\+\_\+loaded\+Models}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Map$<$ Q\+String, {\bf Node} $\ast$ $>$ Node\+::\+\_\+loaded\+Models\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{class_node_a082b475f17808deeb73c07d311f45073}
+\hypertarget{class_node_aad5e459a1ed03d6e09ad7054f2014f5a}{\index{Node@{Node}!\+\_\+meshs@{\+\_\+meshs}}
+\index{\+\_\+meshs@{\+\_\+meshs}!Node@{Node}}
+\subsubsection[{\+\_\+meshs}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<${\bf Mesh} $\ast$$>$ Node\+::\+\_\+meshs\hspace{0.3cm}{\ttfamily [private]}}}\label{class_node_aad5e459a1ed03d6e09ad7054f2014f5a}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+objets/\hyperlink{node_8hpp}{node.\+hpp}\item 
+objets/\hyperlink{node_8cpp}{node.\+cpp}\end{DoxyCompactItemize}

@@ -26,10 +26,11 @@ void Piece::addChild(Objet * o)
 {
 	if (_children.contains(o->name()))
 	{
-		qDebug() << "Objet ayant le même nom déjà présent";
+		qDebug() << "Objet ayant le même nom déjà présent" << o->name();
 	}
 	else
 	{
+		qDebug() << "Ajout de " << o->name();
 		_children[o->name()] = o;
 	}
 }
@@ -38,10 +39,11 @@ void Piece::addChild(const QString & name, Objet * o)
 {
 	if (_children.contains(name))
 	{
-		qDebug() << "Objet ayant le même nom déjà présent";
+		qDebug() << "Objet ayant le même nom déjà présent" << name;
 	}
 	else
 	{
+		qDebug() << "Ajout de " << name;
 		_children[name] = o;
 	}
 }

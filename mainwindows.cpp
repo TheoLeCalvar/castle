@@ -2,7 +2,7 @@
 #include <iostream>
 #include "light.hpp"
 
-MainWindow::MainWindow()
+MainWindow::MainWindow():light(NULL),material(NULL)
 {
 /* ************************************** */
 //          Central  Widget               //
@@ -527,7 +527,11 @@ void MainWindow::createToolBar()
                         )
                     );
             dockajoutlumiere->close();
-            light->appendRow(new QStandardItem(lineeditnomajoutlumiere->text()));
+
+             if (light)
+             {
+              light->appendRow(new QStandardItem(lineeditnomajoutlumiere->text()));
+             }
         }//fin else
     }
 
@@ -553,32 +557,34 @@ void MainWindow::createToolBar()
 
                         new Material//lumiere
                             (
-                                vec4(//ambiante
+                                vec3(//ambiante
                                 spinambajoutmaterialx->value(),
                                 spinambajoutmaterialy->value(),
-                                spinambajoutmaterialz->value(),
-                                 0.0
+                                spinambajoutmaterialz->value()
                                 ),
 
-                                vec4(//difuse
+                                vec3(//difuse
                                 spindifajoutmaterialx->value(),
                                 spindifajoutmaterialy->value(),
-                                spindifajoutmaterialz->value(),
-                                 0.0
+                                spindifajoutmaterialz->value()
+
                                 ),
 
-                                vec4(//spe
+                                vec3(//spe
                                 spinspeajoutmaterialx->value(),
                                 spinspeajoutmaterialy->value(),
-                                spinspeajoutmaterialz->value(),
-                                spinspeajoutmateriala->value()//shines
+                                spinspeajoutmaterialz->value()
                                 ),
 
                                 spinspeajoutmateriala->value()//shines
                             )
                         );
+
                 dockajoutmateriaux->close();
-                material->appendRow(new QStandardItem(lineeditnomajoutmaterial->text()));
+
+                if(material){
+                        material->appendRow(new QStandardItem(lineeditnomajoutmaterial->text()));
+                }
             }//fin else
         }
 

@@ -81,5 +81,8 @@ vendredi 9 mai
 dimanche 11 mai
 	lecture des textures à partir des matériaux inclus aux modèles
 
+lundi 12, mardi 13 mai et mercredi 14
+	amélioration du chargement des modèles et partage des vao/vbo
+
 Amélioration à faire
-	collision !
+	collision -> rajouter notion de hitbox à Objet, et ensuite calculer sur le vecteur déplacement entre dans cette hitbox

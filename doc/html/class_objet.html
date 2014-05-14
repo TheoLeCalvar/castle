@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -105,9 +105,10 @@ Inheritance diagram for Objet:</div>
 <area href="class_cube.html" title="Primitive cube. " alt="Cube" shape="rect" coords="0,112,187,136"/>
 <area href="class_donuts.html" title="Primitive tore. " alt="Donuts" shape="rect" coords="197,112,384,136"/>
 <area href="class_mesh.html" title="Charge un modèle 3D. " alt="Mesh" shape="rect" coords="394,112,581,136"/>
-<area href="class_piece.html" title="Pièce, contient un ensemble d&#39;objet qu&#39;elle contient. " alt="Piece" shape="rect" coords="591,112,778,136"/>
-<area href="class_plan.html" title="Plan utilisé par la Piece. " alt="Plan" shape="rect" coords="788,112,975,136"/>
-<area href="class_sphere.html" title="Primitive tore. " alt="Sphere" shape="rect" coords="985,112,1172,136"/>
+<area href="class_node.html" alt="Node" shape="rect" coords="591,112,778,136"/>
+<area href="class_piece.html" title="Pièce, contient un ensemble d&#39;objet qu&#39;elle contient. " alt="Piece" shape="rect" coords="788,112,975,136"/>
+<area href="class_plan.html" title="Plan utilisé par la Piece. " alt="Plan" shape="rect" coords="985,112,1172,136"/>
+<area href="class_sphere.html" title="Primitive tore. " alt="Sphere" shape="rect" coords="1182,112,1369,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -342,7 +343,7 @@ Private Member Functions</h2></td></tr>
 <p>Affichage de l'<a class="el" href="class_objet.html" title="Classe de base affichable. ">Objet</a>. </p>
 <p>Active le shader de l'<a class="el" href="class_objet.html" title="Classe de base affichable. ">Objet</a> et applique le material </p>
 
-<p>Reimplemented in <a class="el" href="class_mesh.html#a996a8668fa2ca7d95d6d10744c833bc8">Mesh</a>, <a class="el" href="class_plan.html#a513c3dec0ce9043a9e1d3b5b18a6d698">Plan</a>, <a class="el" href="class_cube.html#ab26b72a81376fd5dc4fcc7f0b715b087">Cube</a>, <a class="el" href="class_piece.html#aee937e57fbfe4717aab14e1e892aed2e">Piece</a>, <a class="el" href="class_donuts.html#a5a7932c8494905ba09bb515a01e6c91d">Donuts</a>, and <a class="el" href="class_sphere.html#a34a34167b7544c95155d3ff30638d045">Sphere</a>.</p>
+<p>Reimplemented in <a class="el" href="class_mesh.html#a996a8668fa2ca7d95d6d10744c833bc8">Mesh</a>, <a class="el" href="class_plan.html#a513c3dec0ce9043a9e1d3b5b18a6d698">Plan</a>, <a class="el" href="class_cube.html#ab26b72a81376fd5dc4fcc7f0b715b087">Cube</a>, <a class="el" href="class_piece.html#aee937e57fbfe4717aab14e1e892aed2e">Piece</a>, <a class="el" href="class_node.html#ab88c83ced58700a56de568f5b1e3c473">Node</a>, <a class="el" href="class_donuts.html#a5a7932c8494905ba09bb515a01e6c91d">Donuts</a>, and <a class="el" href="class_sphere.html#a34a34167b7544c95155d3ff30638d045">Sphere</a>.</p>
 
 </div>
 </div>
@@ -878,7 +879,7 @@ Private Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 8 2014 15:23:20 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 13 2014 16:49:05 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

@@ -30,6 +30,13 @@ public:
 	Objet(const QString& name = QString(), Material * mat = NULL, vec3 rotation = vec3(), vec3 position = vec3(), Objet * parent = NULL);
 
 	/**
+	 * @brief Constructeur par recopie
+	 * 
+	 * @param o objet à copier
+	 */
+	Objet(const Objet & o);
+
+	/**
 	 * @brief Destructeur
 	 */
 	virtual ~Objet(){}

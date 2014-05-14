@@ -16,6 +16,11 @@ Inheritance diagram for Mesh\+:\begin{figure}[H]
 \includegraphics[height=3.000000cm]{class_mesh}
 \end{center}
 \end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_mesh_1_1_mesh_info}{Mesh\+Info}
+\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -23,38 +28,27 @@ Inheritance diagram for Mesh\+:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
 void \hyperlink{class_mesh_a996a8668fa2ca7d95d6d10744c833bc8}{draw} ()
 \begin{DoxyCompactList}\small\item\em Affiche le modèle. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-static \hyperlink{class_mesh}{Mesh} $\ast$ \hyperlink{class_mesh_ab930df3a124420d74b954948bb6bfbec}{load} (const Q\+String \&file\+Name, \hyperlink{class_scene}{Scene} $\ast$scene)
-\begin{DoxyCompactList}\small\item\em Charge un modèle 3\+D. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_mesh_a2af137f1571af89172b9c102302c416b}{Mesh} ()
-\begin{DoxyCompactList}\small\item\em Constructeur privé \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructeur privé \end{DoxyCompactList}\item 
+\hyperlink{class_mesh_a713cb62e7078cfd627108a0b14f72c6f}{Mesh} (const \hyperlink{class_mesh}{Mesh} \&m)
+\begin{DoxyCompactList}\small\item\em Constructeur par recopie. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \hyperlink{class_mesh}{Mesh} $\ast$ \hyperlink{class_mesh_acded5b29f25b95ecbb5142e659fe4c58}{load\+Obj} (const ai\+Scene $\ast$scene, const Q\+String \&file\+Name)
-\begin{DoxyCompactList}\small\item\em Charge un modèle 3\+D au format obj. \end{DoxyCompactList}\item 
-static \hyperlink{class_mesh}{Mesh} $\ast$ \hyperlink{class_mesh_a157c9773238e20a98a114e0adc8f8ab5}{load\+Ply} (const ai\+Scene $\ast$scene, const Q\+String \&file\+Name)
-\begin{DoxyCompactList}\small\item\em Charge un modèle 3\+D au format ply. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static \hyperlink{class_mesh}{Mesh} $\ast$ \hyperlink{class_mesh_a7b405216bda9e94d64aa8a308d718cb4}{load\+Mesh} (const ai\+Mesh $\ast$scene)
+\begin{DoxyCompactList}\small\item\em Charge un mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-G\+Luint \hyperlink{class_mesh_a1949164d110452d2d7a44f5ccac34194}{\+\_\+vao}
-\item 
-std\+::list$<$ G\+Luint $>$ \hyperlink{class_mesh_ad14f28c038a34b836a9ff7a9d601d281}{\+\_\+vbo}
-\item 
-unsigned int \hyperlink{class_mesh_a6ba32034874ae52e5f69b13086ffbcf4}{\+\_\+nb\+Vertices}
+\hyperlink{struct_mesh_1_1_mesh_info}{Mesh\+Info} $\ast$ \hyperlink{class_mesh_a608911b8dbff58ff769c708b8b7f2618}{\+\_\+infos}
 \end{DoxyCompactItemize}
-\subsection*{Static Private Attributes}
+\subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-static std\+::map$<$ const Q\+String, \\*
-std\+::pair$<$ G\+Luint, unsigned \\*
-int $>$ $>$ \hyperlink{class_mesh_aa97db2c6844e7517a8f8343fb5e3259e}{\+\_\+loaded\+Models}
+class \hyperlink{class_mesh_a6db9d28bd448a131448276ee03de1e6d}{Node}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -79,9 +73,20 @@ Ne supporte pas tout les formats, seul les .ply sont totalement gérés, les .ob
 
 Constructeur privé 
 
-Utiliser \hyperlink{class_mesh_ab930df3a124420d74b954948bb6bfbec}{load(const Q\+String \& file\+Name, Scene $\ast$ scene)} \begin{DoxySeeAlso}{See also}
-\hyperlink{class_mesh_ab930df3a124420d74b954948bb6bfbec}{load} 
+Utiliser Node\+::load(const Q\+String \& file\+Name, Scene $\ast$ scene) \begin{DoxySeeAlso}{See also}
+\hyperlink{class_node_ac2140ddf8f06f8b5620e6743c945c482}{Node\+::load\+Model()} 
 \end{DoxySeeAlso}
+\hypertarget{class_mesh_a713cb62e7078cfd627108a0b14f72c6f}{\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\subsubsection[{Mesh}]{\setlength{\rightskip}{0pt plus 5cm}Mesh\+::\+Mesh (
+\begin{DoxyParamCaption}
+\item[{const {\bf Mesh} \&}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mesh_a713cb62e7078cfd627108a0b14f72c6f}
+
+
+Constructeur par recopie. 
+
 \hypertarget{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}{\index{Mesh@{Mesh}!````~Mesh@{$\sim$\+Mesh}}
 \index{````~Mesh@{$\sim$\+Mesh}!Mesh@{Mesh}}
 \subsubsection[{$\sim$\+Mesh}]{\setlength{\rightskip}{0pt plus 5cm}Mesh\+::$\sim$\+Mesh (
@@ -111,96 +116,38 @@ Affiche le modèle.
 
 Reimplemented from \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Objet}.
 
-\hypertarget{class_mesh_ab930df3a124420d74b954948bb6bfbec}{\index{Mesh@{Mesh}!load@{load}}
-\index{load@{load}!Mesh@{Mesh}}
-\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mesh} $\ast$ Mesh\+::load (
+\hypertarget{class_mesh_a7b405216bda9e94d64aa8a308d718cb4}{\index{Mesh@{Mesh}!load\+Mesh@{load\+Mesh}}
+\index{load\+Mesh@{load\+Mesh}!Mesh@{Mesh}}
+\subsubsection[{load\+Mesh}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mesh} $\ast$ Mesh\+::load\+Mesh (
 \begin{DoxyParamCaption}
-\item[{const Q\+String \&}]{file\+Name, }
-\item[{{\bf Scene} $\ast$}]{scene}
+\item[{const ai\+Mesh $\ast$}]{scene}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_mesh_ab930df3a124420d74b954948bb6bfbec}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{class_mesh_a7b405216bda9e94d64aa8a308d718cb4}
 
 
-Charge un modèle 3\+D. 
-
-Charge un modèle 3\+D et retourne le \hyperlink{class_mesh}{Mesh} $\ast$ associé
+Charge un mesh. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em file\+Name} & nom du fichier à charger \\
-\hline
-{\em scene} & \hyperlink{class_scene}{Scene} à laquelle ajouté les matériaux (pas encore géré)\\
-\hline
-\end{DoxyParams}
-\begin{DoxyWarning}{Warning}
-Ne gère pas les matériaux contenus dans la scène
-\end{DoxyWarning}
-\begin{DoxyReturn}{Returns}
-un pointeur sur \hyperlink{class_mesh}{Mesh} ou N\+U\+L\+L si une erreur s'est produite, peut aussi stoper le programme 
-\end{DoxyReturn}
-\hypertarget{class_mesh_acded5b29f25b95ecbb5142e659fe4c58}{\index{Mesh@{Mesh}!load\+Obj@{load\+Obj}}
-\index{load\+Obj@{load\+Obj}!Mesh@{Mesh}}
-\subsubsection[{load\+Obj}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mesh} $\ast$ Mesh\+::load\+Obj (
-\begin{DoxyParamCaption}
-\item[{const ai\+Scene $\ast$}]{scene, }
-\item[{const Q\+String \&}]{file\+Name}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{class_mesh_acded5b29f25b95ecbb5142e659fe4c58}
-
-
-Charge un modèle 3\+D au format obj. 
-
-\begin{DoxyWarning}{Warning}
-Ne gère pas tout les obj, les groupes ne sont pas géré, seul le premier mesh est chargé, ne gère pas les matériaux
-\end{DoxyWarning}
-
-\begin{DoxyParams}{Parameters}
-{\em scene} & scène générée par assimp \\
-\hline
-{\em file\+Name} & nom du fichier\\
+{\em scene} & scène générée par assimp\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 un pointeur sur \hyperlink{class_mesh}{Mesh}, N\+U\+L\+L si erreur 
 \end{DoxyReturn}
-\hypertarget{class_mesh_a157c9773238e20a98a114e0adc8f8ab5}{\index{Mesh@{Mesh}!load\+Ply@{load\+Ply}}
-\index{load\+Ply@{load\+Ply}!Mesh@{Mesh}}
-\subsubsection[{load\+Ply}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mesh} $\ast$ Mesh\+::load\+Ply (
-\begin{DoxyParamCaption}
-\item[{const ai\+Scene $\ast$}]{scene, }
-\item[{const Q\+String \&}]{file\+Name}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{class_mesh_a157c9773238e20a98a114e0adc8f8ab5}
 
 
-Charge un modèle 3\+D au format ply. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em scene} & scène générée par assimp \\
-\hline
-{\em file\+Name} & nom du fichier\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-un pointeur sur \hyperlink{class_mesh}{Mesh}, N\+U\+L\+L si erreur 
-\end{DoxyReturn}
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_mesh_a6db9d28bd448a131448276ee03de1e6d}{\index{Mesh@{Mesh}!Node@{Node}}
+\index{Node@{Node}!Mesh@{Mesh}}
+\subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Node}\hspace{0.3cm}{\ttfamily [friend]}}}\label{class_mesh_a6db9d28bd448a131448276ee03de1e6d}
 
 
 \subsection{Member Data Documentation}
-\hypertarget{class_mesh_aa97db2c6844e7517a8f8343fb5e3259e}{\index{Mesh@{Mesh}!\+\_\+loaded\+Models@{\+\_\+loaded\+Models}}
-\index{\+\_\+loaded\+Models@{\+\_\+loaded\+Models}!Mesh@{Mesh}}
-\subsubsection[{\+\_\+loaded\+Models}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$ const Q\+String, std\+::pair$<$ G\+Luint, unsigned int $>$ $>$ Mesh\+::\+\_\+loaded\+Models\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{class_mesh_aa97db2c6844e7517a8f8343fb5e3259e}
-Ensemble des V\+A\+O des modèles chargés \hypertarget{class_mesh_a6ba32034874ae52e5f69b13086ffbcf4}{\index{Mesh@{Mesh}!\+\_\+nb\+Vertices@{\+\_\+nb\+Vertices}}
-\index{\+\_\+nb\+Vertices@{\+\_\+nb\+Vertices}!Mesh@{Mesh}}
-\subsubsection[{\+\_\+nb\+Vertices}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Mesh\+::\+\_\+nb\+Vertices\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mesh_a6ba32034874ae52e5f69b13086ffbcf4}
-Nombre de vertices du model, tuilisé pour gl\+Draw \hypertarget{class_mesh_a1949164d110452d2d7a44f5ccac34194}{\index{Mesh@{Mesh}!\+\_\+vao@{\+\_\+vao}}
-\index{\+\_\+vao@{\+\_\+vao}!Mesh@{Mesh}}
-\subsubsection[{\+\_\+vao}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Mesh\+::\+\_\+vao\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mesh_a1949164d110452d2d7a44f5ccac34194}
-V\+A\+O du model \hypertarget{class_mesh_ad14f28c038a34b836a9ff7a9d601d281}{\index{Mesh@{Mesh}!\+\_\+vbo@{\+\_\+vbo}}
-\index{\+\_\+vbo@{\+\_\+vbo}!Mesh@{Mesh}}
-\subsubsection[{\+\_\+vbo}]{\setlength{\rightskip}{0pt plus 5cm}std\+::list$<$G\+Luint$>$ Mesh\+::\+\_\+vbo\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mesh_ad14f28c038a34b836a9ff7a9d601d281}
-V\+B\+Os du model 
+\hypertarget{class_mesh_a608911b8dbff58ff769c708b8b7f2618}{\index{Mesh@{Mesh}!\+\_\+infos@{\+\_\+infos}}
+\index{\+\_\+infos@{\+\_\+infos}!Mesh@{Mesh}}
+\subsubsection[{\+\_\+infos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mesh\+Info}$\ast$ Mesh\+::\+\_\+infos\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mesh_a608911b8dbff58ff769c708b8b7f2618}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

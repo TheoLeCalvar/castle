@@ -25,7 +25,9 @@ Inheritance diagram for Piece\+:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
 void \hyperlink{class_piece_aee937e57fbfe4717aab14e1e892aed2e}{draw} ()
 \begin{DoxyCompactList}\small\item\em Affiche l'ensemble des fils. \end{DoxyCompactList}\item 
-void \hyperlink{class_piece_af84bf26b989fcd2ab415bdb8b033a627}{add\+Child} (\hyperlink{class_objet}{Objet} $\ast$objet)
+void \hyperlink{class_piece_adf4f51a5f33071fd0acc706c347f4741}{add\+Child} (const Q\+String \&\hyperlink{class_objet_a4a702c189bedcbf1e65da6aec72c8e44}{name}, \hyperlink{class_objet}{Objet} $\ast$objet)
+\begin{DoxyCompactList}\small\item\em Ajoute un fils à la pièce. \end{DoxyCompactList}\item 
+void \hyperlink{class_piece_aeb48b4fda2f8950546baf534b3cf08cf}{add\+Child} (\hyperlink{class_objet}{Objet} $\ast$o)
 \begin{DoxyCompactList}\small\item\em Ajoute un fils à la pièce. \end{DoxyCompactList}\item 
 Q\+String\+List \hyperlink{class_piece_a029823aa5135b356a9e4da14578db4e8}{get\+Children} () const 
 \begin{DoxyCompactList}\small\item\em Récupère la liste des noms des objets fils. \end{DoxyCompactList}\item 
@@ -42,7 +44,7 @@ void \hyperlink{class_piece_a4419c3b0a9e57dcd215dd87be025752f}{dimensions} (cons
 \item 
 \hyperlink{structvec3}{vec3} \hyperlink{class_piece_a47a3458694b894041bd95a1666c9bf3d}{\+\_\+dimensions}
 \item 
-Q\+List$<$ \hyperlink{class_objet}{Objet} $\ast$ $>$ \hyperlink{class_piece_a3ba9c0e4bdea96982145e7ae693f5c2a}{\+\_\+children}
+Q\+Map$<$ Q\+String, \hyperlink{class_objet}{Objet} $\ast$ $>$ \hyperlink{class_piece_ac80078a597e7edcd297895bab25731e6}{\+\_\+children}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -79,13 +81,14 @@ Destructeur.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_piece_af84bf26b989fcd2ab415bdb8b033a627}{\index{Piece@{Piece}!add\+Child@{add\+Child}}
+\hypertarget{class_piece_adf4f51a5f33071fd0acc706c347f4741}{\index{Piece@{Piece}!add\+Child@{add\+Child}}
 \index{add\+Child@{add\+Child}!Piece@{Piece}}
 \subsubsection[{add\+Child}]{\setlength{\rightskip}{0pt plus 5cm}void Piece\+::add\+Child (
 \begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name, }
 \item[{{\bf Objet} $\ast$}]{objet}
 \end{DoxyParamCaption}
-)}}\label{class_piece_af84bf26b989fcd2ab415bdb8b033a627}
+)}}\label{class_piece_adf4f51a5f33071fd0acc706c347f4741}
 
 
 Ajoute un fils à la pièce. 
@@ -94,7 +97,25 @@ Se charge de la destruction de l'objet
 
 
 \begin{DoxyParams}{Parameters}
+{\em name} & nom de l'objet \\
+\hline
 {\em objet} & objet à ajouter \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_piece_aeb48b4fda2f8950546baf534b3cf08cf}{\index{Piece@{Piece}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Piece@{Piece}}
+\subsubsection[{add\+Child}]{\setlength{\rightskip}{0pt plus 5cm}void Piece\+::add\+Child (
+\begin{DoxyParamCaption}
+\item[{{\bf Objet} $\ast$}]{o}
+\end{DoxyParamCaption}
+)}}\label{class_piece_aeb48b4fda2f8950546baf534b3cf08cf}
+
+
+Ajoute un fils à la pièce. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em o} & objet à ajouter \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_piece_ab522c715b4dd27b0789f5aed218ab59d}{\index{Piece@{Piece}!dimensions@{dimensions}}
@@ -188,18 +209,17 @@ un pointeur valide si l'objet est un fils de la pièce, N\+U\+L\+L sinon
 
 Récupère la liste des noms des objets fils. 
 
-\begin{DoxyWarning}{Warning}
-A revoir ! 
-\end{DoxyWarning}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000005}{Todo}]A revoir ! \begin{DoxyReturn}{Returns}
 liste des noms des objets 
 \end{DoxyReturn}
+\end{DoxyRefDesc}
 
 
 \subsection{Member Data Documentation}
-\hypertarget{class_piece_a3ba9c0e4bdea96982145e7ae693f5c2a}{\index{Piece@{Piece}!\+\_\+children@{\+\_\+children}}
+\hypertarget{class_piece_ac80078a597e7edcd297895bab25731e6}{\index{Piece@{Piece}!\+\_\+children@{\+\_\+children}}
 \index{\+\_\+children@{\+\_\+children}!Piece@{Piece}}
-\subsubsection[{\+\_\+children}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<${\bf Objet} $\ast$$>$ Piece\+::\+\_\+children\hspace{0.3cm}{\ttfamily [private]}}}\label{class_piece_a3ba9c0e4bdea96982145e7ae693f5c2a}
+\subsubsection[{\+\_\+children}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Map$<$Q\+String, {\bf Objet} $\ast$$>$ Piece\+::\+\_\+children\hspace{0.3cm}{\ttfamily [private]}}}\label{class_piece_ac80078a597e7edcd297895bab25731e6}
 \hypertarget{class_piece_a47a3458694b894041bd95a1666c9bf3d}{\index{Piece@{Piece}!\+\_\+dimensions@{\+\_\+dimensions}}
 \index{\+\_\+dimensions@{\+\_\+dimensions}!Piece@{Piece}}
 \subsubsection[{\+\_\+dimensions}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Piece\+::\+\_\+dimensions\hspace{0.3cm}{\ttfamily [private]}}}\label{class_piece_a47a3458694b894041bd95a1666c9bf3d}
