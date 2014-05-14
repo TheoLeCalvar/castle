@@ -71,6 +71,7 @@ void MainWindow::createActions()
         ajoutlumierAct = new QAction(tr("&Lumiere"),this);
             connect(ajoutlumierAct,SIGNAL(triggered()),this , SLOT(ajoutlumiere()));
         ajoutmaterialAct = new QAction(tr("&Materiaux"),this);
+            connect(ajoutmaterialAct,SIGNAL(triggered()),this , SLOT(ajoutmaterial()));
 
      //aide
      racourcitAct = new QAction(tr("&Racourcit"), this);
@@ -176,7 +177,6 @@ void MainWindow::createMenus()
 
             //bouton
              boutonajoutlumiere = new QPushButton("ajouter");
-                      connect(racourcitAct, SIGNAL(triggered()), this, SLOT(Racourcit()));
              connect(boutonajoutlumiere,SIGNAL(clicked()), this ,SLOT(validajoutlumiere()));
 
              layoutajoutlumiere=new QVBoxLayout;
@@ -192,6 +192,88 @@ void MainWindow::createMenus()
 
             //ajout material
             ajoutelement->addAction(ajoutmaterialAct);
+
+            widgetajoutmaterial = new QWidget;
+
+            //nom
+            nomajoutmaterial = new QLabel("Nom:");
+            lineeditnomajoutmaterial = new QLineEdit(this);
+            layoutnomajoutmaterial = new QHBoxLayout();
+                layoutnomajoutmaterial->addWidget(nomajoutmaterial);
+                layoutnomajoutmaterial->addWidget(lineeditnomajoutmaterial);
+
+            //ambiante
+            ambajoutmaterial = new QLabel("ambiante: ");
+            spinambajoutmaterialx = new QDoubleSpinBox;
+                spinambajoutmaterialx->setRange(0 , 1);
+                spinambajoutmaterialx->setSingleStep(0.01);
+            spinambajoutmaterialy = new QDoubleSpinBox;
+                spinambajoutmaterialy->setRange(0 , 1);
+                spinambajoutmaterialy->setSingleStep(0.01);
+            spinambajoutmaterialz = new QDoubleSpinBox;
+                spinambajoutmaterialz->setRange(0 , 1);
+                spinambajoutmaterialz->setSingleStep(0.01);
+
+            layoutambajoutmaterial = new QHBoxLayout();
+                 layoutambajoutmaterial->addWidget(ambajoutmaterial);
+                 layoutambajoutmaterial->addWidget(spinambajoutmaterialx);
+                 layoutambajoutmaterial->addWidget(spinambajoutmaterialy);
+                 layoutambajoutmaterial->addWidget(spinambajoutmaterialz);
+
+            //difuse
+            difajoutmaterial = new QLabel("Difuse: ");
+            spindifajoutmaterialx = new QDoubleSpinBox;
+                spindifajoutmaterialx->setRange(0 , 1);
+                spindifajoutmaterialx->setSingleStep(0.01);
+            spindifajoutmaterialy = new QDoubleSpinBox;
+                 spindifajoutmaterialy->setRange(0 , 1);
+                 spindifajoutmaterialy->setSingleStep(0.01);
+            spindifajoutmaterialz = new QDoubleSpinBox;
+                 spindifajoutmaterialz->setRange(0 , 1);
+                 spindifajoutmaterialz->setSingleStep(0.01);
+
+            layoutdifajoutmaterial = new QHBoxLayout();
+                layoutdifajoutmaterial->addWidget(difajoutmaterial);
+                layoutdifajoutmaterial->addWidget(spindifajoutmaterialx);
+                layoutdifajoutmaterial->addWidget(spindifajoutmaterialy);
+                layoutdifajoutmaterial->addWidget(spindifajoutmaterialz);
+
+             //speculaire
+             speajoutmaterial = new QLabel("Speculaire: ");
+             spinspeajoutmaterialx = new QDoubleSpinBox;
+                spinspeajoutmaterialx->setRange(0 , 1);
+                spinspeajoutmaterialx->setSingleStep(0.01);
+             spinspeajoutmaterialy = new QDoubleSpinBox;
+                spinspeajoutmaterialy->setRange(0 , 1);
+                spinspeajoutmaterialy->setSingleStep(0.01);
+             spinspeajoutmaterialz = new QDoubleSpinBox;
+                spinspeajoutmaterialz->setRange(0 , 1);
+                spinspeajoutmaterialz->setSingleStep(0.01);
+                spinspeajoutmateriala = new QDoubleSpinBox;
+                   spinspeajoutmateriala->setRange(0 , 64);
+                   spinspeajoutmateriala->setSingleStep(0.5);
+
+             layoutspeajoutmaterial = new QHBoxLayout();
+                layoutspeajoutmaterial->addWidget(speajoutmaterial);
+                layoutspeajoutmaterial->addWidget(spinspeajoutmaterialx);
+                layoutspeajoutmaterial->addWidget(spinspeajoutmaterialy);
+                layoutspeajoutmaterial->addWidget(spinspeajoutmaterialz);
+                layoutspeajoutmaterial->addWidget(spinspeajoutmateriala);
+
+            //bouton
+             boutonajoutmaterial = new QPushButton("ajouter");
+             connect(boutonajoutmaterial,SIGNAL(clicked()), this ,SLOT(validajoutmaterial()));
+
+             layoutajoutmaterial=new QVBoxLayout;
+                layoutajoutmaterial->addLayout(layoutnomajoutmaterial);
+                layoutajoutmaterial->addLayout(layoutambajoutmaterial);
+                layoutajoutmaterial->addLayout(layoutdifajoutmaterial);
+                layoutajoutmaterial->addLayout(layoutspeajoutmaterial);
+                layoutajoutmaterial->addWidget(boutonajoutmaterial);
+
+                widgetajoutmaterial->setLayout(layoutajoutmaterial);
+
+                dockajoutmateriaux->setWidget(widgetajoutmaterial);
 
 
     Aide = menuBar()->addMenu(tr("&Aide"));
@@ -211,9 +293,14 @@ void MainWindow::createListeDockwidget()
         dock_light->hide();
 
     dockajoutlumiere =new QDockWidget(tr("Ajout d'une lumiere"), this);
-        dock_light->setAllowedAreas(Qt::LeftDockWidgetArea);
+        dockajoutlumiere->setAllowedAreas(Qt::LeftDockWidgetArea);
         addDockWidget(Qt::LeftDockWidgetArea, dockajoutlumiere);
         dockajoutlumiere->hide();
+
+    dockajoutmateriaux =new QDockWidget(tr("Ajout d'un materiau"), this);
+        dockajoutmateriaux->setAllowedAreas(Qt::LeftDockWidgetArea);
+        addDockWidget(Qt::LeftDockWidgetArea, dockajoutmateriaux);
+        dockajoutmateriaux->hide();
 }
 
 void MainWindow::createToolBar()
@@ -424,14 +511,14 @@ void MainWindow::createToolBar()
                             spinpositionajoutlumierez->value()
                             ),
 
-                            vec3(
-                            spindifajoutlumierex->value(),//difuse
+                            vec3(//difuse
+                            spindifajoutlumierex->value(),
                             spindifajoutlumierey->value(),
                             spindifajoutlumierez->value()
                             ),
 
-                            vec3(//ambiante
-                            spinspeajoutlumierex->value(), //ambiante
+                            vec3(//speculaire
+                            spinspeajoutlumierex->value(),
                             spinspeajoutlumierey->value(),
                             spinspeajoutlumierez->value()
                             ),
@@ -444,8 +531,62 @@ void MainWindow::createToolBar()
         }//fin else
     }
 
+    void MainWindow::ajoutmaterial(){
+        dockajoutmateriaux->show();
+    }
+
+    void MainWindow::validajoutmaterial()
+        {
+            Scene * scenetemp = widget->getScene();
+
+            if (lineeditnomajoutmaterial->text()==NULL)
+            {
+                QMessageBox msgBox;
+                msgBox.setText("le champ nom , ne peut etre vide");
+                msgBox.exec();
+             dockajoutmateriaux->close();
+            }
+            else
+            {
+                scenetemp->addMaterial(
+                    lineeditnomajoutmaterial->text(),//nom
+
+                        new Material//lumiere
+                            (
+                                vec4(//ambiante
+                                spinambajoutmaterialx->value(),
+                                spinambajoutmaterialy->value(),
+                                spinambajoutmaterialz->value(),
+                                 0.0
+                                ),
+
+                                vec4(//difuse
+                                spindifajoutmaterialx->value(),
+                                spindifajoutmaterialy->value(),
+                                spindifajoutmaterialz->value(),
+                                 0.0
+                                ),
+
+                                vec4(//spe
+                                spinspeajoutmaterialx->value(),
+                                spinspeajoutmaterialy->value(),
+                                spinspeajoutmaterialz->value(),
+                                spinspeajoutmateriala->value()//shines
+                                ),
+
+                                spinspeajoutmateriala->value()//shines
+                            )
+                        );
+                dockajoutmateriaux->close();
+                material->appendRow(new QStandardItem(lineeditnomajoutmaterial->text()));
+            }//fin else
+        }
+
+
+
     //aide
-    void MainWindow::Racourcit(){
+    void MainWindow::Racourcit()
+    {
     }
 
 //fin Menubars

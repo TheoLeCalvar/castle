@@ -58,6 +58,8 @@ private slots:
         void Importation3D();
         void ajoutlumiere();
         void validajoutlumiere();
+        void ajoutmaterial();
+        void validajoutmaterial();
 
         //aide
         void Racourcit();
@@ -133,9 +135,44 @@ private slots:
             QHBoxLayout * layoutposajoutlumiere;
             QHBoxLayout * layoutdifajoutlumiere;
             QHBoxLayout * layoutspeajoutlumiere;
-            QHBoxLayout * layoutambajoutlumiere;
 
             QVBoxLayout * layoutajoutlumiere;
+
+        //materiaux
+        QDockWidget * dockajoutmateriaux;
+
+        //contenu dockajoutlumiere materiau
+        QWidget * widgetajoutmaterial;
+
+        QPushButton * boutonajoutmaterial;
+
+        QLineEdit *lineeditnomajoutmaterial;
+        QLabel *nomajoutmaterial;
+
+        QDoubleSpinBox *spinambajoutmaterialx;
+        QDoubleSpinBox *spinambajoutmaterialy;
+        QDoubleSpinBox *spinambajoutmaterialz;
+        QLabel *ambajoutmaterial;
+
+        QDoubleSpinBox *spindifajoutmaterialx;
+        QDoubleSpinBox *spindifajoutmaterialy;
+        QDoubleSpinBox *spindifajoutmaterialz;
+        QLabel *difajoutmaterial;
+
+        QDoubleSpinBox *spinspeajoutmaterialx;
+        QDoubleSpinBox *spinspeajoutmaterialy;
+        QDoubleSpinBox *spinspeajoutmaterialz;
+        QDoubleSpinBox *spinspeajoutmateriala;
+        QLabel *speajoutmaterial;
+
+
+        QHBoxLayout * layoutnomajoutmaterial;
+        QHBoxLayout * layoutambajoutmaterial;
+        QHBoxLayout * layoutdifajoutmaterial;
+        QHBoxLayout * layoutspeajoutmaterial;
+
+
+        QVBoxLayout * layoutajoutmaterial;
 
         //aide
         QAction *racourcitAct;
