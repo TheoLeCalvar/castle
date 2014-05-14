@@ -8,13 +8,14 @@
 var indexSectionsWithContent =
 {
   0: "_acdghiklmnoprstuvxyz~",
-  1: "cdlmopsv",
-  2: "cdhlmops",
+  1: "cdlmnopsv",
+  2: "cdhlmnops",
   3: "_acdghiklmnoprstuvxyz~",
   4: "_acmnv",
   5: "mv",
-  6: "mot",
-  7: "t"
+  6: "no",
+  7: "dmnost",
+  8: "t"
 };
 
 var indexSectionNames =
@@ -25,8 +26,9 @@ var indexSectionNames =
   3: "functions",
   4: "variables",
   5: "typedefs",
-  6: "defines",
-  7: "pages"
+  6: "related",
+  7: "defines",
+  8: "pages"
 };
 
 function convertToId(search)

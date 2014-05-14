@@ -82,4 +82,4 @@ dimanche 11 mai
 	lecture des textures à partir des matériaux inclus aux modèles
 
 Amélioration à faire
-	collision !
+	collision -> rajouter notion de hitbox à Objet, et ensuite calculer sur le vecteur déplacement entre dans cette hitbox

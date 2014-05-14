@@ -25,6 +25,10 @@ Inheritance diagram for Light\+:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
 void \hyperlink{class_light_a9fcc4b3ffdeedbe214ee8384c7d311b9}{set} (G\+Lenum type, \hyperlink{structvec3}{vec3} value)
 \begin{DoxyCompactList}\small\item\em Met à jour une composante de la lumière. \end{DoxyCompactList}\item 
+\hyperlink{structvec3}{vec3} \hyperlink{class_light_ad0f5f939bc047e39c6deb2e264a5a2c1}{get} (G\+Lenum type) const 
+\begin{DoxyCompactList}\small\item\em Récupère la valeur d'une composante de la lumière. \end{DoxyCompactList}\item 
+\hyperlink{structvec3}{vec3} \& \hyperlink{class_light_a74a0381255c1c7e002ac583401a46de0}{get} (G\+Lenum type)
+\begin{DoxyCompactList}\small\item\em Récupère la valeur d'une composante de la lumière. \end{DoxyCompactList}\item 
 void \hyperlink{class_light_a985e67a0b88ba49ec8da5d5b205d06ed}{set\+Number} (char num)
 \begin{DoxyCompactList}\small\item\em Change le slot de la lumière. \end{DoxyCompactList}\item 
 void \hyperlink{class_light_a295eaf1ef5ebd30fa4997d4f7ccbb7e1}{update} ()
@@ -104,6 +108,47 @@ Destructeur.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_light_ad0f5f939bc047e39c6deb2e264a5a2c1}{\index{Light@{Light}!get@{get}}
+\index{get@{get}!Light@{Light}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Light\+::get (
+\begin{DoxyParamCaption}
+\item[{G\+Lenum}]{type}
+\end{DoxyParamCaption}
+) const}}\label{class_light_ad0f5f939bc047e39c6deb2e264a5a2c1}
+
+
+Récupère la valeur d'une composante de la lumière. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & composante voulu, doit être parmis (G\+L\+\_\+\+P\+O\+S\+I\+T\+I\+O\+N, G\+L\+\_\+\+A\+M\+B\+I\+E\+N\+T, G\+L\+\_\+\+D\+I\+F\+F\+U\+S\+E, G\+L\+\_\+\+S\+P\+E\+C\+U\+L\+A\+R) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+valeur 
+\end{DoxyReturn}
+\hypertarget{class_light_a74a0381255c1c7e002ac583401a46de0}{\index{Light@{Light}!get@{get}}
+\index{get@{get}!Light@{Light}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} \& Light\+::get (
+\begin{DoxyParamCaption}
+\item[{G\+Lenum}]{type}
+\end{DoxyParamCaption}
+)}}\label{class_light_a74a0381255c1c7e002ac583401a46de0}
+
+
+Récupère la valeur d'une composante de la lumière. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & composante voulu, doit être parmis (G\+L\+\_\+\+P\+O\+S\+I\+T\+I\+O\+N, G\+L\+\_\+\+A\+M\+B\+I\+E\+N\+T, G\+L\+\_\+\+D\+I\+F\+F\+U\+S\+E, G\+L\+\_\+\+S\+P\+E\+C\+U\+L\+A\+R) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+valeur 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+si le type n'est pas dans les 4 gérés résultat imprévisible 
+\end{DoxyWarning}
 \hypertarget{class_light_a9fcc4b3ffdeedbe214ee8384c7d311b9}{\index{Light@{Light}!set@{set}}
 \index{set@{set}!Light@{Light}}
 \subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void Light\+::set (

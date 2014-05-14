@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,12 +83,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="class_mesh-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Mesh Class Reference</div>  </div>
@@ -109,6 +109,11 @@ Inheritance diagram for Mesh:</div>
 </map>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_mesh_1_1_mesh_info.html">MeshInfo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5efe4da1a4c0971cfb037bd70304c303"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">~Mesh</a> ()</td></tr>
@@ -164,42 +169,30 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a9fcc9af481f4e13f46ab7d1b40cf91fc inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change le nom de l'<a class="el" href="class_objet.html" title="Classe de base affichable. ">Objet</a>.  <a href="#a9fcc9af481f4e13f46ab7d1b40cf91fc">More...</a><br /></td></tr>
 <tr class="separator:a9fcc9af481f4e13f46ab7d1b40cf91fc inherit pub_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ab930df3a124420d74b954948bb6bfbec"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mesh.html">Mesh</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#ab930df3a124420d74b954948bb6bfbec">load</a> (const QString &amp;fileName, <a class="el" href="class_scene.html">Scene</a> *scene)</td></tr>
-<tr class="memdesc:ab930df3a124420d74b954948bb6bfbec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge un modèle 3D.  <a href="#ab930df3a124420d74b954948bb6bfbec">More...</a><br /></td></tr>
-<tr class="separator:ab930df3a124420d74b954948bb6bfbec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a2af137f1571af89172b9c102302c416b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a2af137f1571af89172b9c102302c416b">Mesh</a> ()</td></tr>
 <tr class="memdesc:a2af137f1571af89172b9c102302c416b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur privé  <a href="#a2af137f1571af89172b9c102302c416b">More...</a><br /></td></tr>
 <tr class="separator:a2af137f1571af89172b9c102302c416b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a713cb62e7078cfd627108a0b14f72c6f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a713cb62e7078cfd627108a0b14f72c6f">Mesh</a> (const <a class="el" href="class_mesh.html">Mesh</a> &amp;m)</td></tr>
+<tr class="memdesc:a713cb62e7078cfd627108a0b14f72c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur par recopie.  <a href="#a713cb62e7078cfd627108a0b14f72c6f">More...</a><br /></td></tr>
+<tr class="separator:a713cb62e7078cfd627108a0b14f72c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
-<tr class="memitem:acded5b29f25b95ecbb5142e659fe4c58"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mesh.html">Mesh</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#acded5b29f25b95ecbb5142e659fe4c58">loadObj</a> (const aiScene *scene, const QString &amp;fileName)</td></tr>
-<tr class="memdesc:acded5b29f25b95ecbb5142e659fe4c58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge un modèle 3D au format obj.  <a href="#acded5b29f25b95ecbb5142e659fe4c58">More...</a><br /></td></tr>
-<tr class="separator:acded5b29f25b95ecbb5142e659fe4c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a157c9773238e20a98a114e0adc8f8ab5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mesh.html">Mesh</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a157c9773238e20a98a114e0adc8f8ab5">loadPly</a> (const aiScene *scene, const QString &amp;fileName)</td></tr>
-<tr class="memdesc:a157c9773238e20a98a114e0adc8f8ab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge un modèle 3D au format ply.  <a href="#a157c9773238e20a98a114e0adc8f8ab5">More...</a><br /></td></tr>
-<tr class="separator:a157c9773238e20a98a114e0adc8f8ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b405216bda9e94d64aa8a308d718cb4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mesh.html">Mesh</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a7b405216bda9e94d64aa8a308d718cb4">loadMesh</a> (const aiMesh *scene)</td></tr>
+<tr class="memdesc:a7b405216bda9e94d64aa8a308d718cb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge un mesh.  <a href="#a7b405216bda9e94d64aa8a308d718cb4">More...</a><br /></td></tr>
+<tr class="separator:a7b405216bda9e94d64aa8a308d718cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a1949164d110452d2d7a44f5ccac34194"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a1949164d110452d2d7a44f5ccac34194">_vao</a></td></tr>
-<tr class="separator:a1949164d110452d2d7a44f5ccac34194"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad14f28c038a34b836a9ff7a9d601d281"><td class="memItemLeft" align="right" valign="top">std::list&lt; GLuint &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#ad14f28c038a34b836a9ff7a9d601d281">_vbo</a></td></tr>
-<tr class="separator:ad14f28c038a34b836a9ff7a9d601d281"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ba32034874ae52e5f69b13086ffbcf4"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a6ba32034874ae52e5f69b13086ffbcf4">_nbVertices</a></td></tr>
-<tr class="separator:a6ba32034874ae52e5f69b13086ffbcf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a608911b8dbff58ff769c708b8b7f2618"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_mesh_1_1_mesh_info.html">MeshInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a608911b8dbff58ff769c708b8b7f2618">_infos</a></td></tr>
+<tr class="separator:a608911b8dbff58ff769c708b8b7f2618"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
-Static Private Attributes</h2></td></tr>
-<tr class="memitem:aa97db2c6844e7517a8f8343fb5e3259e"><td class="memItemLeft" align="right" valign="top">static std::map&lt; const QString, <br class="typebreak" />
-std::pair&lt; GLuint, unsigned <br class="typebreak" />
-int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#aa97db2c6844e7517a8f8343fb5e3259e">_loadedModels</a></td></tr>
-<tr class="separator:aa97db2c6844e7517a8f8343fb5e3259e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a6db9d28bd448a131448276ee03de1e6d"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a6db9d28bd448a131448276ee03de1e6d">Node</a></td></tr>
+<tr class="separator:a6db9d28bd448a131448276ee03de1e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -245,7 +238,33 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructeur privé </p>
-<p>Utiliser <a class="el" href="class_mesh.html#ab930df3a124420d74b954948bb6bfbec" title="Charge un modèle 3D. ">load(const QString &amp; fileName, Scene * scene)</a> </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_mesh.html#ab930df3a124420d74b954948bb6bfbec" title="Charge un modèle 3D. ">load</a> </dd></dl>
+<p>Utiliser Node::load(const QString &amp; fileName, Scene * scene) </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_node.html#ac2140ddf8f06f8b5620e6743c945c482">Node::loadModel()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a713cb62e7078cfd627108a0b14f72c6f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mesh::Mesh </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_mesh.html">Mesh</a> &amp;&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructeur par recopie. </p>
 
 </div>
 </div>
@@ -294,7 +313,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab930df3a124420d74b954948bb6bfbec"></a>
+<a class="anchor" id="a7b405216bda9e94d64aa8a308d718cb4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -302,67 +321,11 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_mesh.html">Mesh</a> * Mesh::load </td>
+          <td class="memname"><a class="el" href="class_mesh.html">Mesh</a> * Mesh::loadMesh </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>fileName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">const aiMesh *&#160;</td>
+          <td class="paramname"><em>scene</em></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_scene.html">Scene</a> *&#160;</td>
-          <td class="paramname"><em>scene</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Charge un modèle 3D. </p>
-<p>Charge un modèle 3D et retourne le <a class="el" href="class_mesh.html" title="Charge un modèle 3D. ">Mesh</a> * associé</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fileName</td><td>nom du fichier à charger </td></tr>
-    <tr><td class="paramname">scene</td><td><a class="el" href="class_scene.html" title="Classe principale. ">Scene</a> à laquelle ajouté les matériaux (pas encore géré)</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section warning"><dt>Warning</dt><dd>Ne gère pas les matériaux contenus dans la scène</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>un pointeur sur <a class="el" href="class_mesh.html" title="Charge un modèle 3D. ">Mesh</a> ou NULL si une erreur s'est produite, peut aussi stoper le programme </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="acded5b29f25b95ecbb5142e659fe4c58"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_mesh.html">Mesh</a> * Mesh::loadObj </td>
-          <td>(</td>
-          <td class="paramtype">const aiScene *&#160;</td>
-          <td class="paramname"><em>scene</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>fileName</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -372,12 +335,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Charge un modèle 3D au format obj. </p>
-<dl class="section warning"><dt>Warning</dt><dd>Ne gère pas tout les obj, les groupes ne sont pas géré, seul le premier mesh est chargé, ne gère pas les matériaux</dd></dl>
+<p>Charge un mesh. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">scene</td><td>scène générée par assimp </td></tr>
-    <tr><td class="paramname">fileName</td><td>nom du fichier</td></tr>
+    <tr><td class="paramname">scene</td><td>scène générée par assimp</td></tr>
   </table>
   </dd>
 </dl>
@@ -385,7 +346,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a157c9773238e20a98a114e0adc8f8ab5"></a>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a class="anchor" id="a6db9d28bd448a131448276ee03de1e6d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -393,44 +355,20 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_mesh.html">Mesh</a> * Mesh::loadPly </td>
-          <td>(</td>
-          <td class="paramtype">const aiScene *&#160;</td>
-          <td class="paramname"><em>scene</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>fileName</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">friend class <a class="el" href="class_node.html">Node</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Charge un modèle 3D au format ply. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">scene</td><td>scène générée par assimp </td></tr>
-    <tr><td class="paramname">fileName</td><td>nom du fichier</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>un pointeur sur <a class="el" href="class_mesh.html" title="Charge un modèle 3D. ">Mesh</a>, NULL si erreur </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aa97db2c6844e7517a8f8343fb5e3259e"></a>
+<a class="anchor" id="a608911b8dbff58ff769c708b8b7f2618"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -438,28 +376,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt; const QString, std::pair&lt; GLuint, unsigned int &gt; &gt; Mesh::_loadedModels</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Ensemble des VAO des modèles chargés </p>
-
-</div>
-</div>
-<a class="anchor" id="a6ba32034874ae52e5f69b13086ffbcf4"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int Mesh::_nbVertices</td>
+          <td class="memname"><a class="el" href="struct_mesh_1_1_mesh_info.html">MeshInfo</a>* Mesh::_infos</td>
         </tr>
       </table>
   </td>
@@ -468,49 +385,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Nombre de vertices du model, tuilisé pour glDraw </p>
-
-</div>
-</div>
-<a class="anchor" id="a1949164d110452d2d7a44f5ccac34194"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">GLuint Mesh::_vao</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>VAO du model </p>
-
-</div>
-</div>
-<a class="anchor" id="ad14f28c038a34b836a9ff7a9d601d281"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::list&lt;GLuint&gt; Mesh::_vbo</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>VBOs du model </p>
 
 </div>
 </div>
@@ -521,7 +395,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 8 2014 15:23:20 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 13 2014 16:49:05 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

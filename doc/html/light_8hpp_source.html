@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -117,15 +117,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_light.html#a9fcc4b3ffdeedbe214ee8384c7d311b9">set</a>(GLenum type, <a class="code" href="structvec3.html">vec3</a> value);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_light.html#a985e67a0b88ba49ec8da5d5b205d06ed">setNumber</a>(<span class="keywordtype">char</span> num);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="structvec3.html">vec3</a> <span class="keyword">get</span>(GLenum type) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_light.html#a295eaf1ef5ebd30fa4997d4f7ccbb7e1">update</a>();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="structvec3.html">vec3</a> &amp; <span class="keyword">get</span>(GLenum type);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_light.html#a985e67a0b88ba49ec8da5d5b205d06ed">setNumber</a>(<span class="keywordtype">char</span> num);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_light.html#a295eaf1ef5ebd30fa4997d4f7ccbb7e1">update</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="class_light_html_a9fcc4b3ffdeedbe214ee8384c7d311b9"><div class="ttname"><a href="class_light.html#a9fcc4b3ffdeedbe214ee8384c7d311b9">Light::set</a></div><div class="ttdeci">void set(GLenum type, vec3 value)</div><div class="ttdoc">Met à jour une composante de la lumière. </div><div class="ttdef"><b>Definition:</b> light.cpp:23</div></div>
-<div class="ttc" id="class_light_html_a985e67a0b88ba49ec8da5d5b205d06ed"><div class="ttname"><a href="class_light.html#a985e67a0b88ba49ec8da5d5b205d06ed">Light::setNumber</a></div><div class="ttdeci">void setNumber(char num)</div><div class="ttdoc">Change le slot de la lumière. </div><div class="ttdef"><b>Definition:</b> light.cpp:45</div></div>
+<div class="ttc" id="class_light_html_a985e67a0b88ba49ec8da5d5b205d06ed"><div class="ttname"><a href="class_light.html#a985e67a0b88ba49ec8da5d5b205d06ed">Light::setNumber</a></div><div class="ttdeci">void setNumber(char num)</div><div class="ttdoc">Change le slot de la lumière. </div><div class="ttdef"><b>Definition:</b> light.cpp:84</div></div>
 <div class="ttc" id="class_light_html"><div class="ttname"><a href="class_light.html">Light</a></div><div class="ttdoc">Lumière pour la Scene. </div><div class="ttdef"><b>Definition:</b> light.hpp:15</div></div>
 <div class="ttc" id="structvec3_html"><div class="ttname"><a href="structvec3.html">vec3</a></div><div class="ttdef"><b>Definition:</b> helper.hpp:62</div></div>
 <div class="ttc" id="class_light_html_a3af8c823a869606782bd9e1872586b72"><div class="ttname"><a href="class_light.html#a3af8c823a869606782bd9e1872586b72">Light::_position</a></div><div class="ttdeci">vec3 _position</div><div class="ttdef"><b>Definition:</b> light.hpp:18</div></div>
@@ -136,12 +140,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_light_html_ab139b739498b75944c99203027332ad9"><div class="ttname"><a href="class_light.html#ab139b739498b75944c99203027332ad9">Light::_ambient</a></div><div class="ttdeci">static vec3 _ambient</div><div class="ttdef"><b>Definition:</b> light.hpp:19</div></div>
 <div class="ttc" id="helper_8hpp_html"><div class="ttname"><a href="helper_8hpp.html">helper.hpp</a></div></div>
 <div class="ttc" id="class_light_html_a32445f2054766ef532c29eb514b2599d"><div class="ttname"><a href="class_light.html#a32445f2054766ef532c29eb514b2599d">Light::_diffuse</a></div><div class="ttdeci">vec3 _diffuse</div><div class="ttdef"><b>Definition:</b> light.hpp:20</div></div>
-<div class="ttc" id="helper_8hpp_html_ac15f8149ada16c4afc8031679427a194"><div class="ttname"><a href="helper_8hpp.html#ac15f8149ada16c4afc8031679427a194">vec3</a></div><div class="ttdeci">struct vec3 vec3</div><div class="ttdef"><b>Definition:</b> helper.hpp:212</div></div>
-<div class="ttc" id="class_light_html_a295eaf1ef5ebd30fa4997d4f7ccbb7e1"><div class="ttname"><a href="class_light.html#a295eaf1ef5ebd30fa4997d4f7ccbb7e1">Light::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Met à jour le shader avec les infos de la lumière. </div><div class="ttdef"><b>Definition:</b> light.cpp:51</div></div>
+<div class="ttc" id="helper_8hpp_html_ac15f8149ada16c4afc8031679427a194"><div class="ttname"><a href="helper_8hpp.html#ac15f8149ada16c4afc8031679427a194">vec3</a></div><div class="ttdeci">struct vec3 vec3</div><div class="ttdef"><b>Definition:</b> helper.hpp:213</div></div>
+<div class="ttc" id="class_light_html_a295eaf1ef5ebd30fa4997d4f7ccbb7e1"><div class="ttname"><a href="class_light.html#a295eaf1ef5ebd30fa4997d4f7ccbb7e1">Light::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Met à jour le shader avec les infos de la lumière. </div><div class="ttdef"><b>Definition:</b> light.cpp:90</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 8 2014 15:23:20 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 13 2014 16:49:05 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

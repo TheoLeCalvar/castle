@@ -1,7 +1,7 @@
 var searchData=
 [
   ['genvao',['genVao',['../class_cube.html#a06f4c8632c223f8d8c34971e55a2dafc',1,'Cube::genVao()'],['../class_donuts.html#aff7950429cf43ee2898c6f1a6545b174',1,'Donuts::genVao()'],['../class_sphere.html#aacaf4cf9d7810dffd8c81c8c8298a95b',1,'Sphere::genVao()']]],
-  ['get',['get',['../class_material.html#a87434a8797bb6e758d764a4d7350ac38',1,'Material']]],
+  ['get',['get',['../class_light.html#ad0f5f939bc047e39c6deb2e264a5a2c1',1,'Light::get(GLenum type) const '],['../class_light.html#a74a0381255c1c7e002ac583401a46de0',1,'Light::get(GLenum type)'],['../class_material.html#a59a7e83068d2be75fda72bf509ccff3c',1,'Material::get(GLenum type) const '],['../class_material.html#a6821fc2db0ee20168bba0e23658b93ff',1,'Material::get(GLenum type)']]],
   ['getactiveshader',['getActiveShader',['../helper_8cpp.html#a9fec7631dd6ac8589e51d4d04ff4a272',1,'getActiveShader():&#160;helper.cpp'],['../helper_8hpp.html#a9fec7631dd6ac8589e51d4d04ff4a272',1,'getActiveShader():&#160;helper.cpp']]],
   ['getchild',['getChild',['../class_piece.html#aa77dc9ed8493cc22d1455c3eb2bec013',1,'Piece']]],
   ['getchildren',['getChildren',['../class_piece.html#a029823aa5135b356a9e4da14578db4e8',1,'Piece']]],

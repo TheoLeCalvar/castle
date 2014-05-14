@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -99,58 +99,67 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QDebug&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="objet_8hpp.html">objet.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="scene_8hpp.html">scene.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_mesh.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_mesh.html">Mesh</a>: <span class="keyword">public</span> <a class="code" href="class_objet.html">Objet</a></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_mesh.html#aa97db2c6844e7517a8f8343fb5e3259e">   30</a></span>&#160;    <span class="keyword">static</span> std::map&lt;const QString, std::pair&lt;GLuint, unsigned int&gt; &gt; <a class="code" href="class_mesh.html#aa97db2c6844e7517a8f8343fb5e3259e">_loadedModels</a>; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_mesh.html#a1949164d110452d2d7a44f5ccac34194">   32</a></span>&#160;    GLuint <a class="code" href="class_mesh.html#a1949164d110452d2d7a44f5ccac34194">_vao</a>; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_mesh.html#ad14f28c038a34b836a9ff7a9d601d281">   33</a></span>&#160;    std::list&lt;GLuint&gt; <a class="code" href="class_mesh.html#ad14f28c038a34b836a9ff7a9d601d281">_vbo</a>; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_mesh.html#a6ba32034874ae52e5f69b13086ffbcf4">   34</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_mesh.html#a6ba32034874ae52e5f69b13086ffbcf4">_nbVertices</a>; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_mesh.html#a2af137f1571af89172b9c102302c416b">Mesh</a>();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QMap&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QPair&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="objet_8hpp.html">objet.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="scene_8hpp.html">scene.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_mesh.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_mesh.html">Mesh</a>: <span class="keyword">public</span> <a class="code" href="class_objet.html">Objet</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_mesh.html#a6db9d28bd448a131448276ee03de1e6d">   29</a></span>&#160;<span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_node.html">Node</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="struct_mesh_1_1_mesh_info.html">   33</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">struct </span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="struct_mesh_1_1_mesh_info.html#af15096e0f0aa61fff7d8a1c223e547cf">   35</a></span>&#160;        GLuint <a class="code" href="struct_mesh_1_1_mesh_info.html#af15096e0f0aa61fff7d8a1c223e547cf">vao</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="struct_mesh_1_1_mesh_info.html#ad360b326ff7424dc9b6a3f6614af895d">   36</a></span>&#160;        QList&lt;GLuint&gt; <a class="code" href="struct_mesh_1_1_mesh_info.html#ad360b326ff7424dc9b6a3f6614af895d">vbos</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="struct_mesh_1_1_mesh_info.html#a8869e5c769b3895876e32bed8252dffd">   37</a></span>&#160;        GLuint <a class="code" href="struct_mesh_1_1_mesh_info.html#a8869e5c769b3895876e32bed8252dffd">nbVertices</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="struct_mesh_1_1_mesh_info.html#a8e32fc200e5ed8af32c409cac7b17342">   38</a></span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="struct_mesh_1_1_mesh_info.html#a8e32fc200e5ed8af32c409cac7b17342">nbReferences</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    } <a class="code" href="struct_mesh_1_1_mesh_info.html">MeshInfo</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_mesh.html#a608911b8dbff58ff769c708b8b7f2618">   41</a></span>&#160;    <a class="code" href="struct_mesh_1_1_mesh_info.html">MeshInfo</a> * <a class="code" href="class_mesh.html#a608911b8dbff58ff769c708b8b7f2618">_infos</a>;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_mesh.html">Mesh</a> * <a class="code" href="class_mesh.html#acded5b29f25b95ecbb5142e659fe4c58">loadObj</a>(<span class="keyword">const</span> aiScene* scene, <span class="keyword">const</span> QString &amp; fileName);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_mesh.html">Mesh</a> * <a class="code" href="class_mesh.html#a157c9773238e20a98a114e0adc8f8ab5">loadPly</a>(<span class="keyword">const</span> aiScene* scene, <span class="keyword">const</span> QString &amp; fileName);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="class_mesh.html#a2af137f1571af89172b9c102302c416b">Mesh</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="class_mesh.html#a2af137f1571af89172b9c102302c416b">Mesh</a>(<span class="keyword">const</span> <a class="code" href="class_mesh.html">Mesh</a> &amp; m);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_mesh.html">Mesh</a> * <a class="code" href="class_mesh.html#a7b405216bda9e94d64aa8a308d718cb4">loadMesh</a>(<span class="keyword">const</span> aiMesh* scene);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_mesh.html">Mesh</a> * <a class="code" href="class_mesh.html#ab930df3a124420d74b954948bb6bfbec">load</a>(<span class="keyword">const</span> QString &amp; fileName, <a class="code" href="class_scene.html">Scene</a> * scene);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">~Mesh</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a996a8668fa2ca7d95d6d10744c833bc8">draw</a>();</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">~Mesh</a>();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a996a8668fa2ca7d95d6d10744c833bc8">draw</a>();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_mesh_html_ab930df3a124420d74b954948bb6bfbec"><div class="ttname"><a href="class_mesh.html#ab930df3a124420d74b954948bb6bfbec">Mesh::load</a></div><div class="ttdeci">static Mesh * load(const QString &amp;fileName, Scene *scene)</div><div class="ttdoc">Charge un modèle 3D. </div><div class="ttdef"><b>Definition:</b> mesh.cpp:8</div></div>
-<div class="ttc" id="class_mesh_html_a157c9773238e20a98a114e0adc8f8ab5"><div class="ttname"><a href="class_mesh.html#a157c9773238e20a98a114e0adc8f8ab5">Mesh::loadPly</a></div><div class="ttdeci">static Mesh * loadPly(const aiScene *scene, const QString &amp;fileName)</div><div class="ttdoc">Charge un modèle 3D au format ply. </div><div class="ttdef"><b>Definition:</b> mesh.cpp:152</div></div>
-<div class="ttc" id="class_mesh_html"><div class="ttname"><a href="class_mesh.html">Mesh</a></div><div class="ttdoc">Charge un modèle 3D. </div><div class="ttdef"><b>Definition:</b> mesh.hpp:26</div></div>
-<div class="ttc" id="class_mesh_html_a996a8668fa2ca7d95d6d10744c833bc8"><div class="ttname"><a href="class_mesh.html#a996a8668fa2ca7d95d6d10744c833bc8">Mesh::draw</a></div><div class="ttdeci">void draw()</div><div class="ttdoc">Affiche le modèle. </div><div class="ttdef"><b>Definition:</b> mesh.cpp:239</div></div>
-<div class="ttc" id="class_mesh_html_ad14f28c038a34b836a9ff7a9d601d281"><div class="ttname"><a href="class_mesh.html#ad14f28c038a34b836a9ff7a9d601d281">Mesh::_vbo</a></div><div class="ttdeci">std::list&lt; GLuint &gt; _vbo</div><div class="ttdef"><b>Definition:</b> mesh.hpp:33</div></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_mesh_html"><div class="ttname"><a href="class_mesh.html">Mesh</a></div><div class="ttdoc">Charge un modèle 3D. </div><div class="ttdef"><b>Definition:</b> mesh.hpp:27</div></div>
+<div class="ttc" id="class_mesh_html_a996a8668fa2ca7d95d6d10744c833bc8"><div class="ttname"><a href="class_mesh.html#a996a8668fa2ca7d95d6d10744c833bc8">Mesh::draw</a></div><div class="ttdeci">void draw()</div><div class="ttdoc">Affiche le modèle. </div><div class="ttdef"><b>Definition:</b> mesh.cpp:142</div></div>
 <div class="ttc" id="objet_8hpp_html"><div class="ttname"><a href="objet_8hpp.html">objet.hpp</a></div></div>
-<div class="ttc" id="class_mesh_html_a2af137f1571af89172b9c102302c416b"><div class="ttname"><a href="class_mesh.html#a2af137f1571af89172b9c102302c416b">Mesh::Mesh</a></div><div class="ttdeci">Mesh()</div><div class="ttdoc">Constructeur privé </div><div class="ttdef"><b>Definition:</b> mesh.cpp:5</div></div>
-<div class="ttc" id="class_mesh_html_acded5b29f25b95ecbb5142e659fe4c58"><div class="ttname"><a href="class_mesh.html#acded5b29f25b95ecbb5142e659fe4c58">Mesh::loadObj</a></div><div class="ttdeci">static Mesh * loadObj(const aiScene *scene, const QString &amp;fileName)</div><div class="ttdoc">Charge un modèle 3D au format obj. </div><div class="ttdef"><b>Definition:</b> mesh.cpp:67</div></div>
-<div class="ttc" id="class_mesh_html_a5efe4da1a4c0971cfb037bd70304c303"><div class="ttname"><a href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">Mesh::~Mesh</a></div><div class="ttdeci">~Mesh()</div><div class="ttdoc">Destructeur. </div><div class="ttdef"><b>Definition:</b> mesh.cpp:236</div></div>
-<div class="ttc" id="class_mesh_html_a6ba32034874ae52e5f69b13086ffbcf4"><div class="ttname"><a href="class_mesh.html#a6ba32034874ae52e5f69b13086ffbcf4">Mesh::_nbVertices</a></div><div class="ttdeci">unsigned int _nbVertices</div><div class="ttdef"><b>Definition:</b> mesh.hpp:34</div></div>
-<div class="ttc" id="class_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdoc">Classe principale. </div><div class="ttdef"><b>Definition:</b> scene.hpp:42</div></div>
-<div class="ttc" id="class_mesh_html_aa97db2c6844e7517a8f8343fb5e3259e"><div class="ttname"><a href="class_mesh.html#aa97db2c6844e7517a8f8343fb5e3259e">Mesh::_loadedModels</a></div><div class="ttdeci">static std::map&lt; const QString, std::pair&lt; GLuint, unsigned int &gt; &gt; _loadedModels</div><div class="ttdef"><b>Definition:</b> mesh.hpp:30</div></div>
+<div class="ttc" id="class_node_html"><div class="ttname"><a href="class_node.html">Node</a></div><div class="ttdef"><b>Definition:</b> node.hpp:16</div></div>
+<div class="ttc" id="class_mesh_html_a7b405216bda9e94d64aa8a308d718cb4"><div class="ttname"><a href="class_mesh.html#a7b405216bda9e94d64aa8a308d718cb4">Mesh::loadMesh</a></div><div class="ttdeci">static Mesh * loadMesh(const aiMesh *scene)</div><div class="ttdoc">Charge un mesh. </div><div class="ttdef"><b>Definition:</b> mesh.cpp:13</div></div>
+<div class="ttc" id="struct_mesh_1_1_mesh_info_html"><div class="ttname"><a href="struct_mesh_1_1_mesh_info.html">Mesh::MeshInfo</a></div><div class="ttdef"><b>Definition:</b> mesh.hpp:33</div></div>
+<div class="ttc" id="class_mesh_html_a2af137f1571af89172b9c102302c416b"><div class="ttname"><a href="class_mesh.html#a2af137f1571af89172b9c102302c416b">Mesh::Mesh</a></div><div class="ttdeci">Mesh()</div><div class="ttdoc">Constructeur privé </div><div class="ttdef"><b>Definition:</b> mesh.cpp:4</div></div>
+<div class="ttc" id="struct_mesh_1_1_mesh_info_html_a8869e5c769b3895876e32bed8252dffd"><div class="ttname"><a href="struct_mesh_1_1_mesh_info.html#a8869e5c769b3895876e32bed8252dffd">Mesh::MeshInfo::nbVertices</a></div><div class="ttdeci">GLuint nbVertices</div><div class="ttdef"><b>Definition:</b> mesh.hpp:37</div></div>
+<div class="ttc" id="struct_mesh_1_1_mesh_info_html_a8e32fc200e5ed8af32c409cac7b17342"><div class="ttname"><a href="struct_mesh_1_1_mesh_info.html#a8e32fc200e5ed8af32c409cac7b17342">Mesh::MeshInfo::nbReferences</a></div><div class="ttdeci">unsigned int nbReferences</div><div class="ttdef"><b>Definition:</b> mesh.hpp:38</div></div>
+<div class="ttc" id="class_mesh_html_a608911b8dbff58ff769c708b8b7f2618"><div class="ttname"><a href="class_mesh.html#a608911b8dbff58ff769c708b8b7f2618">Mesh::_infos</a></div><div class="ttdeci">MeshInfo * _infos</div><div class="ttdef"><b>Definition:</b> mesh.hpp:41</div></div>
+<div class="ttc" id="class_mesh_html_a5efe4da1a4c0971cfb037bd70304c303"><div class="ttname"><a href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">Mesh::~Mesh</a></div><div class="ttdeci">~Mesh()</div><div class="ttdoc">Destructeur. </div><div class="ttdef"><b>Definition:</b> mesh.cpp:125</div></div>
 <div class="ttc" id="class_objet_html"><div class="ttname"><a href="class_objet.html">Objet</a></div><div class="ttdoc">Classe de base affichable. </div><div class="ttdef"><b>Definition:</b> objet.hpp:13</div></div>
+<div class="ttc" id="struct_mesh_1_1_mesh_info_html_af15096e0f0aa61fff7d8a1c223e547cf"><div class="ttname"><a href="struct_mesh_1_1_mesh_info.html#af15096e0f0aa61fff7d8a1c223e547cf">Mesh::MeshInfo::vao</a></div><div class="ttdeci">GLuint vao</div><div class="ttdef"><b>Definition:</b> mesh.hpp:35</div></div>
 <div class="ttc" id="scene_8hpp_html"><div class="ttname"><a href="scene_8hpp.html">scene.hpp</a></div></div>
-<div class="ttc" id="class_mesh_html_a1949164d110452d2d7a44f5ccac34194"><div class="ttname"><a href="class_mesh.html#a1949164d110452d2d7a44f5ccac34194">Mesh::_vao</a></div><div class="ttdeci">GLuint _vao</div><div class="ttdef"><b>Definition:</b> mesh.hpp:32</div></div>
+<div class="ttc" id="struct_mesh_1_1_mesh_info_html_ad360b326ff7424dc9b6a3f6614af895d"><div class="ttname"><a href="struct_mesh_1_1_mesh_info.html#ad360b326ff7424dc9b6a3f6614af895d">Mesh::MeshInfo::vbos</a></div><div class="ttdeci">QList&lt; GLuint &gt; vbos</div><div class="ttdef"><b>Definition:</b> mesh.hpp:36</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 8 2014 15:23:20 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 13 2014 16:49:05 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

@@ -71,6 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>All</span></a></li>
       <li><a href="functions_func.html"><span>Functions</span></a></li>
       <li class="current"><a href="functions_vars.html"><span>Variables</span></a></li>
+      <li><a href="functions_rela.html"><span>Related&#160;Functions</span></a></li>
     </ul>
   </div>
   <div id="navrow4" class="tabs3">
@@ -87,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -126,11 +127,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_camera.html#ad80a82cbc81e6d8ba04c7cc1ac7ba0d7">Camera</a>
 </li>
 <li>_children
-: <a class="el" href="class_piece.html#a3ba9c0e4bdea96982145e7ae693f5c2a">Piece</a>
+: <a class="el" href="class_node.html#aac0c3b4b1f41b26ec5a22d77f067ec5b">Node</a>
+, <a class="el" href="class_piece.html#ac80078a597e7edcd297895bab25731e6">Piece</a>
 </li>
 <li>_diffuse
 : <a class="el" href="class_light.html#a32445f2054766ef532c29eb514b2599d">Light</a>
 , <a class="el" href="class_material.html#ac6d5a21fb938c37d981ff904baa139ce">Material</a>
+</li>
+<li>_diffuse_texture
+: <a class="el" href="class_material.html#a522d07896a1363e987d09d8e4b66c156">Material</a>
 </li>
 <li>_dimensions
 : <a class="el" href="class_piece.html#a47a3458694b894041bd95a1666c9bf3d">Piece</a>
@@ -156,6 +161,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>_haut_presse
 : <a class="el" href="class_camera.html#a43b59b53cb182906d56e6e4d2c31139c">Camera</a>
 </li>
+<li>_infos
+: <a class="el" href="class_mesh.html#a608911b8dbff58ff769c708b8b7f2618">Mesh</a>
+</li>
 <li>_lightNum
 : <a class="el" href="class_light.html#a072b63fbb9a1269db4241e09db7588b1">Light</a>
 </li>
@@ -163,13 +171,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_scene.html#a0ef33120973d6afc1754d2154d7c338a">Scene</a>
 </li>
 <li>_loadedModels
-: <a class="el" href="class_mesh.html#aa97db2c6844e7517a8f8343fb5e3259e">Mesh</a>
+: <a class="el" href="class_node.html#a082b475f17808deeb73c07d311f45073">Node</a>
 </li>
 <li>_mat
 : <a class="el" href="class_objet.html#aefea82be8c63504190ac63d5e44ff61a">Objet</a>
 </li>
 <li>_materials
 : <a class="el" href="class_scene.html#a5b96810fdeb47632d5ce6c2c47f41691">Scene</a>
+</li>
+<li>_meshs
+: <a class="el" href="class_node.html#aad5e459a1ed03d6e09ad7054f2014f5a">Node</a>
 </li>
 <li>_model
 : <a class="el" href="class_objet.html#a1963cca59f62c7a6f69a9c2c461ad9ea">Objet</a>
@@ -178,8 +189,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_objet.html#ac19f568a794dd9387386ee71914a868e">Objet</a>
 </li>
 <li>_nbVertices
-: <a class="el" href="class_mesh.html#a6ba32034874ae52e5f69b13086ffbcf4">Mesh</a>
-, <a class="el" href="class_plan.html#af3d9228c1b7dc91c0cb00d4c8fa5a550">Plan</a>
+: <a class="el" href="class_plan.html#af3d9228c1b7dc91c0cb00d4c8fa5a550">Plan</a>
+</li>
+<li>_normal_texture
+: <a class="el" href="class_material.html#add78622071d92485dd37dbd1934453b3">Material</a>
 </li>
 <li>_parent
 : <a class="el" href="class_objet.html#a91c5a50011c3fe9233a645aa767a275f">Objet</a>
@@ -216,8 +229,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_light.html#a36414dc1e8a75b36652bc5a12b2ea43d">Light</a>
 , <a class="el" href="class_material.html#aa86eef19901a701e22ef3ddd7b9c8ec2">Material</a>
 </li>
-<li>_textures
-: <a class="el" href="class_material.html#a0cccab80c654d9506bd1fff36ee47bd6">Material</a>
+<li>_specular_texture
+: <a class="el" href="class_material.html#a15711d6d794b6ea122e38738fa73ba8a">Material</a>
 </li>
 <li>_texturesLoaded
 : <a class="el" href="class_material.html#a9ccbb6b22b224284050b4d6c172829fc">Material</a>
@@ -231,12 +244,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>_vao
 : <a class="el" href="class_cube.html#ae474ca8293842dd9ac83a8c606991eac">Cube</a>
 , <a class="el" href="class_donuts.html#a659c70b043ddc2ebcdc64bcb58c1e621">Donuts</a>
-, <a class="el" href="class_mesh.html#a1949164d110452d2d7a44f5ccac34194">Mesh</a>
 , <a class="el" href="class_plan.html#ab4efe8532b73dd0efca80000afb0027d">Plan</a>
 , <a class="el" href="class_sphere.html#a18d31b1d011d5c5e452b9b9b6f54b10f">Sphere</a>
-</li>
-<li>_vbo
-: <a class="el" href="class_mesh.html#ad14f28c038a34b836a9ff7a9d601d281">Mesh</a>
 </li>
 <li>_vbo_indices
 : <a class="el" href="class_plan.html#ad8791ad67d66ac1b24792dc72ec00c64">Plan</a>
@@ -286,9 +295,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
+<li>nbReferences
+: <a class="el" href="struct_mesh_1_1_mesh_info.html#a8e32fc200e5ed8af32c409cac7b17342">Mesh::MeshInfo</a>
+</li>
 <li>nbvertex
 : <a class="el" href="class_donuts.html#aac0118d276a512d287a9bc1f4c7d249d">Donuts</a>
 , <a class="el" href="class_sphere.html#a4e8e9f5ba889e700b7244bc70232a271">Sphere</a>
+</li>
+<li>nbVertices
+: <a class="el" href="struct_mesh_1_1_mesh_info.html#a8869e5c769b3895876e32bed8252dffd">Mesh::MeshInfo</a>
 </li>
 </ul>
 
@@ -299,11 +314,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="structvec3.html#ad09608040a1a4e4d026086eff69725d2">vec3</a>
 , <a class="el" href="structvec4.html#a08f56ae363c0cabebd3fe446ef28e652">vec4</a>
 </li>
+<li>vao
+: <a class="el" href="struct_mesh_1_1_mesh_info.html#af15096e0f0aa61fff7d8a1c223e547cf">Mesh::MeshInfo</a>
+</li>
+<li>vbos
+: <a class="el" href="struct_mesh_1_1_mesh_info.html#ad360b326ff7424dc9b6a3f6614af895d">Mesh::MeshInfo</a>
+</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 8 2014 15:23:20 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 13 2014 16:49:05 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

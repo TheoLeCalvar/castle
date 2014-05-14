@@ -1,5 +1,6 @@
 #include "scene.hpp"
 #include "mesh.hpp"
+#include "node.hpp"
 
 Scene::Scene()
 {
@@ -277,6 +278,8 @@ void 	Scene::loadMaterials(const QDomElement & dom)
 
 		material = material.nextSiblingElement("material");
 	}
+
+	addMaterial("neutre", new Material());
 }
 
 void 	Scene::loadLights(const QDomElement & dom)
@@ -505,27 +508,29 @@ void 	Scene::loadPieces(const QDomElement & dom)
 				yRot = objet.attribute("Yrot", "0").toFloat();
 				zRot = objet.attribute("Zrot", "0").toFloat();
 				QString modeleObjet = objet.attribute("modele");
-				QString nomObjet = objets.attribute("nom", nom + "_" + modeleObjet);
+				QString nomObjet = objet.attribute("nom", nom + "_" + modeleObjet);
 				QString matObjet = objet.attribute("mat", "");
 				QString shaderObjet = objet.attribute("shader", "");
 
 
-				QList<Mesh *> meshs = Mesh::loadMesh(modeleObjet, this);
+				Node * node = Node::loadModel(modeleObjet, this);
 
-				if (meshs.empty())
+				if (!node)
 				{
 					qFatal("Stop, erreur de chargement");
 				}
-				for(auto mesh : meshs)
+
+				node->parent(pieceTmp);
+				node->rotation(vec3(xRot, yRot, zRot));
+
+				if (matObjet != "")
 				{
-					mesh->parent(pieceTmp);
-					mesh->rotation(vec3(xRot, yRot, zRot));
-					if (matObjet != "")
-					{
-						mesh->material(getMaterial(matObjet));
-					}
-					mesh->shaderId(getShader(shaderObjet));
+					node->material(getMaterial(matObjet));
 				}
+
+				node->shaderId(getShader(shaderObjet));
+				node->name(nomObjet);
+				
 
 
 				QDomElement position = objet.firstChildElement("position");
@@ -538,12 +543,11 @@ void 	Scene::loadPieces(const QDomElement & dom)
 					y = position.attribute("y", "0").toFloat();
 					z = position.attribute("z", "0").toFloat();
 
-					for(auto mesh: meshs)
-						mesh->position(vec3(x, y, z));
+					node->position(vec3(x, y, z));
 				}
 
-				for(auto mesh: meshs)
-					pieceTmp->addChild(mesh);
+
+				pieceTmp->addChild(nomObjet ,node);
 
 				objet = objet.nextSiblingElement("objet");
 			}

@@ -7,6 +7,12 @@ Objet::Objet(const QString & name, Material * mat, vec3 rotation, vec3 position,
 	updateModel();
 }
 
+Objet::Objet(const Objet & o)
+		:_parent(o._parent), _mat(o._mat), _name(o._name), _rotation(o._rotation), _position(o._position), _model(o._model), _shaderId(o._shaderId)
+{
+	initializeOpenGLFunctions(); 
+}
+
 void 	Objet::draw()
 {
 

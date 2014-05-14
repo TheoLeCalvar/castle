@@ -71,6 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>All</span></a></li>
       <li class="current"><a href="functions_func.html"><span>Functions</span></a></li>
       <li><a href="functions_vars.html"><span>Variables</span></a></li>
+      <li><a href="functions_rela.html"><span>Related&#160;Functions</span></a></li>
     </ul>
   </div>
   <div id="navrow4" class="tabs3">
@@ -101,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -122,23 +123,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Light()
 : <a class="el" href="class_light.html#a661826269046b9f5d0e7eb8415e6fd12">Light</a>
 </li>
-<li>load()
-: <a class="el" href="class_mesh.html#ab930df3a124420d74b954948bb6bfbec">Mesh</a>
-</li>
 <li>loadLights()
 : <a class="el" href="class_scene.html#a34446952ed460f5a66a90649d6f743ec">Scene</a>
+</li>
+<li>loadMaterial()
+: <a class="el" href="class_node.html#a0684a35524cc1e276bfefdd28cd452cf">Node</a>
 </li>
 <li>loadMaterials()
 : <a class="el" href="class_scene.html#a8fe39b5221775362f28c78129292e162">Scene</a>
 </li>
-<li>loadObj()
-: <a class="el" href="class_mesh.html#acded5b29f25b95ecbb5142e659fe4c58">Mesh</a>
+<li>loadMesh()
+: <a class="el" href="class_mesh.html#a7b405216bda9e94d64aa8a308d718cb4">Mesh</a>
+</li>
+<li>loadModel()
+: <a class="el" href="class_node.html#ac2140ddf8f06f8b5620e6743c945c482">Node</a>
+</li>
+<li>loadNode()
+: <a class="el" href="class_node.html#acf6db74c5840b203f4eee1239539ce31">Node</a>
 </li>
 <li>loadPieces()
 : <a class="el" href="class_scene.html#aa6d40bab1b160afc7bb84841d056a07d">Scene</a>
-</li>
-<li>loadPly()
-: <a class="el" href="class_mesh.html#a157c9773238e20a98a114e0adc8f8ab5">Mesh</a>
 </li>
 <li>loadShaders()
 : <a class="el" href="class_scene.html#a1deb5bb022836f4b585c8580246b26cb">Scene</a>
@@ -147,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 8 2014 15:23:20 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 13 2014 16:49:05 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>
