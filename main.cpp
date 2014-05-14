@@ -18,11 +18,26 @@ int main(int argc, char **argv)
 		dir.cd("Resources");
 	#endif
 
-
-        MainWindow window;
-        window.show();
-        return app.exec();
+	QDir::setCurrent(dir.absolutePath());
 
 
+	if(argc < 2)
+	{
+		QGLFormat f;
 
+		f.setVersion(3, 2);
+		f.setProfile(QGLFormat::CoreProfile);
+		
+		MyOpenGLWidget w(f);
+		w.show();
+
+		return app.exec();
+	}
+	else
+	{
+		MainWindow w;
+		w.show();
+
+		return app.exec();
+	}
 }
