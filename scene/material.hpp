@@ -101,6 +101,7 @@ public:
 	 */
 	vec3 get(GLenum type) const;
 
+
 	/**
 	 * @brief Récupère la valeur d'un champ
 	 * 

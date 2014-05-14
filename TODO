@@ -3,8 +3,6 @@ TODO:
 Objets primitifs :
 	pyramide à base carrée
 	pyramide à base triangulaire
-	carré "smooth" avec normales au sommet "propre"
-	si tu as le courage, sphère et tore
 
 Objets non primitifs:
 	charger l'obj associé à partir
@@ -13,6 +11,9 @@ Objets non primitifs:
 
 Interface:
 	une interface Qt jolie
+<<<<<<< HEAD
 
 Collision:
 	trouver objets proches, les stockers et ensuite calculer les collisions sur ces objets proches
+=======
+>>>>>>> sas

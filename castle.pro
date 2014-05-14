@@ -27,6 +27,7 @@ HEADERS += camera.hpp \
            MyOpenGLWidget.hpp \
 #           objets/cube.hpp \
 #           objets/donuts.hpp \
+           mainwindows.hpp \
            objets/mesh.hpp \
            objets/node.hpp \
            objets/plan.hpp \
@@ -35,7 +36,9 @@ HEADERS += camera.hpp \
            scene/light.hpp \
            scene/material.hpp \
            scene/piece.hpp \
-           scene/scene.hpp 
+           scene/scene.hpp \ 
+    mondock.hpp
+
 
            
 SOURCES += camera.cpp \
@@ -43,6 +46,7 @@ SOURCES += camera.cpp \
            MyOpenGLWidget.cpp \
 #           objets/cube.cpp \
 #           objets/donuts.cpp \
+           mainwindows.cpp \
            objets/mesh.cpp \
            objets/node.cpp \
            objets/objet.cpp \
@@ -52,4 +56,6 @@ SOURCES += camera.cpp \
            scene/material.cpp \
            scene/piece.cpp \
            scene/scene.cpp \
-           main.cpp
+           main.cpp \
+    mondock.cpp
+

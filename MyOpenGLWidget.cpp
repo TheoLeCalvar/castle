@@ -14,6 +14,7 @@ MyOpenGLWidget::MyOpenGLWidget(const QGLFormat & format, QWidget * parent, const
 
      setFocusPolicy(Qt::StrongFocus);
      setMouseTracking(true);
+
 }
 
 MyOpenGLWidget::~MyOpenGLWidget()
@@ -74,6 +75,7 @@ void	MyOpenGLWidget::initializeGL()
     _scene = new Scene("scene.xml");
 
 
+
 }
 
 
@@ -91,6 +93,7 @@ void	MyOpenGLWidget::paintGL()
     openGL_check_error();
 
     setWindowTitle(QString("Castle | %1 fps | %2 ms").arg(1 / (timer.elapsed() / 1000.0)).arg(timer.elapsed()));
+
 }
 
 void	MyOpenGLWidget::resizeGL(int width, int height)
@@ -114,9 +117,6 @@ void    MyOpenGLWidget::keyPressEvent(QKeyEvent * event)
 
     switch (event->key())
     {
-        case Qt::Key_Escape:
-            close();
-            goto action;
 
         case Qt::Key_Up:
         case Qt::Key_Z:
@@ -148,34 +148,6 @@ void    MyOpenGLWidget::keyPressEvent(QKeyEvent * event)
             _scene->_camera->_bas_presse = true;
             goto action;
 
-        case Qt::Key_F1:
-        {
-            static bool wire = true;
-
-            glPolygonMode(GL_FRONT_AND_BACK, wire ? GL_LINE : GL_FILL);
-
-            wire = !wire;
-
-            goto action;
-        }
-
-        case Qt::Key_F2:
-        {
-            static bool cullface = false;
-
-            if (cullface)  
-            {
-                glEnable(GL_CULL_FACE);
-            }
-            else
-            {
-                glDisable(GL_CULL_FACE);
-            }
-
-            cullface = !cullface;
-
-            goto action;
-        }
 
         case Qt::Key_F3:
             qDebug() << _scene->getMaterialsNames();

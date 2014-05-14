@@ -132,6 +132,7 @@ vec3& Material::get(GLenum type)
 
 		case GL_EMISSION:
 			return _emissive;
+
 	}
 }
 
