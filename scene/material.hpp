@@ -34,11 +34,11 @@
 class Material: protected QOpenGLFunctions_3_2_Core
 {
 private:
-	vec4 			_ambient;
-	vec4			_diffuse;
-	vec4			_specular;
+	vec3 			_ambient;
+	vec3			_diffuse;
+	vec3			_specular;
 	float			_shininess;
-	vec4			_emissive;
+	vec3			_emissive;
 	QOpenGLTexture* _diffuse_texture;
 	QOpenGLTexture* _specular_texture;
 	QOpenGLTexture* _normal_texture;
@@ -54,11 +54,11 @@ public:
 	 * @warning composante emissive pas encore gérée
 	 */
 	Material(
-		vec4 	ambient = vec4(0.2, 0.2, 0.2, 1.0),
-		vec4 	diffuse = vec4(0.8, 0.8, 0.8, 1.0),
-		vec4 	specular = vec4(0.8, 0.8, 0.8, 1.0),
+		vec3 	ambient = vec3(0.2, 0.2, 0.2),
+		vec3 	diffuse = vec3(0.8, 0.8, 0.8),
+		vec3 	specular = vec3(0.8, 0.8, 0.8),
 		float 	shininess = 0.0f,
-		vec4 	emissive = vec4(0.0, 0.0, 0.0, 1.0)
+		vec3 	emissive = vec3(0.0, 0.0, 0.0)
 	);
 
 	/**
@@ -97,17 +97,17 @@ public:
 	 * @brief Récupère la valeur d'un champ
 	 * 
 	 * @param type doit être parmis GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR
-	 * @return dans le cas de GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR retourne un vec4 correspondant à la composante, retourne vec4() autrement
+	 * @return dans le cas de GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR retourne un vec3 correspondant à la composante, retourne vec4() autrement
 	 */
-	vec4 get(GLenum type) const;
+	vec3 get(GLenum type) const;
 
 	/**
 	 * @brief Récupère la valeur d'un champ
 	 * 
 	 * @param type doit être parmis GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR
-	 * @return dans le cas de GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR retourne un vec4 correspondant à la composante, retourne vec4() autrement
+	 * @return dans le cas de GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR retourne un vec3 correspondant à la composante, retourne vec4() autrement
 	 */
-	vec4 &get(GLenum type);
+	vec3 &get(GLenum type);
 
 	/**
 	 * @brief Valeur du shininess

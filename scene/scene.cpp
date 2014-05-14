@@ -291,48 +291,60 @@ void 	Scene::loadLights(const QDomElement & dom)
 		Light * tmp = new Light;
 		QString nom = light.attribute("nom"), mat = light.attribute("mat");
 		int lightNum = light.attribute("num", "0").toInt();
-		Material * res = _materials[mat];
 
 		tmp->setNumber(lightNum);
 		
 		qDebug() << light.attribute("nom");
 
-		if (res)
+		if (mat != "")
 		{
-			tmp->set(GL_AMBIENT, res->get(GL_AMBIENT));
-			tmp->set(GL_DIFFUSE, res->get(GL_DIFFUSE));
-			tmp->set(GL_SPECULAR, res->get(GL_SPECULAR));
-		}
+			Material * res = _materials.value(mat);
 
-
-		QDomNode var = light.firstChild();
-
-
-		while(!var.isNull())
-		{
-			float x, y, z;
-			QString repere, path;
-
-			if (var.isElement())
-			{	
-				QDomElement var2 = var.toElement();
-
-				if (var2.tagName() == "position")
-				{
-					x = var2.attribute("x", "0").toFloat();
-					y = var2.attribute("y", "0").toFloat();
-					z = var2.attribute("z", "0").toFloat();
-					repere = var2.attribute("repere", "world");
-
-					qDebug() << "Repere a gerer " << x << y << z;
-
-					tmp->set(GL_POSITION, vec3(x, y, z));
-
-					break;
-				}
+			if(res)
+			{
+				tmp->set(GL_AMBIENT, res->get(GL_AMBIENT));
+				tmp->set(GL_DIFFUSE, res->get(GL_DIFFUSE));
+				tmp->set(GL_SPECULAR, res->get(GL_SPECULAR));
 			}
-			var = var.nextSibling();
 		}
+		else
+		{
+			QDomElement ambient = light.firstChildElement("ambient");
+			QDomElement diffuse = light.firstChildElement("diffuse");
+			QDomElement specular = light.firstChildElement("specular");
+
+			vec3 vAmbient(	
+				ambient.attribute("r", "0").toFloat(),
+				ambient.attribute("g", "0").toFloat(),
+				ambient.attribute("b", "0").toFloat());
+
+			vec3 vDiffuse(
+				diffuse.attribute("r", "0").toFloat(),
+				diffuse.attribute("g", "0").toFloat(),
+				diffuse.attribute("b", "0").toFloat());
+
+			vec3 vSpecular(
+				specular.attribute("r", "0").toFloat(),
+				specular.attribute("g", "0").toFloat(),
+				specular.attribute("b", "0").toFloat());
+
+			tmp->set(GL_DIFFUSE, vDiffuse);
+			tmp->set(GL_SPECULAR, vSpecular);
+			tmp->set(GL_AMBIENT, vAmbient);
+
+		}
+
+		float x, y, z;
+		QDomElement position = light.firstChildElement("position");
+
+		x = position.attribute("x", "0").toFloat();
+		y = position.attribute("y", "0").toFloat();
+		z = position.attribute("z", "0").toFloat();
+
+		qDebug() << x << y << z;
+
+		tmp->set(GL_POSITION, vec3(x, y, z));
+
 
 		addLight(nom, tmp);
 

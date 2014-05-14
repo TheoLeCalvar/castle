@@ -5,9 +5,9 @@
 std::map<const QString, QOpenGLTexture *> Material::_texturesLoaded;
 
 Material::Material(
-		vec4 ambient, vec4 diffuse, vec4 specular, 
+		vec3 ambient, vec3 diffuse, vec3 specular, 
 		float shininess, 
-		vec4 emissive
+		vec3 emissive
 		):
 	_ambient(ambient), _diffuse(diffuse), _specular(specular), _shininess(shininess), _emissive(emissive), _diffuse_texture(NULL), _specular_texture(NULL), _normal_texture(NULL)
 {
@@ -96,7 +96,7 @@ void Material::addTexture(const QString & texFile, unsigned char type)
 	}	
 }
 
-vec4 Material::get(GLenum type) const
+vec3 Material::get(GLenum type) const
 {
 	switch (type)
 	{
@@ -117,7 +117,7 @@ vec4 Material::get(GLenum type) const
 	}
 }
 
-vec4& Material::get(GLenum type)
+vec3& Material::get(GLenum type)
 {
 	switch (type)
 	{
