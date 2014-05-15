@@ -22,9 +22,6 @@ protected:
 
 	GLuint 		_shaderId;
 
-	vec3 		_hitboxMin;
-	vec3		_hitboxMax;
-
 public:
 	/**
 	 * @brief Constructeur
@@ -132,8 +129,6 @@ public:
 	 * @param n nouveau nom de l'Objet
 	 */
 	void 			name(const QString & n){_name = n;}
-
-	bool			collide(vec3 position, vec3 direction) const;
 
 private:
 	/**
