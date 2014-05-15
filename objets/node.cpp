@@ -233,3 +233,37 @@ void Node::draw()
 
 	popMatrix();
 }
+
+
+QStringList Node::getChildrenNames() const
+{
+	return _children.keys();
+}
+
+QStringList Node::getMeshNames() const
+{
+	QStringList l;
+
+	for(auto i : _meshs)
+		l << i->name();
+
+	return l;
+}
+
+Node * Node::getChild(const QString & name)
+{
+	return _children.value(name);
+}
+
+Mesh * Node::getMesh(const QString & name)
+{
+	for(Mesh * i : _meshs)
+	{
+		if (i->name() == name)
+		{
+			return i;
+		}
+	}
+
+	return NULL;
+}

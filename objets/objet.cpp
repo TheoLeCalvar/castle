@@ -1,14 +1,14 @@
 #include "objet.hpp"
 
 Objet::Objet(const QString & name, Material * mat, vec3 rotation, vec3 position, Objet * parent)
-		:_parent(parent), _mat(mat), _name(name), _rotation(rotation), _position(position), _model(1), _shaderId(0)
+		:_parent(parent), _mat(mat), _name(name), _rotation(rotation), _position(position), _model(1), _shaderId(0), _hitboxMin(0), _hitboxMax(0)
 {
 	initializeOpenGLFunctions(); 
 	updateModel();
 }
 
 Objet::Objet(const Objet & o)
-		:_parent(o._parent), _mat(o._mat), _name(o._name), _rotation(o._rotation), _position(o._position), _model(o._model), _shaderId(o._shaderId)
+		:_parent(o._parent), _mat(o._mat), _name(o._name), _rotation(o._rotation), _position(o._position), _model(o._model), _shaderId(o._shaderId), _hitboxMin(o._hitboxMin), _hitboxMax(o._hitboxMax)
 {
 	initializeOpenGLFunctions(); 
 }
@@ -71,4 +71,9 @@ void 	Objet::updateModel()
 	_model = Zrotate(_model, _rotation[2]);
 
 	_model = translate(_model, _position);
+}
+
+bool	Objet::collide(vec3 position, vec3 direction) const
+{
+	
 }

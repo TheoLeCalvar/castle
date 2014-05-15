@@ -8,11 +8,11 @@ Scene::Scene()
 	_camera = new Camera();
 }
 
-Scene::Scene(const QString & fileName):
-	_xml("scene")
+Scene::Scene(const QString & fileName)
 {
 	initializeOpenGLFunctions();
 	QFile file;
+	QDomDocument xml;
 	file.setFileName(fileName);
 
 	QDomElement root; 
@@ -23,12 +23,12 @@ Scene::Scene(const QString & fileName):
 	}
 
 
-	_xml.setContent(&file);
+	xml.setContent(&file);
 
 	file.close();
 
 
-	root = _xml.documentElement();
+	root = xml.documentElement();
 
 	QDomElement materiaux, lumieres, camera, pieces, shaders;
 

@@ -38,9 +38,6 @@ class Node;
 class Scene: protected QOpenGLFunctions_3_2_Core
 {
 private:
-	QDomDocument 										_xml; /**< Encore utile ? */
-
-
 	QMap<QString, Piece *>						_pieces; /**< Map des pièces constituant la scène, identifiées par leur nom, doit être unique */ 
 	QMap<QString, Light *> 						_lights; /**< Map des lumières constituant la scène, identifiées par leur nom, doit être unique */
 	QMap<QString, Material *>					_materials; /**< Map des matériaux constituant la scène, identifiés par leur nom, doit être unique */
@@ -181,6 +178,7 @@ public:
 	 * 
 	 * @param fileName nom du fichier dans lequel sauvegarde
 	 * @warning Pas encore implémenté
+	 * @todo  A implémenter
 	 */
 	void 		saveAsXML(const QString & fileName);
 
