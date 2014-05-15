@@ -340,7 +340,6 @@ void 	Scene::loadLights(const QDomElement & dom)
 		y = position.attribute("y", "0").toFloat();
 		z = position.attribute("z", "0").toFloat();
 
-		qDebug() << x << y << z;
 
 		tmp->set(GL_POSITION, vec3(x, y, z));
 

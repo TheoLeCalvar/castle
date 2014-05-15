@@ -29,12 +29,16 @@ Mesh* Mesh::loadMesh(const aiMesh * mesh)
 
 
 
-
-	qDebug() << "Nombre de vertices : " <<  info->nbVertices; 
+	#ifdef DEBUG
+		qDebug() << "Nombre de vertices : " <<  info->nbVertices; 
+	#endif
 
 	if (mesh->HasPositions())
 	{
-		qDebug() << "Y'a des vertices !";
+		#ifdef DEBUG
+			qDebug() << "Y'a des vertices !";
+		#endif
+
 		for (unsigned int i = 0; i < info->nbVertices; ++i)
 		{
 			const aiVector3D* vp = &(mesh->mVertices[i]);
@@ -47,7 +51,10 @@ Mesh* Mesh::loadMesh(const aiMesh * mesh)
 
 	if (mesh->HasNormals())	
 	{
-		qDebug() << "Y'a des normales !";
+		#ifdef DEBUG
+			qDebug() << "Y'a des normales !";
+		#endif
+
 		for (unsigned int i = 0; i < info->nbVertices; ++i)
 		{
 			const aiVector3D* vp = &(mesh->mNormals[i]);
@@ -60,7 +67,9 @@ Mesh* Mesh::loadMesh(const aiMesh * mesh)
 
 	if (mesh->HasTextureCoords(0))
 	{
-		qDebug() << "Texture !";
+		#ifdef DEBUG
+			qDebug() << "Coordonées de textures !";
+		#endif
 
 		for (unsigned int i = 0; i < info->nbVertices; ++i)
 		{
