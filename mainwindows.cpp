@@ -331,6 +331,21 @@ void MainWindow::createToolBar()
             fileToolBar->addSeparator();
 }
 
+void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
+        {
+        QStringList *listeelement = new QStringList(a->getChildrenNames());
+
+        for (int i ;i<listeelement->size();i++)
+            {
+            QStandardItem * itemtmp= new QStandardItem(listeelement->at(i));
+            b->appendRow(itemtmp);
+            Node *nodetmp = a->getChild(listeelement->at(i));
+            affichagerecnoderestant(nodetmp, itemtmp);
+            }
+
+        }
+
+
 
 //__slots_________________________________//
 
@@ -426,6 +441,8 @@ void MainWindow::createToolBar()
                                 {
                                    material->appendRow(new QStandardItem(listtempmaterial.at(i)));
                                 }
+                    dock_light->_itemmaterial=material;
+
                     //objet
                     objet = new QStandardItem("Objet");
                     modele->appendRow(objet);
@@ -440,10 +457,35 @@ void MainWindow::createToolBar()
 
                                   for(int j=0 ; j < listobjfils.size();j++)
                                           {
+                                           Objet * objetfils = objtemp->getChild(listobjfils.at(j));
+
                                            QStandardItem * itemfils =  new QStandardItem(listobjfils.at(j));
                                            item->appendRow(itemfils); ;
-                                          }
-                                }
+
+
+                                           //recherche des item petits fils
+                                           Node* nodepetitfils;
+                                           if ( (nodepetitfils = dynamic_cast<Node*> (objetfils)))
+                                           {
+                                              QStringList listobjpetitfils = nodepetitfils->getChildrenNames();
+
+                                                    for(int k=0 ; k<listobjpetitfils.size();k++)
+                                                        {
+                                                        QStandardItem * itempetitfils =  new QStandardItem(listobjpetitfils.at(k));
+                                                        itemfils->appendRow(itempetitfils);
+
+                                                            //traitement item encore plus jeune que petit fils
+                                                            affichagerecnoderestant((nodepetitfils->getChild(listobjpetitfils.at(k))),itempetitfils);
+                                                            //fin traitement item encore plus jeune que petit fils
+
+                                                        }//fin for petit fils
+                                          }//fin if
+
+                                }//fin for fils
+                             }//fin for pere
+
+                     dock_light->_itempiece=objet;//afection de la liste des objet dans le dock d'edition
+
                     //shader
                     shader = new QStandardItem("Shader");
                     modele->appendRow(shader);

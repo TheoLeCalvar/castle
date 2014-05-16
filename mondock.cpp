@@ -25,10 +25,19 @@ Mondock:: ~Mondock(){
                      {
                        traitementlumiere();
                      }
+         //si parent = material
          if (elementSelectionneParent.toString()=="Material")
                      {
                        traitementmaterial();
                      }
+        //si grand parent = Objet
+         indexgparent= indexElementSelectionne.parent();
+         elementSelectionneGParent= dockmodele->data(indexgparent.parent(), Qt::DisplayRole);
+
+         if( (elementSelectionneGParent)=="Objet")
+                    {
+                    traitementobjet();
+                    }
      }
 
     void Mondock::amblightfuncx(int x)
@@ -145,52 +154,72 @@ Mondock:: ~Mondock(){
 
         void Mondock::ambmaterialfuncx(int x)
             {
-            _materiaux->get(GL_AMBIENT)[0]=x/255;
+            _materiaux->get(GL_AMBIENT)[0]=x/255.0;
             }
 
         void Mondock::ambmaterialfuncy(int x)
             {
-            _materiaux->get(GL_AMBIENT)[1]=x/255;
+            _materiaux->get(GL_AMBIENT)[1]=x/255.0;
             }
 
         void Mondock::ambmaterialfuncz(int x)
             {
-            _materiaux->get(GL_AMBIENT)[2]=x/255;
+            _materiaux->get(GL_AMBIENT)[2]=x/255.0;
             }
 
         void Mondock::difmaterialfuncx(int x)
             {
-            _materiaux->get(GL_DIFFUSE)[0]=x/255;
+            _materiaux->get(GL_DIFFUSE)[0]=x/255.0;
             }
 
         void Mondock::difmaterialfuncy(int x)
             {
-            _materiaux->get(GL_DIFFUSE)[1]=x/255;
+            _materiaux->get(GL_DIFFUSE)[1]=x/255.0;
             }
 
         void Mondock::difmaterialfuncz(int x)
             {
-             _materiaux->get(GL_DIFFUSE)[2]=x/255;
+             _materiaux->get(GL_DIFFUSE)[2]=x/255.0;
             }
 
         void Mondock::spematerialfuncx(int x)
             {
-            _materiaux->get(GL_SPECULAR)[0]=x/255;
+            _materiaux->get(GL_SPECULAR)[0]=x/255.0;
             }
 
         void Mondock::spematerialfuncy(int x)
             {
-            _materiaux->get(GL_SPECULAR)[1]=x/255;
+            _materiaux->get(GL_SPECULAR)[1]=x/255.0;
             }
 
         void Mondock::spematerialfuncz(int x)
             {
-            _materiaux->get(GL_SPECULAR)[2]=x/255;
+            _materiaux->get(GL_SPECULAR)[2]=x/255.0;
             }
 
         void Mondock::spematerialtfunca(int x)
             {
-            _materiaux->set(x);
+            _materiaux->set((double)x);
+            }
+
+
+        //objet
+        void Mondock::rotobjectx(double x)
+            {
+            vec3 vectmp =_objet->rotation();
+            _objet->rotation(vec3(x,vectmp[1],vectmp[2]));
+            }
+
+        void Mondock::rotobjecty(double x)
+            {
+            vec3 vectmp =_objet->rotation();
+            _objet->rotation(vec3(vectmp[0],x,vectmp[2]));
+            }
+
+        void Mondock::rotobjectz(double x)
+            {
+            vec3 vectmp =_objet->rotation();
+            _objet->rotation(vec3(vectmp[0],vectmp[1],x));
             }
 
 //_____slots_________________________//
@@ -218,7 +247,7 @@ Mondock:: ~Mondock(){
 
         //renome le dockwidget
 
-        this->setWindowTitle(lightselectioner.toString());
+        this->setWindowTitle("Edition :  " + lightselectioner.toString());
 
         this->_light= dockscene->getLight(lightselectioner.toString());
         //creation qtabwidget
@@ -454,7 +483,7 @@ Mondock:: ~Mondock(){
 
             //renome le dockwidget
 
-            this->setWindowTitle(materialselectioner.toString());
+            this->setWindowTitle("Edition :  " + materialselectioner.toString());
 
             this->_materiaux= dockscene->getMaterial(materialselectioner.toString());
 
@@ -589,3 +618,131 @@ Mondock:: ~Mondock(){
             this->setWidget(tabmaterial);
             this->show();
             }
+/* ************************************ */
+//             objet                    //
+/* ************************************ */
+        void Mondock::traitementobjet()
+        {
+
+            indexobjetlSelectionne = selection->currentIndex();
+            objetselectioner = dockmodele->data(indexobjetlSelectionne, Qt::DisplayRole);
+
+            //renome le dockwidget
+            this->setWindowTitle("Edition :  " + objetselectioner.toString());
+
+            //recuperatin de l'objet dans dans le dockwidget
+
+            QVariant elementgpvariant = dockmodele->data(indexgparent, Qt::DisplayRole);
+
+            Piece * piecetmp = dockscene->getPiece(elementgpvariant.toString());
+
+            this->_objet= piecetmp->getChild(objetselectioner.toString());
+
+            //creation qtabwidget
+            tabobjet = new QTabWidget();
+
+            //widget1
+            tabobjetpropr = new QWidget();
+
+                //les layout du widget
+                layouttabobjetpropr = new QVBoxLayout();
+                    layouttabobjetproprlabel= new QHBoxLayout();
+                    layouttabobjetproprcombo= new QHBoxLayout();
+
+                //partie combobox
+                    //creation du model des materiaux
+                    modelmaterial=new QStandardItemModel();
+
+                    int nblignetmp =_itemmaterial->rowCount();
+
+                    for (int i=0 ; i<nblignetmp ;i++)
+                           {
+                           modelmaterial->insertRow( i,(_itemmaterial->child(i)->clone()) );
+                           }
+
+                    //creation du model des parent
+
+                    modelpiece=new QStandardItemModel();
+
+                    nblignetmp =_itempiece->rowCount();
+
+                    for (int i=0 ; i<nblignetmp ;i++)
+                           {
+                           modelpiece->insertRow( i,(_itempiece->child(i)->clone()));
+                           }
+
+                    //creation des combo
+                    combomaterial = new QComboBox();
+                        combomaterial->setModel( modelmaterial);
+
+                    comboparent= new QComboBox();
+                        comboparent->setModel(modelpiece);
+
+                //ligne des label
+                labelobjetproprmaterial=new QLabel();
+                    labelobjetproprmaterial->setText("Materiaux:");
+                labelobjetproprparent=new QLabel();;
+                    labelobjetproprparent->setText("Parents:");
+
+                //possitionement+ajout au widget du layout principal
+                layouttabobjetproprlabel->addWidget(labelobjetproprmaterial);
+                layouttabobjetproprlabel->addWidget(labelobjetproprparent);
+
+                layouttabobjetproprcombo->addWidget(combomaterial);
+                layouttabobjetproprcombo->addWidget(comboparent);
+
+                layouttabobjetpropr->addLayout(layouttabobjetproprlabel);
+                layouttabobjetpropr->addLayout(layouttabobjetproprcombo);
+
+                tabobjetpropr->setLayout(layouttabobjetpropr);
+
+            //widget2
+            tabobjetrotation = new QWidget();
+
+                //spinbox
+            vec3 rotationtmp = _objet->rotation();
+
+                boxobjetrotationx = new QDoubleSpinBox();
+                    boxobjetrotationx->setPrefix("X = ");
+                    boxobjetrotationx->setSuffix("°");
+                    boxobjetrotationx->setRange(0,360);
+                    boxobjetrotationx->setValue(rotationtmp[3]);
+                    connect(boxobjetrotationx, SIGNAL(valueChanged(double)),this, SLOT(rotobjectx(double)));
+
+                boxobjetrotationy = new QDoubleSpinBox();
+                    boxobjetrotationy->setPrefix("Y = ");
+                    boxobjetrotationy->setSuffix("°");
+                    boxobjetrotationy->setRange(0,360);
+                    boxobjetrotationy->setValue(rotationtmp[1]);
+                    connect(boxobjetrotationy, SIGNAL(valueChanged(double)),this, SLOT(rotobjecty(double)));
+
+                boxobjetrotationz = new QDoubleSpinBox();
+                    boxobjetrotationz->setPrefix("Z = ");
+                    boxobjetrotationz->setSuffix("°");
+                    boxobjetrotationz->setRange(0,360);
+                    boxobjetrotationx->setValue(rotationtmp[0]);
+                    connect(boxobjetrotationz, SIGNAL(valueChanged(double)),this, SLOT(rotobjectz(double)));
+
+                //layout + layout au  widget
+                    layouttabobjetrotation =new QHBoxLayout();
+                        layouttabobjetrotation->addWidget(boxobjetrotationx);
+                        layouttabobjetrotation->addWidget(boxobjetrotationy);
+                        layouttabobjetrotation->addWidget(boxobjetrotationz);
+                tabobjetrotation->setLayout(layouttabobjetrotation);
+
+            //widget3
+            tabobjettrans = new QWidget();
+            //widget4
+            tabobjetscale = new QWidget();
+
+
+            //assosiation des 4widget au tab
+            tabobjet->addTab(tabobjetpropr , "Propriete");
+            tabobjet->addTab(tabobjetrotation , "Rotation");
+            tabobjet->addTab(tabobjettrans , "Translation");
+            tabobjet->addTab(tabobjetscale , "Scale");
+
+            //fixe de widget et afiche le dockwidget
+            this->setWidget(tabobjet);
+            this->show();
+        }

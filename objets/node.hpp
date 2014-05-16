@@ -73,7 +73,7 @@ public:
 	 * @brief Retourne la liste des noms des Nodes fils
 	 * @return liste des noms des Nodes fils
 	 */
-	QStringList getChildrenNames() const;
+    QStringList getChildrenNames() const;
 
 	/**
 	 * @brief Retourne le Node enfant à partir de son nom

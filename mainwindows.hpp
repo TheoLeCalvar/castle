@@ -2,13 +2,15 @@
 #define MAINWINDOW_HPP
 
 #include <mondock.hpp>
+#include <node.hpp>
+#include "MyOpenGLWidget.hpp"
+
 #include <QMainWindow>
 #include <QAction>
 #include <QMenuBar>
 #include <QDir>
 #include <QGLFormat>
 #include <QSurface>
-#include "MyOpenGLWidget.hpp"
 #include <QStatusBar>
 #include <QDockWidget>
 #include <QToolBar>
@@ -74,6 +76,9 @@ private slots:
         void createMenus();
         void createListeDockwidget();
         void createToolBar();
+
+        //fichage node
+        void affichagerecnoderestant(Node *a , QStandardItem *b );
 
 /* ************************************** */
 //               menu bar                 //

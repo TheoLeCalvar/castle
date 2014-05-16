@@ -23,6 +23,8 @@
 #include <QDoubleSpinBox>
 #include<QLabel>
 #include<QString>
+#include <QComboBox>
+
 class Mondock:public QDockWidget
 {
 Q_OBJECT
@@ -35,9 +37,13 @@ public://a metre private plus tard (donc geter/seter a faire)
     Scene *dockscene;
     Light * _light;
     Material * _materiaux;
+    Objet * _objet;
 
     QStandardItemModel *dockmodele;
     QTreeView *dockvue;
+
+    QStandardItem *_itemmaterial;//liste des materiaux
+    QStandardItem *_itempiece;//liste des piece
 
 private:
 
@@ -50,6 +56,16 @@ private:
 
              QModelIndex indexmaterialSelectionne;
              QVariant materialselectioner;
+
+             QModelIndex indexgparent;
+             QVariant elementSelectionneGParent;
+
+             QModelIndex indexobjetlSelectionne;
+             QVariant objetselectioner;
+
+             QStandardItemModel * modelmaterial;//(model de la liste des materiaux)
+             QStandardItemModel * modelpiece;//(model de la liste des piece)
+
 /* ******************************************************** */
              //lumiere
 /* ******************************************************** */
@@ -138,9 +154,41 @@ private:
                              QSpinBox *materialspinboxemiy;
                              QSpinBox *materialspinboxemiz;
 
+/* ******************************************************** */
+                   //objet
+/* ******************************************************** */
+
+//contien les 4 widget ( propriété ,rotation , trans, scale )
+                QTabWidget * tabobjet;
+
+                //propriete
+                QWidget * tabobjetpropr;
+                    QVBoxLayout *layouttabobjetpropr ;
+                        QHBoxLayout *layouttabobjetproprlabel;
+                        QHBoxLayout *layouttabobjetproprcombo;
+
+                    QComboBox *combomaterial;
+                    QComboBox *comboparent;
+
+                    QLabel *labelobjetproprmaterial;
+                    QLabel *labelobjetproprparent;
+                //rotation
+                QWidget * tabobjetrotation;
+                    QHBoxLayout * layouttabobjetrotation;
+
+                    QDoubleSpinBox * boxobjetrotationx;
+                    QDoubleSpinBox * boxobjetrotationy;
+                    QDoubleSpinBox * boxobjetrotationz;
+
+                //translation
+                QWidget * tabobjettrans;
+                //scale
+                QWidget * tabobjetscale;
+
 
                 void traitementlumiere();
                 void traitementmaterial();
+                void traitementobjet();
 
 private slots:
     void selectionlight();
@@ -178,5 +226,10 @@ private slots:
     void spematerialfuncy(int x);
     void spematerialfuncz(int x);
     void spematerialtfunca(int x);
+
+//objet
+    void rotobjectx(double x);
+    void rotobjecty(double x);
+    void rotobjectz(double x);
 };
 #endif
