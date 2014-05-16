@@ -221,7 +221,24 @@ Mondock:: ~Mondock(){
             vec3 vectmp =_objet->rotation();
             _objet->rotation(vec3(vectmp[0],vectmp[1],x));
             }
+////
+        void Mondock::transobjectx(double x)
+            {
+            vec3 vectmp =_objet->position();
+            _objet->position(vec3(x,vectmp[1],vectmp[2]));
+            }
 
+        void Mondock::transobjecty(double x)
+            {
+            vec3 vectmp =_objet->position();
+            _objet->position(vec3(vectmp[0],x,vectmp[2]));
+            }
+
+        void Mondock::transobjectz(double x)
+            {
+            vec3 vectmp =_objet->position();
+            _objet->position(vec3(vectmp[0],vectmp[1],x));
+            }
 //_____slots_________________________//
 
 
@@ -732,6 +749,36 @@ Mondock:: ~Mondock(){
 
             //widget3
             tabobjettrans = new QWidget();
+
+            //spinbox
+        vec3 transtmp = _objet->position() ;
+
+            boxobjettransx = new QDoubleSpinBox();
+                boxobjettransx->setPrefix("X = ");
+                boxobjettransx->setRange(-1000,1000);
+                boxobjettransx->setValue(transtmp[3]);
+                connect(boxobjettransx, SIGNAL(valueChanged(double)),this, SLOT(transobjectx(double)));
+
+            boxobjettransy = new QDoubleSpinBox();
+                boxobjettransy->setPrefix("Y = ");
+                boxobjettransy->setRange(-1000,1000);
+                boxobjettransy->setValue(transtmp[1]);
+                connect(boxobjettransy, SIGNAL(valueChanged(double)),this, SLOT(transobjecty(double)));
+
+            boxobjettransz = new QDoubleSpinBox();
+                boxobjettransz->setPrefix("Z = ");
+                boxobjettransz->setRange(-1000,1000);
+                boxobjettransx->setValue(transtmp[0]);
+                connect(boxobjettransz, SIGNAL(valueChanged(double)),this, SLOT(transobjectz(double)));
+
+            //layout + layout au  widget
+                layouttabobjettrans =new QHBoxLayout();
+                    layouttabobjettrans->addWidget(boxobjettransx);
+                    layouttabobjettrans->addWidget(boxobjettransy);
+                    layouttabobjettrans->addWidget(boxobjettransz);
+            tabobjettrans->setLayout(layouttabobjettrans);
+
+
             //widget4
             tabobjetscale = new QWidget();
 

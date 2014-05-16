@@ -182,6 +182,11 @@ private:
 
                 //translation
                 QWidget * tabobjettrans;
+                    QHBoxLayout * layouttabobjettrans;
+
+                    QDoubleSpinBox * boxobjettransx;
+                    QDoubleSpinBox * boxobjettransy;
+                    QDoubleSpinBox * boxobjettransz;
                 //scale
                 QWidget * tabobjetscale;
 
@@ -231,5 +236,10 @@ private slots:
     void rotobjectx(double x);
     void rotobjecty(double x);
     void rotobjectz(double x);
+
+    void transobjectx(double x);
+    void transobjecty(double x);
+    void transobjectz(double x);
+
 };
 #endif
