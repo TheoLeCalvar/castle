@@ -38,6 +38,7 @@ public://a metre private plus tard (donc geter/seter a faire)
     Light * _light;
     Material * _materiaux;
     Objet * _objet;
+    Piece * _piece;
 
     QStandardItemModel *dockmodele;
     QTreeView *dockvue;
@@ -56,6 +57,9 @@ private:
 
              QModelIndex indexmaterialSelectionne;
              QVariant materialselectioner;
+
+             QModelIndex indexpieceSelectionne;
+             QVariant pieceselectioner;
 
              QModelIndex indexgparent;
              QVariant elementSelectionneGParent;
@@ -190,10 +194,22 @@ private:
                 //scale
                 QWidget * tabobjetscale;
 
+/* ******************************************************** */
+                    //piece
+/* ******************************************************** */
+                QWidget * widgetpiece;
+                QHBoxLayout *widgetpiecelayout;
+
+                QSpinBox* dimentionpiecex;
+                QSpinBox* dimentionpiecey;
+                QSpinBox* dimentionpiecez;
+
+
 
                 void traitementlumiere();
                 void traitementmaterial();
                 void traitementobjet();
+                void traitementpiece();
 
 private slots:
     void selectionlight();
@@ -240,6 +256,9 @@ private slots:
     void transobjectx(double x);
     void transobjecty(double x);
     void transobjectz(double x);
-
+//piece
+    void slotdimentionpiecex(int x);
+    void slotdimentionpiecey(int x);
+    void slotdimentionpiecez(int x);
 };
 #endif

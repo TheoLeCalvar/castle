@@ -30,6 +30,13 @@ Mondock:: ~Mondock(){
                      {
                        traitementmaterial();
                      }
+
+         if (elementSelectionneParent.toString()=="Objet")
+                     {
+                       traitementpiece();
+                     }
+
+
         //si grand parent = Objet
          indexgparent= indexElementSelectionne.parent();
          elementSelectionneGParent= dockmodele->data(indexgparent.parent(), Qt::DisplayRole);
@@ -221,7 +228,7 @@ Mondock:: ~Mondock(){
             vec3 vectmp =_objet->rotation();
             _objet->rotation(vec3(vectmp[0],vectmp[1],x));
             }
-////
+
         void Mondock::transobjectx(double x)
             {
             vec3 vectmp =_objet->position();
@@ -239,6 +246,26 @@ Mondock:: ~Mondock(){
             vec3 vectmp =_objet->position();
             _objet->position(vec3(vectmp[0],vectmp[1],x));
             }
+
+        //piece
+        void Mondock::slotdimentionpiecex(int x)
+            {
+            vec3 vectmp =_piece->position();
+            _piece->position(vec3(x,vectmp[1],vectmp[2]));
+             }
+
+        void Mondock::slotdimentionpiecey(int x)
+            {
+            vec3 vectmp =_piece->position();
+            _piece->position(vec3(vectmp[0],x,vectmp[2]));
+            }
+
+        void Mondock::slotdimentionpiecez(int x)
+            {
+            vec3 vectmp =_piece->position();
+            _piece->position(vec3(vectmp[0],vectmp[1],x));
+            }
+
 //_____slots_________________________//
 
 
@@ -723,7 +750,7 @@ Mondock:: ~Mondock(){
                     boxobjetrotationx->setPrefix("X = ");
                     boxobjetrotationx->setSuffix("°");
                     boxobjetrotationx->setRange(0,360);
-                    boxobjetrotationx->setValue(rotationtmp[3]);
+                    boxobjetrotationx->setValue(rotationtmp[2]);
                     connect(boxobjetrotationx, SIGNAL(valueChanged(double)),this, SLOT(rotobjectx(double)));
 
                 boxobjetrotationy = new QDoubleSpinBox();
@@ -756,7 +783,7 @@ Mondock:: ~Mondock(){
             boxobjettransx = new QDoubleSpinBox();
                 boxobjettransx->setPrefix("X = ");
                 boxobjettransx->setRange(-1000,1000);
-                boxobjettransx->setValue(transtmp[3]);
+                boxobjettransx->setValue(transtmp[2]);
                 connect(boxobjettransx, SIGNAL(valueChanged(double)),this, SLOT(transobjectx(double)));
 
             boxobjettransy = new QDoubleSpinBox();
@@ -793,3 +820,52 @@ Mondock:: ~Mondock(){
             this->setWidget(tabobjet);
             this->show();
         }
+
+/* ************************************ */
+//             piece                    //
+/* ************************************ */
+
+    void Mondock::traitementpiece()
+        {
+        indexpieceSelectionne = selection->currentIndex();
+        pieceselectioner = dockmodele->data(indexpieceSelectionne, Qt::DisplayRole);
+
+        //renome le dockwidget
+
+        this->setWindowTitle("Edition :  " + pieceselectioner.toString());
+
+        this->_piece= dockscene->getPiece(pieceselectioner.toString());
+
+        widgetpiece = new QWidget();
+            widgetpiecelayout = new QHBoxLayout();
+
+            vec3 tmp = _piece->dimensions();
+
+            dimentionpiecex= new QSpinBox();
+                dimentionpiecex->setPrefix("X = ");
+                dimentionpiecex->setRange(-1000,1000);
+                dimentionpiecex->setValue((int)tmp[0]);
+                connect(dimentionpiecex, SIGNAL(valueChanged(int)),this, SLOT(slotdimentionpiecex(int)));
+
+            dimentionpiecey= new QSpinBox();
+                dimentionpiecey->setPrefix("Y = ");
+                dimentionpiecey->setRange(-1000,1000);
+                dimentionpiecey->setValue((int)tmp[1]);
+                connect(dimentionpiecey, SIGNAL(valueChanged(int)),this, SLOT(slotdimentionpiecey(int)));
+
+            dimentionpiecez= new QSpinBox();
+                dimentionpiecez->setPrefix("Z = ");
+                dimentionpiecez->setRange(-1000,1000);
+                dimentionpiecez->setValue((int)tmp[2]);
+                connect(dimentionpiecez, SIGNAL(valueChanged(int)),this, SLOT(slotdimentionpiecez(int)));
+
+            widgetpiecelayout->addWidget(dimentionpiecex);
+            widgetpiecelayout->addWidget(dimentionpiecey);
+            widgetpiecelayout->addWidget(dimentionpiecez);
+
+            widgetpiece->setLayout(widgetpiecelayout);
+
+        //fixe de widget et afiche le dockwidget
+        this->setWidget(widgetpiece);
+        this->show();
+    }
