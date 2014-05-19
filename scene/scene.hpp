@@ -137,6 +137,16 @@ public:
 	*/
 	QStringList getShadersNames() const;
 
+
+	/**
+	 * @brief Retourne le nom du Material passé en paramètre
+	 * 
+	 * @param m Material dont on veut le nom
+	 * @return nom du Material
+	 */
+	QString getMaterialName(Material * m) const;
+
+
 	/**
 	 * @brief Ajoute une pièce à la scène
 	 * @details Ajoute une pièce à la scène, le nom ne doit pas être déjà présent dans la scène, si l'est la pièce n'est pas ajoutée
