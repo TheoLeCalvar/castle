@@ -38,7 +38,9 @@ const \hyperlink{structvec3}{vec3} \hyperlink{class_piece_ab522c715b4dd27b0789f5
 \hyperlink{structvec3}{vec3} \& \hyperlink{class_piece_a3f5440ec22866d79a26a513470744412}{dimensions} ()
 \begin{DoxyCompactList}\small\item\em Retourne les dimensions de la pièce. \end{DoxyCompactList}\item 
 void \hyperlink{class_piece_a4419c3b0a9e57dcd215dd87be025752f}{dimensions} (const \hyperlink{structvec3}{vec3} v)
-\begin{DoxyCompactList}\small\item\em Edite les dimensions de la pièce. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Edite les dimensions de la pièce. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_piece_a7b433182fab60a55c1b8dda976c015cc}{collide} (const \hyperlink{class_hitbox}{Hitbox} \&) const 
+\begin{DoxyCompactList}\small\item\em Calcule la collision des deux O\+B\+B. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -118,6 +120,31 @@ Ajoute un fils à la pièce.
 {\em o} & objet à ajouter \\
 \hline
 \end{DoxyParams}
+\hypertarget{class_piece_a7b433182fab60a55c1b8dda976c015cc}{\index{Piece@{Piece}!collide@{collide}}
+\index{collide@{collide}!Piece@{Piece}}
+\subsubsection[{collide}]{\setlength{\rightskip}{0pt plus 5cm}bool Piece\+::collide (
+\begin{DoxyParamCaption}
+\item[{const {\bf Hitbox} \&}]{h}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_piece_a7b433182fab60a55c1b8dda976c015cc}
+
+
+Calcule la collision des deux O\+B\+B. 
+
+utilise l'algorithme des S\+A\+T, plus d'info sur \href{http://goldensuneur.fr/divers/Separating%20Axis%20Theorem%20for%20Oriented%20Bounding%20Boxes.pdf}{\tt http\+://goldensuneur.\+fr/divers/\+Separating\%20\+Axis\%20\+Theorem\%20for\%20\+Oriented\%20\+Bounding\%20\+Boxes.\+pdf}
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & seconde \hyperlink{class_hitbox}{Hitbox} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+actuellement non fonctionnel 
+\end{DoxyWarning}
+
+
+Reimplemented from \hyperlink{class_hitbox_a10182e2ac66fd9e2ff07e9c8bf6c0a1c}{Hitbox}.
+
 \hypertarget{class_piece_ab522c715b4dd27b0789f5aed218ab59d}{\index{Piece@{Piece}!dimensions@{dimensions}}
 \index{dimensions@{dimensions}!Piece@{Piece}}
 \subsubsection[{dimensions}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf vec3} Piece\+::dimensions (

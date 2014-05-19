@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['scene',['Scene',['../class_scene.html',1,'']]],
-  ['sphere',['Sphere',['../class_sphere.html',1,'']]]
+  ['piece',['Piece',['../class_piece.html',1,'']]],
+  ['plan',['Plan',['../class_plan.html',1,'']]]
 ];

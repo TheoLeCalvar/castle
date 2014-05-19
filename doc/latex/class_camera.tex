@@ -10,10 +10,16 @@
 
 {\ttfamily \#include $<$camera.\+hpp$>$}
 
+Inheritance diagram for Camera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_camera}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_camera_a415d689f1cf61b90da28f53dc232f232}{Camera} (float eye\+X=0.\+0f, float eye\+Y=0.\+0f, float eye\+Z=0.\+0f)
+\hyperlink{class_camera_a1a8ac754efe577c8abbc1e19cc8bca25}{Camera} (\hyperlink{class_scene}{Scene} $\ast$scene=N\+U\+L\+L, float eye\+X=0.\+0f, float eye\+Y=0.\+0f, float eye\+Z=0.\+0f)
 \begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
 \hyperlink{class_camera_ad1897942d0ccf91052386388a497349f}{$\sim$\+Camera} ()
 \begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
@@ -36,6 +42,23 @@ bool \hyperlink{class_camera_a43b59b53cb182906d56e6e4d2c31139c}{\+\_\+haut\+\_\+
 \item 
 bool \hyperlink{class_camera_aaba6828f97c9ef07b6b135a665bd3008}{\+\_\+bas\+\_\+presse}
 \end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{structvec3}{vec3} \hyperlink{class_camera_a78bcbeed337fb2ee25f1077d11eb8a33}{get\+P} () const 
+\begin{DoxyCompactList}\small\item\em Retourne le centre de la \hyperlink{class_hitbox}{Hitbox}. \end{DoxyCompactList}\item 
+virtual \hyperlink{structvec3}{vec3} \hyperlink{class_camera_a190a745972d0b797ebb19a2aecd5fbe2}{get\+X} () const 
+\begin{DoxyCompactList}\small\item\em \hyperlink{structvec3}{vec3} unitaire X \end{DoxyCompactList}\item 
+virtual \hyperlink{structvec3}{vec3} \hyperlink{class_camera_a23b4f98ea112c9c435f9ee8df7cdfc45}{get\+Y} () const 
+\begin{DoxyCompactList}\small\item\em \hyperlink{structvec3}{vec3} unitaire Y \end{DoxyCompactList}\item 
+virtual \hyperlink{structvec3}{vec3} \hyperlink{class_camera_a5132a2f324c60f0f94d8adb66644e5a3}{get\+Z} () const 
+\begin{DoxyCompactList}\small\item\em \hyperlink{structvec3}{vec3} unitaire Z \end{DoxyCompactList}\item 
+virtual float \hyperlink{class_camera_a1b29933f81edb6cac6815a139442e6c5}{get\+Width} () const 
+\begin{DoxyCompactList}\small\item\em renvoie la demie largeur de la hitbox \end{DoxyCompactList}\item 
+virtual float \hyperlink{class_camera_af34538e81e41b215ffcae141b238a84d}{get\+Height} () const 
+\begin{DoxyCompactList}\small\item\em renvoie la demie hauteur de la hitbox \end{DoxyCompactList}\item 
+virtual float \hyperlink{class_camera_ae8be0ecf4c8611d787f4234832ee8419}{get\+Depth} () const 
+\begin{DoxyCompactList}\small\item\em renvoie la demie profondeur de la hitbox \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -54,6 +77,8 @@ float \hyperlink{class_camera_aeb3c859c3c254c8296420451259e5629}{\+\_\+theta}
 \hyperlink{structvec3}{vec3} \hyperlink{class_camera_af860db197a7abbf0284df4e32a95a347}{\+\_\+haut}
 \item 
 float \hyperlink{class_camera_a9062fdde515a49bf8db963ac46be9942}{\+\_\+vitesse}
+\item 
+\hyperlink{class_scene}{Scene} $\ast$ \hyperlink{class_camera_a81ffb00eedbaefbfb755b0c13d42180a}{\+\_\+scene}
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -70,15 +95,16 @@ void \hyperlink{class_camera_aa4e815462a964caa6b10804e33119cf2}{vector\+From\+An
 \hyperlink{class_camera}{Camera} pour \hyperlink{class_scene}{Scene}. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_camera_a415d689f1cf61b90da28f53dc232f232}{\index{Camera@{Camera}!Camera@{Camera}}
+\hypertarget{class_camera_a1a8ac754efe577c8abbc1e19cc8bca25}{\index{Camera@{Camera}!Camera@{Camera}}
 \index{Camera@{Camera}!Camera@{Camera}}
 \subsubsection[{Camera}]{\setlength{\rightskip}{0pt plus 5cm}Camera\+::\+Camera (
 \begin{DoxyParamCaption}
+\item[{{\bf Scene} $\ast$}]{scene = {\ttfamily NULL}, }
 \item[{float}]{eye\+X = {\ttfamily 0.0f}, }
 \item[{float}]{eye\+Y = {\ttfamily 0.0f}, }
 \item[{float}]{eye\+Z = {\ttfamily 0.0f}}
 \end{DoxyParamCaption}
-)}}\label{class_camera_a415d689f1cf61b90da28f53dc232f232}
+)}}\label{class_camera_a1a8ac754efe577c8abbc1e19cc8bca25}
 
 
 Constructeur. 
@@ -108,7 +134,112 @@ Destructeur.
 
 Actualise la caméra. 
 
-Met à jour la position de la caméra en fonction des booléens de déplacement et actualise la matrice view \hypertarget{class_camera_abde0ff477fb0baea7515767dcd7a7cf7}{\index{Camera@{Camera}!go@{go}}
+Met à jour la position de la caméra en fonction des booléens de déplacement et actualise la matrice view \hypertarget{class_camera_ae8be0ecf4c8611d787f4234832ee8419}{\index{Camera@{Camera}!get\+Depth@{get\+Depth}}
+\index{get\+Depth@{get\+Depth}!Camera@{Camera}}
+\subsubsection[{get\+Depth}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::get\+Depth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_camera_ae8be0ecf4c8611d787f4234832ee8419}
+
+
+renvoie la demie profondeur de la hitbox 
+
+
+
+Implements \hyperlink{class_hitbox_a100e9cdbd7e85179e64c9679c28354ee}{Hitbox}.
+
+\hypertarget{class_camera_af34538e81e41b215ffcae141b238a84d}{\index{Camera@{Camera}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Camera@{Camera}}
+\subsubsection[{get\+Height}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::get\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_camera_af34538e81e41b215ffcae141b238a84d}
+
+
+renvoie la demie hauteur de la hitbox 
+
+
+
+Implements \hyperlink{class_hitbox_a2393fb817af93cbeacfb140f4f30c1a0}{Hitbox}.
+
+\hypertarget{class_camera_a78bcbeed337fb2ee25f1077d11eb8a33}{\index{Camera@{Camera}!get\+P@{get\+P}}
+\index{get\+P@{get\+P}!Camera@{Camera}}
+\subsubsection[{get\+P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Camera\+::get\+P (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_camera_a78bcbeed337fb2ee25f1077d11eb8a33}
+
+
+Retourne le centre de la \hyperlink{class_hitbox}{Hitbox}. 
+
+
+
+Implements \hyperlink{class_hitbox_a2572250e152f89c05e68f9fb0a03bf7a}{Hitbox}.
+
+\hypertarget{class_camera_a1b29933f81edb6cac6815a139442e6c5}{\index{Camera@{Camera}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!Camera@{Camera}}
+\subsubsection[{get\+Width}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::get\+Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_camera_a1b29933f81edb6cac6815a139442e6c5}
+
+
+renvoie la demie largeur de la hitbox 
+
+
+
+Implements \hyperlink{class_hitbox_a5805a4ad2b59f303892af5dfca73a41e}{Hitbox}.
+
+\hypertarget{class_camera_a190a745972d0b797ebb19a2aecd5fbe2}{\index{Camera@{Camera}!get\+X@{get\+X}}
+\index{get\+X@{get\+X}!Camera@{Camera}}
+\subsubsection[{get\+X}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Camera\+::get\+X (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_camera_a190a745972d0b797ebb19a2aecd5fbe2}
+
+
+\hyperlink{structvec3}{vec3} unitaire X 
+
+
+
+Implements \hyperlink{class_hitbox_a25ee2fb5e0556399bc8012073e461411}{Hitbox}.
+
+\hypertarget{class_camera_a23b4f98ea112c9c435f9ee8df7cdfc45}{\index{Camera@{Camera}!get\+Y@{get\+Y}}
+\index{get\+Y@{get\+Y}!Camera@{Camera}}
+\subsubsection[{get\+Y}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Camera\+::get\+Y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_camera_a23b4f98ea112c9c435f9ee8df7cdfc45}
+
+
+\hyperlink{structvec3}{vec3} unitaire Y 
+
+
+
+Implements \hyperlink{class_hitbox_acf6cfd480e5e1d925386a1225713ea13}{Hitbox}.
+
+\hypertarget{class_camera_a5132a2f324c60f0f94d8adb66644e5a3}{\index{Camera@{Camera}!get\+Z@{get\+Z}}
+\index{get\+Z@{get\+Z}!Camera@{Camera}}
+\subsubsection[{get\+Z}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Camera\+::get\+Z (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_camera_a5132a2f324c60f0f94d8adb66644e5a3}
+
+
+\hyperlink{structvec3}{vec3} unitaire Z 
+
+
+
+Implements \hyperlink{class_hitbox_a2a024cefac26e2fb8db4ecc9010251c8}{Hitbox}.
+
+\hypertarget{class_camera_abde0ff477fb0baea7515767dcd7a7cf7}{\index{Camera@{Camera}!go@{go}}
 \index{go@{go}!Camera@{Camera}}
 \subsubsection[{go}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::go (
 \begin{DoxyParamCaption}
@@ -207,6 +338,9 @@ Indique si la caméra doit aller à gauche au prochain affichage \hypertarget{cl
 Indique si la caméra doit monter au prochain affichage \hypertarget{class_camera_a288df53a3ff446ee4367ee47b8499fcd}{\index{Camera@{Camera}!\+\_\+phi@{\+\_\+phi}}
 \index{\+\_\+phi@{\+\_\+phi}!Camera@{Camera}}
 \subsubsection[{\+\_\+phi}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::\+\_\+phi\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_camera_a288df53a3ff446ee4367ee47b8499fcd}
+\hypertarget{class_camera_a81ffb00eedbaefbfb755b0c13d42180a}{\index{Camera@{Camera}!\+\_\+scene@{\+\_\+scene}}
+\index{\+\_\+scene@{\+\_\+scene}!Camera@{Camera}}
+\subsubsection[{\+\_\+scene}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Scene}$\ast$ Camera\+::\+\_\+scene\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_camera_a81ffb00eedbaefbfb755b0c13d42180a}
 \hypertarget{class_camera_aeb3c859c3c254c8296420451259e5629}{\index{Camera@{Camera}!\+\_\+theta@{\+\_\+theta}}
 \index{\+\_\+theta@{\+\_\+theta}!Camera@{Camera}}
 \subsubsection[{\+\_\+theta}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::\+\_\+theta\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_camera_aeb3c859c3c254c8296420451259e5629}

@@ -19,7 +19,7 @@ Inheritance diagram for Material\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_material_a262f6ab1d9c846fe72300764bc0389a7}{Material} (\hyperlink{structvec4}{vec4} ambient=\hyperlink{structvec4}{vec4}(0.\+2, 0.\+2, 0.\+2, 1.\+0), \hyperlink{structvec4}{vec4} diffuse=\hyperlink{structvec4}{vec4}(0.\+8, 0.\+8, 0.\+8, 1.\+0), \hyperlink{structvec4}{vec4} specular=\hyperlink{structvec4}{vec4}(0.\+8, 0.\+8, 0.\+8, 1.\+0), float \hyperlink{class_material_a9a938aa96f0d5a5dc4d17d43cfd4b42b}{shininess}=0.\+0f, vec4 emissive=vec4(0.\+0, 0.\+0, 0.\+0, 1.\+0))
+\hyperlink{class_material_a1692495b8e704a0ab17701365eb34b0f}{Material} (\hyperlink{structvec3}{vec3} ambient=\hyperlink{structvec3}{vec3}(0.\+2, 0.\+2, 0.\+2), \hyperlink{structvec3}{vec3} diffuse=\hyperlink{structvec3}{vec3}(0.\+8, 0.\+8, 0.\+8), \hyperlink{structvec3}{vec3} specular=\hyperlink{structvec3}{vec3}(0.\+8, 0.\+8, 0.\+8), float \hyperlink{class_material_a9a938aa96f0d5a5dc4d17d43cfd4b42b}{shininess}=0.\+0f, vec3 emissive=vec3(0.\+0, 0.\+0, 0.\+0))
 \begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
 \hyperlink{class_material_a2c19452d71f54075df8f5405b03129f4}{$\sim$\+Material} ()
 \begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
@@ -29,9 +29,9 @@ void \hyperlink{class_material_aae1b7e4c0ae1fec27d28a7e62c9a0bd4}{add\+Texture} 
 \begin{DoxyCompactList}\small\item\em Charge une texture et l'associe à un slot. \end{DoxyCompactList}\item 
 void \hyperlink{class_material_a3de47a95f13dc6f6306493516814762c}{set} (float \hyperlink{class_material_a9a938aa96f0d5a5dc4d17d43cfd4b42b}{shininess})
 \begin{DoxyCompactList}\small\item\em Met à jour la shniness du \hyperlink{class_material}{Material}. \end{DoxyCompactList}\item 
-\hyperlink{structvec4}{vec4} \hyperlink{class_material_a59a7e83068d2be75fda72bf509ccff3c}{get} (G\+Lenum type) const 
+\hyperlink{structvec3}{vec3} \hyperlink{class_material_a6b4b32cf23cbba3988becd840471a51c}{get} (G\+Lenum type) const 
 \begin{DoxyCompactList}\small\item\em Récupère la valeur d'un champ. \end{DoxyCompactList}\item 
-\hyperlink{structvec4}{vec4} \& \hyperlink{class_material_a6821fc2db0ee20168bba0e23658b93ff}{get} (G\+Lenum type)
+\hyperlink{structvec3}{vec3} \& \hyperlink{class_material_a229d118ec5602033bafbc1212a7b72ce}{get} (G\+Lenum type)
 \begin{DoxyCompactList}\small\item\em Récupère la valeur d'un champ. \end{DoxyCompactList}\item 
 float \hyperlink{class_material_a9a938aa96f0d5a5dc4d17d43cfd4b42b}{shininess} () const 
 \begin{DoxyCompactList}\small\item\em Valeur du shininess. \end{DoxyCompactList}\item 
@@ -48,15 +48,15 @@ void \hyperlink{class_material_a3f43fe7bcfa721fd8156adb151adf45c}{update} ()
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{structvec4}{vec4} \hyperlink{class_material_a8631fe4ccaea32b5f83d618490ed1a94}{\+\_\+ambient}
+\hyperlink{structvec3}{vec3} \hyperlink{class_material_a4c29044a3f7e8008eb3a0666c4ce09b9}{\+\_\+ambient}
 \item 
-\hyperlink{structvec4}{vec4} \hyperlink{class_material_ac6d5a21fb938c37d981ff904baa139ce}{\+\_\+diffuse}
+\hyperlink{structvec3}{vec3} \hyperlink{class_material_a402005729d7d5a147d51dfcd691d2ffa}{\+\_\+diffuse}
 \item 
-\hyperlink{structvec4}{vec4} \hyperlink{class_material_aa86eef19901a701e22ef3ddd7b9c8ec2}{\+\_\+specular}
+\hyperlink{structvec3}{vec3} \hyperlink{class_material_af3e2839f5a712fba28111e00783af70f}{\+\_\+specular}
 \item 
 float \hyperlink{class_material_ae3f666b9de93b770232ebb5b1b3ee47e}{\+\_\+shininess}
 \item 
-\hyperlink{structvec4}{vec4} \hyperlink{class_material_a48f498add75d2e7b0022b3f34271e22b}{\+\_\+emissive}
+\hyperlink{structvec3}{vec3} \hyperlink{class_material_a7c2eb5e499b3f46ec6e9d62f02653879}{\+\_\+emissive}
 \item 
 Q\+Open\+G\+L\+Texture $\ast$ \hyperlink{class_material_a522d07896a1363e987d09d8e4b66c156}{\+\_\+diffuse\+\_\+texture}
 \item 
@@ -83,17 +83,17 @@ Matériaux pour la \hyperlink{class_scene}{Scene}.
 Contient les informations nécessaire à la gestion d'un material pour la scène 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_material_a262f6ab1d9c846fe72300764bc0389a7}{\index{Material@{Material}!Material@{Material}}
+\hypertarget{class_material_a1692495b8e704a0ab17701365eb34b0f}{\index{Material@{Material}!Material@{Material}}
 \index{Material@{Material}!Material@{Material}}
 \subsubsection[{Material}]{\setlength{\rightskip}{0pt plus 5cm}Material\+::\+Material (
 \begin{DoxyParamCaption}
-\item[{{\bf vec4}}]{ambient = {\ttfamily {\bf vec4}(0.2,~0.2,~0.2,~1.0)}, }
-\item[{{\bf vec4}}]{diffuse = {\ttfamily {\bf vec4}(0.8,~0.8,~0.8,~1.0)}, }
-\item[{{\bf vec4}}]{specular = {\ttfamily {\bf vec4}(0.8,~0.8,~0.8,~1.0)}, }
+\item[{{\bf vec3}}]{ambient = {\ttfamily {\bf vec3}(0.2,~0.2,~0.2)}, }
+\item[{{\bf vec3}}]{diffuse = {\ttfamily {\bf vec3}(0.8,~0.8,~0.8)}, }
+\item[{{\bf vec3}}]{specular = {\ttfamily {\bf vec3}(0.8,~0.8,~0.8)}, }
 \item[{float}]{shininess = {\ttfamily 0.0f}, }
-\item[{{\bf vec4}}]{emissive = {\ttfamily {\bf vec4}(0.0,~0.0,~0.0,~1.0)}}
+\item[{{\bf vec3}}]{emissive = {\ttfamily {\bf vec3}(0.0,~0.0,~0.0)}}
 \end{DoxyParamCaption}
-)}}\label{class_material_a262f6ab1d9c846fe72300764bc0389a7}
+)}}\label{class_material_a1692495b8e704a0ab17701365eb34b0f}
 
 
 Constructeur. 
@@ -141,13 +141,13 @@ Charge une texture et l'associe à un slot pour le passage au shader
 \begin{DoxyWarning}{Warning}
 Ecrase la texture à l'indice choisie 
 \end{DoxyWarning}
-\hypertarget{class_material_a59a7e83068d2be75fda72bf509ccff3c}{\index{Material@{Material}!get@{get}}
+\hypertarget{class_material_a6b4b32cf23cbba3988becd840471a51c}{\index{Material@{Material}!get@{get}}
 \index{get@{get}!Material@{Material}}
-\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec4} Material\+::get (
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Material\+::get (
 \begin{DoxyParamCaption}
 \item[{G\+Lenum}]{type}
 \end{DoxyParamCaption}
-) const}}\label{class_material_a59a7e83068d2be75fda72bf509ccff3c}
+) const}}\label{class_material_a6b4b32cf23cbba3988becd840471a51c}
 
 
 Récupère la valeur d'un champ. 
@@ -158,15 +158,15 @@ Récupère la valeur d'un champ.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-dans le cas de G\+L\+\_\+\+A\+M\+B\+I\+E\+N\+T, G\+L\+\_\+\+D\+I\+F\+F\+U\+S\+E, G\+L\+\_\+\+S\+P\+E\+C\+U\+L\+A\+R retourne un \hyperlink{structvec4}{vec4} correspondant à la composante, retourne \hyperlink{helper_8hpp_a8d45e9fbe94ddf3c3291116b8fce15c5}{vec4()} autrement 
+dans le cas de G\+L\+\_\+\+A\+M\+B\+I\+E\+N\+T, G\+L\+\_\+\+D\+I\+F\+F\+U\+S\+E, G\+L\+\_\+\+S\+P\+E\+C\+U\+L\+A\+R retourne un \hyperlink{structvec3}{vec3} correspondant à la composante, retourne \hyperlink{helper_8hpp_a8d45e9fbe94ddf3c3291116b8fce15c5}{vec4()} autrement 
 \end{DoxyReturn}
-\hypertarget{class_material_a6821fc2db0ee20168bba0e23658b93ff}{\index{Material@{Material}!get@{get}}
+\hypertarget{class_material_a229d118ec5602033bafbc1212a7b72ce}{\index{Material@{Material}!get@{get}}
 \index{get@{get}!Material@{Material}}
-\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec4} \& Material\+::get (
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} \& Material\+::get (
 \begin{DoxyParamCaption}
 \item[{G\+Lenum}]{type}
 \end{DoxyParamCaption}
-)}}\label{class_material_a6821fc2db0ee20168bba0e23658b93ff}
+)}}\label{class_material_a229d118ec5602033bafbc1212a7b72ce}
 
 
 Récupère la valeur d'un champ. 
@@ -177,7 +177,7 @@ Récupère la valeur d'un champ.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-dans le cas de G\+L\+\_\+\+A\+M\+B\+I\+E\+N\+T, G\+L\+\_\+\+D\+I\+F\+F\+U\+S\+E, G\+L\+\_\+\+S\+P\+E\+C\+U\+L\+A\+R retourne un \hyperlink{structvec4}{vec4} correspondant à la composante, retourne \hyperlink{helper_8hpp_a8d45e9fbe94ddf3c3291116b8fce15c5}{vec4()} autrement 
+dans le cas de G\+L\+\_\+\+A\+M\+B\+I\+E\+N\+T, G\+L\+\_\+\+D\+I\+F\+F\+U\+S\+E, G\+L\+\_\+\+S\+P\+E\+C\+U\+L\+A\+R retourne un \hyperlink{structvec3}{vec3} correspondant à la composante, retourne \hyperlink{helper_8hpp_a8d45e9fbe94ddf3c3291116b8fce15c5}{vec4()} autrement 
 \end{DoxyReturn}
 \hypertarget{class_material_aa07bc322b6904dd4ccf61620a0eb703c}{\index{Material@{Material}!has\+Diffuse\+Texture@{has\+Diffuse\+Texture}}
 \index{has\+Diffuse\+Texture@{has\+Diffuse\+Texture}!Material@{Material}}
@@ -281,27 +281,27 @@ Met à jour le \hyperlink{class_material}{Material} courant dans le shader actif
 
 
 \subsection{Member Data Documentation}
-\hypertarget{class_material_a8631fe4ccaea32b5f83d618490ed1a94}{\index{Material@{Material}!\+\_\+ambient@{\+\_\+ambient}}
+\hypertarget{class_material_a4c29044a3f7e8008eb3a0666c4ce09b9}{\index{Material@{Material}!\+\_\+ambient@{\+\_\+ambient}}
 \index{\+\_\+ambient@{\+\_\+ambient}!Material@{Material}}
-\subsubsection[{\+\_\+ambient}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec4} Material\+::\+\_\+ambient\hspace{0.3cm}{\ttfamily [private]}}}\label{class_material_a8631fe4ccaea32b5f83d618490ed1a94}
-\hypertarget{class_material_ac6d5a21fb938c37d981ff904baa139ce}{\index{Material@{Material}!\+\_\+diffuse@{\+\_\+diffuse}}
+\subsubsection[{\+\_\+ambient}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Material\+::\+\_\+ambient\hspace{0.3cm}{\ttfamily [private]}}}\label{class_material_a4c29044a3f7e8008eb3a0666c4ce09b9}
+\hypertarget{class_material_a402005729d7d5a147d51dfcd691d2ffa}{\index{Material@{Material}!\+\_\+diffuse@{\+\_\+diffuse}}
 \index{\+\_\+diffuse@{\+\_\+diffuse}!Material@{Material}}
-\subsubsection[{\+\_\+diffuse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec4} Material\+::\+\_\+diffuse\hspace{0.3cm}{\ttfamily [private]}}}\label{class_material_ac6d5a21fb938c37d981ff904baa139ce}
+\subsubsection[{\+\_\+diffuse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Material\+::\+\_\+diffuse\hspace{0.3cm}{\ttfamily [private]}}}\label{class_material_a402005729d7d5a147d51dfcd691d2ffa}
 \hypertarget{class_material_a522d07896a1363e987d09d8e4b66c156}{\index{Material@{Material}!\+\_\+diffuse\+\_\+texture@{\+\_\+diffuse\+\_\+texture}}
 \index{\+\_\+diffuse\+\_\+texture@{\+\_\+diffuse\+\_\+texture}!Material@{Material}}
 \subsubsection[{\+\_\+diffuse\+\_\+texture}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Open\+G\+L\+Texture$\ast$ Material\+::\+\_\+diffuse\+\_\+texture\hspace{0.3cm}{\ttfamily [private]}}}\label{class_material_a522d07896a1363e987d09d8e4b66c156}
-\hypertarget{class_material_a48f498add75d2e7b0022b3f34271e22b}{\index{Material@{Material}!\+\_\+emissive@{\+\_\+emissive}}
+\hypertarget{class_material_a7c2eb5e499b3f46ec6e9d62f02653879}{\index{Material@{Material}!\+\_\+emissive@{\+\_\+emissive}}
 \index{\+\_\+emissive@{\+\_\+emissive}!Material@{Material}}
-\subsubsection[{\+\_\+emissive}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec4} Material\+::\+\_\+emissive\hspace{0.3cm}{\ttfamily [private]}}}\label{class_material_a48f498add75d2e7b0022b3f34271e22b}
+\subsubsection[{\+\_\+emissive}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Material\+::\+\_\+emissive\hspace{0.3cm}{\ttfamily [private]}}}\label{class_material_a7c2eb5e499b3f46ec6e9d62f02653879}
 \hypertarget{class_material_add78622071d92485dd37dbd1934453b3}{\index{Material@{Material}!\+\_\+normal\+\_\+texture@{\+\_\+normal\+\_\+texture}}
 \index{\+\_\+normal\+\_\+texture@{\+\_\+normal\+\_\+texture}!Material@{Material}}
 \subsubsection[{\+\_\+normal\+\_\+texture}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Open\+G\+L\+Texture$\ast$ Material\+::\+\_\+normal\+\_\+texture\hspace{0.3cm}{\ttfamily [private]}}}\label{class_material_add78622071d92485dd37dbd1934453b3}
 \hypertarget{class_material_ae3f666b9de93b770232ebb5b1b3ee47e}{\index{Material@{Material}!\+\_\+shininess@{\+\_\+shininess}}
 \index{\+\_\+shininess@{\+\_\+shininess}!Material@{Material}}
 \subsubsection[{\+\_\+shininess}]{\setlength{\rightskip}{0pt plus 5cm}float Material\+::\+\_\+shininess\hspace{0.3cm}{\ttfamily [private]}}}\label{class_material_ae3f666b9de93b770232ebb5b1b3ee47e}
-\hypertarget{class_material_aa86eef19901a701e22ef3ddd7b9c8ec2}{\index{Material@{Material}!\+\_\+specular@{\+\_\+specular}}
+\hypertarget{class_material_af3e2839f5a712fba28111e00783af70f}{\index{Material@{Material}!\+\_\+specular@{\+\_\+specular}}
 \index{\+\_\+specular@{\+\_\+specular}!Material@{Material}}
-\subsubsection[{\+\_\+specular}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec4} Material\+::\+\_\+specular\hspace{0.3cm}{\ttfamily [private]}}}\label{class_material_aa86eef19901a701e22ef3ddd7b9c8ec2}
+\subsubsection[{\+\_\+specular}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Material\+::\+\_\+specular\hspace{0.3cm}{\ttfamily [private]}}}\label{class_material_af3e2839f5a712fba28111e00783af70f}
 \hypertarget{class_material_a15711d6d794b6ea122e38738fa73ba8a}{\index{Material@{Material}!\+\_\+specular\+\_\+texture@{\+\_\+specular\+\_\+texture}}
 \index{\+\_\+specular\+\_\+texture@{\+\_\+specular\+\_\+texture}!Material@{Material}}
 \subsubsection[{\+\_\+specular\+\_\+texture}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Open\+G\+L\+Texture$\ast$ Material\+::\+\_\+specular\+\_\+texture\hspace{0.3cm}{\ttfamily [private]}}}\label{class_material_a15711d6d794b6ea122e38738fa73ba8a}
