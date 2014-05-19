@@ -149,6 +149,11 @@ QStringList Scene::getShadersNames() const
 	return _shaders.keys();
 }
 
+QString 	Scene::getMaterialName(Material * m) const
+{
+	return _materials.key(m, "");
+}
+
 void 	Scene::addMaterial(const QString & name, Material * v)
 {
 	if (_materials.contains(name))
