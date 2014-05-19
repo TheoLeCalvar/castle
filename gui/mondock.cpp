@@ -1,5 +1,6 @@
-#include<mondock.hpp>
-#include<iostream>
+#include "mondock.hpp"
+#include <iostream>
+
 Mondock::Mondock(const QString & title, QWidget * parent, Qt::WindowFlags flags):
     QDockWidget(title,parent,flags),modelmaterial(NULL),modelpiece(NULL)
 {

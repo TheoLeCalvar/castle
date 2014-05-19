@@ -2,7 +2,7 @@
 #define mon_dock
 
 #include "scene.hpp"
-#include <helper.hpp>
+#include "helper.hpp"
 
 #include <QDockWidget>
 #include <QStatusBar>
@@ -21,8 +21,8 @@
 #include <QTabWidget>
 #include <QSlider>
 #include <QDoubleSpinBox>
-#include<QLabel>
-#include<QString>
+#include <QLabel>
+#include <QString>
 #include <QComboBox>
 
 class Mondock:public QDockWidget
