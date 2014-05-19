@@ -1,7 +1,7 @@
 #include<mondock.hpp>
 #include<iostream>
 Mondock::Mondock(const QString & title, QWidget * parent, Qt::WindowFlags flags):
-    QDockWidget(title,parent,flags)
+    QDockWidget(title,parent,flags),modelmaterial(NULL),modelpiece(NULL)
 {
 
 
@@ -25,10 +25,26 @@ Mondock:: ~Mondock(){
                      {
                        traitementlumiere();
                      }
+         //si parent = material
          if (elementSelectionneParent.toString()=="Material")
                      {
                        traitementmaterial();
                      }
+
+         if (elementSelectionneParent.toString()=="Objet")
+                     {
+                       traitementpiece();
+                     }
+
+
+        //si grand parent = Objet
+         indexgparent= indexElementSelectionne.parent();
+         elementSelectionneGParent= dockmodele->data(indexgparent.parent(), Qt::DisplayRole);
+
+         if( (elementSelectionneGParent)=="Objet")
+                    {
+                    traitementobjet();
+                    }
      }
 
     void Mondock::amblightfuncx(int x)
@@ -131,67 +147,173 @@ Mondock:: ~Mondock(){
             }
 
     //materiaux
-        void Mondock::emimaterialfuncx(int x)
-            {
-            }
+//        void Mondock::emimaterialfuncx(int x)
+//            {
+//            }
 
-        void Mondock::emimaterialfuncy(int x)
-            {
-            }
+//        void Mondock::emimaterialfuncy(int x)
+//            {
+//            }
 
-        void Mondock::emimaterialfuncz(int x)
-            {
-            }
+//        void Mondock::emimaterialfuncz(int x)
+//            {
+//            }
 
         void Mondock::ambmaterialfuncx(int x)
             {
-            _materiaux->get(GL_AMBIENT)[0]=x/255;
+            _materiaux->get(GL_AMBIENT)[0]=x/255.0;
             }
 
         void Mondock::ambmaterialfuncy(int x)
             {
-            _materiaux->get(GL_AMBIENT)[1]=x/255;
+            _materiaux->get(GL_AMBIENT)[1]=x/255.0;
             }
 
         void Mondock::ambmaterialfuncz(int x)
             {
-            _materiaux->get(GL_AMBIENT)[2]=x/255;
+            _materiaux->get(GL_AMBIENT)[2]=x/255.0;
             }
 
         void Mondock::difmaterialfuncx(int x)
             {
-            _materiaux->get(GL_DIFFUSE)[0]=x/255;
+            _materiaux->get(GL_DIFFUSE)[0]=x/255.0;
             }
 
         void Mondock::difmaterialfuncy(int x)
             {
-            _materiaux->get(GL_DIFFUSE)[1]=x/255;
+            _materiaux->get(GL_DIFFUSE)[1]=x/255.0;
             }
 
         void Mondock::difmaterialfuncz(int x)
             {
-             _materiaux->get(GL_DIFFUSE)[2]=x/255;
+             _materiaux->get(GL_DIFFUSE)[2]=x/255.0;
             }
 
         void Mondock::spematerialfuncx(int x)
             {
-            _materiaux->get(GL_SPECULAR)[0]=x/255;
+            _materiaux->get(GL_SPECULAR)[0]=x/255.0;
             }
 
         void Mondock::spematerialfuncy(int x)
             {
-            _materiaux->get(GL_SPECULAR)[1]=x/255;
+            _materiaux->get(GL_SPECULAR)[1]=x/255.0;
             }
 
         void Mondock::spematerialfuncz(int x)
             {
-            _materiaux->get(GL_SPECULAR)[2]=x/255;
+            _materiaux->get(GL_SPECULAR)[2]=x/255.0;
             }
 
         void Mondock::spematerialtfunca(int x)
             {
-            _materiaux->set(x);
+            _materiaux->set((double)x);
             }
+
+
+        //objet
+        void Mondock::matobjet(const QString & text  )
+            {
+
+            _objet->material( dockscene->getMaterial( text ) );
+            }
+
+        void Mondock::pereobjet(const QString & text  )
+            {
+            _objet->parent(dockscene->getPiece(text));
+            }
+
+
+        void Mondock::rotobjectx(double x)
+            {
+            vec3 vectmp =_objet->rotation();
+            _objet->rotation(vec3(x,vectmp[1],vectmp[2]));
+            }
+
+        void Mondock::rotobjecty(double x)
+            {
+            vec3 vectmp =_objet->rotation();
+            _objet->rotation(vec3(vectmp[0],x,vectmp[2]));
+            }
+
+        void Mondock::rotobjectz(double x)
+            {
+            vec3 vectmp =_objet->rotation();
+            _objet->rotation(vec3(vectmp[0],vectmp[1],x));
+            }
+
+        void Mondock::transobjectx(double x)
+            {
+            vec3 vectmp =_objet->position();
+            _objet->position(vec3(x,vectmp[1],vectmp[2]));
+            }
+
+        void Mondock::transobjecty(double x)
+            {
+            vec3 vectmp =_objet->position();
+            _objet->position(vec3(vectmp[0],x,vectmp[2]));
+            }
+
+        void Mondock::transobjectz(double x)
+            {
+            vec3 vectmp =_objet->position();
+            _objet->position(vec3(vectmp[0],vectmp[1],x));
+            }
+        //scale
+        void Mondock::scaleobjectx(double x)
+            {
+            vec3 vectmp =_objet->scale();
+            _objet->scale(vec3(x,vectmp[1],vectmp[2]));
+            }
+
+        void Mondock::scaleobjecty(double x)
+            {
+            vec3 vectmp =_objet->scale();
+            _objet->scale(vec3(vectmp[0],x,vectmp[2]));
+            }
+
+        void Mondock::scaleobjectz(double x)
+            {
+            vec3 vectmp =_objet->scale();
+            _objet->scale(vec3(vectmp[0],vectmp[1],x));
+            }
+
+        //piece
+        void Mondock::slotpositionpiecex(int x)
+            {
+            vec3 vectmp =_piece->position();
+            _piece->position(vec3(x,vectmp[1],vectmp[2]));
+             }
+
+        void Mondock::slotpositionpiecey(int x)
+            {
+            vec3 vectmp =_piece->position();
+            _piece->position(vec3(vectmp[0],x,vectmp[2]));
+            }
+
+        void Mondock::slotpositionpiecez(int x)
+            {
+            vec3 vectmp =_piece->position();
+            _piece->position(vec3(vectmp[0],vectmp[1],x));
+            }
+
+//        void Mondock::slotdimentionpiecex(double x)
+//            {
+//            vec3 vectmp =_piece->dimensions();
+//            _piece->dimensions(vec3(x,vectmp[1],vectmp[2]));
+//             }
+
+//        void Mondock::slotdimentionpiecey(double x)
+//            {
+//            vec3 vectmp =_piece->dimensions();
+//            _piece->dimensions(vec3(vectmp[0],x,vectmp[2]));
+//            }
+
+//        void Mondock::slotdimentionpiecez(double x)
+//            {
+//            vec3 vectmp =_piece->dimensions();
+//            _piece->dimensions(vec3(vectmp[0],vectmp[1],x));
+//            }
+
 
 //_____slots_________________________//
 
@@ -218,7 +340,7 @@ Mondock:: ~Mondock(){
 
         //renome le dockwidget
 
-        this->setWindowTitle(lightselectioner.toString());
+        this->setWindowTitle("Edition :  " + lightselectioner.toString());
 
         this->_light= dockscene->getLight(lightselectioner.toString());
         //creation qtabwidget
@@ -454,7 +576,7 @@ Mondock:: ~Mondock(){
 
             //renome le dockwidget
 
-            this->setWindowTitle(materialselectioner.toString());
+            this->setWindowTitle("Edition :  " + materialselectioner.toString());
 
             this->_materiaux= dockscene->getMaterial(materialselectioner.toString());
 
@@ -589,3 +711,264 @@ Mondock:: ~Mondock(){
             this->setWidget(tabmaterial);
             this->show();
             }
+/* ************************************ */
+//             objet                    //
+/* ************************************ */
+        void Mondock::traitementobjet()
+        {
+
+            indexobjetlSelectionne = selection->currentIndex();
+            objetselectioner = dockmodele->data(indexobjetlSelectionne, Qt::DisplayRole);
+
+            //renome le dockwidget
+            this->setWindowTitle("Edition :  " + objetselectioner.toString());
+
+            //recuperatin de l'objet dans dans le dockwidget
+
+            QVariant elementgpvariant = dockmodele->data(indexgparent, Qt::DisplayRole);
+
+            Piece * piecetmp = dockscene->getPiece(elementgpvariant.toString());
+
+            this->_objet= piecetmp->getChild(objetselectioner.toString());
+
+            //creation qtabwidget
+            tabobjet = new QTabWidget();
+
+            //widget1
+            tabobjetpropr = new QWidget();
+
+                //les layout du widget
+                layouttabobjetpropr = new QVBoxLayout();
+                    layouttabobjetproprlabel= new QHBoxLayout();
+                    layouttabobjetproprcombo= new QHBoxLayout();
+
+                //partie combobox
+                    //creation du model des materiaux
+                    modelmaterial=new QStandardItemModel();
+
+                    int nblignetmp =_itemmaterial->rowCount();
+                    int a =0;//pour savoir la valeur par default dans le model des materiaux
+                    int b =0;//pour savoir la valeur par default dans le model des parent
+
+                    for (int i=0 ; i<nblignetmp ;i++)
+                           {
+                           modelmaterial->insertRow( i,(_itemmaterial->child(i)->clone()));
+                           if ( (_itemmaterial->child(i)->text()) == (dockscene->getMaterialName(_objet->material())))
+                                       {
+                                            a=i;
+                                       }
+                           }
+
+                    //creation du model des parent
+
+                    modelpiece=new QStandardItemModel();
+
+                    nblignetmp =_itempiece->rowCount();
+
+                    for (int i=0 ; i<nblignetmp ;i++)
+                           {
+                           modelpiece->insertRow( i,(_itempiece->child(i)->clone()));
+
+                            if ( (_itempiece->child(i)->text()) == _objet->parent()->name())
+                                        {
+                                            b=i;
+                                        }
+                           }
+
+                    //creation des combo
+                    combomaterial = new QComboBox();
+                        combomaterial->setModel( modelmaterial);
+                        combomaterial->setCurrentIndex(a);
+                    connect(combomaterial, SIGNAL(currentIndexChanged ( const QString  ) ),this, SLOT(matobjet(const QString )));
+
+                    comboparent= new QComboBox();
+                        comboparent->setModel(modelpiece);
+                        comboparent->setCurrentIndex(b);
+                    connect(comboparent, SIGNAL(currentIndexChanged ( const QString ) ),this, SLOT(pereobjet(const QString )));
+
+                //ligne des label
+                labelobjetproprmaterial=new QLabel();
+                    labelobjetproprmaterial->setText("Materiaux:");
+                labelobjetproprparent=new QLabel();;
+                    labelobjetproprparent->setText("Parents:");
+
+                //possitionement+ajout au widget du layout principal
+                layouttabobjetproprlabel->addWidget(labelobjetproprmaterial);
+                layouttabobjetproprlabel->addWidget(labelobjetproprparent);
+
+                layouttabobjetproprcombo->addWidget(combomaterial);
+                layouttabobjetproprcombo->addWidget(comboparent);
+
+                layouttabobjetpropr->addLayout(layouttabobjetproprlabel);
+                layouttabobjetpropr->addLayout(layouttabobjetproprcombo);
+
+                tabobjetpropr->setLayout(layouttabobjetpropr);
+
+            //widget2
+            tabobjetrotation = new QWidget();
+
+                //spinbox
+            vec3 rotationtmp = _objet->rotation();
+
+                boxobjetrotationx = new QDoubleSpinBox();
+                    boxobjetrotationx->setPrefix("X = ");
+                    boxobjetrotationx->setSuffix("°");
+                    boxobjetrotationx->setRange(0,360);
+                    boxobjetrotationx->setValue(rotationtmp[2]);
+                    connect(boxobjetrotationx, SIGNAL(valueChanged(double)),this, SLOT(rotobjectx(double)));
+
+                boxobjetrotationy = new QDoubleSpinBox();
+                    boxobjetrotationy->setPrefix("Y = ");
+                    boxobjetrotationy->setSuffix("°");
+                    boxobjetrotationy->setRange(0,360);
+                    boxobjetrotationy->setValue(rotationtmp[1]);
+                    connect(boxobjetrotationy, SIGNAL(valueChanged(double)),this, SLOT(rotobjecty(double)));
+
+                boxobjetrotationz = new QDoubleSpinBox();
+                    boxobjetrotationz->setPrefix("Z = ");
+                    boxobjetrotationz->setSuffix("°");
+                    boxobjetrotationz->setRange(0,360);
+                    boxobjetrotationx->setValue(rotationtmp[0]);
+                    connect(boxobjetrotationz, SIGNAL(valueChanged(double)),this, SLOT(rotobjectz(double)));
+
+                //layout + layout au  widget
+                    layouttabobjetrotation =new QHBoxLayout();
+                        layouttabobjetrotation->addWidget(boxobjetrotationx);
+                        layouttabobjetrotation->addWidget(boxobjetrotationy);
+                        layouttabobjetrotation->addWidget(boxobjetrotationz);
+                tabobjetrotation->setLayout(layouttabobjetrotation);
+
+            //widget3
+            tabobjettrans = new QWidget();
+
+            //spinbox
+        vec3 transtmp = _objet->position() ;
+
+            boxobjettransx = new QDoubleSpinBox();
+                boxobjettransx->setPrefix("X = ");
+                boxobjettransx->setRange(-1000,1000);
+                boxobjettransx->setValue(transtmp[2]);
+                connect(boxobjettransx, SIGNAL(valueChanged(double)),this, SLOT(transobjectx(double)));
+
+            boxobjettransy = new QDoubleSpinBox();
+                boxobjettransy->setPrefix("Y = ");
+                boxobjettransy->setRange(-1000,1000);
+                boxobjettransy->setValue(transtmp[1]);
+                connect(boxobjettransy, SIGNAL(valueChanged(double)),this, SLOT(transobjecty(double)));
+
+            boxobjettransz = new QDoubleSpinBox();
+                boxobjettransz->setPrefix("Z = ");
+                boxobjettransz->setRange(-1000,1000);
+                boxobjettransz->setValue(transtmp[0]);
+                connect(boxobjettransz, SIGNAL(valueChanged(double)),this, SLOT(transobjectz(double)));
+
+            //layout + layout au  widget
+                layouttabobjettrans =new QHBoxLayout();
+                    layouttabobjettrans->addWidget(boxobjettransx);
+                    layouttabobjettrans->addWidget(boxobjettransy);
+                    layouttabobjettrans->addWidget(boxobjettransz);
+            tabobjettrans->setLayout(layouttabobjettrans);
+
+
+            //widget4
+            tabobjetscale = new QWidget();
+
+            //spinbox
+        vec3 scaletmp = _objet->scale() ;
+
+            boxobjetscalex = new QDoubleSpinBox();
+                boxobjetscalex->setPrefix("X = ");
+                boxobjetscalex->setRange(0,100);
+                boxobjetscalex->setSingleStep(0.01);
+                boxobjetscalex->setValue(scaletmp[2]);
+                connect(boxobjetscalex, SIGNAL(valueChanged(double)),this, SLOT(scaleobjectx(double)));
+
+            boxobjetscaley = new QDoubleSpinBox();
+                boxobjetscaley->setPrefix("Y = ");
+                boxobjetscaley->setRange(0,100);
+                boxobjetscaley->setSingleStep(0.01);
+                boxobjetscaley->setValue(scaletmp[1]);
+               connect(boxobjetscaley, SIGNAL(valueChanged(double)),this, SLOT(scaleobjecty(double)));
+
+            boxobjetscalez = new QDoubleSpinBox();
+                boxobjetscalez->setPrefix("Z = ");
+                boxobjetscalez->setRange(0,100);
+                boxobjetscalez->setSingleStep(0.01);
+                boxobjetscalez->setValue(scaletmp[0]);
+                connect(boxobjetscalez, SIGNAL(valueChanged(double)),this, SLOT(scaleobjectz(double)));
+
+            //layout + layout au  widget
+                layouttabobjetscale =new QHBoxLayout();
+                    layouttabobjetscale->addWidget(boxobjetscalex);
+                    layouttabobjetscale->addWidget(boxobjetscaley);
+                    layouttabobjetscale->addWidget(boxobjetscalez);
+            tabobjetscale->setLayout(layouttabobjetscale);
+
+
+            //assosiation des 4widget au tab
+            tabobjet->addTab(tabobjetpropr , "Propriete");
+            tabobjet->addTab(tabobjetrotation , "Rotation");
+            tabobjet->addTab(tabobjettrans , "Translation");
+            tabobjet->addTab(tabobjetscale , "Scale");
+
+            //fixe de widget et afiche le dockwidget
+            this->setWidget(tabobjet);
+            this->show();
+        }
+
+/* ************************************ */
+//             piece                    //
+/* ************************************ */
+
+    void Mondock::traitementpiece()
+        {
+        indexpieceSelectionne = selection->currentIndex();
+        pieceselectioner = dockmodele->data(indexpieceSelectionne, Qt::DisplayRole);
+
+        //renome le dockwidget
+
+        this->setWindowTitle("Edition :  " + pieceselectioner.toString());
+
+        this->_piece= dockscene->getPiece(pieceselectioner.toString());
+
+        //definition du qtab
+        tabpiece = new QTabWidget();
+
+
+        //position
+        widgetpieceposi = new QWidget();
+            pieceposilayout = new QHBoxLayout();
+
+            vec3 tmp = _piece->position();
+
+            positionpiecex= new QSpinBox();
+                positionpiecex->setPrefix("X = ");
+                positionpiecex->setRange(-1000,1000);
+                positionpiecex->setValue((int)tmp[0]);
+                connect(positionpiecex, SIGNAL(valueChanged(int)),this, SLOT(slotpositionpiecex(int)));
+
+            positionpiecey= new QSpinBox();
+                positionpiecey->setPrefix("Y = ");
+                positionpiecey->setRange(-1000,1000);
+                positionpiecey->setValue((int)tmp[1]);
+                connect(positionpiecey, SIGNAL(valueChanged(int)),this, SLOT(slotpositionpiecey(int)));
+
+            positionpiecez= new QSpinBox();
+                positionpiecez->setPrefix("Z = ");
+                positionpiecez->setRange(-1000,1000);
+                positionpiecez->setValue((int)tmp[2]);
+                connect(positionpiecez, SIGNAL(valueChanged(int)),this, SLOT(slotpositionpiecez(int)));
+
+            pieceposilayout->addWidget(positionpiecex);
+            pieceposilayout->addWidget(positionpiecey);
+            pieceposilayout->addWidget(positionpiecez);
+
+            widgetpieceposi->setLayout(pieceposilayout);
+
+            //assosiation des 4widget au tab
+            tabpiece->addTab(widgetpieceposi , "Position");
+
+        //fixe de widget et afiche le dockwidget
+        this->setWidget(tabpiece);
+        this->show();
+    }

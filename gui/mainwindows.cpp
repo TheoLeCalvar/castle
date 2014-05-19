@@ -207,12 +207,15 @@ void MainWindow::createMenus()
             spinambajoutmaterialx = new QDoubleSpinBox;
                 spinambajoutmaterialx->setRange(0 , 1);
                 spinambajoutmaterialx->setSingleStep(0.01);
+                spinambajoutmaterialx->setDecimals(4);
             spinambajoutmaterialy = new QDoubleSpinBox;
                 spinambajoutmaterialy->setRange(0 , 1);
                 spinambajoutmaterialy->setSingleStep(0.01);
+                spinambajoutmaterialy->setDecimals(4);
             spinambajoutmaterialz = new QDoubleSpinBox;
                 spinambajoutmaterialz->setRange(0 , 1);
                 spinambajoutmaterialz->setSingleStep(0.01);
+                spinambajoutmaterialz->setDecimals(4);
 
             layoutambajoutmaterial = new QHBoxLayout();
                  layoutambajoutmaterial->addWidget(ambajoutmaterial);
@@ -225,12 +228,15 @@ void MainWindow::createMenus()
             spindifajoutmaterialx = new QDoubleSpinBox;
                 spindifajoutmaterialx->setRange(0 , 1);
                 spindifajoutmaterialx->setSingleStep(0.01);
+                spindifajoutmaterialx->setDecimals(4);
             spindifajoutmaterialy = new QDoubleSpinBox;
                  spindifajoutmaterialy->setRange(0 , 1);
                  spindifajoutmaterialy->setSingleStep(0.01);
+                 spindifajoutmaterialy->setDecimals(4);
             spindifajoutmaterialz = new QDoubleSpinBox;
                  spindifajoutmaterialz->setRange(0 , 1);
                  spindifajoutmaterialz->setSingleStep(0.01);
+                 spindifajoutmaterialz->setDecimals(4);
 
             layoutdifajoutmaterial = new QHBoxLayout();
                 layoutdifajoutmaterial->addWidget(difajoutmaterial);
@@ -243,14 +249,17 @@ void MainWindow::createMenus()
              spinspeajoutmaterialx = new QDoubleSpinBox;
                 spinspeajoutmaterialx->setRange(0 , 1);
                 spinspeajoutmaterialx->setSingleStep(0.01);
+                spinspeajoutmaterialx->setDecimals(4);
              spinspeajoutmaterialy = new QDoubleSpinBox;
                 spinspeajoutmaterialy->setRange(0 , 1);
                 spinspeajoutmaterialy->setSingleStep(0.01);
+                spinspeajoutmaterialy->setDecimals(4);
              spinspeajoutmaterialz = new QDoubleSpinBox;
                 spinspeajoutmaterialz->setRange(0 , 1);
                 spinspeajoutmaterialz->setSingleStep(0.01);
-                spinspeajoutmateriala = new QDoubleSpinBox;
-                   spinspeajoutmateriala->setRange(0 , 64);
+                spinspeajoutmaterialz->setDecimals(4);
+             spinspeajoutmateriala = new QDoubleSpinBox;
+                   spinspeajoutmateriala->setRange(0 , 128);
                    spinspeajoutmateriala->setSingleStep(0.5);
 
              layoutspeajoutmaterial = new QHBoxLayout();
@@ -330,6 +339,21 @@ void MainWindow::createToolBar()
 
             fileToolBar->addSeparator();
 }
+
+void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
+        {
+        QStringList *listeelement = new QStringList(a->getChildrenNames());
+
+        for (int i ;i<listeelement->size();i++)
+            {
+            QStandardItem * itemtmp= new QStandardItem(listeelement->at(i));
+            b->appendRow(itemtmp);
+            Node *nodetmp = a->getChild(listeelement->at(i));
+            affichagerecnoderestant(nodetmp, itemtmp);
+            }
+
+        }
+
 
 
 //__slots_________________________________//
@@ -426,6 +450,8 @@ void MainWindow::createToolBar()
                                 {
                                    material->appendRow(new QStandardItem(listtempmaterial.at(i)));
                                 }
+                    dock_light->_itemmaterial=material;
+
                     //objet
                     objet = new QStandardItem("Objet");
                     modele->appendRow(objet);
@@ -440,11 +466,36 @@ void MainWindow::createToolBar()
 
                                   for(int j=0 ; j < listobjfils.size();j++)
                                           {
+                                           Objet * objetfils = objtemp->getChild(listobjfils.at(j));
+
                                            QStandardItem * itemfils =  new QStandardItem(listobjfils.at(j));
                                            item->appendRow(itemfils); ;
-                                          }
-                                }
-                    //shader
+
+
+                                           //recherche des item petits fils
+                                           Node* nodepetitfils;
+                                           if ( (nodepetitfils = dynamic_cast<Node*> (objetfils)))
+                                           {
+                                              QStringList listobjpetitfils = nodepetitfils->getChildrenNames();
+
+                                                    for(int k=0 ; k<listobjpetitfils.size();k++)
+                                                        {
+                                                        QStandardItem * itempetitfils =  new QStandardItem(listobjpetitfils.at(k));
+                                                        itemfils->appendRow(itempetitfils);
+
+                                                            //traitement item encore plus jeune que petit fils
+                                                            affichagerecnoderestant((nodepetitfils->getChild(listobjpetitfils.at(k))),itempetitfils);
+                                                            //fin traitement item encore plus jeune que petit fils
+
+                                                        }//fin for petit fils
+                                          }//fin if
+
+                                }//fin for fils
+                             }//fin for pere
+
+                     dock_light->_itempiece = objet;//afection de la liste des objet dans le dock d'edition
+
+                     //shader
                     shader = new QStandardItem("Shader");
                     modele->appendRow(shader);
 
@@ -584,6 +635,9 @@ void MainWindow::createToolBar()
 
                 if(material){
                         material->appendRow(new QStandardItem(lineeditnomajoutmaterial->text()));
+                }
+                if(dock_light->modelmaterial){
+                  dock_light->modelmaterial->appendRow(new QStandardItem(lineeditnomajoutmaterial->text()));
                 }
             }//fin else
         }

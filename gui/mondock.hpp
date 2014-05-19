@@ -23,6 +23,8 @@
 #include <QDoubleSpinBox>
 #include<QLabel>
 #include<QString>
+#include <QComboBox>
+
 class Mondock:public QDockWidget
 {
 Q_OBJECT
@@ -35,9 +37,14 @@ public://a metre private plus tard (donc geter/seter a faire)
     Scene *dockscene;
     Light * _light;
     Material * _materiaux;
+    Objet * _objet;
+    Piece * _piece;
 
     QStandardItemModel *dockmodele;
     QTreeView *dockvue;
+
+    QStandardItem *_itemmaterial;//liste des materiaux
+    QStandardItem *_itempiece;//liste des piece
 
 private:
 
@@ -50,6 +57,20 @@ private:
 
              QModelIndex indexmaterialSelectionne;
              QVariant materialselectioner;
+
+             QModelIndex indexpieceSelectionne;
+             QVariant pieceselectioner;
+
+             QModelIndex indexgparent;
+             QVariant elementSelectionneGParent;
+
+             QModelIndex indexobjetlSelectionne;
+             QVariant objetselectioner;
+public:
+             QStandardItemModel * modelmaterial;//(model de la liste des materiaux)
+private:
+             QStandardItemModel * modelpiece;//(model de la liste des piece)
+
 /* ******************************************************** */
              //lumiere
 /* ******************************************************** */
@@ -138,9 +159,72 @@ private:
                              QSpinBox *materialspinboxemiy;
                              QSpinBox *materialspinboxemiz;
 
+/* ******************************************************** */
+                   //objet
+/* ******************************************************** */
+
+//contien les 4 widget ( propriété ,rotation , trans, scale )
+                QTabWidget * tabobjet;
+
+                //propriete
+                QWidget * tabobjetpropr;
+                    QVBoxLayout *layouttabobjetpropr ;
+                        QHBoxLayout *layouttabobjetproprlabel;
+                        QHBoxLayout *layouttabobjetproprcombo;
+
+                    QComboBox *combomaterial;
+                    QComboBox *comboparent;
+
+                    QLabel *labelobjetproprmaterial;
+                    QLabel *labelobjetproprparent;
+                //rotation
+                QWidget * tabobjetrotation;
+                    QHBoxLayout * layouttabobjetrotation;
+
+                    QDoubleSpinBox * boxobjetrotationx;
+                    QDoubleSpinBox * boxobjetrotationy;
+                    QDoubleSpinBox * boxobjetrotationz;
+
+                //translation
+                QWidget * tabobjettrans;
+                    QHBoxLayout * layouttabobjettrans;
+
+                    QDoubleSpinBox * boxobjettransx;
+                    QDoubleSpinBox * boxobjettransy;
+                    QDoubleSpinBox * boxobjettransz;
+                //scale
+                QWidget * tabobjetscale;
+                    QHBoxLayout * layouttabobjetscale;
+
+                    QDoubleSpinBox * boxobjetscalex;
+                    QDoubleSpinBox * boxobjetscaley;
+                    QDoubleSpinBox * boxobjetscalez;
+
+/* ******************************************************** */
+                    //piece
+/* ******************************************************** */
+                QTabWidget * tabpiece;
+
+                    QWidget * widgetpiecedim;
+                    QHBoxLayout *piecedimlayout;
+
+                    QSpinBox* dimentionpiecex;
+                    QSpinBox* dimentionpiecey;
+                    QSpinBox* dimentionpiecez;
+
+
+                    QWidget * widgetpieceposi;
+                    QHBoxLayout *pieceposilayout;
+
+                    QSpinBox* positionpiecex;
+                    QSpinBox* positionpiecey;
+                    QSpinBox* positionpiecez;
+
 
                 void traitementlumiere();
                 void traitementmaterial();
+                void traitementobjet();
+                void traitementpiece();
 
 private slots:
     void selectionlight();
@@ -162,9 +246,9 @@ private slots:
     void spelightfuncz(int x);
 
 //materiaux
-    void emimaterialfuncx(int x);
-    void emimaterialfuncy(int x);
-    void emimaterialfuncz(int x);
+//    void emimaterialfuncx(int x);
+//    void emimaterialfuncy(int x);
+//    void emimaterialfuncz(int x);
 
     void ambmaterialfuncx(int x);
     void ambmaterialfuncy(int x);
@@ -178,5 +262,30 @@ private slots:
     void spematerialfuncy(int x);
     void spematerialfuncz(int x);
     void spematerialtfunca(int x);
+
+//objet
+    void matobjet(const QString & text );
+    void pereobjet(const QString & text );
+
+    void rotobjectx(double x);
+    void rotobjecty(double x);
+    void rotobjectz(double x);
+
+    void transobjectx(double x);
+    void transobjecty(double x);
+    void transobjectz(double x);
+
+    void scaleobjectx(double x);
+    void scaleobjecty(double x);
+    void scaleobjectz(double x);
+
+//piece
+    void slotpositionpiecex(int x);
+    void slotpositionpiecey(int x);
+    void slotpositionpiecez(int x);
+
+//    void slotdimentionpiecex(double);
+//    void slotdimentionpiecey(double);
+//    void slotdimentionpiecez(double);
 };
 #endif
