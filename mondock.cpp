@@ -717,6 +717,8 @@ Mondock:: ~Mondock(){
                     modelmaterial=new QStandardItemModel();
 
                     int nblignetmp =_itemmaterial->rowCount();
+                    int a =0;//pour savoir la valeur par default dans le model des materiaux
+                    int b =0;//pour savoir la valeur par default dans le model des parent
 
                     for (int i=0 ; i<nblignetmp ;i++)
                            {
@@ -732,6 +734,12 @@ Mondock:: ~Mondock(){
                     for (int i=0 ; i<nblignetmp ;i++)
                            {
                            modelpiece->insertRow( i,(_itempiece->child(i)->clone()));
+
+                            if ( (_itempiece->child(i)->text()) == _objet->parent()->name())
+                                        {
+                                        b=i;
+                                        }
+
                            }
 
                     //creation des combo
@@ -740,6 +748,7 @@ Mondock:: ~Mondock(){
 
                     comboparent= new QComboBox();
                         comboparent->setModel(modelpiece);
+                        comboparent->setCurrentIndex(b);
 
                 //ligne des label
                 labelobjetproprmaterial=new QLabel();
