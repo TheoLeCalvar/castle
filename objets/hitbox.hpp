@@ -86,6 +86,7 @@ public:
 		if(abs(T * (aZ ^ bZ)) > abs(aW * rYZ) + abs(aH * rXZ) + abs(bW * rZY) + abs(bH * rZX))
 			return false;	
 
+
 		return true;
 	}
 

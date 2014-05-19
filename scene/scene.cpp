@@ -584,3 +584,17 @@ void Scene::saveAsXML(const QString & fileName)
 	QFile  file;
 	file.setFileName(fileName);
 }
+
+bool Scene::collide(const Hitbox & h) const
+{
+	for (Piece * i : _pieces)
+	{
+		if(i->collide(h))
+		{
+			qDebug() << "Collision avec " << i->name();
+			return true;
+		}
+	}
+
+	return false;
+}

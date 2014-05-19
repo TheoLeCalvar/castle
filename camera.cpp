@@ -13,34 +13,45 @@ Camera::Camera(Scene * scene, float eyeX, float eyeY, float eyeZ):
 
 void Camera::move()
 {
+    vec3 deplacement;
 
     if (_avant_presse)
     {
-        _eye = _eye + _avant * _vitesse;
+        deplacement += _avant * _vitesse;
     }
     if (_gauche_presse)
     {
-        _eye = _eye + _gauche * _vitesse;
+        deplacement += _gauche * _vitesse;
     }
     if (_arriere_presse)
     {
-        _eye = _eye - _avant * _vitesse;
+        deplacement -= _avant * _vitesse;
     }
     if (_droite_presse)
     {
-        _eye = _eye - _gauche * _vitesse;
+        deplacement -= _gauche * _vitesse;
     }
     if (_haut_presse)
     {
-        _eye = _eye + _haut * _vitesse;
+        deplacement += _haut * _vitesse;
     }
     if (_bas_presse)
     {
-        _eye = _eye - _haut * _vitesse;
+        deplacement -= _haut * _vitesse;
+    }
+    
+    _eye += deplacement;
+
+    if(_scene && _scene->collide(*this))
+    {
+        _eye -= deplacement;
     }
 
+    
 
     _center = _eye + _avant;
+    
+
 }
 
 void Camera::go(float x, float y, float z)
@@ -106,7 +117,7 @@ void Camera::display()
 
 vec3 Camera::getP() const
 {
-    return _center + vec4(0.0f, 1.8f, 0.0f, 0.0f);
+    return _center;
 }
 
 vec3 Camera::getX() const

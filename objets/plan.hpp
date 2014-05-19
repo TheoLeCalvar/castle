@@ -21,6 +21,10 @@ private:
 	GLuint _vbo_texCoord;
 	unsigned int _nbVertices;
 
+	vec3 	_minP;
+	vec3 	_maxP;
+
+
 public:
 	/**
 	 * @brief Constructeur
@@ -49,10 +53,8 @@ public:
 
 
 protected:
+
 	virtual vec3 getP() const;
-	virtual vec3 getX() const;
-	virtual vec3 getY() const;
-	virtual vec3 getZ() const;
 	virtual float getWidth() const;
 	virtual float getHeight() const;
 	virtual float getDepth() const;

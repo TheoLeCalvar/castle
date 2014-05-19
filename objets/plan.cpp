@@ -9,7 +9,8 @@ Plan::Plan(
 		Material * mat, vec3 rotation, vec3 position
 		)
 			:	Objet("", mat, rotation, position), 
-				_vao(0), _nbVertices(0)
+				_vao(0), _nbVertices(0),
+				_minP(0.0f, 0.0f, -0.5f), _maxP(width, height, 0.5f)
 {
 	std::vector<float> points, normals, texCoord;
 	std::vector<unsigned int> indices;
@@ -143,36 +144,24 @@ void Plan::draw()
 
 vec3 Plan::getP() const
 {
+	vec4 centre((_minP + _maxP)/2.0f, 0.0f);
+	transformVector(centre);
 
-}
-
-vec3 Plan::getX() const
-{
-
-}
-
-vec3 Plan::getY() const
-{
-
-}
-
-vec3 Plan::getZ() const
-{
-
+	return centre;
 }
 
 float Plan::getWidth() const
 {
-
+	return (_maxP[0] - _minP[0]) / 2.0f;
 }
 
 float Plan::getHeight() const
 {
-
+	return (_maxP[1] - _minP[1]) / 2.0f;
 }
 
 float Plan::getDepth() const
 {
-
+	return (_maxP[2] - _minP[2]) / 2.0f;
 }
 

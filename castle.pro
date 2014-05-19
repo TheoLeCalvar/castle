@@ -7,7 +7,7 @@ TARGET = castle
 INCLUDEPATH += . scene/ objets/
 QT += opengl xml gui
 CONFIG += c++11
-QMAKE_CXXFLAGS += -g
+QMAKE_CXXFLAGS += -g -DNO_COLLIDE
 OBJECTS_DIR = build
 MOC_DIR = build
 

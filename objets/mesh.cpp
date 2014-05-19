@@ -199,36 +199,6 @@ vec3 Mesh::getP() const
 	return centre;
 }
 
-vec3 Mesh::getX() const
-{
-	vec4 v(1.0f, 0.0f, 0.0f, 0.0f);
-	transformVector(v);
-
-	v.normalize();
-
-	return v;
-}
-
-vec3 Mesh::getY() const
-{
-	vec4 v(0.0f, 1.0f, 0.0f, 0.0f);
-	transformVector(v);
-
-	v.normalize();
-	
-	return v;
-}
-
-vec3 Mesh::getZ() const
-{
-	vec4 v(0.0f, 0.0f, 1.0f, 0.0f);
-	transformVector(v);
-
-	v.normalize();
-	
-	return v;
-}
-
 float Mesh::getWidth() const
 {
 	return (_infos->maxP[0] - _infos->minP[0]) / 2.0f;
