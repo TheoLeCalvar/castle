@@ -194,6 +194,11 @@ private:
                     QDoubleSpinBox * boxobjettransz;
                 //scale
                 QWidget * tabobjetscale;
+                    QHBoxLayout * layouttabobjetscale;
+
+                    QDoubleSpinBox * boxobjetscalex;
+                    QDoubleSpinBox * boxobjetscaley;
+                    QDoubleSpinBox * boxobjetscalez;
 
 /* ******************************************************** */
                     //piece
@@ -259,6 +264,9 @@ private slots:
     void spematerialtfunca(int x);
 
 //objet
+    void matobjet(const QString & text );
+    void pereobjet(const QString & text );
+
     void rotobjectx(double x);
     void rotobjecty(double x);
     void rotobjectz(double x);
@@ -266,6 +274,11 @@ private slots:
     void transobjectx(double x);
     void transobjecty(double x);
     void transobjectz(double x);
+
+    void scaleobjectx(double x);
+    void scaleobjecty(double x);
+    void scaleobjectz(double x);
+
 //piece
     void slotpositionpiecex(int x);
     void slotpositionpiecey(int x);

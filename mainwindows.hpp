@@ -1,8 +1,8 @@
 #ifndef MAINWINDOW_HPP
 #define MAINWINDOW_HPP
 
-#include <mondock.hpp>
-#include <node.hpp>
+#include "mondock.hpp"
+#include "node.hpp"
 #include "MyOpenGLWidget.hpp"
 
 #include <QMainWindow>
