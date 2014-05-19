@@ -92,7 +92,7 @@
 			</murs>
 
 			<objets>
-				<objet nom="objet1" mat="Mat3" modele="modeles/bun_zipper.ply" Xrot="90" Yrot="90" Zrot="0" >
+				<objet nom="objet1" modele="modeles/bun_zipper.ply" Xrot="90" Yrot="90" Zrot="0" >
 					<position x="5" y="7" z="0" />
 				</objet>
 
@@ -100,11 +100,11 @@
 					<position x="0" y="0" z="0" />
 				</objet>
 
-				<objet nom="objet3" mat="Mat3" modele="modeles/susanne.obj" >
+				<objet nom="objet3" modele="modeles/susanne.obj" >
 					<position x="1" y="5" z="7" />
 				</objet>
 
-<!-- 				<objet nom="miku" modele="modeles/mikuA.obj" >
+<!-- 				<objet nom="miku" modele="modeles/mikuB.obj" >
 					<position x="1" y="5" z="7" />
 				</objet> -->
 <!-- 				<objet nom="objet2" mat="Mat2" modele="lavabo" >
@@ -142,7 +142,7 @@
 				</objet>
 
 				<objet nom="yolo" modele="modeles/flutter.obj" Xrot="0" Yrot="90" Zrot="0" >
-					<position x="20" y="20" z="20" />
+					<position x="5" y="5" z="5" />
 				</objet>
 			</objets>
 		</piece>
