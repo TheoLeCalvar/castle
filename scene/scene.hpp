@@ -2,7 +2,6 @@
 #define SCENE_H
 
 #include "helper.hpp"
-#include "camera.hpp"
 #include "light.hpp"
 #include "material.hpp"
 
@@ -26,6 +25,7 @@
 
 class Mesh;
 class Node;
+class Camera;
 
 
 /**

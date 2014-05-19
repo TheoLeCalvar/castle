@@ -1,11 +1,12 @@
 #include "scene.hpp"
 #include "mesh.hpp"
 #include "node.hpp"
+#include "camera.hpp"
 
 Scene::Scene()
 {
 	initializeOpenGLFunctions();
-	_camera = new Camera();
+	_camera = new Camera(this);
 }
 
 Scene::Scene(const QString & fileName)
@@ -42,6 +43,7 @@ Scene::Scene(const QString & fileName)
 
 
 	_camera = new Camera(
+		this,
 		camera_position.attribute("x").toFloat(),
 		camera_position.attribute("y").toFloat(),
 		camera_position.attribute("z").toFloat()

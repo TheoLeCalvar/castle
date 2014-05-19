@@ -215,7 +215,7 @@ void Node::draw()
 
 	mat4 model = currentMatrix();
 
-	model = _model * model;
+	model = model * _model;
 
 	pushMatrix(model);
 
@@ -260,4 +260,21 @@ Mesh * Node::getMesh(const QString & name)
 	}
 
 	return NULL;
+}
+
+bool Node::collide(const Hitbox & h) const
+{
+	for(Mesh * i : _meshs)
+	{
+		if(i->collide(h))
+			return true;
+	}
+
+	for(Node * i : _children)
+	{
+		if(i->collide(h))
+			return true;
+	}
+
+	return false;
 }

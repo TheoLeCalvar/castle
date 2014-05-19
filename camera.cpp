@@ -2,9 +2,10 @@
 #include <cmath>
 
 
-Camera::Camera( float eyeX, float eyeY, float eyeZ):
+Camera::Camera(Scene * scene, float eyeX, float eyeY, float eyeZ):
     _eye(eyeX, eyeY, eyeZ),
     _phi(0), _theta(0), _haut(0.0f,1.0f,0.0f), _vitesse(0.10f),
+    _scene(scene),
     _avant_presse(false), _arriere_presse(false), _gauche_presse(false), _droite_presse(false), _haut_presse(false), _bas_presse(false)
 {
     vectorFromAngle();
@@ -101,4 +102,39 @@ void Camera::display()
     setViewMatrix(view);
 
 
+}
+
+vec3 Camera::getP() const
+{
+    return _center + vec4(0.0f, 1.8f, 0.0f, 0.0f);
+}
+
+vec3 Camera::getX() const
+{
+    return _avant;
+}
+
+vec3 Camera::getY() const
+{
+    return _haut;
+}
+
+vec3 Camera::getZ() const
+{
+    return _gauche;
+}
+
+float Camera::getWidth() const
+{
+    return 0.5f;
+}
+
+float Camera::getHeight() const
+{
+    return 0.9f;
+}
+
+float Camera::getDepth() const
+{
+    return 0.5f;
 }

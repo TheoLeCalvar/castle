@@ -2,7 +2,8 @@
 #define CAMERA_H
 
 #include "helper.hpp"
-
+#include "hitbox.hpp"
+#include "scene.hpp"
 
 
 /**
@@ -10,20 +11,21 @@
  * @brief Camera pour Scene
  * 
  */
-class Camera
+class Camera: public Hitbox
 {
 protected:
-	vec3 	 _eye;
-	vec3   _center;
+	vec3 	_eye;
+	vec3   	_center;
 
-	float _phi;
-	float _theta;
+	float 	_phi;
+	float 	_theta;
 
-	vec3  _avant;
-	vec3  _gauche;
-	vec3  _haut;
-	float _vitesse;
+	vec3  	_avant;
+	vec3  	_gauche;
+	vec3  	_haut;
+	float 	_vitesse;
 
+	Scene * _scene;
 
 public:
 	bool    _avant_presse; 	/**< Indique si la caméra doit avancer au prochain affichage */
@@ -40,7 +42,7 @@ public:
 	 * @brief Constructeur
 	 * 
 	 */
-	Camera(float eyeX = 0.0f, float eyeY = 0.0f, float eyeZ = 0.0f);
+	Camera(Scene * scene = NULL, float eyeX = 0.0f, float eyeY = 0.0f, float eyeZ = 0.0f);
 
 	/**
 	 * @brief Destructeur
@@ -79,7 +81,16 @@ private:
 	 */
 	void 	vectorFromAngle();
 
-	
+protected:
+	virtual vec3 getP() const;
+	virtual vec3 getX() const;
+	virtual vec3 getY() const;
+	virtual vec3 getZ() const;
+	virtual float getWidth() const;
+	virtual float getHeight() const;
+	virtual float getDepth() const;
+
+
 };
 
 #endif

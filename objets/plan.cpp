@@ -140,3 +140,39 @@ void Plan::draw()
 
 	glBindVertexArray(0);	
 }
+
+vec3 Plan::getP() const
+{
+
+}
+
+vec3 Plan::getX() const
+{
+
+}
+
+vec3 Plan::getY() const
+{
+
+}
+
+vec3 Plan::getZ() const
+{
+
+}
+
+float Plan::getWidth() const
+{
+
+}
+
+float Plan::getHeight() const
+{
+
+}
+
+float Plan::getDepth() const
+{
+
+}
+

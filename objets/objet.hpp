@@ -4,13 +4,14 @@
 #include <QOpenGLFunctions_3_2_Core>
 #include "material.hpp"
 #include "helper.hpp"
+#include "hitbox.hpp"
 
 /**
  * @class Objet
  * @brief Classe de base affichable
  * 
  */
-class Objet: protected QOpenGLFunctions_3_2_Core
+class Objet: protected QOpenGLFunctions_3_2_Core, public Hitbox
 {
 protected:
 	Objet * 	_parent;
@@ -18,6 +19,7 @@ protected:
 	QString 	_name;
 	vec3 		_rotation;
 	vec3 		_position;
+	vec3 		_scale;
 	mat4		_model;
 
 	GLuint 		_shaderId;
@@ -84,6 +86,24 @@ public:
 	void			rotation(vec3 r);
 
 	/**
+	 * @brief Récupère les facteurs de scale de l'objet
+	 * @return scale de l'objet
+	 */
+	vec3 &			scale(){return _scale;}
+
+	/**
+	 * @brief Récupère les facteurs de scale de l'objet
+	 * @return scale de l'objet
+	 */
+	vec3 			scale() const{return _scale;}
+
+	/**
+	 * @brief Modifie le scale de l'objet
+	 * @param scale nouveau vecteur de scale
+	 */
+	void 			scale(vec3 scale);
+
+	/**
 	 * @brief Change l'id du shader
 	 * 
 	 * @param s nouvel id du shader de l'Objet
@@ -130,6 +150,11 @@ public:
 	 */
 	void 			name(const QString & n){_name = n;}
 
+
+	virtual bool collide(const Hitbox &) const{return false;}
+
+
+
 private:
 	/**
 	 * @brief Met à jour la matrice de model
@@ -148,6 +173,25 @@ private:
 	 * @details Active le shader de l'Objet, reporte les matrices de view et projection
 	 */
 	void 			activateShader();
+
+
+protected:
+	/**
+	 * @brief Apllique au vecteur les transformation de l'objet et de ses pères
+	 * @details vec4 pour optimisation lors des casts 
+	 * 
+	 * @param v vec4 à calcuer
+	 */
+	void 			transformVector(vec4 & v) const;
+
+
+	virtual vec3 getP() 		const{ return vec3();}
+	virtual vec3 getX() 		const{ return vec3();}
+	virtual vec3 getY() 		const{ return vec3();}
+	virtual vec3 getZ() 		const{ return vec3();}
+	virtual float getWidth() 	const{ return 0.0f;}
+	virtual float getHeight() 	const{ return 0.0f;}
+	virtual float getDepth() 	const{ return 0.0f;}
 
 };
 

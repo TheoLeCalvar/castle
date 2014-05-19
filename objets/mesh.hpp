@@ -32,10 +32,12 @@ private:
 
 	typedef struct 
 	{
-		GLuint vao;
-		QList<GLuint> vbos;
-		GLuint nbVertices;
-		unsigned int nbReferences;
+		GLuint 			vao;
+		QList<GLuint> 	vbos;
+		GLuint 			nbVertices;
+		vec3 			minP;
+		vec3			maxP;
+		unsigned int 	nbReferences;
 	} MeshInfo;
 
 	MeshInfo * _infos;
@@ -76,6 +78,15 @@ public:
 	 * @brief Affiche le modèle
 	 */
 	void draw();
+
+protected:
+	virtual vec3 getP() const;
+	virtual vec3 getX() const;
+	virtual vec3 getY() const;
+	virtual vec3 getZ() const;
+	virtual float getWidth() const;
+	virtual float getHeight() const;
+	virtual float getDepth() const;
 
 };
 

@@ -112,6 +112,8 @@ public:
 	static Node * loadModel(const QString & path, Scene * scene);
 
 
+	virtual bool collide(const Hitbox & h) const;
+
 };
 
 
