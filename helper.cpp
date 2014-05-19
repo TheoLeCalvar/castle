@@ -962,7 +962,7 @@ mat4 scaleMatrix(const vec3 & vv)
 		);	
 }
 
-mat4 scaleMatrix(const mat4 & mm, const vec3 & vv)
+mat4 scales(const mat4 & mm, const vec3 & vv)
 {
 	return scaleMatrix(vv) * mm;
 }

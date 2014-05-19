@@ -11,6 +11,7 @@ QMAKE_CXXFLAGS += -g
 OBJECTS_DIR = build
 MOC_DIR = build
 
+#QMAKE_CXXFLAGS += -DDEBUG
 
 macx
 {
@@ -24,10 +25,11 @@ LIBS += -lassimp
 # Input
 HEADERS += camera.hpp \
            helper.hpp \
+           mainwindows.hpp \
            MyOpenGLWidget.hpp \
 #           objets/cube.hpp \
 #           objets/donuts.hpp \
-           mainwindows.hpp \
+           objets/hitbox.hpp \
            objets/mesh.hpp \
            objets/node.hpp \
            objets/plan.hpp \
@@ -43,10 +45,10 @@ HEADERS += camera.hpp \
            
 SOURCES += camera.cpp \
            helper.cpp \
+           mainwindows.cpp \
            MyOpenGLWidget.cpp \
 #           objets/cube.cpp \
 #           objets/donuts.cpp \
-           mainwindows.cpp \
            objets/mesh.cpp \
            objets/node.cpp \
            objets/objet.cpp \

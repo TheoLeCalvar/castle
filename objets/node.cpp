@@ -52,8 +52,12 @@ Node * Node::loadNode(const aiNode * node, const aiScene * pScene, Scene * scene
 		aiMat.a4, aiMat.b4, aiMat.c4, aiMat.d4 
 	);
 
-	print(parentMatrix);
-	qDebug() << "TODO matrice";
+	#ifdef DEBUG
+		qDebug() << "Node info :";
+		qDebug() << "Number of children : " << node->mNumChildren;
+		qDebug() << "Number of meshes : " << node->mNumMeshes;
+	#endif
+
 
 
 
@@ -72,17 +76,24 @@ Node * Node::loadNode(const aiNode * node, const aiScene * pScene, Scene * scene
 	for(unsigned int i = 0; i < node->mNumMeshes; ++i)
 	{
 		Mesh * mesh = Mesh::loadMesh(pScene->mMeshes[node->mMeshes[i]]);
-		Material * mat;				
+		Material * mat = nullptr;				
 		aiString name;
 
 
 		if(pScene->HasMaterials())
 		{
 			aiMaterial * m = pScene->mMaterials[pScene->mMeshes[node->mMeshes[i]]->mMaterialIndex];
-			mat = loadMaterial(m);	
 
 			if(AI_SUCCESS == m->Get(AI_MATKEY_NAME, name))
-				scene->addMaterial(QString::fromUtf8(name.C_Str()), mat);		
+			{
+				mat = scene->getMaterial(QString::fromUtf8(node->mName.C_Str()) + "_" + QString::fromUtf8(name.C_Str()));
+
+				if(!mat)
+				{
+					mat = loadMaterial(m);	
+					scene->addMaterial(QString::fromUtf8(node->mName.C_Str()) + "_" + QString::fromUtf8(name.C_Str()), mat);		
+				}
+			}
 		}
 		else
 		{
@@ -107,8 +118,6 @@ Material * Node::loadMaterial(const aiMaterial * mtl)
 	aiString path;
 	aiColor4t<float> color;
 	float shininess;
-
-	qDebug() << "Y'a un matériaux";
 
 	/*
 	AI_MATKEY_NAME
@@ -174,34 +183,19 @@ Node* Node::loadModel(const QString & file, Scene * scene)
 		}
 		else
 		{
-			qDebug() << "Bingo ça charge";
-
-			qDebug() << "Has Animations : " << pScene->HasAnimations() << pScene->mNumAnimations;
-			qDebug() << "Has Cameras : " 	<< pScene->HasCameras() << pScene->mNumCameras;
-			qDebug() << "Has Lights : " 	<< pScene->HasLights() << pScene->mNumLights;
-			qDebug() << "Has Materials : " 	<< pScene->HasMaterials() << pScene->mNumMaterials;
-			qDebug() << "Has Meshes : " 	<< pScene->HasMeshes() << pScene->mNumMeshes;
-			qDebug() << "Has Textures : " 	<< pScene->HasTextures() << pScene->mNumTextures;
-
-
-			qDebug() << "Root node :";
-			qDebug() << "Number of children : " << pScene->mRootNode->mNumChildren;
-			qDebug() << "Number of meshes : " << pScene->mRootNode->mNumMeshes;
-
-			if (file.endsWith(".ply"))
-			{
-				qDebug() << "Load ply : " << file;
-
-				node = loadNode(pScene->mRootNode, pScene, scene);
-			}
-			else if (file.endsWith(".obj"))
-			{
-				qDebug() << "Load obj : " << file;
+			#ifdef DEBUG
+				qDebug() << "Has Animations : " << pScene->HasAnimations() << pScene->mNumAnimations;
+				qDebug() << "Has Cameras : " 	<< pScene->HasCameras() << pScene->mNumCameras;
+				qDebug() << "Has Lights : " 	<< pScene->HasLights() << pScene->mNumLights;
+				qDebug() << "Has Materials : " 	<< pScene->HasMaterials() << pScene->mNumMaterials;
+				qDebug() << "Has Meshes : " 	<< pScene->HasMeshes() << pScene->mNumMeshes;
+				qDebug() << "Has Textures : " 	<< pScene->HasTextures() << pScene->mNumTextures;
 
 
-				node = loadNode(pScene->mRootNode, pScene, scene);
+				qDebug() << "Load : " << file;
+			#endif
 
-			}
+			node = loadNode(pScene->mRootNode, pScene, scene);
 
 
 		}
@@ -221,7 +215,7 @@ void Node::draw()
 
 	mat4 model = currentMatrix();
 
-	model = _model * model;
+	model = model * _model;
 
 	pushMatrix(model);
 
@@ -266,4 +260,21 @@ Mesh * Node::getMesh(const QString & name)
 	}
 
 	return NULL;
+}
+
+bool Node::collide(const Hitbox & h) const
+{
+	for(Mesh * i : _meshs)
+	{
+		if(i->collide(h))
+			return true;
+	}
+
+	for(Node * i : _children)
+	{
+		if(i->collide(h))
+			return true;
+	}
+
+	return false;
 }

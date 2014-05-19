@@ -56,7 +56,6 @@ QStringList Piece::getChildren() const
 Objet * 	Piece::getChild(const QString & name)
 {
 	return _children.value(name);
-
 }
 
 const vec3 Piece::dimensions() const
@@ -72,4 +71,16 @@ vec3 & Piece::dimensions()
 void Piece::dimensions(const vec3 v)
 {
 	_dimensions = v;
+}
+
+bool Piece::collide(const Hitbox & h) const
+{
+	for(Objet * i : _children)
+	{
+		if (i->collide(h))
+		{
+			return true;
+		}
+	}
+	return false;
 }

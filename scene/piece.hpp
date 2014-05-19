@@ -86,6 +86,9 @@ public:
 	 */
 	void dimensions(const vec3 v);
 
+
+	virtual bool collide(const Hitbox &) const;
+
 };
 
 #endif

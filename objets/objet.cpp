@@ -1,7 +1,7 @@
 #include "objet.hpp"
 
 Objet::Objet(const QString & name, Material * mat, vec3 rotation, vec3 position, Objet * parent)
-		:_parent(parent), _mat(mat), _name(name), _rotation(rotation), _position(position), _model(1), _shaderId(0)
+		:_parent(parent), _mat(mat), _name(name), _rotation(rotation), _position(position), _scale(1.0f, 1.0f, 1.0f), _model(1), _shaderId(0)
 {
 	initializeOpenGLFunctions(); 
 	updateModel();
@@ -35,6 +35,12 @@ void	Objet::rotation(vec3 r)
 	updateModel();
 }
 
+void 	Objet::scale(vec3 scale)
+{
+	_scale = scale;
+	updateModel();
+}
+
 
 void 	Objet::applyMaterial()
 {
@@ -64,6 +70,14 @@ void 	Objet::activateShader()
 	}
 }
 
+void 	Objet::transformVector(vec4 & v) const
+{
+	v = _model * v;
+
+	if(_parent)
+		_parent->transformVector(v);
+}
+
 void 	Objet::updateModel()
 {
 	_model = XrotationMatrix(_rotation[0]);
@@ -71,4 +85,6 @@ void 	Objet::updateModel()
 	_model = Zrotate(_model, _rotation[2]);
 
 	_model = translate(_model, _position);
+
+	_model = scales(_model, _scale);
 }

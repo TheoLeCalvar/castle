@@ -13,6 +13,7 @@
 #include <QMultiMap>
 #include <QPair>
 
+
 /**
  * @class Node
  * @brief Contient un node de modèle 3D
@@ -110,6 +111,8 @@ public:
 	 */
 	static Node * loadModel(const QString & path, Scene * scene);
 
+
+	virtual bool collide(const Hitbox & h) const;
 
 };
 

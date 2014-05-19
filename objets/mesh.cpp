@@ -28,13 +28,20 @@ Mesh* Mesh::loadMesh(const aiMesh * mesh)
 	info->nbReferences = 1;
 
 
+	info->maxP = vec3(10e-10, 10e-10, 10e-10);
+	info->minP = vec3(10e10, 10e10, 10e10);
 
 
-	qDebug() << "Nombre de vertices : " <<  info->nbVertices; 
+	#ifdef DEBUG
+		qDebug() << "Nombre de vertices : " <<  info->nbVertices; 
+	#endif
 
 	if (mesh->HasPositions())
 	{
-		qDebug() << "Y'a des vertices !";
+		#ifdef DEBUG
+			qDebug() << "Y'a des vertices !";
+		#endif
+
 		for (unsigned int i = 0; i < info->nbVertices; ++i)
 		{
 			const aiVector3D* vp = &(mesh->mVertices[i]);
@@ -42,12 +49,33 @@ Mesh* Mesh::loadMesh(const aiMesh * mesh)
 			vertices.push_back(vp->x);
 			vertices.push_back(vp->y);
 			vertices.push_back(vp->z);
+
+			if(vp->x < info->minP[0])
+				info->minP[0] = vp->x;
+
+			if(vp->y < info->minP[1])
+				info->minP[1] = vp->y;
+
+			if(vp->z < info->minP[2])
+				info->minP[2] = vp->z;
+
+			if(vp->x > info->maxP[0])
+				info->maxP[0] = vp->x;
+
+			if(vp->y > info->maxP[1])
+				info->maxP[1] = vp->y;
+
+			if(vp->z > info->maxP[2])
+				info->maxP[2] = vp->z;
 		}
 	}
 
 	if (mesh->HasNormals())	
 	{
-		qDebug() << "Y'a des normales !";
+		#ifdef DEBUG
+			qDebug() << "Y'a des normales !";
+		#endif
+
 		for (unsigned int i = 0; i < info->nbVertices; ++i)
 		{
 			const aiVector3D* vp = &(mesh->mNormals[i]);
@@ -60,7 +88,9 @@ Mesh* Mesh::loadMesh(const aiMesh * mesh)
 
 	if (mesh->HasTextureCoords(0))
 	{
-		qDebug() << "Texture !";
+		#ifdef DEBUG
+			qDebug() << "Coordonées de textures !";
+		#endif
 
 		for (unsigned int i = 0; i < info->nbVertices; ++i)
 		{
@@ -161,5 +191,57 @@ void Mesh::draw()
   	openGL_check_error();
 }
 
+vec3 Mesh::getP() const
+{
+	vec4 centre((_infos->minP + _infos->maxP)/2.0f, 0.0f);
+	transformVector(centre);
+
+	return centre;
+}
+
+vec3 Mesh::getX() const
+{
+	vec4 v(1.0f, 0.0f, 0.0f, 0.0f);
+	transformVector(v);
+
+	v.normalize();
+
+	return v;
+}
+
+vec3 Mesh::getY() const
+{
+	vec4 v(0.0f, 1.0f, 0.0f, 0.0f);
+	transformVector(v);
+
+	v.normalize();
+	
+	return v;
+}
+
+vec3 Mesh::getZ() const
+{
+	vec4 v(0.0f, 0.0f, 1.0f, 0.0f);
+	transformVector(v);
+
+	v.normalize();
+	
+	return v;
+}
+
+float Mesh::getWidth() const
+{
+	return (_infos->maxP[0] - _infos->minP[0]) / 2.0f;
+}
+
+float Mesh::getHeight() const
+{
+	return (_infos->maxP[1] - _infos->minP[1]) / 2.0f;
+}
+
+float Mesh::getDepth() const
+{
+	return (_infos->maxP[2] - _infos->minP[2]) / 2.0f;
+}
 
 

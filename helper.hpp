@@ -241,7 +241,7 @@ mat4 Zrotate(const mat4 &, float alpha);
 
 mat4 scaleMatrix(float x, float y, float z);
 mat4 scaleMatrix(const vec3 &);
-mat4 scale(const mat4 &, const vec3 &);
+mat4 scales(const mat4 &, const vec3 &);
 
 mat4 viewMatrix(const vec3 & eye, const vec3 & center, const vec3 & up);
 mat4 projectionMatrix(float fov, float aspect, float zNear, float zFar);
