@@ -25,39 +25,33 @@ LIBS += -lassimp
 # Input
 HEADERS += camera.hpp \
            helper.hpp \
-           mainwindows.hpp \
-           MyOpenGLWidget.hpp \
-#           objets/cube.hpp \
-#           objets/donuts.hpp \
+           gui/mainwindows.hpp \
+           gui/mondock.hpp \
+           gui/MyOpenGLWidget.hpp \
            objets/hitbox.hpp \
            objets/mesh.hpp \
            objets/node.hpp \
            objets/plan.hpp \
            objets/objet.hpp \
-#           objets/sphere.hpp \
            scene/light.hpp \
            scene/material.hpp \
            scene/piece.hpp \
-           scene/scene.hpp \ 
-    mondock.hpp
+           scene/scene.hpp 
 
 
            
 SOURCES += camera.cpp \
            helper.cpp \
-           mainwindows.cpp \
-           MyOpenGLWidget.cpp \
-#           objets/cube.cpp \
-#           objets/donuts.cpp \
+           gui/mainwindows.cpp \
+           gui/mondock.cpp \
+           gui/MyOpenGLWidget.cpp \
            objets/mesh.cpp \
            objets/node.cpp \
            objets/objet.cpp \
            objets/plan.cpp \
-#           objets/sphere.cpp \
            scene/light.cpp \
            scene/material.cpp \
            scene/piece.cpp \
            scene/scene.cpp \
-           main.cpp \
-    mondock.cpp
+           main.cpp 
 

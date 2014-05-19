@@ -11,6 +11,7 @@ public:
 	 * @details utilise l'algorithme des SAT, plus d'info sur http://goldensuneur.fr/divers/Separating%20Axis%20Theorem%20for%20Oriented%20Bounding%20Boxes.pdf
 	 * 
 	 * @param h seconde Hitbox
+	 * @warning actuellement non fonctionnel
 	 */
 	virtual bool collide(const Hitbox & h) const
 	{
