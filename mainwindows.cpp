@@ -627,6 +627,9 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                 if(material){
                         material->appendRow(new QStandardItem(lineeditnomajoutmaterial->text()));
                 }
+                if(dock_light->modelmaterial){
+                  dock_light->modelmaterial->appendRow(new QStandardItem(lineeditnomajoutmaterial->text()));
+                }
             }//fin else
         }
 

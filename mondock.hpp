@@ -66,8 +66,9 @@ private:
 
              QModelIndex indexobjetlSelectionne;
              QVariant objetselectioner;
-
+public:
              QStandardItemModel * modelmaterial;//(model de la liste des materiaux)
+private:
              QStandardItemModel * modelpiece;//(model de la liste des piece)
 
 /* ******************************************************** */
@@ -197,13 +198,22 @@ private:
 /* ******************************************************** */
                     //piece
 /* ******************************************************** */
-                QWidget * widgetpiece;
-                QHBoxLayout *widgetpiecelayout;
+                QTabWidget * tabpiece;
 
-                QSpinBox* dimentionpiecex;
-                QSpinBox* dimentionpiecey;
-                QSpinBox* dimentionpiecez;
+                    QWidget * widgetpiecedim;
+                    QHBoxLayout *piecedimlayout;
 
+                    QSpinBox* dimentionpiecex;
+                    QSpinBox* dimentionpiecey;
+                    QSpinBox* dimentionpiecez;
+
+
+                    QWidget * widgetpieceposi;
+                    QHBoxLayout *pieceposilayout;
+
+                    QSpinBox* positionpiecex;
+                    QSpinBox* positionpiecey;
+                    QSpinBox* positionpiecez;
 
 
                 void traitementlumiere();
@@ -231,9 +241,9 @@ private slots:
     void spelightfuncz(int x);
 
 //materiaux
-    void emimaterialfuncx(int x);
-    void emimaterialfuncy(int x);
-    void emimaterialfuncz(int x);
+//    void emimaterialfuncx(int x);
+//    void emimaterialfuncy(int x);
+//    void emimaterialfuncz(int x);
 
     void ambmaterialfuncx(int x);
     void ambmaterialfuncy(int x);
@@ -257,8 +267,12 @@ private slots:
     void transobjecty(double x);
     void transobjectz(double x);
 //piece
-    void slotdimentionpiecex(int x);
-    void slotdimentionpiecey(int x);
-    void slotdimentionpiecez(int x);
+    void slotpositionpiecex(int x);
+    void slotpositionpiecey(int x);
+    void slotpositionpiecez(int x);
+
+//    void slotdimentionpiecex(double);
+//    void slotdimentionpiecey(double);
+//    void slotdimentionpiecez(double);
 };
 #endif

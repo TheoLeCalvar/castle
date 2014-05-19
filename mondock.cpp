@@ -1,7 +1,7 @@
 #include<mondock.hpp>
 #include<iostream>
 Mondock::Mondock(const QString & title, QWidget * parent, Qt::WindowFlags flags):
-    QDockWidget(title,parent,flags)
+    QDockWidget(title,parent,flags),modelmaterial(NULL),modelpiece(NULL)
 {
 
 
@@ -147,17 +147,17 @@ Mondock:: ~Mondock(){
             }
 
     //materiaux
-        void Mondock::emimaterialfuncx(int x)
-            {
-            }
+//        void Mondock::emimaterialfuncx(int x)
+//            {
+//            }
 
-        void Mondock::emimaterialfuncy(int x)
-            {
-            }
+//        void Mondock::emimaterialfuncy(int x)
+//            {
+//            }
 
-        void Mondock::emimaterialfuncz(int x)
-            {
-            }
+//        void Mondock::emimaterialfuncz(int x)
+//            {
+//            }
 
         void Mondock::ambmaterialfuncx(int x)
             {
@@ -248,23 +248,42 @@ Mondock:: ~Mondock(){
             }
 
         //piece
-        void Mondock::slotdimentionpiecex(int x)
+        void Mondock::slotpositionpiecex(int x)
             {
             vec3 vectmp =_piece->position();
             _piece->position(vec3(x,vectmp[1],vectmp[2]));
              }
 
-        void Mondock::slotdimentionpiecey(int x)
+        void Mondock::slotpositionpiecey(int x)
             {
             vec3 vectmp =_piece->position();
             _piece->position(vec3(vectmp[0],x,vectmp[2]));
             }
 
-        void Mondock::slotdimentionpiecez(int x)
+        void Mondock::slotpositionpiecez(int x)
             {
             vec3 vectmp =_piece->position();
             _piece->position(vec3(vectmp[0],vectmp[1],x));
             }
+
+//        void Mondock::slotdimentionpiecex(double x)
+//            {
+//            vec3 vectmp =_piece->dimensions();
+//            _piece->dimensions(vec3(x,vectmp[1],vectmp[2]));
+//             }
+
+//        void Mondock::slotdimentionpiecey(double x)
+//            {
+//            vec3 vectmp =_piece->dimensions();
+//            _piece->dimensions(vec3(vectmp[0],x,vectmp[2]));
+//            }
+
+//        void Mondock::slotdimentionpiecez(double x)
+//            {
+//            vec3 vectmp =_piece->dimensions();
+//            _piece->dimensions(vec3(vectmp[0],vectmp[1],x));
+//            }
+
 
 //_____slots_________________________//
 
@@ -701,7 +720,7 @@ Mondock:: ~Mondock(){
 
                     for (int i=0 ; i<nblignetmp ;i++)
                            {
-                           modelmaterial->insertRow( i,(_itemmaterial->child(i)->clone()) );
+                           modelmaterial->insertRow( i,(_itemmaterial->child(i)->clone()));
                            }
 
                     //creation du model des parent
@@ -836,36 +855,44 @@ Mondock:: ~Mondock(){
 
         this->_piece= dockscene->getPiece(pieceselectioner.toString());
 
-        widgetpiece = new QWidget();
-            widgetpiecelayout = new QHBoxLayout();
+        //definition du qtab
+        tabpiece = new QTabWidget();
 
-            vec3 tmp = _piece->dimensions();
 
-            dimentionpiecex= new QSpinBox();
-                dimentionpiecex->setPrefix("X = ");
-                dimentionpiecex->setRange(-1000,1000);
-                dimentionpiecex->setValue((int)tmp[0]);
-                connect(dimentionpiecex, SIGNAL(valueChanged(int)),this, SLOT(slotdimentionpiecex(int)));
+        //position
+        widgetpieceposi = new QWidget();
+            pieceposilayout = new QHBoxLayout();
 
-            dimentionpiecey= new QSpinBox();
-                dimentionpiecey->setPrefix("Y = ");
-                dimentionpiecey->setRange(-1000,1000);
-                dimentionpiecey->setValue((int)tmp[1]);
-                connect(dimentionpiecey, SIGNAL(valueChanged(int)),this, SLOT(slotdimentionpiecey(int)));
+            vec3 tmp = _piece->position();
 
-            dimentionpiecez= new QSpinBox();
-                dimentionpiecez->setPrefix("Z = ");
-                dimentionpiecez->setRange(-1000,1000);
-                dimentionpiecez->setValue((int)tmp[2]);
-                connect(dimentionpiecez, SIGNAL(valueChanged(int)),this, SLOT(slotdimentionpiecez(int)));
+            positionpiecex= new QSpinBox();
+                positionpiecex->setPrefix("X = ");
+                positionpiecex->setRange(-1000,1000);
+                positionpiecex->setValue((int)tmp[0]);
+                connect(positionpiecex, SIGNAL(valueChanged(int)),this, SLOT(slotpositionpiecex(int)));
 
-            widgetpiecelayout->addWidget(dimentionpiecex);
-            widgetpiecelayout->addWidget(dimentionpiecey);
-            widgetpiecelayout->addWidget(dimentionpiecez);
+            positionpiecey= new QSpinBox();
+                positionpiecey->setPrefix("Y = ");
+                positionpiecey->setRange(-1000,1000);
+                positionpiecey->setValue((int)tmp[1]);
+                connect(positionpiecey, SIGNAL(valueChanged(int)),this, SLOT(slotpositionpiecey(int)));
 
-            widgetpiece->setLayout(widgetpiecelayout);
+            positionpiecez= new QSpinBox();
+                positionpiecez->setPrefix("Z = ");
+                positionpiecez->setRange(-1000,1000);
+                positionpiecez->setValue((int)tmp[2]);
+                connect(positionpiecez, SIGNAL(valueChanged(int)),this, SLOT(slotpositionpiecez(int)));
+
+            pieceposilayout->addWidget(positionpiecex);
+            pieceposilayout->addWidget(positionpiecey);
+            pieceposilayout->addWidget(positionpiecez);
+
+            widgetpieceposi->setLayout(pieceposilayout);
+
+            //assosiation des 4widget au tab
+            tabpiece->addTab(widgetpieceposi , "Position");
 
         //fixe de widget et afiche le dockwidget
-        this->setWidget(widgetpiece);
+        this->setWidget(tabpiece);
         this->show();
     }
