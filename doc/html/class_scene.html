@@ -186,6 +186,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a1deb5bb022836f4b585c8580246b26cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a1deb5bb022836f4b585c8580246b26cb">loadShaders</a> (const QDomElement &amp;dom)</td></tr>
 <tr class="memdesc:a1deb5bb022836f4b585c8580246b26cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge les shaders.  <a href="#a1deb5bb022836f4b585c8580246b26cb">More...</a><br /></td></tr>
 <tr class="separator:a1deb5bb022836f4b585c8580246b26cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6fc45f015d96191dbf775d54d6e4437"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ae6fc45f015d96191dbf775d54d6e4437">orderLights</a> ()</td></tr>
+<tr class="memdesc:ae6fc45f015d96191dbf775d54d6e4437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ordonne les <a class="el" href="class_light.html" title="Lumière pour la Scene. ">Light</a> en fonction de la distance à la caméra.  <a href="#ae6fc45f015d96191dbf775d54d6e4437">More...</a><br /></td></tr>
+<tr class="separator:ae6fc45f015d96191dbf775d54d6e4437"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31be15d8114d6d9c01c312cbe1a41ed6"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structvec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a31be15d8114d6d9c01c312cbe1a41ed6">getP</a> () const </td></tr>
 <tr class="memdesc:a31be15d8114d6d9c01c312cbe1a41ed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le centre de la <a class="el" href="class_hitbox.html">Hitbox</a>.  <a href="#a31be15d8114d6d9c01c312cbe1a41ed6">More...</a><br /></td></tr>
 <tr class="separator:a31be15d8114d6d9c01c312cbe1a41ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -221,6 +224,8 @@ QOpenGLShaderProgram * &gt;&#160;</td><td class="memItemRight" valign="bottom"><
 <tr class="separator:abde34dc03c8d3a07b3177041ab195f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7db3394191c0a07e6bdc456a53ac8ece"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmat4.html">mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a7db3394191c0a07e6bdc456a53ac8ece">_projectionMatrix</a></td></tr>
 <tr class="separator:a7db3394191c0a07e6bdc456a53ac8ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fae715ba6bdde7c382f9d779095a718"><td class="memItemLeft" align="right" valign="top">QMap&lt; float, <a class="el" href="class_light.html">Light</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a5fae715ba6bdde7c382f9d779095a718">_orderedLights</a></td></tr>
+<tr class="separator:a5fae715ba6bdde7c382f9d779095a718"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -1006,6 +1011,31 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ae6fc45f015d96191dbf775d54d6e4437"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::orderLights </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ordonne les <a class="el" href="class_light.html" title="Lumière pour la Scene. ">Light</a> en fonction de la distance à la caméra. </p>
+
+</div>
+</div>
 <a class="anchor" id="ae87e88cbefc16640354acc8ec11b5e1e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1028,7 +1058,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section warning"><dt>Warning</dt><dd>Pas encore implémenté </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>A implémenter </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>A implémenter </dd></dl>
 
 </div>
 </div>
@@ -1085,6 +1115,27 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Map des matériaux constituant la scène, identifiés par leur nom, doit être unique </p>
+
+</div>
+</div>
+<a class="anchor" id="a5fae715ba6bdde7c382f9d779095a718"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;float, <a class="el" href="class_light.html">Light</a> *&gt; Scene::_orderedLights</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="class_light.html" title="Lumière pour la Scene. ">Light</a> ordonnées par leurs distance à la caméra </p>
 
 </div>
 </div>
@@ -1158,7 +1209,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 19 2014 16:14:40 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 20 2014 14:23:07 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

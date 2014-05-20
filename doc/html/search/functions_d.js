@@ -2,10 +2,11 @@ var searchData=
 [
   ['paintgl',['paintGL',['../class_my_open_g_l_widget.html#af7babfe769e968c317e646c4387b357d',1,'MyOpenGLWidget']]],
   ['parent',['parent',['../class_objet.html#a95e63a98dc9dc485fe874df30f2069ee',1,'Objet::parent(Objet *o)'],['../class_objet.html#aaa3c3290e5bb742363263600fcdb3e5e',1,'Objet::parent()']]],
+  ['pereobjet',['pereobjet',['../class_mondock.html#afcb87fab11d89a1a24da091153d4dbac',1,'Mondock']]],
   ['piece',['Piece',['../class_piece.html#adfc1a07bd6a58ab6cac476fedb38cb15',1,'Piece']]],
   ['plan',['Plan',['../class_plan.html#ab74eeb948e40ade24bd54a60a4ece8c6',1,'Plan']]],
   ['popmatrix',['popMatrix',['../helper_8cpp.html#a89162c73545bb184c781c825dd72f082',1,'popMatrix():&#160;helper.cpp'],['../helper_8hpp.html#a89162c73545bb184c781c825dd72f082',1,'popMatrix():&#160;helper.cpp']]],
-  ['position',['position',['../class_objet.html#a0e109bc790b14328202dd2546b04e2fd',1,'Objet::position()'],['../class_objet.html#a79051e09eb1aa72dcd338ed033e9f3f1',1,'Objet::position() const '],['../class_objet.html#a89ed090c598f087792ee81c40ff46f75',1,'Objet::position(vec3 p)']]],
+  ['position',['position',['../class_camera.html#ad42b0114b12a48474ae6c8be1c44e7bb',1,'Camera::position()'],['../class_objet.html#a0e109bc790b14328202dd2546b04e2fd',1,'Objet::position()'],['../class_objet.html#a79051e09eb1aa72dcd338ed033e9f3f1',1,'Objet::position() const '],['../class_objet.html#a89ed090c598f087792ee81c40ff46f75',1,'Objet::position(vec3 p)']]],
   ['poslightfuncx',['poslightfuncx',['../class_mondock.html#a05ec25870c70f2eeba2ccdc1da44e7ca',1,'Mondock']]],
   ['poslightfuncy',['poslightfuncy',['../class_mondock.html#ae8593b3cbc4c42badf600599a2e01dce',1,'Mondock']]],
   ['poslightfuncz',['poslightfuncz',['../class_mondock.html#aa5ec8a8453515216ffd85961c868108f',1,'Mondock']]],
