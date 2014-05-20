@@ -87,10 +87,16 @@ lundi 12, mardi 13 mai et mercredi 14
 jeudi 15, vendredi 16 mai
 	recherche d'informations sur les algorithmes de collision et mise ne place des bases
 
-lundi 19
+lundi 19 mai
 	mise ne place des collisions
 	ajout de quelques fonctions pour l'interface
 	correction héritage matrice des nodes
 
+mardi 20 mai
+	supression des collisions, modèle choisi pas adapté à la structure de donnée
+	ajout parasage scale
+	début sauvegarde du xml
+
+	
 Amélioration à faire
 	collision -> rajouter notion de hitbox à Objet, et ensuite calculer sur le vecteur déplacement entre dans cette hitbox

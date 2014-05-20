@@ -49,6 +49,8 @@ private:
 	QMap<QString, Light *> 						_lights; /**< Map des lumières constituant la scène, identifiées par leur nom, doit être unique */
 	QMap<QString, Material *>					_materials; /**< Map des matériaux constituant la scène, identifiés par leur nom, doit être unique */
 	QMap<QString, QOpenGLShaderProgram *> 		_shaders; /**< Map des shader constituant la scène, identifiés par leur nom, doit être unique */
+	QMap<QString, QOpenGLShader *>				_loadedShaders; /**< Fichiers de shaders déjà chargés, utilisé pour l'export */
+
 
 	mat4 										_projectionMatrix; /**< Matrice de projection, recalculée à chaque redimensionnement du widget */
 
@@ -196,10 +198,9 @@ public:
 	 * @brief Sauvegarde de la scène au format xml
 	 * 
 	 * @param fileName nom du fichier dans lequel sauvegarde
-	 * @warning Pas encore implémenté
-	 * @todo  A implémenter
+	 * @return indique si le ficheir a été sauvegardé ou pas
 	 */
-	void 		saveAsXML(const QString & fileName);
+	bool 		saveAsXML(const QString & fileName);
 
 
 	virtual bool collide(const Hitbox & h) const;
@@ -242,6 +243,30 @@ private:
 	 * @brief Ordonne les Light en fonction de la distance à la caméra
 	 */
 	void 		orderLights();
+
+	/**
+	 * @brief Retourne un vec3 correspondant au vecteur position lu
+	 * 
+	 * @param e élement à lire
+	 * @return position
+	 */
+	static vec3 readPosition(const QDomElement & e);
+
+	/**
+	 * @brief Retourne un vec3 correspondant au scale lu
+	 * 
+	 * @param e élement à lire
+	 * @return facteur de scale
+	 */
+	static vec3 readScale(const QDomElement & e);
+
+
+	void saveMaterials(QDomElement & root, QDomDocument & doc) const;
+
+	void saveLights(QDomElement & root, QDomDocument & doc) const;
+
+	void saveShaders(QDomElement & root, QDomDocument & doc) const;
+
 
 
 	virtual vec3 getP() 		const{ return vec3();}

@@ -2,7 +2,7 @@
 
 #include <QDebug>
 
-std::map<const QString, QOpenGLTexture *> Material::_texturesLoaded;
+QMap<QString, QOpenGLTexture *> Material::_texturesLoaded;
 
 Material::Material(
 		vec3 ambient, vec3 diffuse, vec3 specular, 
@@ -48,22 +48,22 @@ void Material::addTexture(const QString & texFile, unsigned char type)
 {
 	if (texFile != "")
 	{
-		auto res = _texturesLoaded.find(texFile);
+		auto res = _texturesLoaded.value(texFile);
 
-		if (res != _texturesLoaded.end())
+		if (res)
 		{
 			switch(type)
 			{
 				case DIFFUSE:
-					_diffuse_texture = res->second;
+					_diffuse_texture = res;
 					break;
 
 				case SPECULAR:
-					_specular_texture = res->second;
+					_specular_texture = res;
 					break;
 
 				case NORMAL:
-					_normal_texture = res->second;
+					_normal_texture = res;
 					break;
 			}
 		}
@@ -91,7 +91,7 @@ void Material::addTexture(const QString & texFile, unsigned char type)
 			}
 
 
-			_texturesLoaded.insert(std::make_pair(texFile, texture));
+			_texturesLoaded.insert(texFile, texture);
 		}
 	}	
 }
@@ -174,6 +174,21 @@ bool Material::hasSpecularTexture() const
 bool Material::hasNormalTexture() const
 {
 	return (_normal_texture != NULL);
+}
+
+QString Material::getDiffuseTextureName() const
+{
+	return _texturesLoaded.key(_diffuse_texture);
+}
+
+QString Material::getSpecularTextureName() const
+{
+	return _texturesLoaded.key(_specular_texture);
+}
+
+QString Material::getNormalTextureName() const
+{
+	return _texturesLoaded.key(_normal_texture);
 }
 
 void Material::update()

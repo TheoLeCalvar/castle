@@ -66,6 +66,9 @@ Scene::Scene(const QString & fileName)
 
 Scene::~Scene()
 {
+	qDebug() << saveAsXML("test_xml.xml");
+
+
 	for(auto i : _pieces)
 		delete i;
 
@@ -371,20 +374,49 @@ void 	Scene::loadShaders(const QDomElement & dom)
 	{
 		QOpenGLShaderProgram * prog = new QOpenGLShaderProgram();
 		QString nom = shader.attribute("nom");
+		QString fragName = shader.attribute("fragment");
+		QString vertName = shader.attribute("vertex");
 
-		if(!prog->addShaderFromSourceFile(QOpenGLShader::Fragment, shader.attribute("fragment")))
+		QOpenGLShader * frag = _loadedShaders.value(fragName);
+		QOpenGLShader * vert = _loadedShaders.value(vertName);
+
+		if(!frag)
 		{
-			qFatal("Erreur de chargement du shader %s\nLogs : %s", shader.attribute("fragment").toStdString().c_str(), prog->log().toStdString().c_str());
+			frag = new QOpenGLShader(QOpenGLShader::Fragment);
+			if(!frag->compileSourceFile(fragName))
+			{
+				qDebug() << "Erreur de chargement du shader " << fragName;
+				qDebug() << "Log : " << frag->log();
+
+				qFatal("Erreur de chargement de shader");
+			}
+			
+			_loadedShaders.insert(fragName, frag);	
 		}
 
-		if(!prog->addShaderFromSourceFile(QOpenGLShader::Vertex, shader.attribute("vertex")))
+		if(!vert)
 		{
-			qFatal("Erreur de chargement du shader %s\nLogs : %s", shader.attribute("vertex").toStdString().c_str(), prog->log().toStdString().c_str());
+			vert = new QOpenGLShader(QOpenGLShader::Vertex);
+			if(!vert->compileSourceFile(vertName))
+			{
+				qDebug() << "Erreur de chargement du shader " << vertName;
+				qDebug() << "Log : " << vert->log();
+
+				qFatal("Erreur de chargement de shader");
+			}
+			
+			_loadedShaders.insert(vertName, vert);	
 		}
+
+		prog->addShader(frag);
+		prog->addShader(vert);
 
 		if (!prog->link())
 		{
-			qFatal("Erreur de linkage du shader %s\nLogs  : %s", nom.toStdString().c_str(), prog->log().toStdString().c_str());
+			qDebug() << "Erreur de chargement du shader " << nom;
+			qDebug() << "Log : " << prog->log();
+
+			qFatal("Erreur de chargement de shader");
 		}
 
 		addShader(nom, prog);
@@ -406,10 +438,10 @@ void 	Scene::loadPieces(const QDomElement & dom)
 		QString shaderName = piece.attribute("shader");
 		GLuint 	shaderId = getShader(shaderName);
 		int width, height, length;
-		int x, y, z;
+		vec3 position;
+		vec3 scale(1.0f, 1.0f, 1.0f);
 
 		QDomElement dim = piece.firstChildElement("dimension");
-		QDomElement pos = piece.firstChildElement("position");
 		QDomElement murs = piece.firstChildElement("murs");
 		QDomElement objets = piece.firstChildElement("objets");
 
@@ -431,25 +463,19 @@ void 	Scene::loadPieces(const QDomElement & dom)
 			qDebug() << "Pas de dimension trouvé pour" << nom << "valeur par défaut 1x1x1";
 		}
 
-		if (!pos.isNull())
-		{
-			x = pos.attribute("x").toUInt();
-			y = pos.attribute("y").toUInt();
-			z = pos.attribute("z").toUInt();
-			qDebug() << "Position : " << x << y << z;
-		}
-		else
-		{
-			x = 0;
-			y = 0;
-			z = 0;
-			qDebug() << "Pas de position trouvée pour" << nom << "valeur par défaut (0,0,0)";
-		}
 
-		pieceTmp = new Piece(vec3(width, height, length), vec3(), vec3(x, y, z), NULL);
+		position = readPosition(piece.firstChildElement("position"));
+		qDebug() << "Position : " << position;
+
+		scale = readScale(piece.firstChildElement("scale"));
+		qDebug() << "Scale : " << scale;
+
+
+		pieceTmp = new Piece(vec3(width, height, length), vec3(), position, NULL);
 		pieceTmp->shaderId(shaderId);
 		pieceTmp->material(getMaterial(materialPiece));
 		pieceTmp->name(nom);
+		pieceTmp->scale(scale);
 
 		if (!murs.isNull())
 		{
@@ -464,6 +490,7 @@ void 	Scene::loadPieces(const QDomElement & dom)
 				QList<QRectF> fenetres;
 
 				QDomElement fenetre = mur.firstChildElement("fenetre");
+
 
 				while(!fenetre.isNull())
 				{
@@ -530,6 +557,7 @@ void 	Scene::loadPieces(const QDomElement & dom)
 				xRot = objet.attribute("Xrot", "0").toFloat();
 				yRot = objet.attribute("Yrot", "0").toFloat();
 				zRot = objet.attribute("Zrot", "0").toFloat();
+				vec3 scale = readScale(objet.firstChildElement("scale"));
 				QString modeleObjet = objet.attribute("modele");
 				QString nomObjet = objet.attribute("nom", nom + "_" + modeleObjet);
 				QString matObjet = objet.attribute("mat", "");
@@ -545,6 +573,7 @@ void 	Scene::loadPieces(const QDomElement & dom)
 
 				node->parent(pieceTmp);
 				node->rotation(vec3(xRot, yRot, zRot));
+				node->scale(scale);
 
 				if (matObjet != "")
 				{
@@ -556,18 +585,11 @@ void 	Scene::loadPieces(const QDomElement & dom)
 				
 
 
-				QDomElement position = objet.firstChildElement("position");
 
-				if (!position.isNull())
-				{
-					float x, y, z;
+				vec3 position = readPosition(objet.firstChildElement("position"));
 
-					x = position.attribute("x", "0").toFloat();
-					y = position.attribute("y", "0").toFloat();
-					z = position.attribute("z", "0").toFloat();
 
-					node->position(vec3(x, y, z));
-				}
+				node->position(position);
 
 
 				pieceTmp->addChild(nomObjet ,node);
@@ -585,10 +607,211 @@ void 	Scene::loadPieces(const QDomElement & dom)
 	}
 }
 
-void Scene::saveAsXML(const QString & fileName)
+bool Scene::saveAsXML(const QString & fileName)
 {
-	QFile  file;
-	file.setFileName(fileName);
+	QDomDocument doc(fileName);
+
+	QDomElement scene = doc.createElement("scene");
+
+	doc.appendChild(scene);
+
+	QDomElement camera = doc.createElement("camera");
+	QDomElement camPos = doc.createElement("position");
+	vec3 pos = _camera->position();
+
+	camPos.setAttribute("x", pos[0]);
+	camPos.setAttribute("y", pos[1]);
+	camPos.setAttribute("z", pos[2]);
+
+	camera.appendChild(camPos);
+	scene.appendChild(camera);
+
+	saveMaterials(scene, doc);
+	saveLights(scene, doc);
+	saveShaders(scene, doc);
+
+	QFile file(fileName);
+
+	if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
+	{
+		qDebug() << "Ouverture du fichier de sauvegarde impossible";
+
+		return false;
+	}
+
+	QTextStream stream( &file );
+	stream << doc.toString();
+  
+	file.close();
+
+	return true;
+}
+
+void Scene::saveMaterials(QDomElement & root, QDomDocument & doc) const
+{	
+	QDomElement materiaux = doc.createElement("materiaux");
+
+
+	for(auto i = _materials.begin(); i != _materials.end(); ++i)
+	{
+		QDomElement material = doc.createElement("material");
+
+		material.setAttribute("nom", i.key());
+
+		vec3 ambient = i.value()->get(GL_AMBIENT);
+		vec3 diffuse = i.value()->get(GL_DIFFUSE);
+		vec3 specular = i.value()->get(GL_SPECULAR);
+		float shininess = i.value()->shininess();
+
+		QDomElement ambientE = doc.createElement("ambient");
+
+		ambientE.setAttribute("r", ambient[0]);
+		ambientE.setAttribute("g", ambient[1]);
+		ambientE.setAttribute("b", ambient[2]);
+
+
+		QDomElement diffuseE = doc.createElement("diffuse");
+
+		diffuseE.setAttribute("r", diffuse[0]);
+		diffuseE.setAttribute("g", diffuse[1]);
+		diffuseE.setAttribute("b", diffuse[2]);
+
+
+		QDomElement specularE = doc.createElement("specular");
+
+		specularE.setAttribute("r", specular[0]);
+		specularE.setAttribute("g", specular[1]);
+		specularE.setAttribute("b", specular[2]);
+		specularE.setAttribute("a", shininess);
+
+
+		material.appendChild(ambientE);
+		material.appendChild(diffuseE);	
+		material.appendChild(specularE);
+
+
+		if(i.value()->hasDiffuseTexture())
+		{
+			QDomElement diffuseT = doc.createElement("texture");
+
+			diffuseT.setAttribute("src", i.value()->getDiffuseTextureName());
+			diffuseT.setAttribute("location", 0);
+
+			material.appendChild(diffuseT);
+
+		}
+
+		if(i.value()->hasSpecularTexture())
+		{
+			QDomElement specularT = doc.createElement("texture");
+
+			specularT.setAttribute("src", i.value()->getSpecularTextureName());
+			specularT.setAttribute("location", 2);
+
+			material.appendChild(specularT);
+		}
+
+		if(i.value()->hasNormalTexture())
+		{
+			QDomElement normalT = doc.createElement("texture");
+
+			normalT.setAttribute("src", i.value()->getNormalTextureName());
+			normalT.setAttribute("location", 1);
+
+			material.appendChild(normalT);
+		}
+
+		materiaux.appendChild(material);
+
+	}
+
+	root.appendChild(materiaux);
+}
+
+void Scene::saveLights(QDomElement & root, QDomDocument & doc) const
+{
+	QDomElement lumieres = doc.createElement("lumieres");
+
+
+	for(auto i = _lights.begin(); i != _lights.end(); ++i)
+	{
+		QDomElement lumiere = doc.createElement("lumiere");
+
+		lumiere.setAttribute("nom", i.key());
+
+		vec3 ambient = i.value()->get(GL_AMBIENT);
+		vec3 diffuse = i.value()->get(GL_DIFFUSE);
+		vec3 specular = i.value()->get(GL_SPECULAR);
+		vec3 position = i.value()->get(GL_POSITION);
+
+		QDomElement ambientE = doc.createElement("ambient");
+
+		ambientE.setAttribute("r", ambient[0]);
+		ambientE.setAttribute("g", ambient[1]);
+		ambientE.setAttribute("b", ambient[2]);
+
+
+		QDomElement diffuseE = doc.createElement("diffuse");
+
+		diffuseE.setAttribute("r", diffuse[0]);
+		diffuseE.setAttribute("g", diffuse[1]);
+		diffuseE.setAttribute("b", diffuse[2]);
+
+
+		QDomElement specularE = doc.createElement("specular");
+
+		specularE.setAttribute("r", specular[0]);
+		specularE.setAttribute("g", specular[1]);
+		specularE.setAttribute("b", specular[2]);
+
+		QDomElement positionE = doc.createElement("position");
+
+		positionE.setAttribute("x", position[0]);
+		positionE.setAttribute("y", position[1]);
+		positionE.setAttribute("z", position[2]);
+
+		lumiere.appendChild(positionE);
+		lumiere.appendChild(ambientE);
+		lumiere.appendChild(diffuseE);	
+		lumiere.appendChild(specularE);
+
+
+		lumieres.appendChild(lumiere);
+
+	}
+
+	root.appendChild(lumieres);
+}
+
+void Scene::saveShaders(QDomElement & root, QDomDocument & doc) const
+{
+	QDomElement shaders = doc.createElement("shaders");
+
+	for(auto i = _shaders.begin(); i != _shaders.end(); ++i)
+	{
+		QDomElement shader = doc.createElement("shader");
+		QList<QOpenGLShader *> shaderList = i.value()->shaders(); 
+
+		shader.setAttribute("nom", i.key());
+		
+		for(QOpenGLShader * j : shaderList)
+		{
+			switch(j->shaderType())
+			{
+				case QOpenGLShader::Vertex :
+					shader.setAttribute("vertex", _loadedShaders.key(j));
+					break;
+
+				case QOpenGLShader::Fragment :
+					shader.setAttribute("fragment", _loadedShaders.key(j));
+					break; 
+			}
+		}
+
+		shaders.appendChild(shader);
+	}
+
+	root.appendChild(shaders);
 }
 
 void Scene::orderLights()
@@ -624,4 +847,26 @@ bool Scene::collide(const Hitbox & h) const
 	}
 
 	return false;
+}
+
+vec3 Scene::readPosition(const QDomElement & e)
+{
+	vec3 position;
+
+	position[0] = e.attribute("x", "1").toFloat();
+	position[1] = e.attribute("y", "1").toFloat();
+	position[2] = e.attribute("z", "1").toFloat();
+
+	return position;
+}
+
+vec3 Scene::readScale(const QDomElement & e)
+{
+	vec3 scale;
+
+	scale[0] = e.attribute("x", "1").toFloat();
+	scale[1] = e.attribute("y", "1").toFloat();
+	scale[2] = e.attribute("z", "1").toFloat();
+
+	return scale;
 }
