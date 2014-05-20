@@ -1,5 +1,6 @@
-#include<mondock.hpp>
+#include "mondock.hpp"
 #include<iostream>
+
 Mondock::Mondock(const QString & title, QWidget * parent, Qt::WindowFlags flags):
     QDockWidget(title,parent,flags),modelmaterial(NULL),modelpiece(NULL)
 {
@@ -13,7 +14,7 @@ Mondock:: ~Mondock(){
 //___slots___________________________________________________//
 
 
-     void Mondock::selectionlight()
+    void Mondock::selectionlight()
      {
          //selection et verification du parent de l'element selectioner
          selection = dockvue->selectionModel();
@@ -222,7 +223,6 @@ Mondock:: ~Mondock(){
             _objet->parent(dockscene->getPiece(text));
             }
 
-
         void Mondock::rotobjectx(double x)
             {
             vec3 vectmp =_objet->rotation();
@@ -258,6 +258,7 @@ Mondock:: ~Mondock(){
             vec3 vectmp =_objet->position();
             _objet->position(vec3(vectmp[0],vectmp[1],x));
             }
+
         //scale
         void Mondock::scaleobjectx(double x)
             {
@@ -564,11 +565,12 @@ Mondock:: ~Mondock(){
         this->setWidget(tablight);
         this->show();
         }
+
 /* ************************************ */
 //             material                 //
 /* ************************************ */
 
-        void Mondock::traitementmaterial()
+    void Mondock::traitementmaterial()
             {
 
             indexmaterialSelectionne = selection->currentIndex();
@@ -711,10 +713,12 @@ Mondock:: ~Mondock(){
             this->setWidget(tabmaterial);
             this->show();
             }
+
 /* ************************************ */
 //             objet                    //
 /* ************************************ */
-        void Mondock::traitementobjet()
+
+    void Mondock::traitementobjet()
         {
 
             indexobjetlSelectionne = selection->currentIndex();

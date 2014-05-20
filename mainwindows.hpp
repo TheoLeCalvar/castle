@@ -5,6 +5,7 @@
 #include "node.hpp"
 #include "MyOpenGLWidget.hpp"
 
+#include <QSortFilterProxyModel>
 #include <QMainWindow>
 #include <QAction>
 #include <QMenuBar>
@@ -221,7 +222,7 @@ private slots:
        //fin liste element scene
 
        //widget element selectioner
-       Mondock *dock_light;
+       Mondock *dock_perso;
        //fin element selectioner
 
 //fin dock widgets
