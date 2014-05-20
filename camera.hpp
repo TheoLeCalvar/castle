@@ -65,6 +65,14 @@ public:
 	 */
 	void mouseMoveEvent(int x, int y, int width, int height);
 
+	/**
+	 * @brief Calcule la distance au carré entre l'oeil et la lumière
+	 * 
+	 * @param light Light dont on veut la distance
+	 * @return distance au carré entre la lumière et la caméra
+	 */
+	double distanceToLight(const Light *) const;
+
 private:
 	/**
 	 * @brief Calcul le déplacement de la Camera

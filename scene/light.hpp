@@ -19,7 +19,6 @@ private:
 	static vec3	_ambient; /**< La composante ambient est commune à toutes les lumières */
 	vec3	_diffuse;
 	vec3 	_specular;
-	char 	_lightNum;
 
 
 public:
@@ -36,9 +35,7 @@ public:
 	Light(
 		vec3 position = vec3(0.0, 0.0, 0.0), 
 		vec3 diffuse = vec3(0.8, 0.8, 0.8), 
-		vec3 specular = vec3(0.8, 0.8, 0.8),
-		char number = 0
-		);
+		vec3 specular = vec3(0.8, 0.8, 0.8)		);
 
 	/**
 	 * @brief Destructeur
@@ -72,17 +69,10 @@ public:
 	vec3 & get(GLenum type);
 
 	/**
-	 * @brief Change le slot de la lumière
-	 * 
-	 * @param num nouveau slot de la lumière
-	 * @todo  désactiver la lumière dans l'ancien slot
-	 */
-	void setNumber(char num);
-
-	/**
 	 * @brief Met à jour le shader avec les infos de la lumière
+	 * @param  number slot de lumière à utiliser dans la shader
 	 */
-	void update();
+	void update(char number);
 	
 };
 

@@ -344,7 +344,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
         {
         QStringList *listeelement = new QStringList(a->getChildrenNames());
 
-        for (int i ;i<listeelement->size();i++)
+        for (int i = 0;i<listeelement->size();i++)
             {
             QStandardItem * itemtmp= new QStandardItem(listeelement->at(i));
             b->appendRow(itemtmp);
@@ -572,9 +572,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                             spinspeajoutlumierex->value(),
                             spinspeajoutlumierey->value(),
                             spinspeajoutlumierez->value()
-                            ),
-
-                            2
+                            )
                         )
                     );
             dockajoutlumiere->close();

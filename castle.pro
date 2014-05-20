@@ -5,7 +5,7 @@
 TEMPLATE = app
 TARGET = castle
 INCLUDEPATH += . scene/ objets/ gui/
-QT += opengl xml gui
+QT += opengl xml gui concurrent
 CONFIG += c++11
 QMAKE_CXXFLAGS += -g -DNO_COLLIDE
 OBJECTS_DIR = build

@@ -80,13 +80,16 @@ void 	Objet::transformVector(vec4 & v) const
 
 void 	Objet::updateModel()
 {
-	_model = XrotationMatrix(_rotation[0]);
+	_model = scaleMatrix(_scale);
+
+	// _model = XrotationMatrix(_rotation[0]);
+	_model = Xrotate(_model, _rotation[0]);
 	_model = Yrotate(_model, _rotation[1]);
 	_model = Zrotate(_model, _rotation[2]);
 
 	_model = translate(_model, _position);
 
-	_model = scales(_model, _scale);
+	// _model = scales(_model, _scale);
 }
 
 vec3 Objet::getX() const

@@ -177,7 +177,7 @@ void Mesh::draw()
 
 	mat4 model = currentMatrix();
 
-	model = _model * model;
+	model =  model * _model;
 
 
 	setModelMatrix(model);

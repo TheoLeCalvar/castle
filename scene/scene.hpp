@@ -22,11 +22,17 @@
 #include <QDomNodeList>
 #include <QRectF>
 
+#include <QtConcurrent>
+
 
 
 class Mesh;
 class Node;
 class Camera;
+
+#ifndef MAX_LIGHT
+#define MAX_LIGHT 8
+#endif
 
 
 /**
@@ -45,6 +51,8 @@ private:
 	QMap<QString, QOpenGLShaderProgram *> 		_shaders; /**< Map des shader constituant la scène, identifiés par leur nom, doit être unique */
 
 	mat4 										_projectionMatrix; /**< Matrice de projection, recalculée à chaque redimensionnement du widget */
+
+	QMap<double, Light *>						_orderedLights; /**< Light ordonnées par leurs distance à la caméra */
 
 public:
 	Camera *									_camera; /**< Caméra de la scène */
@@ -229,6 +237,11 @@ private:
 	 * @param dom noeud XML correspondant à <shaders>
 	 */
 	void 		loadShaders(const QDomElement & dom);
+
+	/**
+	 * @brief Ordonne les Light en fonction de la distance à la caméra
+	 */
+	void 		orderLights();
 
 
 	virtual vec3 getP() 		const{ return vec3();}
