@@ -595,11 +595,19 @@ void Scene::orderLights()
 {
 	_orderedLights.clear();
 
-	// QFuture<double> res = QtConcurrent::mapped(_lights, &(_camera->distanceToLight));
+	QList<QFuture<QPair<Light *, float> > > resultats;
+
+	// auto res = QtConcurrent::mapped(_lights, [this](const Light * l){vec3 distance = _camera->position() - l->get(GL_POSITION); return (distance[0]*distance[0] + distance[1]*distance[1] + distance[2]*distance[2]);});
 
 	for(Light * i : _lights)
 	{
-		_orderedLights.insert(_camera->distanceToLight(i), i);
+		resultats << QtConcurrent::run([this](Light * l){vec3 distance = _camera->position() - l->get(GL_POSITION); return QPair<Light *, float>(l, (distance[0]*distance[0] + distance[1]*distance[1] + distance[2]*distance[2]));}, i);
+	}
+
+
+	for(QFuture<QPair<Light *, float> > f : resultats)
+	{
+		_orderedLights.insert(f.result().second, f.result().first);
 	}
 
 }

@@ -52,7 +52,7 @@ private:
 
 	mat4 										_projectionMatrix; /**< Matrice de projection, recalculée à chaque redimensionnement du widget */
 
-	QMap<double, Light *>						_orderedLights; /**< Light ordonnées par leurs distance à la caméra */
+	QMap<float, Light *>						_orderedLights; /**< Light ordonnées par leurs distance à la caméra */
 
 public:
 	Camera *									_camera; /**< Caméra de la scène */
