@@ -25,6 +25,17 @@ Inheritance diagram for Plan\+:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
 void \hyperlink{class_plan_a513c3dec0ce9043a9e1d3b5b18a6d698}{draw} ()
 \begin{DoxyCompactList}\small\item\em Affiche le plan. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{structvec3}{vec3} \hyperlink{class_plan_a2561b08d2e0f333c56d7ac2b5cc72fd7}{get\+P} () const 
+\begin{DoxyCompactList}\small\item\em Retourne le centre de la \hyperlink{class_hitbox}{Hitbox}. \end{DoxyCompactList}\item 
+virtual float \hyperlink{class_plan_aa64cc1ec4e6d1660c691592eb441e00c}{get\+Width} () const 
+\begin{DoxyCompactList}\small\item\em renvoie la demie largeur de la hitbox \end{DoxyCompactList}\item 
+virtual float \hyperlink{class_plan_a73316993ed03bbf13b38f2dff76b0ced}{get\+Height} () const 
+\begin{DoxyCompactList}\small\item\em renvoie la demie hauteur de la hitbox \end{DoxyCompactList}\item 
+virtual float \hyperlink{class_plan_a086041dcf2879904e774f34ae4ad61d7}{get\+Depth} () const 
+\begin{DoxyCompactList}\small\item\em renvoie la demie profondeur de la hitbox \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,6 +50,10 @@ G\+Luint \hyperlink{class_plan_ad8791ad67d66ac1b24792dc72ec00c64}{\+\_\+vbo\+\_\
 G\+Luint \hyperlink{class_plan_a3c16becd29f35260b79af8b9cb6fa892}{\+\_\+vbo\+\_\+tex\+Coord}
 \item 
 unsigned int \hyperlink{class_plan_af3d9228c1b7dc91c0cb00d4c8fa5a550}{\+\_\+nb\+Vertices}
+\item 
+\hyperlink{structvec3}{vec3} \hyperlink{class_plan_aad9837a269e87fa5d7a4a5fc90abf3e7}{\+\_\+min\+P}
+\item 
+\hyperlink{structvec3}{vec3} \hyperlink{class_plan_a2dce54e58d00f40ed8da5c9bd34c1232}{\+\_\+max\+P}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -115,9 +130,75 @@ Affiche le plan.
 
 Reimplemented from \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Objet}.
 
+\hypertarget{class_plan_a086041dcf2879904e774f34ae4ad61d7}{\index{Plan@{Plan}!get\+Depth@{get\+Depth}}
+\index{get\+Depth@{get\+Depth}!Plan@{Plan}}
+\subsubsection[{get\+Depth}]{\setlength{\rightskip}{0pt plus 5cm}float Plan\+::get\+Depth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_plan_a086041dcf2879904e774f34ae4ad61d7}
+
+
+renvoie la demie profondeur de la hitbox 
+
+
+
+Reimplemented from \hyperlink{class_objet_a27f49df80d4efc35530987cd8683dde0}{Objet}.
+
+\hypertarget{class_plan_a73316993ed03bbf13b38f2dff76b0ced}{\index{Plan@{Plan}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Plan@{Plan}}
+\subsubsection[{get\+Height}]{\setlength{\rightskip}{0pt plus 5cm}float Plan\+::get\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_plan_a73316993ed03bbf13b38f2dff76b0ced}
+
+
+renvoie la demie hauteur de la hitbox 
+
+
+
+Reimplemented from \hyperlink{class_objet_a05bcb1a581309e6785be09058ff68450}{Objet}.
+
+\hypertarget{class_plan_a2561b08d2e0f333c56d7ac2b5cc72fd7}{\index{Plan@{Plan}!get\+P@{get\+P}}
+\index{get\+P@{get\+P}!Plan@{Plan}}
+\subsubsection[{get\+P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Plan\+::get\+P (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_plan_a2561b08d2e0f333c56d7ac2b5cc72fd7}
+
+
+Retourne le centre de la \hyperlink{class_hitbox}{Hitbox}. 
+
+
+
+Reimplemented from \hyperlink{class_objet_a470565255788e83680e544631b5800ff}{Objet}.
+
+\hypertarget{class_plan_aa64cc1ec4e6d1660c691592eb441e00c}{\index{Plan@{Plan}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!Plan@{Plan}}
+\subsubsection[{get\+Width}]{\setlength{\rightskip}{0pt plus 5cm}float Plan\+::get\+Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_plan_aa64cc1ec4e6d1660c691592eb441e00c}
+
+
+renvoie la demie largeur de la hitbox 
+
+
+
+Reimplemented from \hyperlink{class_objet_ae8b213466c38b3bcaa34144cc708da65}{Objet}.
+
 
 
 \subsection{Member Data Documentation}
+\hypertarget{class_plan_a2dce54e58d00f40ed8da5c9bd34c1232}{\index{Plan@{Plan}!\+\_\+max\+P@{\+\_\+max\+P}}
+\index{\+\_\+max\+P@{\+\_\+max\+P}!Plan@{Plan}}
+\subsubsection[{\+\_\+max\+P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Plan\+::\+\_\+max\+P\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plan_a2dce54e58d00f40ed8da5c9bd34c1232}
+\hypertarget{class_plan_aad9837a269e87fa5d7a4a5fc90abf3e7}{\index{Plan@{Plan}!\+\_\+min\+P@{\+\_\+min\+P}}
+\index{\+\_\+min\+P@{\+\_\+min\+P}!Plan@{Plan}}
+\subsubsection[{\+\_\+min\+P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Plan\+::\+\_\+min\+P\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plan_aad9837a269e87fa5d7a4a5fc90abf3e7}
 \hypertarget{class_plan_af3d9228c1b7dc91c0cb00d4c8fa5a550}{\index{Plan@{Plan}!\+\_\+nb\+Vertices@{\+\_\+nb\+Vertices}}
 \index{\+\_\+nb\+Vertices@{\+\_\+nb\+Vertices}!Plan@{Plan}}
 \subsubsection[{\+\_\+nb\+Vertices}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Plan\+::\+\_\+nb\+Vertices\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plan_af3d9228c1b7dc91c0cb00d4c8fa5a550}

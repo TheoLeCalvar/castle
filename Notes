@@ -84,5 +84,13 @@ dimanche 11 mai
 lundi 12, mardi 13 mai et mercredi 14
 	amélioration du chargement des modèles et partage des vao/vbo
 
+jeudi 15, vendredi 16 mai
+	recherche d'informations sur les algorithmes de collision et mise ne place des bases
+
+lundi 19
+	mise ne place des collisions
+	ajout de quelques fonctions pour l'interface
+	correction héritage matrice des nodes
+
 Amélioration à faire
 	collision -> rajouter notion de hitbox à Objet, et ensuite calculer sur le vecteur déplacement entre dans cette hitbox

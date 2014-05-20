@@ -177,7 +177,7 @@ void Mesh::draw()
 
 	mat4 model = currentMatrix();
 
-	model = _model * model;
+	model =  model * _model;
 
 
 	setModelMatrix(model);
@@ -197,36 +197,6 @@ vec3 Mesh::getP() const
 	transformVector(centre);
 
 	return centre;
-}
-
-vec3 Mesh::getX() const
-{
-	vec4 v(1.0f, 0.0f, 0.0f, 0.0f);
-	transformVector(v);
-
-	v.normalize();
-
-	return v;
-}
-
-vec3 Mesh::getY() const
-{
-	vec4 v(0.0f, 1.0f, 0.0f, 0.0f);
-	transformVector(v);
-
-	v.normalize();
-	
-	return v;
-}
-
-vec3 Mesh::getZ() const
-{
-	vec4 v(0.0f, 0.0f, 1.0f, 0.0f);
-	transformVector(v);
-
-	v.normalize();
-	
-	return v;
 }
 
 float Mesh::getWidth() const

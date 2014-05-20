@@ -1,0 +1,173 @@
+\hypertarget{class_hitbox}{\section{Hitbox Class Reference}
+\label{class_hitbox}\index{Hitbox@{Hitbox}}
+}
+
+
+{\ttfamily \#include $<$hitbox.\+hpp$>$}
+
+Inheritance diagram for Hitbox\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_hitbox}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{class_hitbox_a10182e2ac66fd9e2ff07e9c8bf6c0a1c}{collide} (const \hyperlink{class_hitbox}{Hitbox} \&h) const 
+\begin{DoxyCompactList}\small\item\em Calcule la collision des deux O\+B\+B. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{structvec3}{vec3} \hyperlink{class_hitbox_a2572250e152f89c05e68f9fb0a03bf7a}{get\+P} () const =0
+\begin{DoxyCompactList}\small\item\em Retourne le centre de la \hyperlink{class_hitbox}{Hitbox}. \end{DoxyCompactList}\item 
+virtual \hyperlink{structvec3}{vec3} \hyperlink{class_hitbox_a25ee2fb5e0556399bc8012073e461411}{get\+X} () const =0
+\begin{DoxyCompactList}\small\item\em \hyperlink{structvec3}{vec3} unitaire X \end{DoxyCompactList}\item 
+virtual \hyperlink{structvec3}{vec3} \hyperlink{class_hitbox_acf6cfd480e5e1d925386a1225713ea13}{get\+Y} () const =0
+\begin{DoxyCompactList}\small\item\em \hyperlink{structvec3}{vec3} unitaire Y \end{DoxyCompactList}\item 
+virtual \hyperlink{structvec3}{vec3} \hyperlink{class_hitbox_a2a024cefac26e2fb8db4ecc9010251c8}{get\+Z} () const =0
+\begin{DoxyCompactList}\small\item\em \hyperlink{structvec3}{vec3} unitaire Z \end{DoxyCompactList}\item 
+virtual float \hyperlink{class_hitbox_a5805a4ad2b59f303892af5dfca73a41e}{get\+Width} () const =0
+\begin{DoxyCompactList}\small\item\em renvoie la demie largeur de la hitbox \end{DoxyCompactList}\item 
+virtual float \hyperlink{class_hitbox_a2393fb817af93cbeacfb140f4f30c1a0}{get\+Height} () const =0
+\begin{DoxyCompactList}\small\item\em renvoie la demie hauteur de la hitbox \end{DoxyCompactList}\item 
+virtual float \hyperlink{class_hitbox_a100e9cdbd7e85179e64c9679c28354ee}{get\+Depth} () const =0
+\begin{DoxyCompactList}\small\item\em renvoie la demie profondeur de la hitbox \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_hitbox_a10182e2ac66fd9e2ff07e9c8bf6c0a1c}{\index{Hitbox@{Hitbox}!collide@{collide}}
+\index{collide@{collide}!Hitbox@{Hitbox}}
+\subsubsection[{collide}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Hitbox\+::collide (
+\begin{DoxyParamCaption}
+\item[{const {\bf Hitbox} \&}]{h}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_hitbox_a10182e2ac66fd9e2ff07e9c8bf6c0a1c}
+
+
+Calcule la collision des deux O\+B\+B. 
+
+utilise l'algorithme des S\+A\+T, plus d'info sur \href{http://goldensuneur.fr/divers/Separating%20Axis%20Theorem%20for%20Oriented%20Bounding%20Boxes.pdf}{\tt http\+://goldensuneur.\+fr/divers/\+Separating\%20\+Axis\%20\+Theorem\%20for\%20\+Oriented\%20\+Bounding\%20\+Boxes.\+pdf}
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & seconde \hyperlink{class_hitbox}{Hitbox} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+actuellement non fonctionnel 
+\end{DoxyWarning}
+
+
+Reimplemented in \hyperlink{class_scene_a55a738d6643c4d9964caf84a0d361dbe}{Scene}, \hyperlink{class_node_a07ceab8d57814d67b0a6a3c662130aa2}{Node}, and \hyperlink{class_piece_a7b433182fab60a55c1b8dda976c015cc}{Piece}.
+
+\hypertarget{class_hitbox_a100e9cdbd7e85179e64c9679c28354ee}{\index{Hitbox@{Hitbox}!get\+Depth@{get\+Depth}}
+\index{get\+Depth@{get\+Depth}!Hitbox@{Hitbox}}
+\subsubsection[{get\+Depth}]{\setlength{\rightskip}{0pt plus 5cm}virtual float Hitbox\+::get\+Depth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{class_hitbox_a100e9cdbd7e85179e64c9679c28354ee}
+
+
+renvoie la demie profondeur de la hitbox 
+
+
+
+Implemented in \hyperlink{class_scene_a96b58a841f6295813072d258aa9a9236}{Scene}, \hyperlink{class_objet_a27f49df80d4efc35530987cd8683dde0}{Objet}, \hyperlink{class_camera_ae8be0ecf4c8611d787f4234832ee8419}{Camera}, \hyperlink{class_mesh_a505f44a95b363e12f6434801fe697108}{Mesh}, and \hyperlink{class_plan_a086041dcf2879904e774f34ae4ad61d7}{Plan}.
+
+\hypertarget{class_hitbox_a2393fb817af93cbeacfb140f4f30c1a0}{\index{Hitbox@{Hitbox}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Hitbox@{Hitbox}}
+\subsubsection[{get\+Height}]{\setlength{\rightskip}{0pt plus 5cm}virtual float Hitbox\+::get\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{class_hitbox_a2393fb817af93cbeacfb140f4f30c1a0}
+
+
+renvoie la demie hauteur de la hitbox 
+
+
+
+Implemented in \hyperlink{class_scene_a83026eeb7ec401111634beb553cb2f8e}{Scene}, \hyperlink{class_objet_a05bcb1a581309e6785be09058ff68450}{Objet}, \hyperlink{class_camera_af34538e81e41b215ffcae141b238a84d}{Camera}, \hyperlink{class_mesh_a3feeb4d65973f3dc0c0e66ae95b36971}{Mesh}, and \hyperlink{class_plan_a73316993ed03bbf13b38f2dff76b0ced}{Plan}.
+
+\hypertarget{class_hitbox_a2572250e152f89c05e68f9fb0a03bf7a}{\index{Hitbox@{Hitbox}!get\+P@{get\+P}}
+\index{get\+P@{get\+P}!Hitbox@{Hitbox}}
+\subsubsection[{get\+P}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf vec3} Hitbox\+::get\+P (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{class_hitbox_a2572250e152f89c05e68f9fb0a03bf7a}
+
+
+Retourne le centre de la \hyperlink{class_hitbox}{Hitbox}. 
+
+
+
+Implemented in \hyperlink{class_scene_a31be15d8114d6d9c01c312cbe1a41ed6}{Scene}, \hyperlink{class_objet_a470565255788e83680e544631b5800ff}{Objet}, \hyperlink{class_camera_a78bcbeed337fb2ee25f1077d11eb8a33}{Camera}, \hyperlink{class_mesh_ab1da4db267719d533521873715b9359c}{Mesh}, and \hyperlink{class_plan_a2561b08d2e0f333c56d7ac2b5cc72fd7}{Plan}.
+
+\hypertarget{class_hitbox_a5805a4ad2b59f303892af5dfca73a41e}{\index{Hitbox@{Hitbox}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!Hitbox@{Hitbox}}
+\subsubsection[{get\+Width}]{\setlength{\rightskip}{0pt plus 5cm}virtual float Hitbox\+::get\+Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{class_hitbox_a5805a4ad2b59f303892af5dfca73a41e}
+
+
+renvoie la demie largeur de la hitbox 
+
+
+
+Implemented in \hyperlink{class_scene_a3fa3346da04b7aa00cb5a30171e70a24}{Scene}, \hyperlink{class_objet_ae8b213466c38b3bcaa34144cc708da65}{Objet}, \hyperlink{class_camera_a1b29933f81edb6cac6815a139442e6c5}{Camera}, \hyperlink{class_mesh_a8e0ae90ffac8c8295027d21f5af155cc}{Mesh}, and \hyperlink{class_plan_aa64cc1ec4e6d1660c691592eb441e00c}{Plan}.
+
+\hypertarget{class_hitbox_a25ee2fb5e0556399bc8012073e461411}{\index{Hitbox@{Hitbox}!get\+X@{get\+X}}
+\index{get\+X@{get\+X}!Hitbox@{Hitbox}}
+\subsubsection[{get\+X}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf vec3} Hitbox\+::get\+X (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{class_hitbox_a25ee2fb5e0556399bc8012073e461411}
+
+
+\hyperlink{structvec3}{vec3} unitaire X 
+
+
+
+Implemented in \hyperlink{class_scene_a1a35eb36ad2c6b5bf748c31933e4ea5b}{Scene}, \hyperlink{class_objet_afaf96803ebfa415f7e3cbb1548bc1820}{Objet}, and \hyperlink{class_camera_a190a745972d0b797ebb19a2aecd5fbe2}{Camera}.
+
+\hypertarget{class_hitbox_acf6cfd480e5e1d925386a1225713ea13}{\index{Hitbox@{Hitbox}!get\+Y@{get\+Y}}
+\index{get\+Y@{get\+Y}!Hitbox@{Hitbox}}
+\subsubsection[{get\+Y}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf vec3} Hitbox\+::get\+Y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{class_hitbox_acf6cfd480e5e1d925386a1225713ea13}
+
+
+\hyperlink{structvec3}{vec3} unitaire Y 
+
+
+
+Implemented in \hyperlink{class_scene_a8b925540bc8fc2976eec67998f5c3bd3}{Scene}, \hyperlink{class_objet_a861ee97362660b8b4e013ac08bcacbfc}{Objet}, and \hyperlink{class_camera_a23b4f98ea112c9c435f9ee8df7cdfc45}{Camera}.
+
+\hypertarget{class_hitbox_a2a024cefac26e2fb8db4ecc9010251c8}{\index{Hitbox@{Hitbox}!get\+Z@{get\+Z}}
+\index{get\+Z@{get\+Z}!Hitbox@{Hitbox}}
+\subsubsection[{get\+Z}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf vec3} Hitbox\+::get\+Z (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{class_hitbox_a2a024cefac26e2fb8db4ecc9010251c8}
+
+
+\hyperlink{structvec3}{vec3} unitaire Z 
+
+
+
+Implemented in \hyperlink{class_scene_a4762ba0c1a51eeba4a19a515b546b6bd}{Scene}, \hyperlink{class_objet_ae7f55830cdd18cfc3ceb9b556f25be23}{Objet}, and \hyperlink{class_camera_a5132a2f324c60f0f94d8adb66644e5a3}{Camera}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+objets/\hyperlink{hitbox_8hpp}{hitbox.\+hpp}\end{DoxyCompactItemize}

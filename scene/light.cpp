@@ -7,10 +7,9 @@ vec3 Light::_ambient;
 Light::Light(
 	vec3 position, 
 	vec3 diffuse, 
-	vec3 specular,
-	char number)
+	vec3 specular)
 	:
-	_position(position), _diffuse(diffuse), _specular(specular), _lightNum(number)
+	_position(position), _diffuse(diffuse), _specular(specular)
 {
 	initializeOpenGLFunctions();
 
@@ -81,20 +80,15 @@ vec3& Light::get(GLenum type)
 	}
 }
 
-void Light::setNumber(char num)
-{
-	_lightNum = num;
-}
 
-
-void Light::update()
+void Light::update(char number)
 {
 	GLuint 	shader = getActiveShader();
 	char	name[] = "Lights[0].Ld";
 	char 	enable[] = "Lights[0].enabled";
 	//modification du 0 pour avoir le bon indice
-	enable[7] += _lightNum;
-	name[7] += _lightNum;
+	enable[7] += number;
+	name[7] += number;
 
 	GLint enabled_location = glGetUniformLocation(shader, enable);
 	GLint ambient_location = glGetUniformLocation(shader, "La");

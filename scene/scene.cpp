@@ -82,6 +82,11 @@ Scene::~Scene()
 
 void 	Scene::draw()
 {
+	orderLights();
+
+	int size = _orderedLights.size();
+
+
 
 	_camera->display();
 	
@@ -94,13 +99,16 @@ void 	Scene::draw()
 
 	for(auto i: _shaders)
 	{
+		char cpt = 0;
+
 		setActiveShader(i->programId());
 
 		openGL_check_error();
 
-		for(auto j : _lights)
+
+		for(auto j = _orderedLights.begin(); j != _orderedLights.begin() + (size >= MAX_LIGHT ? MAX_LIGHT : size); ++j)
 		{
-			j->update();
+			j.value()->update(cpt++);
 			openGL_check_error();
 		}
 	}
@@ -296,9 +304,7 @@ void 	Scene::loadLights(const QDomElement & dom)
 	{
 		Light * tmp = new Light;
 		QString nom = light.attribute("nom"), mat = light.attribute("mat");
-		int lightNum = light.attribute("num", "0").toInt();
 
-		tmp->setNumber(lightNum);
 		
 		qDebug() << light.attribute("nom");
 
@@ -583,4 +589,31 @@ void Scene::saveAsXML(const QString & fileName)
 {
 	QFile  file;
 	file.setFileName(fileName);
+}
+
+void Scene::orderLights()
+{
+	_orderedLights.clear();
+
+	// QFuture<double> res = QtConcurrent::mapped(_lights, &(_camera->distanceToLight));
+
+	for(Light * i : _lights)
+	{
+		_orderedLights.insert(_camera->distanceToLight(i), i);
+	}
+
+}
+
+bool Scene::collide(const Hitbox & h) const
+{
+	for (Piece * i : _pieces)
+	{
+		if(i->collide(h))
+		{
+			qDebug() << "Collision avec " << i->name();
+			return true;
+		}
+	}
+
+	return false;
 }

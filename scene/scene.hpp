@@ -7,6 +7,7 @@
 
 #include "objet.hpp"
 #include "piece.hpp"
+#include "hitbox.hpp"
 
 
 #include <QOpenGLFunctions_3_2_Core>
@@ -21,11 +22,17 @@
 #include <QDomNodeList>
 #include <QRectF>
 
+#include <QtConcurrent>
+
 
 
 class Mesh;
 class Node;
 class Camera;
+
+#ifndef MAX_LIGHT
+#define MAX_LIGHT 8
+#endif
 
 
 /**
@@ -35,7 +42,7 @@ class Camera;
  * Se charge de lire le xml et de générer la scène.
  * Nécessite un context OpenGL 3.2 au minimum
  */
-class Scene: protected QOpenGLFunctions_3_2_Core
+class Scene: protected QOpenGLFunctions_3_2_Core, public Hitbox
 {
 private:
 	QMap<QString, Piece *>						_pieces; /**< Map des pièces constituant la scène, identifiées par leur nom, doit être unique */ 
@@ -44,6 +51,8 @@ private:
 	QMap<QString, QOpenGLShaderProgram *> 		_shaders; /**< Map des shader constituant la scène, identifiés par leur nom, doit être unique */
 
 	mat4 										_projectionMatrix; /**< Matrice de projection, recalculée à chaque redimensionnement du widget */
+
+	QMap<double, Light *>						_orderedLights; /**< Light ordonnées par leurs distance à la caméra */
 
 public:
 	Camera *									_camera; /**< Caméra de la scène */
@@ -193,6 +202,9 @@ public:
 	void 		saveAsXML(const QString & fileName);
 
 
+	virtual bool collide(const Hitbox & h) const;
+
+
 private:
 	/**
 	 * @brief Charge les lumières
@@ -225,6 +237,20 @@ private:
 	 * @param dom noeud XML correspondant à <shaders>
 	 */
 	void 		loadShaders(const QDomElement & dom);
+
+	/**
+	 * @brief Ordonne les Light en fonction de la distance à la caméra
+	 */
+	void 		orderLights();
+
+
+	virtual vec3 getP() 		const{ return vec3();}
+	virtual vec3 getX() 		const{ return vec3();}
+	virtual vec3 getY() 		const{ return vec3();}
+	virtual vec3 getZ() 		const{ return vec3();}
+	virtual float getWidth() 	const{ return 0.0f;}
+	virtual float getHeight() 	const{ return 0.0f;}
+	virtual float getDepth() 	const{ return 0.0f;}
 	
 };
 

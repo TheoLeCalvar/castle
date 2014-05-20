@@ -81,9 +81,6 @@ public:
 
 protected:
 	virtual vec3 getP() const;
-	virtual vec3 getX() const;
-	virtual vec3 getY() const;
-	virtual vec3 getZ() const;
 	virtual float getWidth() const;
 	virtual float getHeight() const;
 	virtual float getDepth() const;

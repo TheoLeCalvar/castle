@@ -151,9 +151,9 @@ public:
 	void 			name(const QString & n){_name = n;}
 
 
-	virtual bool collide(const Hitbox &) const{return false;}
-
-
+#ifdef NO_COLLIDE
+	bool 			collide(const Hitbox &) const{return false;}
+#endif
 
 private:
 	/**
@@ -186,9 +186,9 @@ protected:
 
 
 	virtual vec3 getP() 		const{ return vec3();}
-	virtual vec3 getX() 		const{ return vec3();}
-	virtual vec3 getY() 		const{ return vec3();}
-	virtual vec3 getZ() 		const{ return vec3();}
+	virtual vec3 getX() 		const;
+	virtual vec3 getY() 		const;
+	virtual vec3 getZ() 		const;
 	virtual float getWidth() 	const{ return 0.0f;}
 	virtual float getHeight() 	const{ return 0.0f;}
 	virtual float getDepth() 	const{ return 0.0f;}

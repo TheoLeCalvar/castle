@@ -8,7 +8,7 @@ Objet::Objet(const QString & name, Material * mat, vec3 rotation, vec3 position,
 }
 
 Objet::Objet(const Objet & o)
-		:_parent(o._parent), _mat(o._mat), _name(o._name), _rotation(o._rotation), _position(o._position), _model(o._model), _shaderId(o._shaderId)
+		:_parent(o._parent), _mat(o._mat), _name(o._name), _rotation(o._rotation), _position(o._position), _scale(o._scale), _model(o._model), _shaderId(o._shaderId)
 {
 	initializeOpenGLFunctions(); 
 }
@@ -80,11 +80,44 @@ void 	Objet::transformVector(vec4 & v) const
 
 void 	Objet::updateModel()
 {
-	_model = XrotationMatrix(_rotation[0]);
+	_model = scaleMatrix(_scale);
+
+	// _model = XrotationMatrix(_rotation[0]);
+	_model = Xrotate(_model, _rotation[0]);
 	_model = Yrotate(_model, _rotation[1]);
 	_model = Zrotate(_model, _rotation[2]);
 
 	_model = translate(_model, _position);
 
-	_model = scales(_model, _scale);
+	// _model = scales(_model, _scale);
+}
+
+vec3 Objet::getX() const
+{
+	vec4 v(1.0f, 0.0f, 0.0f, 0.0f);
+	transformVector(v);
+
+	v.normalize();
+
+	return v;
+}
+
+vec3 Objet::getY() const
+{
+	vec4 v(0.0f, 1.0f, 0.0f, 0.0f);
+	transformVector(v);
+
+	v.normalize();
+	
+	return v;
+}
+
+vec3 Objet::getZ() const
+{
+	vec4 v(0.0f, 0.0f, 1.0f, 0.0f);
+	transformVector(v);
+
+	v.normalize();
+	
+	return v;
 }

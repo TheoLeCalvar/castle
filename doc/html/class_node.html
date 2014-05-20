@@ -95,6 +95,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Contient un node de modèle 3D.  
+ <a href="class_node.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="node_8hpp_source.html">node.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Node:</div>
@@ -102,21 +105,41 @@ Inheritance diagram for Node:</div>
  <div class="center">
   <img src="class_node.png" usemap="#Node_map" alt=""/>
   <map id="Node_map" name="Node_map">
-<area href="class_objet.html" title="Classe de base affichable. " alt="Objet" shape="rect" coords="0,56,187,80"/>
+<area href="class_objet.html" title="Classe de base affichable. " alt="Objet" shape="rect" coords="98,56,285,80"/>
+<area href="class_hitbox.html" alt="Hitbox" shape="rect" coords="197,0,384,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa0840c3cb5c7159be6d992adecd2097c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node.html#aa0840c3cb5c7159be6d992adecd2097c">~Node</a> ()</td></tr>
+<tr class="memdesc:aa0840c3cb5c7159be6d992adecd2097c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#aa0840c3cb5c7159be6d992adecd2097c">More...</a><br /></td></tr>
 <tr class="separator:aa0840c3cb5c7159be6d992adecd2097c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab88c83ced58700a56de568f5b1e3c473"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node.html#ab88c83ced58700a56de568f5b1e3c473">draw</a> ()</td></tr>
 <tr class="memdesc:ab88c83ced58700a56de568f5b1e3c473"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage de l'<a class="el" href="class_objet.html" title="Classe de base affichable. ">Objet</a>.  <a href="#ab88c83ced58700a56de568f5b1e3c473">More...</a><br /></td></tr>
 <tr class="separator:ab88c83ced58700a56de568f5b1e3c473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7d6e2eab0af346f6690b4a2db12d953"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node.html#af7d6e2eab0af346f6690b4a2db12d953">getChildrenNames</a> () const </td></tr>
+<tr class="memdesc:af7d6e2eab0af346f6690b4a2db12d953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la liste des noms des Nodes fils.  <a href="#af7d6e2eab0af346f6690b4a2db12d953">More...</a><br /></td></tr>
+<tr class="separator:af7d6e2eab0af346f6690b4a2db12d953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdc8a8f6c370f437037c85ffea5af4c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node.html#afdc8a8f6c370f437037c85ffea5af4c1">getChild</a> (const QString &amp;<a class="el" href="class_objet.html#a4a702c189bedcbf1e65da6aec72c8e44">name</a>)</td></tr>
+<tr class="memdesc:afdc8a8f6c370f437037c85ffea5af4c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le <a class="el" href="class_node.html" title="Contient un node de modèle 3D. ">Node</a> enfant à partir de son nom.  <a href="#afdc8a8f6c370f437037c85ffea5af4c1">More...</a><br /></td></tr>
+<tr class="separator:afdc8a8f6c370f437037c85ffea5af4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a3bbcabcbd5423c297e287dd0ab7ecd"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node.html#a4a3bbcabcbd5423c297e287dd0ab7ecd">getMeshNames</a> () const </td></tr>
+<tr class="memdesc:a4a3bbcabcbd5423c297e287dd0ab7ecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la liste des noms des <a class="el" href="class_mesh.html" title="Charge un modèle 3D. ">Mesh</a> de ce <a class="el" href="class_node.html" title="Contient un node de modèle 3D. ">Node</a>.  <a href="#a4a3bbcabcbd5423c297e287dd0ab7ecd">More...</a><br /></td></tr>
+<tr class="separator:a4a3bbcabcbd5423c297e287dd0ab7ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47c225bb649c6d44763661f6e3253c7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_mesh.html">Mesh</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node.html#a47c225bb649c6d44763661f6e3253c7c">getMesh</a> (const QString &amp;<a class="el" href="class_objet.html#a4a702c189bedcbf1e65da6aec72c8e44">name</a>)</td></tr>
+<tr class="memdesc:a47c225bb649c6d44763661f6e3253c7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le <a class="el" href="class_mesh.html" title="Charge un modèle 3D. ">Mesh</a> ayant le nom donné  <a href="#a47c225bb649c6d44763661f6e3253c7c">More...</a><br /></td></tr>
+<tr class="separator:a47c225bb649c6d44763661f6e3253c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07ceab8d57814d67b0a6a3c662130aa2"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node.html#a07ceab8d57814d67b0a6a3c662130aa2">collide</a> (const <a class="el" href="class_hitbox.html">Hitbox</a> &amp;h) const </td></tr>
+<tr class="memdesc:a07ceab8d57814d67b0a6a3c662130aa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcule la collision des deux OBB.  <a href="#a07ceab8d57814d67b0a6a3c662130aa2">More...</a><br /></td></tr>
+<tr class="separator:a07ceab8d57814d67b0a6a3c662130aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_objet"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_objet')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_objet.html">Objet</a></td></tr>
 <tr class="memitem:aea29e90dc963beb399d3028b7322039f inherit pub_methods_class_objet"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#aea29e90dc963beb399d3028b7322039f">Objet</a> (const QString &amp;<a class="el" href="class_objet.html#a4a702c189bedcbf1e65da6aec72c8e44">name</a>=QString(), <a class="el" href="class_material.html">Material</a> *mat=NULL, <a class="el" href="structvec3.html">vec3</a> <a class="el" href="class_objet.html#ac69a1b459bcb4433099c8cfbff06b209">rotation</a>=<a class="el" href="structvec3.html">vec3</a>(), <a class="el" href="structvec3.html">vec3</a> <a class="el" href="class_objet.html#a0e109bc790b14328202dd2546b04e2fd">position</a>=<a class="el" href="structvec3.html">vec3</a>(), <a class="el" href="class_objet.html">Objet</a> *<a class="el" href="class_objet.html#a95e63a98dc9dc485fe874df30f2069ee">parent</a>=NULL)</td></tr>
 <tr class="memdesc:aea29e90dc963beb399d3028b7322039f inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#aea29e90dc963beb399d3028b7322039f">More...</a><br /></td></tr>
 <tr class="separator:aea29e90dc963beb399d3028b7322039f inherit pub_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaf99767deb7996bd323185ba22e8ca1 inherit pub_methods_class_objet"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#aeaf99767deb7996bd323185ba22e8ca1">Objet</a> (const <a class="el" href="class_objet.html">Objet</a> &amp;o)</td></tr>
+<tr class="memdesc:aeaf99767deb7996bd323185ba22e8ca1 inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur par recopie.  <a href="#aeaf99767deb7996bd323185ba22e8ca1">More...</a><br /></td></tr>
+<tr class="separator:aeaf99767deb7996bd323185ba22e8ca1 inherit pub_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77a195bb1452ef4221b5080632cd7757 inherit pub_methods_class_objet"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a77a195bb1452ef4221b5080632cd7757">~Objet</a> ()</td></tr>
 <tr class="memdesc:a77a195bb1452ef4221b5080632cd7757 inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#a77a195bb1452ef4221b5080632cd7757">More...</a><br /></td></tr>
 <tr class="separator:a77a195bb1452ef4221b5080632cd7757 inherit pub_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,6 +161,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2d37f15368f40615a8bc58622623d991 inherit pub_methods_class_objet"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a2d37f15368f40615a8bc58622623d991">rotation</a> (<a class="el" href="structvec3.html">vec3</a> r)</td></tr>
 <tr class="memdesc:a2d37f15368f40615a8bc58622623d991 inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change la rotation de l'<a class="el" href="class_objet.html" title="Classe de base affichable. ">Objet</a>.  <a href="#a2d37f15368f40615a8bc58622623d991">More...</a><br /></td></tr>
 <tr class="separator:a2d37f15368f40615a8bc58622623d991 inherit pub_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae09962e65216c36b31ab389a5af310a3 inherit pub_methods_class_objet"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvec3.html">vec3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#ae09962e65216c36b31ab389a5af310a3">scale</a> ()</td></tr>
+<tr class="memdesc:ae09962e65216c36b31ab389a5af310a3 inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère les facteurs de scale de l'objet.  <a href="#ae09962e65216c36b31ab389a5af310a3">More...</a><br /></td></tr>
+<tr class="separator:ae09962e65216c36b31ab389a5af310a3 inherit pub_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e472f9f9362ecfa46e85bffcfc14e31 inherit pub_methods_class_objet"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a7e472f9f9362ecfa46e85bffcfc14e31">scale</a> () const </td></tr>
+<tr class="memdesc:a7e472f9f9362ecfa46e85bffcfc14e31 inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère les facteurs de scale de l'objet.  <a href="#a7e472f9f9362ecfa46e85bffcfc14e31">More...</a><br /></td></tr>
+<tr class="separator:a7e472f9f9362ecfa46e85bffcfc14e31 inherit pub_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4ca090d86e327ad4654a068afcf3141 inherit pub_methods_class_objet"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#ae4ca090d86e327ad4654a068afcf3141">scale</a> (<a class="el" href="structvec3.html">vec3</a> scale)</td></tr>
+<tr class="memdesc:ae4ca090d86e327ad4654a068afcf3141 inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie le scale de l'objet.  <a href="#ae4ca090d86e327ad4654a068afcf3141">More...</a><br /></td></tr>
+<tr class="separator:ae4ca090d86e327ad4654a068afcf3141 inherit pub_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13f08bf7d1265bbf4ade92b755b27c1b inherit pub_methods_class_objet"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a13f08bf7d1265bbf4ade92b755b27c1b">shaderId</a> (GLuint s)</td></tr>
 <tr class="memdesc:a13f08bf7d1265bbf4ade92b755b27c1b inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change l'id du shader.  <a href="#a13f08bf7d1265bbf4ade92b755b27c1b">More...</a><br /></td></tr>
 <tr class="separator:a13f08bf7d1265bbf4ade92b755b27c1b inherit pub_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,20 +195,25 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ac2140ddf8f06f8b5620e6743c945c482"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node.html#ac2140ddf8f06f8b5620e6743c945c482">loadModel</a> (const QString &amp;path, <a class="el" href="class_scene.html">Scene</a> *scene)</td></tr>
+<tr class="memdesc:ac2140ddf8f06f8b5620e6743c945c482"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge le modèle.  <a href="#ac2140ddf8f06f8b5620e6743c945c482">More...</a><br /></td></tr>
 <tr class="separator:ac2140ddf8f06f8b5620e6743c945c482"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:ad7a34779cad45d997bfd6d3d8043c75f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node.html#ad7a34779cad45d997bfd6d3d8043c75f">Node</a> ()</td></tr>
+<tr class="memdesc:ad7a34779cad45d997bfd6d3d8043c75f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur par défaut.  <a href="#ad7a34779cad45d997bfd6d3d8043c75f">More...</a><br /></td></tr>
 <tr class="separator:ad7a34779cad45d997bfd6d3d8043c75f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bf5930c1238505203c3dcf6e4573bad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node.html#a4bf5930c1238505203c3dcf6e4573bad">Node</a> (const <a class="el" href="class_node.html">Node</a> &amp;node)</td></tr>
+<tr class="memdesc:a4bf5930c1238505203c3dcf6e4573bad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur par recopie.  <a href="#a4bf5930c1238505203c3dcf6e4573bad">More...</a><br /></td></tr>
 <tr class="separator:a4bf5930c1238505203c3dcf6e4573bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
 <tr class="memitem:a0684a35524cc1e276bfefdd28cd452cf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_material.html">Material</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node.html#a0684a35524cc1e276bfefdd28cd452cf">loadMaterial</a> (const aiMaterial *mtl)</td></tr>
+<tr class="memdesc:a0684a35524cc1e276bfefdd28cd452cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge un <a class="el" href="class_material.html" title="Matériaux pour la Scene. ">Material</a> depuis une aiMaterial d'ASSIMP.  <a href="#a0684a35524cc1e276bfefdd28cd452cf">More...</a><br /></td></tr>
 <tr class="separator:a0684a35524cc1e276bfefdd28cd452cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf6db74c5840b203f4eee1239539ce31"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node.html#acf6db74c5840b203f4eee1239539ce31">loadNode</a> (const aiNode *node, const aiScene *pScene, <a class="el" href="class_scene.html">Scene</a> *scene)</td></tr>
+<tr class="memdesc:acf6db74c5840b203f4eee1239539ce31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge un aiNode.  <a href="#acf6db74c5840b203f4eee1239539ce31">More...</a><br /></td></tr>
 <tr class="separator:acf6db74c5840b203f4eee1239539ce31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -188,11 +225,36 @@ Private Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:a082b475f17808deeb73c07d311f45073"><td class="memItemLeft" align="right" valign="top">static QMap&lt; QString, <a class="el" href="class_node.html">Node</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node.html#a082b475f17808deeb73c07d311f45073">_loadedModels</a></td></tr>
-<tr class="separator:a082b475f17808deeb73c07d311f45073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e510fe62f9ef864668e32ef9269543c"><td class="memItemLeft" align="right" valign="top">static QMultiMap&lt; QString, <a class="el" href="class_node.html">Node</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node.html#a2e510fe62f9ef864668e32ef9269543c">_loadedModels</a></td></tr>
+<tr class="separator:a2e510fe62f9ef864668e32ef9269543c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_class_objet"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_objet')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_objet.html">Objet</a></td></tr>
+<tr class="memitem:a68db2971ff359da981bc0fb73a164b9f inherit pro_methods_class_objet"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a68db2971ff359da981bc0fb73a164b9f">transformVector</a> (<a class="el" href="structvec4.html">vec4</a> &amp;v) const </td></tr>
+<tr class="memdesc:a68db2971ff359da981bc0fb73a164b9f inherit pro_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apllique au vecteur les transformation de l'objet et de ses pères.  <a href="#a68db2971ff359da981bc0fb73a164b9f">More...</a><br /></td></tr>
+<tr class="separator:a68db2971ff359da981bc0fb73a164b9f inherit pro_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a470565255788e83680e544631b5800ff inherit pro_methods_class_objet"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structvec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a470565255788e83680e544631b5800ff">getP</a> () const </td></tr>
+<tr class="memdesc:a470565255788e83680e544631b5800ff inherit pro_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le centre de la <a class="el" href="class_hitbox.html">Hitbox</a>.  <a href="#a470565255788e83680e544631b5800ff">More...</a><br /></td></tr>
+<tr class="separator:a470565255788e83680e544631b5800ff inherit pro_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaf96803ebfa415f7e3cbb1548bc1820 inherit pro_methods_class_objet"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structvec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#afaf96803ebfa415f7e3cbb1548bc1820">getX</a> () const </td></tr>
+<tr class="memdesc:afaf96803ebfa415f7e3cbb1548bc1820 inherit pro_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structvec3.html">vec3</a> unitaire X  <a href="#afaf96803ebfa415f7e3cbb1548bc1820">More...</a><br /></td></tr>
+<tr class="separator:afaf96803ebfa415f7e3cbb1548bc1820 inherit pro_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a861ee97362660b8b4e013ac08bcacbfc inherit pro_methods_class_objet"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structvec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a861ee97362660b8b4e013ac08bcacbfc">getY</a> () const </td></tr>
+<tr class="memdesc:a861ee97362660b8b4e013ac08bcacbfc inherit pro_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structvec3.html">vec3</a> unitaire Y  <a href="#a861ee97362660b8b4e013ac08bcacbfc">More...</a><br /></td></tr>
+<tr class="separator:a861ee97362660b8b4e013ac08bcacbfc inherit pro_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7f55830cdd18cfc3ceb9b556f25be23 inherit pro_methods_class_objet"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structvec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#ae7f55830cdd18cfc3ceb9b556f25be23">getZ</a> () const </td></tr>
+<tr class="memdesc:ae7f55830cdd18cfc3ceb9b556f25be23 inherit pro_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structvec3.html">vec3</a> unitaire Z  <a href="#ae7f55830cdd18cfc3ceb9b556f25be23">More...</a><br /></td></tr>
+<tr class="separator:ae7f55830cdd18cfc3ceb9b556f25be23 inherit pro_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8b213466c38b3bcaa34144cc708da65 inherit pro_methods_class_objet"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#ae8b213466c38b3bcaa34144cc708da65">getWidth</a> () const </td></tr>
+<tr class="memdesc:ae8b213466c38b3bcaa34144cc708da65 inherit pro_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie la demie largeur de la hitbox  <a href="#ae8b213466c38b3bcaa34144cc708da65">More...</a><br /></td></tr>
+<tr class="separator:ae8b213466c38b3bcaa34144cc708da65 inherit pro_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05bcb1a581309e6785be09058ff68450 inherit pro_methods_class_objet"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a05bcb1a581309e6785be09058ff68450">getHeight</a> () const </td></tr>
+<tr class="memdesc:a05bcb1a581309e6785be09058ff68450 inherit pro_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie la demie hauteur de la hitbox  <a href="#a05bcb1a581309e6785be09058ff68450">More...</a><br /></td></tr>
+<tr class="separator:a05bcb1a581309e6785be09058ff68450 inherit pro_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27f49df80d4efc35530987cd8683dde0 inherit pro_methods_class_objet"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a27f49df80d4efc35530987cd8683dde0">getDepth</a> () const </td></tr>
+<tr class="memdesc:a27f49df80d4efc35530987cd8683dde0 inherit pro_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie la demie profondeur de la hitbox  <a href="#a27f49df80d4efc35530987cd8683dde0">More...</a><br /></td></tr>
+<tr class="separator:a27f49df80d4efc35530987cd8683dde0 inherit pro_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_objet"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_objet')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_objet.html">Objet</a></td></tr>
 <tr class="memitem:a91c5a50011c3fe9233a645aa767a275f inherit pro_attribs_class_objet"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_objet.html">Objet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a91c5a50011c3fe9233a645aa767a275f">_parent</a></td></tr>
 <tr class="separator:a91c5a50011c3fe9233a645aa767a275f inherit pro_attribs_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -204,12 +266,17 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a1d8675e88cc98ba740292af1421c2ee1 inherit pro_attribs_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c1a10fa5f4c5cd0e0617d93f42d927b inherit pro_attribs_class_objet"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a6c1a10fa5f4c5cd0e0617d93f42d927b">_position</a></td></tr>
 <tr class="separator:a6c1a10fa5f4c5cd0e0617d93f42d927b inherit pro_attribs_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fee0c5016edddf7c4b9a0b55ef44752 inherit pro_attribs_class_objet"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a3fee0c5016edddf7c4b9a0b55ef44752">_scale</a></td></tr>
+<tr class="separator:a3fee0c5016edddf7c4b9a0b55ef44752 inherit pro_attribs_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1963cca59f62c7a6f69a9c2c461ad9ea inherit pro_attribs_class_objet"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmat4.html">mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a1963cca59f62c7a6f69a9c2c461ad9ea">_model</a></td></tr>
 <tr class="separator:a1963cca59f62c7a6f69a9c2c461ad9ea inherit pro_attribs_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0d545a506dbfa377c8ca5a499fdf755 inherit pro_attribs_class_objet"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#af0d545a506dbfa377c8ca5a499fdf755">_shaderId</a></td></tr>
 <tr class="separator:af0d545a506dbfa377c8ca5a499fdf755 inherit pro_attribs_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Contient un node de modèle 3D. </p>
+<p>Un node possède un ensemble de meshes et de <a class="el" href="class_node.html" title="Contient un node de modèle 3D. ">Node</a> fils </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad7a34779cad45d997bfd6d3d8043c75f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -230,6 +297,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Constructeur par défaut. </p>
 
 </div>
 </div>
@@ -255,6 +324,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Constructeur par recopie. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td><a class="el" href="class_node.html" title="Contient un node de modèle 3D. ">Node</a> à recopier </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="aa0840c3cb5c7159be6d992adecd2097c"></a>
@@ -270,9 +347,48 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Destructeur. </p>
+<p>Détruit les Nodes et <a class="el" href="class_mesh.html" title="Charge un modèle 3D. ">Mesh</a> fils </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a07ceab8d57814d67b0a6a3c662130aa2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Node::collide </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_hitbox.html">Hitbox</a> &amp;&#160;</td>
+          <td class="paramname"><em>h</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calcule la collision des deux OBB. </p>
+<p>utilise l'algorithme des SAT, plus d'info sur <a href="http://goldensuneur.fr/divers/Separating%20Axis%20Theorem%20for%20Oriented%20Bounding%20Boxes.pdf">http://goldensuneur.fr/divers/Separating%20Axis%20Theorem%20for%20Oriented%20Bounding%20Boxes.pdf</a></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>seconde <a class="el" href="class_hitbox.html">Hitbox</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>actuellement non fonctionnel </dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_hitbox.html#a10182e2ac66fd9e2ff07e9c8bf6c0a1c">Hitbox</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ab88c83ced58700a56de568f5b1e3c473"></a>
 <div class="memitem">
 <div class="memproto">
@@ -301,6 +417,92 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="afdc8a8f6c370f437037c85ffea5af4c1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_node.html">Node</a> * Node::getChild </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne le <a class="el" href="class_node.html" title="Contient un node de modèle 3D. ">Node</a> enfant à partir de son nom. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>nom du <a class="el" href="class_node.html" title="Contient un node de modèle 3D. ">Node</a> enfant </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>retourne NULL si aucun enfant n'existe avec ce nom </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af7d6e2eab0af346f6690b4a2db12d953"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList Node::getChildrenNames </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne la liste des noms des Nodes fils. </p>
+<dl class="section return"><dt>Returns</dt><dd>liste des noms des Nodes fils </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a47c225bb649c6d44763661f6e3253c7c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_mesh.html">Mesh</a> * Node::getMesh </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne le <a class="el" href="class_mesh.html" title="Charge un modèle 3D. ">Mesh</a> ayant le nom donné </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>nom du <a class="el" href="class_mesh.html" title="Charge un modèle 3D. ">Mesh</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NULL si le <a class="el" href="class_mesh.html" title="Charge un modèle 3D. ">Mesh</a> n'appartient pas à ce <a class="el" href="class_node.html" title="Contient un node de modèle 3D. ">Node</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4a3bbcabcbd5423c297e287dd0ab7ecd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList Node::getMeshNames </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne la liste des noms des <a class="el" href="class_mesh.html" title="Charge un modèle 3D. ">Mesh</a> de ce <a class="el" href="class_node.html" title="Contient un node de modèle 3D. ">Node</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>liste des noms des <a class="el" href="class_mesh.html" title="Charge un modèle 3D. ">Mesh</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a0684a35524cc1e276bfefdd28cd452cf"></a>
 <div class="memitem">
 <div class="memproto">
@@ -322,6 +524,15 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Charge un <a class="el" href="class_material.html" title="Matériaux pour la Scene. ">Material</a> depuis une aiMaterial d'ASSIMP. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mtl</td><td>material à charger </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_material.html" title="Matériaux pour la Scene. ">Material</a> créé </dd></dl>
 
 </div>
 </div>
@@ -356,6 +567,17 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Charge le modèle. </p>
+<p>Retourne le <a class="el" href="class_node.html" title="Contient un node de modèle 3D. ">Node</a> racine représentant le modèle et ajoute les matériaux à la scène</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>nom du fichier à charger </td></tr>
+    <tr><td class="paramname">scene</td><td><a class="el" href="class_scene.html" title="Classe principale. ">Scene</a> qui recevra les matériaux chargés</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_node.html" title="Contient un node de modèle 3D. ">Node</a> racine du modèle </dd></dl>
 
 </div>
 </div>
@@ -397,6 +619,17 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Charge un aiNode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>aiNode à charger </td></tr>
+    <tr><td class="paramname">pScene</td><td>aiScene contenant les textures, matériaux et mesh </td></tr>
+    <tr><td class="paramname">scene</td><td><a class="el" href="class_scene.html" title="Classe principale. ">Scene</a> à laquelle ajouter les matériaux chargés </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_node.html" title="Contient un node de modèle 3D. ">Node</a> proprement chargé </dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -417,10 +650,11 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Fils du <a class="el" href="class_node.html" title="Contient un node de modèle 3D. ">Node</a> </p>
 
 </div>
 </div>
-<a class="anchor" id="a082b475f17808deeb73c07d311f45073"></a>
+<a class="anchor" id="a2e510fe62f9ef864668e32ef9269543c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -428,7 +662,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QMap&lt; QString, <a class="el" href="class_node.html">Node</a> * &gt; Node::_loadedModels</td>
+          <td class="memname">QMultiMap&lt; QString, <a class="el" href="class_node.html">Node</a> * &gt; Node::_loadedModels</td>
         </tr>
       </table>
   </td>
@@ -437,6 +671,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Modèles déjà chargés, recnstruit un ensemble de <a class="el" href="class_node.html" title="Contient un node de modèle 3D. ">Node</a> par recopie </p>
 
 </div>
 </div>
@@ -457,6 +692,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Liste des <a class="el" href="class_mesh.html" title="Charge un modèle 3D. ">Mesh</a> de ce node </p>
 
 </div>
 </div>
@@ -467,7 +703,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 13 2014 16:49:05 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 19 2014 16:14:40 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

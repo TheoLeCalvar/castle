@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['yrotate',['Yrotate',['../helper_8cpp.html#a11d0c6ac15a769ed31c72afa8ca82d7d',1,'Yrotate(const mat4 &amp;mm, float alpha):&#160;helper.cpp'],['../helper_8hpp.html#a9cc5cdda209a8a2a14042b3df90581c2',1,'Yrotate(const mat4 &amp;, float alpha):&#160;helper.cpp']]],
-  ['yrotationmatrix',['YrotationMatrix',['../helper_8cpp.html#ae99bc46f20b337de096992c93e4b9d5d',1,'YrotationMatrix(float alpha):&#160;helper.cpp'],['../helper_8hpp.html#ae99bc46f20b337de096992c93e4b9d5d',1,'YrotationMatrix(float alpha):&#160;helper.cpp']]]
+  ['update',['update',['../class_light.html#a295eaf1ef5ebd30fa4997d4f7ccbb7e1',1,'Light::update()'],['../class_material.html#a3f43fe7bcfa721fd8156adb151adf45c',1,'Material::update()']]],
+  ['updatemodel',['updateModel',['../class_objet.html#a0960722f5ddb16f2c245dca4e6584f25',1,'Objet']]]
 ];
