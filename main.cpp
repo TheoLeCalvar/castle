@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 		f.setVersion(3, 2);
 		f.setProfile(QGLFormat::CoreProfile);
 		
-		MyOpenGLWidget w(f);
+		MyOpenGLWidget w(f, NULL, "test.xml");
 		w.show();
 
 		return app.exec();

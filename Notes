@@ -97,6 +97,9 @@ mardi 20 mai
 	ajout parasage scale
 	début sauvegarde du xml
 
+mercredi 21 mai
+	fini export XML
+
 	
 Amélioration à faire
 	collision -> rajouter notion de hitbox à Objet, et ensuite calculer sur le vecteur déplacement entre dans cette hitbox
