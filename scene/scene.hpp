@@ -93,7 +93,7 @@ public:
 	 * @param name nom de la pièce
 	 * @return Retourne le pointeur si le nom est trouvé, NULL autrement
 	 */
-	Piece * 	getPiece(const QString & name);
+	Piece * 	getPiece(const QString & name) const;
 
 
 	/**
@@ -102,7 +102,7 @@ public:
 	 * @param name nom de la lumière
 	 * @return Retourne un pointeur valide si le nom est présent, NULL autrement
 	 */
-	Light * 	getLight(const QString & name);
+	Light * 	getLight(const QString & name) const;
 
 
 	/**
@@ -111,7 +111,7 @@ public:
 	 * @param name nom du material
 	 * @return Retourne un pointeur valide si le nom est présent, NULL autrement
 	 */
-	Material *	getMaterial(const QString & name);
+	Material *	getMaterial(const QString & name) const;
 
 
 	/**
@@ -120,7 +120,15 @@ public:
 	 * @param name nom du shader
 	 * @return Retourne l'id d'un shader valide si le nom est présent, 0 autrement
 	 */
-	GLuint 		getShader(const QString & name);
+	GLuint 		getShader(const QString & name) const;
+
+	/**
+	 * @brief Recheche le nom d'un shader à partir de son ID OpenGL
+	 * 
+	 * @param  id identifiant OpenGL du shader
+	 * @return nom du shader s'il existe
+	 */
+	QString 	getShaderNameByID(const GLuint id) const;
 
 
 	/**
@@ -266,6 +274,8 @@ private:
 	void saveLights(QDomElement & root, QDomDocument & doc) const;
 
 	void saveShaders(QDomElement & root, QDomDocument & doc) const;
+
+	void savePieces(QDomElement & root, QDomDocument & doc) const;
 
 
 

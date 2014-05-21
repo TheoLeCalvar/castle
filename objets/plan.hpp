@@ -24,6 +24,7 @@ private:
 	vec3 	_minP;
 	vec3 	_maxP;
 
+	QList<QRectF> _fenetres;
 
 public:
 	/**
@@ -50,6 +51,13 @@ public:
 	 * @brief Affiche le plan
 	 */
 	void 	draw();
+
+
+	/**
+	 * @brief Renvoie la liste des rectangles définissant les fenêtres de la pièce
+	 * @return liste des fenêtres
+	 */
+	const QList<QRectF> & getFenetres() const{return _fenetres;}
 
 
 protected:

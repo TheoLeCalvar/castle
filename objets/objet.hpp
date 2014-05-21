@@ -111,6 +111,12 @@ public:
 	void 			shaderId(GLuint s){_shaderId = s;}
 
 	/**
+	 * @brief Retourne l'id du shader qu'utilise l'Objet
+	 * @return identifiant OpengGL du shader
+	 */
+	GLuint 			shaderId() const{return _shaderId;}
+
+	/**
 	 * @brief Récupère le material de l'Objet
 	 * @return un pointeur valide ou NULL
 	 */

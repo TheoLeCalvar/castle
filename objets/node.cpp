@@ -262,6 +262,11 @@ Mesh * Node::getMesh(const QString & name)
 	return NULL;
 }
 
+QString Node::getModelName() const
+{
+	return _loadedModels.key(const_cast<Node *>(this));
+}
+
 bool Node::collide(const Hitbox & h) const
 {
 	for(Mesh * i : _meshs)

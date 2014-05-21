@@ -10,7 +10,8 @@ Plan::Plan(
 		)
 			:	Objet("", mat, rotation, position), 
 				_vao(0), _nbVertices(0),
-				_minP(0.0f, 0.0f, -0.5f), _maxP(width, height, 0.5f)
+				_minP(0.0f, 0.0f, -0.5f), _maxP(width, height, 0.5f), 
+				_fenetres(rects)
 {
 	std::vector<float> points, normals, texCoord;
 	std::vector<unsigned int> indices;

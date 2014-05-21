@@ -118,25 +118,38 @@ void 	Scene::draw()
 
 }
 
-Piece * 	Scene::getPiece(const QString & name)
+Piece * 	Scene::getPiece(const QString & name) const
 {
 	return _pieces.value(name);
 }
 
-Light * 	Scene::getLight(const QString & name)
+Light * 	Scene::getLight(const QString & name) const
 {
 	return _lights.value(name);
 }
 
-Material *	Scene::getMaterial(const QString & name)
+Material *	Scene::getMaterial(const QString & name) const
 {
 	return _materials.value(name);
 }
 
-GLuint 		Scene::getShader(const QString & name)
+GLuint 		Scene::getShader(const QString & name) const
 {
 	auto shader = _shaders.value(name);
 	return (shader ? shader->programId() : 0);
+}
+
+QString 	Scene::getShaderNameByID(GLuint id) const
+{
+	for(auto i = _shaders.begin(); i != _shaders.end(); ++i)
+	{
+		if (i.value()->programId() == id)
+		{
+			return i.key();
+		}
+	}
+
+	return "not found";
 }
 
 QStringList Scene::getPiecesName() const
@@ -629,6 +642,7 @@ bool Scene::saveAsXML(const QString & fileName)
 	saveMaterials(scene, doc);
 	saveLights(scene, doc);
 	saveShaders(scene, doc);
+	savePieces(scene, doc);
 
 	QFile file(fileName);
 
@@ -783,6 +797,7 @@ void Scene::saveLights(QDomElement & root, QDomDocument & doc) const
 	root.appendChild(lumieres);
 }
 
+
 void Scene::saveShaders(QDomElement & root, QDomDocument & doc) const
 {
 	QDomElement shaders = doc.createElement("shaders");
@@ -812,6 +827,130 @@ void Scene::saveShaders(QDomElement & root, QDomDocument & doc) const
 	}
 
 	root.appendChild(shaders);
+}
+
+void Scene::savePieces(QDomElement & root, QDomDocument & doc) const
+{
+	QDomElement pieces = doc.createElement("pieces");
+
+	for(auto i = _pieces.begin(); i != _pieces.end(); ++i)
+	{
+		QDomElement piece = doc.createElement("piece");
+
+
+		piece.setAttribute("nom", i.key());
+		piece.setAttribute("shader", getShaderNameByID(i.value()->shaderId()));
+		piece.setAttribute("mat", getMaterialName(i.value()->material()));
+
+		QDomElement dimensionE = doc.createElement("dimension");
+		vec3 	dimension = i.value()->dimensions();
+
+		dimensionE.setAttribute("width", dimension[0]);
+		dimensionE.setAttribute("height", dimension[1]);
+		dimensionE.setAttribute("length", dimension[2]);
+
+		piece.appendChild(dimensionE);
+
+		QDomElement positionE = doc.createElement("position");
+		vec3 position = i.value()->position();
+
+		positionE.setAttribute("x", position[0]);
+		positionE.setAttribute("y", position[1]);
+		positionE.setAttribute("z", position[2]);
+
+		piece.appendChild(positionE);
+
+
+		QDomElement mursE = doc.createElement("murs");
+		QDomElement objetsE = doc.createElement("objets");
+		QStringList children = i.value()->getChildren();
+
+		for(QString child : children)
+		{
+
+			if(child.startsWith(i.key()))
+			//c'est un mur
+			{
+				QDomElement murE = doc.createElement("mur");
+				Plan * mur = dynamic_cast<Plan *>(i.value()->getChild(child));
+
+				if(!mur)
+				{
+					qWarning() << "Impossible de caster l'objet en Plan.";
+					continue;
+				}
+
+				if(mur->material())
+				{
+					murE.setAttribute("mat", getMaterialName(mur->material()));
+				}
+
+				child.remove(i.key() + "_");
+
+
+				murE.setAttribute("cote", child);
+
+				const QList<QRectF> fenetres = mur->getFenetres();
+
+				for(QRectF r : fenetres)
+				{
+					QDomElement fenetreE = doc.createElement("fenetre");
+
+					fenetreE.setAttribute("x", r.x());
+					fenetreE.setAttribute("y", r.y());
+					fenetreE.setAttribute("width", r.width());
+					fenetreE.setAttribute("height", r.height());
+
+					murE.appendChild(fenetreE);
+				}
+
+				mursE.appendChild(murE);
+			}
+			else
+			{
+				QDomElement objetE = doc.createElement("objet");
+				Node * node = dynamic_cast<Node *>(i.value()->getChild(child));
+
+				if(!node)
+				{
+					qWarning() << "Impossible de caster l'objet en node";
+					continue;
+				}
+
+				objetE.setAttribute("nom", node->name());
+				objetE.setAttribute("modele", node->getModelName());
+
+				vec3 rotation = node->rotation();
+
+				objetE.setAttribute("xRot", rotation[0]);
+				objetE.setAttribute("yRot", rotation[1]);
+				objetE.setAttribute("zRot", rotation[2]);
+
+
+				QDomElement positionE = doc.createElement("position");
+				vec3 position = node->position();
+
+				positionE.setAttribute("x", position[0]);
+				positionE.setAttribute("y", position[1]);
+				positionE.setAttribute("z", position[2]);
+
+				objetE.appendChild(positionE);
+
+
+				objetsE.appendChild(objetE);
+			}
+
+
+		}
+
+		piece.appendChild(mursE);
+		piece.appendChild(objetsE);
+
+
+		pieces.appendChild(piece);
+	}
+
+	root.appendChild(pieces);
 }
 
 void Scene::orderLights()
