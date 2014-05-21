@@ -296,10 +296,11 @@ void MainWindow::createListeDockwidget()
         addDockWidget(Qt::LeftDockWidgetArea, dock_list_elements);
         dock_list_elements->hide();
 
-    dock_light = new Mondock(tr("vide"),this);
-        dock_light->setAllowedAreas(Qt::LeftDockWidgetArea);
-        addDockWidget(Qt::LeftDockWidgetArea, dock_light);
-        dock_light->hide();
+    dock_perso = new Mondock(tr("vide"),this);
+        dock_perso->setAllowedAreas(Qt::LeftDockWidgetArea);
+        addDockWidget(Qt::LeftDockWidgetArea, dock_perso);
+        dock_perso->hide();
+
 
     dockajoutlumiere =new QDockWidget(tr("Ajout d'une lumiere"), this);
         dockajoutlumiere->setAllowedAreas(Qt::LeftDockWidgetArea);
@@ -419,7 +420,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
            if (!(importation3DAct->isChecked()))
            {
             dock_list_elements->hide();
-            dock_light->hide();
+            dock_perso->hide();
            }
            else
            {
@@ -450,7 +451,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                                 {
                                    material->appendRow(new QStandardItem(listtempmaterial.at(i)));
                                 }
-                    dock_light->_itemmaterial=material;
+                    dock_perso->_itemmaterial=material;
 
                     //objet
                     objet = new QStandardItem("Objet");
@@ -493,7 +494,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                                 }//fin for fils
                              }//fin for pere
 
-                     dock_light->_itempiece = objet;//afection de la liste des objet dans le dock d'edition
+                     dock_perso->_itempiece = objet;//afection de la liste des objet dans le dock d'edition
 
                      //shader
                     shader = new QStandardItem("Shader");
@@ -505,10 +506,10 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                                 }
 
             vue = new QTreeView;
-            vue->setModel(modele);
+            //vue->setModel(modele);
             vue->header()->hide();
-
-
+                vue->setModel(modele);
+                vue->sortByColumn(1,Qt::AscendingOrder);
             //creation widget a fixer dans le dockwidget
 
             boutonlisteelement = new QPushButton("Editer");
@@ -527,10 +528,10 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             dock_list_elements->show();
 
             //conect les element de la vus au fonction d'afichage et donne vue+ model au docklight
-            dock_light->dockmodele= modele;
-            dock_light->dockvue = vue;
-            dock_light->dockscene= scenetemp;
-            connect(boutonlisteelement, SIGNAL(clicked()), dock_light, SLOT(selectionlight()));
+            dock_perso->dockmodele= modele;
+            dock_perso->dockvue = vue;
+            dock_perso->dockscene= scenetemp;
+            connect(boutonlisteelement, SIGNAL(clicked()), dock_perso, SLOT(selectionlight()));
 
            }//fin else
     }
@@ -634,8 +635,8 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                 if(material){
                         material->appendRow(new QStandardItem(lineeditnomajoutmaterial->text()));
                 }
-                if(dock_light->modelmaterial){
-                  dock_light->modelmaterial->appendRow(new QStandardItem(lineeditnomajoutmaterial->text()));
+                if(dock_perso->modelmaterial){
+                  dock_perso->modelmaterial->appendRow(new QStandardItem(lineeditnomajoutmaterial->text()));
                 }
             }//fin else
         }
