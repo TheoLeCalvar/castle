@@ -1065,7 +1065,7 @@ Mondock:: ~Mondock(){
                 connect(rotspinboxy, SIGNAL(valueChanged(double)),this, SLOT(rotpiecey(double) ));
 
             rotspinboxz = new QDoubleSpinBox();
-                rotspinboxz->setPrefix("X = ");
+                rotspinboxz->setPrefix("Z = ");
                 rotspinboxz->setSuffix("°");
                 rotspinboxz->setRange(0,360);
                 rotspinboxz->setValue(_piece->rotation()[2]);
