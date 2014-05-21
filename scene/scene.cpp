@@ -66,9 +66,6 @@ Scene::Scene(const QString & fileName)
 
 Scene::~Scene()
 {
-	qDebug() << saveAsXML("test_xml.xml");
-
-
 	for(auto i : _pieces)
 		delete i;
 

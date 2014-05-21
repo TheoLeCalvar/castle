@@ -45,12 +45,13 @@ Node * Node::loadNode(const aiNode * node, const aiScene * pScene, Scene * scene
 {
 	Node * nodeOut = new Node();
 	aiMatrix4x4 aiMat = node->mTransformation;
-	mat4 parentMatrix(	
-		aiMat.a1, aiMat.b1, aiMat.c1, aiMat.d1, 
-		aiMat.a2, aiMat.b2, aiMat.c2, aiMat.d2, 
-		aiMat.a3, aiMat.b3, aiMat.c3, aiMat.d3, 
-		aiMat.a4, aiMat.b4, aiMat.c4, aiMat.d4 
-	);
+	aiVector3D aiScale, aiTranslation;
+	aiQuaternion aiRotation;
+
+	aiMat.Decompose(aiScale, aiRotation, aiTranslation);
+
+	nodeOut->position(vec3(aiTranslation.x, aiTranslation.y, aiTranslation.z));
+	nodeOut->scale(vec3(aiScale.x, aiScale.y, aiScale.z));
 
 	#ifdef DEBUG
 		qDebug() << "Node info :";
@@ -172,9 +173,17 @@ Node* Node::loadModel(const QString & file, Scene * scene)
 	{
 		Assimp::Importer importer;
 
+		QStringList dossiers = file.split("/");
 
 
-		const aiScene* pScene = importer.ReadFile(file.toStdString(), 
+		for(auto i = dossiers.begin(); i != dossiers.end() -1; ++i)
+		{
+			QDir::setCurrent(*i);
+		}
+
+
+
+		const aiScene* pScene = importer.ReadFile(file.right(file.size() - file.lastIndexOf("/") - 1).toStdString(), 
 				aiProcess_Triangulate | aiProcess_GenSmoothNormals );
 
 		if (!pScene)
@@ -195,10 +204,18 @@ Node* Node::loadModel(const QString & file, Scene * scene)
 				qDebug() << "Load : " << file;
 			#endif
 
+
 			node = loadNode(pScene->mRootNode, pScene, scene);
 
 
+
 		}
+
+		for(auto i = dossiers.begin(); i != dossiers.end() - 1; ++i)
+		{
+			QDir::setCurrent("..");
+		}
+		
 	}
 	
 	_loadedModels.insert(file, node);

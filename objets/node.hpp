@@ -12,6 +12,7 @@
 #include <QList>
 #include <QMultiMap>
 #include <QPair>
+#include <QDir>
 
 
 /**
