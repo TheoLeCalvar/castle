@@ -2,7 +2,7 @@
 #include <iostream>
 #include "light.hpp"
 
-MainWindow::MainWindow():light(NULL),material(NULL)
+MainWindow::MainWindow():light(NULL),material(NULL),objet(NULL)
 {
 /* ************************************** */
 //          Central  Widget               //
@@ -68,10 +68,15 @@ void MainWindow::createActions()
          importation3DAct->setCheckable(true);
 
      ajoutelement = new QMenu(tr("&Ajout"));
+
         ajoutlumierAct = new QAction(tr("&Lumiere"),this);
             connect(ajoutlumierAct,SIGNAL(triggered()),this , SLOT(ajoutlumiere()));
+
         ajoutmaterialAct = new QAction(tr("&Materiaux"),this);
             connect(ajoutmaterialAct,SIGNAL(triggered()),this , SLOT(ajoutmaterial()));
+
+        ajoutpieceAct = new QAction(tr("&Piece"),this);
+            connect(ajoutpieceAct,SIGNAL(triggered()),this , SLOT(ajoutpiece()));
 
      //aide
      racourcitAct = new QAction(tr("&Racourcit"), this);
@@ -87,6 +92,7 @@ void MainWindow::createMenus()
         Fichier->addAction(nouveauAct);
         Fichier->addAction(ouvrirAct);
         Fichier->addAction(enregistrerAct);
+            enregistrerAct->setIcon(QIcon("icones/save.png"));
         Fichier->addSeparator();
         Fichier->addAction(kiterAct);
             kiterAct->setIcon(QIcon("icones/exit.png"));
@@ -112,7 +118,8 @@ void MainWindow::createMenus()
         Outil->addAction(importation3DAct);
             importation3DAct->setIcon(QIcon("icones/value_list.png"));
         Outil->addMenu(ajoutelement);
-            //ajout lumiere
+
+            //ajout lumiere declaration des element
             ajoutelement->addAction(ajoutlumierAct);
 
             widgetajoutlumiere = new QWidget;
@@ -282,9 +289,128 @@ void MainWindow::createMenus()
 
                 widgetajoutmaterial->setLayout(layoutajoutmaterial);
 
+                //ajout widget au dock
                 dockajoutmateriaux->setWidget(widgetajoutmaterial);
 
+                //ajout piece
+                ajoutelement->addAction(ajoutpieceAct);
 
+                widgetajoutpiece = new QWidget;
+
+                //nom
+                labelnomajoutpiece = new QLabel();
+                    labelnomajoutpiece->setText("Nom:");
+                lineeditajoutpiece = new QLineEdit();
+
+                //materiaux
+                modelemateriaupiece = new QStandardItemModel;
+
+                labelcomboajoutpiece = new QLabel();
+                    labelcomboajoutpiece->setText("Materiaux: ");
+                comboajoutpiece = new QComboBox();
+                    comboajoutpiece->setMaximumWidth(200);
+
+                //dimention
+                labeldimajoutpiece = new QLabel();
+                    labeldimajoutpiece->setText("Dimention: ");
+
+                ajoutpiecedimx = new QSpinBox();
+                    ajoutpiecedimx->setPrefix("X= ");
+                    ajoutpiecedimx->setRange(0,1000);
+                ajoutpiecedimy = new QSpinBox();
+                    ajoutpiecedimy->setPrefix("Y= ");
+                    ajoutpiecedimy->setRange(0,1000);
+                ajoutpiecedimz = new QSpinBox();
+                    ajoutpiecedimz->setPrefix("Z= ");
+                    ajoutpiecedimz->setRange(0,1000);
+
+                //shader
+                labelajoutpieceshader = new QLabel();
+                    labelajoutpieceshader->setText("Shader:");
+                comboajoutpieceshader = new QComboBox();
+                    comboajoutpieceshader->setMaximumWidth(200);
+                 modelepieceshader = new QStandardItemModel();
+
+                //bouton
+                boutonajoutpiece = new QPushButton("ajouter");
+                connect(boutonajoutpiece,SIGNAL(clicked()), this ,SLOT(validajoutpiece()));
+
+                //murs
+                labelmurajoutpiece = new QLabel();
+                    labelmurajoutpiece->setText("Liste des murs: ");
+
+                    //label des mur
+                    labelmur1 = new QLabel();
+                        labelmur1->setText("mur 1:");
+                    labelmur2 = new QLabel();
+                        labelmur2->setText("mur 2:");
+                    labelmur3 = new QLabel();
+                        labelmur3->setText("mur 3:");
+                    labelmur4 = new QLabel();
+                        labelmur4->setText("mur 4:");
+                    labelmur5 = new QLabel();
+                        labelmur5->setText("mur 5:");
+                    labelmur6 = new QLabel();
+                        labelmur6->setText("mur 6:");
+                    //checkbox mur
+                    checkmur1 = new QCheckBox();
+                    checkmur2 = new QCheckBox();
+                    checkmur3 = new QCheckBox();
+                    checkmur4 = new QCheckBox();
+                    checkmur5 = new QCheckBox();
+                    checkmur6 = new QCheckBox();
+
+                //positionement
+                mainlayoutajoutpiece = new QVBoxLayout();
+                    ajoutpiecelayoutdim = new QHBoxLayout();
+                        ajoutpiecelayoutdim->addWidget(labeldimajoutpiece);
+                        ajoutpiecelayoutdim->addWidget(ajoutpiecedimx);
+                        ajoutpiecelayoutdim->addWidget(ajoutpiecedimy);
+                        ajoutpiecelayoutdim->addWidget(ajoutpiecedimz);
+                    ajoutpiecelayoutnom = new QHBoxLayout();
+                        ajoutpiecelayoutnom->addWidget(labelnomajoutpiece);
+                        ajoutpiecelayoutnom->addWidget(lineeditajoutpiece);
+                    ajoutpiecelayoutcombo = new QHBoxLayout();
+                        ajoutpiecelayoutcombo->addWidget(labelcomboajoutpiece);
+                        ajoutpiecelayoutcombo->addWidget(comboajoutpiece);
+                    ajoutpiecelabelmure  = new QHBoxLayout();
+                        ajoutpiecelabelmure->addWidget(labelmurajoutpiece);
+                    ajoutpiecepiecer1  = new QHBoxLayout();
+                        ajoutpiecepiecer1->addWidget(labelmur1);
+                        ajoutpiecepiecer1->addWidget(checkmur1);
+                        ajoutpiecepiecer1->addWidget(labelmur2);
+                        ajoutpiecepiecer1->addWidget(checkmur2);
+                    ajoutpiecepiecer2  = new QHBoxLayout();
+                        ajoutpiecepiecer2->addWidget(labelmur3);
+                        ajoutpiecepiecer2->addWidget(checkmur3);
+                        ajoutpiecepiecer2->addWidget(labelmur4);
+                        ajoutpiecepiecer2->addWidget(checkmur4);
+                    ajoutpiecepiecer3  = new QHBoxLayout();
+                        ajoutpiecepiecer3->addWidget(labelmur5);
+                        ajoutpiecepiecer3->addWidget(checkmur5);
+                        ajoutpiecepiecer3->addWidget(labelmur6);
+                        ajoutpiecepiecer3->addWidget(checkmur6);
+                    ajoutpieceshaderlayout = new QHBoxLayout();
+                        ajoutpieceshaderlayout->addWidget(labelajoutpieceshader);
+                        ajoutpieceshaderlayout->addWidget(comboajoutpieceshader);
+
+                mainlayoutajoutpiece->addLayout(ajoutpiecelayoutnom);
+                mainlayoutajoutpiece->addLayout(ajoutpiecelayoutcombo);
+                mainlayoutajoutpiece->addLayout(ajoutpiecelayoutdim);
+                mainlayoutajoutpiece->addLayout( ajoutpieceshaderlayout);
+                mainlayoutajoutpiece->addLayout(ajoutpiecelabelmure);
+                mainlayoutajoutpiece->addLayout(ajoutpiecepiecer1);
+                mainlayoutajoutpiece->addLayout(ajoutpiecepiecer2);
+                mainlayoutajoutpiece->addLayout(ajoutpiecepiecer3);
+                mainlayoutajoutpiece->addWidget(boutonajoutpiece);
+
+                widgetajoutpiece->setLayout(mainlayoutajoutpiece);
+
+                //ajout widget au dock
+                dockajoutpiece->setWidget(widgetajoutpiece);
+
+
+    //aide
     Aide = menuBar()->addMenu(tr("&Aide"));
         Aide->addAction(racourcitAct);
 }
@@ -311,6 +437,11 @@ void MainWindow::createListeDockwidget()
         dockajoutmateriaux->setAllowedAreas(Qt::LeftDockWidgetArea);
         addDockWidget(Qt::LeftDockWidgetArea, dockajoutmateriaux);
         dockajoutmateriaux->hide();
+
+        dockajoutpiece =new QDockWidget(tr("Ajout d'une piece"), this);
+            dockajoutmateriaux->setAllowedAreas(Qt::LeftDockWidgetArea);
+            addDockWidget(Qt::LeftDockWidgetArea,  dockajoutpiece);
+            dockajoutpiece->hide();
 }
 
 void MainWindow::createToolBar()
@@ -321,6 +452,10 @@ void MainWindow::createToolBar()
     addToolBar(Qt::TopToolBarArea, fileToolBar);
 
             fileToolBar->addAction(kiterAct);
+
+            fileToolBar->addSeparator();
+
+            fileToolBar->addAction(enregistrerAct);
 
             fileToolBar->addSeparator();
 
@@ -508,8 +643,9 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             vue = new QTreeView;
             //vue->setModel(modele);
             vue->header()->hide();
-                vue->setModel(modele);
-                vue->sortByColumn(1,Qt::AscendingOrder);
+            vue->setEditTriggers(QTreeView::NoEditTriggers);
+            vue->setModel(modele);
+            vue->sortByColumn(1,Qt::AscendingOrder);
             //creation widget a fixer dans le dockwidget
 
             boutonlisteelement = new QPushButton("Editer");
@@ -641,7 +777,184 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             }//fin else
         }
 
+    void MainWindow::ajoutpiece()
+        {
+            //creation model materiaux
+            QStringList listtmp = widget->getScene()->getMaterialsNames();
 
+            modelemateriaupiece = new QStandardItemModel();
+
+            for (int ligne=0 ; ligne < listtmp.size(); ligne++)
+            {
+            QStandardItem *itemtmp =new QStandardItem(listtmp.at(ligne));
+            modelemateriaupiece->setItem(ligne,itemtmp);
+            }
+
+            comboajoutpiece->setModel(modelemateriaupiece);
+
+            //creation model shader
+            listtmp = widget->getScene()->getShadersNames();
+
+            modelepieceshader = new QStandardItemModel();
+
+            for (int ligne=0 ; ligne < listtmp.size(); ligne++)
+            {
+            QStandardItem *itemtmp =new QStandardItem(listtmp.at(ligne));
+            modelepieceshader->setItem(ligne,itemtmp);
+            }
+
+            comboajoutpieceshader->setModel(modelepieceshader);
+
+
+            //show
+            dockajoutpiece->show();
+        }
+
+    void MainWindow::validajoutpiece()
+        {
+        Scene * scenetemp = widget->getScene();
+
+        if (lineeditajoutpiece->text()==NULL)
+        {
+            QMessageBox msgBox;
+            msgBox.setText("le champ nom , ne peut etre vide");
+            msgBox.exec();
+         dockajoutpiece->close();
+        }
+        else{
+            Piece* piecetmp = new Piece (
+                        vec3(//dimention
+                             ajoutpiecedimx->value(),
+                             ajoutpiecedimy->value(),
+                             ajoutpiecedimz->value()),
+                        vec3(),//rotation
+                        vec3(),//position
+                        scenetemp->getMaterial(comboajoutpiece->currentText()));
+
+             piecetmp->shaderId(scenetemp->getShader(comboajoutpieceshader->currentText()));
+
+             scenetemp->addPiece( lineeditajoutpiece->text(), piecetmp);
+
+                //ajout des murs
+                if (checkmur1->isChecked())
+                {
+
+                    Plan* plantmp = new Plan(
+                                ajoutpiecedimx->value(),//width
+                                ajoutpiecedimz->value(),//height
+                                20,//widthDivision
+                                20,//heightDivision
+                                QList<QRectF>(),
+                                scenetemp->getMaterial(comboajoutpiece->currentText()),//material
+                                vec3(-90,0,0),
+                                vec3(0,0,ajoutpiecedimz->value())
+                                 );
+                    plantmp->parent(piecetmp);
+                    //ok:plan = new Plan(width, length, 20, 20, fenetres, getMaterial(material), vec3(-90.0f, 0.0f, 0.0f), vec3(0.0f, 0.0f, length));
+                    scenetemp->getPiece(lineeditajoutpiece->text())->addChild(lineeditajoutpiece->text()+"_bas" ,plantmp);
+                }
+               if (checkmur2->isChecked())
+               {
+                   Plan* plantmp = new Plan(
+                               ajoutpiecedimx->value(),//width
+                               ajoutpiecedimz->value(),//height
+                               20,//widthDivision
+                               20,//heightDivision
+                               QList<QRectF>(),
+                               scenetemp->getMaterial(comboajoutpiece->currentText()),//material
+                               vec3(90,0,0),
+                               vec3(0,ajoutpiecedimy->value(),0)
+                                );
+                   plantmp->parent(piecetmp);
+//ok:plan = new Plan(width, length, 20, 20, fenetres, getMaterial(material), vec3(90.0f, 0.0f, 0.0f), vec3(0.0f, height, 0.0f));
+                   scenetemp->getPiece(lineeditajoutpiece->text())->addChild(lineeditajoutpiece->text()+"_haut" ,plantmp);
+               }
+
+                if (checkmur3->isChecked())
+                {
+                    Plan* plantmp = new Plan(
+                                ajoutpiecedimx->value(),//width
+                                ajoutpiecedimy->value(),//height
+                                20,//widthDivision
+                                20,//heightDivision
+                                QList<QRectF>(),
+                                scenetemp->getMaterial(comboajoutpiece->currentText())//material
+                                 );
+                    plantmp->parent(piecetmp);
+                    //ok:plan = new Plan(width, height, 20, 20, fenetres, getMaterial(material), vec3(), vec3());
+                    scenetemp->getPiece(lineeditajoutpiece->text())->addChild(lineeditajoutpiece->text()+"_arriere" ,plantmp);
+                }
+                if (checkmur4->isChecked())
+                {
+                    Plan* plantmp = new Plan(
+                                ajoutpiecedimx->value(),//width
+                                ajoutpiecedimy->value(),//height
+                                20,//widthDivision
+                                20,//heightDivision
+                                QList<QRectF>(),
+                                scenetemp->getMaterial(comboajoutpiece->currentText()),//material
+                                vec3(0,180,0),
+                                vec3(ajoutpiecedimx->value(),0,ajoutpiecedimz->value())
+                                 );
+                    plantmp->parent(piecetmp);
+                    //ok:plan = new Plan(width, height, 20, 20, fenetres, getMaterial(material), vec3(0.0f, 180.0f, 0.0f), vec3(width, 0.0f, length));
+                    scenetemp->getPiece(lineeditajoutpiece->text())->addChild(lineeditajoutpiece->text()+"_avant" ,plantmp);
+                }
+                if (checkmur5->isChecked())
+                {
+                    Plan* plantmp = new Plan(
+                                ajoutpiecedimz->value(),//width
+                                ajoutpiecedimy->value(),//height
+                                20,//widthDivision
+                                20,//heightDivision
+                                QList<QRectF>(),
+                                scenetemp->getMaterial(comboajoutpiece->currentText()),//material
+                                vec3(0,-90,0),
+                                vec3(ajoutpiecedimx->value(),0,0)
+                                 );
+                    plantmp->parent(piecetmp);
+//ok:plan = new Plan(length, height, 20, 20, fenetres, getMaterial(material), vec3(0.0f, -90.0f, 0.0f), vec3(width, 0.0f, 0.0f));
+                    scenetemp->getPiece(lineeditajoutpiece->text())->addChild(lineeditajoutpiece->text()+"_gauche" ,plantmp);
+                }
+               if (checkmur6->isChecked())
+               {
+                   Plan* plantmp = new Plan(
+                               ajoutpiecedimz->value(),//width
+                               ajoutpiecedimy->value(),//height
+                               20,//widthDivision
+                               20,//heightDivision
+                               QList<QRectF>(),
+                               scenetemp->getMaterial(comboajoutpiece->currentText()),//material
+                               vec3(0,90,0),
+                               vec3(0,0,ajoutpiecedimz->value())
+                                );
+                   plantmp->parent(piecetmp);
+//ok:plan = new Plan(length, height, 20, 20, fenetres, getMaterial(material), vec3(0.0f, 90.0f, 0.0f), vec3(0.0f, 0.0f, length));
+                   scenetemp->getPiece(lineeditajoutpiece->text())->addChild(lineeditajoutpiece->text()+"_droite" ,plantmp);
+               }
+
+                //fin de l'ajout
+                dockajoutpiece->close();
+
+                //ajout au model qui liste les objets
+                if(objet){
+                        objet->appendRow(new QStandardItem(lineeditajoutpiece->text()));
+
+                            for (int i = 0 ;i<objet->rowCount(); i++)
+                            {
+
+                                if ((objet->child(i)->text())== (lineeditajoutpiece->text()) )
+                                {
+                                    objet->child(i)->appendRow(new QStandardItem(lineeditajoutpiece->text()+"_bas"));
+                                    objet->child(i)->appendRow(new QStandardItem(lineeditajoutpiece->text()+"_haut"));
+                                    objet->child(i)->appendRow(new QStandardItem(lineeditajoutpiece->text()+"_arriere"));
+                                    objet->child(i)->appendRow(new QStandardItem(lineeditajoutpiece->text()+"_avant"));
+                                    objet->child(i)->appendRow(new QStandardItem(lineeditajoutpiece->text()+"_droite"));
+                                }
+                            }
+                        }
+            }
+        }
 
     //aide
     void MainWindow::Racourcit()

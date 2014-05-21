@@ -5,7 +5,8 @@
 #include "node.hpp"
 #include "MyOpenGLWidget.hpp"
 
-#include <QSortFilterProxyModel>
+
+#include <QCheckBox>
 #include <QMainWindow>
 #include <QAction>
 #include <QMenuBar>
@@ -63,6 +64,9 @@ private slots:
         void validajoutlumiere();
         void ajoutmaterial();
         void validajoutmaterial();
+        void ajoutpiece();
+        void validajoutpiece();
+
 
         //aide
         void Racourcit();
@@ -111,8 +115,10 @@ private slots:
         QMenu *ajoutelement ;
             QAction *ajoutlumierAct;
             QAction *ajoutmaterialAct;
-
+            QAction *ajoutpieceAct;
+        //ajout lumiere
         QDockWidget * dockajoutlumiere;
+
             //contenu dock ajout lumiere
             QWidget * widgetajoutlumiere;
 
@@ -144,41 +150,93 @@ private slots:
 
             QVBoxLayout * layoutajoutlumiere;
 
-        //materiaux
+        //ajout materiaux
         QDockWidget * dockajoutmateriaux;
 
-        //contenu dockajoutlumiere materiau
-        QWidget * widgetajoutmaterial;
+            //contenu dockajoutlumiere materiau
+            QWidget * widgetajoutmaterial;
 
-        QPushButton * boutonajoutmaterial;
+            QPushButton * boutonajoutmaterial;
 
-        QLineEdit *lineeditnomajoutmaterial;
-        QLabel *nomajoutmaterial;
+            QLineEdit *lineeditnomajoutmaterial;
+            QLabel *nomajoutmaterial;
 
-        QDoubleSpinBox *spinambajoutmaterialx;
-        QDoubleSpinBox *spinambajoutmaterialy;
-        QDoubleSpinBox *spinambajoutmaterialz;
-        QLabel *ambajoutmaterial;
+            QDoubleSpinBox *spinambajoutmaterialx;
+            QDoubleSpinBox *spinambajoutmaterialy;
+            QDoubleSpinBox *spinambajoutmaterialz;
+            QLabel *ambajoutmaterial;
 
-        QDoubleSpinBox *spindifajoutmaterialx;
-        QDoubleSpinBox *spindifajoutmaterialy;
-        QDoubleSpinBox *spindifajoutmaterialz;
-        QLabel *difajoutmaterial;
+            QDoubleSpinBox *spindifajoutmaterialx;
+            QDoubleSpinBox *spindifajoutmaterialy;
+            QDoubleSpinBox *spindifajoutmaterialz;
+            QLabel *difajoutmaterial;
 
-        QDoubleSpinBox *spinspeajoutmaterialx;
-        QDoubleSpinBox *spinspeajoutmaterialy;
-        QDoubleSpinBox *spinspeajoutmaterialz;
-        QDoubleSpinBox *spinspeajoutmateriala;
-        QLabel *speajoutmaterial;
-
-
-        QHBoxLayout * layoutnomajoutmaterial;
-        QHBoxLayout * layoutambajoutmaterial;
-        QHBoxLayout * layoutdifajoutmaterial;
-        QHBoxLayout * layoutspeajoutmaterial;
+            QDoubleSpinBox *spinspeajoutmaterialx;
+            QDoubleSpinBox *spinspeajoutmaterialy;
+            QDoubleSpinBox *spinspeajoutmaterialz;
+            QDoubleSpinBox *spinspeajoutmateriala;
+            QLabel *speajoutmaterial;
 
 
-        QVBoxLayout * layoutajoutmaterial;
+            QHBoxLayout * layoutnomajoutmaterial;
+            QHBoxLayout * layoutambajoutmaterial;
+            QHBoxLayout * layoutdifajoutmaterial;
+            QHBoxLayout * layoutspeajoutmaterial;
+
+
+            QVBoxLayout * layoutajoutmaterial;
+
+        //ajout piece
+        QDockWidget * dockajoutpiece;
+
+            //contenu ajout piece
+            QWidget * widgetajoutpiece;
+
+            QPushButton * boutonajoutpiece;
+
+            QSpinBox * ajoutpiecedimx;
+            QSpinBox * ajoutpiecedimy;
+            QSpinBox * ajoutpiecedimz;
+
+            QComboBox * comboajoutpiece;
+            QStandardItemModel * modelemateriaupiece;
+
+            QComboBox * comboajoutpieceshader;
+            QStandardItemModel * modelepieceshader;
+
+            QLabel * labelcomboajoutpiece;
+            QLabel * labeldimajoutpiece;
+            QLabel * labelnomajoutpiece;
+            QLabel * labelmurajoutpiece;
+            QLabel * labelajoutpieceshader;
+
+            //label des mur
+            QLabel * labelmur1;
+            QLabel * labelmur2;
+            QLabel * labelmur3;
+            QLabel * labelmur4;
+            QLabel * labelmur5;
+            QLabel * labelmur6;
+            //checkbox mur
+            QCheckBox * checkmur1;
+            QCheckBox * checkmur2;
+            QCheckBox * checkmur3;
+            QCheckBox * checkmur4;
+            QCheckBox * checkmur5;
+            QCheckBox * checkmur6;
+
+            QLineEdit * lineeditajoutpiece;
+
+            //layout ajout piece
+            QVBoxLayout * mainlayoutajoutpiece;
+                QHBoxLayout * ajoutpiecelayoutdim;
+                QHBoxLayout * ajoutpiecelayoutnom;
+                QHBoxLayout * ajoutpiecelayoutcombo;
+                QHBoxLayout * ajoutpiecelabelmure;
+                QHBoxLayout * ajoutpiecepiecer1;
+                QHBoxLayout * ajoutpiecepiecer2;
+                QHBoxLayout * ajoutpiecepiecer3;
+                QHBoxLayout * ajoutpieceshaderlayout;
 
         //aide
         QAction *racourcitAct;

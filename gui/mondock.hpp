@@ -194,17 +194,22 @@ private:
                     QDoubleSpinBox * boxobjettransz;
                 //scale
                 QWidget * tabobjetscale;
+                QVBoxLayout *  layoutglobalscaleobjet;
                     QHBoxLayout * layouttabobjetscale;
+                    QHBoxLayout * layoutobjetscaleall;
 
                     QDoubleSpinBox * boxobjetscalex;
                     QDoubleSpinBox * boxobjetscaley;
                     QDoubleSpinBox * boxobjetscalez;
 
+                    QLabel * labelsliderobjetscale;
+                    QSlider * sliderobjetscale;
+
 /* ******************************************************** */
                     //piece
 /* ******************************************************** */
                 QTabWidget * tabpiece;
-
+                    //position
                     QWidget * widgetpiecedim;
                     QHBoxLayout *piecedimlayout;
 
@@ -219,7 +224,27 @@ private:
                     QSpinBox* positionpiecex;
                     QSpinBox* positionpiecey;
                     QSpinBox* positionpiecez;
+                    //scale
+                    QWidget * widgetpiecescale;
+                    QVBoxLayout *piecescalelayout;
 
+                    QHBoxLayout *scalesliderlayout;
+                    QHBoxLayout *scalespinboxlayout;
+
+                    QDoubleSpinBox *scalespinboxx;
+                    QDoubleSpinBox *scalespinboxy;
+                    QDoubleSpinBox *scalespinboxz;
+
+                    QLabel *scalelabel;
+                    QSlider *scaleslider;
+
+                    //rotation
+                    QWidget * widgetpiecerotate;
+                    QHBoxLayout *piecerotatelayout;
+
+                    QDoubleSpinBox *rotspinboxx;
+                    QDoubleSpinBox *rotspinboxy;
+                    QDoubleSpinBox *rotspinboxz;
 
                 void traitementlumiere();
                 void traitementmaterial();
@@ -246,9 +271,9 @@ private slots:
     void spelightfuncz(int x);
 
 //materiaux
-//    void emimaterialfuncx(int x);
-//    void emimaterialfuncy(int x);
-//    void emimaterialfuncz(int x);
+    void emimaterialfuncx(int x);
+    void emimaterialfuncy(int x);
+    void emimaterialfuncz(int x);
 
     void ambmaterialfuncx(int x);
     void ambmaterialfuncy(int x);
@@ -278,11 +303,20 @@ private slots:
     void scaleobjectx(double x);
     void scaleobjecty(double x);
     void scaleobjectz(double x);
-
+    void scalesliderobject(int x);
 //piece
     void slotpositionpiecex(int x);
     void slotpositionpiecey(int x);
     void slotpositionpiecez(int x);
+
+    void scalepiecex(double x);
+    void scalepiecey(double x);
+    void scalepiecez(double x);
+    void scalesliderpiece(int x);
+
+    void rotpiecex(double x);
+    void rotpiecey(double x);
+    void rotpiecez(double x);
 
 //    void slotdimentionpiecex(double);
 //    void slotdimentionpiecey(double);
