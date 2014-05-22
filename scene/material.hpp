@@ -7,7 +7,7 @@
 #include <QOpenGLTexture>
 #include <QImage>
 #include <QList>
-#include <map>
+#include <QMap>
 
 
 
@@ -44,7 +44,7 @@ private:
 	QOpenGLTexture* _normal_texture;
 
 
-	static std::map<const QString, QOpenGLTexture *> _texturesLoaded; /**< Ensemble des textures déjà chargées pour réutilisation */
+	static QMap<QString, QOpenGLTexture *> _texturesLoaded; /**< Ensemble des textures déjà chargées pour réutilisation */
 
 
 public:
@@ -121,6 +121,25 @@ public:
 	bool hasDiffuseTexture() const;
 	bool hasSpecularTexture() const;
 	bool hasNormalTexture() const;
+
+	/**
+	 * @brief Retourne le path de la texture diffuse
+	 * @return nom de la texture diffuse
+	 */
+	QString getDiffuseTextureName() const;
+
+	/**
+	 * @brief Retourne le path de la texture spéculaire
+	 * @return nom de la texture spéculaire
+	 */	
+	QString getSpecularTextureName() const;
+
+	/**
+	 * @brief Retourne le path de la normal map
+	 * @return nom de la normal map
+	 */
+	QString getNormalTextureName() const;
+
 
 	/**
 	 * @brief Met à jour le Material courant dans le shader actif

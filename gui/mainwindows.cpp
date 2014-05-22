@@ -644,8 +644,8 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             //vue->setModel(modele);
             vue->header()->hide();
             vue->setEditTriggers(QTreeView::NoEditTriggers);
-                vue->setModel(modele);
-                vue->sortByColumn(1,Qt::AscendingOrder);
+            vue->setModel(modele);
+            vue->sortByColumn(1,Qt::AscendingOrder);
             //creation widget a fixer dans le dockwidget
 
             boutonlisteelement = new QPushButton("Editer");

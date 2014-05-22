@@ -3,8 +3,8 @@
 #include <QRectF>
 #include <vector>
 
-MyOpenGLWidget::MyOpenGLWidget(const QGLFormat & format, QWidget * parent, const QGLWidget * shareWidget, Qt::WindowFlags f):
-	QGLWidget(format, parent, shareWidget, f), _captureMouse(false)
+MyOpenGLWidget::MyOpenGLWidget(const QGLFormat & format, QWidget * parent, const QString & path, const QGLWidget * shareWidget, Qt::WindowFlags f):
+	QGLWidget(format, parent, shareWidget, f), _captureMouse(false), _path(path)
 {
     //refresh tout les 1/60eme de seconde
      _timer = new QTimer(this);
@@ -72,7 +72,7 @@ void	MyOpenGLWidget::initializeGL()
     glClearColor(0.3, 0.3, 0.3, 1.0);
    
 
-    _scene = new Scene("scene.xml");
+    _scene = new Scene(_path);
 
 
 
@@ -92,7 +92,9 @@ void	MyOpenGLWidget::paintGL()
 
     openGL_check_error();
 
-    setWindowTitle(QString("Castle | %1 fps | %2 ms").arg(1 / (timer.elapsed() / 1000.0)).arg(timer.elapsed()));
+    qint64 time = timer.nsecsElapsed();
+
+    setWindowTitle(QString("Castle | %1 fps | %2 ns").arg(1 / (time / 1000000000.0)).arg(time));
 
 }
 

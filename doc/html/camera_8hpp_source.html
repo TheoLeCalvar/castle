@@ -124,26 +124,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_camera.html#a22aaf20b581d402e5c3952655b830c0f">mouseMoveEvent</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span>    <a class="code" href="class_camera.html#a8414e6d74d3f6259fa5ea1f037e9d8bd">move</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_camera.html#ad42b0114b12a48474ae6c8be1c44e7bb">   72</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="structvec3.html">vec3</a> &amp; <a class="code" href="class_camera.html#ad42b0114b12a48474ae6c8be1c44e7bb">position</a>()<span class="keyword"> const</span>{<span class="keywordflow">return</span> <a class="code" href="class_camera.html#ad4c22c27bd247f4411c4166220ba6e82">_eye</a>;}</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span>    <a class="code" href="class_camera.html#abde0ff477fb0baea7515767dcd7a7cf7">go</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span>    <a class="code" href="class_camera.html#aa4e815462a964caa6b10804e33119cf2">vectorFromAngle</a>();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="structvec3.html">vec3</a> <a class="code" href="class_camera.html#a78bcbeed337fb2ee25f1077d11eb8a33">getP</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="structvec3.html">vec3</a> <a class="code" href="class_camera.html#a190a745972d0b797ebb19a2aecd5fbe2">getX</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="structvec3.html">vec3</a> <a class="code" href="class_camera.html#a23b4f98ea112c9c435f9ee8df7cdfc45">getY</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="structvec3.html">vec3</a> <a class="code" href="class_camera.html#a5132a2f324c60f0f94d8adb66644e5a3">getZ</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="class_camera.html#a1b29933f81edb6cac6815a139442e6c5">getWidth</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="class_camera.html#af34538e81e41b215ffcae141b238a84d">getHeight</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="class_camera.html#ae8be0ecf4c8611d787f4234832ee8419">getDepth</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span>    <a class="code" href="class_camera.html#a8414e6d74d3f6259fa5ea1f037e9d8bd">move</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span>    <a class="code" href="class_camera.html#abde0ff477fb0baea7515767dcd7a7cf7">go</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span>    <a class="code" href="class_camera.html#aa4e815462a964caa6b10804e33119cf2">vectorFromAngle</a>();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="structvec3.html">vec3</a> <a class="code" href="class_camera.html#a78bcbeed337fb2ee25f1077d11eb8a33">getP</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="structvec3.html">vec3</a> <a class="code" href="class_camera.html#a190a745972d0b797ebb19a2aecd5fbe2">getX</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="structvec3.html">vec3</a> <a class="code" href="class_camera.html#a23b4f98ea112c9c435f9ee8df7cdfc45">getY</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="structvec3.html">vec3</a> <a class="code" href="class_camera.html#a5132a2f324c60f0f94d8adb66644e5a3">getZ</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="class_camera.html#a1b29933f81edb6cac6815a139442e6c5">getWidth</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="class_camera.html#af34538e81e41b215ffcae141b238a84d">getHeight</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="class_camera.html#ae8be0ecf4c8611d787f4234832ee8419">getDepth</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;};</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="class_camera_html_a23b4f98ea112c9c435f9ee8df7cdfc45"><div class="ttname"><a href="class_camera.html#a23b4f98ea112c9c435f9ee8df7cdfc45">Camera::getY</a></div><div class="ttdeci">virtual vec3 getY() const </div><div class="ttdoc">vec3 unitaire Y </div><div class="ttdef"><b>Definition:</b> camera.cpp:128</div></div>
 <div class="ttc" id="class_camera_html_ae8be0ecf4c8611d787f4234832ee8419"><div class="ttname"><a href="class_camera.html#ae8be0ecf4c8611d787f4234832ee8419">Camera::getDepth</a></div><div class="ttdeci">virtual float getDepth() const </div><div class="ttdoc">renvoie la demie profondeur de la hitbox </div><div class="ttdef"><b>Definition:</b> camera.cpp:148</div></div>
 <div class="ttc" id="class_camera_html_a1a8ac754efe577c8abbc1e19cc8bca25"><div class="ttname"><a href="class_camera.html#a1a8ac754efe577c8abbc1e19cc8bca25">Camera::Camera</a></div><div class="ttdeci">Camera(Scene *scene=NULL, float eyeX=0.0f, float eyeY=0.0f, float eyeZ=0.0f)</div><div class="ttdoc">Constructeur. </div><div class="ttdef"><b>Definition:</b> camera.cpp:5</div></div>
@@ -160,12 +164,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_camera_html_a1b29933f81edb6cac6815a139442e6c5"><div class="ttname"><a href="class_camera.html#a1b29933f81edb6cac6815a139442e6c5">Camera::getWidth</a></div><div class="ttdeci">virtual float getWidth() const </div><div class="ttdoc">renvoie la demie largeur de la hitbox </div><div class="ttdef"><b>Definition:</b> camera.cpp:138</div></div>
 <div class="ttc" id="class_camera_html_a8414e6d74d3f6259fa5ea1f037e9d8bd"><div class="ttname"><a href="class_camera.html#a8414e6d74d3f6259fa5ea1f037e9d8bd">Camera::move</a></div><div class="ttdeci">void move()</div><div class="ttdoc">Calcul le déplacement de la Camera. </div><div class="ttdef"><b>Definition:</b> camera.cpp:14</div></div>
 <div class="ttc" id="class_camera_html_a81ffb00eedbaefbfb755b0c13d42180a"><div class="ttname"><a href="class_camera.html#a81ffb00eedbaefbfb755b0c13d42180a">Camera::_scene</a></div><div class="ttdeci">Scene * _scene</div><div class="ttdef"><b>Definition:</b> camera.hpp:28</div></div>
+<div class="ttc" id="class_camera_html_ad42b0114b12a48474ae6c8be1c44e7bb"><div class="ttname"><a href="class_camera.html#ad42b0114b12a48474ae6c8be1c44e7bb">Camera::position</a></div><div class="ttdeci">const vec3 &amp; position() const </div><div class="ttdoc">Retourne la position de la caméra. </div><div class="ttdef"><b>Definition:</b> camera.hpp:72</div></div>
 <div class="ttc" id="class_camera_html_a190a745972d0b797ebb19a2aecd5fbe2"><div class="ttname"><a href="class_camera.html#a190a745972d0b797ebb19a2aecd5fbe2">Camera::getX</a></div><div class="ttdeci">virtual vec3 getX() const </div><div class="ttdoc">vec3 unitaire X </div><div class="ttdef"><b>Definition:</b> camera.cpp:123</div></div>
 <div class="ttc" id="class_camera_html_abde0ff477fb0baea7515767dcd7a7cf7"><div class="ttname"><a href="class_camera.html#abde0ff477fb0baea7515767dcd7a7cf7">Camera::go</a></div><div class="ttdeci">void go(float x, float y, float z)</div><div class="ttdoc">Déplace la caméra aux coordonnées données. </div><div class="ttdef"><b>Definition:</b> camera.cpp:57</div></div>
 <div class="ttc" id="class_camera_html_a43b59b53cb182906d56e6e4d2c31139c"><div class="ttname"><a href="class_camera.html#a43b59b53cb182906d56e6e4d2c31139c">Camera::_haut_presse</a></div><div class="ttdeci">bool _haut_presse</div><div class="ttdef"><b>Definition:</b> camera.hpp:35</div></div>
 <div class="ttc" id="class_camera_html_a22aaf20b581d402e5c3952655b830c0f"><div class="ttname"><a href="class_camera.html#a22aaf20b581d402e5c3952655b830c0f">Camera::mouseMoveEvent</a></div><div class="ttdeci">void mouseMoveEvent(int x, int y, int width, int height)</div><div class="ttdoc">Fonction de déplacement de la caméra à la souris. </div><div class="ttdef"><b>Definition:</b> camera.cpp:63</div></div>
 <div class="ttc" id="class_camera_html_a61b2e438537b99ba1f0a97e5586b7f45"><div class="ttname"><a href="class_camera.html#a61b2e438537b99ba1f0a97e5586b7f45">Camera::_droite_presse</a></div><div class="ttdeci">bool _droite_presse</div><div class="ttdef"><b>Definition:</b> camera.hpp:34</div></div>
-<div class="ttc" id="class_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdoc">Classe principale. </div><div class="ttdef"><b>Definition:</b> scene.hpp:39</div></div>
+<div class="ttc" id="class_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdoc">Classe principale. </div><div class="ttdef"><b>Definition:</b> scene.hpp:45</div></div>
 <div class="ttc" id="class_hitbox_html"><div class="ttname"><a href="class_hitbox.html">Hitbox</a></div><div class="ttdef"><b>Definition:</b> hitbox.hpp:6</div></div>
 <div class="ttc" id="class_camera_html_ac2a5c37c4f9603a14e3616d6a75f7998"><div class="ttname"><a href="class_camera.html#ac2a5c37c4f9603a14e3616d6a75f7998">Camera::_gauche_presse</a></div><div class="ttdeci">bool _gauche_presse</div><div class="ttdef"><b>Definition:</b> camera.hpp:33</div></div>
 <div class="ttc" id="hitbox_8hpp_html"><div class="ttname"><a href="hitbox_8hpp.html">hitbox.hpp</a></div></div>
@@ -183,7 +188,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 19 2014 16:14:39 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 20 2014 14:23:07 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

@@ -72,7 +72,7 @@ public:
 	 * @brief Retourne les dimensions de la pièce
 	 * @return vec3 contenant les dimensions de la pièce
 	 */
-	const vec3 dimensions() const;
+	const vec3 & dimensions() const;
 
 	/**
 	 * @brief Retourne les dimensions de la pièce

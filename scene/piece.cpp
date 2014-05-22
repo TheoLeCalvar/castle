@@ -58,7 +58,7 @@ Objet * 	Piece::getChild(const QString & name)
 	return _children.value(name);
 }
 
-const vec3 Piece::dimensions() const
+const vec3 & Piece::dimensions() const
 {
 	return _dimensions;
 }

@@ -34,13 +34,14 @@ Q_OBJECT
 private:
 	bool   		_captureMouse;
 	QTimer 	*	_timer;
+	QString 	_path;
 
 
 	Scene * 	_scene;
 
 
 public:
-	MyOpenGLWidget(const QGLFormat & format, QWidget * parent = 0, const QGLWidget * shareWidget = 0, Qt::WindowFlags f = 0);
+	MyOpenGLWidget(const QGLFormat & format, QWidget * parent = 0, const QString & path = "scene.xml", const QGLWidget * shareWidget = 0, Qt::WindowFlags f = 0);
 	~MyOpenGLWidget();
 
     QSize minimumSizeHint() const;

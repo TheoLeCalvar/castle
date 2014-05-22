@@ -76,13 +76,6 @@ void Camera::mouseMoveEvent(int x, int y, int width, int height)
     }
 }
 
-double Camera::distanceToLight(const Light * l) const
-{
-    vec3 direction = l->get(GL_POSITION) - _eye;
-
-    return (direction[0]*direction[0] + direction[1]*direction[1] + direction[2]*direction[2]);
-}
-
 void Camera::vectorFromAngle()
 {
     static vec3 up(0.0f,1.0f,0.0f);

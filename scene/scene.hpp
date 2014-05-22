@@ -49,10 +49,12 @@ private:
 	QMap<QString, Light *> 						_lights; /**< Map des lumières constituant la scène, identifiées par leur nom, doit être unique */
 	QMap<QString, Material *>					_materials; /**< Map des matériaux constituant la scène, identifiés par leur nom, doit être unique */
 	QMap<QString, QOpenGLShaderProgram *> 		_shaders; /**< Map des shader constituant la scène, identifiés par leur nom, doit être unique */
+	QMap<QString, QOpenGLShader *>				_loadedShaders; /**< Fichiers de shaders déjà chargés, utilisé pour l'export */
+
 
 	mat4 										_projectionMatrix; /**< Matrice de projection, recalculée à chaque redimensionnement du widget */
 
-	QMap<double, Light *>						_orderedLights; /**< Light ordonnées par leurs distance à la caméra */
+	QMap<float, Light *>						_orderedLights; /**< Light ordonnées par leurs distance à la caméra */
 
 public:
 	Camera *									_camera; /**< Caméra de la scène */
@@ -91,7 +93,7 @@ public:
 	 * @param name nom de la pièce
 	 * @return Retourne le pointeur si le nom est trouvé, NULL autrement
 	 */
-	Piece * 	getPiece(const QString & name);
+	Piece * 	getPiece(const QString & name) const;
 
 
 	/**
@@ -100,7 +102,7 @@ public:
 	 * @param name nom de la lumière
 	 * @return Retourne un pointeur valide si le nom est présent, NULL autrement
 	 */
-	Light * 	getLight(const QString & name);
+	Light * 	getLight(const QString & name) const;
 
 
 	/**
@@ -109,7 +111,7 @@ public:
 	 * @param name nom du material
 	 * @return Retourne un pointeur valide si le nom est présent, NULL autrement
 	 */
-	Material *	getMaterial(const QString & name);
+	Material *	getMaterial(const QString & name) const;
 
 
 	/**
@@ -118,7 +120,15 @@ public:
 	 * @param name nom du shader
 	 * @return Retourne l'id d'un shader valide si le nom est présent, 0 autrement
 	 */
-	GLuint 		getShader(const QString & name);
+	GLuint 		getShader(const QString & name) const;
+
+	/**
+	 * @brief Recheche le nom d'un shader à partir de son ID OpenGL
+	 * 
+	 * @param  id identifiant OpenGL du shader
+	 * @return nom du shader s'il existe
+	 */
+	QString 	getShaderNameByID(const GLuint id) const;
 
 
 	/**
@@ -196,10 +206,9 @@ public:
 	 * @brief Sauvegarde de la scène au format xml
 	 * 
 	 * @param fileName nom du fichier dans lequel sauvegarde
-	 * @warning Pas encore implémenté
-	 * @todo  A implémenter
+	 * @return indique si le ficheir a été sauvegardé ou pas
 	 */
-	void 		saveAsXML(const QString & fileName);
+	bool 		saveAsXML(const QString & fileName);
 
 
 	virtual bool collide(const Hitbox & h) const;
@@ -242,6 +251,32 @@ private:
 	 * @brief Ordonne les Light en fonction de la distance à la caméra
 	 */
 	void 		orderLights();
+
+	/**
+	 * @brief Retourne un vec3 correspondant au vecteur position lu
+	 * 
+	 * @param e élement à lire
+	 * @return position
+	 */
+	static vec3 readPosition(const QDomElement & e);
+
+	/**
+	 * @brief Retourne un vec3 correspondant au scale lu
+	 * 
+	 * @param e élement à lire
+	 * @return facteur de scale
+	 */
+	static vec3 readScale(const QDomElement & e);
+
+
+	void saveMaterials(QDomElement & root, QDomDocument & doc) const;
+
+	void saveLights(QDomElement & root, QDomDocument & doc) const;
+
+	void saveShaders(QDomElement & root, QDomDocument & doc) const;
+
+	void savePieces(QDomElement & root, QDomDocument & doc) const;
+
 
 
 	virtual vec3 getP() 		const{ return vec3();}

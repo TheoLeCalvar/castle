@@ -12,6 +12,7 @@
 #include <QList>
 #include <QMultiMap>
 #include <QPair>
+#include <QDir>
 
 
 /**
@@ -110,6 +111,15 @@ public:
 	 * @return Node racine du modèle
 	 */
 	static Node * loadModel(const QString & path, Scene * scene);
+
+	/**
+	 * @brief Récupère le nom du modèle chargé
+	 * 
+	 * @param node Node dont on veut le nom du modèle
+	 * @return nom du fichier charger
+	 * @warning  Ne fonctionne que pour les Node racines
+	 */
+	QString getModelName() const;
 
 
 	virtual bool collide(const Hitbox & h) const;

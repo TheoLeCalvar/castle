@@ -260,6 +260,8 @@ Mondock:: ~Mondock(){
             _objet->position(vec3(vectmp[0],vectmp[1],x));
             }
 
+
+        //scale
         void Mondock::scaleobjectx(double x)
             {
             vec3 vectmp =_objet->scale();

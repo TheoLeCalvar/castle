@@ -73,6 +73,8 @@ void \hyperlink{class_scene_aa6d40bab1b160afc7bb84841d056a07d}{load\+Pieces} (co
 \begin{DoxyCompactList}\small\item\em Charge les pièces. \end{DoxyCompactList}\item 
 void \hyperlink{class_scene_a1deb5bb022836f4b585c8580246b26cb}{load\+Shaders} (const Q\+Dom\+Element \&dom)
 \begin{DoxyCompactList}\small\item\em Charge les shaders. \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_ae6fc45f015d96191dbf775d54d6e4437}{order\+Lights} ()
+\begin{DoxyCompactList}\small\item\em Ordonne les \hyperlink{class_light}{Light} en fonction de la distance à la caméra. \end{DoxyCompactList}\item 
 virtual \hyperlink{structvec3}{vec3} \hyperlink{class_scene_a31be15d8114d6d9c01c312cbe1a41ed6}{get\+P} () const 
 \begin{DoxyCompactList}\small\item\em Retourne le centre de la \hyperlink{class_hitbox}{Hitbox}. \end{DoxyCompactList}\item 
 virtual \hyperlink{structvec3}{vec3} \hyperlink{class_scene_a1a35eb36ad2c6b5bf748c31933e4ea5b}{get\+X} () const 
@@ -100,6 +102,8 @@ Q\+Map$<$ Q\+String, \\*
 Q\+Open\+G\+L\+Shader\+Program $\ast$ $>$ \hyperlink{class_scene_abde34dc03c8d3a07b3177041ab195f07}{\+\_\+shaders}
 \item 
 \hyperlink{structmat4}{mat4} \hyperlink{class_scene_a7db3394191c0a07e6bdc456a53ac8ece}{\+\_\+projection\+Matrix}
+\item 
+Q\+Map$<$ float, \hyperlink{class_light}{Light} $\ast$ $>$ \hyperlink{class_scene_a5fae715ba6bdde7c382f9d779095a718}{\+\_\+ordered\+Lights}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -601,6 +605,17 @@ Charge les shaders à partir du X\+M\+L
 {\em dom} & noeud X\+M\+L correspondant à $<$shaders$>$ \\
 \hline
 \end{DoxyParams}
+\hypertarget{class_scene_ae6fc45f015d96191dbf775d54d6e4437}{\index{Scene@{Scene}!order\+Lights@{order\+Lights}}
+\index{order\+Lights@{order\+Lights}!Scene@{Scene}}
+\subsubsection[{order\+Lights}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+::order\+Lights (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_ae6fc45f015d96191dbf775d54d6e4437}
+
+
+Ordonne les \hyperlink{class_light}{Light} en fonction de la distance à la caméra. 
+
 \hypertarget{class_scene_ae87e88cbefc16640354acc8ec11b5e1e}{\index{Scene@{Scene}!save\+As\+X\+M\+L@{save\+As\+X\+M\+L}}
 \index{save\+As\+X\+M\+L@{save\+As\+X\+M\+L}!Scene@{Scene}}
 \subsubsection[{save\+As\+X\+M\+L}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+::save\+As\+X\+M\+L (
@@ -621,7 +636,7 @@ Sauvegarde de la scène au format xml.
 Pas encore implémenté 
 \end{DoxyWarning}
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000006}{Todo}]A implémenter \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000005}{Todo}]A implémenter \end{DoxyRefDesc}
 
 
 \subsection{Member Data Documentation}
@@ -634,7 +649,10 @@ Caméra de la scène \hypertarget{class_scene_a0ef33120973d6afc1754d2154d7c338a}
 Map des lumières constituant la scène, identifiées par leur nom, doit être unique \hypertarget{class_scene_a5b96810fdeb47632d5ce6c2c47f41691}{\index{Scene@{Scene}!\+\_\+materials@{\+\_\+materials}}
 \index{\+\_\+materials@{\+\_\+materials}!Scene@{Scene}}
 \subsubsection[{\+\_\+materials}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Map$<$Q\+String, {\bf Material} $\ast$$>$ Scene\+::\+\_\+materials\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_a5b96810fdeb47632d5ce6c2c47f41691}
-Map des matériaux constituant la scène, identifiés par leur nom, doit être unique \hypertarget{class_scene_aa3a488d4be41fe6a187488e1e7a1035c}{\index{Scene@{Scene}!\+\_\+pieces@{\+\_\+pieces}}
+Map des matériaux constituant la scène, identifiés par leur nom, doit être unique \hypertarget{class_scene_a5fae715ba6bdde7c382f9d779095a718}{\index{Scene@{Scene}!\+\_\+ordered\+Lights@{\+\_\+ordered\+Lights}}
+\index{\+\_\+ordered\+Lights@{\+\_\+ordered\+Lights}!Scene@{Scene}}
+\subsubsection[{\+\_\+ordered\+Lights}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Map$<$float, {\bf Light} $\ast$$>$ Scene\+::\+\_\+ordered\+Lights\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_a5fae715ba6bdde7c382f9d779095a718}
+\hyperlink{class_light}{Light} ordonnées par leurs distance à la caméra \hypertarget{class_scene_aa3a488d4be41fe6a187488e1e7a1035c}{\index{Scene@{Scene}!\+\_\+pieces@{\+\_\+pieces}}
 \index{\+\_\+pieces@{\+\_\+pieces}!Scene@{Scene}}
 \subsubsection[{\+\_\+pieces}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Map$<$Q\+String, {\bf Piece} $\ast$$>$ Scene\+::\+\_\+pieces\hspace{0.3cm}{\ttfamily [private]}}}\label{class_scene_aa3a488d4be41fe6a187488e1e7a1035c}
 Map des pièces constituant la scène, identifiées par leur nom, doit être unique \hypertarget{class_scene_a7db3394191c0a07e6bdc456a53ac8ece}{\index{Scene@{Scene}!\+\_\+projection\+Matrix@{\+\_\+projection\+Matrix}}
