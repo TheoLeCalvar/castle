@@ -5,7 +5,7 @@
 #include "node.hpp"
 #include "MyOpenGLWidget.hpp"
 
-
+#include <QFileDialog>
 #include <QCheckBox>
 #include <QMainWindow>
 #include <QAction>

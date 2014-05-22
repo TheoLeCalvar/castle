@@ -498,12 +498,41 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
 //               Menubars                 //
 /* ************************************** */
     //fichier
-    void MainWindow::Nouveau(){}
+    void MainWindow::Nouveau()
+    {
+            delete widget;
 
-    void MainWindow::Ouvrir(){}
+            QGLFormat f;
+            f.setVersion(3, 2);
+            f.setProfile(QGLFormat::CoreProfile);
+            widget = new MyOpenGLWidget(f,this);
+            setCentralWidget(widget);
 
-    void MainWindow::Enregistrer(){}
+    }
 
+
+    void MainWindow::Ouvrir(){
+           QString fileName = QFileDialog::getOpenFileName(this,
+                tr("Open Scene"), "",
+                tr("XML files (*.xml)"));
+     if (fileName!=NULL){
+           widget->getScene()->~Scene();
+           widget->setScene(new Scene(fileName));
+     }
+    }
+
+    void MainWindow::Enregistrer(){
+        QString fileName = QFileDialog::getSaveFileName(this,
+            tr("Save Scene"), "",
+            tr("XML files (*.xml)"));
+    if (fileName!=NULL){
+                if(fileName.endsWith(".xml",Qt::CaseSensitive) )
+                 {
+                 widget->getScene()->saveAsXML(fileName);
+                 }
+                else widget->getScene()->saveAsXML(fileName + ".xml");
+        }
+    }
     void MainWindow::Kiter(){}
 
     //edition
