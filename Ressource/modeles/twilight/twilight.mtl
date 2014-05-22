@@ -6,77 +6,77 @@ Ns 80.392157
 Ka 0.000000 0.000000 0.000000
 Kd 0.8 0.8 0.8
 Ks 0.000000 0.000000 0.000000
-map_Kd modeles/twilight/twilight_body.png
+map_Kd textures/twilight_body.png
 
 newmtl Material.002
 Ns 80.392157
 Ka 0.000000 0.000000 0.000000
 Kd 0.8 0.8 0.8
 Ks 0.000000 0.000000 0.000000
-map_Kd modeles/twilight/twilight_body.png
+map_Kd textures/twilight_body.png
 
 newmtl Material.003
 Ns 739.215686
 Ka 0.000000 0.000000 0.000000
 Kd 0.8 0.8 0.8
 Ks 0.000000 0.000000 0.000000
-map_Kd modeles/twilight/twilight_eyes.png
+map_Kd textures/twilight_eyes.png
 
 newmtl Material.005
 Ns 90.196078
 Ka 0.000000 0.000000 0.000000
 Kd 0.8 0.8 0.8
 Ks 0.000000 0.000000 0.000000
-map_Kd modeles/twilight/twilight_horn.png
+map_Kd textures/twilight_horn.png
 
 newmtl None
 Ns 0.000000
 Ka 0.000000 0.000000 0.000000
 Kd 0.512000 0.512000 0.512000
 Ks 0.000000 0.000000 0.000000
-map_Kd modeles/twilight/CrownTex.png
+map_Kd textures/CrownTex.png
 
 newmtl _TwilightGemTex.png
 Ns 0.000000
 Ka 0.000000 0.000000 0.000000
 Kd 0.512000 0.512000 0.512000
 Ks 0.000000 0.000000 0.000000
-map_Kd modeles/twilight/TwilightGemTex.png
+map_Kd textures/TwilightGemTex.png
 
 newmtl _TwilightGemTex.png.002
 Ns 0.000000
 Ka 0.000000 0.000000 0.000000
 Kd 0.512000 0.512000 0.512000
 Ks 0.000000 0.000000 0.000000
-map_Kd modeles/twilight/TwilightGemTex.png
+map_Kd textures/TwilightGemTex.png
 
 newmtl _TwilightGemTex.png.004
 Ns 0.000000
 Ka 0.000000 0.000000 0.000000
 Kd 0.512000 0.512000 0.512000
 Ks 0.000000 0.000000 0.000000
-map_Kd modeles/twilight/TwilightGemTex.png
+map_Kd textures/TwilightGemTex.png
 
 newmtl _TwilightGemTex.png.006
 Ns 0.000000
 Ka 0.000000 0.000000 0.000000
 Kd 0.512000 0.512000 0.512000
 Ks 0.000000 0.000000 0.000000
-map_Kd modeles/twilight/TwilightGemTex.png
+map_Kd textures/TwilightGemTex.png
 
 newmtl _TwilightGemTex.png.007
 Ns 0.000000
 Ka 0.000000 0.000000 0.000000
 Kd 0.512000 0.512000 0.512000
 Ks 0.000000 0.000000 0.000000
-map_Kd modeles/twilight/TwilightGemTex.png
+map_Kd textures/TwilightGemTex.png
 
 newmtl defaultMat.001
 Ns 90.196078
 Ka 0.000000 0.000000 0.000000
 Kd 0.8 0.8 0.8
 Ks 0.533333 0.533333 0.533333
-map_Kd modeles/twilight/txtr_celestia_crown.png
+map_Kd textures/txtr_celestia_crown.png
 
 newmtl defaultMat.003
 Ns 92.156863
@@ -89,28 +89,28 @@ Ns 90.196078
 Ka 0.000000 0.000000 0.000000
 Kd 0.8 0.8 0.8
 Ks 0.533333 0.533333 0.533333
-map_Kd modeles/twilight/txtr_celestia_crown.png
+map_Kd textures/txtr_celestia_crown.png
 
 newmtl defaultMat.005_txtr_celestia_crown.png.010
 Ns 90.196078
 Ka 0.000000 0.000000 0.000000
 Kd 0.8 0.8 0.8
 Ks 0.533333 0.533333 0.533333
-map_Kd modeles/twilight/txtr_celestia_crown.png
+map_Kd textures/txtr_celestia_crown.png
 
 newmtl defaultMat.006
 Ns 90.196078
 Ka 0.000000 0.000000 0.000000
 Kd 0.8 0.8 0.8
 Ks 0.000000 0.000000 0.000000
-map_Kd modeles/twilight/twilight_hair_front.png
+map_Kd textures/twilight_hair_front.png
 
 newmtl defaultMat.007
 Ns 90.196078
 Ka 0.000000 0.000000 0.000000
 Kd 0.8 0.8 0.8
 Ks 0.000000 0.000000 0.000000
-map_Kd modeles/twilight/twilight_hair_back.png
+map_Kd textures/twilight_hair_back.png
 
 newmtl defaultMat.008
 Ns 92.156863
@@ -135,18 +135,18 @@ Ns 90.196078
 Ka 0.000000 0.000000 0.000000
 Kd 0.8 0.8 0.8
 Ks 0.533333 0.533333 0.533333
-map_Kd modeles/twilight/txtr_celestia_crown.png
+map_Kd textures/txtr_celestia_crown.png
 
 newmtl defaultMat.015
 Ns 90.196078
 Ka 0.000000 0.000000 0.000000
 Kd 0.8 0.8 0.8
 Ks 0.533333 0.533333 0.533333
-map_Kd modeles/twilight/txtr_celestia_crown.png
+map_Kd textures/txtr_celestia_crown.png
 
 newmtl twilight_tail_defaultMat.001
 Ns 90.196078
 Ka 0.000000 0.000000 0.000000
 Kd 0.8 0.8 0.8
 Ks 0.000000 0.000000 0.000000
-map_Kd modeles/twilight/twilight_tail.png
+map_Kd textures/twilight_tail.png
