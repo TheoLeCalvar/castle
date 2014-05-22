@@ -119,6 +119,10 @@ void MainWindow::createMenus()
             importation3DAct->setIcon(QIcon("icones/value_list.png"));
         Outil->addMenu(ajoutelement);
 
+/* ************************************** */
+//              ajout elements            //
+/* ************************************** */
+
             //ajout lumiere declaration des element
             ajoutelement->addAction(ajoutlumierAct);
 
@@ -510,7 +514,6 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
 
     }
 
-
     void MainWindow::Ouvrir(){
            QString fileName = QFileDialog::getOpenFileName(this,
                 tr("Open Scene"), "",
@@ -533,7 +536,6 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                 else widget->getScene()->saveAsXML(fileName + ".xml");
         }
     }
-    void MainWindow::Kiter(){}
 
     //edition
     void MainWindow::Annuler(){}
@@ -678,10 +680,12 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             //creation widget a fixer dans le dockwidget
 
             boutonlisteelement = new QPushButton("Editer");
+            boutonlisteelementdelete = new QPushButton("Suprimer");
 
             layoutlistescene = new QVBoxLayout();
                 layoutlistescene->addWidget(vue);
                 layoutlistescene->addWidget(boutonlisteelement);
+                layoutlistescene->addWidget(boutonlisteelementdelete);
 
             widgetdocklistscene = new QWidget() ;
                 widgetdocklistscene->setLayout(layoutlistescene);

@@ -5,29 +5,29 @@
 #include "node.hpp"
 #include "MyOpenGLWidget.hpp"
 
-#include <QFileDialog>
-#include <QCheckBox>
-#include <QMainWindow>
 #include <QAction>
-#include <QMenuBar>
-#include <QDir>
-#include <QGLFormat>
-#include <QSurface>
-#include <QStatusBar>
-#include <QDockWidget>
-#include <QToolBar>
-#include <QFileSystemModel>
 #include <QApplication>
-#include <QStringListModel>
-#include <QStringList>
+#include <QCheckBox>
+#include <QDir>
+#include <QDockWidget>
+#include <QFileDialog>
+#include <QFileSystemModel>
+#include <QGLFormat>
 #include <QHeaderView>
-#include <QTreeView>
-#include <QVBoxLayout>
-#include <QStandardItemModel>
-#include <QPushButton>
-#include <QTabWidget>
-#include <QSlider>
 #include <QLineEdit>
+#include <QMainWindow>
+#include <QMenuBar>
+#include <QPushButton>
+#include <QSurface>
+#include <QSlider>
+#include <QStandardItemModel>
+#include <QStatusBar>
+#include <QStringList>
+#include <QStringListModel>
+#include <QToolBar>
+#include <QTreeView>
+#include <QTabWidget>
+#include <QVBoxLayout>
 
 class MainWindow : public QMainWindow
 {
@@ -44,32 +44,31 @@ private slots:
  //           menu bar                     //
  /* ************************************** */
         //fichier
-        void Nouveau();
-        void Ouvrir();
-        void Enregistrer();
-        void Kiter();
+        void    Nouveau();
+        void    Ouvrir();
+        void    Enregistrer();
 
         //edition
-        void Annuler();
-        void Retablir();
+        void    Annuler();
+        void    Retablir();
 
         //affichage
-        void Apercut();
-        void Culface();
-        void Grille();
+        void    Apercut();
+        void    Culface();
+        void    Grille();
 
         //outil
-        void Importation3D();
-        void ajoutlumiere();
-        void validajoutlumiere();
-        void ajoutmaterial();
-        void validajoutmaterial();
-        void ajoutpiece();
-        void validajoutpiece();
+        void    Importation3D();
+        void    ajoutlumiere();
+        void    validajoutlumiere();
+        void    ajoutmaterial();
+        void    validajoutmaterial();
+        void    ajoutpiece();
+        void    validajoutpiece();
 
 
         //aide
-        void Racourcit();
+        void    Racourcit();
 //fin slots menu bar
 
 
@@ -77,176 +76,181 @@ private slots:
 
 
     private:
-        void createActions();
-        void createMenus();
-        void createListeDockwidget();
-        void createToolBar();
+        void    createActions();
+        void    createMenus();
+        void    createListeDockwidget();
+        void    createToolBar();
 
         //fichage node
-        void affichagerecnoderestant(Node *a , QStandardItem *b );
+        void    affichagerecnoderestant(Node *a , QStandardItem *b );
 
 /* ************************************** */
 //               menu bar                 //
 /* ************************************** */
-        QMenu *Fichier;
-        QMenu *Edition;
-        QMenu *Affichage;
-        QMenu *Outil;
-        QMenu *Aide;
+        QMenu*  Fichier;
+        QMenu*  Edition;
+        QMenu*  Affichage;
+        QMenu*  Outil;
+        QMenu*  Aide;
 
         //fichier
-        QAction *nouveauAct;
-        QAction *ouvrirAct;
-        QAction *enregistrerAct;
-        QAction *kiterAct;
+        QAction*    nouveauAct;
+        QAction*    ouvrirAct;
+        QAction*    enregistrerAct;
+        QAction*    kiterAct;
 
         //edition
-        QAction *annulerAct;
-        QAction *retablirAct;
+        QAction*    annulerAct;
+        QAction*    retablirAct;
 
         //affichage
-        QAction *apercutAct;
-        QAction *culfaceAct;
-        QAction *grilleAct;
+        QAction*    apercutAct;
+        QAction*    culfaceAct;
+        QAction*    grilleAct;
 
         //outil
-        QAction *importation3DAct;
+        QAction*    importation3DAct;
 
-        QMenu *ajoutelement ;
-            QAction *ajoutlumierAct;
-            QAction *ajoutmaterialAct;
-            QAction *ajoutpieceAct;
+        QMenu* ajoutelement ;
+            QAction*    ajoutlumierAct;
+            QAction*    ajoutmaterialAct;
+            QAction*    ajoutpieceAct;
+
+/* ************************************** */
+//              ajout d'element           //
+/* ************************************** */
         //ajout lumiere
-        QDockWidget * dockajoutlumiere;
+        QDockWidget*    dockajoutlumiere;
 
             //contenu dock ajout lumiere
-            QWidget * widgetajoutlumiere;
+            QWidget*    widgetajoutlumiere;
 
-            QPushButton * boutonajoutlumiere;
+            QPushButton*    boutonajoutlumiere;
 
-            QLineEdit *lineeditnomajoutlumiere;
-            QLabel *nomajoutlumiere;
+            QLineEdit*  lineeditnomajoutlumiere;
+            QLabel*     nomajoutlumiere;
 
-            QDoubleSpinBox *spinpositionajoutlumierex;
-            QDoubleSpinBox *spinpositionajoutlumierey;
-            QDoubleSpinBox *spinpositionajoutlumierez;
-            QLabel *positionajoutlumiere;
+            QDoubleSpinBox* spinpositionajoutlumierex;
+            QDoubleSpinBox* spinpositionajoutlumierey;
+            QDoubleSpinBox* spinpositionajoutlumierez;
+            QLabel*         positionajoutlumiere;
 
-            QDoubleSpinBox *spindifajoutlumierex;
-            QDoubleSpinBox *spindifajoutlumierey;
-            QDoubleSpinBox *spindifajoutlumierez;
-            QLabel *difajoutlumiere;
+            QDoubleSpinBox* spindifajoutlumierex;
+            QDoubleSpinBox* spindifajoutlumierey;
+            QDoubleSpinBox* spindifajoutlumierez;
+            QLabel*         difajoutlumiere;
 
-            QDoubleSpinBox *spinspeajoutlumierex;
-            QDoubleSpinBox *spinspeajoutlumierey;
-            QDoubleSpinBox *spinspeajoutlumierez;
-            QLabel *speajoutlumiere;
+            QDoubleSpinBox* spinspeajoutlumierex;
+            QDoubleSpinBox* spinspeajoutlumierey;
+            QDoubleSpinBox* spinspeajoutlumierez;
+            QLabel*         speajoutlumiere;
 
 
-            QHBoxLayout * layoutnomajoutlumiere;
-            QHBoxLayout * layoutposajoutlumiere;
-            QHBoxLayout * layoutdifajoutlumiere;
-            QHBoxLayout * layoutspeajoutlumiere;
+            QHBoxLayout*    layoutnomajoutlumiere;
+            QHBoxLayout*    layoutposajoutlumiere;
+            QHBoxLayout*    layoutdifajoutlumiere;
+            QHBoxLayout*    layoutspeajoutlumiere;
 
-            QVBoxLayout * layoutajoutlumiere;
+            QVBoxLayout*    layoutajoutlumiere;
 
         //ajout materiaux
-        QDockWidget * dockajoutmateriaux;
+        QDockWidget*    dockajoutmateriaux;
 
             //contenu dockajoutlumiere materiau
-            QWidget * widgetajoutmaterial;
+            QWidget*    widgetajoutmaterial;
 
-            QPushButton * boutonajoutmaterial;
+            QPushButton* boutonajoutmaterial;
 
-            QLineEdit *lineeditnomajoutmaterial;
-            QLabel *nomajoutmaterial;
+            QLineEdit*  lineeditnomajoutmaterial;
+            QLabel*     nomajoutmaterial;
 
-            QDoubleSpinBox *spinambajoutmaterialx;
-            QDoubleSpinBox *spinambajoutmaterialy;
-            QDoubleSpinBox *spinambajoutmaterialz;
-            QLabel *ambajoutmaterial;
+            QDoubleSpinBox* spinambajoutmaterialx;
+            QDoubleSpinBox* spinambajoutmaterialy;
+            QDoubleSpinBox* spinambajoutmaterialz;
+            QLabel*         ambajoutmaterial;
 
-            QDoubleSpinBox *spindifajoutmaterialx;
-            QDoubleSpinBox *spindifajoutmaterialy;
-            QDoubleSpinBox *spindifajoutmaterialz;
-            QLabel *difajoutmaterial;
+            QDoubleSpinBox* spindifajoutmaterialx;
+            QDoubleSpinBox* spindifajoutmaterialy;
+            QDoubleSpinBox* spindifajoutmaterialz;
+            QLabel*         difajoutmaterial;
 
-            QDoubleSpinBox *spinspeajoutmaterialx;
-            QDoubleSpinBox *spinspeajoutmaterialy;
-            QDoubleSpinBox *spinspeajoutmaterialz;
-            QDoubleSpinBox *spinspeajoutmateriala;
-            QLabel *speajoutmaterial;
-
-
-            QHBoxLayout * layoutnomajoutmaterial;
-            QHBoxLayout * layoutambajoutmaterial;
-            QHBoxLayout * layoutdifajoutmaterial;
-            QHBoxLayout * layoutspeajoutmaterial;
+            QDoubleSpinBox* spinspeajoutmaterialx;
+            QDoubleSpinBox* spinspeajoutmaterialy;
+            QDoubleSpinBox* spinspeajoutmaterialz;
+            QDoubleSpinBox* spinspeajoutmateriala;
+            QLabel*         speajoutmaterial;
 
 
-            QVBoxLayout * layoutajoutmaterial;
+            QHBoxLayout*    layoutnomajoutmaterial;
+            QHBoxLayout*    layoutambajoutmaterial;
+            QHBoxLayout*    layoutdifajoutmaterial;
+            QHBoxLayout*    layoutspeajoutmaterial;
+
+
+            QVBoxLayout*    layoutajoutmaterial;
 
         //ajout piece
-        QDockWidget * dockajoutpiece;
+        QDockWidget*    dockajoutpiece;
 
             //contenu ajout piece
-            QWidget * widgetajoutpiece;
+            QWidget*    widgetajoutpiece;
 
-            QPushButton * boutonajoutpiece;
+            QPushButton* boutonajoutpiece;
 
-            QSpinBox * ajoutpiecedimx;
-            QSpinBox * ajoutpiecedimy;
-            QSpinBox * ajoutpiecedimz;
+            QSpinBox*   ajoutpiecedimx;
+            QSpinBox*   ajoutpiecedimy;
+            QSpinBox*   ajoutpiecedimz;
 
-            QComboBox * comboajoutpiece;
-            QStandardItemModel * modelemateriaupiece;
+            QComboBox*  comboajoutpiece;
+            QStandardItemModel* modelemateriaupiece;
 
-            QComboBox * comboajoutpieceshader;
-            QStandardItemModel * modelepieceshader;
+            QComboBox*  comboajoutpieceshader;
+            QStandardItemModel* modelepieceshader;
 
-            QLabel * labelcomboajoutpiece;
-            QLabel * labeldimajoutpiece;
-            QLabel * labelnomajoutpiece;
-            QLabel * labelmurajoutpiece;
-            QLabel * labelajoutpieceshader;
+            QLabel*     labelcomboajoutpiece;
+            QLabel*     labeldimajoutpiece;
+            QLabel*     labelnomajoutpiece;
+            QLabel*     labelmurajoutpiece;
+            QLabel*     labelajoutpieceshader;
 
             //label des mur
-            QLabel * labelmur1;
-            QLabel * labelmur2;
-            QLabel * labelmur3;
-            QLabel * labelmur4;
-            QLabel * labelmur5;
-            QLabel * labelmur6;
-            //checkbox mur
-            QCheckBox * checkmur1;
-            QCheckBox * checkmur2;
-            QCheckBox * checkmur3;
-            QCheckBox * checkmur4;
-            QCheckBox * checkmur5;
-            QCheckBox * checkmur6;
+            QLabel*     labelmur1;
+            QLabel*     labelmur2;
+            QLabel*     labelmur3;
+            QLabel*     labelmur4;
+            QLabel*     labelmur5;
+            QLabel*     labelmur6;
 
-            QLineEdit * lineeditajoutpiece;
+            //checkbox mur
+            QCheckBox*  checkmur1;
+            QCheckBox*  checkmur2;
+            QCheckBox*  checkmur3;
+            QCheckBox*  checkmur4;
+            QCheckBox*  checkmur5;
+            QCheckBox*  checkmur6;
+
+            QLineEdit* lineeditajoutpiece;
 
             //layout ajout piece
-            QVBoxLayout * mainlayoutajoutpiece;
-                QHBoxLayout * ajoutpiecelayoutdim;
-                QHBoxLayout * ajoutpiecelayoutnom;
-                QHBoxLayout * ajoutpiecelayoutcombo;
-                QHBoxLayout * ajoutpiecelabelmure;
-                QHBoxLayout * ajoutpiecepiecer1;
-                QHBoxLayout * ajoutpiecepiecer2;
-                QHBoxLayout * ajoutpiecepiecer3;
-                QHBoxLayout * ajoutpieceshaderlayout;
+            QVBoxLayout*    mainlayoutajoutpiece;
+                QHBoxLayout*    ajoutpiecelayoutdim;
+                QHBoxLayout*    ajoutpiecelayoutnom;
+                QHBoxLayout*    ajoutpiecelayoutcombo;
+                QHBoxLayout*    ajoutpiecelabelmure;
+                QHBoxLayout*    ajoutpiecepiecer1;
+                QHBoxLayout*    ajoutpiecepiecer2;
+                QHBoxLayout*    ajoutpiecepiecer3;
+                QHBoxLayout*    ajoutpieceshaderlayout;
 
         //aide
-        QAction *racourcitAct;
+        QAction*    racourcitAct;
 //fin menu bar
 
 
 /* ************************************** */
 //               Toolbars                 //
 /* ************************************** */
-       QToolBar     *fileToolBar;
+       QToolBar*    fileToolBar;
 //fin toolbars
 
 /* ************************************** */
@@ -257,30 +261,31 @@ private slots:
        QDockWidget* dock_list_elements;
 
        QPushButton* boutonlisteelement;
+       QPushButton* boutonlisteelementdelete;
 
-       Scene * scenetemp;
+       Scene*       scenetemp;
 
-       QStringList listtempobjet;
-       QStringList listtemplight;
-       QStringList listtempmaterial;
-       QStringList listtemshader;
+       QStringList  listtempobjet;
+       QStringList  listtemplight;
+       QStringList  listtempmaterial;
+       QStringList  listtemshader;
 
-       QStandardItemModel *modele;
+       QStandardItemModel*  modele;
 
-       QStandardItem *light;
-       QStandardItem *material;
-       QStandardItem *objet;
-       QStandardItem *shader;
+       QStandardItem*       light;
+       QStandardItem*       material;
+       QStandardItem*       objet;
+       QStandardItem*       shader;
 
-       QTreeView *vue;
+       QTreeView*   vue;
 
-       QVBoxLayout *layoutlistescene;
+       QVBoxLayout* layoutlistescene;
 
-       QWidget * widgetdocklistscene;
+       QWidget*     widgetdocklistscene;
        //fin liste element scene
 
        //widget element selectioner
-       Mondock *dock_perso;
+       Mondock*     dock_perso;
        //fin element selectioner
 
 //fin dock widgets
@@ -288,7 +293,7 @@ private slots:
 /* ************************************** */
 //          Central  Widget               //
 /* ************************************** */
-        MyOpenGLWidget *widget;
+        MyOpenGLWidget* widget;
 //fin central Widget
 };
 
