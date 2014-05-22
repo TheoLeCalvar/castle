@@ -9,7 +9,7 @@ Ks 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd modeles/flutter/fluttershy_body.png
+map_Kd textures/fluttershy_body.png
 
 newmtl Material.004
 Ns 92.156863
@@ -28,7 +28,7 @@ Ks 0.428571 0.428571 0.428571
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd modeles/flutter/fluttershy_eyes.png
+map_Kd textures/fluttershy_eyes.png
 
 newmtl None.001
 Ns 0.000000
@@ -38,7 +38,7 @@ Ks 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd modeles/flutter/BaseNeckTex.png
+map_Kd textures/BaseNeckTex.png
 
 
 newmtl _FlutterGemTex.png.001
@@ -49,7 +49,7 @@ Ks 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd modeles/flutter/FlutterGemTex.png
+map_Kd textures/FlutterGemTex.png
 
 
 newmtl defaultMat.001
@@ -60,7 +60,7 @@ Ks 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd modeles/flutter/fluttershy_hair_back.png
+map_Kd textures/fluttershy_hair_back.png
 
 newmtl defaultMat.002
 Ns 84.313725
@@ -70,7 +70,7 @@ Ks 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd modeles/flutter/fluttershy_hair_front.png
+map_Kd textures/fluttershy_hair_front.png
 
 newmtl defaultMat.003
 Ns 92.156863
@@ -98,7 +98,7 @@ Ks 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd modeles/flutter/fluttershy_tail.png
+map_Kd textures/fluttershy_tail.png
 
 newmtl defaultMat.006
 Ns 92.156863
@@ -126,4 +126,4 @@ Ks 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd modeles/flutter/fluttershy_wings.png
+map_Kd textures/fluttershy_wings.png

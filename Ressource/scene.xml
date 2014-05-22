@@ -46,20 +46,50 @@
 	</materiaux>
 
 	<lumieres>
-		<lumiere nom="Light2" num="0" >
+		<lumiere nom="Light1" >
 			<position x="1" y="10" z="4" />
 			<ambient r="0.2" g="0.2" b="0.2" />
-			<diffuse r="1.0" g="1.0" b="1.0" />
-			<specular r="0.0" g="0.0" b="1.0" />
-		</lumiere>
-		<lumiere nom="Light1" mat="Light1" num="1" >
-			<position x="14" y="8" z="22" />
-			<ambient r="0.2" g="0.2" b="0.2" />
-			<diffuse r="1.0" g="1.0" b="1.0" />
+			<diffuse r="1.0" g="0.0" b="0.0" />
 			<specular r="1.0" g="0.0" b="0.0" />
 		</lumiere>
-		<lumiere nom="Light3" mat="neutre" num="2" >
+		<lumiere nom="Light2" >
+			<position x="14" y="8" z="22" />
+			<ambient r="0.2" g="0.2" b="0.2" />
+			<diffuse r="0.0" g="1.0" b="0.0" />
+			<specular r="0.0" g="1.0" b="0.0" />
+		</lumiere>
+		<lumiere nom="Light3" >
 			<position x="5" y="7" z="7" />
+			<ambient r="0.2" g="0.2" b="0.2" />
+			<diffuse r="0.0" g="0.0" b="1.0" />
+			<specular r="0.0" g="0.0" b="1.0" />
+		</lumiere>
+
+		<lumiere nom="Light4" >
+			<position x="15" y="6" z="4" />
+			<ambient r="0.2" g="0.2" b="0.2" />
+			<diffuse r="1.0" g="1.0" b="0.0" />
+			<specular r="1.0" g="1.0" b="0.0" />
+		</lumiere>
+
+		<lumiere nom="Light5" >
+			<position x="-12" y="2" z="-2" />
+			<ambient r="0.2" g="0.2" b="0.2" />
+			<diffuse r="1.0" g="0.0" b="1.0" />
+			<specular r="1.0" g="0.0" b="0.0" />
+		</lumiere>
+		<lumiere nom="Light6" >
+			<position x="-2" y="15" z="0" />
+			<ambient r="0.2" g="0.2" b="0.2" />
+			<diffuse r="0.0" g="1.0" b="1.0" />
+			<specular r="0.0" g="1.0" b="1.0" />
+		</lumiere>
+
+		<lumiere nom="Light7" >
+			<position x="23" y="10" z="-12" />
+			<ambient r="0.2" g="0.2" b="0.2" />
+			<diffuse r="1.0" g="1.0" b="1.0" />
+			<specular r="1.0" g="1.0" b="1.0" />
 		</lumiere>
 	</lumieres>
 
@@ -96,20 +126,18 @@
 					<position x="5" y="7" z="0" />
 				</objet>
 
-				<objet nom="objet2" modele="modeles/twilight.obj" Xrot="0" Yrot="90" Zrot="0" >
+				<objet nom="objet2" modele="modeles/twilight/twilight.obj" Xrot="0" Yrot="90" Zrot="0" >
 					<position x="0" y="0" z="0" />
 				</objet>
 
-				<objet nom="objet3" modele="modeles/susanne.obj" >
+				<objet nom="objet3" modele="modeles/susanne/susanne.obj" >
 					<position x="1" y="5" z="7" />
 				</objet>
 
-<!-- 				<objet nom="miku" modele="modeles/mikuB.obj" >
+<!-- 				<objet nom="miku" modele="modeles/miku/mikuA.obj" >
 					<position x="1" y="5" z="7" />
 				</objet> -->
-<!-- 				<objet nom="objet2" mat="Mat2" modele="lavabo" >
-					<position relatif="objet1" x="1" y="5" z="0" />
-				</objet> -->
+
 			</objets>
 		</piece>
 		<piece nom="piece2" shader="bump" mat="wall">
@@ -133,15 +161,15 @@
 				</mur>
 			</murs>
 			<objets>
-				<objet nom="plante1" modele="modeles/sphere.obj" >
+				<objet nom="plante1" modele="modeles/sphere/sphere.obj" >
 					<position x="10" y="10" z="4" />
 				</objet>
 
-				<objet nom="ibjet54" modele="modeles/flutter.obj" Xrot="0" Yrot="90" Zrot="0" >
+				<objet nom="ibjet54" modele="modeles/flutter/flutter.obj" Xrot="0" Yrot="90" Zrot="0" >
 					<position x="0" y="0" z="0" />
 				</objet>
 
-				<objet nom="yolo" modele="modeles/flutter.obj" Xrot="0" Yrot="90" Zrot="0" >
+				<objet nom="yolo" modele="modeles/flutter/flutter.obj" Xrot="0" Yrot="90" Zrot="0" >
 					<position x="5" y="5" z="5" />
 				</objet>
 			</objets>

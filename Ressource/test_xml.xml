@@ -1,0 +1,175 @@
+<!DOCTYPE test_xml.xml>
+<scene>
+ <camera>
+  <position z="-2.527" x="-6.64144" y="2.86485"/>
+ </camera>
+ <materiaux>
+  <material nom="Cube.001_Cube.005__TwilightGemTex.png.004">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.512" b="0.512" g="0.512"/>
+   <specular r="0" a="0" b="0" g="0"/>
+   <texture location="0" src="textures/TwilightGemTex.png"/>
+  </material>
+  <material nom="Cube.002__TwilightGemTex.png">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.512" b="0.512" g="0.512"/>
+   <specular r="0" a="0" b="0" g="0"/>
+   <texture location="0" src="textures/TwilightGemTex.png"/>
+  </material>
+  <material nom="Cube.003__TwilightGemTex.png.002">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.512" b="0.512" g="0.512"/>
+   <specular r="0" a="0" b="0" g="0"/>
+   <texture location="0" src="textures/TwilightGemTex.png"/>
+  </material>
+  <material nom="Cube.004_Cube.008__TwilightGemTex.png.007">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.512" b="0.512" g="0.512"/>
+   <specular r="0" a="0" b="0" g="0"/>
+   <texture location="0" src="textures/TwilightGemTex.png"/>
+  </material>
+  <material nom="Cube.005_Cube.007__TwilightGemTex.png.006">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.512" b="0.512" g="0.512"/>
+   <specular r="0" a="0" b="0" g="0"/>
+   <texture location="0" src="textures/TwilightGemTex.png"/>
+  </material>
+  <material nom="Cube_Cube.001_None">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.512" b="0.512" g="0.512"/>
+   <specular r="0" a="0" b="0" g="0"/>
+   <texture location="0" src="textures/CrownTex.png"/>
+  </material>
+  <material nom="Group54397.001_Group54397.002_defaultMat.001">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.8" b="0.8" g="0.8"/>
+   <specular r="0.533333" a="360.784" b="0.533333" g="0.533333"/>
+   <texture location="0" src="textures/txtr_celestia_crown.png"/>
+  </material>
+  <material nom="Group54397.002_Group54397.006_defaultMat.011">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.8" b="0.8" g="0.8"/>
+   <specular r="0.533333" a="360.784" b="0.533333" g="0.533333"/>
+   <texture location="0" src="textures/txtr_celestia_crown.png"/>
+  </material>
+  <material nom="Group54397.003_Group54397.005_defaultMat.005_txtr_celestia_crown.png.010">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.8" b="0.8" g="0.8"/>
+   <specular r="0.533333" a="360.784" b="0.533333" g="0.533333"/>
+   <texture location="0" src="textures/txtr_celestia_crown.png"/>
+  </material>
+  <material nom="Group54397_defaultMat.015">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.8" b="0.8" g="0.8"/>
+   <specular r="0.533333" a="360.784" b="0.533333" g="0.533333"/>
+   <texture location="0" src="textures/txtr_celestia_crown.png"/>
+  </material>
+  <material nom="ZBrush_defualt_group.001_Material.005">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.8" b="0.8" g="0.8"/>
+   <specular r="0" a="360.784" b="0" g="0"/>
+   <texture location="0" src="textures/twilight_horn.png"/>
+  </material>
+  <material nom="ZBrush_defualt_group.002_ZBrush_defualt_group.005_defaultMat.007">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.8" b="0.8" g="0.8"/>
+   <specular r="0" a="360.784" b="0" g="0"/>
+   <texture location="0" src="textures/twilight_hair_back.png"/>
+  </material>
+  <material nom="ZBrush_defualt_group.003_defaultMat.003">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0" b="0" g="0"/>
+   <specular r="0" a="368.627" b="0" g="0"/>
+  </material>
+  <material nom="ZBrush_defualt_group.004_Material.003">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.8" b="0.8" g="0.8"/>
+   <specular r="0" a="2956.86" b="0" g="0"/>
+   <texture location="0" src="textures/twilight_eyes.png"/>
+  </material>
+  <material nom="ZBrush_defualt_group.005_ZBrush_defualt_group.010_defaultMat.008">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.512" b="0.512" g="0.512"/>
+   <specular r="0.5" a="368.627" b="0.5" g="0.5"/>
+  </material>
+  <material nom="ZBrush_defualt_group.006_defaultMat.006">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.8" b="0.8" g="0.8"/>
+   <specular r="0" a="360.784" b="0" g="0"/>
+   <texture location="0" src="textures/twilight_hair_front.png"/>
+  </material>
+  <material nom="ZBrush_defualt_group.007_ZBrush_defualt_group.011_defaultMat.009">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.512" b="0.512" g="0.512"/>
+   <specular r="0.5" a="368.627" b="0.5" g="0.5"/>
+  </material>
+  <material nom="ZBrush_defualt_group.008_ZBrush_defualt_group.012_defaultMat.010">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.512" b="0.114409" g="0.220071"/>
+   <specular r="0.5" a="368.627" b="0.5" g="0.5"/>
+  </material>
+  <material nom="ZBrush_defualt_group.009_ZBrush_defualt_group.002_Material.002">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.8" b="0.8" g="0.8"/>
+   <specular r="0" a="321.569" b="0" g="0"/>
+   <texture location="0" src="textures/twilight_body.png"/>
+  </material>
+  <material nom="ZBrush_defualt_group.010_ZBrush_defualt_group.007_Material.000">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.8" b="0.8" g="0.8"/>
+   <specular r="0" a="321.569" b="0" g="0"/>
+   <texture location="0" src="textures/twilight_body.png"/>
+  </material>
+  <material nom="ZBrush_defualt_group_defaultMat.003">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0" b="0" g="0"/>
+   <specular r="0" a="368.627" b="0" g="0"/>
+  </material>
+  <material nom="defaultobject_defaultMat.005">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.8" b="0.8" g="0.8"/>
+   <specular r="0.533333" a="360.784" b="0.533333" g="0.533333"/>
+   <texture location="0" src="textures/txtr_celestia_crown.png"/>
+  </material>
+  <material nom="neutre">
+   <ambient r="0.2" b="0.2" g="0.2"/>
+   <diffuse r="0.8" b="0.8" g="0.8"/>
+   <specular r="0.8" a="0" b="0.8" g="0.8"/>
+  </material>
+  <material nom="pony_body_polySurface1_Material.002">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.8" b="0.8" g="0.8"/>
+   <specular r="0" a="321.569" b="0" g="0"/>
+   <texture location="0" src="textures/twilight_body.png"/>
+  </material>
+  <material nom="twilight_tail_ZBrush_defualt_group_twilight_tail_defaultMat.001">
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.8" b="0.8" g="0.8"/>
+   <specular r="0" a="360.784" b="0" g="0"/>
+   <texture location="0" src="textures/twilight_tail.png"/>
+  </material>
+ </materiaux>
+ <lumieres>
+  <lumiere nom="Light1">
+   <position z="4" x="1" y="10"/>
+   <ambient r="0.2" b="0.2" g="0.2"/>
+   <diffuse r="0.8" b="0.8" g="0.8"/>
+   <specular r="0.8" b="0.8" g="0.8"/>
+  </lumiere>
+ </lumieres>
+ <shaders>
+  <shader vertex="shaders/test.vert" nom="bump" fragment="shaders/bump.frag"/>
+ </shaders>
+ <pieces>
+  <piece nom="pièce1" shader="bump" mat="">
+   <dimension width="12" height="10" length="10"/>
+   <position z="0" x="0" y="0"/>
+   <murs/>
+   <objets>
+    <objet zRot="0" nom="objet2" modele="modeles/twilight/twilight.obj" xRot="0" yRot="90">
+     <position z="0" x="0" y="0"/>
+    </objet>
+   </objets>
+  </piece>
+ </pieces>
+</scene>
