@@ -152,8 +152,10 @@ Material * Node::loadMaterial(const aiMaterial * mtl)
 
 	if (AI_SUCCESS == mtl->GetTexture(aiTextureType_DIFFUSE, 0, &path))
 	{
-		mat->addTexture(QString::fromUtf8(path.C_Str()), DIFFUSE);
+		mat->addTexture(QString::fromUtf8(path.C_Str()), "diffuse");
 	}
+
+	mat->fromXML(false);
 
 	return mat;
 }
@@ -277,6 +279,31 @@ Mesh * Node::getMesh(const QString & name)
 	}
 
 	return NULL;
+}
+
+void Node::removeChild(const QString & name)
+{
+	Node * n = _children.value(name);
+
+	if(n)
+	{
+		delete n;
+		_children.remove(name);
+	}
+}
+
+void Node::removeMesh(const QString & name)
+{
+	for(auto m = _meshs.begin(); m != _meshs.end() ; ++m)
+	{
+		if((*m)->name() == name)
+		{
+			delete *m;
+
+			_meshs.erase(m);
+		}
+			
+	}
 }
 
 QString Node::getModelName() const

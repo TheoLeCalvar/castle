@@ -13,17 +13,6 @@
 
 #include "helper.hpp"
 
-#ifndef DIFFUSE
-#define DIFFUSE 0
-#endif
-
-#ifndef SPECULAR
-#define SPECULAR 1
-#endif
-
-#ifndef NORMAL
-#define NORMAL 2
-#endif
 
 /**
  * @class Material
@@ -42,6 +31,7 @@ private:
 	QOpenGLTexture* _diffuse_texture;
 	QOpenGLTexture* _specular_texture;
 	QOpenGLTexture* _normal_texture;
+	bool			_fromXML;
 
 
 	static QMap<QString, QOpenGLTexture *> _texturesLoaded; /**< Ensemble des textures déjà chargées pour réutilisation */
@@ -84,7 +74,7 @@ public:
 	 * @param int indice que la texture doit occuper
 	 * @warning Ecrase la texture à l'indice choisie
 	 */
-	void addTexture(const QString & texFile, unsigned char type);
+	void addTexture(const QString & texFile, const QString & type);
 
 	/**
 	 * @brief Met à jour la shniness du Material
@@ -150,6 +140,16 @@ public:
 	 * @brief Libère les textures chargées
 	 */
 	static void clear();
+
+	/**
+	 * @brief Indique si le Material a été chargé depuis le XML ou pas
+	 */
+	bool isFromXML() const{return _fromXML;}
+
+	/**
+	 * @brief Indique si le Material est issu ou non du XML
+	 */
+	void fromXML(bool b){_fromXML = b;}
 
 	friend QDebug operator<<(QDebug dbg, const Material &m);
 };

@@ -100,6 +100,11 @@ mardi 20 mai
 mercredi 21 mai
 	fini export XML
 
+jeudi 22 mai
+
+vendredi 23 mai
+	correction export XML
+
 	
 Amélioration à faire
 	collision -> rajouter notion de hitbox à Objet, et ensuite calculer sur le vecteur déplacement entre dans cette hitbox

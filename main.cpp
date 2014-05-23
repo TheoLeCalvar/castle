@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		MainWindow w;
+		MainWindow w(argv[1]);
 		w.show();
 
 		return app.exec();

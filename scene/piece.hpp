@@ -69,6 +69,13 @@ public:
 	Objet * 	getChild(const QString & name);
 
 	/**
+	 * @brief supprime un Objet fils de la pièce
+	 * 
+	 * @param name nom de l'Objet à supprimer
+	 */
+	void 		removeChild(const QString & name);
+
+	/**
 	 * @brief Retourne les dimensions de la pièce
 	 * @return vec3 contenant les dimensions de la pièce
 	 */

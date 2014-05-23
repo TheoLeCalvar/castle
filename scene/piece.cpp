@@ -53,6 +53,18 @@ QStringList Piece::getChildren() const
 	return _children.keys();
 }
 
+void 		Piece::removeChild(const QString & name)
+{
+	Objet * o = _children.value(name);
+
+	if(o)
+	{
+		delete o;
+
+		_children.remove(name);
+	}
+}
+
 Objet * 	Piece::getChild(const QString & name)
 {
 	return _children.value(name);
