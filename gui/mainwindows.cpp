@@ -119,6 +119,10 @@ void MainWindow::createMenus()
             importation3DAct->setIcon(QIcon("icones/value_list.png"));
         Outil->addMenu(ajoutelement);
 
+/* ************************************** */
+//              ajout elements            //
+/* ************************************** */
+
             //ajout lumiere declaration des element
             ajoutelement->addAction(ajoutlumierAct);
 
@@ -341,17 +345,17 @@ void MainWindow::createMenus()
 
                     //label des mur
                     labelmur1 = new QLabel();
-                        labelmur1->setText("mur 1:");
+                        labelmur1->setText("bas:");
                     labelmur2 = new QLabel();
-                        labelmur2->setText("mur 2:");
+                        labelmur2->setText("haut:");
                     labelmur3 = new QLabel();
-                        labelmur3->setText("mur 3:");
+                        labelmur3->setText("arriere:");
                     labelmur4 = new QLabel();
-                        labelmur4->setText("mur 4:");
+                        labelmur4->setText("avant:");
                     labelmur5 = new QLabel();
-                        labelmur5->setText("mur 5:");
+                        labelmur5->setText("gauche:");
                     labelmur6 = new QLabel();
-                        labelmur6->setText("mur 6:");
+                        labelmur6->setText("droite:");
                     //checkbox mur
                     checkmur1 = new QCheckBox();
                     checkmur2 = new QCheckBox();
@@ -498,13 +502,40 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
 //               Menubars                 //
 /* ************************************** */
     //fichier
-    void MainWindow::Nouveau(){}
+    void MainWindow::Nouveau()
+    {
+            delete widget;
 
-    void MainWindow::Ouvrir(){}
+            QGLFormat f;
+            f.setVersion(3, 2);
+            f.setProfile(QGLFormat::CoreProfile);
+            widget = new MyOpenGLWidget(f,this);
+            setCentralWidget(widget);
 
-    void MainWindow::Enregistrer(){}
+    }
 
-    void MainWindow::Kiter(){}
+    void MainWindow::Ouvrir(){
+           QString fileName = QFileDialog::getOpenFileName(this,
+                tr("Open Scene"), "",
+                tr("XML files (*.xml)"));
+     if (fileName!=NULL){
+           widget->getScene()->~Scene();
+           widget->setScene(new Scene(fileName));
+     }
+    }
+
+    void MainWindow::Enregistrer(){
+        QString fileName = QFileDialog::getSaveFileName(this,
+            tr("Save Scene"), "",
+            tr("XML files (*.xml)"));
+    if (fileName!=NULL){
+                if(fileName.endsWith(".xml",Qt::CaseSensitive) )
+                 {
+                 widget->getScene()->saveAsXML(fileName);
+                 }
+                else widget->getScene()->saveAsXML(fileName + ".xml");
+        }
+    }
 
     //edition
     void MainWindow::Annuler(){}
@@ -649,10 +680,12 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             //creation widget a fixer dans le dockwidget
 
             boutonlisteelement = new QPushButton("Editer");
+            boutonlisteelementdelete = new QPushButton("Suprimer");
 
             layoutlistescene = new QVBoxLayout();
                 layoutlistescene->addWidget(vue);
                 layoutlistescene->addWidget(boutonlisteelement);
+                layoutlistescene->addWidget(boutonlisteelementdelete);
 
             widgetdocklistscene = new QWidget() ;
                 widgetdocklistscene->setLayout(layoutlistescene);
@@ -850,7 +883,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                                 vec3(0,0,ajoutpiecedimz->value())
                                  );
                     plantmp->parent(piecetmp);
-                    //ok:plan = new Plan(width, length, 20, 20, fenetres, getMaterial(material), vec3(-90.0f, 0.0f, 0.0f), vec3(0.0f, 0.0f, length));
+
                     scenetemp->getPiece(lineeditajoutpiece->text())->addChild(lineeditajoutpiece->text()+"_bas" ,plantmp);
                 }
                if (checkmur2->isChecked())
@@ -866,7 +899,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                                vec3(0,ajoutpiecedimy->value(),0)
                                 );
                    plantmp->parent(piecetmp);
-//ok:plan = new Plan(width, length, 20, 20, fenetres, getMaterial(material), vec3(90.0f, 0.0f, 0.0f), vec3(0.0f, height, 0.0f));
+
                    scenetemp->getPiece(lineeditajoutpiece->text())->addChild(lineeditajoutpiece->text()+"_haut" ,plantmp);
                }
 
@@ -881,7 +914,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                                 scenetemp->getMaterial(comboajoutpiece->currentText())//material
                                  );
                     plantmp->parent(piecetmp);
-                    //ok:plan = new Plan(width, height, 20, 20, fenetres, getMaterial(material), vec3(), vec3());
+
                     scenetemp->getPiece(lineeditajoutpiece->text())->addChild(lineeditajoutpiece->text()+"_arriere" ,plantmp);
                 }
                 if (checkmur4->isChecked())
@@ -897,7 +930,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                                 vec3(ajoutpiecedimx->value(),0,ajoutpiecedimz->value())
                                  );
                     plantmp->parent(piecetmp);
-                    //ok:plan = new Plan(width, height, 20, 20, fenetres, getMaterial(material), vec3(0.0f, 180.0f, 0.0f), vec3(width, 0.0f, length));
+
                     scenetemp->getPiece(lineeditajoutpiece->text())->addChild(lineeditajoutpiece->text()+"_avant" ,plantmp);
                 }
                 if (checkmur5->isChecked())
@@ -913,7 +946,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                                 vec3(ajoutpiecedimx->value(),0,0)
                                  );
                     plantmp->parent(piecetmp);
-//ok:plan = new Plan(length, height, 20, 20, fenetres, getMaterial(material), vec3(0.0f, -90.0f, 0.0f), vec3(width, 0.0f, 0.0f));
+
                     scenetemp->getPiece(lineeditajoutpiece->text())->addChild(lineeditajoutpiece->text()+"_gauche" ,plantmp);
                 }
                if (checkmur6->isChecked())
@@ -929,7 +962,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                                vec3(0,0,ajoutpiecedimz->value())
                                 );
                    plantmp->parent(piecetmp);
-//ok:plan = new Plan(length, height, 20, 20, fenetres, getMaterial(material), vec3(0.0f, 90.0f, 0.0f), vec3(0.0f, 0.0f, length));
+
                    scenetemp->getPiece(lineeditajoutpiece->text())->addChild(lineeditajoutpiece->text()+"_droite" ,plantmp);
                }
 
@@ -945,11 +978,13 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
 
                                 if ((objet->child(i)->text())== (lineeditajoutpiece->text()) )
                                 {
-                                    objet->child(i)->appendRow(new QStandardItem(lineeditajoutpiece->text()+"_bas"));
-                                    objet->child(i)->appendRow(new QStandardItem(lineeditajoutpiece->text()+"_haut"));
-                                    objet->child(i)->appendRow(new QStandardItem(lineeditajoutpiece->text()+"_arriere"));
-                                    objet->child(i)->appendRow(new QStandardItem(lineeditajoutpiece->text()+"_avant"));
-                                    objet->child(i)->appendRow(new QStandardItem(lineeditajoutpiece->text()+"_droite"));
+                                    if (checkmur1->isChecked()) {objet->child(i)->appendRow(new QStandardItem(lineeditajoutpiece->text()+"_bas"));}
+                                    if (checkmur2->isChecked()) {objet->child(i)->appendRow(new QStandardItem(lineeditajoutpiece->text()+"_haut"));}
+                                    if (checkmur3->isChecked()) {objet->child(i)->appendRow(new QStandardItem(lineeditajoutpiece->text()+"_arriere"));}
+                                    if (checkmur4->isChecked()) {objet->child(i)->appendRow(new QStandardItem(lineeditajoutpiece->text()+"_avant"));}
+                                    if (checkmur5->isChecked()) {objet->child(i)->appendRow(new QStandardItem(lineeditajoutpiece->text()+"_gauche"));}
+                                    if (checkmur6->isChecked()) {objet->child(i)->appendRow(new QStandardItem(lineeditajoutpiece->text()+"_droite"));}
+
                                 }
                             }
                         }

@@ -1,21 +1,14 @@
 #include "mondock.hpp"
-#include <iostream>
 
 
 Mondock::Mondock(const QString & title, QWidget * parent, Qt::WindowFlags flags):
-    QDockWidget(title,parent,flags),modelmaterial(NULL),modelpiece(NULL)
-{
+    QDockWidget(title,parent,flags),modelmaterial(NULL),modelpiece(NULL){}
 
-
-}
-
-Mondock:: ~Mondock(){
-
-}
+Mondock:: ~Mondock(){}
 //___slots___________________________________________________//
 
 
-    void Mondock::selectionlight()
+    void Mondock::selectionlight()//trie les element en fonction de leur parent , nom a changer car ne traite bien plsu que light
      {
          //selection et verification du parent de l'element selectioner
          selection = dockvue->selectionModel();
@@ -23,44 +16,32 @@ Mondock:: ~Mondock(){
          elementSelectionneParent = dockmodele->data(indexElementSelectionne.parent(), Qt::DisplayRole);
 
          //si parent = light
-         if (elementSelectionneParent.toString()=="Light")
-                     {
-                       traitementlumiere();
-                     }
+         if (elementSelectionneParent.toString() == "Light")
+                     { traitementlumiere();}
          //si parent = material
-         if (elementSelectionneParent.toString()=="Material")
-                     {
-                       traitementmaterial();
-                     }
-
-         if (elementSelectionneParent.toString()=="Objet")
-                     {
-                       traitementpiece();
-                     }
-
-
+         if (elementSelectionneParent.toString() == "Material")
+                     {traitementmaterial();}
+         //si parent = objet
+         if (elementSelectionneParent.toString() == "Objet")
+                     {traitementpiece();}
         //si grand parent = Objet
          indexgparent= indexElementSelectionne.parent();
          elementSelectionneGParent= dockmodele->data(indexgparent.parent(), Qt::DisplayRole);
+         if( (elementSelectionneGParent) == "Objet")
+                    {traitementobjet();}
+     }//fin selectionparent
 
-         if( (elementSelectionneGParent)=="Objet")
-                    {
-                    traitementobjet();
-                    }
-     }
-
-    void Mondock::amblightfuncx(int x)
+    void Mondock::amblightfuncx( int x )
             {
-            _light->get(GL_AMBIENT)[0]=x/255.0;
+            _light->get(GL_AMBIENT)[0] = x/255.0;
 
             QString tmp = QString::number((double)x);
 
             labelambx->setText(" X = " + tmp);
             }
 
-    void Mondock::amblightfuncy(int x)
+    void Mondock::amblightfuncy( int x )
             {
-
             _light->get(GL_AMBIENT)[1]=x/255.0;
 
             QString tmp = QString::number((double)x);
@@ -68,7 +49,7 @@ Mondock:: ~Mondock(){
             labelamby->setText(" Y = " + tmp);
             }
 
-    void Mondock::amblightfuncz(int x)
+    void Mondock::amblightfuncz( int x )
             {
             _light->get(GL_AMBIENT)[2]=x/255.0;
 
@@ -77,17 +58,16 @@ Mondock:: ~Mondock(){
             labelambz->setText(" Z = " + tmp);
             }
 
-    void Mondock::diflightfuncx(int x)
+    void Mondock::diflightfuncx( int x )
             {
-
-            _light->get(GL_DIFFUSE)[0]=x/255.0;
+            _light->get(GL_DIFFUSE)[0] = x/255.0;
 
             QString tmp = QString::number((double)x);
 
             labeldifx->setText(" X = " + tmp);
             }
 
-    void Mondock::diflightfuncy(int x)
+    void Mondock::diflightfuncy( int x )
             {
             _light->get(GL_DIFFUSE)[1]=x/255.0;
 
@@ -96,7 +76,7 @@ Mondock:: ~Mondock(){
             labeldify->setText(" Y = " + tmp);
             }
 
-    void Mondock::diflightfuncz(int x)
+    void Mondock::diflightfuncz( int x )
             {
             _light->get(GL_DIFFUSE)[2]=x/255.0;
 
@@ -105,7 +85,7 @@ Mondock:: ~Mondock(){
             labeldifz->setText(" Z = " + tmp);
             }
 
-    void Mondock::spelightfuncx(int x)
+    void Mondock::spelightfuncx( int x )
             {
             _light->get(GL_SPECULAR)[0]=x/255.0;
 
@@ -114,7 +94,7 @@ Mondock:: ~Mondock(){
             labelspex->setText(" X = " + tmp);
             }
 
-    void Mondock::spelightfuncy(int x)
+    void Mondock::spelightfuncy( int x )
             {
             _light->get(GL_SPECULAR)[1]=x/255.0;
 
@@ -123,164 +103,162 @@ Mondock:: ~Mondock(){
             labelspey->setText(" Y = " + tmp);
             }
 
-    void Mondock::spelightfuncz(int x)
+    void Mondock::spelightfuncz (int x )
             {
-            _light->get(GL_SPECULAR)[2]=x/255.0;
+            _light->get(GL_SPECULAR)[2] = x/255.0;
 
              QString tmp = QString::number((double)x);
 
              labelspez->setText(" Z = " + tmp);
-
             }
 
-    void Mondock::poslightfuncx(double x)
+    void Mondock::poslightfuncx( double x )
             {
             _light->get(GL_POSITION)[0]=x;
             }
 
-    void Mondock::poslightfuncy(double x)
+    void Mondock::poslightfuncy( double x )
             {
             _light->get(GL_POSITION)[1]=x;
             }
 
-    void Mondock::poslightfuncz(double x)
+    void Mondock::poslightfuncz( double x )
             {
             _light->get(GL_POSITION)[2]=x;
             }
 
     //materiaux
-        void Mondock::emimaterialfuncx(int x)
+        void Mondock::emimaterialfuncx( int x )
             {
             }
 
-        void Mondock::emimaterialfuncy(int x)
+        void Mondock::emimaterialfuncy( int x )
             {
             }
 
-        void Mondock::emimaterialfuncz(int x)
+        void Mondock::emimaterialfuncz(int x )
             {
             }
 
-        void Mondock::ambmaterialfuncx(int x)
+        void Mondock::ambmaterialfuncx( int x )
             {
-            _materiaux->get(GL_AMBIENT)[0]=x/255.0;
+            _materiaux->get(GL_AMBIENT)[0] = x/255.0;
             }
 
-        void Mondock::ambmaterialfuncy(int x)
+        void Mondock::ambmaterialfuncy( int x )
             {
-            _materiaux->get(GL_AMBIENT)[1]=x/255.0;
+            _materiaux->get(GL_AMBIENT)[1] = x/255.0;
             }
 
-        void Mondock::ambmaterialfuncz(int x)
+        void Mondock::ambmaterialfuncz( int x )
             {
-            _materiaux->get(GL_AMBIENT)[2]=x/255.0;
+            _materiaux->get(GL_AMBIENT)[2] = x/255.0;
             }
 
-        void Mondock::difmaterialfuncx(int x)
+        void Mondock::difmaterialfuncx( int x )
             {
-            _materiaux->get(GL_DIFFUSE)[0]=x/255.0;
+            _materiaux->get(GL_DIFFUSE)[0] = x/255.0;
             }
 
-        void Mondock::difmaterialfuncy(int x)
+        void Mondock::difmaterialfuncy( int x )
             {
-            _materiaux->get(GL_DIFFUSE)[1]=x/255.0;
+            _materiaux->get(GL_DIFFUSE)[1] = x/255.0;
             }
 
-        void Mondock::difmaterialfuncz(int x)
+        void Mondock::difmaterialfuncz( int x )
             {
              _materiaux->get(GL_DIFFUSE)[2]=x/255.0;
             }
 
-        void Mondock::spematerialfuncx(int x)
+        void Mondock::spematerialfuncx( int x )
             {
             _materiaux->get(GL_SPECULAR)[0]=x/255.0;
             }
 
-        void Mondock::spematerialfuncy(int x)
+        void Mondock::spematerialfuncy( int x )
             {
-            _materiaux->get(GL_SPECULAR)[1]=x/255.0;
+            _materiaux->get(GL_SPECULAR)[1] = x/255.0;
             }
 
-        void Mondock::spematerialfuncz(int x)
+        void Mondock::spematerialfuncz( int x )
             {
-            _materiaux->get(GL_SPECULAR)[2]=x/255.0;
+            _materiaux->get(GL_SPECULAR)[2] = x/255.0;
             }
 
-        void Mondock::spematerialtfunca(int x)
+        void Mondock::spematerialtfunca( int x )
             {
             _materiaux->set((double)x);
             }
 
 
         //objet
-        void Mondock::matobjet(const QString & text  )
+        void Mondock::matobjet( const QString & text  )
             {
-
             _objet->material( dockscene->getMaterial( text ) );
             }
 
-        void Mondock::pereobjet(const QString & text  )
+        void Mondock::pereobjet( const QString & text  )
             {
             _objet->parent(dockscene->getPiece(text));
             }
 
-        void Mondock::rotobjectx(double x)
+        void Mondock::rotobjectx( double x )
             {
-            vec3 vectmp =_objet->rotation();
+            vec3 vectmp = _objet->rotation();
             _objet->rotation(vec3(x,vectmp[1],vectmp[2]));
             }
 
-        void Mondock::rotobjecty(double x)
+        void Mondock::rotobjecty( double x )
             {
-            vec3 vectmp =_objet->rotation();
+            vec3 vectmp = _objet->rotation();
             _objet->rotation(vec3(vectmp[0],x,vectmp[2]));
             }
 
-        void Mondock::rotobjectz(double x)
+        void Mondock::rotobjectz( double x )
             {
-            vec3 vectmp =_objet->rotation();
+            vec3 vectmp = _objet->rotation();
             _objet->rotation(vec3(vectmp[0],vectmp[1],x));
             }
 
-        void Mondock::transobjectx(double x)
+        void Mondock::transobjectx( double x )
             {
-            vec3 vectmp =_objet->position();
+            vec3 vectmp = _objet->position();
             _objet->position(vec3(x,vectmp[1],vectmp[2]));
             }
 
-        void Mondock::transobjecty(double x)
+        void Mondock::transobjecty( double x )
             {
-            vec3 vectmp =_objet->position();
+            vec3 vectmp = _objet->position();
             _objet->position(vec3(vectmp[0],x,vectmp[2]));
             }
 
-        void Mondock::transobjectz(double x)
+        void Mondock::transobjectz( double x )
             {
-            vec3 vectmp =_objet->position();
+            vec3 vectmp = _objet->position();
             _objet->position(vec3(vectmp[0],vectmp[1],x));
             }
 
 
         //scale
-        void Mondock::scaleobjectx(double x)
+        void Mondock::scaleobjectx( double x )
             {
-            vec3 vectmp =_objet->scale();
+            vec3 vectmp = _objet->scale();
             _objet->scale(vec3(x,vectmp[1],vectmp[2]));
             }
 
-        void Mondock::scaleobjecty(double x)
+        void Mondock::scaleobjecty( double x )
             {
-            vec3 vectmp =_objet->scale();
+            vec3 vectmp = _objet->scale();
             _objet->scale(vec3(vectmp[0],x,vectmp[2]));
             }
 
-        void Mondock::scaleobjectz(double x)
+        void Mondock::scaleobjectz( double x )
             {
-            vec3 vectmp =_objet->scale();
+            vec3 vectmp = _objet->scale();
             _objet->scale(vec3(vectmp[0],vectmp[1],x));
             }
 
-        void Mondock::scalesliderobject(int x)
+        void Mondock::scalesliderobject( int x )
             {
             boxobjetscalex->setValue(x/10.0);
             boxobjetscaley->setValue(x/10.0);
@@ -290,43 +268,43 @@ Mondock:: ~Mondock(){
             }
 
         //piece
-        void Mondock::slotpositionpiecex(int x)
+        void Mondock::slotpositionpiecex( int x )
             {
-            vec3 vectmp =_piece->position();
+            vec3 vectmp = _piece->position();
             _piece->position(vec3(x,vectmp[1],vectmp[2]));
              }
 
-        void Mondock::slotpositionpiecey(int x)
+        void Mondock::slotpositionpiecey( int x )
             {
-            vec3 vectmp =_piece->position();
+            vec3 vectmp = _piece->position();
             _piece->position(vec3(vectmp[0],x,vectmp[2]));
             }
 
-        void Mondock::slotpositionpiecez(int x)
+        void Mondock::slotpositionpiecez( int x )
             {
-            vec3 vectmp =_piece->position();
+            vec3 vectmp = _piece->position();
             _piece->position(vec3(vectmp[0],vectmp[1],x));
             }
 
-        void Mondock::scalepiecex(double x)
+        void Mondock::scalepiecex( double x )
             {
-            vec3 vectmp =_piece->scale();
+            vec3 vectmp = _piece->scale();
             _piece->scale(vec3(vectmp[0],vectmp[1],x));
             }
 
-        void Mondock::scalepiecey(double x)
+        void Mondock::scalepiecey( double x )
             {
-            vec3 vectmp =_piece->scale();
+            vec3 vectmp = _piece->scale();
             _piece->scale(vec3(vectmp[0],x,vectmp[2]));
             }
 
-        void Mondock::scalepiecez(double x)
+        void Mondock::scalepiecez( double x )
             {
-            vec3 vectmp =_piece->scale();
+            vec3 vectmp = _piece->scale();
             _piece->scale(vec3(x,vectmp[1],vectmp[2]));
             }
 
-        void Mondock::scalesliderpiece(int x)
+        void Mondock::scalesliderpiece( int x )
             {
             scalespinboxx->setValue(x/10.0);
             scalespinboxy->setValue(x/10.0);
@@ -335,42 +313,23 @@ Mondock:: ~Mondock(){
             _piece->scale(vec3(x/10.0,x/10.0,x/10.0));
              }
 
-        void Mondock::rotpiecex(double x)
+        void Mondock::rotpiecex( double x )
             {
-            vec3 vectmp =_piece->rotation();
+            vec3 vectmp = _piece->rotation();
             _piece->rotation(vec3(vectmp[0],vectmp[1],x));
             }
 
-        void Mondock::rotpiecey(double x)
+        void Mondock::rotpiecey( double x )
             {
-            vec3 vectmp =_piece->rotation();
+            vec3 vectmp = _piece->rotation();
             _piece->rotation(vec3(vectmp[0],x,vectmp[2]));
             }
 
-        void Mondock::rotpiecez(double x)
+        void Mondock::rotpiecez( double x )
             {
-            vec3 vectmp =_piece->rotation();
+            vec3 vectmp = _piece->rotation();
             _piece->rotation(vec3(x,vectmp[1],vectmp[2]));
             }
-
-
-//        void Mondock::slotdimentionpiecex(double x)
-//            {
-//            vec3 vectmp =_piece->dimensions();
-//            _piece->dimensions(vec3(x,vectmp[1],vectmp[2]));
-//             }
-
-//        void Mondock::slotdimentionpiecey(double x)
-//            {
-//            vec3 vectmp =_piece->dimensions();
-//            _piece->dimensions(vec3(vectmp[0],x,vectmp[2]));
-//            }
-
-//        void Mondock::slotdimentionpiecez(double x)
-//            {
-//            vec3 vectmp =_piece->dimensions();
-//            _piece->dimensions(vec3(vectmp[0],vectmp[1],x));
-//            }
 
 
 //_____slots_________________________//
@@ -387,9 +346,9 @@ Mondock:: ~Mondock(){
         int ytmp;
         int ztmp;
 
-         QString sxtmp ;
-         QString sytmp ;
-         QString sztmp ;
+        QString sxtmp ;
+        QString sytmp ;
+        QString sztmp ;
 
         //fin variable
 
@@ -397,10 +356,10 @@ Mondock:: ~Mondock(){
         lightselectioner = dockmodele->data(indexlightSelectionne, Qt::DisplayRole);
 
         //renome le dockwidget
-
         this->setWindowTitle("Edition :  " + lightselectioner.toString());
 
-        this->_light= dockscene->getLight(lightselectioner.toString());
+        this->_light = dockscene->getLight(lightselectioner.toString());
+
         //creation qtabwidget
         tablight = new QTabWidget();
 

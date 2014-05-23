@@ -92,9 +92,24 @@ void 	Scene::draw()
 	int size = _orderedLights.size();
 
 
-
 	_camera->display();
 	
+
+    for(auto i: _shaders)
+    {
+        char cpt = 0;
+
+        setActiveShader(i->programId());
+
+        openGL_check_error();
+
+
+        for(auto j = _orderedLights.begin(); j != _orderedLights.begin() + (size >= MAX_LIGHT ? MAX_LIGHT : size); ++j)
+        {
+            j.value()->update(cpt++);
+            openGL_check_error();
+        }
+    }
 
 	for(auto i : _pieces)
 	{
@@ -102,21 +117,6 @@ void 	Scene::draw()
 		openGL_check_error();
 	}
 
-	for(auto i: _shaders)
-	{
-		char cpt = 0;
-
-		setActiveShader(i->programId());
-
-		openGL_check_error();
-
-
-		for(auto j = _orderedLights.begin(); j != _orderedLights.begin() + (size >= MAX_LIGHT ? MAX_LIGHT : size); ++j)
-		{
-			j.value()->update(cpt++);
-			openGL_check_error();
-		}
-	}
 
 }
 
