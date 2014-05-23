@@ -69,6 +69,9 @@ private slots:
 
         //aide
         void    Racourcit();
+
+        //autre
+        void    supresionelement();
 //fin slots menu bar
 
 

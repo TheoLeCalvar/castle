@@ -708,6 +708,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             dock_perso->dockvue = vue;
             dock_perso->dockscene= scenetemp;
             connect(boutonlisteelement, SIGNAL(clicked()), dock_perso, SLOT(selectionlight()));
+            connect(boutonlisteelementdelete, SIGNAL(clicked()), this, SLOT(supresionelement()));
 
            }//fin else
     }
@@ -1001,6 +1002,29 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
     //aide
     void MainWindow::Racourcit()
     {
+    }
+
+
+    //supression
+    void MainWindow::supresionelement()
+    {
+
+        //supression lumiere
+        if( modele->data ( (vue->selectionModel()->currentIndex().parent()), Qt::DisplayRole)=="Light")
+            {
+            std::cout<< "je suis une lumiere"<<std::endl;
+            //widget->getScene()removeLight(widget->getScene()->getLight(vue->selectionModel()->currentIndex().data().toString()));
+            }
+        //supresion piece
+        if( modele->data ( (vue->selectionModel()->currentIndex().parent()), Qt::DisplayRole)=="Objet")
+            {
+            std::cout<< "je suis une piece"<<std::endl;
+            }
+        //supression objet
+        if( modele->data ( (vue->selectionModel()->currentIndex().parent().parent()), Qt::DisplayRole)=="Objet")
+            {
+            std::cout<< "je suis un objet d'une piece"<<std::endl;
+            }
     }
 
 //fin Menubars
