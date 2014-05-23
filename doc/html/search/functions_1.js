@@ -10,6 +10,7 @@ var searchData=
   ['affichagerecnoderestant',['affichagerecnoderestant',['../class_main_window.html#a9db31c33ce466950590bb5271412cc86',1,'MainWindow']]],
   ['ajoutlumiere',['ajoutlumiere',['../class_main_window.html#a42d29fe9a2657a5c5563b3f1235a28e4',1,'MainWindow']]],
   ['ajoutmaterial',['ajoutmaterial',['../class_main_window.html#a3a599353265f9c01a8780529aa5fed75',1,'MainWindow']]],
+  ['ajoutpiece',['ajoutpiece',['../class_main_window.html#a6661770cd92877aa3b1c0dae91513a50',1,'MainWindow']]],
   ['amblightfuncx',['amblightfuncx',['../class_mondock.html#a07685bc7db5c3346c1813e84abf8aa2f',1,'Mondock']]],
   ['amblightfuncy',['amblightfuncy',['../class_mondock.html#a2397e94ee9af0a37c12b1443d70c17b6',1,'Mondock']]],
   ['amblightfuncz',['amblightfuncz',['../class_mondock.html#a727e012b9b0df615ea2d585f98b00fb9',1,'Mondock']]],

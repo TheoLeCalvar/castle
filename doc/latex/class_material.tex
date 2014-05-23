@@ -43,8 +43,19 @@ bool \hyperlink{class_material_ab1d0beef91e6149c0ebfc6c82b977889}{has\+Specular\
 \item 
 bool \hyperlink{class_material_a9bfe6c055d9af6f3ef029b62cc57e6a1}{has\+Normal\+Texture} () const 
 \item 
+Q\+String \hyperlink{class_material_a9305ced3fea7ab22cd25877e14cfb53c}{get\+Diffuse\+Texture\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Retourne le path de la texture diffuse. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_material_a0f33deb2e971506b9382d1ece4ff2fa6}{get\+Specular\+Texture\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Retourne le path de la texture spéculaire. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_material_ae72d423e9f07b3cc0388854e0ad2c1ca}{get\+Normal\+Texture\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Retourne le path de la normal map. \end{DoxyCompactList}\item 
 void \hyperlink{class_material_a3f43fe7bcfa721fd8156adb151adf45c}{update} ()
 \begin{DoxyCompactList}\small\item\em Met à jour le \hyperlink{class_material}{Material} courant dans le shader actif. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_material_ab350dd584b850dfc3e0c52201b5699e0}{clear} ()
+\begin{DoxyCompactList}\small\item\em Libère les textures chargées. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -67,8 +78,8 @@ Q\+Open\+G\+L\+Texture $\ast$ \hyperlink{class_material_add78622071d92485dd37dbd
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static std\+::map$<$ const Q\+String, \\*
-Q\+Open\+G\+L\+Texture $\ast$ $>$ \hyperlink{class_material_a9ccbb6b22b224284050b4d6c172829fc}{\+\_\+textures\+Loaded}
+static Q\+Map$<$ Q\+String, \\*
+Q\+Open\+G\+L\+Texture $\ast$ $>$ \hyperlink{class_material_a9f91b9fda835fed049df5c6959043623}{\+\_\+textures\+Loaded}
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -141,6 +152,17 @@ Charge une texture et l'associe à un slot pour le passage au shader
 \begin{DoxyWarning}{Warning}
 Ecrase la texture à l'indice choisie 
 \end{DoxyWarning}
+\hypertarget{class_material_ab350dd584b850dfc3e0c52201b5699e0}{\index{Material@{Material}!clear@{clear}}
+\index{clear@{clear}!Material@{Material}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void Material\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_material_ab350dd584b850dfc3e0c52201b5699e0}
+
+
+Libère les textures chargées. 
+
 \hypertarget{class_material_a6b4b32cf23cbba3988becd840471a51c}{\index{Material@{Material}!get@{get}}
 \index{get@{get}!Material@{Material}}
 \subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Material\+::get (
@@ -178,6 +200,48 @@ Récupère la valeur d'un champ.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 dans le cas de G\+L\+\_\+\+A\+M\+B\+I\+E\+N\+T, G\+L\+\_\+\+D\+I\+F\+F\+U\+S\+E, G\+L\+\_\+\+S\+P\+E\+C\+U\+L\+A\+R retourne un \hyperlink{structvec3}{vec3} correspondant à la composante, retourne \hyperlink{helper_8hpp_a8d45e9fbe94ddf3c3291116b8fce15c5}{vec4()} autrement 
+\end{DoxyReturn}
+\hypertarget{class_material_a9305ced3fea7ab22cd25877e14cfb53c}{\index{Material@{Material}!get\+Diffuse\+Texture\+Name@{get\+Diffuse\+Texture\+Name}}
+\index{get\+Diffuse\+Texture\+Name@{get\+Diffuse\+Texture\+Name}!Material@{Material}}
+\subsubsection[{get\+Diffuse\+Texture\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Material\+::get\+Diffuse\+Texture\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_material_a9305ced3fea7ab22cd25877e14cfb53c}
+
+
+Retourne le path de la texture diffuse. 
+
+\begin{DoxyReturn}{Returns}
+nom de la texture diffuse 
+\end{DoxyReturn}
+\hypertarget{class_material_ae72d423e9f07b3cc0388854e0ad2c1ca}{\index{Material@{Material}!get\+Normal\+Texture\+Name@{get\+Normal\+Texture\+Name}}
+\index{get\+Normal\+Texture\+Name@{get\+Normal\+Texture\+Name}!Material@{Material}}
+\subsubsection[{get\+Normal\+Texture\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Material\+::get\+Normal\+Texture\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_material_ae72d423e9f07b3cc0388854e0ad2c1ca}
+
+
+Retourne le path de la normal map. 
+
+\begin{DoxyReturn}{Returns}
+nom de la normal map 
+\end{DoxyReturn}
+\hypertarget{class_material_a0f33deb2e971506b9382d1ece4ff2fa6}{\index{Material@{Material}!get\+Specular\+Texture\+Name@{get\+Specular\+Texture\+Name}}
+\index{get\+Specular\+Texture\+Name@{get\+Specular\+Texture\+Name}!Material@{Material}}
+\subsubsection[{get\+Specular\+Texture\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Material\+::get\+Specular\+Texture\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_material_a0f33deb2e971506b9382d1ece4ff2fa6}
+
+
+Retourne le path de la texture spéculaire. 
+
+\begin{DoxyReturn}{Returns}
+nom de la texture spéculaire 
 \end{DoxyReturn}
 \hypertarget{class_material_aa07bc322b6904dd4ccf61620a0eb703c}{\index{Material@{Material}!has\+Diffuse\+Texture@{has\+Diffuse\+Texture}}
 \index{has\+Diffuse\+Texture@{has\+Diffuse\+Texture}!Material@{Material}}
@@ -305,9 +369,9 @@ Met à jour le \hyperlink{class_material}{Material} courant dans le shader actif
 \hypertarget{class_material_a15711d6d794b6ea122e38738fa73ba8a}{\index{Material@{Material}!\+\_\+specular\+\_\+texture@{\+\_\+specular\+\_\+texture}}
 \index{\+\_\+specular\+\_\+texture@{\+\_\+specular\+\_\+texture}!Material@{Material}}
 \subsubsection[{\+\_\+specular\+\_\+texture}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Open\+G\+L\+Texture$\ast$ Material\+::\+\_\+specular\+\_\+texture\hspace{0.3cm}{\ttfamily [private]}}}\label{class_material_a15711d6d794b6ea122e38738fa73ba8a}
-\hypertarget{class_material_a9ccbb6b22b224284050b4d6c172829fc}{\index{Material@{Material}!\+\_\+textures\+Loaded@{\+\_\+textures\+Loaded}}
+\hypertarget{class_material_a9f91b9fda835fed049df5c6959043623}{\index{Material@{Material}!\+\_\+textures\+Loaded@{\+\_\+textures\+Loaded}}
 \index{\+\_\+textures\+Loaded@{\+\_\+textures\+Loaded}!Material@{Material}}
-\subsubsection[{\+\_\+textures\+Loaded}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$ const Q\+String, Q\+Open\+G\+L\+Texture $\ast$ $>$ Material\+::\+\_\+textures\+Loaded\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{class_material_a9ccbb6b22b224284050b4d6c172829fc}
+\subsubsection[{\+\_\+textures\+Loaded}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Map$<$ Q\+String, Q\+Open\+G\+L\+Texture $\ast$ $>$ Material\+::\+\_\+textures\+Loaded\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{class_material_a9f91b9fda835fed049df5c6959043623}
 Ensemble des textures déjà chargées pour réutilisation 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

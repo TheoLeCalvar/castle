@@ -86,6 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_scene-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -121,18 +122,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac0e3d2c98ba6063a086467fb2c19142f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ac0e3d2c98ba6063a086467fb2c19142f">draw</a> ()</td></tr>
 <tr class="memdesc:ac0e3d2c98ba6063a086467fb2c19142f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la scène.  <a href="#ac0e3d2c98ba6063a086467fb2c19142f">More...</a><br /></td></tr>
 <tr class="separator:ac0e3d2c98ba6063a086467fb2c19142f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8571f97120d3d7826b0689a0e3351f45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_piece.html">Piece</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a8571f97120d3d7826b0689a0e3351f45">getPiece</a> (const QString &amp;name)</td></tr>
-<tr class="memdesc:a8571f97120d3d7826b0689a0e3351f45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère un pointeur sur une pièce.  <a href="#a8571f97120d3d7826b0689a0e3351f45">More...</a><br /></td></tr>
-<tr class="separator:a8571f97120d3d7826b0689a0e3351f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae75e1e0573b52c2c960e8afe77fead94"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_light.html">Light</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ae75e1e0573b52c2c960e8afe77fead94">getLight</a> (const QString &amp;name)</td></tr>
-<tr class="memdesc:ae75e1e0573b52c2c960e8afe77fead94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère un pointeur sur une lumière.  <a href="#ae75e1e0573b52c2c960e8afe77fead94">More...</a><br /></td></tr>
-<tr class="separator:ae75e1e0573b52c2c960e8afe77fead94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c54f74841e986a80b03866dbed21d33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_material.html">Material</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a6c54f74841e986a80b03866dbed21d33">getMaterial</a> (const QString &amp;name)</td></tr>
-<tr class="memdesc:a6c54f74841e986a80b03866dbed21d33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère un pointeur sur un material.  <a href="#a6c54f74841e986a80b03866dbed21d33">More...</a><br /></td></tr>
-<tr class="separator:a6c54f74841e986a80b03866dbed21d33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a002dee3b17da628be382679c99d78c8f"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a002dee3b17da628be382679c99d78c8f">getShader</a> (const QString &amp;name)</td></tr>
-<tr class="memdesc:a002dee3b17da628be382679c99d78c8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère l'id d'un shader.  <a href="#a002dee3b17da628be382679c99d78c8f">More...</a><br /></td></tr>
-<tr class="separator:a002dee3b17da628be382679c99d78c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2060bd6c44231ffe7f6f0a3447325f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_piece.html">Piece</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ae2060bd6c44231ffe7f6f0a3447325f1">getPiece</a> (const QString &amp;name) const </td></tr>
+<tr class="memdesc:ae2060bd6c44231ffe7f6f0a3447325f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère un pointeur sur une pièce.  <a href="#ae2060bd6c44231ffe7f6f0a3447325f1">More...</a><br /></td></tr>
+<tr class="separator:ae2060bd6c44231ffe7f6f0a3447325f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f35ca9d308ef5563d9f205904eedbb8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_light.html">Light</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a4f35ca9d308ef5563d9f205904eedbb8">getLight</a> (const QString &amp;name) const </td></tr>
+<tr class="memdesc:a4f35ca9d308ef5563d9f205904eedbb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère un pointeur sur une lumière.  <a href="#a4f35ca9d308ef5563d9f205904eedbb8">More...</a><br /></td></tr>
+<tr class="separator:a4f35ca9d308ef5563d9f205904eedbb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb93862254b6869533d7487c56133adb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_material.html">Material</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#afb93862254b6869533d7487c56133adb">getMaterial</a> (const QString &amp;name) const </td></tr>
+<tr class="memdesc:afb93862254b6869533d7487c56133adb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère un pointeur sur un material.  <a href="#afb93862254b6869533d7487c56133adb">More...</a><br /></td></tr>
+<tr class="separator:afb93862254b6869533d7487c56133adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a957a47245453a8868a417396abf9adce"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a957a47245453a8868a417396abf9adce">getShader</a> (const QString &amp;name) const </td></tr>
+<tr class="memdesc:a957a47245453a8868a417396abf9adce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère l'id d'un shader.  <a href="#a957a47245453a8868a417396abf9adce">More...</a><br /></td></tr>
+<tr class="separator:a957a47245453a8868a417396abf9adce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af00f7d191f9277b3dbad125c54677d79"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#af00f7d191f9277b3dbad125c54677d79">getShaderNameByID</a> (const GLuint id) const </td></tr>
+<tr class="memdesc:af00f7d191f9277b3dbad125c54677d79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recheche le nom d'un shader à partir de son ID OpenGL.  <a href="#af00f7d191f9277b3dbad125c54677d79">More...</a><br /></td></tr>
+<tr class="separator:af00f7d191f9277b3dbad125c54677d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ea5207a5d9ec6e4081f12896b01d9d5"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a2ea5207a5d9ec6e4081f12896b01d9d5">getPiecesName</a> () const </td></tr>
 <tr class="memdesc:a2ea5207a5d9ec6e4081f12896b01d9d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la liste des noms des pièces dans la scène.  <a href="#a2ea5207a5d9ec6e4081f12896b01d9d5">More...</a><br /></td></tr>
 <tr class="separator:a2ea5207a5d9ec6e4081f12896b01d9d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,9 +164,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad15253a331423b1e3c3fb2484b10509c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ad15253a331423b1e3c3fb2484b10509c">addShader</a> (const QString &amp;name, QOpenGLShaderProgram *s)</td></tr>
 <tr class="memdesc:ad15253a331423b1e3c3fb2484b10509c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un shadder à la scène.  <a href="#ad15253a331423b1e3c3fb2484b10509c">More...</a><br /></td></tr>
 <tr class="separator:ad15253a331423b1e3c3fb2484b10509c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae87e88cbefc16640354acc8ec11b5e1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ae87e88cbefc16640354acc8ec11b5e1e">saveAsXML</a> (const QString &amp;fileName)</td></tr>
-<tr class="memdesc:ae87e88cbefc16640354acc8ec11b5e1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde de la scène au format xml.  <a href="#ae87e88cbefc16640354acc8ec11b5e1e">More...</a><br /></td></tr>
-<tr class="separator:ae87e88cbefc16640354acc8ec11b5e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a696a59602fa780cd7904df5c50b94eae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a696a59602fa780cd7904df5c50b94eae">saveAsXML</a> (const QString &amp;fileName)</td></tr>
+<tr class="memdesc:a696a59602fa780cd7904df5c50b94eae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde de la scène au format xml.  <a href="#a696a59602fa780cd7904df5c50b94eae">More...</a><br /></td></tr>
+<tr class="separator:a696a59602fa780cd7904df5c50b94eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55a738d6643c4d9964caf84a0d361dbe"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a55a738d6643c4d9964caf84a0d361dbe">collide</a> (const <a class="el" href="class_hitbox.html">Hitbox</a> &amp;h) const </td></tr>
 <tr class="memdesc:a55a738d6643c4d9964caf84a0d361dbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcule la collision des deux OBB.  <a href="#a55a738d6643c4d9964caf84a0d361dbe">More...</a><br /></td></tr>
 <tr class="separator:a55a738d6643c4d9964caf84a0d361dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -189,6 +193,14 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:ae6fc45f015d96191dbf775d54d6e4437"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ae6fc45f015d96191dbf775d54d6e4437">orderLights</a> ()</td></tr>
 <tr class="memdesc:ae6fc45f015d96191dbf775d54d6e4437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ordonne les <a class="el" href="class_light.html" title="Lumière pour la Scene. ">Light</a> en fonction de la distance à la caméra.  <a href="#ae6fc45f015d96191dbf775d54d6e4437">More...</a><br /></td></tr>
 <tr class="separator:ae6fc45f015d96191dbf775d54d6e4437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23faaec79e3e47ab7827411f23dd79d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a23faaec79e3e47ab7827411f23dd79d9">saveMaterials</a> (QDomElement &amp;root, QDomDocument &amp;doc) const </td></tr>
+<tr class="separator:a23faaec79e3e47ab7827411f23dd79d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13dc69fb963cd556e3029e7ffc55180b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a13dc69fb963cd556e3029e7ffc55180b">saveLights</a> (QDomElement &amp;root, QDomDocument &amp;doc) const </td></tr>
+<tr class="separator:a13dc69fb963cd556e3029e7ffc55180b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaec7f89a0a039c5a770ce06e80d96cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#abaec7f89a0a039c5a770ce06e80d96cd">saveShaders</a> (QDomElement &amp;root, QDomDocument &amp;doc) const </td></tr>
+<tr class="separator:abaec7f89a0a039c5a770ce06e80d96cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab51c69ad1faae20cf5375c3f02b6e7fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ab51c69ad1faae20cf5375c3f02b6e7fc">savePieces</a> (QDomElement &amp;root, QDomDocument &amp;doc) const </td></tr>
+<tr class="separator:ab51c69ad1faae20cf5375c3f02b6e7fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31be15d8114d6d9c01c312cbe1a41ed6"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structvec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a31be15d8114d6d9c01c312cbe1a41ed6">getP</a> () const </td></tr>
 <tr class="memdesc:a31be15d8114d6d9c01c312cbe1a41ed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le centre de la <a class="el" href="class_hitbox.html">Hitbox</a>.  <a href="#a31be15d8114d6d9c01c312cbe1a41ed6">More...</a><br /></td></tr>
 <tr class="separator:a31be15d8114d6d9c01c312cbe1a41ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -211,6 +223,15 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:a96b58a841f6295813072d258aa9a9236"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie la demie profondeur de la hitbox  <a href="#a96b58a841f6295813072d258aa9a9236">More...</a><br /></td></tr>
 <tr class="separator:a96b58a841f6295813072d258aa9a9236"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a98d11f40f1ac651eae91827ae9ef3d5c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structvec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a98d11f40f1ac651eae91827ae9ef3d5c">readPosition</a> (const QDomElement &amp;e)</td></tr>
+<tr class="memdesc:a98d11f40f1ac651eae91827ae9ef3d5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne un <a class="el" href="structvec3.html">vec3</a> correspondant au vecteur position lu.  <a href="#a98d11f40f1ac651eae91827ae9ef3d5c">More...</a><br /></td></tr>
+<tr class="separator:a98d11f40f1ac651eae91827ae9ef3d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ea5cfec3f9be76fe110cba255621d7e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structvec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a2ea5cfec3f9be76fe110cba255621d7e">readScale</a> (const QDomElement &amp;e)</td></tr>
+<tr class="memdesc:a2ea5cfec3f9be76fe110cba255621d7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne un <a class="el" href="structvec3.html">vec3</a> correspondant au scale lu.  <a href="#a2ea5cfec3f9be76fe110cba255621d7e">More...</a><br /></td></tr>
+<tr class="separator:a2ea5cfec3f9be76fe110cba255621d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aa3a488d4be41fe6a187488e1e7a1035c"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, <a class="el" href="class_piece.html">Piece</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#aa3a488d4be41fe6a187488e1e7a1035c">_pieces</a></td></tr>
@@ -222,6 +243,8 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:abde34dc03c8d3a07b3177041ab195f07"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, <br class="typebreak" />
 QOpenGLShaderProgram * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#abde34dc03c8d3a07b3177041ab195f07">_shaders</a></td></tr>
 <tr class="separator:abde34dc03c8d3a07b3177041ab195f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57117e4269465f070fb412f338d28bf4"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, QOpenGLShader * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a57117e4269465f070fb412f338d28bf4">_loadedShaders</a></td></tr>
+<tr class="separator:a57117e4269465f070fb412f338d28bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7db3394191c0a07e6bdc456a53ac8ece"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmat4.html">mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a7db3394191c0a07e6bdc456a53ac8ece">_projectionMatrix</a></td></tr>
 <tr class="separator:a7db3394191c0a07e6bdc456a53ac8ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fae715ba6bdde7c382f9d779095a718"><td class="memItemLeft" align="right" valign="top">QMap&lt; float, <a class="el" href="class_light.html">Light</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a5fae715ba6bdde7c382f9d779095a718">_orderedLights</a></td></tr>
@@ -547,7 +570,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae75e1e0573b52c2c960e8afe77fead94"></a>
+<a class="anchor" id="a4f35ca9d308ef5563d9f205904eedbb8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -556,7 +579,7 @@ Additional Inherited Members</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const QString &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -590,7 +613,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a6c54f74841e986a80b03866dbed21d33"></a>
+<a class="anchor" id="afb93862254b6869533d7487c56133adb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -599,7 +622,7 @@ Additional Inherited Members</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const QString &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -685,7 +708,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8571f97120d3d7826b0689a0e3351f45"></a>
+<a class="anchor" id="ae2060bd6c44231ffe7f6f0a3447325f1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -694,7 +717,7 @@ Additional Inherited Members</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const QString &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -728,7 +751,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a002dee3b17da628be382679c99d78c8f"></a>
+<a class="anchor" id="a957a47245453a8868a417396abf9adce"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -737,7 +760,7 @@ Additional Inherited Members</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const QString &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -750,6 +773,31 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Retourne l'id d'un shader valide si le nom est présent, 0 autrement </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af00f7d191f9277b3dbad125c54677d79"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Scene::getShaderNameByID </td>
+          <td>(</td>
+          <td class="paramtype">const GLuint&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recheche le nom d'un shader à partir de son ID OpenGL. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>identifiant OpenGL du shader </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nom du shader s'il existe </dd></dl>
 
 </div>
 </div>
@@ -1036,12 +1084,78 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae87e88cbefc16640354acc8ec11b5e1e"></a>
+<a class="anchor" id="a98d11f40f1ac651eae91827ae9ef3d5c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structvec3.html">vec3</a> Scene::readPosition </td>
+          <td>(</td>
+          <td class="paramtype">const QDomElement &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne un <a class="el" href="structvec3.html">vec3</a> correspondant au vecteur position lu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>élement à lire </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>position </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2ea5cfec3f9be76fe110cba255621d7e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structvec3.html">vec3</a> Scene::readScale </td>
+          <td>(</td>
+          <td class="paramtype">const QDomElement &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne un <a class="el" href="structvec3.html">vec3</a> correspondant au scale lu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>élement à lire </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>facteur de scale </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a696a59602fa780cd7904df5c50b94eae"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Scene::saveAsXML </td>
+          <td class="memname">bool Scene::saveAsXML </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;&#160;</td>
           <td class="paramname"><em>fileName</em></td><td>)</td>
@@ -1057,8 +1171,143 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section warning"><dt>Warning</dt><dd>Pas encore implémenté </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>A implémenter </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>indique si le ficheir a été sauvegardé ou pas </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a13dc69fb963cd556e3029e7ffc55180b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::saveLights </td>
+          <td>(</td>
+          <td class="paramtype">QDomElement &amp;&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QDomDocument &amp;&#160;</td>
+          <td class="paramname"><em>doc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a23faaec79e3e47ab7827411f23dd79d9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::saveMaterials </td>
+          <td>(</td>
+          <td class="paramtype">QDomElement &amp;&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QDomDocument &amp;&#160;</td>
+          <td class="paramname"><em>doc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab51c69ad1faae20cf5375c3f02b6e7fc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::savePieces </td>
+          <td>(</td>
+          <td class="paramtype">QDomElement &amp;&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QDomDocument &amp;&#160;</td>
+          <td class="paramname"><em>doc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abaec7f89a0a039c5a770ce06e80d96cd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::saveShaders </td>
+          <td>(</td>
+          <td class="paramtype">QDomElement &amp;&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QDomDocument &amp;&#160;</td>
+          <td class="paramname"><em>doc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1094,6 +1343,27 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Map des lumières constituant la scène, identifiées par leur nom, doit être unique </p>
+
+</div>
+</div>
+<a class="anchor" id="a57117e4269465f070fb412f338d28bf4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;QString, QOpenGLShader *&gt; Scene::_loadedShaders</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Fichiers de shaders déjà chargés, utilisé pour l'export </p>
 
 </div>
 </div>
@@ -1209,7 +1479,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 20 2014 14:23:07 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 23 2014 11:00:53 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

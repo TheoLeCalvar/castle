@@ -3,6 +3,7 @@ var searchData=
   ['v',['v',['../structvec2.html#ae25758a321e69cf6f722589fca155735',1,'vec2::v()'],['../structvec3.html#ad09608040a1a4e4d026086eff69725d2',1,'vec3::v()'],['../structvec4.html#a08f56ae363c0cabebd3fe446ef28e652',1,'vec4::v()']]],
   ['validajoutlumiere',['validajoutlumiere',['../class_main_window.html#a56f65a459f0caca9f71251663b200431',1,'MainWindow']]],
   ['validajoutmaterial',['validajoutmaterial',['../class_main_window.html#a2d8cee622b78ccdeed758c51b9fb5b0e',1,'MainWindow']]],
+  ['validajoutpiece',['validajoutpiece',['../class_main_window.html#ada60d01c441123e1b7d4d30be1d16f8f',1,'MainWindow']]],
   ['vao',['vao',['../struct_mesh_1_1_mesh_info.html#af15096e0f0aa61fff7d8a1c223e547cf',1,'Mesh::MeshInfo']]],
   ['vbos',['vbos',['../struct_mesh_1_1_mesh_info.html#ad360b326ff7424dc9b6a3f6614af895d',1,'Mesh::MeshInfo']]],
   ['vec2',['vec2',['../structvec2.html',1,'vec2'],['../structvec2.html#a9486933da4d4d819a8b99bae91066cb3',1,'vec2::vec2(float x, float y)'],['../structvec2.html#afc5a96fc403a9d8fd7e5d68bff5d29b7',1,'vec2::vec2(const vec2 &amp;vv)'],['../structvec2.html#ad91c5434ac0e8f28fbe003eb502794b4',1,'vec2::vec2(const vec3 &amp;vv)'],['../structvec2.html#a176b35e8578714444c9342c02e340d8f',1,'vec2::vec2(const vec4 &amp;vv)'],['../structvec2.html#ae12a1a221eca3561809600a11b58eaa3',1,'vec2::vec2()'],['../helper_8hpp.html#a238bb41ac23f822b4a29c8a565723a6e',1,'vec2():&#160;helper.hpp']]],

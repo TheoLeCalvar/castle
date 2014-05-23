@@ -31,6 +31,8 @@ Q\+String\+List \hyperlink{class_node_a4a3bbcabcbd5423c297e287dd0ab7ecd}{get\+Me
 \begin{DoxyCompactList}\small\item\em Retourne la liste des noms des \hyperlink{class_mesh}{Mesh} de ce \hyperlink{class_node}{Node}. \end{DoxyCompactList}\item 
 \hyperlink{class_mesh}{Mesh} $\ast$ \hyperlink{class_node_a47c225bb649c6d44763661f6e3253c7c}{get\+Mesh} (const Q\+String \&\hyperlink{class_objet_a4a702c189bedcbf1e65da6aec72c8e44}{name})
 \begin{DoxyCompactList}\small\item\em Retourne le \hyperlink{class_mesh}{Mesh} ayant le nom donné \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_node_adf80c463ba15d60645252ffa171fd209}{get\+Model\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Récupère le nom du modèle chargé \end{DoxyCompactList}\item 
 virtual bool \hyperlink{class_node_a07ceab8d57814d67b0a6a3c662130aa2}{collide} (const \hyperlink{class_hitbox}{Hitbox} \&h) const 
 \begin{DoxyCompactList}\small\item\em Calcule la collision des deux O\+B\+B. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
@@ -220,6 +222,28 @@ Retourne la liste des noms des \hyperlink{class_mesh}{Mesh} de ce \hyperlink{cla
 \begin{DoxyReturn}{Returns}
 liste des noms des \hyperlink{class_mesh}{Mesh} 
 \end{DoxyReturn}
+\hypertarget{class_node_adf80c463ba15d60645252ffa171fd209}{\index{Node@{Node}!get\+Model\+Name@{get\+Model\+Name}}
+\index{get\+Model\+Name@{get\+Model\+Name}!Node@{Node}}
+\subsubsection[{get\+Model\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Node\+::get\+Model\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_node_adf80c463ba15d60645252ffa171fd209}
+
+
+Récupère le nom du modèle chargé 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & \hyperlink{class_node}{Node} dont on veut le nom du modèle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nom du fichier charger 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Ne fonctionne que pour les \hyperlink{class_node}{Node} racines 
+\end{DoxyWarning}
 \hypertarget{class_node_a0684a35524cc1e276bfefdd28cd452cf}{\index{Node@{Node}!load\+Material@{load\+Material}}
 \index{load\+Material@{load\+Material}!Node@{Node}}
 \subsubsection[{load\+Material}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Material} $\ast$ Node\+::load\+Material (

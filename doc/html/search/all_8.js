@@ -6,6 +6,6 @@ var searchData=
   ['hastexture',['hasTexture',['../class_material.html#a5a489f2fa09381b917c6bc3244e02877',1,'Material']]],
   ['helper_2ecpp',['helper.cpp',['../helper_8cpp.html',1,'']]],
   ['helper_2ehpp',['helper.hpp',['../helper_8hpp.html',1,'']]],
-  ['hitbox',['Hitbox',['../class_hitbox.html',1,'']]],
+  ['hitbox',['Hitbox',['../class_hitbox.html',1,'Hitbox'],['../struct_mesh_1_1_mesh_info.html#a325c495a1c63762bac63b3df9c9dfebf',1,'Mesh::MeshInfo::hitbox()']]],
   ['hitbox_2ehpp',['hitbox.hpp',['../hitbox_8hpp.html',1,'']]]
 ];

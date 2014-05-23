@@ -9,6 +9,7 @@ var searchData=
   ['m_5fstacks',['m_stacks',['../class_donuts.html#a5273bc3a4bdada5e4302b35d49bdd550',1,'Donuts::m_stacks()'],['../class_sphere.html#aef79b7beb9d008e8dcc0849fbe691072',1,'Sphere::m_stacks()']]],
   ['main',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cpp']]],
   ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['mainlayoutajoutpiece',['mainlayoutajoutpiece',['../class_main_window.html#a9c7efc08e16b1648f53664b98dc99c00',1,'MainWindow']]],
   ['mainwindow',['MainWindow',['../class_main_window.html',1,'MainWindow'],['../class_main_window.html#a34c4b4207b46d11a4100c9b19f0e81bb',1,'MainWindow::MainWindow()']]],
   ['mainwindows_2ecpp',['mainwindows.cpp',['../mainwindows_8cpp.html',1,'']]],
   ['mainwindows_2ehpp',['mainwindows.hpp',['../mainwindows_8hpp.html',1,'']]],
@@ -42,6 +43,8 @@ var searchData=
   ['minimumsizehint',['minimumSizeHint',['../class_my_open_g_l_widget.html#a4a037578f8e21a015e7b2915992fbe5d',1,'MyOpenGLWidget']]],
   ['minp',['minP',['../struct_mesh_1_1_mesh_info.html#add150c6f037445254a0ebee99abf3ba9',1,'Mesh::MeshInfo']]],
   ['modele',['modele',['../class_main_window.html#abb752b382e336483740c8e0ad21cbcf5',1,'MainWindow']]],
+  ['modelemateriaupiece',['modelemateriaupiece',['../class_main_window.html#a7bdcda1e4a341f69651631c5ee882c41',1,'MainWindow']]],
+  ['modelepieceshader',['modelepieceshader',['../class_main_window.html#a6be7cafd28d97201c3df69a7b144f456',1,'MainWindow']]],
   ['modelmaterial',['modelmaterial',['../class_mondock.html#aceda9fef8d2c8b9c88672bacbeac7988',1,'Mondock']]],
   ['modelpiece',['modelpiece',['../class_mondock.html#a2560c460ea144a4e8b2300dadf8df8ed',1,'Mondock']]],
   ['mondock',['Mondock',['../class_mondock.html',1,'Mondock'],['../class_mondock.html#a31297333af7c87f4f9773728db845d7f',1,'Mondock::Mondock()']]],
@@ -50,7 +53,7 @@ var searchData=
   ['mousemoveevent',['mouseMoveEvent',['../class_camera.html#a22aaf20b581d402e5c3952655b830c0f',1,'Camera::mouseMoveEvent()'],['../class_my_open_g_l_widget.html#a27abe02c04240317cf42c1cec1ac7e25',1,'MyOpenGLWidget::mouseMoveEvent()']]],
   ['mousepressevent',['mousePressEvent',['../class_my_open_g_l_widget.html#a6a2e229f91bb75775bb539c85bb696ef',1,'MyOpenGLWidget']]],
   ['move',['move',['../class_camera.html#a8414e6d74d3f6259fa5ea1f037e9d8bd',1,'Camera']]],
-  ['myopenglwidget',['MyOpenGLWidget',['../class_my_open_g_l_widget.html',1,'MyOpenGLWidget'],['../class_my_open_g_l_widget.html#af7d9636f7607ea575f0742d64366b87b',1,'MyOpenGLWidget::MyOpenGLWidget()']]],
+  ['myopenglwidget',['MyOpenGLWidget',['../class_my_open_g_l_widget.html',1,'MyOpenGLWidget'],['../class_my_open_g_l_widget.html#abdf77aa3e6d581bbcbbc505b4c592492',1,'MyOpenGLWidget::MyOpenGLWidget()']]],
   ['myopenglwidget_2ecpp',['MyOpenGLWidget.cpp',['../_my_open_g_l_widget_8cpp.html',1,'']]],
   ['myopenglwidget_2ehpp',['MyOpenGLWidget.hpp',['../_my_open_g_l_widget_8hpp.html',1,'']]]
 ];

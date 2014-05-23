@@ -130,6 +130,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a47c225bb649c6d44763661f6e3253c7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_mesh.html">Mesh</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node.html#a47c225bb649c6d44763661f6e3253c7c">getMesh</a> (const QString &amp;<a class="el" href="class_objet.html#a4a702c189bedcbf1e65da6aec72c8e44">name</a>)</td></tr>
 <tr class="memdesc:a47c225bb649c6d44763661f6e3253c7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le <a class="el" href="class_mesh.html" title="Charge un modèle 3D. ">Mesh</a> ayant le nom donné  <a href="#a47c225bb649c6d44763661f6e3253c7c">More...</a><br /></td></tr>
 <tr class="separator:a47c225bb649c6d44763661f6e3253c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf80c463ba15d60645252ffa171fd209"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node.html#adf80c463ba15d60645252ffa171fd209">getModelName</a> () const </td></tr>
+<tr class="memdesc:adf80c463ba15d60645252ffa171fd209"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère le nom du modèle chargé  <a href="#adf80c463ba15d60645252ffa171fd209">More...</a><br /></td></tr>
+<tr class="separator:adf80c463ba15d60645252ffa171fd209"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07ceab8d57814d67b0a6a3c662130aa2"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node.html#a07ceab8d57814d67b0a6a3c662130aa2">collide</a> (const <a class="el" href="class_hitbox.html">Hitbox</a> &amp;h) const </td></tr>
 <tr class="memdesc:a07ceab8d57814d67b0a6a3c662130aa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcule la collision des deux OBB.  <a href="#a07ceab8d57814d67b0a6a3c662130aa2">More...</a><br /></td></tr>
 <tr class="separator:a07ceab8d57814d67b0a6a3c662130aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,6 +176,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a13f08bf7d1265bbf4ade92b755b27c1b inherit pub_methods_class_objet"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a13f08bf7d1265bbf4ade92b755b27c1b">shaderId</a> (GLuint s)</td></tr>
 <tr class="memdesc:a13f08bf7d1265bbf4ade92b755b27c1b inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change l'id du shader.  <a href="#a13f08bf7d1265bbf4ade92b755b27c1b">More...</a><br /></td></tr>
 <tr class="separator:a13f08bf7d1265bbf4ade92b755b27c1b inherit pub_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a6a7ddf0136e2b685c07778b681c976 inherit pub_methods_class_objet"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a1a6a7ddf0136e2b685c07778b681c976">shaderId</a> () const </td></tr>
+<tr class="memdesc:a1a6a7ddf0136e2b685c07778b681c976 inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'id du shader qu'utilise l'<a class="el" href="class_objet.html" title="Classe de base affichable. ">Objet</a>.  <a href="#a1a6a7ddf0136e2b685c07778b681c976">More...</a><br /></td></tr>
+<tr class="separator:a1a6a7ddf0136e2b685c07778b681c976 inherit pub_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ce451437b7d7d22fdfd8cdb10b347fa inherit pub_methods_class_objet"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a3ce451437b7d7d22fdfd8cdb10b347fa">drawHitbox</a> (bool b)</td></tr>
+<tr class="memdesc:a3ce451437b7d7d22fdfd8cdb10b347fa inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche les <a class="el" href="class_hitbox.html">Hitbox</a> des objets capables d'en afficher.  <a href="#a3ce451437b7d7d22fdfd8cdb10b347fa">More...</a><br /></td></tr>
+<tr class="separator:a3ce451437b7d7d22fdfd8cdb10b347fa inherit pub_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17afdd67513cf35ab527af241cc7f769 inherit pub_methods_class_objet"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a17afdd67513cf35ab527af241cc7f769">drawHitbox</a> () const </td></tr>
+<tr class="memdesc:a17afdd67513cf35ab527af241cc7f769 inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la <a class="el" href="class_hitbox.html">Hitbox</a> de l'objet.  <a href="#a17afdd67513cf35ab527af241cc7f769">More...</a><br /></td></tr>
+<tr class="separator:a17afdd67513cf35ab527af241cc7f769 inherit pub_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b8f371853435fb08bba5163cb4dbe09 inherit pub_methods_class_objet"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_material.html">Material</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a5b8f371853435fb08bba5163cb4dbe09">material</a> ()</td></tr>
 <tr class="memdesc:a5b8f371853435fb08bba5163cb4dbe09 inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère le material de l'<a class="el" href="class_objet.html" title="Classe de base affichable. ">Objet</a>.  <a href="#a5b8f371853435fb08bba5163cb4dbe09">More...</a><br /></td></tr>
 <tr class="separator:a5b8f371853435fb08bba5163cb4dbe09 inherit pub_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -272,6 +284,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a1963cca59f62c7a6f69a9c2c461ad9ea inherit pro_attribs_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0d545a506dbfa377c8ca5a499fdf755 inherit pro_attribs_class_objet"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#af0d545a506dbfa377c8ca5a499fdf755">_shaderId</a></td></tr>
 <tr class="separator:af0d545a506dbfa377c8ca5a499fdf755 inherit pro_attribs_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a953ad7ff9941575d1f18b6d256d2dcdc inherit pro_attribs_class_objet"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a953ad7ff9941575d1f18b6d256d2dcdc">_drawHitbox</a></td></tr>
+<tr class="separator:a953ad7ff9941575d1f18b6d256d2dcdc inherit pro_attribs_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contient un node de modèle 3D. </p>
@@ -503,6 +517,31 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="adf80c463ba15d60645252ffa171fd209"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Node::getModelName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupère le nom du modèle chargé </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td><a class="el" href="class_node.html" title="Contient un node de modèle 3D. ">Node</a> dont on veut le nom du modèle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nom du fichier charger </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Ne fonctionne que pour les <a class="el" href="class_node.html" title="Contient un node de modèle 3D. ">Node</a> racines </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a0684a35524cc1e276bfefdd28cd452cf"></a>
 <div class="memitem">
 <div class="memproto">
@@ -703,7 +742,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 20 2014 14:23:07 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 23 2014 11:00:52 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

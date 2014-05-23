@@ -27,8 +27,6 @@ void \hyperlink{class_main_window_adbc60f34a13a49cc015dc4a124a588a1}{Ouvrir} ()
 \item 
 void \hyperlink{class_main_window_a8c07d91b87178ac0a1b88aabc45c6ddb}{Enregistrer} ()
 \item 
-void \hyperlink{class_main_window_a4558a3ff95a78f4a0e0d0adf312a6b8c}{Kiter} ()
-\item 
 void \hyperlink{class_main_window_a5277087cb1c0b01722b7a4ff436070ba}{Annuler} ()
 \item 
 void \hyperlink{class_main_window_ab2ff5da91852950471811fa93028dc0c}{Retablir} ()
@@ -48,6 +46,10 @@ void \hyperlink{class_main_window_a56f65a459f0caca9f71251663b200431}{validajoutl
 void \hyperlink{class_main_window_a3a599353265f9c01a8780529aa5fed75}{ajoutmaterial} ()
 \item 
 void \hyperlink{class_main_window_a2d8cee622b78ccdeed758c51b9fb5b0e}{validajoutmaterial} ()
+\item 
+void \hyperlink{class_main_window_a6661770cd92877aa3b1c0dae91513a50}{ajoutpiece} ()
+\item 
+void \hyperlink{class_main_window_ada60d01c441123e1b7d4d30be1d16f8f}{validajoutpiece} ()
 \item 
 void \hyperlink{class_main_window_abd2acb261445354d2fd680c9b48bad77}{Racourcit} ()
 \end{DoxyCompactItemize}
@@ -102,6 +104,8 @@ Q\+Menu $\ast$ \hyperlink{class_main_window_a6c2ded3bdffc863604d7890c554578d5}{a
 Q\+Action $\ast$ \hyperlink{class_main_window_a04b22ecfd14e02f1dd5a5dd77b509f8e}{ajoutlumier\+Act}
 \item 
 Q\+Action $\ast$ \hyperlink{class_main_window_ae531eca2b9941c7f260f466edd97790e}{ajoutmaterial\+Act}
+\item 
+Q\+Action $\ast$ \hyperlink{class_main_window_a150ff31dd92454823cf92bd6d4d1852d}{ajoutpiece\+Act}
 \item 
 Q\+Dock\+Widget $\ast$ \hyperlink{class_main_window_a391dd00592f215079a80db989f24266e}{dockajoutlumiere}
 \item 
@@ -193,6 +197,80 @@ Q\+H\+Box\+Layout $\ast$ \hyperlink{class_main_window_adac5730b1a8e83ec6c59d531d
 \item 
 Q\+V\+Box\+Layout $\ast$ \hyperlink{class_main_window_a377ec350ecc66336f8d5540670999b3a}{layoutajoutmaterial}
 \item 
+Q\+Dock\+Widget $\ast$ \hyperlink{class_main_window_a6a303ea101c20af7884bb398bd3dc41f}{dockajoutpiece}
+\item 
+Q\+Widget $\ast$ \hyperlink{class_main_window_a81a3c7e272f0bc32762ef85575fe271d}{widgetajoutpiece}
+\item 
+Q\+Push\+Button $\ast$ \hyperlink{class_main_window_ad6c5d4342e58b7edad16490d493ea342}{boutonajoutpiece}
+\item 
+Q\+Spin\+Box $\ast$ \hyperlink{class_main_window_aa75a74b6d22f3363190785617dba7dc2}{ajoutpiecedimx}
+\item 
+Q\+Spin\+Box $\ast$ \hyperlink{class_main_window_a4d95aef4c72cb18b0599c4e525d1ccdf}{ajoutpiecedimy}
+\item 
+Q\+Spin\+Box $\ast$ \hyperlink{class_main_window_a2c29b0021713ae3d3f317fb54fdb4962}{ajoutpiecedimz}
+\item 
+Q\+Combo\+Box $\ast$ \hyperlink{class_main_window_acb844d7f147cf7f5114e0a626c9564df}{comboajoutpiece}
+\item 
+Q\+Standard\+Item\+Model $\ast$ \hyperlink{class_main_window_a7bdcda1e4a341f69651631c5ee882c41}{modelemateriaupiece}
+\item 
+Q\+Combo\+Box $\ast$ \hyperlink{class_main_window_ad7c2aad3dda2062d4d26a14709e54ff1}{comboajoutpieceshader}
+\item 
+Q\+Standard\+Item\+Model $\ast$ \hyperlink{class_main_window_a6be7cafd28d97201c3df69a7b144f456}{modelepieceshader}
+\item 
+Q\+Label $\ast$ \hyperlink{class_main_window_a5a72195fa8145f88d29886d680f741a0}{labelcomboajoutpiece}
+\item 
+Q\+Label $\ast$ \hyperlink{class_main_window_ac017a38253ab695f0098c7c853e46f9b}{labeldimajoutpiece}
+\item 
+Q\+Label $\ast$ \hyperlink{class_main_window_a1d3e7516cbe9514b90e22cf6dc175459}{labelnomajoutpiece}
+\item 
+Q\+Label $\ast$ \hyperlink{class_main_window_a24709250991f21e3c2672f1e76569d0d}{labelmurajoutpiece}
+\item 
+Q\+Label $\ast$ \hyperlink{class_main_window_a2c60769cc5ab003462a9d183c26792cc}{labelajoutpieceshader}
+\item 
+Q\+Label $\ast$ \hyperlink{class_main_window_a2a21ea46a1f1be6c8f474902aaa74bf1}{labelmur1}
+\item 
+Q\+Label $\ast$ \hyperlink{class_main_window_af5c6fd2af3aa1d234476a0404927c206}{labelmur2}
+\item 
+Q\+Label $\ast$ \hyperlink{class_main_window_a586d64e68a953b3506846e937df60509}{labelmur3}
+\item 
+Q\+Label $\ast$ \hyperlink{class_main_window_a1ce750a7b2152528b4bf5153f9b50f55}{labelmur4}
+\item 
+Q\+Label $\ast$ \hyperlink{class_main_window_aa1074d2c5241b1cf88d93186225f1ed4}{labelmur5}
+\item 
+Q\+Label $\ast$ \hyperlink{class_main_window_acabc7a22eeffa30597c1278617544a31}{labelmur6}
+\item 
+Q\+Check\+Box $\ast$ \hyperlink{class_main_window_aabce537f4ce40332b2411e31218abf37}{checkmur1}
+\item 
+Q\+Check\+Box $\ast$ \hyperlink{class_main_window_a9311b2ff986d09836c8e385348acd571}{checkmur2}
+\item 
+Q\+Check\+Box $\ast$ \hyperlink{class_main_window_a71169e71f8f50fc126c8cdaad981cad7}{checkmur3}
+\item 
+Q\+Check\+Box $\ast$ \hyperlink{class_main_window_a2e8fae74cfc9045da4dfcba506aacca4}{checkmur4}
+\item 
+Q\+Check\+Box $\ast$ \hyperlink{class_main_window_a13b9eb7874b1b8363eb8ee0399e0a6db}{checkmur5}
+\item 
+Q\+Check\+Box $\ast$ \hyperlink{class_main_window_a0e9dad3f68b376acacd166f6a58ea4dd}{checkmur6}
+\item 
+Q\+Line\+Edit $\ast$ \hyperlink{class_main_window_ac6b2333b54d4551f41d0941c7f171097}{lineeditajoutpiece}
+\item 
+Q\+V\+Box\+Layout $\ast$ \hyperlink{class_main_window_a9c7efc08e16b1648f53664b98dc99c00}{mainlayoutajoutpiece}
+\item 
+Q\+H\+Box\+Layout $\ast$ \hyperlink{class_main_window_ae06a728d54678994456d0585d265baf0}{ajoutpiecelayoutdim}
+\item 
+Q\+H\+Box\+Layout $\ast$ \hyperlink{class_main_window_a48cf0bbc5e90a751711519a7c7c2af7b}{ajoutpiecelayoutnom}
+\item 
+Q\+H\+Box\+Layout $\ast$ \hyperlink{class_main_window_a195ed8cd075a1153faa7926f38b08609}{ajoutpiecelayoutcombo}
+\item 
+Q\+H\+Box\+Layout $\ast$ \hyperlink{class_main_window_a7fc456fae07aba46102c8670721688e6}{ajoutpiecelabelmure}
+\item 
+Q\+H\+Box\+Layout $\ast$ \hyperlink{class_main_window_a49e6b8184f85caeec9b9936999387e8f}{ajoutpiecepiecer1}
+\item 
+Q\+H\+Box\+Layout $\ast$ \hyperlink{class_main_window_a01a7211a86eb47e523b13d18beedd7c5}{ajoutpiecepiecer2}
+\item 
+Q\+H\+Box\+Layout $\ast$ \hyperlink{class_main_window_ac059f285df8d02b2deaf915f82c4c247}{ajoutpiecepiecer3}
+\item 
+Q\+H\+Box\+Layout $\ast$ \hyperlink{class_main_window_aace055ea8d65d6138d60d7a40da1c707}{ajoutpieceshaderlayout}
+\item 
 Q\+Action $\ast$ \hyperlink{class_main_window_a5abf7bab9a2c85168545220c9984fdfe}{racourcit\+Act}
 \item 
 Q\+Tool\+Bar $\ast$ \hyperlink{class_main_window_a0a352c6d66b7a080fcf558874a7e51d4}{file\+Tool\+Bar}
@@ -200,6 +278,8 @@ Q\+Tool\+Bar $\ast$ \hyperlink{class_main_window_a0a352c6d66b7a080fcf558874a7e51
 Q\+Dock\+Widget $\ast$ \hyperlink{class_main_window_ab0e654c3c8f22ae05433da58c112f155}{dock\+\_\+list\+\_\+elements}
 \item 
 Q\+Push\+Button $\ast$ \hyperlink{class_main_window_af87ab6bb1e48500cc732286cc98b990e}{boutonlisteelement}
+\item 
+Q\+Push\+Button $\ast$ \hyperlink{class_main_window_a0300f02a442c333e918e229817b27ef2}{boutonlisteelementdelete}
 \item 
 \hyperlink{class_scene}{Scene} $\ast$ \hyperlink{class_main_window_ab3b59f5d30eaedb1281da2b817c17fdf}{scenetemp}
 \item 
@@ -227,7 +307,7 @@ Q\+V\+Box\+Layout $\ast$ \hyperlink{class_main_window_ab25fb184d802450a71a998cf1
 \item 
 Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}{widgetdocklistscene}
 \item 
-\hyperlink{class_mondock}{Mondock} $\ast$ \hyperlink{class_main_window_af9acaaae5d4e102aa790a65c01430160}{dock\+\_\+light}
+\hyperlink{class_mondock}{Mondock} $\ast$ \hyperlink{class_main_window_a0733647a631eeb38fc72d3cf7e01c3db}{dock\+\_\+perso}
 \item 
 \hyperlink{class_my_open_g_l_widget}{My\+Open\+G\+L\+Widget} $\ast$ \hyperlink{class_main_window_a0a21ff789dee5a19a74d2461cf0820dc}{widget}
 \end{DoxyCompactItemize}
@@ -273,6 +353,13 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a3a599353265f9c01a8780529aa5fed75}
+\hypertarget{class_main_window_a6661770cd92877aa3b1c0dae91513a50}{\index{Main\+Window@{Main\+Window}!ajoutpiece@{ajoutpiece}}
+\index{ajoutpiece@{ajoutpiece}!Main\+Window@{Main\+Window}}
+\subsubsection[{ajoutpiece}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::ajoutpiece (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a6661770cd92877aa3b1c0dae91513a50}
 \hypertarget{class_main_window_a5277087cb1c0b01722b7a4ff436070ba}{\index{Main\+Window@{Main\+Window}!Annuler@{Annuler}}
 \index{Annuler@{Annuler}!Main\+Window@{Main\+Window}}
 \subsubsection[{Annuler}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::\+Annuler (
@@ -343,13 +430,6 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_af26018b1d699cbf0a3f62048472cc489}
-\hypertarget{class_main_window_a4558a3ff95a78f4a0e0d0adf312a6b8c}{\index{Main\+Window@{Main\+Window}!Kiter@{Kiter}}
-\index{Kiter@{Kiter}!Main\+Window@{Main\+Window}}
-\subsubsection[{Kiter}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::\+Kiter (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a4558a3ff95a78f4a0e0d0adf312a6b8c}
 \hypertarget{class_main_window_a6f837f331c40d27e47fbb0d6a73b040e}{\index{Main\+Window@{Main\+Window}!Nouveau@{Nouveau}}
 \index{Nouveau@{Nouveau}!Main\+Window@{Main\+Window}}
 \subsubsection[{Nouveau}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::\+Nouveau (
@@ -392,6 +472,13 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a2d8cee622b78ccdeed758c51b9fb5b0e}
+\hypertarget{class_main_window_ada60d01c441123e1b7d4d30be1d16f8f}{\index{Main\+Window@{Main\+Window}!validajoutpiece@{validajoutpiece}}
+\index{validajoutpiece@{validajoutpiece}!Main\+Window@{Main\+Window}}
+\subsubsection[{validajoutpiece}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::validajoutpiece (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_ada60d01c441123e1b7d4d30be1d16f8f}
 
 
 \subsection{Member Data Documentation}
@@ -410,6 +497,42 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 \hypertarget{class_main_window_ae531eca2b9941c7f260f466edd97790e}{\index{Main\+Window@{Main\+Window}!ajoutmaterial\+Act@{ajoutmaterial\+Act}}
 \index{ajoutmaterial\+Act@{ajoutmaterial\+Act}!Main\+Window@{Main\+Window}}
 \subsubsection[{ajoutmaterial\+Act}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ Main\+Window\+::ajoutmaterial\+Act\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_ae531eca2b9941c7f260f466edd97790e}
+\hypertarget{class_main_window_a150ff31dd92454823cf92bd6d4d1852d}{\index{Main\+Window@{Main\+Window}!ajoutpiece\+Act@{ajoutpiece\+Act}}
+\index{ajoutpiece\+Act@{ajoutpiece\+Act}!Main\+Window@{Main\+Window}}
+\subsubsection[{ajoutpiece\+Act}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ Main\+Window\+::ajoutpiece\+Act\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a150ff31dd92454823cf92bd6d4d1852d}
+\hypertarget{class_main_window_aa75a74b6d22f3363190785617dba7dc2}{\index{Main\+Window@{Main\+Window}!ajoutpiecedimx@{ajoutpiecedimx}}
+\index{ajoutpiecedimx@{ajoutpiecedimx}!Main\+Window@{Main\+Window}}
+\subsubsection[{ajoutpiecedimx}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ Main\+Window\+::ajoutpiecedimx\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_aa75a74b6d22f3363190785617dba7dc2}
+\hypertarget{class_main_window_a4d95aef4c72cb18b0599c4e525d1ccdf}{\index{Main\+Window@{Main\+Window}!ajoutpiecedimy@{ajoutpiecedimy}}
+\index{ajoutpiecedimy@{ajoutpiecedimy}!Main\+Window@{Main\+Window}}
+\subsubsection[{ajoutpiecedimy}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ Main\+Window\+::ajoutpiecedimy\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a4d95aef4c72cb18b0599c4e525d1ccdf}
+\hypertarget{class_main_window_a2c29b0021713ae3d3f317fb54fdb4962}{\index{Main\+Window@{Main\+Window}!ajoutpiecedimz@{ajoutpiecedimz}}
+\index{ajoutpiecedimz@{ajoutpiecedimz}!Main\+Window@{Main\+Window}}
+\subsubsection[{ajoutpiecedimz}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ Main\+Window\+::ajoutpiecedimz\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a2c29b0021713ae3d3f317fb54fdb4962}
+\hypertarget{class_main_window_a7fc456fae07aba46102c8670721688e6}{\index{Main\+Window@{Main\+Window}!ajoutpiecelabelmure@{ajoutpiecelabelmure}}
+\index{ajoutpiecelabelmure@{ajoutpiecelabelmure}!Main\+Window@{Main\+Window}}
+\subsubsection[{ajoutpiecelabelmure}]{\setlength{\rightskip}{0pt plus 5cm}Q\+H\+Box\+Layout$\ast$ Main\+Window\+::ajoutpiecelabelmure\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a7fc456fae07aba46102c8670721688e6}
+\hypertarget{class_main_window_a195ed8cd075a1153faa7926f38b08609}{\index{Main\+Window@{Main\+Window}!ajoutpiecelayoutcombo@{ajoutpiecelayoutcombo}}
+\index{ajoutpiecelayoutcombo@{ajoutpiecelayoutcombo}!Main\+Window@{Main\+Window}}
+\subsubsection[{ajoutpiecelayoutcombo}]{\setlength{\rightskip}{0pt plus 5cm}Q\+H\+Box\+Layout$\ast$ Main\+Window\+::ajoutpiecelayoutcombo\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a195ed8cd075a1153faa7926f38b08609}
+\hypertarget{class_main_window_ae06a728d54678994456d0585d265baf0}{\index{Main\+Window@{Main\+Window}!ajoutpiecelayoutdim@{ajoutpiecelayoutdim}}
+\index{ajoutpiecelayoutdim@{ajoutpiecelayoutdim}!Main\+Window@{Main\+Window}}
+\subsubsection[{ajoutpiecelayoutdim}]{\setlength{\rightskip}{0pt plus 5cm}Q\+H\+Box\+Layout$\ast$ Main\+Window\+::ajoutpiecelayoutdim\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_ae06a728d54678994456d0585d265baf0}
+\hypertarget{class_main_window_a48cf0bbc5e90a751711519a7c7c2af7b}{\index{Main\+Window@{Main\+Window}!ajoutpiecelayoutnom@{ajoutpiecelayoutnom}}
+\index{ajoutpiecelayoutnom@{ajoutpiecelayoutnom}!Main\+Window@{Main\+Window}}
+\subsubsection[{ajoutpiecelayoutnom}]{\setlength{\rightskip}{0pt plus 5cm}Q\+H\+Box\+Layout$\ast$ Main\+Window\+::ajoutpiecelayoutnom\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a48cf0bbc5e90a751711519a7c7c2af7b}
+\hypertarget{class_main_window_a49e6b8184f85caeec9b9936999387e8f}{\index{Main\+Window@{Main\+Window}!ajoutpiecepiecer1@{ajoutpiecepiecer1}}
+\index{ajoutpiecepiecer1@{ajoutpiecepiecer1}!Main\+Window@{Main\+Window}}
+\subsubsection[{ajoutpiecepiecer1}]{\setlength{\rightskip}{0pt plus 5cm}Q\+H\+Box\+Layout$\ast$ Main\+Window\+::ajoutpiecepiecer1\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a49e6b8184f85caeec9b9936999387e8f}
+\hypertarget{class_main_window_a01a7211a86eb47e523b13d18beedd7c5}{\index{Main\+Window@{Main\+Window}!ajoutpiecepiecer2@{ajoutpiecepiecer2}}
+\index{ajoutpiecepiecer2@{ajoutpiecepiecer2}!Main\+Window@{Main\+Window}}
+\subsubsection[{ajoutpiecepiecer2}]{\setlength{\rightskip}{0pt plus 5cm}Q\+H\+Box\+Layout$\ast$ Main\+Window\+::ajoutpiecepiecer2\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a01a7211a86eb47e523b13d18beedd7c5}
+\hypertarget{class_main_window_ac059f285df8d02b2deaf915f82c4c247}{\index{Main\+Window@{Main\+Window}!ajoutpiecepiecer3@{ajoutpiecepiecer3}}
+\index{ajoutpiecepiecer3@{ajoutpiecepiecer3}!Main\+Window@{Main\+Window}}
+\subsubsection[{ajoutpiecepiecer3}]{\setlength{\rightskip}{0pt plus 5cm}Q\+H\+Box\+Layout$\ast$ Main\+Window\+::ajoutpiecepiecer3\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_ac059f285df8d02b2deaf915f82c4c247}
+\hypertarget{class_main_window_aace055ea8d65d6138d60d7a40da1c707}{\index{Main\+Window@{Main\+Window}!ajoutpieceshaderlayout@{ajoutpieceshaderlayout}}
+\index{ajoutpieceshaderlayout@{ajoutpieceshaderlayout}!Main\+Window@{Main\+Window}}
+\subsubsection[{ajoutpieceshaderlayout}]{\setlength{\rightskip}{0pt plus 5cm}Q\+H\+Box\+Layout$\ast$ Main\+Window\+::ajoutpieceshaderlayout\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_aace055ea8d65d6138d60d7a40da1c707}
 \hypertarget{class_main_window_aea5950c7b756106a6a68c766352676bb}{\index{Main\+Window@{Main\+Window}!ambajoutmaterial@{ambajoutmaterial}}
 \index{ambajoutmaterial@{ambajoutmaterial}!Main\+Window@{Main\+Window}}
 \subsubsection[{ambajoutmaterial}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Main\+Window\+::ambajoutmaterial\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_aea5950c7b756106a6a68c766352676bb}
@@ -425,9 +548,39 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 \hypertarget{class_main_window_a9d0608c267dd8f7898df41de4dda0be1}{\index{Main\+Window@{Main\+Window}!boutonajoutmaterial@{boutonajoutmaterial}}
 \index{boutonajoutmaterial@{boutonajoutmaterial}!Main\+Window@{Main\+Window}}
 \subsubsection[{boutonajoutmaterial}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ Main\+Window\+::boutonajoutmaterial\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a9d0608c267dd8f7898df41de4dda0be1}
+\hypertarget{class_main_window_ad6c5d4342e58b7edad16490d493ea342}{\index{Main\+Window@{Main\+Window}!boutonajoutpiece@{boutonajoutpiece}}
+\index{boutonajoutpiece@{boutonajoutpiece}!Main\+Window@{Main\+Window}}
+\subsubsection[{boutonajoutpiece}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ Main\+Window\+::boutonajoutpiece\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_ad6c5d4342e58b7edad16490d493ea342}
 \hypertarget{class_main_window_af87ab6bb1e48500cc732286cc98b990e}{\index{Main\+Window@{Main\+Window}!boutonlisteelement@{boutonlisteelement}}
 \index{boutonlisteelement@{boutonlisteelement}!Main\+Window@{Main\+Window}}
 \subsubsection[{boutonlisteelement}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ Main\+Window\+::boutonlisteelement\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_af87ab6bb1e48500cc732286cc98b990e}
+\hypertarget{class_main_window_a0300f02a442c333e918e229817b27ef2}{\index{Main\+Window@{Main\+Window}!boutonlisteelementdelete@{boutonlisteelementdelete}}
+\index{boutonlisteelementdelete@{boutonlisteelementdelete}!Main\+Window@{Main\+Window}}
+\subsubsection[{boutonlisteelementdelete}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ Main\+Window\+::boutonlisteelementdelete\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a0300f02a442c333e918e229817b27ef2}
+\hypertarget{class_main_window_aabce537f4ce40332b2411e31218abf37}{\index{Main\+Window@{Main\+Window}!checkmur1@{checkmur1}}
+\index{checkmur1@{checkmur1}!Main\+Window@{Main\+Window}}
+\subsubsection[{checkmur1}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Check\+Box$\ast$ Main\+Window\+::checkmur1\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_aabce537f4ce40332b2411e31218abf37}
+\hypertarget{class_main_window_a9311b2ff986d09836c8e385348acd571}{\index{Main\+Window@{Main\+Window}!checkmur2@{checkmur2}}
+\index{checkmur2@{checkmur2}!Main\+Window@{Main\+Window}}
+\subsubsection[{checkmur2}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Check\+Box$\ast$ Main\+Window\+::checkmur2\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a9311b2ff986d09836c8e385348acd571}
+\hypertarget{class_main_window_a71169e71f8f50fc126c8cdaad981cad7}{\index{Main\+Window@{Main\+Window}!checkmur3@{checkmur3}}
+\index{checkmur3@{checkmur3}!Main\+Window@{Main\+Window}}
+\subsubsection[{checkmur3}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Check\+Box$\ast$ Main\+Window\+::checkmur3\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a71169e71f8f50fc126c8cdaad981cad7}
+\hypertarget{class_main_window_a2e8fae74cfc9045da4dfcba506aacca4}{\index{Main\+Window@{Main\+Window}!checkmur4@{checkmur4}}
+\index{checkmur4@{checkmur4}!Main\+Window@{Main\+Window}}
+\subsubsection[{checkmur4}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Check\+Box$\ast$ Main\+Window\+::checkmur4\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a2e8fae74cfc9045da4dfcba506aacca4}
+\hypertarget{class_main_window_a13b9eb7874b1b8363eb8ee0399e0a6db}{\index{Main\+Window@{Main\+Window}!checkmur5@{checkmur5}}
+\index{checkmur5@{checkmur5}!Main\+Window@{Main\+Window}}
+\subsubsection[{checkmur5}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Check\+Box$\ast$ Main\+Window\+::checkmur5\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a13b9eb7874b1b8363eb8ee0399e0a6db}
+\hypertarget{class_main_window_a0e9dad3f68b376acacd166f6a58ea4dd}{\index{Main\+Window@{Main\+Window}!checkmur6@{checkmur6}}
+\index{checkmur6@{checkmur6}!Main\+Window@{Main\+Window}}
+\subsubsection[{checkmur6}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Check\+Box$\ast$ Main\+Window\+::checkmur6\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a0e9dad3f68b376acacd166f6a58ea4dd}
+\hypertarget{class_main_window_acb844d7f147cf7f5114e0a626c9564df}{\index{Main\+Window@{Main\+Window}!comboajoutpiece@{comboajoutpiece}}
+\index{comboajoutpiece@{comboajoutpiece}!Main\+Window@{Main\+Window}}
+\subsubsection[{comboajoutpiece}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Combo\+Box$\ast$ Main\+Window\+::comboajoutpiece\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_acb844d7f147cf7f5114e0a626c9564df}
+\hypertarget{class_main_window_ad7c2aad3dda2062d4d26a14709e54ff1}{\index{Main\+Window@{Main\+Window}!comboajoutpieceshader@{comboajoutpieceshader}}
+\index{comboajoutpieceshader@{comboajoutpieceshader}!Main\+Window@{Main\+Window}}
+\subsubsection[{comboajoutpieceshader}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Combo\+Box$\ast$ Main\+Window\+::comboajoutpieceshader\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_ad7c2aad3dda2062d4d26a14709e54ff1}
 \hypertarget{class_main_window_acc241f6a81ac7e252fac333e8e725da3}{\index{Main\+Window@{Main\+Window}!culface\+Act@{culface\+Act}}
 \index{culface\+Act@{culface\+Act}!Main\+Window@{Main\+Window}}
 \subsubsection[{culface\+Act}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ Main\+Window\+::culface\+Act\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_acc241f6a81ac7e252fac333e8e725da3}
@@ -437,18 +590,21 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 \hypertarget{class_main_window_a8bbcda89f3ac6367c000056b7e6acb5f}{\index{Main\+Window@{Main\+Window}!difajoutmaterial@{difajoutmaterial}}
 \index{difajoutmaterial@{difajoutmaterial}!Main\+Window@{Main\+Window}}
 \subsubsection[{difajoutmaterial}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Main\+Window\+::difajoutmaterial\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a8bbcda89f3ac6367c000056b7e6acb5f}
-\hypertarget{class_main_window_af9acaaae5d4e102aa790a65c01430160}{\index{Main\+Window@{Main\+Window}!dock\+\_\+light@{dock\+\_\+light}}
-\index{dock\+\_\+light@{dock\+\_\+light}!Main\+Window@{Main\+Window}}
-\subsubsection[{dock\+\_\+light}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mondock}$\ast$ Main\+Window\+::dock\+\_\+light\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_af9acaaae5d4e102aa790a65c01430160}
 \hypertarget{class_main_window_ab0e654c3c8f22ae05433da58c112f155}{\index{Main\+Window@{Main\+Window}!dock\+\_\+list\+\_\+elements@{dock\+\_\+list\+\_\+elements}}
 \index{dock\+\_\+list\+\_\+elements@{dock\+\_\+list\+\_\+elements}!Main\+Window@{Main\+Window}}
 \subsubsection[{dock\+\_\+list\+\_\+elements}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Dock\+Widget$\ast$ Main\+Window\+::dock\+\_\+list\+\_\+elements\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_ab0e654c3c8f22ae05433da58c112f155}
+\hypertarget{class_main_window_a0733647a631eeb38fc72d3cf7e01c3db}{\index{Main\+Window@{Main\+Window}!dock\+\_\+perso@{dock\+\_\+perso}}
+\index{dock\+\_\+perso@{dock\+\_\+perso}!Main\+Window@{Main\+Window}}
+\subsubsection[{dock\+\_\+perso}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mondock}$\ast$ Main\+Window\+::dock\+\_\+perso\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a0733647a631eeb38fc72d3cf7e01c3db}
 \hypertarget{class_main_window_a391dd00592f215079a80db989f24266e}{\index{Main\+Window@{Main\+Window}!dockajoutlumiere@{dockajoutlumiere}}
 \index{dockajoutlumiere@{dockajoutlumiere}!Main\+Window@{Main\+Window}}
 \subsubsection[{dockajoutlumiere}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Dock\+Widget$\ast$ Main\+Window\+::dockajoutlumiere\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a391dd00592f215079a80db989f24266e}
 \hypertarget{class_main_window_a033d7bd189e33389081c3352c3b41021}{\index{Main\+Window@{Main\+Window}!dockajoutmateriaux@{dockajoutmateriaux}}
 \index{dockajoutmateriaux@{dockajoutmateriaux}!Main\+Window@{Main\+Window}}
 \subsubsection[{dockajoutmateriaux}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Dock\+Widget$\ast$ Main\+Window\+::dockajoutmateriaux\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a033d7bd189e33389081c3352c3b41021}
+\hypertarget{class_main_window_a6a303ea101c20af7884bb398bd3dc41f}{\index{Main\+Window@{Main\+Window}!dockajoutpiece@{dockajoutpiece}}
+\index{dockajoutpiece@{dockajoutpiece}!Main\+Window@{Main\+Window}}
+\subsubsection[{dockajoutpiece}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Dock\+Widget$\ast$ Main\+Window\+::dockajoutpiece\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a6a303ea101c20af7884bb398bd3dc41f}
 \hypertarget{class_main_window_af32c5a214657e6a6dd30269f81c8b450}{\index{Main\+Window@{Main\+Window}!Edition@{Edition}}
 \index{Edition@{Edition}!Main\+Window@{Main\+Window}}
 \subsubsection[{Edition}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Menu$\ast$ Main\+Window\+::\+Edition\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_af32c5a214657e6a6dd30269f81c8b450}
@@ -470,6 +626,39 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 \hypertarget{class_main_window_ac1517849e119e00fbbebe90570eabade}{\index{Main\+Window@{Main\+Window}!kiter\+Act@{kiter\+Act}}
 \index{kiter\+Act@{kiter\+Act}!Main\+Window@{Main\+Window}}
 \subsubsection[{kiter\+Act}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ Main\+Window\+::kiter\+Act\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_ac1517849e119e00fbbebe90570eabade}
+\hypertarget{class_main_window_a2c60769cc5ab003462a9d183c26792cc}{\index{Main\+Window@{Main\+Window}!labelajoutpieceshader@{labelajoutpieceshader}}
+\index{labelajoutpieceshader@{labelajoutpieceshader}!Main\+Window@{Main\+Window}}
+\subsubsection[{labelajoutpieceshader}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Main\+Window\+::labelajoutpieceshader\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a2c60769cc5ab003462a9d183c26792cc}
+\hypertarget{class_main_window_a5a72195fa8145f88d29886d680f741a0}{\index{Main\+Window@{Main\+Window}!labelcomboajoutpiece@{labelcomboajoutpiece}}
+\index{labelcomboajoutpiece@{labelcomboajoutpiece}!Main\+Window@{Main\+Window}}
+\subsubsection[{labelcomboajoutpiece}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Main\+Window\+::labelcomboajoutpiece\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a5a72195fa8145f88d29886d680f741a0}
+\hypertarget{class_main_window_ac017a38253ab695f0098c7c853e46f9b}{\index{Main\+Window@{Main\+Window}!labeldimajoutpiece@{labeldimajoutpiece}}
+\index{labeldimajoutpiece@{labeldimajoutpiece}!Main\+Window@{Main\+Window}}
+\subsubsection[{labeldimajoutpiece}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Main\+Window\+::labeldimajoutpiece\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_ac017a38253ab695f0098c7c853e46f9b}
+\hypertarget{class_main_window_a2a21ea46a1f1be6c8f474902aaa74bf1}{\index{Main\+Window@{Main\+Window}!labelmur1@{labelmur1}}
+\index{labelmur1@{labelmur1}!Main\+Window@{Main\+Window}}
+\subsubsection[{labelmur1}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Main\+Window\+::labelmur1\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a2a21ea46a1f1be6c8f474902aaa74bf1}
+\hypertarget{class_main_window_af5c6fd2af3aa1d234476a0404927c206}{\index{Main\+Window@{Main\+Window}!labelmur2@{labelmur2}}
+\index{labelmur2@{labelmur2}!Main\+Window@{Main\+Window}}
+\subsubsection[{labelmur2}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Main\+Window\+::labelmur2\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_af5c6fd2af3aa1d234476a0404927c206}
+\hypertarget{class_main_window_a586d64e68a953b3506846e937df60509}{\index{Main\+Window@{Main\+Window}!labelmur3@{labelmur3}}
+\index{labelmur3@{labelmur3}!Main\+Window@{Main\+Window}}
+\subsubsection[{labelmur3}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Main\+Window\+::labelmur3\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a586d64e68a953b3506846e937df60509}
+\hypertarget{class_main_window_a1ce750a7b2152528b4bf5153f9b50f55}{\index{Main\+Window@{Main\+Window}!labelmur4@{labelmur4}}
+\index{labelmur4@{labelmur4}!Main\+Window@{Main\+Window}}
+\subsubsection[{labelmur4}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Main\+Window\+::labelmur4\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a1ce750a7b2152528b4bf5153f9b50f55}
+\hypertarget{class_main_window_aa1074d2c5241b1cf88d93186225f1ed4}{\index{Main\+Window@{Main\+Window}!labelmur5@{labelmur5}}
+\index{labelmur5@{labelmur5}!Main\+Window@{Main\+Window}}
+\subsubsection[{labelmur5}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Main\+Window\+::labelmur5\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_aa1074d2c5241b1cf88d93186225f1ed4}
+\hypertarget{class_main_window_acabc7a22eeffa30597c1278617544a31}{\index{Main\+Window@{Main\+Window}!labelmur6@{labelmur6}}
+\index{labelmur6@{labelmur6}!Main\+Window@{Main\+Window}}
+\subsubsection[{labelmur6}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Main\+Window\+::labelmur6\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_acabc7a22eeffa30597c1278617544a31}
+\hypertarget{class_main_window_a24709250991f21e3c2672f1e76569d0d}{\index{Main\+Window@{Main\+Window}!labelmurajoutpiece@{labelmurajoutpiece}}
+\index{labelmurajoutpiece@{labelmurajoutpiece}!Main\+Window@{Main\+Window}}
+\subsubsection[{labelmurajoutpiece}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Main\+Window\+::labelmurajoutpiece\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a24709250991f21e3c2672f1e76569d0d}
+\hypertarget{class_main_window_a1d3e7516cbe9514b90e22cf6dc175459}{\index{Main\+Window@{Main\+Window}!labelnomajoutpiece@{labelnomajoutpiece}}
+\index{labelnomajoutpiece@{labelnomajoutpiece}!Main\+Window@{Main\+Window}}
+\subsubsection[{labelnomajoutpiece}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Main\+Window\+::labelnomajoutpiece\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a1d3e7516cbe9514b90e22cf6dc175459}
 \hypertarget{class_main_window_ab54462c9ca68986b780c8fb83300336c}{\index{Main\+Window@{Main\+Window}!layoutajoutlumiere@{layoutajoutlumiere}}
 \index{layoutajoutlumiere@{layoutajoutlumiere}!Main\+Window@{Main\+Window}}
 \subsubsection[{layoutajoutlumiere}]{\setlength{\rightskip}{0pt plus 5cm}Q\+V\+Box\+Layout$\ast$ Main\+Window\+::layoutajoutlumiere\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_ab54462c9ca68986b780c8fb83300336c}
@@ -506,6 +695,9 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 \hypertarget{class_main_window_a36a5d988881c1ce38d0692ed500067e1}{\index{Main\+Window@{Main\+Window}!light@{light}}
 \index{light@{light}!Main\+Window@{Main\+Window}}
 \subsubsection[{light}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Standard\+Item$\ast$ Main\+Window\+::light\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a36a5d988881c1ce38d0692ed500067e1}
+\hypertarget{class_main_window_ac6b2333b54d4551f41d0941c7f171097}{\index{Main\+Window@{Main\+Window}!lineeditajoutpiece@{lineeditajoutpiece}}
+\index{lineeditajoutpiece@{lineeditajoutpiece}!Main\+Window@{Main\+Window}}
+\subsubsection[{lineeditajoutpiece}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Line\+Edit$\ast$ Main\+Window\+::lineeditajoutpiece\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_ac6b2333b54d4551f41d0941c7f171097}
 \hypertarget{class_main_window_a88ef14a32e7bd0694d8c970b700588c8}{\index{Main\+Window@{Main\+Window}!lineeditnomajoutlumiere@{lineeditnomajoutlumiere}}
 \index{lineeditnomajoutlumiere@{lineeditnomajoutlumiere}!Main\+Window@{Main\+Window}}
 \subsubsection[{lineeditnomajoutlumiere}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Line\+Edit$\ast$ Main\+Window\+::lineeditnomajoutlumiere\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a88ef14a32e7bd0694d8c970b700588c8}
@@ -524,12 +716,21 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 \hypertarget{class_main_window_a889162c5299f284129bec68a0cc45cbf}{\index{Main\+Window@{Main\+Window}!listtemshader@{listtemshader}}
 \index{listtemshader@{listtemshader}!Main\+Window@{Main\+Window}}
 \subsubsection[{listtemshader}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List Main\+Window\+::listtemshader\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a889162c5299f284129bec68a0cc45cbf}
+\hypertarget{class_main_window_a9c7efc08e16b1648f53664b98dc99c00}{\index{Main\+Window@{Main\+Window}!mainlayoutajoutpiece@{mainlayoutajoutpiece}}
+\index{mainlayoutajoutpiece@{mainlayoutajoutpiece}!Main\+Window@{Main\+Window}}
+\subsubsection[{mainlayoutajoutpiece}]{\setlength{\rightskip}{0pt plus 5cm}Q\+V\+Box\+Layout$\ast$ Main\+Window\+::mainlayoutajoutpiece\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a9c7efc08e16b1648f53664b98dc99c00}
 \hypertarget{class_main_window_ad89e3c0f75025021cddb58c4cdd5edd8}{\index{Main\+Window@{Main\+Window}!material@{material}}
 \index{material@{material}!Main\+Window@{Main\+Window}}
 \subsubsection[{material}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Standard\+Item$\ast$ Main\+Window\+::material\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_ad89e3c0f75025021cddb58c4cdd5edd8}
 \hypertarget{class_main_window_abb752b382e336483740c8e0ad21cbcf5}{\index{Main\+Window@{Main\+Window}!modele@{modele}}
 \index{modele@{modele}!Main\+Window@{Main\+Window}}
 \subsubsection[{modele}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Standard\+Item\+Model$\ast$ Main\+Window\+::modele\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_abb752b382e336483740c8e0ad21cbcf5}
+\hypertarget{class_main_window_a7bdcda1e4a341f69651631c5ee882c41}{\index{Main\+Window@{Main\+Window}!modelemateriaupiece@{modelemateriaupiece}}
+\index{modelemateriaupiece@{modelemateriaupiece}!Main\+Window@{Main\+Window}}
+\subsubsection[{modelemateriaupiece}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Standard\+Item\+Model$\ast$ Main\+Window\+::modelemateriaupiece\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a7bdcda1e4a341f69651631c5ee882c41}
+\hypertarget{class_main_window_a6be7cafd28d97201c3df69a7b144f456}{\index{Main\+Window@{Main\+Window}!modelepieceshader@{modelepieceshader}}
+\index{modelepieceshader@{modelepieceshader}!Main\+Window@{Main\+Window}}
+\subsubsection[{modelepieceshader}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Standard\+Item\+Model$\ast$ Main\+Window\+::modelepieceshader\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a6be7cafd28d97201c3df69a7b144f456}
 \hypertarget{class_main_window_ad38c142eee23820d2d4c87217ea3558a}{\index{Main\+Window@{Main\+Window}!nomajoutlumiere@{nomajoutlumiere}}
 \index{nomajoutlumiere@{nomajoutlumiere}!Main\+Window@{Main\+Window}}
 \subsubsection[{nomajoutlumiere}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Main\+Window\+::nomajoutlumiere\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_ad38c142eee23820d2d4c87217ea3558a}
@@ -638,6 +839,9 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 \hypertarget{class_main_window_a071e7995e629a7b42ddbc5f54eae7dd3}{\index{Main\+Window@{Main\+Window}!widgetajoutmaterial@{widgetajoutmaterial}}
 \index{widgetajoutmaterial@{widgetajoutmaterial}!Main\+Window@{Main\+Window}}
 \subsubsection[{widgetajoutmaterial}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ Main\+Window\+::widgetajoutmaterial\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a071e7995e629a7b42ddbc5f54eae7dd3}
+\hypertarget{class_main_window_a81a3c7e272f0bc32762ef85575fe271d}{\index{Main\+Window@{Main\+Window}!widgetajoutpiece@{widgetajoutpiece}}
+\index{widgetajoutpiece@{widgetajoutpiece}!Main\+Window@{Main\+Window}}
+\subsubsection[{widgetajoutpiece}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ Main\+Window\+::widgetajoutpiece\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a81a3c7e272f0bc32762ef85575fe271d}
 \hypertarget{class_main_window_a38d553a96a3898e65b500c639673b8de}{\index{Main\+Window@{Main\+Window}!widgetdocklistscene@{widgetdocklistscene}}
 \index{widgetdocklistscene@{widgetdocklistscene}!Main\+Window@{Main\+Window}}
 \subsubsection[{widgetdocklistscene}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ Main\+Window\+::widgetdocklistscene\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a38d553a96a3898e65b500c639673b8de}

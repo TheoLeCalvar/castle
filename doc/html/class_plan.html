@@ -118,6 +118,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a513c3dec0ce9043a9e1d3b5b18a6d698"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plan.html#a513c3dec0ce9043a9e1d3b5b18a6d698">draw</a> ()</td></tr>
 <tr class="memdesc:a513c3dec0ce9043a9e1d3b5b18a6d698"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche le plan.  <a href="#a513c3dec0ce9043a9e1d3b5b18a6d698">More...</a><br /></td></tr>
 <tr class="separator:a513c3dec0ce9043a9e1d3b5b18a6d698"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac193f6297c584d43977dca3a16f18180"><td class="memItemLeft" align="right" valign="top">const QList&lt; QRectF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plan.html#ac193f6297c584d43977dca3a16f18180">getFenetres</a> () const </td></tr>
+<tr class="memdesc:ac193f6297c584d43977dca3a16f18180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la liste des rectangles définissant les fenêtres de la pièce.  <a href="#ac193f6297c584d43977dca3a16f18180">More...</a><br /></td></tr>
+<tr class="separator:ac193f6297c584d43977dca3a16f18180"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_objet"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_objet')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_objet.html">Objet</a></td></tr>
 <tr class="memitem:aea29e90dc963beb399d3028b7322039f inherit pub_methods_class_objet"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#aea29e90dc963beb399d3028b7322039f">Objet</a> (const QString &amp;<a class="el" href="class_objet.html#a4a702c189bedcbf1e65da6aec72c8e44">name</a>=QString(), <a class="el" href="class_material.html">Material</a> *mat=NULL, <a class="el" href="structvec3.html">vec3</a> <a class="el" href="class_objet.html#ac69a1b459bcb4433099c8cfbff06b209">rotation</a>=<a class="el" href="structvec3.html">vec3</a>(), <a class="el" href="structvec3.html">vec3</a> <a class="el" href="class_objet.html#a0e109bc790b14328202dd2546b04e2fd">position</a>=<a class="el" href="structvec3.html">vec3</a>(), <a class="el" href="class_objet.html">Objet</a> *<a class="el" href="class_objet.html#a95e63a98dc9dc485fe874df30f2069ee">parent</a>=NULL)</td></tr>
 <tr class="memdesc:aea29e90dc963beb399d3028b7322039f inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#aea29e90dc963beb399d3028b7322039f">More...</a><br /></td></tr>
@@ -158,6 +161,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a13f08bf7d1265bbf4ade92b755b27c1b inherit pub_methods_class_objet"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a13f08bf7d1265bbf4ade92b755b27c1b">shaderId</a> (GLuint s)</td></tr>
 <tr class="memdesc:a13f08bf7d1265bbf4ade92b755b27c1b inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change l'id du shader.  <a href="#a13f08bf7d1265bbf4ade92b755b27c1b">More...</a><br /></td></tr>
 <tr class="separator:a13f08bf7d1265bbf4ade92b755b27c1b inherit pub_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a6a7ddf0136e2b685c07778b681c976 inherit pub_methods_class_objet"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a1a6a7ddf0136e2b685c07778b681c976">shaderId</a> () const </td></tr>
+<tr class="memdesc:a1a6a7ddf0136e2b685c07778b681c976 inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'id du shader qu'utilise l'<a class="el" href="class_objet.html" title="Classe de base affichable. ">Objet</a>.  <a href="#a1a6a7ddf0136e2b685c07778b681c976">More...</a><br /></td></tr>
+<tr class="separator:a1a6a7ddf0136e2b685c07778b681c976 inherit pub_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ce451437b7d7d22fdfd8cdb10b347fa inherit pub_methods_class_objet"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a3ce451437b7d7d22fdfd8cdb10b347fa">drawHitbox</a> (bool b)</td></tr>
+<tr class="memdesc:a3ce451437b7d7d22fdfd8cdb10b347fa inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche les <a class="el" href="class_hitbox.html">Hitbox</a> des objets capables d'en afficher.  <a href="#a3ce451437b7d7d22fdfd8cdb10b347fa">More...</a><br /></td></tr>
+<tr class="separator:a3ce451437b7d7d22fdfd8cdb10b347fa inherit pub_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17afdd67513cf35ab527af241cc7f769 inherit pub_methods_class_objet"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a17afdd67513cf35ab527af241cc7f769">drawHitbox</a> () const </td></tr>
+<tr class="memdesc:a17afdd67513cf35ab527af241cc7f769 inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la <a class="el" href="class_hitbox.html">Hitbox</a> de l'objet.  <a href="#a17afdd67513cf35ab527af241cc7f769">More...</a><br /></td></tr>
+<tr class="separator:a17afdd67513cf35ab527af241cc7f769 inherit pub_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b8f371853435fb08bba5163cb4dbe09 inherit pub_methods_class_objet"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_material.html">Material</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a5b8f371853435fb08bba5163cb4dbe09">material</a> ()</td></tr>
 <tr class="memdesc:a5b8f371853435fb08bba5163cb4dbe09 inherit pub_methods_class_objet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère le material de l'<a class="el" href="class_objet.html" title="Classe de base affichable. ">Objet</a>.  <a href="#a5b8f371853435fb08bba5163cb4dbe09">More...</a><br /></td></tr>
 <tr class="separator:a5b8f371853435fb08bba5163cb4dbe09 inherit pub_methods_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -227,6 +239,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aad9837a269e87fa5d7a4a5fc90abf3e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dce54e58d00f40ed8da5c9bd34c1232"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plan.html#a2dce54e58d00f40ed8da5c9bd34c1232">_maxP</a></td></tr>
 <tr class="separator:a2dce54e58d00f40ed8da5c9bd34c1232"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9fdbf8efac3f80ffd8bb2f789e7f4f2"><td class="memItemLeft" align="right" valign="top">QList&lt; QRectF &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plan.html#aa9fdbf8efac3f80ffd8bb2f789e7f4f2">_fenetres</a></td></tr>
+<tr class="separator:aa9fdbf8efac3f80ffd8bb2f789e7f4f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -247,6 +261,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a1963cca59f62c7a6f69a9c2c461ad9ea inherit pro_attribs_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0d545a506dbfa377c8ca5a499fdf755 inherit pro_attribs_class_objet"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#af0d545a506dbfa377c8ca5a499fdf755">_shaderId</a></td></tr>
 <tr class="separator:af0d545a506dbfa377c8ca5a499fdf755 inherit pro_attribs_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a953ad7ff9941575d1f18b6d256d2dcdc inherit pro_attribs_class_objet"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet.html#a953ad7ff9941575d1f18b6d256d2dcdc">_drawHitbox</a></td></tr>
+<tr class="separator:a953ad7ff9941575d1f18b6d256d2dcdc inherit pro_attribs_class_objet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_plan.html" title="Plan utilisé par la Piece. ">Plan</a> utilisé par la <a class="el" href="class_piece.html" title="Pièce, contient un ensemble d&#39;objet qu&#39;elle contient. ">Piece</a>. </p>
@@ -402,6 +418,32 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ac193f6297c584d43977dca3a16f18180"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QList&lt;QRectF&gt;&amp; Plan::getFenetres </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renvoie la liste des rectangles définissant les fenêtres de la pièce. </p>
+<dl class="section return"><dt>Returns</dt><dd>liste des fenêtres </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a73316993ed03bbf13b38f2dff76b0ced"></a>
 <div class="memitem">
 <div class="memproto">
@@ -484,6 +526,26 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aa9fdbf8efac3f80ffd8bb2f789e7f4f2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QRectF&gt; Plan::_fenetres</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a2dce54e58d00f40ed8da5c9bd34c1232"></a>
 <div class="memitem">
 <div class="memproto">
@@ -651,7 +713,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 20 2014 14:23:07 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 23 2014 11:00:53 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

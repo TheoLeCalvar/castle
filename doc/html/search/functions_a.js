@@ -12,5 +12,5 @@ var searchData=
   ['mousemoveevent',['mouseMoveEvent',['../class_camera.html#a22aaf20b581d402e5c3952655b830c0f',1,'Camera::mouseMoveEvent()'],['../class_my_open_g_l_widget.html#a27abe02c04240317cf42c1cec1ac7e25',1,'MyOpenGLWidget::mouseMoveEvent()']]],
   ['mousepressevent',['mousePressEvent',['../class_my_open_g_l_widget.html#a6a2e229f91bb75775bb539c85bb696ef',1,'MyOpenGLWidget']]],
   ['move',['move',['../class_camera.html#a8414e6d74d3f6259fa5ea1f037e9d8bd',1,'Camera']]],
-  ['myopenglwidget',['MyOpenGLWidget',['../class_my_open_g_l_widget.html#af7d9636f7607ea575f0742d64366b87b',1,'MyOpenGLWidget']]]
+  ['myopenglwidget',['MyOpenGLWidget',['../class_my_open_g_l_widget.html#abdf77aa3e6d581bbcbbc505b4c592492',1,'MyOpenGLWidget']]]
 ];

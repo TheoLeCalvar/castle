@@ -47,6 +47,12 @@ void \hyperlink{class_objet_ae4ca090d86e327ad4654a068afcf3141}{scale} (\hyperlin
 \begin{DoxyCompactList}\small\item\em Modifie le scale de l'objet. \end{DoxyCompactList}\item 
 void \hyperlink{class_objet_a13f08bf7d1265bbf4ade92b755b27c1b}{shader\+Id} (G\+Luint s)
 \begin{DoxyCompactList}\small\item\em Change l'id du shader. \end{DoxyCompactList}\item 
+G\+Luint \hyperlink{class_objet_a1a6a7ddf0136e2b685c07778b681c976}{shader\+Id} () const 
+\begin{DoxyCompactList}\small\item\em Retourne l'id du shader qu'utilise l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\item 
+void \hyperlink{class_objet_a3ce451437b7d7d22fdfd8cdb10b347fa}{draw\+Hitbox} (bool b)
+\begin{DoxyCompactList}\small\item\em Affiche les \hyperlink{class_hitbox}{Hitbox} des objets capables d'en afficher. \end{DoxyCompactList}\item 
+bool \hyperlink{class_objet_a17afdd67513cf35ab527af241cc7f769}{draw\+Hitbox} () const 
+\begin{DoxyCompactList}\small\item\em Affiche la \hyperlink{class_hitbox}{Hitbox} de l'objet. \end{DoxyCompactList}\item 
 \hyperlink{class_material}{Material} $\ast$ \hyperlink{class_objet_a5b8f371853435fb08bba5163cb4dbe09}{material} ()
 \begin{DoxyCompactList}\small\item\em Récupère le material de l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\item 
 void \hyperlink{class_objet_a470e028ee53141cf9d11d107317989b7}{material} (\hyperlink{class_material}{Material} $\ast$m)
@@ -96,6 +102,8 @@ Q\+String \hyperlink{class_objet_ac19f568a794dd9387386ee71914a868e}{\+\_\+name}
 \hyperlink{structmat4}{mat4} \hyperlink{class_objet_a1963cca59f62c7a6f69a9c2c461ad9ea}{\+\_\+model}
 \item 
 G\+Luint \hyperlink{class_objet_af0d545a506dbfa377c8ca5a499fdf755}{\+\_\+shader\+Id}
+\item 
+bool \hyperlink{class_objet_a953ad7ff9941575d1f18b6d256d2dcdc}{\+\_\+draw\+Hitbox}
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -193,6 +201,33 @@ Affichage de l'\hyperlink{class_objet}{Objet}.
 Active le shader de l'\hyperlink{class_objet}{Objet} et applique le material 
 
 Reimplemented in \hyperlink{class_mesh_a996a8668fa2ca7d95d6d10744c833bc8}{Mesh}, \hyperlink{class_node_ab88c83ced58700a56de568f5b1e3c473}{Node}, \hyperlink{class_plan_a513c3dec0ce9043a9e1d3b5b18a6d698}{Plan}, \hyperlink{class_cube_ab26b72a81376fd5dc4fcc7f0b715b087}{Cube}, \hyperlink{class_piece_aee937e57fbfe4717aab14e1e892aed2e}{Piece}, \hyperlink{class_donuts_a5a7932c8494905ba09bb515a01e6c91d}{Donuts}, and \hyperlink{class_sphere_a34a34167b7544c95155d3ff30638d045}{Sphere}.
+
+\hypertarget{class_objet_a3ce451437b7d7d22fdfd8cdb10b347fa}{\index{Objet@{Objet}!draw\+Hitbox@{draw\+Hitbox}}
+\index{draw\+Hitbox@{draw\+Hitbox}!Objet@{Objet}}
+\subsubsection[{draw\+Hitbox}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::draw\+Hitbox (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_objet_a3ce451437b7d7d22fdfd8cdb10b347fa}
+
+
+Affiche les \hyperlink{class_hitbox}{Hitbox} des objets capables d'en afficher. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & valeur \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_objet_a17afdd67513cf35ab527af241cc7f769}{\index{Objet@{Objet}!draw\+Hitbox@{draw\+Hitbox}}
+\index{draw\+Hitbox@{draw\+Hitbox}!Objet@{Objet}}
+\subsubsection[{draw\+Hitbox}]{\setlength{\rightskip}{0pt plus 5cm}bool Objet\+::draw\+Hitbox (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_objet_a17afdd67513cf35ab527af241cc7f769}
+
+
+Affiche la \hyperlink{class_hitbox}{Hitbox} de l'objet. 
 
 \hypertarget{class_objet_a27f49df80d4efc35530987cd8683dde0}{\index{Objet@{Objet}!get\+Depth@{get\+Depth}}
 \index{get\+Depth@{get\+Depth}!Objet@{Objet}}
@@ -553,6 +588,20 @@ Change l'id du shader.
 {\em s} & nouvel id du shader de l'\hyperlink{class_objet}{Objet} \\
 \hline
 \end{DoxyParams}
+\hypertarget{class_objet_a1a6a7ddf0136e2b685c07778b681c976}{\index{Objet@{Objet}!shader\+Id@{shader\+Id}}
+\index{shader\+Id@{shader\+Id}!Objet@{Objet}}
+\subsubsection[{shader\+Id}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Objet\+::shader\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_objet_a1a6a7ddf0136e2b685c07778b681c976}
+
+
+Retourne l'id du shader qu'utilise l'\hyperlink{class_objet}{Objet}. 
+
+\begin{DoxyReturn}{Returns}
+identifiant Openg\+G\+L du shader 
+\end{DoxyReturn}
 \hypertarget{class_objet_a68db2971ff359da981bc0fb73a164b9f}{\index{Objet@{Objet}!transform\+Vector@{transform\+Vector}}
 \index{transform\+Vector@{transform\+Vector}!Objet@{Objet}}
 \subsubsection[{transform\+Vector}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::transform\+Vector (
@@ -568,7 +617,7 @@ Apllique au vecteur les transformation de l'objet et de ses pères.
 
 
 \begin{DoxyParams}{Parameters}
-{\em v} & \hyperlink{structvec4}{vec4} à calcuer \\
+{\em v} & \hyperlink{structvec4}{vec4} à calculer \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_objet_a0960722f5ddb16f2c245dca4e6584f25}{\index{Objet@{Objet}!update\+Model@{update\+Model}}
@@ -585,6 +634,9 @@ Met à jour la matrice de model.
 Appellée lors d'une modification des vecteurs position ou rotation 
 
 \subsection{Member Data Documentation}
+\hypertarget{class_objet_a953ad7ff9941575d1f18b6d256d2dcdc}{\index{Objet@{Objet}!\+\_\+draw\+Hitbox@{\+\_\+draw\+Hitbox}}
+\index{\+\_\+draw\+Hitbox@{\+\_\+draw\+Hitbox}!Objet@{Objet}}
+\subsubsection[{\+\_\+draw\+Hitbox}]{\setlength{\rightskip}{0pt plus 5cm}bool Objet\+::\+\_\+draw\+Hitbox\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_objet_a953ad7ff9941575d1f18b6d256d2dcdc}
 \hypertarget{class_objet_aefea82be8c63504190ac63d5e44ff61a}{\index{Objet@{Objet}!\+\_\+mat@{\+\_\+mat}}
 \index{\+\_\+mat@{\+\_\+mat}!Objet@{Objet}}
 \subsubsection[{\+\_\+mat}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Material}$\ast$ Objet\+::\+\_\+mat\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_objet_aefea82be8c63504190ac63d5e44ff61a}

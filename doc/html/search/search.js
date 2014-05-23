@@ -11,9 +11,9 @@ var indexSectionsWithContent =
   1: "cdhlmnopsv",
   2: "cdhlmnops",
   3: "_acdeghiklmnoprstuvxyz~",
-  4: "_abcdefgiklmnoprstvw",
+  4: "_abcdefghiklmnoprstvw",
   5: "mv",
-  6: "no",
+  6: "nop",
   7: "dmnost",
   8: "t"
 };

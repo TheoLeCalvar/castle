@@ -24,7 +24,9 @@ Inheritance diagram for Plan\+:\begin{figure}[H]
 \hyperlink{class_plan_a4df05d0211ed4572125f79cbfaafa626}{$\sim$\+Plan} ()
 \begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
 void \hyperlink{class_plan_a513c3dec0ce9043a9e1d3b5b18a6d698}{draw} ()
-\begin{DoxyCompactList}\small\item\em Affiche le plan. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Affiche le plan. \end{DoxyCompactList}\item 
+const Q\+List$<$ Q\+Rect\+F $>$ \& \hyperlink{class_plan_ac193f6297c584d43977dca3a16f18180}{get\+Fenetres} () const 
+\begin{DoxyCompactList}\small\item\em Renvoie la liste des rectangles définissant les fenêtres de la pièce. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -54,6 +56,8 @@ unsigned int \hyperlink{class_plan_af3d9228c1b7dc91c0cb00d4c8fa5a550}{\+\_\+nb\+
 \hyperlink{structvec3}{vec3} \hyperlink{class_plan_aad9837a269e87fa5d7a4a5fc90abf3e7}{\+\_\+min\+P}
 \item 
 \hyperlink{structvec3}{vec3} \hyperlink{class_plan_a2dce54e58d00f40ed8da5c9bd34c1232}{\+\_\+max\+P}
+\item 
+Q\+List$<$ Q\+Rect\+F $>$ \hyperlink{class_plan_aa9fdbf8efac3f80ffd8bb2f789e7f4f2}{\+\_\+fenetres}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -145,6 +149,20 @@ renvoie la demie profondeur de la hitbox
 
 Reimplemented from \hyperlink{class_objet_a27f49df80d4efc35530987cd8683dde0}{Objet}.
 
+\hypertarget{class_plan_ac193f6297c584d43977dca3a16f18180}{\index{Plan@{Plan}!get\+Fenetres@{get\+Fenetres}}
+\index{get\+Fenetres@{get\+Fenetres}!Plan@{Plan}}
+\subsubsection[{get\+Fenetres}]{\setlength{\rightskip}{0pt plus 5cm}const Q\+List$<$Q\+Rect\+F$>$\& Plan\+::get\+Fenetres (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_plan_ac193f6297c584d43977dca3a16f18180}
+
+
+Renvoie la liste des rectangles définissant les fenêtres de la pièce. 
+
+\begin{DoxyReturn}{Returns}
+liste des fenêtres 
+\end{DoxyReturn}
 \hypertarget{class_plan_a73316993ed03bbf13b38f2dff76b0ced}{\index{Plan@{Plan}!get\+Height@{get\+Height}}
 \index{get\+Height@{get\+Height}!Plan@{Plan}}
 \subsubsection[{get\+Height}]{\setlength{\rightskip}{0pt plus 5cm}float Plan\+::get\+Height (
@@ -193,6 +211,9 @@ Reimplemented from \hyperlink{class_objet_ae8b213466c38b3bcaa34144cc708da65}{Obj
 
 
 \subsection{Member Data Documentation}
+\hypertarget{class_plan_aa9fdbf8efac3f80ffd8bb2f789e7f4f2}{\index{Plan@{Plan}!\+\_\+fenetres@{\+\_\+fenetres}}
+\index{\+\_\+fenetres@{\+\_\+fenetres}!Plan@{Plan}}
+\subsubsection[{\+\_\+fenetres}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$Q\+Rect\+F$>$ Plan\+::\+\_\+fenetres\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plan_aa9fdbf8efac3f80ffd8bb2f789e7f4f2}
 \hypertarget{class_plan_a2dce54e58d00f40ed8da5c9bd34c1232}{\index{Plan@{Plan}!\+\_\+max\+P@{\+\_\+max\+P}}
 \index{\+\_\+max\+P@{\+\_\+max\+P}!Plan@{Plan}}
 \subsubsection[{\+\_\+max\+P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Plan\+::\+\_\+max\+P\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plan_a2dce54e58d00f40ed8da5c9bd34c1232}
