@@ -640,7 +640,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                                   Piece * objtemp = scenetemp->getPiece(listtempobjet.at(i));
                                   QStringList listobjfils = objtemp->getChildren();
 
-                                  QStandardItem * item =  new QStandardItem(listtempobjet.at(i));
+                                  item =  new QStandardItem(listtempobjet.at(i));
                                   objet->appendRow(item);
 
                                   for(int j=0 ; j < listobjfils.size();j++)
@@ -1017,20 +1017,20 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
         //supression lumiere
         if( modele->data ( (vue->selectionModel()->currentIndex().parent()), Qt::DisplayRole)=="Light")
             {
-            std::cout<< "je suis une lumiere"<<std::endl;
             widget->getScene()->removeLight(vue->selectionModel()->currentIndex().data().toString());
+            light->removeRow(vue->selectionModel()->currentIndex().row());
             }
         //supresion piece
         if( modele->data ( (vue->selectionModel()->currentIndex().parent()), Qt::DisplayRole)=="Objet")
             {
-            std::cout<< "je suis une piece"<<std::endl;
             widget->getScene()->removePiece(vue->selectionModel()->currentIndex().data().toString());
+            objet->removeRow(vue->selectionModel()->currentIndex().row());
             }
         //supression objet
         if( modele->data ( (vue->selectionModel()->currentIndex().parent().parent()), Qt::DisplayRole)=="Objet")
             {
-            std::cout<< "je suis un objet d'une piece"<<std::endl;
             widget->getScene()->getPiece(vue->selectionModel()->currentIndex().parent().data().toString())->removeChild(vue->selectionModel()->currentIndex().data().toString());
+            item->removeRow(vue->selectionModel()->currentIndex().row());
             }
     }
 

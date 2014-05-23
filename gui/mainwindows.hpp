@@ -278,6 +278,7 @@ private slots:
        QStandardItem*       light;
        QStandardItem*       material;
        QStandardItem*       objet;
+       QStandardItem*       item;//contenu des piece
        QStandardItem*       shader;
 
        QTreeView*   vue;
