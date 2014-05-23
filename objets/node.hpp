@@ -85,6 +85,12 @@ public:
 	 */
 	Node * getChild(const QString & name);
 
+	/**
+	 * @brief supprime un Node fils
+	 * 
+	 * @param name nom du Node à supprimer
+	 */
+	void removeChild(const QString & name);
 
 	/**
 	 * @brief Retourne la liste des noms des Mesh de ce Node
@@ -99,6 +105,13 @@ public:
 	 * @return NULL si le Mesh n'appartient pas à ce Node
 	 */
 	Mesh * getMesh(const QString & name);
+
+	/**
+	 * @brief Supprime le Mesh portant le nom
+	 * 
+	 * @param name nom du Mesh à supprimer
+	 */
+	void removeMesh(const QString & name);
 
 
 	/**

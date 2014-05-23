@@ -9,7 +9,7 @@ Material::Material(
 		float shininess, 
 		vec3 emissive
 		):
-	_ambient(ambient), _diffuse(diffuse), _specular(specular), _shininess(shininess), _emissive(emissive), _diffuse_texture(NULL), _specular_texture(NULL), _normal_texture(NULL)
+	_ambient(ambient), _diffuse(diffuse), _specular(specular), _shininess(shininess), _emissive(emissive), _diffuse_texture(NULL), _specular_texture(NULL), _normal_texture(NULL), _fromXML(true)
 {
 	initializeOpenGLFunctions();
 }
@@ -44,7 +44,7 @@ void Material::set(const float shininess)
 	_shininess = shininess;
 }
 
-void Material::addTexture(const QString & texFile, unsigned char type)
+void Material::addTexture(const QString & texFile, const QString & type)
 {
 	if (texFile != "")
 	{
@@ -52,20 +52,13 @@ void Material::addTexture(const QString & texFile, unsigned char type)
 
 		if (res)
 		{
-			switch(type)
-			{
-				case DIFFUSE:
-					_diffuse_texture = res;
-					break;
-
-				case SPECULAR:
-					_specular_texture = res;
-					break;
-
-				case NORMAL:
-					_normal_texture = res;
-					break;
-			}
+			if(type == "diffuse")
+				_diffuse_texture = res;
+			else if(type == "specular")
+				_specular_texture = res;
+			else
+				_normal_texture = res;
+			
 		}
 		else
 		{
@@ -75,20 +68,13 @@ void Material::addTexture(const QString & texFile, unsigned char type)
 			texture->setMinMagFilters(QOpenGLTexture::Linear, QOpenGLTexture::Linear);
 
 
-			switch(type)
-			{
-				case DIFFUSE:
-					_diffuse_texture = texture;
-					break;
-
-				case SPECULAR:
-					_specular_texture = texture;
-					break;
-
-				case NORMAL:
-					_normal_texture = texture;
-					break;
-			}
+			if(type == "diffuse")
+				_diffuse_texture = texture;
+			else if(type == "specular")
+				_specular_texture = texture;
+			else
+				_normal_texture = texture;
+			
 
 
 			_texturesLoaded.insert(texFile, texture);
@@ -273,7 +259,7 @@ void Material::clear()
 
 QDebug operator<<(QDebug dbg, const Material &m)
 {
-	dbg.nospace() << "(Material " << &m <<" (ambiant" << m._ambient << ", diffuse" << m._diffuse << ", specular" << m._specular << ", emissive" << m._emissive << ", shininess(" <<m._shininess <<"), "<< m._diffuse_texture << "))";
+	dbg.nospace() << "(Material " << &m <<" (ambiant" << m._ambient << ", diffuse" << m._diffuse << ", specular" << m._specular << ", emissive" << m._emissive << ", shininess(" <<m._shininess <<"), Diffuse tex ("<< m._diffuse_texture << "), Specular Tex (" << m._specular_texture << "), Normal Tex (" << m._normal_texture << "))";
 
 	return dbg.space();
 }

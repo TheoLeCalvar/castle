@@ -6,11 +6,7 @@
 
 #include <QString>
 #include <QDebug>
-#include <QtGui>
 
-#ifdef Q_WS_MAC
-extern void qt_set_sequence_auto_mnemonic(bool b);
-#endif
 
 int main(int argc, char **argv)
 {
@@ -21,8 +17,6 @@ int main(int argc, char **argv)
 	#ifdef Q_OS_OSX
 		dir.cdUp();
 		dir.cd("Resources");
-        qt_se
-        qt_set_sequence_auto_mnemonic(true);
 	#endif
 
 	QDir::setCurrent(dir.absolutePath());
@@ -46,7 +40,7 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		MainWindow w;
+		MainWindow w(argv[1]);
 		w.show();
 
 		return app.exec();

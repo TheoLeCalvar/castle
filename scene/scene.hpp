@@ -130,6 +130,20 @@ public:
 	 */
 	QString 	getShaderNameByID(const GLuint id) const;
 
+	/**
+	 * @brief supprime la Light voulu
+	 * 
+	 * @param name nom de la Light à supprimer
+	 */
+	void 		removeLight(const QString & name);
+
+
+	/**
+	 * @brief supprime la Piece demandée
+	 * 
+	 * @param name nom de la Piece à supprimer
+	 */
+	void 		removePiece(const QString & name);
 
 	/**
 	* @brief Retourne la liste des noms des pièces dans la scène

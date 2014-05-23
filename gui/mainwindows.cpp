@@ -2,7 +2,7 @@
 #include <iostream>
 #include "light.hpp"
 
-MainWindow::MainWindow():light(NULL),material(NULL),objet(NULL)
+MainWindow::MainWindow(const QString & path):light(NULL),material(NULL),objet(NULL)
 {
 /* ************************************** */
 //          Central  Widget               //
@@ -10,7 +10,7 @@ MainWindow::MainWindow():light(NULL),material(NULL),objet(NULL)
     QGLFormat f;
     f.setVersion(3, 2);
     f.setProfile(QGLFormat::CoreProfile);
-    widget = new MyOpenGLWidget(f,this);
+    widget = new MyOpenGLWidget(f,this, path);
     setCentralWidget(widget);
 //fin central Widget
 
@@ -523,11 +523,16 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                 tr("Open Scene"), "",
                 tr("XML files (*.xml)"));
      if (fileName!=NULL){
-         QGLFormat f;
-         f.setVersion(3, 2);
-         f.setProfile(QGLFormat::CoreProfile);
-         widget = new MyOpenGLWidget(f,this,fileName);
-         setCentralWidget(widget);
+
+        widget->close();
+        delete widget;
+
+        QGLFormat f;
+        f.setVersion(3, 2);
+        f.setProfile(QGLFormat::CoreProfile);
+        widget = new MyOpenGLWidget(f,this, fileName);
+        setCentralWidget(widget);
+
      }
     }
 

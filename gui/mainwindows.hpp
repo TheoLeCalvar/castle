@@ -34,7 +34,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow();
+    MainWindow(const QString & path = "");
     ~MainWindow();
 
 //___slots_________________________________//

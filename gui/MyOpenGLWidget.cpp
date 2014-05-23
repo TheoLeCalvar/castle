@@ -9,7 +9,7 @@ MyOpenGLWidget::MyOpenGLWidget(const QGLFormat & format, QWidget * parent, const
     //refresh tout les 1/60eme de seconde
      _timer = new QTimer(this);
      connect(_timer, SIGNAL(timeout()), this, SLOT(updateGL()));
-     _timer->start(0);
+     _timer->start(60.0/1000.0);
 
 
      setFocusPolicy(Qt::StrongFocus);
@@ -76,8 +76,10 @@ void	MyOpenGLWidget::initializeGL()
 
     glClearColor(0.3, 0.3, 0.3, 1.0);
    
-
-    _scene = new Scene(_path);
+    if(_path == "")
+        _scene= new Scene();
+    else
+        _scene = new Scene(_path);
 
 
 

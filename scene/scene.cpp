@@ -154,6 +154,28 @@ QString 	Scene::getShaderNameByID(GLuint id) const
 	return "not found";
 }
 
+void 		Scene::removeLight(const QString & name)
+{
+	Light * l = _lights.value(name);
+
+	if(l)
+	{
+		delete l;
+		_lights.remove(name);
+	}
+}
+
+void 		Scene::removePiece(const QString & name)
+{
+	Piece * p = _pieces.value(name);
+
+	if(p)
+	{
+		delete p;
+		_pieces.remove(name);
+	}
+}
+
 QStringList Scene::getPiecesName() const
 {
 	return _pieces.keys();
@@ -239,72 +261,72 @@ void 	Scene::loadMaterials(const QDomElement & dom)
 		QString nom = material.attribute("nom");
 		Material * tmp = new Material;
 
-			QDomNode var = material.firstChild();
+		QDomNode var = material.firstChild();
 
 
-			while(!var.isNull())
-			{
-				float r, b, g, a, s;
-				unsigned char location;
-				QString path;
-				if (var.isElement())
-				{	
-					QDomElement var2 = var.toElement();
+		while(!var.isNull())
+		{
+			float r, b, g, a, s;
+			QString type;
+			QString path;
+			if (var.isElement())
+			{	
+				QDomElement var2 = var.toElement();
 
-					if (var2.tagName() == "ambient")
-					{
-						r = var2.attribute("r", "0").toFloat();
-						g = var2.attribute("g", "0").toFloat();
-						b = var2.attribute("b", "0").toFloat();
-						a = var2.attribute("a", "0").toFloat();
+				if (var2.tagName() == "ambient")
+				{
+					r = var2.attribute("r", "0").toFloat();
+					g = var2.attribute("g", "0").toFloat();
+					b = var2.attribute("b", "0").toFloat();
+					a = var2.attribute("a", "0").toFloat();
 
-						tmp->set(GL_AMBIENT, vec4(r,g,b,a));
-					}
-					else if (var2.tagName() == "diffuse")
-					{
-						r = var2.attribute("r", "0").toFloat();
-						g = var2.attribute("g", "0").toFloat();
-						b = var2.attribute("b", "0").toFloat();
-						a = var2.attribute("a", "0").toFloat();
-
-						tmp->set(GL_DIFFUSE, vec4(r,g,b,a));
-					}
-					else if (var2.tagName() == "specular")
-					{
-						r = var2.attribute("r", "0").toFloat();
-						g = var2.attribute("g", "0").toFloat();
-						b = var2.attribute("b", "0").toFloat();
-						a = var2.attribute("a", "0").toFloat();
-						s = var2.attribute("s", "0").toFloat();
-
-						tmp->set(GL_SPECULAR, vec4(r,g,b,a));
-						tmp->set(s);
-					}
-					else if (var2.tagName() == "emissive")
-					{
-						r = var2.attribute("r", "0").toFloat();
-						g = var2.attribute("g", "0").toFloat();
-						b = var2.attribute("b", "0").toFloat();
-						a = var2.attribute("a", "0").toFloat();
-
-						tmp->set(GL_EMISSION, vec4(r,g,b,a));
-					}
-					else if (var2.tagName() == "texture")
-					{
-						path = var2.attribute("src", "");
-						location = var2.attribute("location", "500").toUInt();
-
-						if (location < 3)
-							tmp->addTexture(path, location);
-						else
-							tmp->addTexture(path, 0);
-						
-					}
+					tmp->set(GL_AMBIENT, vec4(r,g,b,a));
 				}
-				
+				else if (var2.tagName() == "diffuse")
+				{
+					r = var2.attribute("r", "0").toFloat();
+					g = var2.attribute("g", "0").toFloat();
+					b = var2.attribute("b", "0").toFloat();
+					a = var2.attribute("a", "0").toFloat();
 
-				var = var.nextSibling();
+					tmp->set(GL_DIFFUSE, vec4(r,g,b,a));
+				}
+				else if (var2.tagName() == "specular")
+				{
+					r = var2.attribute("r", "0").toFloat();
+					g = var2.attribute("g", "0").toFloat();
+					b = var2.attribute("b", "0").toFloat();
+					a = var2.attribute("a", "0").toFloat();
+					s = var2.attribute("s", "0").toFloat();
+
+					tmp->set(GL_SPECULAR, vec4(r,g,b,a));
+					tmp->set(s);
+				}
+				else if (var2.tagName() == "emissive")
+				{
+					r = var2.attribute("r", "0").toFloat();
+					g = var2.attribute("g", "0").toFloat();
+					b = var2.attribute("b", "0").toFloat();
+					a = var2.attribute("a", "0").toFloat();
+
+					tmp->set(GL_EMISSION, vec4(r,g,b,a));
+				}
+				else if (var2.tagName() == "texture")
+				{
+					path = var2.attribute("src", "");
+					type = var2.attribute("type", "diffuse");
+
+
+					qDebug() << "Type : " << type << path;
+
+					tmp->addTexture(path, type);
+
+					
+				}
 			}
+
+			var = var.nextSibling();
+		}
 
 		addMaterial(nom, tmp);
 
@@ -624,7 +646,7 @@ void 	Scene::loadPieces(const QDomElement & dom)
 
 bool Scene::saveAsXML(const QString & fileName)
 {
-	QDomDocument doc(fileName);
+	QDomDocument doc("scene");
 
 	QDomElement scene = doc.createElement("scene");
 
@@ -670,75 +692,77 @@ void Scene::saveMaterials(QDomElement & root, QDomDocument & doc) const
 
 	for(auto i = _materials.begin(); i != _materials.end(); ++i)
 	{
-		QDomElement material = doc.createElement("material");
-
-		material.setAttribute("nom", i.key());
-
-		vec3 ambient = i.value()->get(GL_AMBIENT);
-		vec3 diffuse = i.value()->get(GL_DIFFUSE);
-		vec3 specular = i.value()->get(GL_SPECULAR);
-		float shininess = i.value()->shininess();
-
-		QDomElement ambientE = doc.createElement("ambient");
-
-		ambientE.setAttribute("r", ambient[0]);
-		ambientE.setAttribute("g", ambient[1]);
-		ambientE.setAttribute("b", ambient[2]);
-
-
-		QDomElement diffuseE = doc.createElement("diffuse");
-
-		diffuseE.setAttribute("r", diffuse[0]);
-		diffuseE.setAttribute("g", diffuse[1]);
-		diffuseE.setAttribute("b", diffuse[2]);
-
-
-		QDomElement specularE = doc.createElement("specular");
-
-		specularE.setAttribute("r", specular[0]);
-		specularE.setAttribute("g", specular[1]);
-		specularE.setAttribute("b", specular[2]);
-		specularE.setAttribute("a", shininess);
-
-
-		material.appendChild(ambientE);
-		material.appendChild(diffuseE);	
-		material.appendChild(specularE);
-
-
-		if(i.value()->hasDiffuseTexture())
+		if(i.value()->isFromXML())
 		{
-			QDomElement diffuseT = doc.createElement("texture");
+			QDomElement material = doc.createElement("material");
 
-			diffuseT.setAttribute("src", i.value()->getDiffuseTextureName());
-			diffuseT.setAttribute("location", 0);
+			material.setAttribute("nom", i.key());
 
-			material.appendChild(diffuseT);
+			vec3 ambient = i.value()->get(GL_AMBIENT);
+			vec3 diffuse = i.value()->get(GL_DIFFUSE);
+			vec3 specular = i.value()->get(GL_SPECULAR);
+			float shininess = i.value()->shininess();
 
+			QDomElement ambientE = doc.createElement("ambient");
+
+			ambientE.setAttribute("r", ambient[0]);
+			ambientE.setAttribute("g", ambient[1]);
+			ambientE.setAttribute("b", ambient[2]);
+
+
+			QDomElement diffuseE = doc.createElement("diffuse");
+
+			diffuseE.setAttribute("r", diffuse[0]);
+			diffuseE.setAttribute("g", diffuse[1]);
+			diffuseE.setAttribute("b", diffuse[2]);
+
+
+			QDomElement specularE = doc.createElement("specular");
+
+			specularE.setAttribute("r", specular[0]);
+			specularE.setAttribute("g", specular[1]);
+			specularE.setAttribute("b", specular[2]);
+			specularE.setAttribute("s", shininess);
+
+
+			material.appendChild(ambientE);
+			material.appendChild(diffuseE);	
+			material.appendChild(specularE);
+
+
+			if(i.value()->hasDiffuseTexture())
+			{
+				QDomElement diffuseT = doc.createElement("texture");
+
+				diffuseT.setAttribute("src", i.value()->getDiffuseTextureName());
+				diffuseT.setAttribute("type", "diffuse");
+
+				material.appendChild(diffuseT);
+
+			}
+
+			if(i.value()->hasSpecularTexture())
+			{
+				QDomElement specularT = doc.createElement("texture");
+
+				specularT.setAttribute("src", i.value()->getSpecularTextureName());
+				specularT.setAttribute("type", "specular");
+
+				material.appendChild(specularT);
+			}
+
+			if(i.value()->hasNormalTexture())
+			{
+				QDomElement normalT = doc.createElement("texture");
+
+				normalT.setAttribute("src", i.value()->getNormalTextureName());
+				normalT.setAttribute("type", "normal");
+
+				material.appendChild(normalT);
+			}
+
+			materiaux.appendChild(material);
 		}
-
-		if(i.value()->hasSpecularTexture())
-		{
-			QDomElement specularT = doc.createElement("texture");
-
-			specularT.setAttribute("src", i.value()->getSpecularTextureName());
-			specularT.setAttribute("location", 2);
-
-			material.appendChild(specularT);
-		}
-
-		if(i.value()->hasNormalTexture())
-		{
-			QDomElement normalT = doc.createElement("texture");
-
-			normalT.setAttribute("src", i.value()->getNormalTextureName());
-			normalT.setAttribute("location", 1);
-
-			material.appendChild(normalT);
-		}
-
-		materiaux.appendChild(material);
-
 	}
 
 	root.appendChild(materiaux);
