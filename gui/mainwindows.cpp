@@ -90,9 +90,12 @@ void MainWindow::createMenus()
 
     Fichier = menuBar()->addMenu(tr("&Fichier"));
         Fichier->addAction(nouveauAct);
+            nouveauAct->setShortcut(QKeySequence("Ctrl+N"));
         Fichier->addAction(ouvrirAct);
+            ouvrirAct->setShortcut(QKeySequence("Ctrl+O"));
         Fichier->addAction(enregistrerAct);
             enregistrerAct->setIcon(QIcon("icones/save.png"));
+            enregistrerAct->setShortcut(QKeySequence("Ctrl+S"));
         Fichier->addSeparator();
         Fichier->addAction(kiterAct);
             kiterAct->setIcon(QIcon("icones/exit.png"));
@@ -515,12 +518,11 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
     }
 
     void MainWindow::Ouvrir(){
+
            QString fileName = QFileDialog::getOpenFileName(this,
                 tr("Open Scene"), "",
                 tr("XML files (*.xml)"));
      if (fileName!=NULL){
-           // widget->getScene()->~Scene();
-           // widget->setScene(new Scene(fileName));
 
         widget->close();
         delete widget;
@@ -530,6 +532,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
         f.setProfile(QGLFormat::CoreProfile);
         widget = new MyOpenGLWidget(f,this, fileName);
         setCentralWidget(widget);
+
      }
     }
 

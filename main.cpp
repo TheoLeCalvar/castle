@@ -8,11 +8,11 @@
 #include <QDebug>
 
 
-
 int main(int argc, char **argv)
 {
 	QApplication app(argc, argv);	
 	QDir dir(QApplication::applicationDirPath());
+
 
 	#ifdef Q_OS_OSX
 		dir.cdUp();
