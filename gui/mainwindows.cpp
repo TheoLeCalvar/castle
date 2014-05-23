@@ -1018,17 +1018,19 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
         if( modele->data ( (vue->selectionModel()->currentIndex().parent()), Qt::DisplayRole)=="Light")
             {
             std::cout<< "je suis une lumiere"<<std::endl;
-            //widget->getScene()removeLight(widget->getScene()->getLight(vue->selectionModel()->currentIndex().data().toString()));
+            widget->getScene()->removeLight(vue->selectionModel()->currentIndex().data().toString());
             }
         //supresion piece
         if( modele->data ( (vue->selectionModel()->currentIndex().parent()), Qt::DisplayRole)=="Objet")
             {
             std::cout<< "je suis une piece"<<std::endl;
+            widget->getScene()->removePiece(vue->selectionModel()->currentIndex().data().toString());
             }
         //supression objet
         if( modele->data ( (vue->selectionModel()->currentIndex().parent().parent()), Qt::DisplayRole)=="Objet")
             {
             std::cout<< "je suis un objet d'une piece"<<std::endl;
+            widget->getScene()->getPiece(vue->selectionModel()->currentIndex().parent().data().toString())->removeChild(vue->selectionModel()->currentIndex().data().toString());
             }
     }
 

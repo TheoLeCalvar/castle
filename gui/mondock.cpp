@@ -834,22 +834,22 @@ Mondock:: ~Mondock(){}
                 boxobjetrotationx = new QDoubleSpinBox();
                     boxobjetrotationx->setPrefix("X = ");
                     boxobjetrotationx->setSuffix("°");
-                    boxobjetrotationx->setRange(0,360);
+                    boxobjetrotationx->setRange(-360,360);
                     boxobjetrotationx->setValue(rotationtmp[2]);
                     connect(boxobjetrotationx, SIGNAL(valueChanged(double)),this, SLOT(rotobjectx(double)));
 
                 boxobjetrotationy = new QDoubleSpinBox();
                     boxobjetrotationy->setPrefix("Y = ");
                     boxobjetrotationy->setSuffix("°");
-                    boxobjetrotationy->setRange(0,360);
+                    boxobjetrotationy->setRange(-360,360);
                     boxobjetrotationy->setValue(rotationtmp[1]);
                     connect(boxobjetrotationy, SIGNAL(valueChanged(double)),this, SLOT(rotobjecty(double)));
 
                 boxobjetrotationz = new QDoubleSpinBox();
                     boxobjetrotationz->setPrefix("Z = ");
                     boxobjetrotationz->setSuffix("°");
-                    boxobjetrotationz->setRange(0,360);
-                    boxobjetrotationx->setValue(rotationtmp[0]);
+                    boxobjetrotationz->setRange(-360,360);
+                    boxobjetrotationz->setValue(rotationtmp[0]);
                     connect(boxobjetrotationz, SIGNAL(valueChanged(double)),this, SLOT(rotobjectz(double)));
 
                 //layout + layout au  widget
@@ -1014,21 +1014,21 @@ Mondock:: ~Mondock(){}
             rotspinboxx = new QDoubleSpinBox();
                 rotspinboxx->setPrefix("X = ");
                 rotspinboxx->setSuffix("°");
-                rotspinboxx->setRange(0,360);
+                rotspinboxx->setRange(-360,360);
                 rotspinboxx->setValue(_piece->rotation()[0]);
                 connect(rotspinboxx, SIGNAL(valueChanged(double)),this, SLOT(rotpiecex(double) ));
 
             rotspinboxy = new QDoubleSpinBox();
                 rotspinboxy->setPrefix("Y = ");
                 rotspinboxy->setSuffix("°");
-                rotspinboxy->setRange(0,360);
+                rotspinboxy->setRange(-360,360);
                 rotspinboxy->setValue(_piece->rotation()[1]);
                 connect(rotspinboxy, SIGNAL(valueChanged(double)),this, SLOT(rotpiecey(double) ));
 
             rotspinboxz = new QDoubleSpinBox();
                 rotspinboxz->setPrefix("Z = ");
                 rotspinboxz->setSuffix("°");
-                rotspinboxz->setRange(0,360);
+                rotspinboxz->setRange(-360,360);
                 rotspinboxz->setValue(_piece->rotation()[2]);
                 connect(rotspinboxz, SIGNAL(valueChanged(double)),this, SLOT(rotpiecez(double) ));
 
