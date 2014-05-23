@@ -77,6 +77,11 @@ Scene::~Scene()
 
 	for(auto i : _shaders)
 		delete i;
+
+	for(auto i : _loadedShaders)
+		delete i;
+
+	Material::clear();
 }
 
 

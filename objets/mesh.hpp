@@ -20,8 +20,7 @@
  * @class Mesh
  * @brief Charge un modèle 3D
  * @details Permet la lecture de fichiers contenant des modèles 3D
- * @warning Ne supporte pas tout les formats, seul les .ply sont totalement gérés, les .obj le sont partiellement
- * Ne lièbre pas (encore les vao/vbo)
+ * @warning Tout les formats de textures ne sont pas supportés, se référé au support de QImage
  * 
  */
 class Mesh: public Objet
@@ -38,6 +37,8 @@ private:
 		vec3 			minP;
 		vec3			maxP;
 		unsigned int 	nbReferences;
+
+		GLuint 			hitbox;
 	} MeshInfo;
 
 	MeshInfo * _infos;

@@ -137,15 +137,15 @@ vec3 Camera::getZ() const
 
 float Camera::getWidth() const
 {
-    return 0.5f;
+    return 0.2f;
 }
 
 float Camera::getHeight() const
 {
-    return 0.9f;
+    return 0.5f;
 }
 
 float Camera::getDepth() const
 {
-    return 0.5f;
+    return 0.2f;
 }

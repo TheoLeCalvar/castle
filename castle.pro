@@ -12,7 +12,7 @@ OBJECTS_DIR = build
 MOC_DIR = build
 
 
-#QMAKE_CXXFLAGS += -DDEBUG 
+#QMAKE_CXXFLAGS += -DDEBUG  -DNO_COLLIDE
 
 macx
 {

@@ -5,6 +5,8 @@
 
 class Hitbox
 {
+friend class Objet;
+friend class Piece;
 public:
 	/**
 	 * @brief Calcule la collision des deux OBB

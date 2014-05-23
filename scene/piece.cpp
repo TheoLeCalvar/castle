@@ -75,6 +75,17 @@ void Piece::dimensions(const vec3 v)
 
 bool Piece::collide(const Hitbox & h) const
 {
+	vec3 center = h.getP();
+	vec3 xAxis = h.getX(), yAxis = h.getY(), zAxis = h.getZ();
+	float width = h.getWidth(), height = h.getHeight(), depth = h.getDepth();
+
+	vec4 p1 =  vec4(_position, 0.0f);
+	vec4 p2 = p1 + vec4(_dimensions, 0.0f); 
+
+	transformVector(p1);
+	transformVector(p2);
+
+
 	for(Objet * i : _children)
 	{
 		if (i->collide(h))

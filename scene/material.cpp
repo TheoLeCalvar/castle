@@ -260,6 +260,17 @@ void Material::update()
 	
 }
 
+void Material::clear()
+{
+	for(QOpenGLTexture * i : _texturesLoaded)
+	{
+		i->destroy();
+		delete i;
+	}
+	
+	_texturesLoaded.clear();
+}
+
 QDebug operator<<(QDebug dbg, const Material &m)
 {
 	dbg.nospace() << "(Material " << &m <<" (ambiant" << m._ambient << ", diffuse" << m._diffuse << ", specular" << m._specular << ", emissive" << m._emissive << ", shininess(" <<m._shininess <<"), "<< m._diffuse_texture << "))";

@@ -24,6 +24,8 @@ protected:
 
 	GLuint 		_shaderId;
 
+	bool 		_drawHitbox;
+
 public:
 	/**
 	 * @brief Constructeur
@@ -117,6 +119,18 @@ public:
 	GLuint 			shaderId() const{return _shaderId;}
 
 	/**
+	 * @brief Affiche les Hitbox des objets capables d'en afficher
+	 * 
+	 * @param b valeur
+	 */
+	void 			drawHitbox(bool b){_drawHitbox = b;}
+
+	/**
+	 * @brief Affiche la Hitbox de l'objet
+	 */
+	bool 			drawHitbox() const{return _drawHitbox;}
+
+	/**
 	 * @brief Récupère le material de l'Objet
 	 * @return un pointeur valide ou NULL
 	 */
@@ -186,7 +200,7 @@ protected:
 	 * @brief Apllique au vecteur les transformation de l'objet et de ses pères
 	 * @details vec4 pour optimisation lors des casts 
 	 * 
-	 * @param v vec4 à calcuer
+	 * @param v vec4 à calculer
 	 */
 	void 			transformVector(vec4 & v) const;
 

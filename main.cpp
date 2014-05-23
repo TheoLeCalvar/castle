@@ -1,11 +1,12 @@
 #include <QApplication>
 #include <QDir>
 #include <QGLFormat>
-#include <QSurface>
+
 #include "mainwindows.hpp"
 
 #include <QString>
 #include <QDebug>
+
 
 
 int main(int argc, char **argv)
@@ -27,9 +28,13 @@ int main(int argc, char **argv)
 
 		f.setVersion(3, 2);
 		f.setProfile(QGLFormat::CoreProfile);
-		
-		MyOpenGLWidget w(f, NULL, "test.xml");
-		w.show();
+	
+
+
+		MyOpenGLWidget * w = new MyOpenGLWidget(f, NULL, "scene.xml");
+		w->show();
+
+
 
 		return app.exec();
 	}

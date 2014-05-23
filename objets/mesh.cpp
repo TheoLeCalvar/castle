@@ -148,6 +148,55 @@ Mesh* Mesh::loadMesh(const aiMesh * mesh)
 
 	func.glBindVertexArray(0);
 
+	float hitboxPoint[] =
+	{
+		info->minP[0], info->minP[1], info->minP[2],
+		info->maxP[0], info->minP[1], info->minP[2],
+		info->maxP[0], info->maxP[1], info->minP[2],
+		info->minP[0], info->maxP[1], info->minP[2],
+
+		info->minP[0], info->minP[1], info->maxP[2],
+		info->maxP[0], info->minP[1], info->maxP[2],
+		info->maxP[0], info->maxP[1], info->maxP[2],
+		info->minP[0], info->maxP[1], info->maxP[2]
+
+	};
+
+	unsigned char hitboxIndices[]
+	{
+		0, 1, 1, 2, 2, 3, 3, 0,
+		0, 4, 4, 7, 7, 3,
+		4, 5, 5, 6, 6, 7,
+		1, 5, 2, 6
+	};
+
+
+
+	GLuint vboPoints, vboIndices;
+
+	func.glGenBuffers(1, &vboPoints);
+	func.glGenBuffers(1, &vboIndices);
+
+
+	func.glBindBuffer(GL_ARRAY_BUFFER, vboPoints);
+	func.glBufferData(GL_ARRAY_BUFFER, 8 * 3 * sizeof(float), hitboxPoint, GL_STATIC_DRAW);
+
+
+    func.glBindBuffer (GL_ELEMENT_ARRAY_BUFFER, vboIndices);
+    func.glBufferData (GL_ELEMENT_ARRAY_BUFFER,  24 * sizeof (unsigned char), hitboxIndices, GL_STATIC_DRAW);
+
+
+	func.glGenVertexArrays(1, &(info->hitbox));
+	func.glBindVertexArray(info->hitbox);
+
+	func.glEnableVertexAttribArray(0);
+	func.glBindBuffer(GL_ARRAY_BUFFER, vboPoints);
+	func.glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, NULL);
+
+
+    func.glBindBuffer (GL_ELEMENT_ARRAY_BUFFER, vboIndices);
+
+
 	return ret;
 }
 
@@ -188,6 +237,15 @@ void Mesh::draw()
 
   	glDrawArrays (GL_TRIANGLES, 0, _infos->nbVertices);
 
+  	openGL_check_error();
+
+
+  	if(_drawHitbox)
+	{
+  		glBindVertexArray(_infos->hitbox);
+
+  		glDrawElements( GL_LINES, 24, GL_UNSIGNED_BYTE, 0);
+  	}
   	openGL_check_error();
 }
 

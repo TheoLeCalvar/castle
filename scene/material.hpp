@@ -146,6 +146,11 @@ public:
 	 */
 	void update();	
 
+	/**
+	 * @brief Libère les textures chargées
+	 */
+	static void clear();
+
 	friend QDebug operator<<(QDebug dbg, const Material &m);
 };
 

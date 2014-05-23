@@ -1,14 +1,14 @@
 #include "objet.hpp"
 
 Objet::Objet(const QString & name, Material * mat, vec3 rotation, vec3 position, Objet * parent)
-		:_parent(parent), _mat(mat), _name(name), _rotation(rotation), _position(position), _scale(1.0f, 1.0f, 1.0f), _model(1), _shaderId(0)
+		:_parent(parent), _mat(mat), _name(name), _rotation(rotation), _position(position), _scale(1.0f, 1.0f, 1.0f), _model(1), _shaderId(0), _drawHitbox(true)
 {
 	initializeOpenGLFunctions(); 
 	updateModel();
 }
 
 Objet::Objet(const Objet & o)
-		:_parent(o._parent), _mat(o._mat), _name(o._name), _rotation(o._rotation), _position(o._position), _scale(o._scale), _model(o._model), _shaderId(o._shaderId)
+		:_parent(o._parent), _mat(o._mat), _name(o._name), _rotation(o._rotation), _position(o._position), _scale(o._scale), _model(o._model), _shaderId(o._shaderId), _drawHitbox(o._drawHitbox)
 {
 	initializeOpenGLFunctions(); 
 }

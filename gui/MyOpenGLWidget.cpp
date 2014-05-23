@@ -19,6 +19,8 @@ MyOpenGLWidget::MyOpenGLWidget(const QGLFormat & format, QWidget * parent, const
 
 MyOpenGLWidget::~MyOpenGLWidget()
 {
+    makeCurrent();
+
     if (_scene)
     {
         delete _scene;
@@ -54,10 +56,13 @@ void    MyOpenGLWidget::setScene(Scene * scene)
 
 void	MyOpenGLWidget::initializeGL()
 {
+    makeCurrent();
     initializeOpenGLFunctions();
+
 
     qDebug("Vendor : %s\nRenderer : %s\nVersion : %s", glGetString( GL_VENDOR), glGetString(GL_RENDERER), glGetString(GL_VERSION));
     qDebug() << "Current context : " << format(); 
+    qDebug() << context() << context()->isValid();
     qDebug() << QDir::current().entryList();
 
 
@@ -100,7 +105,6 @@ void	MyOpenGLWidget::paintGL()
 
 void	MyOpenGLWidget::resizeGL(int width, int height)
 {
-
     glViewport(0,0, width, height);
 
     setProjectionMatrix(projectionMatrix(70.0, width/(float)height, 0.1f, 100.0f));
