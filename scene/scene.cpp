@@ -116,6 +116,10 @@ void 	Scene::draw()
 
         	openGL_check_error();
         }
+
+        Light::updateAmbient();
+
+        openGL_check_error();
     }
 
 	for(auto i : _pieces)

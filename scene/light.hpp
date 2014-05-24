@@ -80,6 +80,18 @@ public:
 	 * @param  number slot de lumière à utiliser dans la shader
 	 */
 	void update(unsigned char number);
+
+	/**
+	 * @brief Met à jour la lumière ambient
+	 */
+	static void updateAmbient();
+
+	/**
+	 * @brief Modifie la composante ambient de la lumière
+	 * 
+	 * @param v nouvelle composante
+	 */
+	static void ambient(const vec3 & v){_ambient = v;}
 	
 };
 
