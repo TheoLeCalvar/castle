@@ -80,8 +80,25 @@ vec3& Light::get(GLenum type)
 	}
 }
 
+// désactiver les lumières non utilisées
+void Light::disable(unsigned char number)
+{
+	QOpenGLFunctions_3_2_Core f;
+	f.initializeOpenGLFunctions();
 
-void Light::update(char number)
+	GLuint 	shader = getActiveShader();
+	char 	enable[] = "Lights[0].enabled";
+	enable[7] += number;
+
+	GLint enabled_location = f.glGetUniformLocation(shader, enable);
+
+	f.glUniform1i(enabled_location, 0);
+
+	openGL_check_error();
+}
+
+
+void Light::update(unsigned char number)
 {
 	GLuint 	shader = getActiveShader();
 	char	name[] = "Lights[0].Ld";
