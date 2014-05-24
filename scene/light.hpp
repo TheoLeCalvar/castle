@@ -69,10 +69,17 @@ public:
 	vec3 & get(GLenum type);
 
 	/**
+	 * @brief Désactive la lumière dans le shader
+	 * 
+	 * @param number numéro de la lumière à désactiver
+	 */
+	static void disable(unsigned char number);
+
+	/**
 	 * @brief Met à jour le shader avec les infos de la lumière
 	 * @param  number slot de lumière à utiliser dans la shader
 	 */
-	void update(char number);
+	void update(unsigned char number);
 	
 };
 
