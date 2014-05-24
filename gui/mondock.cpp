@@ -34,6 +34,20 @@ Mondock:: ~Mondock(){}
                     {traitementobjet();}
      }//fin selectionparent
 
+/* ************************************ */
+//          slot lumiere  (just amb)    //
+/* ************************************ */
+
+    void Mondock::lumiereambiantejustx( int x )
+            {}
+    void Mondock::lumiereambiantejusty( int x )
+            {}
+    void Mondock::lumiereambiantejustz( int x )
+            {}
+
+/* ************************************ */
+//          slot lumiere                //
+/* ************************************ */
     void Mondock::amblightfuncx( int x )
             {
             _light->get(GL_AMBIENT)[0] = x/255.0;
@@ -130,7 +144,9 @@ Mondock:: ~Mondock(){}
             _light->get(GL_POSITION)[2]=x;
             }
 
-    //materiaux
+/* ************************************ */
+//          slot materiaux              //
+/* ************************************ */
         void Mondock::emimaterialfuncx( int x )
             {
             }
@@ -194,7 +210,9 @@ Mondock:: ~Mondock(){}
             }
 
 
-        //objet
+/* ************************************ */
+//              slot objet              //
+/* ************************************ */
         void Mondock::matobjet( const QString & text  )
             {
             _objet->material( dockscene->getMaterial( text ) );
@@ -270,7 +288,9 @@ Mondock:: ~Mondock(){}
             _objet->scale(vec3(x/10.0,x/10.0,x/10.0));
             }
 
-        //piece
+/* ************************************ */
+//               slot piece             //
+/* ************************************ */
         void Mondock::slotpositionpiecex( int x )
             {
             vec3 vectmp = _piece->position();
@@ -352,9 +372,33 @@ Mondock:: ~Mondock(){}
         editionambiante = new QWidget();
 
         //declaration des element
+        vec3 vectmp = Light::ambient();
 
+        spinboxlumiereambiantex = new QSpinBox();
+            spinboxlumiereambiantex->setRange(0,255);
+            spinboxlumiereambiantex->setPrefix("X = ");
+            //spinboxlumiereambiantex->setValue();
+            connect(spinboxlumiereambiantex, SIGNAL(valueChanged(int)),this, SLOT(lumiereambiantejustx(int)));
+
+        spinboxlumiereambiantey = new QSpinBox();
+            spinboxlumiereambiantey->setRange(0,255);
+            spinboxlumiereambiantey->setPrefix("Y = ");
+            //spinboxlumiereambiantey->setValue(vectmp[1]);
+            connect(spinboxlumiereambiantey, SIGNAL(valueChanged(int)),this, SLOT(lumiereambiantejusty(int)));
+
+        spinboxlumiereambiantez = new QSpinBox();
+            spinboxlumiereambiantez->setRange(0,255);
+            spinboxlumiereambiantez->setPrefix("Z = ");
+            //spinboxlumiereambiantez->setValue(vectmp[3]);
+            connect(spinboxlumiereambiantez, SIGNAL(valueChanged(int)),this, SLOT(lumiereambiantejustz(int)));
 
         //partie layout
+        layouteditionlighamb = new QHBoxLayout();
+            layouteditionlighamb->addWidget(spinboxlumiereambiantex);
+            layouteditionlighamb->addWidget(spinboxlumiereambiantey);
+            layouteditionlighamb->addWidget(spinboxlumiereambiantez);
+
+        editionambiante->setLayout(layouteditionlighamb);
 
         //fixe de widget et afiche le dockwidget
         this->setWidget(editionambiante);

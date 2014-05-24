@@ -3,6 +3,7 @@
 
 #include "scene.hpp"
 #include "helper.hpp"
+#include "light.hpp"
 
 #include <QApplication>
 #include <QComboBox>
@@ -75,8 +76,13 @@ private:
                //lumiere(juste composante ambiante)
 /* ******************************************************** */
 
-            QWidget * editionambiante;
+            QWidget*        editionambiante;
 
+            QSpinBox*       spinboxlumiereambiantex;
+            QSpinBox*       spinboxlumiereambiantey;
+            QSpinBox*       spinboxlumiereambiantez;
+
+            QHBoxLayout*    layouteditionlighamb;
 /* ******************************************************** */
              //lumiere
 /* ******************************************************** */
@@ -265,7 +271,11 @@ private:
 
 private slots:
     void selectionlight();
-
+    //lumiere(ambiante)
+    void lumiereambiantejustx( int x );
+    void lumiereambiantejusty( int x );
+    void lumiereambiantejustz( int x );
+    //lumiere
     void poslightfuncx( double x );
     void poslightfuncy( double x );
     void poslightfuncz( double x );
