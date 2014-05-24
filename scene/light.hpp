@@ -80,6 +80,11 @@ public:
 	 * @param  number slot de lumière à utiliser dans la shader
 	 */
 	void update(unsigned char number);
+
+	/**
+	 * @brief Met à jour la lumière ambient
+	 */
+	static void updateAmbient();
 	
 };
 

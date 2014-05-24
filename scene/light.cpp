@@ -108,7 +108,6 @@ void Light::update(unsigned char number)
 	name[7] += number;
 
 	GLint enabled_location = glGetUniformLocation(shader, enable);
-	GLint ambient_location = glGetUniformLocation(shader, "La");
 	GLint diffuse_location = glGetUniformLocation(shader, name);
 
 	name[11] = 's';
@@ -119,11 +118,24 @@ void Light::update(unsigned char number)
 
 
 	glUniform1i(enabled_location, 1);
-	glUniform3fv(ambient_location, 1, _ambient.v);
 	glUniform3fv(diffuse_location, 1, _diffuse.v);
 	glUniform3fv(specular_location, 1, _specular.v);
 	glUniform3fv(position_location, 1, _position.v);
 
 	openGL_check_error();
 
+}
+
+void Light::updateAmbient()
+{
+	QOpenGLFunctions_3_2_Core f;
+	f.initializeOpenGLFunctions();
+
+	GLuint 	shader = getActiveShader();
+
+	GLint ambient_location = f.glGetUniformLocation(shader, "La");
+
+	f.glUniform3fv(ambient_location, 1, _ambient.v);
+
+	openGL_check_error();
 }
