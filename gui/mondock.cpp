@@ -15,6 +15,9 @@ Mondock:: ~Mondock(){}
          indexElementSelectionne = selection->currentIndex();
          elementSelectionneParent = dockmodele->data(indexElementSelectionne.parent(), Qt::DisplayRole);
 
+         //si on edite light
+         if ((dockmodele->data(indexElementSelectionne,Qt::DisplayRole ).toString()) == "Light")
+                    {traitementambiante();}
          //si parent = light
          if (elementSelectionneParent.toString() == "Light")
                      { traitementlumiere();}
@@ -334,6 +337,29 @@ Mondock:: ~Mondock(){}
 
 //_____slots_________________________//
 
+/* ************************************ */
+//       lumiere (compostante amb)      //
+/* ************************************ */
+    void Mondock::traitementambiante()
+        {
+        indexlightSelectionne = selection->currentIndex();
+        lightselectioner = dockmodele->data(indexlightSelectionne, Qt::DisplayRole);
+
+        //renome le dockwidget
+        this->setWindowTitle("Edition (ambiante):  " + lightselectioner.toString());
+
+        //creation qwidget
+        editionambiante = new QWidget();
+
+        //declaration des element
+
+
+        //partie layout
+
+        //fixe de widget et afiche le dockwidget
+        this->setWidget(editionambiante);
+        this->show();
+        }
 
 /* ************************************ */
 //             lumiere                  //

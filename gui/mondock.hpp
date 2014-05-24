@@ -72,6 +72,12 @@ private:
              QStandardItemModel* modelpiece;//(model de la liste des piece)
 
 /* ******************************************************** */
+               //lumiere(juste composante ambiante)
+/* ******************************************************** */
+
+            QWidget * editionambiante;
+
+/* ******************************************************** */
              //lumiere
 /* ******************************************************** */
 
@@ -251,6 +257,7 @@ private:
                     QDoubleSpinBox* rotspinboxy;
                     QDoubleSpinBox* rotspinboxz;
 
+                void traitementambiante();
                 void traitementlumiere();
                 void traitementmaterial();
                 void traitementobjet();
