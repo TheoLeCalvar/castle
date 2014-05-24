@@ -39,11 +39,20 @@ Mondock:: ~Mondock(){}
 /* ************************************ */
 
     void Mondock::lumiereambiantejustx( int x )
-            {}
+            {
+            vec3 vectmp = Light::ambient();
+            Light::ambient(vec3 (x/255.0 ,vectmp[1],vectmp[2] ) );
+            }
     void Mondock::lumiereambiantejusty( int x )
-            {}
+            {
+            vec3 vectmp = Light::ambient();
+            Light::ambient(vec3 (vectmp[0] ,x/255.0,vectmp[2] ) );
+            }
     void Mondock::lumiereambiantejustz( int x )
-            {}
+            {
+            vec3 vectmp = Light::ambient();
+            Light::ambient(vec3 (vectmp[0] ,vectmp[1],x/255.0 ) );
+            }
 
 /* ************************************ */
 //          slot lumiere                //
@@ -377,19 +386,19 @@ Mondock:: ~Mondock(){}
         spinboxlumiereambiantex = new QSpinBox();
             spinboxlumiereambiantex->setRange(0,255);
             spinboxlumiereambiantex->setPrefix("X = ");
-            //spinboxlumiereambiantex->setValue();
+            spinboxlumiereambiantex->setValue(vectmp[0]*255);
             connect(spinboxlumiereambiantex, SIGNAL(valueChanged(int)),this, SLOT(lumiereambiantejustx(int)));
 
         spinboxlumiereambiantey = new QSpinBox();
             spinboxlumiereambiantey->setRange(0,255);
             spinboxlumiereambiantey->setPrefix("Y = ");
-            //spinboxlumiereambiantey->setValue(vectmp[1]);
+            spinboxlumiereambiantey->setValue(vectmp[1]*255);
             connect(spinboxlumiereambiantey, SIGNAL(valueChanged(int)),this, SLOT(lumiereambiantejusty(int)));
 
         spinboxlumiereambiantez = new QSpinBox();
             spinboxlumiereambiantez->setRange(0,255);
             spinboxlumiereambiantez->setPrefix("Z = ");
-            //spinboxlumiereambiantez->setValue(vectmp[3]);
+            spinboxlumiereambiantez->setValue(vectmp[2]*255);
             connect(spinboxlumiereambiantez, SIGNAL(valueChanged(int)),this, SLOT(lumiereambiantejustz(int)));
 
         //partie layout
