@@ -92,6 +92,11 @@ public:
 	 * @param v nouvelle composante
 	 */
 	static void ambient(const vec3 & v){_ambient = v;}
+
+	/**
+	 * @brief retourne le vecteur des composantes ambient
+	 */
+	static vec3 & ambient(){return _ambient;}
 	
 };
 
