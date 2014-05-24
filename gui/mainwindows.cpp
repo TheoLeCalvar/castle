@@ -1029,11 +1029,13 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
         //supression objet
         if( modele->data ( (vue->selectionModel()->currentIndex().parent().parent()), Qt::DisplayRole)=="Objet")
             {
+            std::cout<< vue->selectionModel()->currentIndex().parent().data().toString().toStdString() << std::endl;
+            std::cout<<vue->selectionModel()->currentIndex().data().toString().toStdString() <<std::endl;
+
             widget->getScene()->getPiece(vue->selectionModel()->currentIndex().parent().data().toString())->removeChild(vue->selectionModel()->currentIndex().data().toString());
 
             objet->child(vue->selectionModel()->currentIndex().parent().row())->removeRow(vue->selectionModel()->currentIndex().row());
-                        std::cout<< vue->selectionModel()->currentIndex().parent().data().toString().toStdString() << std::endl;
-                        std::cout<<vue->selectionModel()->currentIndex().data().toString().toStdString() <<std::endl;
+
             }
     }
 
