@@ -1142,14 +1142,16 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             if (listobjetpiece.at(i) ==   (combopieceajoutmur->currentText() + "_haut")) haut = true;
             }
 
+        if (modelajoutmurmur!=NULL ) delete modelajoutmurmur;
+
         modelajoutmurmur = new QStandardItemModel(this);
 
-        if (arriere == false)  modelajoutmurmur->setItem(cpt,new QStandardItem(combopieceajoutmur->currentText() + "_arriere")) ;cpt++;
-        if (avant   == false)  modelajoutmurmur->setItem(cpt,new QStandardItem(combopieceajoutmur->currentText() + "_avant")) ;cpt++;
-        if (bas     == false)  modelajoutmurmur->setItem(cpt,new QStandardItem(combopieceajoutmur->currentText() + "_bas")) ;cpt++;
-        if (droite  == false)  modelajoutmurmur->setItem(cpt,new QStandardItem(combopieceajoutmur->currentText() + "_droite")) ;cpt++;
-        if (gauche  == false)  modelajoutmurmur->setItem(cpt,new QStandardItem(combopieceajoutmur->currentText() + "_gauche")) ;cpt++;
-        if (haut    == false)  modelajoutmurmur->setItem(cpt,new QStandardItem(combopieceajoutmur->currentText() + "_haut")) ;cpt++;
+        if (arriere == false) {  modelajoutmurmur->setItem(cpt,new QStandardItem(combopieceajoutmur->currentText() + "_arriere")) ;cpt++;}
+        if (avant   == false) {  modelajoutmurmur->setItem(cpt,new QStandardItem(combopieceajoutmur->currentText() + "_avant")) ;cpt++;}
+        if (bas     == false) {  modelajoutmurmur->setItem(cpt,new QStandardItem(combopieceajoutmur->currentText() + "_bas")) ;cpt++;}
+        if (droite  == false) {  modelajoutmurmur->setItem(cpt,new QStandardItem(combopieceajoutmur->currentText() + "_droite")) ;cpt++;}
+        if (gauche  == false) {  modelajoutmurmur->setItem(cpt,new QStandardItem(combopieceajoutmur->currentText() + "_gauche")) ;cpt++;}
+        if (haut    == false) {  modelajoutmurmur->setItem(cpt,new QStandardItem(combopieceajoutmur->currentText() + "_haut")) ;cpt++;}
 
         combomurajoutmur->setModel(modelajoutmurmur);
 
