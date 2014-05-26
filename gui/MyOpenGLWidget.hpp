@@ -41,8 +41,10 @@ private:
 	GLuint 						_framebuffer;
 	GLuint 						_texture;
 	GLuint						_renderbuffer;
+	QOpenGLShaderProgram * 		_activeProgram;
 
-	QOpenGLShaderProgram 	*	_postProcess;
+	QMap<QString, QOpenGLShaderProgram *> _postProcessPrograms;
+
 
 public:
 	MyOpenGLWidget(const QGLFormat & format, QWidget * parent = 0, const QString & path = "", const QGLWidget * shareWidget = 0, Qt::WindowFlags f = 0);
@@ -63,6 +65,10 @@ public:
 
 	virtual void 	mouseMoveEvent(QMouseEvent * event);
 	virtual void 	mousePressEvent(QMouseEvent * event);
+
+	void 			useShader(const QString & name);
+	void 			addShader(const QString & name, const QString & vertex, const QString & fragment);
+	QStringList		getShaderNames();
 
 private:
 	void initFramebuffer(int width, int height);

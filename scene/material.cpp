@@ -203,7 +203,7 @@ void Material::update()
 	glUniform1f(specular_exponnent_location, _shininess);
 	// glUniform3fv(emissive_location, 1, _emissive.v);
 
-	if (hasDiffuseTexture() && (diffuse_texture_location >=0))
+	if (hasDiffuseTexture() && (diffuse_texture_location >= 0))
 	{
 		glUniform1f(use_diffuse_texture_location, 1.0);
 
@@ -216,7 +216,7 @@ void Material::update()
 		glUniform1f(use_diffuse_texture_location, 0.0);
 	}
 
-	if (hasSpecularTexture() && (specular_texture_location >=0))
+	if (hasSpecularTexture() && (specular_texture_location >= 0))
 	{
 		glUniform1f(use_specular_texture_location, 1.0);
 
@@ -229,7 +229,7 @@ void Material::update()
 		glUniform1f(use_specular_texture_location, 0.0);
 	}
 
-	if (hasNormalTexture() && (normal_texture_location >=0))
+	if (hasNormalTexture() && (normal_texture_location >= 0))
 	{
 		glUniform1f(use_normal_texture_location, 1.0);
 
@@ -250,7 +250,6 @@ void Material::clear()
 {
 	for(QOpenGLTexture * i : _texturesLoaded)
 	{
-		i->destroy();
 		delete i;
 	}
 	

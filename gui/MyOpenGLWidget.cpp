@@ -4,7 +4,7 @@
 #include <vector>
 
 MyOpenGLWidget::MyOpenGLWidget(const QGLFormat & format, QWidget * parent, const QString & path, const QGLWidget * shareWidget, Qt::WindowFlags f):
-	QGLWidget(format, parent, shareWidget, f), _captureMouse(false), _path(path), _vao_quad(0), _framebuffer(0), _texture(0), _renderbuffer(0), _postProcess(0)
+	QGLWidget(format, parent, shareWidget, f), _captureMouse(false), _path(path), _vao_quad(0), _framebuffer(0), _texture(0), _renderbuffer(0), _activeProgram(0)
 {
     //refresh tout les 1/60eme de seconde
      _timer = new QTimer(this);
@@ -123,24 +123,9 @@ void	MyOpenGLWidget::initializeGL()
 
     glBindVertexArray(0);
 
+    addShader("base", "shaders/post_process.vert", "shaders/post_process.frag");
+    useShader("base");
 
-    _postProcess = new QOpenGLShaderProgram(this);
-
-    if(!_postProcess->addShaderFromSourceFile(QOpenGLShader::Vertex, "shaders/post_process.vert"))
-    {
-        qDebug() << "Erreur de chargement du vertex" << _postProcess->log();
-    }
-
-    if(!_postProcess->addShaderFromSourceFile(QOpenGLShader::Fragment, "shaders/post_process.frag"))
-    {
-        qDebug() << "Erreur de chargement du fragment" << _postProcess->log();
-    }
-
-    if(!_postProcess->link())
-    {
-        qDebug() << "Erreur de linkage !";
-        qFatal("Erreur fatale");
-    }
 }
 
 
@@ -149,7 +134,10 @@ void	MyOpenGLWidget::paintGL()
     QElapsedTimer timer;
     timer.start();
 
-    glBindFramebuffer(GL_FRAMEBUFFER, _framebuffer);
+    if(_activeProgram)
+        glBindFramebuffer(GL_FRAMEBUFFER, _framebuffer);
+
+
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 
@@ -157,19 +145,21 @@ void	MyOpenGLWidget::paintGL()
 
     openGL_check_error();
 
+    if(_activeProgram)
+    {
+        glBindFramebuffer(GL_FRAMEBUFFER, 0);  
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glUseProgram(_activeProgram->programId());
 
-    glBindFramebuffer(GL_FRAMEBUFFER, 0);  
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glUseProgram(_postProcess->programId());
+        glBindVertexArray(_vao_quad);
 
-    glBindVertexArray(_vao_quad);
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, _texture);
 
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, _texture);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
 
-    glDrawArrays(GL_TRIANGLES, 0, 6);
-
-    glBindVertexArray(0);
+        glBindVertexArray(0);
+    }
     setActiveShader(0);
 
     openGL_check_error();
@@ -309,6 +299,40 @@ void    MyOpenGLWidget::mousePressEvent(QMouseEvent *)
 
         setCursor(Qt::BlankCursor);
     }
+}
+
+void            MyOpenGLWidget::useShader(const QString & name)
+{
+    _activeProgram = _postProcessPrograms.value(name);
+}
+
+void            MyOpenGLWidget::addShader(const QString & name, const QString & vertex, const QString & fragment)
+{
+    QOpenGLShaderProgram *p = new QOpenGLShaderProgram(this);
+
+    if(!p->addShaderFromSourceFile(QOpenGLShader::Vertex, vertex))
+    {
+        qDebug() << "Erreur de chargement du vertex" << p->log();
+    }
+
+    if(!p->addShaderFromSourceFile(QOpenGLShader::Fragment, fragment))
+    {
+        qDebug() << "Erreur de chargement du fragment" << p->log();
+    }
+
+    if(!p->link())
+    {
+        qDebug() << "Erreur de linkage !";
+    }
+    else
+    {
+        _postProcessPrograms.insert(name, p);
+    }
+}
+
+QStringList     MyOpenGLWidget::getShaderNames()
+{
+    return _postProcessPrograms.keys();
 }
 
 void MyOpenGLWidget::initFramebuffer(int width, int height)
