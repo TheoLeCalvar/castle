@@ -383,26 +383,26 @@ Mondock:: ~Mondock(){}
         //declaration des element
         vec3 vectmp = Light::ambient();
 
-        spinboxlumiereambiantex = new QSpinBox(this);
+        spinboxlumiereambiantex = new QSpinBox(editionambiante);
             spinboxlumiereambiantex->setRange(0,255);
             spinboxlumiereambiantex->setPrefix("X = ");
             spinboxlumiereambiantex->setValue(vectmp[0]*255);
             connect(spinboxlumiereambiantex, SIGNAL(valueChanged(int)),this, SLOT(lumiereambiantejustx(int)));
 
-        spinboxlumiereambiantey = new QSpinBox(this);
+        spinboxlumiereambiantey = new QSpinBox(editionambiante);
             spinboxlumiereambiantey->setRange(0,255);
             spinboxlumiereambiantey->setPrefix("Y = ");
             spinboxlumiereambiantey->setValue(vectmp[1]*255);
             connect(spinboxlumiereambiantey, SIGNAL(valueChanged(int)),this, SLOT(lumiereambiantejusty(int)));
 
-        spinboxlumiereambiantez = new QSpinBox(this);
+        spinboxlumiereambiantez = new QSpinBox(editionambiante);
             spinboxlumiereambiantez->setRange(0,255);
             spinboxlumiereambiantez->setPrefix("Z = ");
             spinboxlumiereambiantez->setValue(vectmp[2]*255);
             connect(spinboxlumiereambiantez, SIGNAL(valueChanged(int)),this, SLOT(lumiereambiantejustz(int)));
 
         //partie layout
-        layouteditionlighamb = new QHBoxLayout(this);
+        layouteditionlighamb = new QHBoxLayout(editionambiante);
             layouteditionlighamb->addWidget(spinboxlumiereambiantex);
             layouteditionlighamb->addWidget(spinboxlumiereambiantey);
             layouteditionlighamb->addWidget(spinboxlumiereambiantez);
@@ -445,27 +445,27 @@ Mondock:: ~Mondock(){}
         //creation des 4 widget du Qtab
 
         //widget1
-        tablightpos = new QWidget(this);
-            lightdoublespinboxx = new QDoubleSpinBox(this);
+        tablightpos = new QWidget(tablight);
+            lightdoublespinboxx = new QDoubleSpinBox(tablightpos);
                 lightdoublespinboxx->setPrefix("X = ");
                 lightdoublespinboxx->setRange(-1000,1000);
                 lightdoublespinboxx->setValue(this->_light->get(GL_POSITION)[0]);
             connect(lightdoublespinboxx, SIGNAL(valueChanged(double)),this, SLOT(poslightfuncx(double)));
 
-            lightdoublespinboxy = new QDoubleSpinBox(this);
+            lightdoublespinboxy = new QDoubleSpinBox(tablightpos);
                 lightdoublespinboxy->setPrefix("Y = ");
                 lightdoublespinboxy->setRange(-1000,1000);
                 lightdoublespinboxy->setValue(this->_light->get(GL_POSITION)[1]);
             connect(lightdoublespinboxy, SIGNAL(valueChanged(double)),this, SLOT(poslightfuncy(double)));
 
-            lightdoublespinboxz = new QDoubleSpinBox(this);
+            lightdoublespinboxz = new QDoubleSpinBox(tablightpos);
                 lightdoublespinboxz->setPrefix("Z = ");
                 lightdoublespinboxz->setRange(-1000,1000);
                 lightdoublespinboxz->setValue(this->_light->get(GL_POSITION)[2]);
             connect(lightdoublespinboxz, SIGNAL(valueChanged(double)),this, SLOT(poslightfuncz(double)));
 
             //partie layout
-            tablightposlayout = new QHBoxLayout(this);
+            tablightposlayout = new QHBoxLayout(tablightpos);
                 tablightposlayout->addWidget(lightdoublespinboxx);
                 tablightposlayout->addWidget(lightdoublespinboxy);
                 tablightposlayout ->addWidget(lightdoublespinboxz);
@@ -475,7 +475,7 @@ Mondock:: ~Mondock(){}
           tablightpos->setLayout(tablightposlayout);
 
         //widget2
-        tablightdif = new QWidget(this);
+        tablightdif = new QWidget(tablight);
              sliderdifx = new QSlider(Qt::Horizontal);
                     sliderdifx->setMinimum(0);
                     sliderdifx->setMaximum(255);
@@ -495,9 +495,9 @@ Mondock:: ~Mondock(){}
              connect(sliderdifz, SIGNAL(valueChanged ( int )), this, SLOT(diflightfuncz(int)));
 
              //partie label
-                 labeldifx = new QLabel(this);
-                 labeldify = new QLabel(this);
-                 labeldifz = new QLabel(this);
+                 labeldifx = new QLabel(tablightdif);
+                 labeldify = new QLabel(tablightdif);
+                 labeldifz = new QLabel(tablightdif);
 
                  xtmp = ((this->_light->get(GL_DIFFUSE)[0])*255);
                  ytmp = ((this->_light->get(GL_DIFFUSE)[1])*255);
@@ -514,10 +514,10 @@ Mondock:: ~Mondock(){}
                  labeldifz->setText(" Z = " + sztmp);
 
              //partie layout
-                 tabdiflayout= new QVBoxLayout(this);
+                 tabdiflayout= new QVBoxLayout(tablightdif);
 
-                    labeldiflayout = new QHBoxLayout(this);
-                    lightdiflayout = new QHBoxLayout(this);
+                    labeldiflayout = new QHBoxLayout();
+                    lightdiflayout = new QHBoxLayout();
 
                        labeldiflayout->addWidget(labeldifx);
                        lightdiflayout->addWidget(sliderdifx);
@@ -534,7 +534,7 @@ Mondock:: ~Mondock(){}
                tablightdif->setLayout(tabdiflayout);
 
         //widget3
-        tablightspe = new QWidget(this);
+        tablightspe = new QWidget(tablight);
              sliderspex = new QSlider(Qt::Horizontal);
                     sliderspex->setMinimum(0);
                     sliderspex->setMaximum(255);
@@ -555,9 +555,9 @@ Mondock:: ~Mondock(){}
               connect(sliderspez, SIGNAL(valueChanged ( int )), this, SLOT(spelightfuncz(int)));
 
               //partie label
-                  labelspex = new QLabel(this);
-                  labelspey = new QLabel(this);
-                  labelspez = new QLabel(this);
+                  labelspex = new QLabel(tablightspe);
+                  labelspey = new QLabel(tablightspe);
+                  labelspez = new QLabel(tablightspe);
 
                   xtmp = ((this->_light->get(GL_SPECULAR)[0])*255);
                   ytmp = ((this->_light->get(GL_SPECULAR)[1])*255);
@@ -573,10 +573,10 @@ Mondock:: ~Mondock(){}
                   labelspez->setText(" Z = " + sztmp);
 
               //partie layout
-                  tabspelayout= new QVBoxLayout(this);
+                  tabspelayout= new QVBoxLayout(tablightspe);
 
-                     labelspelayout = new QHBoxLayout(this);
-                     lightspelayout = new QHBoxLayout(this);
+                     labelspelayout = new QHBoxLayout();
+                     lightspelayout = new QHBoxLayout();
 
                         labelspelayout->addWidget(labelspex);
                         lightspelayout->addWidget(sliderspex);
@@ -593,7 +593,7 @@ Mondock:: ~Mondock(){}
                 tablightspe->setLayout(tabspelayout);
 
         //widget4
-        tablightamb = new QWidget(this);
+        tablightamb = new QWidget(tablight);
              sliderambx = new QSlider(Qt::Horizontal);
                     sliderambx->setMinimum(0);
                     sliderambx->setMaximum(255);
@@ -612,9 +612,9 @@ Mondock:: ~Mondock(){}
                      sliderambz->setValue((int)((this->_light->get(GL_AMBIENT)[2])*255));
               connect(sliderambz, SIGNAL(valueChanged ( int )), this, SLOT(amblightfuncz(int)));
               //partie label
-                  labelambx = new QLabel(this);
-                  labelamby = new QLabel(this);
-                  labelambz = new QLabel(this);
+                  labelambx = new QLabel(tablightamb);
+                  labelamby = new QLabel(tablightamb);
+                  labelambz = new QLabel(tablightamb);
 
                   xtmp = ((this->_light->get(GL_AMBIENT)[0])*255);
                   ytmp = ((this->_light->get(GL_AMBIENT)[1])*255);
@@ -631,10 +631,10 @@ Mondock:: ~Mondock(){}
                   labelambz->setText(" Z = " + sztmp);
 
               //partie layout
-              tabamblayout= new QVBoxLayout(this);
+              tabamblayout= new QVBoxLayout(tablightamb);
 
-                 labelamblayout = new QHBoxLayout(this);
-                 lightamblayout = new QHBoxLayout(this);
+                 labelamblayout = new QHBoxLayout();
+                 lightamblayout = new QHBoxLayout();
 
                     labelamblayout->addWidget(labelambx);
                     lightamblayout->addWidget(sliderambx);
@@ -683,24 +683,24 @@ Mondock:: ~Mondock(){}
             //creation 4 widget
 
             //widget1
-            tabmaterialemi = new QWidget(this);
-                materialspinboxemix = new QSpinBox(this);
+            tabmaterialemi = new QWidget(tabmaterial);
+                materialspinboxemix = new QSpinBox(tabmaterialemi);
                 materialspinboxemix->setPrefix("X = ");
                 materialspinboxemix->setRange(0,255);
                 connect(materialspinboxemix, SIGNAL(valueChanged(int)),this, SLOT(emimaterialfuncx(int)));
 
-                materialspinboxemiy = new QSpinBox(this);
+                materialspinboxemiy = new QSpinBox(tabmaterialemi);
                 materialspinboxemiy->setPrefix("Y = ");
                 materialspinboxemiy->setRange(0,255);
                 connect(materialspinboxemiy, SIGNAL(valueChanged(int)),this, SLOT(emimaterialfuncy(int)));
 
-                materialspinboxemiz = new QSpinBox(this);
+                materialspinboxemiz = new QSpinBox(tabmaterialemi);
                 materialspinboxemiz->setPrefix("Z = ");
                 materialspinboxemiz->setRange(0,255);
                 connect(materialspinboxemiz, SIGNAL(valueChanged(int)),this, SLOT(emimaterialfuncz(int)));
 
                 //partie layout
-                tabmaterialemilayout = new QHBoxLayout(this);
+                tabmaterialemilayout = new QHBoxLayout(tabmaterialemi);
                     tabmaterialemilayout->addWidget(materialspinboxemix);
                     tabmaterialemilayout->addWidget(materialspinboxemiy);
                     tabmaterialemilayout->addWidget(materialspinboxemiz);
@@ -708,27 +708,27 @@ Mondock:: ~Mondock(){}
               tabmaterialemi->setLayout(tabmaterialemilayout);
 
               //widget2
-              tabmaterialdif = new QWidget(this);
-                  materialspinboxdifx = new QSpinBox(this);
+              tabmaterialdif = new QWidget(tabmaterial);
+                  materialspinboxdifx = new QSpinBox(tabmaterialdif);
                   materialspinboxdifx->setPrefix("X = ");
                   materialspinboxdifx->setRange(0,255);
                   materialspinboxdifx->setValue(this->_materiaux->get(GL_DIFFUSE)[0]*255);
                   connect(materialspinboxdifx, SIGNAL(valueChanged(int)),this, SLOT(difmaterialfuncx(int)));
 
-                  materialspinboxdify = new QSpinBox(this);
+                  materialspinboxdify = new QSpinBox(tabmaterialdif);
                   materialspinboxdify->setPrefix("Y = ");
                   materialspinboxdify->setRange(0,255);
                   materialspinboxdify->setValue(this->_materiaux->get(GL_DIFFUSE)[1]*255);
                   connect(materialspinboxdify, SIGNAL(valueChanged(int)),this, SLOT(difmaterialfuncy(int)));
 
-                  materialspinboxdifz = new QSpinBox(this);
+                  materialspinboxdifz = new QSpinBox(tabmaterialdif);
                   materialspinboxdifz->setPrefix("Z = ");
                   materialspinboxdifz->setRange(0,255);
                   materialspinboxdifz->setValue(this->_materiaux->get(GL_DIFFUSE)[3]*255);
                   connect(materialspinboxdifz, SIGNAL(valueChanged(int)),this, SLOT(difmaterialfuncz(int)));
 
                   //partie layout
-                  tabmaterialdiflayout = new QHBoxLayout(this);
+                  tabmaterialdiflayout = new QHBoxLayout(tabmaterialdif);
                       tabmaterialdiflayout->addWidget(materialspinboxdifx);
                       tabmaterialdiflayout->addWidget(materialspinboxdify);
                       tabmaterialdiflayout->addWidget(materialspinboxdifz);
@@ -736,27 +736,27 @@ Mondock:: ~Mondock(){}
                 tabmaterialdif->setLayout(tabmaterialdiflayout);
 
                 //widget3
-                tabmaterialamb = new QWidget(this);
-                    materialspinboxambx = new QSpinBox(this);
+                tabmaterialamb = new QWidget(tabmaterial);
+                    materialspinboxambx = new QSpinBox(tabmaterialamb);
                     materialspinboxambx->setPrefix("X = ");
                     materialspinboxambx->setRange(0,255);
                     materialspinboxambx->setValue(this->_materiaux->get(GL_AMBIENT)[0]*255);
                     connect(materialspinboxambx, SIGNAL(valueChanged(int)),this, SLOT(ambmaterialfuncx(int)));
 
-                    materialspinboxamby = new QSpinBox(this);
+                    materialspinboxamby = new QSpinBox(tabmaterialamb);
                     materialspinboxamby->setPrefix("Y = ");
                     materialspinboxamby->setRange(0,255);
                     materialspinboxamby->setValue(this->_materiaux->get(GL_AMBIENT)[1]*255);
                     connect(materialspinboxamby, SIGNAL(valueChanged(int)),this, SLOT(ambmaterialfuncy(int)));
 
-                    materialspinboxambz = new QSpinBox(this);
+                    materialspinboxambz = new QSpinBox(tabmaterialamb);
                     materialspinboxambz->setPrefix("Z = ");
                     materialspinboxambz->setRange(0,255);
                     materialspinboxambz->setValue(this->_materiaux->get(GL_AMBIENT)[2]*255);
                     connect(materialspinboxambz, SIGNAL(valueChanged(int)),this, SLOT(ambmaterialfuncz(int)));
 
                     //partie layout
-                    tabmaterialamblayout = new QHBoxLayout(this);
+                    tabmaterialamblayout = new QHBoxLayout(tabmaterialamb);
                         tabmaterialamblayout->addWidget(materialspinboxambx);
                         tabmaterialamblayout->addWidget(materialspinboxamby);
                         tabmaterialamblayout->addWidget(materialspinboxambz);
@@ -764,33 +764,33 @@ Mondock:: ~Mondock(){}
                   tabmaterialamb->setLayout(tabmaterialamblayout);
 
                   //widget4
-                  tabmaterialspe = new QWidget(this);
-                      materialspinboxspex = new QSpinBox(this);
+                  tabmaterialspe = new QWidget(tabmaterial);
+                      materialspinboxspex = new QSpinBox(tabmaterialspe);
                       materialspinboxspex->setPrefix("X = ");
                       materialspinboxspex->setRange(0,255);
                       materialspinboxspex->setValue(this->_materiaux->get(GL_SPECULAR)[0]*255);
                       connect(materialspinboxspex, SIGNAL(valueChanged(int)),this, SLOT(spematerialfuncx(int)));
 
-                      materialspinboxspey = new QSpinBox(this);
+                      materialspinboxspey = new QSpinBox(tabmaterialspe);
                       materialspinboxspey->setPrefix("Y = ");
                       materialspinboxspey->setRange(0,255);
                       materialspinboxspey->setValue(this->_materiaux->get(GL_SPECULAR)[1]*255);
                       connect(materialspinboxspey, SIGNAL(valueChanged(int)),this, SLOT(spematerialfuncy(int)));
 
-                      materialspinboxspez = new QSpinBox(this);
+                      materialspinboxspez = new QSpinBox(tabmaterialspe);
                       materialspinboxspez->setPrefix("Z = ");
                       materialspinboxspez->setRange(0,255);
                       materialspinboxspez->setValue(this->_materiaux->get(GL_SPECULAR)[2]*255);
                       connect(materialspinboxspez, SIGNAL(valueChanged(int)),this, SLOT(spematerialfuncz(int)));
 
-                      materialspinboxspea = new QSpinBox(this);
+                      materialspinboxspea = new QSpinBox(tabmaterialspe);
                       materialspinboxspea->setPrefix("a = ");
                       materialspinboxspea->setRange(0,255);
                       materialspinboxspea->setValue(this->_materiaux->shininess());
                       connect(materialspinboxspea, SIGNAL(valueChanged(int)),this, SLOT(spematerialtfunca(int)));
 
                       //partie layout
-                      tabmaterialspelayout = new QHBoxLayout(this);
+                      tabmaterialspelayout = new QHBoxLayout(tabmaterialspe);
                           tabmaterialspelayout->addWidget(materialspinboxspex);
                           tabmaterialspelayout->addWidget(materialspinboxspey);
                           tabmaterialspelayout->addWidget(materialspinboxspez);
@@ -834,16 +834,16 @@ Mondock:: ~Mondock(){}
             tabobjet = new QTabWidget(this);
 
             //widget1
-            tabobjetpropr = new QWidget(this);
+            tabobjetpropr = new QWidget(tabobjet);
 
                 //les layout du widget
-                layouttabobjetpropr = new QVBoxLayout(this);
-                    layouttabobjetproprlabel= new QHBoxLayout(this);
-                    layouttabobjetproprcombo= new QHBoxLayout(this);
+                layouttabobjetpropr = new QVBoxLayout(tabobjetpropr);
+                    layouttabobjetproprlabel= new QHBoxLayout();
+                    layouttabobjetproprcombo= new QHBoxLayout();
 
                 //partie combobox
                     //creation du model des materiaux
-                    modelmaterial=new QStandardItemModel(this);
+                    modelmaterial=new QStandardItemModel(tabobjetpropr);
 
                     int nblignetmp =_itemmaterial->rowCount();
                     int a =0;//pour savoir la valeur par default dans le model des materiaux
@@ -860,7 +860,7 @@ Mondock:: ~Mondock(){}
 
                     //creation du model des parent
 
-                    modelpiece=new QStandardItemModel(this);
+                    modelpiece=new QStandardItemModel(tabobjetpropr);
 
                     nblignetmp =_itempiece->rowCount();
 
@@ -875,21 +875,21 @@ Mondock:: ~Mondock(){}
                            }
 
                     //creation des combo
-                    combomaterial = new QComboBox(this);
+                    combomaterial = new QComboBox(tabobjetpropr);
                         combomaterial->setModel( modelmaterial);
                         combomaterial->setCurrentIndex(a);
                         combomaterial->setMaximumWidth(200);
                     connect(combomaterial, SIGNAL(currentIndexChanged ( const QString  ) ),this, SLOT(matobjet(const QString )));
 
-                    comboparent= new QComboBox(this);
+                    comboparent= new QComboBox(tabobjetpropr);
                         comboparent->setModel(modelpiece);
                         comboparent->setCurrentIndex(b);
                     connect(comboparent, SIGNAL(currentIndexChanged ( const QString ) ),this, SLOT(pereobjet(const QString )));
 
                 //ligne des label
-                labelobjetproprmaterial=new QLabel(this);
+                labelobjetproprmaterial=new QLabel(tabobjetpropr);
                     labelobjetproprmaterial->setText("Materiaux:");
-                labelobjetproprparent=new QLabel(this);;
+                labelobjetproprparent=new QLabel(tabobjetpropr);;
                     labelobjetproprparent->setText("Parents:");
 
                 //possitionement+ajout au widget du layout principal
@@ -905,26 +905,26 @@ Mondock:: ~Mondock(){}
                 tabobjetpropr->setLayout(layouttabobjetpropr);
 
             //widget2
-            tabobjetrotation = new QWidget(this);
+            tabobjetrotation = new QWidget(tabobjet);
 
                 //spinbox
             vec3 rotationtmp = _objet->rotation();
 
-                boxobjetrotationx = new QDoubleSpinBox(this);
+                boxobjetrotationx = new QDoubleSpinBox(tabobjetrotation);
                     boxobjetrotationx->setPrefix("X = ");
                     boxobjetrotationx->setSuffix("°");
                     boxobjetrotationx->setRange(-360,360);
                     boxobjetrotationx->setValue(rotationtmp[2]);
                     connect(boxobjetrotationx, SIGNAL(valueChanged(double)),this, SLOT(rotobjectx(double)));
 
-                boxobjetrotationy = new QDoubleSpinBox(this);
+                boxobjetrotationy = new QDoubleSpinBox(tabobjetrotation);
                     boxobjetrotationy->setPrefix("Y = ");
                     boxobjetrotationy->setSuffix("°");
                     boxobjetrotationy->setRange(-360,360);
                     boxobjetrotationy->setValue(rotationtmp[1]);
                     connect(boxobjetrotationy, SIGNAL(valueChanged(double)),this, SLOT(rotobjecty(double)));
 
-                boxobjetrotationz = new QDoubleSpinBox(this);
+                boxobjetrotationz = new QDoubleSpinBox(tabobjetrotation);
                     boxobjetrotationz->setPrefix("Z = ");
                     boxobjetrotationz->setSuffix("°");
                     boxobjetrotationz->setRange(-360,360);
@@ -932,38 +932,38 @@ Mondock:: ~Mondock(){}
                     connect(boxobjetrotationz, SIGNAL(valueChanged(double)),this, SLOT(rotobjectz(double)));
 
                 //layout + layout au  widget
-                    layouttabobjetrotation =new QHBoxLayout(this);
+                    layouttabobjetrotation =new QHBoxLayout(tabobjetrotation);
                         layouttabobjetrotation->addWidget(boxobjetrotationx);
                         layouttabobjetrotation->addWidget(boxobjetrotationy);
                         layouttabobjetrotation->addWidget(boxobjetrotationz);
                 tabobjetrotation->setLayout(layouttabobjetrotation);
 
             //widget3
-            tabobjettrans = new QWidget(this);
+            tabobjettrans = new QWidget(tabobjet);
 
             //spinbox
         vec3 transtmp = _objet->position() ;
 
-            boxobjettransx = new QDoubleSpinBox(this);
+            boxobjettransx = new QDoubleSpinBox(tabobjettrans);
                 boxobjettransx->setPrefix("X = ");
                 boxobjettransx->setRange(-1000,1000);
                 boxobjettransx->setValue(transtmp[2]);
                 connect(boxobjettransx, SIGNAL(valueChanged(double)),this, SLOT(transobjectx(double)));
 
-            boxobjettransy = new QDoubleSpinBox(this);
+            boxobjettransy = new QDoubleSpinBox(tabobjettrans);
                 boxobjettransy->setPrefix("Y = ");
                 boxobjettransy->setRange(-1000,1000);
                 boxobjettransy->setValue(transtmp[1]);
                 connect(boxobjettransy, SIGNAL(valueChanged(double)),this, SLOT(transobjecty(double)));
 
-            boxobjettransz = new QDoubleSpinBox(this);
+            boxobjettransz = new QDoubleSpinBox(tabobjettrans);
                 boxobjettransz->setPrefix("Z = ");
                 boxobjettransz->setRange(-1000,1000);
                 boxobjettransz->setValue(transtmp[0]);
                 connect(boxobjettransz, SIGNAL(valueChanged(double)),this, SLOT(transobjectz(double)));
 
             //layout + layout au  widget
-                layouttabobjettrans =new QHBoxLayout(this);
+                layouttabobjettrans =new QHBoxLayout(tabobjettrans);
                     layouttabobjettrans->addWidget(boxobjettransx);
                     layouttabobjettrans->addWidget(boxobjettransy);
                     layouttabobjettrans->addWidget(boxobjettransz);
@@ -971,26 +971,26 @@ Mondock:: ~Mondock(){}
 
 
             //widget4
-            tabobjetscale = new QWidget(this);
+            tabobjetscale = new QWidget(tabobjet);
 
             //spinbox
         vec3 scaletmp = _objet->scale() ;
 
-            boxobjetscalex = new QDoubleSpinBox(this);
+            boxobjetscalex = new QDoubleSpinBox(tabobjetscale);
                 boxobjetscalex->setPrefix("X = ");
                 boxobjetscalex->setRange(0,100);
                 boxobjetscalex->setSingleStep(0.01);
                 boxobjetscalex->setValue(scaletmp[2]);
                 connect(boxobjetscalex, SIGNAL(valueChanged(double)),this, SLOT(scaleobjectx(double)));
 
-            boxobjetscaley = new QDoubleSpinBox(this);
+            boxobjetscaley = new QDoubleSpinBox(tabobjetscale);
                 boxobjetscaley->setPrefix("Y = ");
                 boxobjetscaley->setRange(0,100);
                 boxobjetscaley->setSingleStep(0.01);
                 boxobjetscaley->setValue(scaletmp[1]);
                connect(boxobjetscaley, SIGNAL(valueChanged(double)),this, SLOT(scaleobjecty(double)));
 
-            boxobjetscalez = new QDoubleSpinBox(this);
+            boxobjetscalez = new QDoubleSpinBox(tabobjetscale);
                 boxobjetscalez->setPrefix("Z = ");
                 boxobjetscalez->setRange(0,100);
                 boxobjetscalez->setSingleStep(0.01);
@@ -1002,20 +1002,20 @@ Mondock:: ~Mondock(){}
                     sliderobjetscale->setSingleStep(1);
                     sliderobjetscale->setValue(10);
 
-                labelsliderobjetscale = new QLabel(this);
+                labelsliderobjetscale = new QLabel(tabobjetscale);
                     labelsliderobjetscale->setText("scale = "+ QString::number(sliderobjetscale->value()/10));
                     labelsliderobjetscale->setMaximumWidth(70);
                     labelsliderobjetscale->setMinimumWidth(70);
                     connect(sliderobjetscale, SIGNAL(valueChanged(int)),this ,SLOT(scalesliderobject(int)));
 
             //layout + layout au  widget
-            layoutglobalscaleobjet = new QVBoxLayout(this);
-                    layouttabobjetscale =new QHBoxLayout(this);
+            layoutglobalscaleobjet = new QVBoxLayout(tabobjetscale);
+                    layouttabobjetscale =new QHBoxLayout();
                         layouttabobjetscale->addWidget(boxobjetscalex);
                         layouttabobjetscale->addWidget(boxobjetscaley);
                         layouttabobjetscale->addWidget(boxobjetscalez);
 
-                    layoutobjetscaleall = new QHBoxLayout(this);
+                    layoutobjetscaleall = new QHBoxLayout();
                         layoutobjetscaleall->addWidget(labelsliderobjetscale);
                         layoutobjetscaleall->addWidget(sliderobjetscale);
 
@@ -1056,24 +1056,24 @@ Mondock:: ~Mondock(){}
 
 
         //position
-        widgetpieceposi = new QWidget(this);
-            pieceposilayout = new QHBoxLayout(this);
+        widgetpieceposi = new QWidget(tabpiece);
+            pieceposilayout = new QHBoxLayout(widgetpieceposi);
 
             vec3 tmp = _piece->position();
 
-            positionpiecex= new QSpinBox(this);
+            positionpiecex= new QSpinBox(widgetpieceposi);
                 positionpiecex->setPrefix("X = ");
                 positionpiecex->setRange(-1000,1000);
                 positionpiecex->setValue((int)tmp[0]);
                 connect(positionpiecex, SIGNAL(valueChanged(int)),this, SLOT(slotpositionpiecex(int)));
 
-            positionpiecey= new QSpinBox(this);
+            positionpiecey= new QSpinBox(widgetpieceposi);
                 positionpiecey->setPrefix("Y = ");
                 positionpiecey->setRange(-1000,1000);
                 positionpiecey->setValue((int)tmp[1]);
                 connect(positionpiecey, SIGNAL(valueChanged(int)),this, SLOT(slotpositionpiecey(int)));
 
-            positionpiecez = new QSpinBox(this);
+            positionpiecez = new QSpinBox(widgetpieceposi);
                 positionpiecez->setPrefix("Z = ");
                 positionpiecez->setRange(-1000,1000);
                 positionpiecez->setValue((int)tmp[2]);
@@ -1086,25 +1086,25 @@ Mondock:: ~Mondock(){}
             widgetpieceposi->setLayout(pieceposilayout);
 
         //rotate
-            widgetpiecerotate = new QWidget(this);
-            piecerotatelayout = new QHBoxLayout(this);
+            widgetpiecerotate = new QWidget(tabpiece);
+            piecerotatelayout = new QHBoxLayout(widgetpiecerotate);
 
 
-            rotspinboxx = new QDoubleSpinBox(this);
+            rotspinboxx = new QDoubleSpinBox(widgetpiecerotate);
                 rotspinboxx->setPrefix("X = ");
                 rotspinboxx->setSuffix("°");
                 rotspinboxx->setRange(-360,360);
                 rotspinboxx->setValue(_piece->rotation()[0]);
                 connect(rotspinboxx, SIGNAL(valueChanged(double)),this, SLOT(rotpiecex(double) ));
 
-            rotspinboxy = new QDoubleSpinBox(this);
+            rotspinboxy = new QDoubleSpinBox(widgetpiecerotate);
                 rotspinboxy->setPrefix("Y = ");
                 rotspinboxy->setSuffix("°");
                 rotspinboxy->setRange(-360,360);
                 rotspinboxy->setValue(_piece->rotation()[1]);
                 connect(rotspinboxy, SIGNAL(valueChanged(double)),this, SLOT(rotpiecey(double) ));
 
-            rotspinboxz = new QDoubleSpinBox(this);
+            rotspinboxz = new QDoubleSpinBox(widgetpiecerotate);
                 rotspinboxz->setPrefix("Z = ");
                 rotspinboxz->setSuffix("°");
                 rotspinboxz->setRange(-360,360);
@@ -1120,27 +1120,27 @@ Mondock:: ~Mondock(){}
             widgetpiecerotate->setLayout(piecerotatelayout);
 
         //scale
-            widgetpiecescale = new QWidget(this);
-            piecescalelayout = new QVBoxLayout(this);
-                scalesliderlayout = new QHBoxLayout(this);
-                scalespinboxlayout = new QHBoxLayout(this);
+            widgetpiecescale = new QWidget(tabpiece);
+            piecescalelayout = new QVBoxLayout(widgetpiecescale);
+                scalesliderlayout = new QHBoxLayout();
+                scalespinboxlayout = new QHBoxLayout();
 
                 //spinbox
-                scalespinboxx = new QDoubleSpinBox(this);
+                scalespinboxx = new QDoubleSpinBox(widgetpiecescale);
                     scalespinboxx->setPrefix("X = ");
                     scalespinboxx->setRange(0,100);
                     scalespinboxx->setSingleStep(0.01);
                     scalespinboxx->setValue(_piece->scale()[0]);
                     connect(scalespinboxx, SIGNAL(valueChanged(double)),this, SLOT(scalepiecex(double) ));
 
-                scalespinboxy = new QDoubleSpinBox(this);
+                scalespinboxy = new QDoubleSpinBox(widgetpiecescale);
                     scalespinboxy->setPrefix("Y = ");
                     scalespinboxy->setRange(0,100);
                     scalespinboxy->setSingleStep(0.01);
                     scalespinboxy->setValue(_piece->scale()[1]);
                     connect(scalespinboxy, SIGNAL(valueChanged(double)),this, SLOT(scalepiecey(double) ));
 
-                scalespinboxz = new QDoubleSpinBox(this);
+                scalespinboxz = new QDoubleSpinBox(widgetpiecescale);
                     scalespinboxz->setPrefix("Z = ");
                     scalespinboxz->setRange(0,100);
                     scalespinboxz->setSingleStep(0.01);
@@ -1158,7 +1158,7 @@ Mondock:: ~Mondock(){}
                     scaleslider->setValue(10);
                     connect(scaleslider, SIGNAL(valueChanged(int)),this, SLOT(scalesliderpiece(int) ));
 
-                 scalelabel = new QLabel(this);
+                 scalelabel = new QLabel(widgetpiecescale);
                      scalelabel->setText("scale = "+ QString::number(scaleslider->value()/10));
                      scalelabel->setMaximumWidth(70);
                      scalelabel->setMinimumWidth(70);
