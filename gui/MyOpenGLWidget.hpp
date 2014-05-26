@@ -45,6 +45,8 @@ private:
 
 	QMap<QString, QOpenGLShaderProgram *> _postProcessPrograms;
 
+	vec2 						_pixel_scale;
+
 
 public:
 	MyOpenGLWidget(const QGLFormat & format, QWidget * parent = 0, const QString & path = "", const QGLWidget * shareWidget = 0, Qt::WindowFlags f = 0);

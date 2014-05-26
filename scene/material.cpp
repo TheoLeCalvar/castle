@@ -62,9 +62,11 @@ void Material::addTexture(const QString & texFile, const QString & type)
 		}
 		else
 		{
-			QOpenGLTexture *texture = new QOpenGLTexture(QImage(texFile).mirrored());
+			QImage tex(texFile);
+			QOpenGLTexture *texture = new QOpenGLTexture(QOpenGLTexture::Target2D);
 			//inverse l'image sur les y pour l'avoir dans le sens intuitif
 
+			texture->setData(tex.mirrored(), QOpenGLTexture::DontGenerateMipMaps);
 			texture->setMinMagFilters(QOpenGLTexture::Linear, QOpenGLTexture::Linear);
 
 

@@ -123,7 +123,8 @@ void	MyOpenGLWidget::initializeGL()
 
     glBindVertexArray(0);
 
-    addShader("base", "shaders/post_process.vert", "shaders/post_process.frag");
+    // addShader("base", "shaders/post_process.vert", "shaders/post_process.frag");
+    addShader("base", "shaders/base.vert", "shaders/edgeDetect.frag");
     useShader("base");
 
 }
@@ -147,9 +148,18 @@ void	MyOpenGLWidget::paintGL()
 
     if(_activeProgram)
     {
+
+
         glBindFramebuffer(GL_FRAMEBUFFER, 0);  
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glUseProgram(_activeProgram->programId());
+
+
+        int pixel_location = glGetUniformLocation(_activeProgram->programId(), "pixel_scale");
+
+        if(pixel_location >= 0)
+            glUniform2fv( pixel_location, 1, _pixel_scale.v);
+
 
         glBindVertexArray(_vao_quad);
 
@@ -177,6 +187,9 @@ void	MyOpenGLWidget::resizeGL(int width, int height)
     setProjectionMatrix(projectionMatrix(70.0, width/(float)height, 0.1f, 100.0f));
 
     initFramebuffer(width, height);
+
+    _pixel_scale = vec2(1.0f / width, 1.0f / height);
+
 }
 
 void    MyOpenGLWidget::keyPressEvent(QKeyEvent * event)

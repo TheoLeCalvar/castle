@@ -1,4 +1,4 @@
-#version 410
+#version 400
 
 // vertex positions input attribute
 in vec2 vp;
