@@ -62,6 +62,7 @@ Scene::Scene(const QString & fileName)
 
 	loadPieces(pieces);
 	qDebug() << "Pièces chargées avec succès";
+
 }
 
 Scene::~Scene()
@@ -91,6 +92,7 @@ void 	Scene::draw()
 
 	_camera->display();
 	
+	openGL_check_error();
 
     for(auto i: _shaders)
     {

@@ -3,8 +3,6 @@
 
 #include <QDir>
 #include <QGLWidget>
-#include <QOpenGLVertexArrayObject>
-#include <QOpenGLBuffer>
 #include <QOpenGLFunctions_3_2_Core>
 #include <QOpenGLShaderProgram>
 
@@ -32,13 +30,19 @@ class MyOpenGLWidget: public QGLWidget, protected QOpenGLFunctions_3_2_Core
 Q_OBJECT
 
 private:
-	bool   		_captureMouse;
-	QTimer 	*	_timer;
-	QString 	_path;
+	bool   						_captureMouse;
+	QTimer 	*					_timer;
+	QString 					_path;
 
 
-	Scene * 	_scene;
+	Scene * 					_scene;
 
+	GLuint 						_vao_quad;
+	GLuint 						_framebuffer;
+	GLuint 						_texture;
+	GLuint						_renderbuffer;
+
+	QOpenGLShaderProgram 	*	_postProcess;
 
 public:
 	MyOpenGLWidget(const QGLFormat & format, QWidget * parent = 0, const QString & path = "", const QGLWidget * shareWidget = 0, Qt::WindowFlags f = 0);
@@ -59,6 +63,9 @@ public:
 
 	virtual void 	mouseMoveEvent(QMouseEvent * event);
 	virtual void 	mousePressEvent(QMouseEvent * event);
+
+private:
+	void initFramebuffer(int width, int height);
 };
 
 

@@ -1167,7 +1167,8 @@ void setProjectionMatrix(mat4 projection)
 
 	currentProjectionMatrix = projection;
 
-	f.glUniformMatrix4fv(f.glGetUniformLocation(activeShader, "projection"), 1, GL_FALSE, currentProjectionMatrix.m);
+	if(activeShader)
+		f.glUniformMatrix4fv(f.glGetUniformLocation(activeShader, "projection"), 1, GL_FALSE, currentProjectionMatrix.m);
 }
 
 void setModelMatrix(mat4 model)
@@ -1177,7 +1178,8 @@ void setModelMatrix(mat4 model)
 
 	currentModelMatrix = model;
 
-	f.glUniformMatrix4fv(f.glGetUniformLocation(activeShader, "model"), 1, GL_FALSE, currentModelMatrix.m);
+	if(activeShader)
+		f.glUniformMatrix4fv(f.glGetUniformLocation(activeShader, "model"), 1, GL_FALSE, currentModelMatrix.m);
 }
 
 void setViewMatrix(mat4 view)
@@ -1187,7 +1189,8 @@ void setViewMatrix(mat4 view)
 
 	currentViewMatrix = view;
 
-	f.glUniformMatrix4fv(f.glGetUniformLocation(activeShader, "view"), 1, GL_FALSE, currentViewMatrix.m);
+	if(activeShader)
+		f.glUniformMatrix4fv(f.glGetUniformLocation(activeShader, "view"), 1, GL_FALSE, currentViewMatrix.m);
 }
 
 void setActiveShader(GLuint shader)
@@ -1201,9 +1204,12 @@ void setActiveShader(GLuint shader)
 
 		f.glUseProgram(activeShader);
 
-		f.glUniformMatrix4fv(f.glGetUniformLocation(activeShader, "projection"), 1, GL_FALSE, currentProjectionMatrix.m);
-		f.glUniformMatrix4fv(f.glGetUniformLocation(activeShader, "view"), 1, GL_FALSE, currentViewMatrix.m);
-		f.glUniformMatrix4fv(f.glGetUniformLocation(activeShader, "model"), 1, GL_FALSE, currentModelMatrix.m);	
+		if(activeShader)
+		{
+			f.glUniformMatrix4fv(f.glGetUniformLocation(activeShader, "projection"), 1, GL_FALSE, currentProjectionMatrix.m);
+			f.glUniformMatrix4fv(f.glGetUniformLocation(activeShader, "view"), 1, GL_FALSE, currentViewMatrix.m);
+			f.glUniformMatrix4fv(f.glGetUniformLocation(activeShader, "model"), 1, GL_FALSE, currentModelMatrix.m);	
+		}
 	}
 }
 
