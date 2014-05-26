@@ -1187,20 +1187,23 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                 plantmp->parent(widget->getScene()->getPiece(combopieceajoutmur->currentText()));
 
                 widget->getScene()->getPiece(combopieceajoutmur->currentText())->addChild(combomurajoutmur->currentText() ,plantmp);
+
                 //parcour pour trouver la piece parente
-                for(int i = 0 ; i < objet->rowCount() ; i++)
-                    {
-                    bool a = false;
-
-                    if (objet->child(i)->text()== combopieceajoutmur->currentText())//si on est dans la bonne piece
-
-                            for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
+                if(objet){
+                        for(int i = 0 ; i < objet->rowCount() ; i++)
                             {
-                            if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_bas")
-                                a=true;
+                            bool a = false;
+
+                            if (objet->child(i)->text()== combopieceajoutmur->currentText())//si on est dans la bonne piece
+
+                                    for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
+                                    {
+                                    if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_bas")
+                                        a=true;
+                                    }
+                            if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_bas"));
                             }
-                    if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_bas"));
-                    }
+                     }
                 }
 
 
@@ -1222,19 +1225,21 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                 widget->getScene()->getPiece(combopieceajoutmur->currentText())->addChild(combomurajoutmur->currentText() ,plantmp);
 
                 //parcour pour trouver la piece parente
-                for(int i = 0 ; i < objet->rowCount() ; i++)
-                    {
-                    bool a = false;
+                if(objet){
+                            for(int i = 0 ; i < objet->rowCount() ; i++)
+                                {
+                                bool a = false;
 
-                    if (objet->child(i)->text()== combopieceajoutmur->currentText())//si on est dans la bonne piece
+                                if (objet->child(i)->text()== combopieceajoutmur->currentText())//si on est dans la bonne piece
 
-                            for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
-                            {
-                            if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_haut")
-                                a=true;
-                            }
-                    if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_haut"));
-                    }
+                                        for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
+                                        {
+                                        if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_haut")
+                                            a=true;
+                                        }
+                                if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_haut"));
+                                }
+                        }
                 }
 
             if (combomurajoutmur->currentText() == (combopieceajoutmur->currentText()+ "_arriere") )
@@ -1252,18 +1257,20 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                 widget->getScene()->getPiece(combopieceajoutmur->currentText())->addChild(combomurajoutmur->currentText() ,plantmp);
 
                 //parcour pour trouver la piece parente
-                for(int i = 0 ; i < objet->rowCount() ; i++)
-                    {
-                    bool a = false;
-
-                    if (objet->child(i)->text()== combopieceajoutmur->currentText())//si on est dans la bonne piece
-
-                            for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
+                if(objet){
+                        for(int i = 0 ; i < objet->rowCount() ; i++)
                             {
-                            if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_arriere")
-                                a=true;
+                            bool a = false;
+
+                            if (objet->child(i)->text()== combopieceajoutmur->currentText())//si on est dans la bonne piece
+
+                                    for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
+                                    {
+                                    if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_arriere")
+                                        a=true;
+                                    }
+                            if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_arriere"));
                             }
-                    if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_arriere"));
                     }
                 }
 
@@ -1284,19 +1291,21 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                 widget->getScene()->getPiece(combopieceajoutmur->currentText())->addChild(combomurajoutmur->currentText() ,plantmp);
 
                 //parcour pour trouver la piece parente
-                for(int i = 0 ; i < objet->rowCount() ; i++)
-                    {
-                    bool a = false;
-
-                    if (objet->child(i)->text()== combopieceajoutmur->currentText())//si on est dans la bonne piece
-
-                            for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
+                if(objet){
+                        for(int i = 0 ; i < objet->rowCount() ; i++)
                             {
-                            if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_avant")
-                                a=true;
+                            bool a = false;
+
+                            if (objet->child(i)->text()== combopieceajoutmur->currentText())//si on est dans la bonne piece
+
+                                    for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
+                                    {
+                                    if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_avant")
+                                        a=true;
+                                    }
+                            if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_avant"));
                             }
-                    if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_avant"));
-                    }
+                  }
                 }
 
 
@@ -1317,18 +1326,20 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                 widget->getScene()->getPiece(combopieceajoutmur->currentText())->addChild(combomurajoutmur->currentText() ,plantmp);
 
                 //parcour pour trouver la piece parente
-                for(int i = 0 ; i < objet->rowCount() ; i++)
-                    {
-                    bool a = false;
-
-                    if (objet->child(i)->text()== combopieceajoutmur->currentText())//si on est dans la bonne piece
-
-                            for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
+                if(objet){
+                        for(int i = 0 ; i < objet->rowCount() ; i++)
                             {
-                            if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_gauche")
-                                a=true;
+                            bool a = false;
+
+                            if (objet->child(i)->text()== combopieceajoutmur->currentText())//si on est dans la bonne piece
+
+                                    for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
+                                    {
+                                    if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_gauche")
+                                        a=true;
+                                    }
+                            if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_gauche"));
                             }
-                    if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_gauche"));
                     }
                 }
 
@@ -1349,19 +1360,21 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                 widget->getScene()->getPiece(combopieceajoutmur->currentText())->addChild(combomurajoutmur->currentText() ,plantmp);
 
                 //parcour pour trouver la piece parente
-                for(int i = 0 ; i < objet->rowCount() ; i++)
-                    {
-                    bool a = false;
-
-                    if (objet->child(i)->text()== combopieceajoutmur->currentText())//si on est dans la bonne piece
-
-                            for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
+                if(objet){
+                        for(int i = 0 ; i < objet->rowCount() ; i++)
                             {
-                            if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_droite")
-                                a=true;
+                            bool a = false;
+
+                            if (objet->child(i)->text()== combopieceajoutmur->currentText())//si on est dans la bonne piece
+
+                                    for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
+                                    {
+                                    if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_droite")
+                                        a=true;
+                                    }
+                            if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_droite"));
                             }
-                    if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_droite"));
-                    }
+                  }
                 }
         }
     }
