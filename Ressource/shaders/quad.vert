@@ -1,4 +1,4 @@
-#version 410
+#version 400
 
 // vertex positions input attribute
 in vec2 vp;
@@ -11,7 +11,7 @@ out vec2 st;
 
 void main () {
   // interpolate texture coordinates
-  st = vt;
+  st = 2 * vt;
   // transform vertex position to clip space (camera view and perspective)
   gl_Position = vec4 (vp, 0.0, 1.0);
 }
