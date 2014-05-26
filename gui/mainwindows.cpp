@@ -78,9 +78,16 @@ void MainWindow::createActions()
         ajoutpieceAct = new QAction(tr("&Piece"),this);
             connect(ajoutpieceAct,SIGNAL(triggered()),this , SLOT(ajoutpiece()));
 
+        ajoutmurAct = new QAction(tr("&Mur"),this);
+            connect(ajoutmurAct,SIGNAL(triggered()),this , SLOT(ajoutmur()));
+
+        ajoutobjetAct = new QAction(tr("&Objet"),this);
+         connect(ajoutobjetAct, SIGNAL(triggered()), this, SLOT(ajoutobjet()));
+
      //aide
      racourcitAct = new QAction(tr("&Racourcit"), this);
-         connect(racourcitAct, SIGNAL(triggered()), this, SLOT(Racourcit()));
+
+
 //fin menubar
 
 }
@@ -126,7 +133,9 @@ void MainWindow::createMenus()
 //              ajout elements            //
 /* ************************************** */
 
-            //ajout lumiere declaration des element
+/* ************************************** */
+//          ajout lumiere                 //
+/* ************************************** */
             ajoutelement->addAction(ajoutlumierAct);
 
             widgetajoutlumiere = new QWidget;
@@ -204,7 +213,10 @@ void MainWindow::createMenus()
 
                 dockajoutlumiere->setWidget(widgetajoutlumiere);
 
-            //ajout material
+/* ************************************** */
+//          ajout material                //
+/* ************************************** */
+
             ajoutelement->addAction(ajoutmaterialAct);
 
             widgetajoutmaterial = new QWidget;
@@ -299,7 +311,10 @@ void MainWindow::createMenus()
                 //ajout widget au dock
                 dockajoutmateriaux->setWidget(widgetajoutmaterial);
 
-                //ajout piece
+/* ************************************** */
+//              ajout piece               //
+/* ************************************** */
+
                 ajoutelement->addAction(ajoutpieceAct);
 
                 widgetajoutpiece = new QWidget;
@@ -416,7 +431,49 @@ void MainWindow::createMenus()
                 //ajout widget au dock
                 dockajoutpiece->setWidget(widgetajoutpiece);
 
+/* ************************************** */
+//          ajout mur                     //
+/* ************************************** */
 
+             ajoutelement->addAction(ajoutmurAct);
+
+             //declaration widget
+             widgetajoutmur = new QWidget();
+
+
+             //declaration contenu
+             labelpiececomboajoutmur = new QLabel();
+                labelpiececomboajoutmur->setText("nom piece :");
+             combopieceajoutmur = new QComboBox();
+             combopieceajoutmur->setMaximumWidth(200);
+
+             labelmurcomboajoutmur = new QLabel();
+                labelmurcomboajoutmur->setText("nom mur :");
+             combomurajoutmur = new QComboBox();
+             combomurajoutmur->setMaximumWidth(200);
+
+             //positionement
+             mainlayoutajoutmur = new QVBoxLayout();
+                layoutcombotnompieceajoutmur = new QHBoxLayout();
+                    layoutcombotnompieceajoutmur->addWidget(labelpiececomboajoutmur);
+                    layoutcombotnompieceajoutmur->addWidget(combopieceajoutmur);
+                layoutcombotnommurajoutmur = new QHBoxLayout();
+                    layoutcombotnommurajoutmur->addWidget(labelmurcomboajoutmur);
+                    layoutcombotnommurajoutmur->addWidget(combomurajoutmur);
+
+                    mainlayoutajoutmur->addLayout(layoutcombotnompieceajoutmur);
+                    mainlayoutajoutmur->addLayout(layoutcombotnommurajoutmur);
+
+            widgetajoutmur->setLayout(mainlayoutajoutmur);
+
+                //ajoutwidget au dock
+                dockajoutmur->setWidget(widgetajoutmur);
+
+/* ************************************** */
+//          ajout objet                   //
+/* ************************************** */
+
+             ajoutelement->addAction(ajoutobjetAct);
     //aide
     Aide = menuBar()->addMenu(tr("&Aide"));
         Aide->addAction(racourcitAct);
@@ -435,20 +492,30 @@ void MainWindow::createListeDockwidget()
         dock_perso->hide();
 
 
-    dockajoutlumiere =new QDockWidget(tr("Ajout d'une lumiere"), this);
+    dockajoutlumiere = new QDockWidget(tr("Ajout d'une lumiere"), this);
         dockajoutlumiere->setAllowedAreas(Qt::LeftDockWidgetArea);
         addDockWidget(Qt::LeftDockWidgetArea, dockajoutlumiere);
         dockajoutlumiere->hide();
 
-    dockajoutmateriaux =new QDockWidget(tr("Ajout d'un materiau"), this);
+    dockajoutmateriaux = new QDockWidget(tr("Ajout d'un materiau"), this);
         dockajoutmateriaux->setAllowedAreas(Qt::LeftDockWidgetArea);
         addDockWidget(Qt::LeftDockWidgetArea, dockajoutmateriaux);
         dockajoutmateriaux->hide();
 
-        dockajoutpiece =new QDockWidget(tr("Ajout d'une piece"), this);
+        dockajoutpiece = new QDockWidget(tr("Ajout d'une piece"), this);
             dockajoutmateriaux->setAllowedAreas(Qt::LeftDockWidgetArea);
             addDockWidget(Qt::LeftDockWidgetArea,  dockajoutpiece);
             dockajoutpiece->hide();
+
+        dockajoutmur= new QDockWidget(tr("Ajout d'un mur "), this);
+            dockajoutmur->setAllowedAreas(Qt::LeftDockWidgetArea);
+            addDockWidget(Qt::LeftDockWidgetArea,  dockajoutmur);
+            dockajoutmur->hide();
+
+        dockajoutobjet= new QDockWidget(tr("Ajout d'un objet "), this);
+             dockajoutobjet->setAllowedAreas(Qt::LeftDockWidgetArea);
+             addDockWidget(Qt::LeftDockWidgetArea,  dockajoutobjet);
+             dockajoutobjet->hide();
 }
 
 void MainWindow::createToolBar()
@@ -1003,6 +1070,28 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                         }
             }
         }
+
+
+
+    void MainWindow::ajoutmur()
+    {
+     dockajoutmur->show();
+    }
+
+    void MainWindow::validajoutmur()
+    {
+
+    }
+
+    void MainWindow::ajoutobjet()
+    {
+    dockajoutobjet->show();
+    }
+
+    void MainWindow::validationajoutobjet()
+    {
+
+    }
 
     //aide
     void MainWindow::Racourcit()

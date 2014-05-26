@@ -65,7 +65,10 @@ private slots:
         void    validajoutmaterial();
         void    ajoutpiece();
         void    validajoutpiece();
-
+        void    ajoutmur();
+        void    validajoutmur();
+        void    ajoutobjet();
+        void    validationajoutobjet();
 
         //aide
         void    Racourcit();
@@ -118,6 +121,8 @@ private slots:
             QAction*    ajoutlumierAct;
             QAction*    ajoutmaterialAct;
             QAction*    ajoutpieceAct;
+            QAction*    ajoutmurAct;
+            QAction*    ajoutobjetAct;
 
 /* ************************************** */
 //              ajout d'element           //
@@ -244,6 +249,26 @@ private slots:
                 QHBoxLayout*    ajoutpiecepiecer2;
                 QHBoxLayout*    ajoutpiecepiecer3;
                 QHBoxLayout*    ajoutpieceshaderlayout;
+
+        //ajout mur
+        QDockWidget*    dockajoutmur;
+            QWidget*    widgetajoutmur;
+
+            //layout ajout mur
+            QVBoxLayout*    mainlayoutajoutmur;
+                QHBoxLayout*    layoutcombotnompieceajoutmur;
+                QHBoxLayout*    layoutcombotnommurajoutmur;
+
+            //contenu ajout mur
+            QComboBox*  combopieceajoutmur;
+            QLabel*     labelpiececomboajoutmur;
+
+            QComboBox*  combomurajoutmur;
+            QLabel*     labelmurcomboajoutmur;
+
+
+        //ajout objet
+        QDockWidget*    dockajoutobjet;
 
         //aide
         QAction*    racourcitAct;
