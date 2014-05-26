@@ -66,6 +66,7 @@ private slots:
         void    ajoutpiece();
         void    validajoutpiece();
         void    ajoutmur();
+        void    ajoutmurcreatemodelmurcombo();
         void    validajoutmur();
         void    ajoutobjet();
         void    validationajoutobjet();
@@ -255,17 +256,21 @@ private slots:
             QWidget*    widgetajoutmur;
 
             //layout ajout mur
-            QVBoxLayout*    mainlayoutajoutmur;
+            QVBoxLayout*        mainlayoutajoutmur;
                 QHBoxLayout*    layoutcombotnompieceajoutmur;
                 QHBoxLayout*    layoutcombotnommurajoutmur;
 
             //contenu ajout mur
-            QComboBox*  combopieceajoutmur;
-            QLabel*     labelpiececomboajoutmur;
+            QComboBox*              combopieceajoutmur;
+                QStandardItemModel* modelajoutmurpiece;
+            QLabel*                 labelpiececomboajoutmur;
+            QPushButton*            boutonpieceajoutmur;
 
-            QComboBox*  combomurajoutmur;
-            QLabel*     labelmurcomboajoutmur;
+            QComboBox*              combomurajoutmur;
+                QStandardItemModel* modelajoutmurmur;
+            QLabel*                 labelmurcomboajoutmur;
 
+            QPushButton*    boutonajoutmur;
 
         //ajout objet
         QDockWidget*    dockajoutobjet;
