@@ -105,6 +105,14 @@ jeudi 22 mai
 vendredi 23 mai
 	correction export XML
 
+lundi 26 mai
+	ajout gestion des FBO et post processing
+
+mardi 27 mai
+	chargement des postProcessing depuis le xml
+	sauvegarde des filtres de post processing dans le xml
+
 	
 Amélioration à faire
-	collision -> rajouter notion de hitbox à Objet, et ensuite calculer sur le vecteur déplacement entre dans cette hitbox
+	Collision
+	Linker les pièces et leurs fenêtres

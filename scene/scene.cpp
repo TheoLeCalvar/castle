@@ -2,14 +2,15 @@
 #include "mesh.hpp"
 #include "node.hpp"
 #include "camera.hpp"
+#include "MyOpenGLWidget.hpp"
 
-Scene::Scene()
+Scene::Scene(MyOpenGLWidget * parent): _parent(parent)
 {
 	initializeOpenGLFunctions();
 	_camera = new Camera(this);
 }
 
-Scene::Scene(const QString & fileName)
+Scene::Scene(MyOpenGLWidget * parent, const QString & fileName):_parent(parent)
 {
 	initializeOpenGLFunctions();
 	QFile file;
@@ -31,13 +32,14 @@ Scene::Scene(const QString & fileName)
 
 	root = xml.documentElement();
 
-	QDomElement materiaux, lumieres, camera, pieces, shaders;
+	QDomElement materiaux, lumieres, camera, pieces, shaders, postProcess;
 
 	camera 		= root.firstChildElement("camera");
 	materiaux 	= root.firstChildElement("materiaux");
 	lumieres 	= root.firstChildElement("lumieres");
 	pieces 		= root.firstChildElement("pieces");
 	shaders 	= root.firstChildElement("shaders");
+	postProcess = root.firstChildElement("postProcess");
 
 	QDomElement camera_position = camera.firstChild().toElement();
 
@@ -59,6 +61,9 @@ Scene::Scene(const QString & fileName)
 
 	loadShaders(shaders);
 	qDebug() << "Shaders chargés avec succès";
+
+	_parent->loadShaders(postProcess);
+	qDebug() << "Filtres de post processing chargés avec succès";
 
 	loadPieces(pieces);
 	qDebug() << "Pièces chargées avec succès";
@@ -679,6 +684,7 @@ bool Scene::saveAsXML(const QString & fileName)
 	saveMaterials(scene, doc);
 	saveLights(scene, doc);
 	saveShaders(scene, doc);
+	_parent->saveShaders(scene, doc);
 	savePieces(scene, doc);
 
 	QFile file(fileName);

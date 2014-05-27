@@ -79,9 +79,9 @@ void	MyOpenGLWidget::initializeGL()
     glClearColor(0.3, 0.3, 0.3, 1.0);
    
     if(_path == "")
-        _scene= new Scene();
+        _scene= new Scene(this);
     else
-        _scene = new Scene(_path);
+        _scene = new Scene(this, _path);
 
 
     float quad_point[] = {
@@ -122,10 +122,6 @@ void	MyOpenGLWidget::initializeGL()
     glVertexAttribPointer (1, 2, GL_FLOAT, GL_FALSE, 0, NULL);
 
     glBindVertexArray(0);
-
-    // addShader("base", "shaders/post_process.vert", "shaders/post_process.frag");
-    addShader("base", "shaders/base.vert", "shaders/edgeDetect.frag");
-    useShader("base");
 
 }
 
@@ -236,8 +232,8 @@ void    MyOpenGLWidget::keyPressEvent(QKeyEvent * event)
             goto action;
 
 
-        case Qt::Key_F3:
-            qDebug() << _scene->getMaterialsNames();
+        case Qt::Key_F4:
+            qDebug() << getShaderNames();
             goto action;
     }
 
@@ -323,15 +319,46 @@ void            MyOpenGLWidget::addShader(const QString & name, const QString & 
 {
     QOpenGLShaderProgram *p = new QOpenGLShaderProgram(this);
 
-    if(!p->addShaderFromSourceFile(QOpenGLShader::Vertex, vertex))
+    if(_loadedShaders.value(vertex))
     {
-        qDebug() << "Erreur de chargement du vertex" << p->log();
+    	p->addShader(_loadedShaders.value(vertex));
     }
+    else
+	{
+		QOpenGLShader *shader = new QOpenGLShader(QOpenGLShader::Vertex);
 
-    if(!p->addShaderFromSourceFile(QOpenGLShader::Fragment, fragment))
+	    if(!shader->compileSourceFile(vertex))
+	    {
+	        qDebug() << "Erreur de chargement du vertex" << shader->log();
+	    }
+	    else
+	    {
+	    	_loadedShaders.insert(vertex, shader);
+
+	    	p->addShader(shader);
+	    }
+	}
+
+
+	if(_loadedShaders.value(fragment))
     {
-        qDebug() << "Erreur de chargement du fragment" << p->log();
+    	p->addShader(_loadedShaders.value(fragment));
     }
+    else
+	{
+		QOpenGLShader *shader = new QOpenGLShader(QOpenGLShader::Fragment);
+
+	    if(!shader->compileSourceFile(fragment))
+	    {
+	        qDebug() << "Erreur de chargement du fragment" << shader->log();
+	    }
+	    else
+	    {
+	    	_loadedShaders.insert(fragment, shader);
+
+	    	p->addShader(shader);
+	    }
+	}
 
     if(!p->link())
     {
@@ -339,6 +366,7 @@ void            MyOpenGLWidget::addShader(const QString & name, const QString & 
     }
     else
     {
+    	qDebug() << "Ajout de " << name << " dans les filtres";
         _postProcessPrograms.insert(name, p);
     }
 }
@@ -347,6 +375,57 @@ QStringList     MyOpenGLWidget::getShaderNames()
 {
     return _postProcessPrograms.keys();
 }
+
+void            MyOpenGLWidget::loadShaders(const QDomElement & postProcess)
+{
+    QDomElement shader = postProcess.firstChildElement("shader");
+
+    while(!shader.isNull())
+    {
+    	QString nom, vertex, fragment;
+
+    	nom = shader.attribute("nom");
+    	vertex = shader.attribute("vertex", "shaders/base.vert");
+    	fragment= shader.attribute("fragment", "shaders/base.frag");
+
+    	addShader(nom, vertex, fragment);
+
+
+        shader = shader.nextSiblingElement("shader");
+    }
+}
+
+void 			MyOpenGLWidget::saveShaders(QDomElement & root, QDomDocument & doc) const
+{
+	QDomElement postProcess = doc.createElement("postProcess");
+
+	for(auto i=  _postProcessPrograms.begin(); i != _postProcessPrograms.end(); ++i)
+	{
+		QDomElement shader = doc.createElement("shader");
+		QList<QOpenGLShader *> shaderList = i.value()->shaders(); 
+
+		shader.setAttribute("nom", i.key());
+
+		for(QOpenGLShader * j : shaderList)
+		{
+			switch(j->shaderType())
+			{
+				case QOpenGLShader::Vertex :
+					shader.setAttribute("vertex", _loadedShaders.key(j));
+					break;
+
+				case QOpenGLShader::Fragment :
+					shader.setAttribute("fragment", _loadedShaders.key(j));
+					break; 
+			}
+		}
+
+		postProcess.appendChild(shader);
+	}
+
+	root.appendChild(postProcess);
+}
+
 
 void MyOpenGLWidget::initFramebuffer(int width, int height)
 {
