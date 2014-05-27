@@ -1404,18 +1404,38 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
         //supression lumiere
         if( modele->data ( (vue->selectionModel()->currentIndex().parent()), Qt::DisplayRole)=="Light")
             {
+            //eviter de pouvoir editer un element deja sup mais avec fenetre edition deja open
+            if (dock_perso->isVisible())
+                {
+                if( (dock_perso->windowTitle()) == ("Edition :  "+vue->selectionModel()->currentIndex().data().toString() ))
+                    dock_perso->hide();
+                }
+            //la supression
             widget->getScene()->removeLight(vue->selectionModel()->currentIndex().data().toString());
             light->removeRow(vue->selectionModel()->currentIndex().row());
-            }
+             }
+
         //supresion piece
         if( modele->data ( (vue->selectionModel()->currentIndex().parent()), Qt::DisplayRole)=="Objet")
             {
+            //eviter de pouvoir editer un element deja sup mais avec fenetre edition deja open
+            if (dock_perso->isVisible())
+                {
+                if( (dock_perso->windowTitle()) == ("Edition :  "+vue->selectionModel()->currentIndex().data().toString() ))
+                    dock_perso->hide();
+                }
             widget->getScene()->removePiece(vue->selectionModel()->currentIndex().data().toString());
             objet->removeRow(vue->selectionModel()->currentIndex().row());
             }
         //supression objet
         if( modele->data ( (vue->selectionModel()->currentIndex().parent().parent()), Qt::DisplayRole)=="Objet")
             {
+            //eviter de pouvoir editer un element deja sup mais avec fenetre edition deja open
+            if (dock_perso->isVisible())
+                {
+                if( (dock_perso->windowTitle()) == ("Edition :  "+vue->selectionModel()->currentIndex().data().toString() ))
+                    dock_perso->hide();
+                }
             widget->getScene()->getPiece(vue->selectionModel()->currentIndex().parent().data().toString())->removeChild(vue->selectionModel()->currentIndex().data().toString());
 
             objet->child(vue->selectionModel()->currentIndex().parent().row())->removeRow(vue->selectionModel()->currentIndex().row());
