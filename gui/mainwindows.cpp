@@ -111,7 +111,7 @@ void MainWindow::createMenus()
         Edition->addAction(annulerAct);
             annulerAct->setIcon(QIcon("icones/undo.png"));
         Edition->addAction(retablirAct);
-            retablirAct->setIcon(QIcon("icones/redo.jpeg"));
+            retablirAct->setIcon(QIcon("icones/redo.png"));
 
     Affichage = menuBar()->addMenu(tr("&Affichage"));
         Affichage->addAction(culfaceAct);
