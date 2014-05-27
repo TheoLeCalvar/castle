@@ -29,6 +29,7 @@
 class Mesh;
 class Node;
 class Camera;
+class MyOpenGLWidget;
 
 #ifndef MAX_LIGHT
 #define MAX_LIGHT 8
@@ -56,6 +57,8 @@ private:
 
 	QMap<float, Light *>						_orderedLights; /**< Light ordonnées par leurs distance à la caméra */
 
+	MyOpenGLWidget 	*							_parent;
+
 public:
 	Camera *									_camera; /**< Caméra de la scène */
 
@@ -65,7 +68,7 @@ public:
 	 * @brief Constructeur vide
 	 * @details Construit une scène vide
 	 */
-	Scene();
+	Scene(MyOpenGLWidget * parent);
 
 	/**
 	 * @brief Charge une scène à partir d'un fichier xml la décrivant
@@ -73,7 +76,7 @@ public:
 	 * 
 	 * @param fileName Chemin vers le fichier
 	 */
-	Scene(const QString & fileName);
+	Scene(MyOpenGLWidget * parent, const QString & fileName);
 	
 	/**
 	 * @brief Destructeur de la scène

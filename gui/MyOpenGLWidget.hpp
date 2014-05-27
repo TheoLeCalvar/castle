@@ -15,6 +15,8 @@
 #include <QCursor>
 #include <QDebug>
 
+#include <QDomdocument>
+
 #include "helper.hpp"
 #include "camera.hpp"
 
@@ -43,7 +45,8 @@ private:
 	GLuint						_renderbuffer;
 	QOpenGLShaderProgram * 		_activeProgram;
 
-	QMap<QString, QOpenGLShaderProgram *> _postProcessPrograms;
+	QMap<QString, QOpenGLShaderProgram *> 	_postProcessPrograms;
+	QMap<QString, QOpenGLShader *>			_loadedShaders;
 
 	vec2 						_pixel_scale;
 
@@ -71,6 +74,9 @@ public:
 	void 			useShader(const QString & name);
 	void 			addShader(const QString & name, const QString & vertex, const QString & fragment);
 	QStringList		getShaderNames();
+
+	void 			loadShaders(const QDomElement & postProcess);
+	void 			saveShaders(QDomElement & root, QDomDocument & doc) const;
 
 private:
 	void initFramebuffer(int width, int height);
