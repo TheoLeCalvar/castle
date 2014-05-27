@@ -545,7 +545,7 @@ void 	Scene::loadPieces(const QDomElement & dom)
 				QList<QRectF> fenetres;
 
 				QDomElement fenetre = mur.firstChildElement("fenetre");
-
+				QDomElement partage = mur.firstChildElement("partage");
 
 				while(!fenetre.isNull())
 				{
@@ -558,6 +558,50 @@ void 	Scene::loadPieces(const QDomElement & dom)
 
 					fenetre = fenetre.nextSiblingElement("fenetre");
 				}
+
+				if(!partage.isNull())
+				{
+					qDebug() << "Partage de fenêtres pour le mur " << cote << "de la pièce" << nom << "on partage avec " << partage.attribute("piece") << partage.attribute("cote");
+					QDomElement pieceAPartager = dom.firstChildElement("piece");
+
+					//parcour des pièces jusqu'à trouver la bonne
+					while(!pieceAPartager.isNull() && pieceAPartager.attribute("nom") != partage.attribute("piece")) pieceAPartager = pieceAPartager.nextSiblingElement("piece");
+
+					if(pieceAPartager.isNull())
+					{
+						qDebug() << "Pièce " << partage.attribute("nom") << "introuvable";
+					}
+					else
+					{
+						QDomElement mur = pieceAPartager.firstChildElement("murs").firstChildElement("mur");
+
+
+						//parcours des murs jusqu'à trouver le bon
+						while(!mur.isNull() && mur.attribute("cote")!=partage.attribute("cote")) mur = mur.nextSiblingElement("mur");
+						
+						if(mur.isNull())
+							qDebug() << "Mur demandé pour le partage introuvable";
+						
+						else
+						{
+							QDomElement fenetre = mur.firstChildElement("fenetre");
+
+							while(!fenetre.isNull())
+							{
+								fenetres << QRectF(	
+										fenetre.attribute("x", "1.0").toFloat(), 
+										fenetre.attribute("y", "1.0").toFloat(), 
+										fenetre.attribute("width", "1.0").toFloat(), 
+										fenetre.attribute("height", "1.0").toFloat()
+									);
+
+
+								fenetre = fenetre.nextSiblingElement("fenetre");
+							}
+						}
+					}
+				}
+
 
 				if (cote == "avant")
 				{
