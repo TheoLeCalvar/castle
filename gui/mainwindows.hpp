@@ -69,6 +69,7 @@ private slots:
         void    ajoutmurcreatemodelmurcombo();
         void    validajoutmur();
         void    ajoutobjet();
+        void    selectioncheminobj();
         void    validationajoutobjet();
 
         //aide
@@ -252,13 +253,13 @@ private slots:
                 QHBoxLayout*    ajoutpieceshaderlayout;
 
         //ajout mur
-        QDockWidget*    dockajoutmur;
-            QWidget*    widgetajoutmur;
+        QDockWidget*                dockajoutmur;
+            QWidget*                widgetajoutmur;
 
             //layout ajout mur
-            QVBoxLayout*        mainlayoutajoutmur;
-                QHBoxLayout*    layoutcombotnompieceajoutmur;
-                QHBoxLayout*    layoutcombotnommurajoutmur;
+            QVBoxLayout*            mainlayoutajoutmur;
+                QHBoxLayout*        layoutcombotnompieceajoutmur;
+                QHBoxLayout*        layoutcombotnommurajoutmur;
 
             //contenu ajout mur
             QComboBox*              combopieceajoutmur;
@@ -270,10 +271,31 @@ private slots:
                 QStandardItemModel* modelajoutmurmur;
             QLabel*                 labelmurcomboajoutmur;
 
-            QPushButton*    boutonajoutmur;
+            QPushButton*            boutonajoutmur;
 
         //ajout objet
-        QDockWidget*    dockajoutobjet;
+        QDockWidget*                dockajoutobjet;
+            QWidget*                widgetajoutobjet;
+
+            //layout
+            QVBoxLayout*            mainlayoutajoutobjet;
+                QHBoxLayout*        layoutajoutobjetnom;
+                QHBoxLayout*        layoutajoutobjetpiece;
+                QHBoxLayout*        layoutcheminajoutobjet;
+
+           //contenu ajout objet
+           QLineEdit*               champnomajoutobjet;
+           QLabel*                  labelnomajoutobjet;
+
+           QComboBox*               combopieceajoutobjet;
+                QStandardItemModel* modelajoutobjet;
+           QLabel*                  labelpieceajoutobjet;
+
+           QLabel*                  labelcheminobjajoutobj;
+           QLineEdit*               lineeditobjajoutobj;
+           QPushButton*             boutonselectionobjajoutobjet;
+
+           QPushButton*             boutonajoutobjet;
 
         //aide
         QAction*    racourcitAct;

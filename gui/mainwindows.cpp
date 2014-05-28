@@ -451,7 +451,6 @@ void MainWindow::createMenus()
              //declaration widget
              widgetajoutmur = new QWidget(dockajoutmur);
 
-
              //declaration contenu
              labelpiececomboajoutmur = new QLabel(widgetajoutmur);
                 labelpiececomboajoutmur->setText("nom piece :");
@@ -495,11 +494,63 @@ void MainWindow::createMenus()
                 //ajoutwidget au dock
                 dockajoutmur->setWidget(widgetajoutmur);
 
+
 /* ************************************** */
 //          ajout objet                   //
 /* ************************************** */
 
              ajoutelement->addAction(ajoutobjetAct);
+
+             //decalration widget
+             widgetajoutobjet = new QWidget(dockajoutobjet);
+
+             //declaration contenu
+             labelnomajoutobjet = new QLabel(widgetajoutobjet);
+                labelnomajoutobjet->setText("Nom: ");
+             champnomajoutobjet = new QLineEdit(widgetajoutobjet);
+
+             labelpieceajoutobjet = new QLabel(widgetajoutobjet);
+                labelpieceajoutobjet->setText("Piece: ");
+             combopieceajoutobjet = new QComboBox(widgetajoutobjet);
+                combopieceajoutobjet->setMaximumWidth(200);
+
+
+             labelcheminobjajoutobj = new QLabel(widgetajoutobjet);
+                labelcheminobjajoutobj->setText("path: ");
+             lineeditobjajoutobj = new QLineEdit(widgetajoutobjet);
+             boutonselectionobjajoutobjet = new QPushButton(widgetajoutobjet);
+                boutonselectionobjajoutobjet->setText("+");
+                connect(boutonselectionobjajoutobjet, SIGNAL(clicked()), this ,SLOT(selectioncheminobj()));
+
+             modelajoutobjet = new QStandardItemModel(widgetajoutobjet);
+
+             boutonajoutobjet = new QPushButton(widgetajoutobjet);
+                boutonajoutobjet->setText("ok");
+                connect(boutonajoutobjet, SIGNAL(clicked()),this,SLOT(validationajoutobjet()) );
+             //positionement
+             mainlayoutajoutobjet = new QVBoxLayout();
+                layoutajoutobjetnom = new QHBoxLayout();
+                    layoutajoutobjetnom->addWidget(labelnomajoutobjet);
+                    layoutajoutobjetnom->addWidget(champnomajoutobjet);
+                layoutajoutobjetpiece = new QHBoxLayout();
+                    layoutajoutobjetpiece->addWidget(labelpieceajoutobjet);
+                    layoutajoutobjetpiece->addWidget(combopieceajoutobjet);
+                layoutcheminajoutobjet = new QHBoxLayout();
+                    layoutcheminajoutobjet->addWidget(labelcheminobjajoutobj);
+                    //layoutcheminajoutobjet->addWidget(lineeditobjajoutobj);
+                    layoutcheminajoutobjet->addWidget(boutonselectionobjajoutobjet);
+
+                mainlayoutajoutobjet->addLayout(layoutajoutobjetnom);
+                mainlayoutajoutobjet->addLayout(layoutajoutobjetpiece);
+                mainlayoutajoutobjet->addLayout(layoutcheminajoutobjet);
+                mainlayoutajoutobjet->addWidget(lineeditobjajoutobj);
+                mainlayoutajoutobjet->addWidget(boutonajoutobjet);
+
+                widgetajoutobjet->setLayout(mainlayoutajoutobjet);
+
+             //ajout au dock
+             dockajoutobjet->setWidget(widgetajoutobjet);
+
     //aide
     Aide = menuBar()->addMenu(tr("&Aide"));
         Aide->addAction(racourcitAct);
@@ -1104,6 +1155,9 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
      //rempli la combo piece
      QStringList listtmp = widget->getScene()->getPiecesName();
 
+     //vide la combo des mur si elle contient deja des mur
+     if (modelajoutmurmur != NULL)  modelajoutmurmur->clear();
+
      for (int i=0 ; i<listtmp.size() ; i++)
           {
             QStandardItem *itemtmp =new QStandardItem(listtmp.at(i));
@@ -1111,10 +1165,6 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
           }
 
      combopieceajoutmur->setModel(modelajoutmurpiece);
-
-     //vide la combo des mur si elle contient deja des mur
-
-     if (modelajoutmurmur != NULL)  modelajoutmurmur = NULL;
 
      //afiche le dock
      dockajoutmur->show();
@@ -1383,11 +1433,71 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
 
     void MainWindow::ajoutobjet()
     {
-    dockajoutobjet->show();
+        //rempli la combo piece
+
+        //vide le model si il a deja des element
+        if  (modelajoutobjet!=NULL)modelajoutobjet->clear();
+
+        QStringList listtmp = widget->getScene()->getPiecesName();
+
+        for (int i=0 ; i<listtmp.size() ; i++)
+             {
+               QStandardItem *itemtmp =new QStandardItem(listtmp.at(i));
+               modelajoutobjet->setItem(i,itemtmp);
+             }
+
+        combopieceajoutobjet->setModel(modelajoutobjet);
+
+
+        //afiche le dock
+        dockajoutobjet->show();
     }
+
+   void MainWindow::selectioncheminobj()
+   {
+   QString fileName = QFileDialog::getOpenFileName(this, tr("Selection obj"),"",tr("Obj (*.obj)"));
+   QFileInfo fileInfo(fileName);
+   QString dirPath = fileInfo.filePath();
+
+   if (fileName!=NULL)
+                {
+                lineeditobjajoutobj->setText(dirPath);
+                }
+
+   lineeditobjajoutobj->setText(dirPath);
+   }
 
     void MainWindow::validationajoutobjet()
     {
+        if (combopieceajoutobjet->currentText().isNull())
+            {
+            QMessageBox msgBox;
+            msgBox.setText("il faut une piece avant de charger un model");
+            msgBox.exec();
+            dockajoutobjet->close();
+            }
+
+        if (champnomajoutobjet->text()=="")
+            {
+            QMessageBox msgBox;
+            msgBox.setText("il faut un nom à l'objet");
+            msgBox.exec();
+            dockajoutobjet->close();
+            }
+
+        if (lineeditobjajoutobj->text()=="")
+            {
+            QMessageBox msgBox;
+            msgBox.setText("il faut un chemin");
+            msgBox.exec();
+            dockajoutobjet->close();
+            }
+
+    Node* nodetmp =   Node::loadModel(lineeditobjajoutobj->text(),widget->getScene());
+    nodetmp->parent(widget->getScene()->getPiece(combopieceajoutobjet->currentText()));
+    widget->getScene()->getPiece(combopieceajoutobjet->currentText())->addChild(champnomajoutobjet->text(),nodetmp);
+
+    dockajoutobjet->close();
 
     }
 
