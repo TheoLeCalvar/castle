@@ -29,6 +29,12 @@ MyOpenGLWidget::~MyOpenGLWidget()
     }
 
     delete _timer;
+
+    for(auto * i : _postProcessPrograms)
+        delete i;
+
+    for(auto * i : _loadedShaders)
+        delete i;
 }
 
 QSize MyOpenGLWidget::minimumSizeHint() const
@@ -123,6 +129,9 @@ void	MyOpenGLWidget::initializeGL()
 
     glBindVertexArray(0);
 
+
+    // useShader("");
+
 }
 
 
@@ -173,6 +182,11 @@ void	MyOpenGLWidget::paintGL()
     qint64 time = timer.nsecsElapsed();
 
     setWindowTitle(QString("Castle | %1 fps | %2 ns").arg(1 / (time / 1000000000.0)).arg(time));
+
+    if(time / 1000000000.0f > 1/60.0f)
+    {
+        qDebug() << "Moins de 60 fps !";
+    }
 
 }
 

@@ -162,7 +162,7 @@ Mesh* Mesh::loadMesh(const aiMesh * mesh)
 
 	};
 
-	unsigned char hitboxIndices[]
+	unsigned char hitboxIndices[] =
 	{
 		0, 1, 1, 2, 2, 3, 3, 0,
 		0, 4, 4, 7, 7, 3,
