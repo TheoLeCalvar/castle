@@ -1465,15 +1465,18 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
    void MainWindow::selectioncheminobj()
    {
    QString fileName = QFileDialog::getOpenFileName(this, tr("Selection obj"),"",tr("Obj (*.obj)"));
+
    QFileInfo fileInfo(fileName);
+
    QString dirPath = fileInfo.filePath();
+
+   QDir::current().relativeFilePath(dirPath);
+
 
    if (fileName!=NULL)
                 {
-                lineeditobjajoutobj->setText(dirPath);
+                lineeditobjajoutobj->setText(QDir::current().relativeFilePath(dirPath));
                 }
-
-   lineeditobjajoutobj->setText(dirPath);
    }
 
     void MainWindow::validationajoutobjet()
