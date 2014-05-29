@@ -1543,9 +1543,20 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                 if( (dock_perso->windowTitle()) == ("Edition :  "+vue->selectionModel()->currentIndex().data().toString() ))
                     dock_perso->hide();
                 }
+            //eviter de pouvoir ajouter un objet/mur au en piece que l'on vien de sup
+            if (dockajoutobjet->isVisible())
+                {
+                dockajoutobjet->close();
+                }
+            if (dockajoutmur->isVisible())
+                {
+                dockajoutmur->close();
+                }
+
             widget->getScene()->removePiece(vue->selectionModel()->currentIndex().data().toString());
             objet->removeRow(vue->selectionModel()->currentIndex().row());
             }
+
         //supression objet
         if( modele->data ( (vue->selectionModel()->currentIndex().parent().parent()), Qt::DisplayRole)=="Objet")
             {
