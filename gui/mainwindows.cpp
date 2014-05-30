@@ -85,7 +85,7 @@ void MainWindow::createActions()
          connect(ajoutobjetAct, SIGNAL(triggered()), this, SLOT(ajoutobjet()));
 
      //aide
-     aproposAct = new QMenu(tr("&A propos"), this);
+     about = new QMenu(tr("about"), this);
         aboutqtAct = new QAction(tr("&QT"), this);
             connect(aboutqtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
         aboutassimpAct = new QAction(tr("&Assimp"), this);
@@ -555,9 +555,9 @@ void MainWindow::createMenus()
 
     //aide
     Aide = menuBar()->addMenu(tr("&Aide"));
-        Aide->addMenu(aproposAct);
-            aproposAct->addAction(aboutqtAct);
-            aproposAct->addAction(aboutassimpAct);
+        Aide->addMenu(about);
+            about->addAction(aboutqtAct);
+            about->addAction(aboutassimpAct);
 }
 
 void MainWindow::createListeDockwidget()
@@ -1578,9 +1578,8 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
     void MainWindow::aboutassimp()
     {
      QMessageBox::about(widget,
-                        tr("A propos de Assimp"),
-                        tr("<h1><b><i><u>Info on MyApp</u></i></b></h1><br />This is some info")
-                        );
+                        tr("About Assimp"),
+                        "");
     }
 
 

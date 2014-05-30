@@ -298,7 +298,7 @@ private slots:
            QPushButton*             boutonajoutobjet;
 
         //aide
-        QMenu*    aproposAct;
+        QMenu*    about;
             QAction*    aboutqtAct;
             QAction*    aboutassimpAct;
 //fin menu bar
