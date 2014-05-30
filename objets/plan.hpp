@@ -59,14 +59,6 @@ public:
 	 */
 	const QList<QRectF> & getFenetres() const{return _fenetres;}
 
-
-protected:
-
-	virtual vec3 getP() const;
-	virtual float getWidth() const;
-	virtual float getHeight() const;
-	virtual float getDepth() const;
-
 };
 
 #endif

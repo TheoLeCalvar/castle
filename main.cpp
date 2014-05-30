@@ -24,16 +24,19 @@ int main(int argc, char **argv)
 
 	if(argc < 2)
 	{
-		QGLFormat f;
+		// QGLFormat f;
 
-		f.setVersion(3, 2);
-		f.setProfile(QGLFormat::CoreProfile);
+		// f.setVersion(3, 2);
+		// f.setProfile(QGLFormat::CoreProfile);
 	
 
 
-		MyOpenGLWidget * w = new MyOpenGLWidget(f, NULL, "scene.xml");
-		w->show();
+		// MyOpenGLWidget * w = new MyOpenGLWidget(f, NULL, "scene.xml");
+		// w->show();
 
+		MainWindow w;
+
+		w.show();
 
 
 		return app.exec();

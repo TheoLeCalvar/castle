@@ -143,26 +143,3 @@ void Plan::draw()
 	glBindVertexArray(0);	
 }
 
-vec3 Plan::getP() const
-{
-	vec4 centre((_minP + _maxP)/2.0f, 0.0f);
-	transformVector(centre);
-
-	return centre;
-}
-
-float Plan::getWidth() const
-{
-	return (_maxP[0] - _minP[0]) / 2.0f;
-}
-
-float Plan::getHeight() const
-{
-	return (_maxP[1] - _minP[1]) / 2.0f;
-}
-
-float Plan::getDepth() const
-{
-	return (_maxP[2] - _minP[2]) / 2.0f;
-}
-

@@ -86,14 +86,6 @@ void 	Objet::activateShader()
 	}
 }
 
-void 	Objet::transformVector(vec4 & v) const
-{
-	v = _model * v;
-
-	if(_parent)
-		_parent->transformVector(v);
-}
-
 void 	Objet::updateModel()
 {
 	_model = scaleMatrix(_scale);
