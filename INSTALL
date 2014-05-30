@@ -1,0 +1,14 @@
+Requière :
+
+	QT 5.2 (testé avec 5.3):
+		- installer depuis les depôts si disponnible ou depuis le site officiel http://qt-project.org/downloads
+
+	Assimp 3 (http://assimp.sourceforge.net/):
+		- non disponnible sur les dépôts, suivre la procédure d'installation et de la compilation 
+		- http://sourceforge.net/projects/assimp/files/assimp-3.0/
+
+
+Compilation:
+	
+	- qmake
+	- make
