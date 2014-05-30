@@ -33,7 +33,7 @@ private:
 	{
 		GLuint 			vao;
 		QList<GLuint> 	vbos;
-		GLuint 			nbVertices;
+		GLuint 			nbFaces;
 		unsigned int 	nbReferences;
 	} MeshInfo;
 
