@@ -197,9 +197,14 @@ void Mesh::draw()
 
 	glBindVertexArray (_infos->vao);
 
-  	glDrawElements (GL_TRIANGLES, _infos->nbFaces * 3, GL_UNSIGNED_INT, 0);
+	openGL_check_error();
+
+	if(_infos->nbFaces)
+  		glDrawElements (GL_TRIANGLES, _infos->nbFaces * 3, GL_UNSIGNED_INT, 0);
 
   	openGL_check_error();
+
+  	glBindVertexArray(0);
 
 }
 

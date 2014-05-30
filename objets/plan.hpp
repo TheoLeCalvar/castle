@@ -19,7 +19,7 @@ private:
 	GLuint _vbo_normals;
 	GLuint _vbo_indices;
 	GLuint _vbo_texCoord;
-	unsigned int _nbVertices;
+	unsigned int _nbIndices;
 
 	vec3 	_minP;
 	vec3 	_maxP;
