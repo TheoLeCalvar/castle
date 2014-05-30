@@ -73,7 +73,7 @@ private slots:
         void    validationajoutobjet();
 
         //aide
-        void    Racourcit();
+        void    aboutassimp();
 
         //autre
         void    supresionelement();
@@ -298,7 +298,9 @@ private slots:
            QPushButton*             boutonajoutobjet;
 
         //aide
-        QAction*    racourcitAct;
+        QMenu*    aproposAct;
+            QAction*    aboutqtAct;
+            QAction*    aboutassimpAct;
 //fin menu bar
 
 
