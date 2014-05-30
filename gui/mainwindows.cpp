@@ -1564,7 +1564,23 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             Node* nodetmp =   Node::loadModel(lineeditobjajoutobj->text(),widget->getScene());
             nodetmp->name(champnomajoutobjet->text());
             nodetmp->parent(widget->getScene()->getPiece(combopieceajoutobjet->currentText()));
-            //on ajoute au model l'element
+
+            //(ajout au model)parcour pour trouver la piece parente
+            if(objet){
+                    for(int i = 0 ; i < objet->rowCount() ; i++)
+                        {
+                        bool a = false;
+
+                        if (objet->child(i)->text()== combopieceajoutobjet->currentText())//si on est dans la bonne piece
+
+                                for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
+                                {
+                                if (objet->child(i)->child(j)->text()==champnomajoutobjet->text())
+                                    a=true;
+                                }
+                        if (a==false) objet->child(i)->appendRow(new QStandardItem(champnomajoutobjet->text()));
+                        }
+                 }
 
             //on ferme le dock d'ajout
             dockajoutobjet->close();

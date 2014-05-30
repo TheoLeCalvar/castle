@@ -48,7 +48,6 @@ private slots:
         void    Ouvrir();
         void    Enregistrer();
 
-
         //affichage
         void    Apercut();
         void    Culface();
