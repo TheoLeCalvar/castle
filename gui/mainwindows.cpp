@@ -39,7 +39,7 @@ void MainWindow::createActions()
      enregistrerAct = new QAction(tr("&Enregistrer"), this);
         connect( enregistrerAct, SIGNAL(triggered()), this, SLOT(Enregistrer()));
 
-     kiterAct = new QAction(tr("&Quitter"), this);
+     kiterAct = new QAction(tr("&exit"), this);
         connect( kiterAct, SIGNAL(triggered()), qApp, SLOT(quit()));
 
      //edition
@@ -85,10 +85,10 @@ void MainWindow::createActions()
          connect(ajoutobjetAct, SIGNAL(triggered()), this, SLOT(ajoutobjet()));
 
      //aide
-     about = new QMenu(tr("about"), this);
-        aboutqtAct = new QAction(tr("&QT"), this);
+     about = new QMenu(tr("&about"), this);
+        aboutqtAct = new QAction(tr("&QT"), about);
             connect(aboutqtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
-        aboutassimpAct = new QAction(tr("&Assimp"), this);
+        aboutassimpAct = new QAction(tr("&Assimp"), about);
             connect(aboutassimpAct, SIGNAL(triggered()), this, SLOT(aboutassimp()));
 //fin menubar
 
@@ -1577,9 +1577,10 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
     //aide
     void MainWindow::aboutassimp()
     {
+
      QMessageBox::about(widget,
                         tr("About Assimp"),
-                        "");
+                          "<p>Open Asset Import Library (short name: Assimp) is a portable Open Source library to import various well-known 3D model formats in a uniform manner. The most recent version also knows how to export 3d files and is therefore suitable as a general-purpose 3D model converter. See the feature list. AssimpView is a Windows-based model viewer. It loads all file formats that Assimp supports and is perfectly suited to quickly inspect 3d assets. Assimp aims to provide a full asset conversion pipeline for use in game engines / realtime rendering systems of any kind, but it is not limited to this purpose. In the past, it has been used in a wide range of applications.Written in C++, it is available under a liberal BSD license. There is a C API as well as bindings to various other languages, including C#/.net, Python and D. Assimp loads all input model formats into one straightforward data structure for further processing. This feature set is augmented by various post processing tools, including frequently-needed operations such as computing normal and tangent vectors.</p><a href=\"http://assimp.sourceforge.net/main_license.html\">License</a>" );
     }
 
 
