@@ -1489,7 +1489,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             dockajoutobjet->close();
             }
 
-        if (champnomajoutobjet->text()=="")
+        else if (champnomajoutobjet->text()=="")
             {
             QMessageBox msgBox;
             msgBox.setText("il faut un nom à l'objet");
@@ -1497,20 +1497,20 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             dockajoutobjet->close();
             }
 
-        if (lineeditobjajoutobj->text()=="")
+        else if (lineeditobjajoutobj->text()=="")
             {
             QMessageBox msgBox;
             msgBox.setText("il faut un chemin");
             msgBox.exec();
             dockajoutobjet->close();
             }
+        else{
+            Node* nodetmp =   Node::loadModel(lineeditobjajoutobj->text(),widget->getScene());
+            nodetmp->parent(widget->getScene()->getPiece(combopieceajoutobjet->currentText()));
+            widget->getScene()->getPiece(combopieceajoutobjet->currentText())->addChild(champnomajoutobjet->text(),nodetmp);
 
-    Node* nodetmp =   Node::loadModel(lineeditobjajoutobj->text(),widget->getScene());
-    nodetmp->parent(widget->getScene()->getPiece(combopieceajoutobjet->currentText()));
-    widget->getScene()->getPiece(combopieceajoutobjet->currentText())->addChild(champnomajoutobjet->text(),nodetmp);
-
-    dockajoutobjet->close();
-
+            dockajoutobjet->close();
+            }
     }
 
     //aide
@@ -1569,7 +1569,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                 if( (dock_perso->windowTitle()) == ("Edition :  "+vue->selectionModel()->currentIndex().data().toString() ))
                     dock_perso->hide();
                 }
-            widget->getScene()->getPiece(vue->selectionModel()->currentIndex().parent().data().toString())->removeChild(vue->selectionModel()->currentIndex().data().toString());
+            widget->getScene()->getPiece(vue->selectionModel()->currentIndex().parent().data().toString())->deleteChild(vue->selectionModel()->currentIndex().data().toString());
 
             objet->child(vue->selectionModel()->currentIndex().parent().row())->removeRow(vue->selectionModel()->currentIndex().row());
             }
