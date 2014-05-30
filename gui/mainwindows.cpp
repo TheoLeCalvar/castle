@@ -1048,9 +1048,8 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                                 vec3(-90,0,0),
                                 vec3(0,0,ajoutpiecedimz->value())
                                  );
+                    plantmp->name(lineeditajoutpiece->text()+"_bas");
                     plantmp->parent(piecetmp);
-
-                    scenetemp->getPiece(lineeditajoutpiece->text())->addChild(lineeditajoutpiece->text()+"_bas" ,plantmp);
                 }
                if (checkmur2->isChecked())
                {
@@ -1064,9 +1063,8 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                                vec3(90,0,0),
                                vec3(0,ajoutpiecedimy->value(),0)
                                 );
+                   plantmp->name(lineeditajoutpiece->text()+"_haut");
                    plantmp->parent(piecetmp);
-
-                   scenetemp->getPiece(lineeditajoutpiece->text())->addChild(lineeditajoutpiece->text()+"_haut" ,plantmp);
                }
 
                 if (checkmur3->isChecked())
@@ -1079,9 +1077,8 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                                 QList<QRectF>(),
                                 scenetemp->getMaterial(comboajoutpiece->currentText())//material
                                  );
-                    plantmp->parent(piecetmp);
-
-                    scenetemp->getPiece(lineeditajoutpiece->text())->addChild(lineeditajoutpiece->text()+"_arriere" ,plantmp);
+                   plantmp->name(lineeditajoutpiece->text()+"_arriere");
+                   plantmp->parent(piecetmp);
                 }
                 if (checkmur4->isChecked())
                 {
@@ -1095,9 +1092,8 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                                 vec3(0,180,0),
                                 vec3(ajoutpiecedimx->value(),0,ajoutpiecedimz->value())
                                  );
+                    plantmp->name(lineeditajoutpiece->text()+"_avant");
                     plantmp->parent(piecetmp);
-
-                    scenetemp->getPiece(lineeditajoutpiece->text())->addChild(lineeditajoutpiece->text()+"_avant" ,plantmp);
                 }
                 if (checkmur5->isChecked())
                 {
@@ -1111,9 +1107,8 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                                 vec3(0,-90,0),
                                 vec3(ajoutpiecedimx->value(),0,0)
                                  );
+                    plantmp->name(lineeditajoutpiece->text()+"_gauche");
                     plantmp->parent(piecetmp);
-
-                    scenetemp->getPiece(lineeditajoutpiece->text())->addChild(lineeditajoutpiece->text()+"_gauche" ,plantmp);
                 }
                if (checkmur6->isChecked())
                {
@@ -1127,9 +1122,8 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                                vec3(0,90,0),
                                vec3(0,0,ajoutpiecedimz->value())
                                 );
+                   plantmp->name(lineeditajoutpiece->text()+"_droite");
                    plantmp->parent(piecetmp);
-
-                   scenetemp->getPiece(lineeditajoutpiece->text())->addChild(lineeditajoutpiece->text()+"_droite" ,plantmp);
                }
 
                 //fin de l'ajout
@@ -1244,12 +1238,11 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                             NULL,
                             vec3(-90,0,0),
                             vec3(0,0,dimtmp[2])
-                             );
+                             );                
+                plantmp->name(combopieceajoutmur->currentText()+ "_bas");
                 plantmp->parent(widget->getScene()->getPiece(combopieceajoutmur->currentText()));
 
-                widget->getScene()->getPiece(combopieceajoutmur->currentText())->addChild(combomurajoutmur->currentText() ,plantmp);
-
-                //parcour pour trouver la piece parente
+                //(ajout au model)parcour pour trouver la piece parente
                 if(objet){
                         for(int i = 0 ; i < objet->rowCount() ; i++)
                             {
@@ -1281,9 +1274,8 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                             vec3(90,0,0),
                             vec3(0,dimtmp[1],0)
                              );
+                plantmp->name(combopieceajoutmur->currentText()+ "_haut");
                 plantmp->parent(widget->getScene()->getPiece(combopieceajoutmur->currentText()));
-
-                widget->getScene()->getPiece(combopieceajoutmur->currentText())->addChild(combomurajoutmur->currentText() ,plantmp);
 
                 //parcour pour trouver la piece parente
                 if(objet){
@@ -1313,9 +1305,8 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                             QList<QRectF>(),
                             NULL
                              );
+                plantmp->name(combopieceajoutmur->currentText()+ "_arriere");
                 plantmp->parent(widget->getScene()->getPiece(combopieceajoutmur->currentText()));
-
-                widget->getScene()->getPiece(combopieceajoutmur->currentText())->addChild(combomurajoutmur->currentText() ,plantmp);
 
                 //parcour pour trouver la piece parente
                 if(objet){
@@ -1347,9 +1338,8 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                             vec3(0,180,0),
                             vec3(dimtmp[0],0,dimtmp[2])
                              );
+                plantmp->name(combopieceajoutmur->currentText()+ "_avant");
                 plantmp->parent(widget->getScene()->getPiece(combopieceajoutmur->currentText()));
-
-                widget->getScene()->getPiece(combopieceajoutmur->currentText())->addChild(combomurajoutmur->currentText() ,plantmp);
 
                 //parcour pour trouver la piece parente
                 if(objet){
@@ -1382,9 +1372,8 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                             vec3(0,-90,0),
                             vec3(dimtmp[0],0,0)
                              );
+                plantmp->name(combopieceajoutmur->currentText()+ "_gauche");
                 plantmp->parent(widget->getScene()->getPiece(combopieceajoutmur->currentText()));
-
-                widget->getScene()->getPiece(combopieceajoutmur->currentText())->addChild(combomurajoutmur->currentText() ,plantmp);
 
                 //parcour pour trouver la piece parente
                 if(objet){
@@ -1416,9 +1405,8 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                             vec3(0,90,0),
                             vec3(0,0,dimtmp[2])
                              );
+                plantmp->name(combopieceajoutmur->currentText()+ "_droite");
                 plantmp->parent(widget->getScene()->getPiece(combopieceajoutmur->currentText()));
-
-                widget->getScene()->getPiece(combopieceajoutmur->currentText())->addChild(combomurajoutmur->currentText() ,plantmp);
 
                 //parcour pour trouver la piece parente
                 if(objet){
@@ -1465,15 +1453,18 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
    void MainWindow::selectioncheminobj()
    {
    QString fileName = QFileDialog::getOpenFileName(this, tr("Selection obj"),"",tr("Obj (*.obj)"));
+
    QFileInfo fileInfo(fileName);
+
    QString dirPath = fileInfo.filePath();
+
+   QDir::current().relativeFilePath(dirPath);
+
 
    if (fileName!=NULL)
                 {
-                lineeditobjajoutobj->setText(dirPath);
+                lineeditobjajoutobj->setText(QDir::current().relativeFilePath(dirPath));
                 }
-
-   lineeditobjajoutobj->setText(dirPath);
    }
 
     void MainWindow::validationajoutobjet()
@@ -1486,7 +1477,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             dockajoutobjet->close();
             }
 
-        if (champnomajoutobjet->text()=="")
+        else if (champnomajoutobjet->text()=="")
             {
             QMessageBox msgBox;
             msgBox.setText("il faut un nom à l'objet");
@@ -1494,20 +1485,23 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             dockajoutobjet->close();
             }
 
-        if (lineeditobjajoutobj->text()=="")
+        else if (lineeditobjajoutobj->text()=="")
             {
             QMessageBox msgBox;
             msgBox.setText("il faut un chemin");
             msgBox.exec();
             dockajoutobjet->close();
             }
+        else{
+            //on ajoute l'objet
+            Node* nodetmp =   Node::loadModel(lineeditobjajoutobj->text(),widget->getScene());
+            nodetmp->name(champnomajoutobjet->text());
+            nodetmp->parent(widget->getScene()->getPiece(combopieceajoutobjet->currentText()));
+            //on ajoute au model l'element
 
-    Node* nodetmp =   Node::loadModel(lineeditobjajoutobj->text(),widget->getScene());
-    nodetmp->parent(widget->getScene()->getPiece(combopieceajoutobjet->currentText()));
-    widget->getScene()->getPiece(combopieceajoutobjet->currentText())->addChild(champnomajoutobjet->text(),nodetmp);
-
-    dockajoutobjet->close();
-
+            //on ferme le dock d'ajout
+            dockajoutobjet->close();
+            }
     }
 
     //aide
@@ -1566,7 +1560,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                 if( (dock_perso->windowTitle()) == ("Edition :  "+vue->selectionModel()->currentIndex().data().toString() ))
                     dock_perso->hide();
                 }
-            widget->getScene()->getPiece(vue->selectionModel()->currentIndex().parent().data().toString())->removeChild(vue->selectionModel()->currentIndex().data().toString());
+            widget->getScene()->getPiece(vue->selectionModel()->currentIndex().parent().data().toString())->deleteChild(vue->selectionModel()->currentIndex().data().toString());
 
             objet->child(vue->selectionModel()->currentIndex().parent().row())->removeRow(vue->selectionModel()->currentIndex().row());
             }
