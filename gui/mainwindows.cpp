@@ -141,61 +141,61 @@ void MainWindow::createMenus()
             widgetajoutlumiere = new QWidget(dockajoutlumiere);
 
             //nom
-            nomajoutlumiere = new QLabel(dockajoutlumiere);
+            nomajoutlumiere = new QLabel(widgetajoutlumiere);
                 nomajoutlumiere->setText("Nom: ");
-            lineeditnomajoutlumiere = new QLineEdit(dockajoutlumiere);
-            layoutnomajoutlumiere = new QHBoxLayout(dockajoutlumiere);
+            lineeditnomajoutlumiere = new QLineEdit(widgetajoutlumiere);
+            layoutnomajoutlumiere = new QHBoxLayout();
                 layoutnomajoutlumiere->addWidget(nomajoutlumiere);
                 layoutnomajoutlumiere->addWidget(lineeditnomajoutlumiere);
             //position
-            positionajoutlumiere = new QLabel(dockajoutlumiere);
+            positionajoutlumiere = new QLabel(widgetajoutlumiere);
                 positionajoutlumiere->setText("Position: ");
-            spinpositionajoutlumierex = new QDoubleSpinBox;
+            spinpositionajoutlumierex = new QDoubleSpinBox(widgetajoutlumiere);
                 spinpositionajoutlumierex->setRange(-1000 , 1000);
-            spinpositionajoutlumierey = new QDoubleSpinBox(dockajoutlumiere);
+            spinpositionajoutlumierey = new QDoubleSpinBox(widgetajoutlumiere);
                 spinpositionajoutlumierey->setRange(-1000 , 1000);
-            spinpositionajoutlumierez = new QDoubleSpinBox(dockajoutlumiere);
+            spinpositionajoutlumierez = new QDoubleSpinBox(widgetajoutlumiere);
                 spinpositionajoutlumierez->setRange(-1000 , 1000);
 
-            layoutposajoutlumiere = new QHBoxLayout(dockajoutlumiere);
+            layoutposajoutlumiere = new QHBoxLayout();
                  layoutposajoutlumiere->addWidget(positionajoutlumiere);
                  layoutposajoutlumiere->addWidget(spinpositionajoutlumierex);
                  layoutposajoutlumiere->addWidget(spinpositionajoutlumierey);
                  layoutposajoutlumiere->addWidget(spinpositionajoutlumierez);
 
             //difuse
-            difajoutlumiere = new QLabel(dockajoutlumiere);
+            difajoutlumiere = new QLabel(widgetajoutlumiere);
                 difajoutlumiere->setText("Diffuse: ");
-            spindifajoutlumierex = new QDoubleSpinBox(dockajoutlumiere);
+            spindifajoutlumierex = new QDoubleSpinBox(widgetajoutlumiere);
                 spindifajoutlumierex->setRange(0 , 1);
                 spindifajoutlumierex->setSingleStep(0.01);
-            spindifajoutlumierey = new QDoubleSpinBox(dockajoutlumiere);
+            spindifajoutlumierey = new QDoubleSpinBox(widgetajoutlumiere);
                  spindifajoutlumierey->setRange(0 , 1);
                  spindifajoutlumierey->setSingleStep(0.01);
-            spindifajoutlumierez = new QDoubleSpinBox(dockajoutlumiere);
+            spindifajoutlumierez = new QDoubleSpinBox(widgetajoutlumiere);
                  spindifajoutlumierez->setRange(0 , 1);
                  spindifajoutlumierez->setSingleStep(0.01);
 
-            layoutdifajoutlumiere = new QHBoxLayout(dockajoutlumiere);
+            layoutdifajoutlumiere = new QHBoxLayout();
                 layoutdifajoutlumiere->addWidget(difajoutlumiere);
                 layoutdifajoutlumiere->addWidget(spindifajoutlumierex);
                 layoutdifajoutlumiere->addWidget(spindifajoutlumierey);
                 layoutdifajoutlumiere->addWidget(spindifajoutlumierez);
 
              //speculaire
-             speajoutlumiere = new QLabel(dockajoutlumiere);
+             speajoutlumiere = new QLabel(widgetajoutlumiere);
                 speajoutlumiere->setText("Speculaire: ");
-             spinspeajoutlumierex = new QDoubleSpinBox(dockajoutlumiere);
+             spinspeajoutlumierex = new QDoubleSpinBox(widgetajoutlumiere);
                 spinspeajoutlumierex->setRange(0 , 1);
                 spinspeajoutlumierex->setSingleStep(0.01);
-             spinspeajoutlumierey = new QDoubleSpinBox(dockajoutlumiere);
+             spinspeajoutlumierey = new QDoubleSpinBox(widgetajoutlumiere);
                 spinspeajoutlumierey->setRange(0 , 1);
                 spinspeajoutlumierey->setSingleStep(0.01);
-             spinspeajoutlumierez = new QDoubleSpinBox(dockajoutlumiere);
+             spinspeajoutlumierez = new QDoubleSpinBox(widgetajoutlumiere);
                 spinspeajoutlumierez->setRange(0 , 1);
                 spinspeajoutlumierez->setSingleStep(0.01);
 
-             layoutspeajoutlumiere = new QHBoxLayout(dockajoutlumiere);
+             layoutspeajoutlumiere = new QHBoxLayout();
                 layoutspeajoutlumiere->addWidget(speajoutlumiere);
                 layoutspeajoutlumiere->addWidget(spinspeajoutlumierex);
                 layoutspeajoutlumiere->addWidget(spinspeajoutlumierey);
@@ -203,11 +203,11 @@ void MainWindow::createMenus()
 
 
             //bouton
-             boutonajoutlumiere = new QPushButton(dockajoutlumiere);
+             boutonajoutlumiere = new QPushButton(widgetajoutlumiere);
                 boutonajoutlumiere->setText("Ajouter: ");
              connect(boutonajoutlumiere,SIGNAL(clicked()), this ,SLOT(validajoutlumiere()));
 
-             layoutajoutlumiere=new QVBoxLayout(dockajoutlumiere);
+             layoutajoutlumiere=new QVBoxLayout();
                 layoutajoutlumiere->addLayout(layoutnomajoutlumiere);
                 layoutajoutlumiere->addLayout(layoutposajoutlumiere);
                 layoutajoutlumiere->addLayout(layoutdifajoutlumiere);
@@ -227,76 +227,77 @@ void MainWindow::createMenus()
             widgetajoutmaterial = new QWidget(dockajoutmateriaux);
 
             //nom
-            nomajoutmaterial = new QLabel(dockajoutmateriaux);
+            nomajoutmaterial = new QLabel(widgetajoutmaterial);
                 nomajoutmaterial->setText("Nom: ");
-            lineeditnomajoutmaterial = new QLineEdit(dockajoutmateriaux);
-            layoutnomajoutmaterial = new QHBoxLayout(dockajoutmateriaux);
+            lineeditnomajoutmaterial = new QLineEdit(widgetajoutmaterial);
+            layoutnomajoutmaterial = new QHBoxLayout();
                 layoutnomajoutmaterial->addWidget(nomajoutmaterial);
                 layoutnomajoutmaterial->addWidget(lineeditnomajoutmaterial);
 
             //ambiante
-            ambajoutmaterial = new QLabel(dockajoutmateriaux);
+            ambajoutmaterial = new QLabel(widgetajoutmaterial);
                 ambajoutmaterial->setText("Ambiante: ");
-            spinambajoutmaterialx = new QDoubleSpinBox(dockajoutmateriaux);
+            spinambajoutmaterialx = new QDoubleSpinBox(widgetajoutmaterial);
                 spinambajoutmaterialx->setRange(0 , 1);
                 spinambajoutmaterialx->setSingleStep(0.01);
                 spinambajoutmaterialx->setDecimals(4);
-            spinambajoutmaterialy = new QDoubleSpinBox(dockajoutmateriaux);
+            spinambajoutmaterialy = new QDoubleSpinBox(widgetajoutmaterial);
                 spinambajoutmaterialy->setRange(0 , 1);
                 spinambajoutmaterialy->setSingleStep(0.01);
                 spinambajoutmaterialy->setDecimals(4);
-            spinambajoutmaterialz = new QDoubleSpinBox(dockajoutmateriaux);
+            spinambajoutmaterialz = new QDoubleSpinBox(widgetajoutmaterial);
                 spinambajoutmaterialz->setRange(0 , 1);
                 spinambajoutmaterialz->setSingleStep(0.01);
                 spinambajoutmaterialz->setDecimals(4);
 
-            layoutambajoutmaterial = new QHBoxLayout(dockajoutmateriaux);
+            layoutambajoutmaterial = new QHBoxLayout();
                  layoutambajoutmaterial->addWidget(ambajoutmaterial);
                  layoutambajoutmaterial->addWidget(spinambajoutmaterialx);
                  layoutambajoutmaterial->addWidget(spinambajoutmaterialy);
                  layoutambajoutmaterial->addWidget(spinambajoutmaterialz);
 
             //difuse
-            difajoutmaterial = new QLabel(dockajoutmateriaux);
+            difajoutmaterial = new QLabel(widgetajoutmaterial);
                 difajoutmaterial->setText("Difuse: ");
-            spindifajoutmaterialx = new QDoubleSpinBox(dockajoutmateriaux);
+            spindifajoutmaterialx = new QDoubleSpinBox(widgetajoutmaterial);
                 spindifajoutmaterialx->setRange(0 , 1);
                 spindifajoutmaterialx->setSingleStep(0.01);
                 spindifajoutmaterialx->setDecimals(4);
-            spindifajoutmaterialy = new QDoubleSpinBox(dockajoutmateriaux);
+            spindifajoutmaterialy = new QDoubleSpinBox(widgetajoutmaterial);
                  spindifajoutmaterialy->setRange(0 , 1);
                  spindifajoutmaterialy->setSingleStep(0.01);
                  spindifajoutmaterialy->setDecimals(4);
-            spindifajoutmaterialz = new QDoubleSpinBox(dockajoutmateriaux);
+            spindifajoutmaterialz = new QDoubleSpinBox(widgetajoutmaterial);
                  spindifajoutmaterialz->setRange(0 , 1);
                  spindifajoutmaterialz->setSingleStep(0.01);
                  spindifajoutmaterialz->setDecimals(4);
 
-            layoutdifajoutmaterial = new QHBoxLayout(dockajoutmateriaux);
+            layoutdifajoutmaterial = new QHBoxLayout();
                 layoutdifajoutmaterial->addWidget(difajoutmaterial);
                 layoutdifajoutmaterial->addWidget(spindifajoutmaterialx);
                 layoutdifajoutmaterial->addWidget(spindifajoutmaterialy);
                 layoutdifajoutmaterial->addWidget(spindifajoutmaterialz);
 
              //speculaire
-             speajoutmaterial = new QLabel("Speculaire: ");
-             spinspeajoutmaterialx = new QDoubleSpinBox(dockajoutmateriaux);
+             speajoutmaterial = new QLabel(widgetajoutmaterial);
+                speajoutmaterial->setText("Speculaire: ");
+             spinspeajoutmaterialx = new QDoubleSpinBox(widgetajoutmaterial);
                 spinspeajoutmaterialx->setRange(0 , 1);
                 spinspeajoutmaterialx->setSingleStep(0.01);
                 spinspeajoutmaterialx->setDecimals(4);
-             spinspeajoutmaterialy = new QDoubleSpinBox(dockajoutmateriaux);
+             spinspeajoutmaterialy = new QDoubleSpinBox(widgetajoutmaterial);
                 spinspeajoutmaterialy->setRange(0 , 1);
                 spinspeajoutmaterialy->setSingleStep(0.01);
                 spinspeajoutmaterialy->setDecimals(4);
-             spinspeajoutmaterialz = new QDoubleSpinBox(dockajoutmateriaux);
+             spinspeajoutmaterialz = new QDoubleSpinBox(widgetajoutmaterial);
                 spinspeajoutmaterialz->setRange(0 , 1);
                 spinspeajoutmaterialz->setSingleStep(0.01);
                 spinspeajoutmaterialz->setDecimals(4);
-             spinspeajoutmateriala = new QDoubleSpinBox(dockajoutmateriaux);
+             spinspeajoutmateriala = new QDoubleSpinBox(widgetajoutmaterial);
                    spinspeajoutmateriala->setRange(0 , 128);
                    spinspeajoutmateriala->setSingleStep(0.5);
 
-             layoutspeajoutmaterial = new QHBoxLayout(dockajoutmateriaux);
+             layoutspeajoutmaterial = new QHBoxLayout();
                 layoutspeajoutmaterial->addWidget(speajoutmaterial);
                 layoutspeajoutmaterial->addWidget(spinspeajoutmaterialx);
                 layoutspeajoutmaterial->addWidget(spinspeajoutmaterialy);
@@ -304,11 +305,11 @@ void MainWindow::createMenus()
                 layoutspeajoutmaterial->addWidget(spinspeajoutmateriala);
 
             //bouton
-             boutonajoutmaterial = new QPushButton(dockajoutmateriaux);
+             boutonajoutmaterial = new QPushButton(widgetajoutmaterial);
                 boutonajoutmaterial->setText("ajouter");
              connect(boutonajoutmaterial,SIGNAL(clicked()), this ,SLOT(validajoutmaterial()));
 
-             layoutajoutmaterial=new QVBoxLayout;
+             layoutajoutmaterial = new QVBoxLayout();
                 layoutajoutmaterial->addLayout(layoutnomajoutmaterial);
                 layoutajoutmaterial->addLayout(layoutambajoutmaterial);
                 layoutajoutmaterial->addLayout(layoutdifajoutmaterial);
@@ -329,100 +330,100 @@ void MainWindow::createMenus()
                 widgetajoutpiece = new QWidget(dockajoutpiece);
 
                 //nom
-                labelnomajoutpiece = new QLabel(dockajoutpiece);
+                labelnomajoutpiece = new QLabel(widgetajoutpiece);
                     labelnomajoutpiece->setText("Nom:");
                 lineeditajoutpiece = new QLineEdit();
 
                 //materiaux
-                modelemateriaupiece = new QStandardItemModel(dockajoutpiece);
+                modelemateriaupiece = new QStandardItemModel(widgetajoutpiece);
 
-                labelcomboajoutpiece = new QLabel(dockajoutpiece);
+                labelcomboajoutpiece = new QLabel(widgetajoutpiece);
                     labelcomboajoutpiece->setText("Materiaux: ");
-                comboajoutpiece = new QComboBox(dockajoutpiece);
+                comboajoutpiece = new QComboBox(widgetajoutpiece);
                     comboajoutpiece->setMaximumWidth(200);
 
                 //dimention
-                labeldimajoutpiece = new QLabel(dockajoutpiece);
+                labeldimajoutpiece = new QLabel(widgetajoutpiece);
                     labeldimajoutpiece->setText("Dimention: ");
 
-                ajoutpiecedimx = new QSpinBox(dockajoutpiece);
+                ajoutpiecedimx = new QSpinBox(widgetajoutpiece);
                     ajoutpiecedimx->setPrefix("X= ");
                     ajoutpiecedimx->setRange(0,1000);
-                ajoutpiecedimy = new QSpinBox(dockajoutpiece);
+                ajoutpiecedimy = new QSpinBox(widgetajoutpiece);
                     ajoutpiecedimy->setPrefix("Y= ");
                     ajoutpiecedimy->setRange(0,1000);
-                ajoutpiecedimz = new QSpinBox(dockajoutpiece);
+                ajoutpiecedimz = new QSpinBox(widgetajoutpiece);
                     ajoutpiecedimz->setPrefix("Z= ");
                     ajoutpiecedimz->setRange(0,1000);
 
                 //shader
-                labelajoutpieceshader = new QLabel(dockajoutpiece);
+                labelajoutpieceshader = new QLabel(widgetajoutpiece);
                     labelajoutpieceshader->setText("Shader:");
-                comboajoutpieceshader = new QComboBox(dockajoutpiece);
+                comboajoutpieceshader = new QComboBox(widgetajoutpiece);
                     comboajoutpieceshader->setMaximumWidth(200);
-                 modelepieceshader = new QStandardItemModel(dockajoutpiece);
+                 modelepieceshader = new QStandardItemModel(widgetajoutpiece);
 
                 //bouton
-                boutonajoutpiece = new QPushButton(dockajoutpiece);
+                boutonajoutpiece = new QPushButton(widgetajoutpiece);
                     boutonajoutpiece->setText("ajouter");
                 connect(boutonajoutpiece,SIGNAL(clicked()), this ,SLOT(validajoutpiece()));
 
                 //murs
-                labelmurajoutpiece = new QLabel(dockajoutpiece);
+                labelmurajoutpiece = new QLabel(widgetajoutpiece);
                     labelmurajoutpiece->setText("Liste des murs: ");
 
                     //label des mur
-                    labelmur1 = new QLabel(dockajoutpiece);
+                    labelmur1 = new QLabel(widgetajoutpiece);
                         labelmur1->setText("bas:");
-                    labelmur2 = new QLabel();
+                    labelmur2 = new QLabel(widgetajoutpiece);
                         labelmur2->setText("haut:");
-                    labelmur3 = new QLabel(dockajoutpiece);
+                    labelmur3 = new QLabel(widgetajoutpiece);
                         labelmur3->setText("arriere:");
-                    labelmur4 = new QLabel(dockajoutpiece);
+                    labelmur4 = new QLabel(widgetajoutpiece);
                         labelmur4->setText("avant:");
-                    labelmur5 = new QLabel(dockajoutpiece);
+                    labelmur5 = new QLabel(widgetajoutpiece);
                         labelmur5->setText("gauche:");
-                    labelmur6 = new QLabel(dockajoutpiece);
+                    labelmur6 = new QLabel(widgetajoutpiece);
                         labelmur6->setText("droite:");
                     //checkbox mur
-                    checkmur1 = new QCheckBox(dockajoutpiece);
-                    checkmur2 = new QCheckBox(dockajoutpiece);
-                    checkmur3 = new QCheckBox(dockajoutpiece);
-                    checkmur4 = new QCheckBox(dockajoutpiece);
-                    checkmur5 = new QCheckBox(dockajoutpiece);
-                    checkmur6 = new QCheckBox(dockajoutpiece);
+                    checkmur1 = new QCheckBox(widgetajoutpiece);
+                    checkmur2 = new QCheckBox(widgetajoutpiece);
+                    checkmur3 = new QCheckBox(widgetajoutpiece);
+                    checkmur4 = new QCheckBox(widgetajoutpiece);
+                    checkmur5 = new QCheckBox(widgetajoutpiece);
+                    checkmur6 = new QCheckBox(widgetajoutpiece);
 
                 //positionement
-                mainlayoutajoutpiece = new QVBoxLayout(dockajoutpiece);
-                    ajoutpiecelayoutdim = new QHBoxLayout(dockajoutpiece);
+                mainlayoutajoutpiece = new QVBoxLayout();
+                    ajoutpiecelayoutdim = new QHBoxLayout();
                         ajoutpiecelayoutdim->addWidget(labeldimajoutpiece);
                         ajoutpiecelayoutdim->addWidget(ajoutpiecedimx);
                         ajoutpiecelayoutdim->addWidget(ajoutpiecedimy);
                         ajoutpiecelayoutdim->addWidget(ajoutpiecedimz);
-                    ajoutpiecelayoutnom = new QHBoxLayout(dockajoutpiece);
+                    ajoutpiecelayoutnom = new QHBoxLayout();
                         ajoutpiecelayoutnom->addWidget(labelnomajoutpiece);
                         ajoutpiecelayoutnom->addWidget(lineeditajoutpiece);
-                    ajoutpiecelayoutcombo = new QHBoxLayout(dockajoutpiece);
+                    ajoutpiecelayoutcombo = new QHBoxLayout();
                         ajoutpiecelayoutcombo->addWidget(labelcomboajoutpiece);
                         ajoutpiecelayoutcombo->addWidget(comboajoutpiece);
-                    ajoutpiecelabelmure  = new QHBoxLayout(dockajoutpiece);
+                    ajoutpiecelabelmure  = new QHBoxLayout();
                         ajoutpiecelabelmure->addWidget(labelmurajoutpiece);
-                    ajoutpiecepiecer1  = new QHBoxLayout(dockajoutpiece);
+                    ajoutpiecepiecer1  = new QHBoxLayout();
                         ajoutpiecepiecer1->addWidget(labelmur1);
                         ajoutpiecepiecer1->addWidget(checkmur1);
                         ajoutpiecepiecer1->addWidget(labelmur2);
                         ajoutpiecepiecer1->addWidget(checkmur2);
-                    ajoutpiecepiecer2  = new QHBoxLayout(dockajoutpiece);
+                    ajoutpiecepiecer2  = new QHBoxLayout();
                         ajoutpiecepiecer2->addWidget(labelmur3);
                         ajoutpiecepiecer2->addWidget(checkmur3);
                         ajoutpiecepiecer2->addWidget(labelmur4);
                         ajoutpiecepiecer2->addWidget(checkmur4);
-                    ajoutpiecepiecer3  = new QHBoxLayout(dockajoutpiece);
+                    ajoutpiecepiecer3  = new QHBoxLayout();
                         ajoutpiecepiecer3->addWidget(labelmur5);
                         ajoutpiecepiecer3->addWidget(checkmur5);
                         ajoutpiecepiecer3->addWidget(labelmur6);
                         ajoutpiecepiecer3->addWidget(checkmur6);
-                    ajoutpieceshaderlayout = new QHBoxLayout(dockajoutpiece);
+                    ajoutpieceshaderlayout = new QHBoxLayout();
                         ajoutpieceshaderlayout->addWidget(labelajoutpieceshader);
                         ajoutpieceshaderlayout->addWidget(comboajoutpieceshader);
 
@@ -450,37 +451,37 @@ void MainWindow::createMenus()
              //declaration widget
              widgetajoutmur = new QWidget(dockajoutmur);
 
-
              //declaration contenu
-             labelpiececomboajoutmur = new QLabel(dockajoutmur);
+             labelpiececomboajoutmur = new QLabel(widgetajoutmur);
                 labelpiececomboajoutmur->setText("nom piece :");
-             combopieceajoutmur = new QComboBox(dockajoutmur);
+             combopieceajoutmur = new QComboBox(widgetajoutmur);
              combopieceajoutmur->setMaximumWidth(200);
-             boutonpieceajoutmur = new QPushButton(dockajoutmur);
+             boutonpieceajoutmur = new QPushButton(widgetajoutmur);
                 boutonpieceajoutmur->setText("ok");
                 connect(boutonpieceajoutmur , SIGNAL(clicked()), this ,SLOT(ajoutmurcreatemodelmurcombo()) );
 
-             labelmurcomboajoutmur = new QLabel();
+             labelmurcomboajoutmur = new QLabel(widgetajoutmur);
                 labelmurcomboajoutmur->setText("nom mur :");
-             combomurajoutmur = new QComboBox(dockajoutmur);
+             combomurajoutmur = new QComboBox(widgetajoutmur);
              combomurajoutmur->setMaximumWidth(200);
 
-             boutonajoutmur = new QPushButton("ok");
+             boutonajoutmur = new QPushButton(widgetajoutmur);
+                boutonajoutmur->setText("ok");
                 connect(boutonajoutmur , SIGNAL(clicked()), this ,SLOT(validajoutmur()) );
 
              //creation du model de la liste des piece
-             modelajoutmurpiece = new QStandardItemModel(dockajoutmur);
-             modelajoutmurmur = new QStandardItemModel(dockajoutmur);
+             modelajoutmurpiece = new QStandardItemModel(widgetajoutmur);
+             modelajoutmurmur = new QStandardItemModel(widgetajoutmur);
 
              //positionement
-             mainlayoutajoutmur = new QVBoxLayout(dockajoutmur);
+             mainlayoutajoutmur = new QVBoxLayout();
 
-                layoutcombotnompieceajoutmur = new QHBoxLayout(dockajoutmur);
+                layoutcombotnompieceajoutmur = new QHBoxLayout();
                     layoutcombotnompieceajoutmur->addWidget(labelpiececomboajoutmur);
                     layoutcombotnompieceajoutmur->addWidget(combopieceajoutmur);
                     layoutcombotnompieceajoutmur->addWidget(boutonpieceajoutmur);
 
-                layoutcombotnommurajoutmur = new QHBoxLayout(dockajoutmur);
+                layoutcombotnommurajoutmur = new QHBoxLayout();
                     layoutcombotnommurajoutmur->addWidget(labelmurcomboajoutmur);
                     layoutcombotnommurajoutmur->addWidget(combomurajoutmur);
 
@@ -493,11 +494,63 @@ void MainWindow::createMenus()
                 //ajoutwidget au dock
                 dockajoutmur->setWidget(widgetajoutmur);
 
+
 /* ************************************** */
 //          ajout objet                   //
 /* ************************************** */
 
              ajoutelement->addAction(ajoutobjetAct);
+
+             //decalration widget
+             widgetajoutobjet = new QWidget(dockajoutobjet);
+
+             //declaration contenu
+             labelnomajoutobjet = new QLabel(widgetajoutobjet);
+                labelnomajoutobjet->setText("Nom: ");
+             champnomajoutobjet = new QLineEdit(widgetajoutobjet);
+
+             labelpieceajoutobjet = new QLabel(widgetajoutobjet);
+                labelpieceajoutobjet->setText("Piece: ");
+             combopieceajoutobjet = new QComboBox(widgetajoutobjet);
+                combopieceajoutobjet->setMaximumWidth(200);
+
+
+             labelcheminobjajoutobj = new QLabel(widgetajoutobjet);
+                labelcheminobjajoutobj->setText("path: ");
+             lineeditobjajoutobj = new QLineEdit(widgetajoutobjet);
+             boutonselectionobjajoutobjet = new QPushButton(widgetajoutobjet);
+                boutonselectionobjajoutobjet->setText("+");
+                connect(boutonselectionobjajoutobjet, SIGNAL(clicked()), this ,SLOT(selectioncheminobj()));
+
+             modelajoutobjet = new QStandardItemModel(widgetajoutobjet);
+
+             boutonajoutobjet = new QPushButton(widgetajoutobjet);
+                boutonajoutobjet->setText("ok");
+                connect(boutonajoutobjet, SIGNAL(clicked()),this,SLOT(validationajoutobjet()) );
+             //positionement
+             mainlayoutajoutobjet = new QVBoxLayout();
+                layoutajoutobjetnom = new QHBoxLayout();
+                    layoutajoutobjetnom->addWidget(labelnomajoutobjet);
+                    layoutajoutobjetnom->addWidget(champnomajoutobjet);
+                layoutajoutobjetpiece = new QHBoxLayout();
+                    layoutajoutobjetpiece->addWidget(labelpieceajoutobjet);
+                    layoutajoutobjetpiece->addWidget(combopieceajoutobjet);
+                layoutcheminajoutobjet = new QHBoxLayout();
+                    layoutcheminajoutobjet->addWidget(labelcheminobjajoutobj);
+                    //layoutcheminajoutobjet->addWidget(lineeditobjajoutobj);
+                    layoutcheminajoutobjet->addWidget(boutonselectionobjajoutobjet);
+
+                mainlayoutajoutobjet->addLayout(layoutajoutobjetnom);
+                mainlayoutajoutobjet->addLayout(layoutajoutobjetpiece);
+                mainlayoutajoutobjet->addLayout(layoutcheminajoutobjet);
+                mainlayoutajoutobjet->addWidget(lineeditobjajoutobj);
+                mainlayoutajoutobjet->addWidget(boutonajoutobjet);
+
+                widgetajoutobjet->setLayout(mainlayoutajoutobjet);
+
+             //ajout au dock
+             dockajoutobjet->setWidget(widgetajoutobjet);
+
     //aide
     Aide = menuBar()->addMenu(tr("&Aide"));
         Aide->addAction(racourcitAct);
@@ -598,6 +651,14 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
     //fichier
     void MainWindow::Nouveau()
     {
+        if (dock_perso->isVisible()) dock_perso->close();
+        if (dock_list_elements->isVisible()) dock_list_elements->close();
+        if(dockajoutmateriaux->isVisible())dockajoutmateriaux->close();
+        if(dockajoutlumiere->isVisible()) dockajoutlumiere->close();
+        if(dockajoutmur->isVisible()) dockajoutmur->close();
+        if(dockajoutobjet->isVisible()) dockajoutobjet->close();
+        if(dockajoutpiece->isVisible())  dockajoutpiece->close();
+
             delete widget;
 
             QGLFormat f;
@@ -605,6 +666,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             f.setProfile(QGLFormat::CoreProfile);
             widget = new MyOpenGLWidget(f,this);
             setCentralWidget(widget);
+
 
     }
 
@@ -1102,6 +1164,9 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
      //rempli la combo piece
      QStringList listtmp = widget->getScene()->getPiecesName();
 
+     //vide la combo des mur si elle contient deja des mur
+     if (modelajoutmurmur != NULL)  modelajoutmurmur->clear();
+
      for (int i=0 ; i<listtmp.size() ; i++)
           {
             QStandardItem *itemtmp =new QStandardItem(listtmp.at(i));
@@ -1109,10 +1174,6 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
           }
 
      combopieceajoutmur->setModel(modelajoutmurpiece);
-
-     //vide la combo des mur si elle contient deja des mur
-
-     if (modelajoutmurmur != NULL)  modelajoutmurmur = NULL;
 
      //afiche le dock
      dockajoutmur->show();
@@ -1381,11 +1442,71 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
 
     void MainWindow::ajoutobjet()
     {
-    dockajoutobjet->show();
+        //rempli la combo piece
+
+        //vide le model si il a deja des element
+        if  (modelajoutobjet!=NULL)modelajoutobjet->clear();
+
+        QStringList listtmp = widget->getScene()->getPiecesName();
+
+        for (int i=0 ; i<listtmp.size() ; i++)
+             {
+               QStandardItem *itemtmp =new QStandardItem(listtmp.at(i));
+               modelajoutobjet->setItem(i,itemtmp);
+             }
+
+        combopieceajoutobjet->setModel(modelajoutobjet);
+
+
+        //afiche le dock
+        dockajoutobjet->show();
     }
+
+   void MainWindow::selectioncheminobj()
+   {
+   QString fileName = QFileDialog::getOpenFileName(this, tr("Selection obj"),"",tr("Obj (*.obj)"));
+   QFileInfo fileInfo(fileName);
+   QString dirPath = fileInfo.filePath();
+
+   if (fileName!=NULL)
+                {
+                lineeditobjajoutobj->setText(dirPath);
+                }
+
+   lineeditobjajoutobj->setText(dirPath);
+   }
 
     void MainWindow::validationajoutobjet()
     {
+        if (combopieceajoutobjet->currentText().isNull())
+            {
+            QMessageBox msgBox;
+            msgBox.setText("il faut une piece avant de charger un model");
+            msgBox.exec();
+            dockajoutobjet->close();
+            }
+
+        if (champnomajoutobjet->text()=="")
+            {
+            QMessageBox msgBox;
+            msgBox.setText("il faut un nom à l'objet");
+            msgBox.exec();
+            dockajoutobjet->close();
+            }
+
+        if (lineeditobjajoutobj->text()=="")
+            {
+            QMessageBox msgBox;
+            msgBox.setText("il faut un chemin");
+            msgBox.exec();
+            dockajoutobjet->close();
+            }
+
+    Node* nodetmp =   Node::loadModel(lineeditobjajoutobj->text(),widget->getScene());
+    nodetmp->parent(widget->getScene()->getPiece(combopieceajoutobjet->currentText()));
+    widget->getScene()->getPiece(combopieceajoutobjet->currentText())->addChild(champnomajoutobjet->text(),nodetmp);
+
+    dockajoutobjet->close();
 
     }
 
@@ -1402,18 +1523,49 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
         //supression lumiere
         if( modele->data ( (vue->selectionModel()->currentIndex().parent()), Qt::DisplayRole)=="Light")
             {
+            //eviter de pouvoir editer un element deja sup mais avec fenetre edition deja open
+            if (dock_perso->isVisible())
+                {
+                if( (dock_perso->windowTitle()) == ("Edition :  "+vue->selectionModel()->currentIndex().data().toString() ))
+                    dock_perso->hide();
+                }
+            //la supression
             widget->getScene()->removeLight(vue->selectionModel()->currentIndex().data().toString());
             light->removeRow(vue->selectionModel()->currentIndex().row());
-            }
+             }
+
         //supresion piece
         if( modele->data ( (vue->selectionModel()->currentIndex().parent()), Qt::DisplayRole)=="Objet")
             {
+            //eviter de pouvoir editer un element deja sup mais avec fenetre edition deja open
+            if (dock_perso->isVisible())
+                {
+                if( (dock_perso->windowTitle()) == ("Edition :  "+vue->selectionModel()->currentIndex().data().toString() ))
+                    dock_perso->hide();
+                }
+            //eviter de pouvoir ajouter un objet/mur au en piece que l'on vien de sup
+            if (dockajoutobjet->isVisible())
+                {
+                dockajoutobjet->close();
+                }
+            if (dockajoutmur->isVisible())
+                {
+                dockajoutmur->close();
+                }
+
             widget->getScene()->removePiece(vue->selectionModel()->currentIndex().data().toString());
             objet->removeRow(vue->selectionModel()->currentIndex().row());
             }
+
         //supression objet
         if( modele->data ( (vue->selectionModel()->currentIndex().parent().parent()), Qt::DisplayRole)=="Objet")
             {
+            //eviter de pouvoir editer un element deja sup mais avec fenetre edition deja open
+            if (dock_perso->isVisible())
+                {
+                if( (dock_perso->windowTitle()) == ("Edition :  "+vue->selectionModel()->currentIndex().data().toString() ))
+                    dock_perso->hide();
+                }
             widget->getScene()->getPiece(vue->selectionModel()->currentIndex().parent().data().toString())->removeChild(vue->selectionModel()->currentIndex().data().toString());
 
             objet->child(vue->selectionModel()->currentIndex().parent().row())->removeRow(vue->selectionModel()->currentIndex().row());

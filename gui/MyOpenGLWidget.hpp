@@ -15,7 +15,7 @@
 #include <QCursor>
 #include <QDebug>
 
-#include <QDomdocument>
+//#include <QDomdocument>
 
 #include "helper.hpp"
 #include "camera.hpp"
