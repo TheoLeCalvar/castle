@@ -49,8 +49,7 @@ private slots:
         void    Enregistrer();
 
         //edition
-        void    Annuler();
-        void    Retablir();
+
 
         //affichage
         void    Apercut();
@@ -108,8 +107,7 @@ private slots:
         QAction*    kiterAct;
 
         //edition
-        QAction*    annulerAct;
-        QAction*    retablirAct;
+
 
         //affichage
         QAction*    apercutAct;

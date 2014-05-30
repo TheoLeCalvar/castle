@@ -43,11 +43,7 @@ void MainWindow::createActions()
         connect( kiterAct, SIGNAL(triggered()), qApp, SLOT(quit()));
 
      //edition
-    annulerAct = new QAction(tr("&Annuler"),this);
-        connect(annulerAct , SIGNAL(triggered()), this,SLOT(Annuler()));
 
-   retablirAct = new QAction(tr("&Retablir"),this);
-        connect(retablirAct , SIGNAL(triggered()), this,SLOT(Retablir()));
 
      //affichage
      grilleAct = new QAction(tr("&Grille"), this);
@@ -70,18 +66,23 @@ void MainWindow::createActions()
      ajoutelement = new QMenu(tr("&Ajout"));
 
         ajoutlumierAct = new QAction(tr("&Lumiere"),this);
+            ajoutlumierAct->setIcon(QIcon("icones/light.jpg"));
             connect(ajoutlumierAct,SIGNAL(triggered()),this , SLOT(ajoutlumiere()));
 
         ajoutmaterialAct = new QAction(tr("&Materiaux"),this);
+            ajoutmaterialAct->setIcon(QIcon("icones/material.jpg"));
             connect(ajoutmaterialAct,SIGNAL(triggered()),this , SLOT(ajoutmaterial()));
 
         ajoutpieceAct = new QAction(tr("&Piece"),this);
+            ajoutpieceAct->setIcon(QIcon("icones/room.png"));
             connect(ajoutpieceAct,SIGNAL(triggered()),this , SLOT(ajoutpiece()));
 
         ajoutmurAct = new QAction(tr("&Mur"),this);
+            ajoutmurAct->setIcon(QIcon("icones/wall.png"));
             connect(ajoutmurAct,SIGNAL(triggered()),this , SLOT(ajoutmur()));
 
         ajoutobjetAct = new QAction(tr("&Objet"),this);
+         ajoutobjetAct->setIcon(QIcon("icones/objects.png"));
          connect(ajoutobjetAct, SIGNAL(triggered()), this, SLOT(ajoutobjet()));
 
      //aide
@@ -110,10 +111,6 @@ void MainWindow::createMenus()
             kiterAct->setIcon(QIcon("icones/exit.png"));
 
     Edition = menuBar()->addMenu(tr("&Edition"));
-        Edition->addAction(annulerAct);
-            annulerAct->setIcon(QIcon("icones/undo.png"));
-        Edition->addAction(retablirAct);
-            retablirAct->setIcon(QIcon("icones/redo.png"));
 
     Affichage = menuBar()->addMenu(tr("&Affichage"));
         Affichage->addAction(culfaceAct);
@@ -612,23 +609,28 @@ void MainWindow::createToolBar()
 
             fileToolBar->addAction(enregistrerAct);
 
-            fileToolBar->addSeparator();
-
-            fileToolBar->addAction(annulerAct);
-
-            fileToolBar->addAction(retablirAct);
-
-            fileToolBar->addSeparator();
+            fileToolBar->addSeparator();//
 
             fileToolBar->addAction(apercutAct);
 
             fileToolBar->addAction(grilleAct);
 
-            fileToolBar->addSeparator();
+            fileToolBar->addSeparator();//
 
             fileToolBar->addAction(importation3DAct);
 
-            fileToolBar->addSeparator();
+            fileToolBar->addSeparator();//
+
+            fileToolBar->addAction(ajoutlumierAct);
+
+            fileToolBar->addAction(ajoutmaterialAct);
+
+            fileToolBar->addAction(ajoutpieceAct);
+
+            fileToolBar->addAction(ajoutmurAct);
+
+            fileToolBar->addAction(ajoutobjetAct);
+
 }
 
 void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
@@ -707,9 +709,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
     }
 
     //edition
-    void MainWindow::Annuler(){}
 
-    void MainWindow::Retablir(){}
 
     //affichage
     void MainWindow::Culface()
