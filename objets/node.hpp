@@ -113,7 +113,6 @@ public:
 	 */
 	void removeMesh(const QString & name);
 
-
 	/**
 	 * @brief Charge le modèle
 	 * @details Retourne le Node racine représentant le modèle et ajoute les matériaux à la scène
@@ -133,9 +132,6 @@ public:
 	 * @warning  Ne fonctionne que pour les Node racines
 	 */
 	QString getModelName() const;
-
-
-	virtual bool collide(const Hitbox & h) const;
 
 };
 

@@ -2,7 +2,6 @@
 #define CAMERA_H
 
 #include "helper.hpp"
-#include "hitbox.hpp"
 #include "scene.hpp"
 
 
@@ -11,7 +10,7 @@
  * @brief Camera pour Scene
  * 
  */
-class Camera: public Hitbox
+class Camera
 {
 protected:
 	vec3 	_eye;
@@ -87,15 +86,6 @@ private:
 	 * @brief Recalcul les vecteurs avant/côté pour le mouvement
 	 */
 	void 	vectorFromAngle();
-
-protected:
-	virtual vec3 getP() const;
-	virtual vec3 getX() const;
-	virtual vec3 getY() const;
-	virtual vec3 getZ() const;
-	virtual float getWidth() const;
-	virtual float getHeight() const;
-	virtual float getDepth() const;
 
 
 };

@@ -67,7 +67,6 @@ Scene::Scene(MyOpenGLWidget * parent, const QString & fileName):_parent(parent)
 
 	loadPieces(pieces);
 	qDebug() << "Pièces chargées avec succès";
-
 }
 
 Scene::~Scene()
@@ -89,7 +88,6 @@ Scene::~Scene()
 
 	Material::clear();
 }
-
 
 void 	Scene::draw()
 {
@@ -134,8 +132,6 @@ void 	Scene::draw()
 		i->draw();
 		openGL_check_error();
 	}
-
-
 }
 
 Piece * 	Scene::getPiece(const QString & name) const
@@ -573,6 +569,7 @@ void 	Scene::loadPieces(const QDomElement & dom)
 					}
 					else
 					{
+						QDomElement dimension = pieceAPartager.firstChildElement("dimension");
 						QDomElement mur = pieceAPartager.firstChildElement("murs").firstChildElement("mur");
 
 
@@ -588,7 +585,8 @@ void 	Scene::loadPieces(const QDomElement & dom)
 
 							while(!fenetre.isNull())
 							{
-								fenetres << QRectF(	
+								QRectF rect
+								(	
 										fenetre.attribute("x", "1.0").toFloat(), 
 										fenetre.attribute("y", "1.0").toFloat(), 
 										fenetre.attribute("width", "1.0").toFloat(), 
@@ -596,6 +594,8 @@ void 	Scene::loadPieces(const QDomElement & dom)
 									);
 
 
+
+								fenetres << rect;
 								fenetre = fenetre.nextSiblingElement("fenetre");
 							}
 						}
@@ -632,7 +632,7 @@ void 	Scene::loadPieces(const QDomElement & dom)
 				{
 					plan->name(nom + "_" + cote);
 					plan->parent(pieceTmp);
-					pieceTmp->addChild(plan);
+					// pieceTmp->addChild(plan);
 
 					plan = NULL;
 				}
@@ -670,9 +670,10 @@ void 	Scene::loadPieces(const QDomElement & dom)
 					qFatal("Stop, erreur de chargement");
 				}
 
-				node->parent(pieceTmp);
+				node->name(nomObjet);
 				node->rotation(vec3(xRot, yRot, zRot));
 				node->scale(scale);
+				node->parent(pieceTmp);
 
 				if (matObjet != "")
 				{
@@ -680,7 +681,6 @@ void 	Scene::loadPieces(const QDomElement & dom)
 				}
 
 				node->shaderId(getShader(shaderObjet));
-				node->name(nomObjet);
 				
 
 
@@ -691,7 +691,7 @@ void 	Scene::loadPieces(const QDomElement & dom)
 				node->position(position);
 
 
-				pieceTmp->addChild(nomObjet ,node);
+				// pieceTmp->addChild(nomObjet ,node);
 
 				objet = objet.nextSiblingElement("objet");
 			}
@@ -886,7 +886,6 @@ void Scene::saveLights(QDomElement & root, QDomDocument & doc) const
 	root.appendChild(lumieres);
 }
 
-
 void Scene::saveShaders(QDomElement & root, QDomDocument & doc) const
 {
 	QDomElement shaders = doc.createElement("shaders");
@@ -1060,21 +1059,6 @@ void Scene::orderLights()
 	{
 		_orderedLights.insert(f.result().second, f.result().first);
 	}
-
-}
-
-bool Scene::collide(const Hitbox & h) const
-{
-	for (Piece * i : _pieces)
-	{
-		if(i->collide(h))
-		{
-			qDebug() << "Collision avec " << i->name();
-			return true;
-		}
-	}
-
-	return false;
 }
 
 vec3 Scene::readPosition(const QDomElement & e)

@@ -33,14 +33,16 @@ Q\+String\+List \hyperlink{class_piece_a029823aa5135b356a9e4da14578db4e8}{get\+C
 \begin{DoxyCompactList}\small\item\em Récupère la liste des noms des objets fils. \end{DoxyCompactList}\item 
 \hyperlink{class_objet}{Objet} $\ast$ \hyperlink{class_piece_aa77dc9ed8493cc22d1455c3eb2bec013}{get\+Child} (const Q\+String \&\hyperlink{class_objet_a4a702c189bedcbf1e65da6aec72c8e44}{name})
 \begin{DoxyCompactList}\small\item\em Renvoie un pointeur sur un objet fils. \end{DoxyCompactList}\item 
+void \hyperlink{class_piece_a133ad0c10c91b183fb145fe54ea6c0f1}{remove\+Child} (const Q\+String \&\hyperlink{class_objet_a4a702c189bedcbf1e65da6aec72c8e44}{name})
+\begin{DoxyCompactList}\small\item\em enlève un \hyperlink{class_objet}{Objet} fils de la pièce \end{DoxyCompactList}\item 
+void \hyperlink{class_piece_a49b725ce33449c3099253288ea261349}{delete\+Child} (const Q\+String \&\hyperlink{class_objet_a4a702c189bedcbf1e65da6aec72c8e44}{name})
+\begin{DoxyCompactList}\small\item\em supprime un \hyperlink{class_objet}{Objet} fils de la \hyperlink{class_piece}{Piece} \end{DoxyCompactList}\item 
 const \hyperlink{structvec3}{vec3} \& \hyperlink{class_piece_afbfee8c5de17e5b046bcddd83043e5b6}{dimensions} () const 
 \begin{DoxyCompactList}\small\item\em Retourne les dimensions de la pièce. \end{DoxyCompactList}\item 
 \hyperlink{structvec3}{vec3} \& \hyperlink{class_piece_a3f5440ec22866d79a26a513470744412}{dimensions} ()
 \begin{DoxyCompactList}\small\item\em Retourne les dimensions de la pièce. \end{DoxyCompactList}\item 
 void \hyperlink{class_piece_a4419c3b0a9e57dcd215dd87be025752f}{dimensions} (const \hyperlink{structvec3}{vec3} v)
-\begin{DoxyCompactList}\small\item\em Edite les dimensions de la pièce. \end{DoxyCompactList}\item 
-virtual bool \hyperlink{class_piece_a7b433182fab60a55c1b8dda976c015cc}{collide} (const \hyperlink{class_hitbox}{Hitbox} \&) const 
-\begin{DoxyCompactList}\small\item\em Calcule la collision des deux O\+B\+B. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Edite les dimensions de la pièce. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -120,31 +122,24 @@ Ajoute un fils à la pièce.
 {\em o} & objet à ajouter \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_piece_a7b433182fab60a55c1b8dda976c015cc}{\index{Piece@{Piece}!collide@{collide}}
-\index{collide@{collide}!Piece@{Piece}}
-\subsubsection[{collide}]{\setlength{\rightskip}{0pt plus 5cm}bool Piece\+::collide (
+\hypertarget{class_piece_a49b725ce33449c3099253288ea261349}{\index{Piece@{Piece}!delete\+Child@{delete\+Child}}
+\index{delete\+Child@{delete\+Child}!Piece@{Piece}}
+\subsubsection[{delete\+Child}]{\setlength{\rightskip}{0pt plus 5cm}void Piece\+::delete\+Child (
 \begin{DoxyParamCaption}
-\item[{const {\bf Hitbox} \&}]{h}
+\item[{const Q\+String \&}]{name}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_piece_a7b433182fab60a55c1b8dda976c015cc}
+)}}\label{class_piece_a49b725ce33449c3099253288ea261349}
 
 
-Calcule la collision des deux O\+B\+B. 
+supprime un \hyperlink{class_objet}{Objet} fils de la \hyperlink{class_piece}{Piece} 
 
-utilise l'algorithme des S\+A\+T, plus d'info sur \href{http://goldensuneur.fr/divers/Separating%20Axis%20Theorem%20for%20Oriented%20Bounding%20Boxes.pdf}{\tt http\+://goldensuneur.\+fr/divers/\+Separating\%20\+Axis\%20\+Theorem\%20for\%20\+Oriented\%20\+Bounding\%20\+Boxes.\+pdf}
+supprime l'\hyperlink{class_objet}{Objet} et libère la mémoire associé
 
 
 \begin{DoxyParams}{Parameters}
-{\em h} & seconde \hyperlink{class_hitbox}{Hitbox} \\
+{\em name} & nom de l'\hyperlink{class_objet}{Objet} \\
 \hline
 \end{DoxyParams}
-\begin{DoxyWarning}{Warning}
-actuellement non fonctionnel 
-\end{DoxyWarning}
-
-
-Reimplemented from \hyperlink{class_hitbox_a10182e2ac66fd9e2ff07e9c8bf6c0a1c}{Hitbox}.
-
 \hypertarget{class_piece_afbfee8c5de17e5b046bcddd83043e5b6}{\index{Piece@{Piece}!dimensions@{dimensions}}
 \index{dimensions@{dimensions}!Piece@{Piece}}
 \subsubsection[{dimensions}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf vec3} \& Piece\+::dimensions (
@@ -241,6 +236,22 @@ Récupère la liste des noms des objets fils.
 liste des noms des objets 
 \end{DoxyReturn}
 \end{DoxyRefDesc}
+\hypertarget{class_piece_a133ad0c10c91b183fb145fe54ea6c0f1}{\index{Piece@{Piece}!remove\+Child@{remove\+Child}}
+\index{remove\+Child@{remove\+Child}!Piece@{Piece}}
+\subsubsection[{remove\+Child}]{\setlength{\rightskip}{0pt plus 5cm}void Piece\+::remove\+Child (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+)}}\label{class_piece_a133ad0c10c91b183fb145fe54ea6c0f1}
+
+
+enlève un \hyperlink{class_objet}{Objet} fils de la pièce 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & nom de l'\hyperlink{class_objet}{Objet} à supprimer \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Data Documentation}

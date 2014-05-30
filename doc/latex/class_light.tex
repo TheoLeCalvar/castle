@@ -29,8 +29,19 @@ void \hyperlink{class_light_a9fcc4b3ffdeedbe214ee8384c7d311b9}{set} (G\+Lenum ty
 \begin{DoxyCompactList}\small\item\em Récupère la valeur d'une composante de la lumière. \end{DoxyCompactList}\item 
 \hyperlink{structvec3}{vec3} \& \hyperlink{class_light_a74a0381255c1c7e002ac583401a46de0}{get} (G\+Lenum type)
 \begin{DoxyCompactList}\small\item\em Récupère la valeur d'une composante de la lumière. \end{DoxyCompactList}\item 
-void \hyperlink{class_light_a1db2ef9e527f873112c948acfd276a68}{update} (char number)
+void \hyperlink{class_light_ade4c742c8ca2c014d74c659fa615ffd7}{update} (unsigned char number)
 \begin{DoxyCompactList}\small\item\em Met à jour le shader avec les infos de la lumière. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_light_a33a43afc95ed75a8970f523cb3f800fa}{disable} (unsigned char number)
+\begin{DoxyCompactList}\small\item\em Désactive la lumière dans le shader. \end{DoxyCompactList}\item 
+static void \hyperlink{class_light_a53ce58fd783207da18aa7dc3465841ac}{update\+Ambient} ()
+\begin{DoxyCompactList}\small\item\em Met à jour la lumière ambient. \end{DoxyCompactList}\item 
+static void \hyperlink{class_light_a1eae781d5e7a95c9dcc9bd76838496df}{ambient} (const \hyperlink{structvec3}{vec3} \&v)
+\begin{DoxyCompactList}\small\item\em Modifie la composante ambient de la lumière. \end{DoxyCompactList}\item 
+static \hyperlink{structvec3}{vec3} \& \hyperlink{class_light_a4f9a64ec04c9854d02a67cd2ceb6760c}{ambient} ()
+\begin{DoxyCompactList}\small\item\em retourne le vecteur des composantes ambient \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -103,6 +114,49 @@ Destructeur.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_light_a1eae781d5e7a95c9dcc9bd76838496df}{\index{Light@{Light}!ambient@{ambient}}
+\index{ambient@{ambient}!Light@{Light}}
+\subsubsection[{ambient}]{\setlength{\rightskip}{0pt plus 5cm}static void Light\+::ambient (
+\begin{DoxyParamCaption}
+\item[{const {\bf vec3} \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_light_a1eae781d5e7a95c9dcc9bd76838496df}
+
+
+Modifie la composante ambient de la lumière. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & nouvelle composante \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_light_a4f9a64ec04c9854d02a67cd2ceb6760c}{\index{Light@{Light}!ambient@{ambient}}
+\index{ambient@{ambient}!Light@{Light}}
+\subsubsection[{ambient}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf vec3}\& Light\+::ambient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_light_a4f9a64ec04c9854d02a67cd2ceb6760c}
+
+
+retourne le vecteur des composantes ambient 
+
+\hypertarget{class_light_a33a43afc95ed75a8970f523cb3f800fa}{\index{Light@{Light}!disable@{disable}}
+\index{disable@{disable}!Light@{Light}}
+\subsubsection[{disable}]{\setlength{\rightskip}{0pt plus 5cm}void Light\+::disable (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_light_a33a43afc95ed75a8970f523cb3f800fa}
+
+
+Désactive la lumière dans le shader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & numéro de la lumière à désactiver \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_light_ad0f5f939bc047e39c6deb2e264a5a2c1}{\index{Light@{Light}!get@{get}}
 \index{get@{get}!Light@{Light}}
 \subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Light\+::get (
@@ -163,13 +217,13 @@ Met à jour une composante de la lumière.
 {\em value} & valeur \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_light_a1db2ef9e527f873112c948acfd276a68}{\index{Light@{Light}!update@{update}}
+\hypertarget{class_light_ade4c742c8ca2c014d74c659fa615ffd7}{\index{Light@{Light}!update@{update}}
 \index{update@{update}!Light@{Light}}
 \subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Light\+::update (
 \begin{DoxyParamCaption}
-\item[{char}]{number}
+\item[{unsigned char}]{number}
 \end{DoxyParamCaption}
-)}}\label{class_light_a1db2ef9e527f873112c948acfd276a68}
+)}}\label{class_light_ade4c742c8ca2c014d74c659fa615ffd7}
 
 
 Met à jour le shader avec les infos de la lumière. 
@@ -179,6 +233,17 @@ Met à jour le shader avec les infos de la lumière.
 {\em number} & slot de lumière à utiliser dans la shader \\
 \hline
 \end{DoxyParams}
+\hypertarget{class_light_a53ce58fd783207da18aa7dc3465841ac}{\index{Light@{Light}!update\+Ambient@{update\+Ambient}}
+\index{update\+Ambient@{update\+Ambient}!Light@{Light}}
+\subsubsection[{update\+Ambient}]{\setlength{\rightskip}{0pt plus 5cm}void Light\+::update\+Ambient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_light_a53ce58fd783207da18aa7dc3465841ac}
+
+
+Met à jour la lumière ambient. 
+
 
 
 \subsection{Member Data Documentation}

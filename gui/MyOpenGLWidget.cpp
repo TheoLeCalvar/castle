@@ -29,6 +29,16 @@ MyOpenGLWidget::~MyOpenGLWidget()
     }
 
     delete _timer;
+
+    glDeleteTextures(1, &_texture);
+    glDeleteRenderbuffers(1, &_renderbuffer);
+    glDeleteFramebuffers(1, &_framebuffer);
+
+    for(auto * i : _postProcessPrograms)
+        delete i;
+
+    for(auto * i : _loadedShaders)
+        delete i;
 }
 
 QSize MyOpenGLWidget::minimumSizeHint() const
@@ -122,6 +132,9 @@ void	MyOpenGLWidget::initializeGL()
     glVertexAttribPointer (1, 2, GL_FLOAT, GL_FALSE, 0, NULL);
 
     glBindVertexArray(0);
+
+
+    // useShader("");
 
 }
 

@@ -46,6 +46,12 @@ Q\+Standard\+Item\+Model $\ast$ \hyperlink{class_mondock_aceda9fef8d2c8b9c88672b
 \item 
 void \hyperlink{class_mondock_a25391f1fac7a8a46e761f2f8c9c2fdc8}{selectionlight} ()
 \item 
+void \hyperlink{class_mondock_a1cdbe11296a3fe24d88992bf7d2236f4}{lumiereambiantejustx} (int x)
+\item 
+void \hyperlink{class_mondock_ae989829f726237ddcacbe9b1ae79ab62}{lumiereambiantejusty} (int x)
+\item 
+void \hyperlink{class_mondock_a824b5c728f21b3ef7d47d322cd0a07ee}{lumiereambiantejustz} (int x)
+\item 
 void \hyperlink{class_mondock_a05ec25870c70f2eeba2ccdc1da44e7ca}{poslightfuncx} (double x)
 \item 
 void \hyperlink{class_mondock_ae8593b3cbc4c42badf600599a2e01dce}{poslightfuncy} (double x)
@@ -143,6 +149,8 @@ void \hyperlink{class_mondock_a8f94fe729819688c88de6025642463c9}{rotpiecez} (dou
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \hyperlink{class_mondock_ae228ac3c0273c3f275fb88842d9c8899}{traitementambiante} ()
+\item 
 void \hyperlink{class_mondock_aea9fc6ea30f9958ac3a747552ecbed17}{traitementlumiere} ()
 \item 
 void \hyperlink{class_mondock_ab482a04624f22351da70e316fe9c8d4e}{traitementmaterial} ()
@@ -181,6 +189,16 @@ Q\+Model\+Index \hyperlink{class_mondock_ab7756e9a6862132ca6b86d4b94c834c0}{inde
 Q\+Variant \hyperlink{class_mondock_aba0697efe8eb1eff576ce6599aea10f3}{objetselectioner}
 \item 
 Q\+Standard\+Item\+Model $\ast$ \hyperlink{class_mondock_a2560c460ea144a4e8b2300dadf8df8ed}{modelpiece}
+\item 
+Q\+Widget $\ast$ \hyperlink{class_mondock_a958707eb3e7ab57d99934c167106dd0d}{editionambiante}
+\item 
+Q\+Spin\+Box $\ast$ \hyperlink{class_mondock_ae8eeb7a414be5aca3c4e893697f8970b}{spinboxlumiereambiantex}
+\item 
+Q\+Spin\+Box $\ast$ \hyperlink{class_mondock_a540926c2bc676ba4e02b2760375a2ece}{spinboxlumiereambiantey}
+\item 
+Q\+Spin\+Box $\ast$ \hyperlink{class_mondock_aec59b2c7f6b841c599de75311a952e35}{spinboxlumiereambiantez}
+\item 
+Q\+H\+Box\+Layout $\ast$ \hyperlink{class_mondock_a96c9d3320d5658f31580b10cb31ef5c5}{layouteditionlighamb}
 \item 
 Q\+Tab\+Widget $\ast$ \hyperlink{class_mondock_aff9f46d61c662d10837346c496160ed1}{tablight}
 \item 
@@ -531,6 +549,27 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_ab69c246125f45077904e519c7f0e397c}
+\hypertarget{class_mondock_a1cdbe11296a3fe24d88992bf7d2236f4}{\index{Mondock@{Mondock}!lumiereambiantejustx@{lumiereambiantejustx}}
+\index{lumiereambiantejustx@{lumiereambiantejustx}!Mondock@{Mondock}}
+\subsubsection[{lumiereambiantejustx}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::lumiereambiantejustx (
+\begin{DoxyParamCaption}
+\item[{int}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a1cdbe11296a3fe24d88992bf7d2236f4}
+\hypertarget{class_mondock_ae989829f726237ddcacbe9b1ae79ab62}{\index{Mondock@{Mondock}!lumiereambiantejusty@{lumiereambiantejusty}}
+\index{lumiereambiantejusty@{lumiereambiantejusty}!Mondock@{Mondock}}
+\subsubsection[{lumiereambiantejusty}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::lumiereambiantejusty (
+\begin{DoxyParamCaption}
+\item[{int}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_ae989829f726237ddcacbe9b1ae79ab62}
+\hypertarget{class_mondock_a824b5c728f21b3ef7d47d322cd0a07ee}{\index{Mondock@{Mondock}!lumiereambiantejustz@{lumiereambiantejustz}}
+\index{lumiereambiantejustz@{lumiereambiantejustz}!Mondock@{Mondock}}
+\subsubsection[{lumiereambiantejustz}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::lumiereambiantejustz (
+\begin{DoxyParamCaption}
+\item[{int}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a824b5c728f21b3ef7d47d322cd0a07ee}
 \hypertarget{class_mondock_ae7cba6de97474c812bf5f6e1f5372540}{\index{Mondock@{Mondock}!matobjet@{matobjet}}
 \index{matobjet@{matobjet}!Mondock@{Mondock}}
 \subsubsection[{matobjet}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::matobjet (
@@ -741,6 +780,13 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_acfe377696276e313ee29188412cdefc5}
+\hypertarget{class_mondock_ae228ac3c0273c3f275fb88842d9c8899}{\index{Mondock@{Mondock}!traitementambiante@{traitementambiante}}
+\index{traitementambiante@{traitementambiante}!Mondock@{Mondock}}
+\subsubsection[{traitementambiante}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::traitementambiante (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_ae228ac3c0273c3f275fb88842d9c8899}
 \hypertarget{class_mondock_aea9fc6ea30f9958ac3a747552ecbed17}{\index{Mondock@{Mondock}!traitementlumiere@{traitementlumiere}}
 \index{traitementlumiere@{traitementlumiere}!Mondock@{Mondock}}
 \subsubsection[{traitementlumiere}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::traitementlumiere (
@@ -862,6 +908,9 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \hypertarget{class_mondock_a32e24e3ef7312fbd292740e19c3d3dcd}{\index{Mondock@{Mondock}!dockvue@{dockvue}}
 \index{dockvue@{dockvue}!Mondock@{Mondock}}
 \subsubsection[{dockvue}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Tree\+View$\ast$ Mondock\+::dockvue}}\label{class_mondock_a32e24e3ef7312fbd292740e19c3d3dcd}
+\hypertarget{class_mondock_a958707eb3e7ab57d99934c167106dd0d}{\index{Mondock@{Mondock}!editionambiante@{editionambiante}}
+\index{editionambiante@{editionambiante}!Mondock@{Mondock}}
+\subsubsection[{editionambiante}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ Mondock\+::editionambiante\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_a958707eb3e7ab57d99934c167106dd0d}
 \hypertarget{class_mondock_a3c00ae3b69dc59785835aa2d04b73392}{\index{Mondock@{Mondock}!element\+Selectionne\+G\+Parent@{element\+Selectionne\+G\+Parent}}
 \index{element\+Selectionne\+G\+Parent@{element\+Selectionne\+G\+Parent}!Mondock@{Mondock}}
 \subsubsection[{element\+Selectionne\+G\+Parent}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Variant Mondock\+::element\+Selectionne\+G\+Parent\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_a3c00ae3b69dc59785835aa2d04b73392}
@@ -931,6 +980,9 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \hypertarget{class_mondock_af00a5126b8b2d537b5a46064b4d26d76}{\index{Mondock@{Mondock}!labelspez@{labelspez}}
 \index{labelspez@{labelspez}!Mondock@{Mondock}}
 \subsubsection[{labelspez}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Mondock\+::labelspez\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_af00a5126b8b2d537b5a46064b4d26d76}
+\hypertarget{class_mondock_a96c9d3320d5658f31580b10cb31ef5c5}{\index{Mondock@{Mondock}!layouteditionlighamb@{layouteditionlighamb}}
+\index{layouteditionlighamb@{layouteditionlighamb}!Mondock@{Mondock}}
+\subsubsection[{layouteditionlighamb}]{\setlength{\rightskip}{0pt plus 5cm}Q\+H\+Box\+Layout$\ast$ Mondock\+::layouteditionlighamb\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_a96c9d3320d5658f31580b10cb31ef5c5}
 \hypertarget{class_mondock_a376d034b08d180ee9d91ab0c5826a5d8}{\index{Mondock@{Mondock}!layoutglobalscaleobjet@{layoutglobalscaleobjet}}
 \index{layoutglobalscaleobjet@{layoutglobalscaleobjet}!Mondock@{Mondock}}
 \subsubsection[{layoutglobalscaleobjet}]{\setlength{\rightskip}{0pt plus 5cm}Q\+V\+Box\+Layout$\ast$ Mondock\+::layoutglobalscaleobjet\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_a376d034b08d180ee9d91ab0c5826a5d8}
@@ -1114,6 +1166,15 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \hypertarget{class_mondock_a496a2a2470c9c96599cd491608544bf6}{\index{Mondock@{Mondock}!sliderspez@{sliderspez}}
 \index{sliderspez@{sliderspez}!Mondock@{Mondock}}
 \subsubsection[{sliderspez}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Slider$\ast$ Mondock\+::sliderspez\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_a496a2a2470c9c96599cd491608544bf6}
+\hypertarget{class_mondock_ae8eeb7a414be5aca3c4e893697f8970b}{\index{Mondock@{Mondock}!spinboxlumiereambiantex@{spinboxlumiereambiantex}}
+\index{spinboxlumiereambiantex@{spinboxlumiereambiantex}!Mondock@{Mondock}}
+\subsubsection[{spinboxlumiereambiantex}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ Mondock\+::spinboxlumiereambiantex\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_ae8eeb7a414be5aca3c4e893697f8970b}
+\hypertarget{class_mondock_a540926c2bc676ba4e02b2760375a2ece}{\index{Mondock@{Mondock}!spinboxlumiereambiantey@{spinboxlumiereambiantey}}
+\index{spinboxlumiereambiantey@{spinboxlumiereambiantey}!Mondock@{Mondock}}
+\subsubsection[{spinboxlumiereambiantey}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ Mondock\+::spinboxlumiereambiantey\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_a540926c2bc676ba4e02b2760375a2ece}
+\hypertarget{class_mondock_aec59b2c7f6b841c599de75311a952e35}{\index{Mondock@{Mondock}!spinboxlumiereambiantez@{spinboxlumiereambiantez}}
+\index{spinboxlumiereambiantez@{spinboxlumiereambiantez}!Mondock@{Mondock}}
+\subsubsection[{spinboxlumiereambiantez}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ Mondock\+::spinboxlumiereambiantez\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_aec59b2c7f6b841c599de75311a952e35}
 \hypertarget{class_mondock_a73f30ee1b770ddf08cdb854136ab4e51}{\index{Mondock@{Mondock}!tabamblayout@{tabamblayout}}
 \index{tabamblayout@{tabamblayout}!Mondock@{Mondock}}
 \subsubsection[{tabamblayout}]{\setlength{\rightskip}{0pt plus 5cm}Q\+V\+Box\+Layout$\ast$ Mondock\+::tabamblayout\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_a73f30ee1b770ddf08cdb854136ab4e51}

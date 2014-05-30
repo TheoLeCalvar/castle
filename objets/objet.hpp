@@ -4,14 +4,13 @@
 #include <QOpenGLFunctions_3_2_Core>
 #include "material.hpp"
 #include "helper.hpp"
-#include "hitbox.hpp"
 
 /**
  * @class Objet
  * @brief Classe de base affichable
  * 
  */
-class Objet: protected QOpenGLFunctions_3_2_Core, public Hitbox
+class Objet: protected QOpenGLFunctions_3_2_Core
 {
 protected:
 	Objet * 	_parent;
@@ -149,7 +148,7 @@ public:
 	 * 
 	 * @param o père
 	 */
-	void 			parent(Objet * o){_parent = o;}
+	void 			parent(Objet * o);
 
 	/**
 	 * @brief Récupère l'Objet père
@@ -170,10 +169,6 @@ public:
 	 */
 	void 			name(const QString & n){_name = n;}
 
-
-#ifdef NO_COLLIDE
-	bool 			collide(const Hitbox &) const{return false;}
-#endif
 
 private:
 	/**
@@ -203,15 +198,6 @@ protected:
 	 * @param v vec4 à calculer
 	 */
 	void 			transformVector(vec4 & v) const;
-
-
-	virtual vec3 getP() 		const{ return vec3();}
-	virtual vec3 getX() 		const;
-	virtual vec3 getY() 		const;
-	virtual vec3 getZ() 		const;
-	virtual float getWidth() 	const{ return 0.0f;}
-	virtual float getHeight() 	const{ return 0.0f;}
-	virtual float getDepth() 	const{ return 0.0f;}
 
 };
 

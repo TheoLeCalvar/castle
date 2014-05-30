@@ -69,11 +69,22 @@ public:
 	Objet * 	getChild(const QString & name);
 
 	/**
-	 * @brief supprime un Objet fils de la pièce
+	 * @brief enlève un Objet fils de la pièce
 	 * 
 	 * @param name nom de l'Objet à supprimer
 	 */
 	void 		removeChild(const QString & name);
+
+
+	/**
+	 * @brief supprime un Objet fils de la Piece
+	 * @details supprime l'Objet et libère la mémoire associé
+	 * 
+	 * @param name nom de l'Objet
+	 */
+	void 		deleteChild(const QString & name);
+
+
 
 	/**
 	 * @brief Retourne les dimensions de la pièce
@@ -92,9 +103,6 @@ public:
 	 * @param v nouvelles dimensions de la pièce
 	 */
 	void dimensions(const vec3 v);
-
-
-	virtual bool collide(const Hitbox &) const;
 
 };
 

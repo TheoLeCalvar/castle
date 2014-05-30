@@ -28,9 +28,6 @@ Mesh* Mesh::loadMesh(const aiMesh * mesh)
 	info->nbReferences = 1;
 
 
-	info->maxP = vec3(10e-10, 10e-10, 10e-10);
-	info->minP = vec3(10e10, 10e10, 10e10);
-
 
 	#ifdef DEBUG
 		qDebug() << "Nombre de vertices : " <<  info->nbVertices; 
@@ -49,24 +46,6 @@ Mesh* Mesh::loadMesh(const aiMesh * mesh)
 			vertices.push_back(vp->x);
 			vertices.push_back(vp->y);
 			vertices.push_back(vp->z);
-
-			if(vp->x < info->minP[0])
-				info->minP[0] = vp->x;
-
-			if(vp->y < info->minP[1])
-				info->minP[1] = vp->y;
-
-			if(vp->z < info->minP[2])
-				info->minP[2] = vp->z;
-
-			if(vp->x > info->maxP[0])
-				info->maxP[0] = vp->x;
-
-			if(vp->y > info->maxP[1])
-				info->maxP[1] = vp->y;
-
-			if(vp->z > info->maxP[2])
-				info->maxP[2] = vp->z;
 		}
 	}
 
@@ -148,54 +127,6 @@ Mesh* Mesh::loadMesh(const aiMesh * mesh)
 
 	func.glBindVertexArray(0);
 
-	float hitboxPoint[] =
-	{
-		info->minP[0], info->minP[1], info->minP[2],
-		info->maxP[0], info->minP[1], info->minP[2],
-		info->maxP[0], info->maxP[1], info->minP[2],
-		info->minP[0], info->maxP[1], info->minP[2],
-
-		info->minP[0], info->minP[1], info->maxP[2],
-		info->maxP[0], info->minP[1], info->maxP[2],
-		info->maxP[0], info->maxP[1], info->maxP[2],
-		info->minP[0], info->maxP[1], info->maxP[2]
-
-	};
-
-	unsigned char hitboxIndices[]
-	{
-		0, 1, 1, 2, 2, 3, 3, 0,
-		0, 4, 4, 7, 7, 3,
-		4, 5, 5, 6, 6, 7,
-		1, 5, 2, 6
-	};
-
-
-
-	GLuint vboPoints, vboIndices;
-
-	func.glGenBuffers(1, &vboPoints);
-	func.glGenBuffers(1, &vboIndices);
-
-
-	func.glBindBuffer(GL_ARRAY_BUFFER, vboPoints);
-	func.glBufferData(GL_ARRAY_BUFFER, 8 * 3 * sizeof(float), hitboxPoint, GL_STATIC_DRAW);
-
-
-    func.glBindBuffer (GL_ELEMENT_ARRAY_BUFFER, vboIndices);
-    func.glBufferData (GL_ELEMENT_ARRAY_BUFFER,  24 * sizeof (unsigned char), hitboxIndices, GL_STATIC_DRAW);
-
-
-	func.glGenVertexArrays(1, &(info->hitbox));
-	func.glBindVertexArray(info->hitbox);
-
-	func.glEnableVertexAttribArray(0);
-	func.glBindBuffer(GL_ARRAY_BUFFER, vboPoints);
-	func.glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, NULL);
-
-
-    func.glBindBuffer (GL_ELEMENT_ARRAY_BUFFER, vboIndices);
-
 
 	return ret;
 }
@@ -239,37 +170,6 @@ void Mesh::draw()
 
   	openGL_check_error();
 
-
-  	if(_drawHitbox)
-	{
-  		glBindVertexArray(_infos->hitbox);
-
-  		glDrawElements( GL_LINES, 24, GL_UNSIGNED_BYTE, 0);
-  	}
-  	openGL_check_error();
-}
-
-vec3 Mesh::getP() const
-{
-	vec4 centre((_infos->minP + _infos->maxP)/2.0f, 0.0f);
-	transformVector(centre);
-
-	return centre;
-}
-
-float Mesh::getWidth() const
-{
-	return (_infos->maxP[0] - _infos->minP[0]) / 2.0f;
-}
-
-float Mesh::getHeight() const
-{
-	return (_infos->maxP[1] - _infos->minP[1]) / 2.0f;
-}
-
-float Mesh::getDepth() const
-{
-	return (_infos->maxP[2] - _infos->minP[2]) / 2.0f;
 }
 
 

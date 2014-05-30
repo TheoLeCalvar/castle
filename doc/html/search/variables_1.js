@@ -6,6 +6,8 @@ var searchData=
   ['ajoutelement',['ajoutelement',['../class_main_window.html#a6c2ded3bdffc863604d7890c554578d5',1,'MainWindow']]],
   ['ajoutlumieract',['ajoutlumierAct',['../class_main_window.html#a04b22ecfd14e02f1dd5a5dd77b509f8e',1,'MainWindow']]],
   ['ajoutmaterialact',['ajoutmaterialAct',['../class_main_window.html#ae531eca2b9941c7f260f466edd97790e',1,'MainWindow']]],
+  ['ajoutmuract',['ajoutmurAct',['../class_main_window.html#ad2fca762b760f8d9dd224c820a188623',1,'MainWindow']]],
+  ['ajoutobjetact',['ajoutobjetAct',['../class_main_window.html#a4a661ddac989853564e72a960e4f5e79',1,'MainWindow']]],
   ['ajoutpieceact',['ajoutpieceAct',['../class_main_window.html#a150ff31dd92454823cf92bd6d4d1852d',1,'MainWindow']]],
   ['ajoutpiecedimx',['ajoutpiecedimx',['../class_main_window.html#aa75a74b6d22f3363190785617dba7dc2',1,'MainWindow']]],
   ['ajoutpiecedimy',['ajoutpiecedimy',['../class_main_window.html#a4d95aef4c72cb18b0599c4e525d1ccdf',1,'MainWindow']]],

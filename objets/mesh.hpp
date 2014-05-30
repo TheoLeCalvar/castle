@@ -34,11 +34,7 @@ private:
 		GLuint 			vao;
 		QList<GLuint> 	vbos;
 		GLuint 			nbVertices;
-		vec3 			minP;
-		vec3			maxP;
 		unsigned int 	nbReferences;
-
-		GLuint 			hitbox;
 	} MeshInfo;
 
 	MeshInfo * _infos;
@@ -79,12 +75,6 @@ public:
 	 * @brief Affiche le modèle
 	 */
 	void draw();
-
-protected:
-	virtual vec3 getP() const;
-	virtual float getWidth() const;
-	virtual float getHeight() const;
-	virtual float getDepth() const;
 
 };
 

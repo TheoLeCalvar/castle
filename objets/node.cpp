@@ -310,27 +310,3 @@ QString Node::getModelName() const
 {
 	return _loadedModels.key(const_cast<Node *>(this));
 }
-
-bool Node::collide(const Hitbox & h) const
-{
-	for(Mesh * i : _meshs)
-	{
-		if(i->collide(h))
-		{
-			qDebug() << "Ça collide avec " << i->name();
-			return true;
-		}
-	}
-
-	for(Node * i : _children)
-	{
-		if(i->collide(h))
-		{
-			qDebug() << "Ça collide avec " << i->name();
-
-			return true;
-		}
-	}
-
-	return false;
-}

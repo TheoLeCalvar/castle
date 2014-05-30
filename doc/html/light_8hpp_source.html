@@ -118,12 +118,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="structvec3.html">vec3</a> &amp; <span class="keyword">get</span>(GLenum type);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_light.html#a1db2ef9e527f873112c948acfd276a68">update</a>(<span class="keywordtype">char</span> number);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_light.html#a33a43afc95ed75a8970f523cb3f800fa">disable</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> number);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_light.html#ade4c742c8ca2c014d74c659fa615ffd7">update</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> number);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_light.html#a53ce58fd783207da18aa7dc3465841ac">updateAmbient</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="class_light.html#a1eae781d5e7a95c9dcc9bd76838496df">   94</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_light.html#a1eae781d5e7a95c9dcc9bd76838496df">ambient</a>(<span class="keyword">const</span> <a class="code" href="structvec3.html">vec3</a> &amp; v){<a class="code" href="class_light.html#ab139b739498b75944c99203027332ad9">_ambient</a> = v;}</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_light.html#a4f9a64ec04c9854d02a67cd2ceb6760c">   99</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="structvec3.html">vec3</a> &amp; <a class="code" href="class_light.html#a4f9a64ec04c9854d02a67cd2ceb6760c">ambient</a>(){<span class="keywordflow">return</span> <a class="code" href="class_light.html#ab139b739498b75944c99203027332ad9">_ambient</a>;}</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;};</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_light_html_a33a43afc95ed75a8970f523cb3f800fa"><div class="ttname"><a href="class_light.html#a33a43afc95ed75a8970f523cb3f800fa">Light::disable</a></div><div class="ttdeci">static void disable(unsigned char number)</div><div class="ttdoc">Désactive la lumière dans le shader. </div><div class="ttdef"><b>Definition:</b> light.cpp:84</div></div>
+<div class="ttc" id="class_light_html_a1eae781d5e7a95c9dcc9bd76838496df"><div class="ttname"><a href="class_light.html#a1eae781d5e7a95c9dcc9bd76838496df">Light::ambient</a></div><div class="ttdeci">static void ambient(const vec3 &amp;v)</div><div class="ttdoc">Modifie la composante ambient de la lumière. </div><div class="ttdef"><b>Definition:</b> light.hpp:94</div></div>
 <div class="ttc" id="class_light_html_a9fcc4b3ffdeedbe214ee8384c7d311b9"><div class="ttname"><a href="class_light.html#a9fcc4b3ffdeedbe214ee8384c7d311b9">Light::set</a></div><div class="ttdeci">void set(GLenum type, vec3 value)</div><div class="ttdoc">Met à jour une composante de la lumière. </div><div class="ttdef"><b>Definition:</b> light.cpp:22</div></div>
+<div class="ttc" id="class_light_html_a4f9a64ec04c9854d02a67cd2ceb6760c"><div class="ttname"><a href="class_light.html#a4f9a64ec04c9854d02a67cd2ceb6760c">Light::ambient</a></div><div class="ttdeci">static vec3 &amp; ambient()</div><div class="ttdoc">retourne le vecteur des composantes ambient </div><div class="ttdef"><b>Definition:</b> light.hpp:99</div></div>
 <div class="ttc" id="class_light_html"><div class="ttname"><a href="class_light.html">Light</a></div><div class="ttdoc">Lumière pour la Scene. </div><div class="ttdef"><b>Definition:</b> light.hpp:15</div></div>
 <div class="ttc" id="structvec3_html"><div class="ttname"><a href="structvec3.html">vec3</a></div><div class="ttdef"><b>Definition:</b> helper.hpp:62</div></div>
 <div class="ttc" id="class_light_html_a3af8c823a869606782bd9e1872586b72"><div class="ttname"><a href="class_light.html#a3af8c823a869606782bd9e1872586b72">Light::_position</a></div><div class="ttdeci">vec3 _position</div><div class="ttdef"><b>Definition:</b> light.hpp:18</div></div>
@@ -133,12 +144,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_light_html_ab139b739498b75944c99203027332ad9"><div class="ttname"><a href="class_light.html#ab139b739498b75944c99203027332ad9">Light::_ambient</a></div><div class="ttdeci">static vec3 _ambient</div><div class="ttdef"><b>Definition:</b> light.hpp:19</div></div>
 <div class="ttc" id="helper_8hpp_html"><div class="ttname"><a href="helper_8hpp.html">helper.hpp</a></div></div>
 <div class="ttc" id="class_light_html_a32445f2054766ef532c29eb514b2599d"><div class="ttname"><a href="class_light.html#a32445f2054766ef532c29eb514b2599d">Light::_diffuse</a></div><div class="ttdeci">vec3 _diffuse</div><div class="ttdef"><b>Definition:</b> light.hpp:20</div></div>
-<div class="ttc" id="class_light_html_a1db2ef9e527f873112c948acfd276a68"><div class="ttname"><a href="class_light.html#a1db2ef9e527f873112c948acfd276a68">Light::update</a></div><div class="ttdeci">void update(char number)</div><div class="ttdoc">Met à jour le shader avec les infos de la lumière. </div><div class="ttdef"><b>Definition:</b> light.cpp:84</div></div>
+<div class="ttc" id="class_light_html_a53ce58fd783207da18aa7dc3465841ac"><div class="ttname"><a href="class_light.html#a53ce58fd783207da18aa7dc3465841ac">Light::updateAmbient</a></div><div class="ttdeci">static void updateAmbient()</div><div class="ttdoc">Met à jour la lumière ambient. </div><div class="ttdef"><b>Definition:</b> light.cpp:129</div></div>
 <div class="ttc" id="helper_8hpp_html_ac15f8149ada16c4afc8031679427a194"><div class="ttname"><a href="helper_8hpp.html#ac15f8149ada16c4afc8031679427a194">vec3</a></div><div class="ttdeci">struct vec3 vec3</div><div class="ttdef"><b>Definition:</b> helper.hpp:213</div></div>
+<div class="ttc" id="class_light_html_ade4c742c8ca2c014d74c659fa615ffd7"><div class="ttname"><a href="class_light.html#ade4c742c8ca2c014d74c659fa615ffd7">Light::update</a></div><div class="ttdeci">void update(unsigned char number)</div><div class="ttdoc">Met à jour le shader avec les infos de la lumière. </div><div class="ttdef"><b>Definition:</b> light.cpp:101</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 23 2014 11:00:52 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 30 2014 11:11:33 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

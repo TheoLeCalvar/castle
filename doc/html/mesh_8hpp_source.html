@@ -117,67 +117,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="struct_mesh_1_1_mesh_info.html#af15096e0f0aa61fff7d8a1c223e547cf">   34</a></span>&#160;        GLuint          <a class="code" href="struct_mesh_1_1_mesh_info.html#af15096e0f0aa61fff7d8a1c223e547cf">vao</a>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="struct_mesh_1_1_mesh_info.html#ad360b326ff7424dc9b6a3f6614af895d">   35</a></span>&#160;        QList&lt;GLuint&gt;   <a class="code" href="struct_mesh_1_1_mesh_info.html#ad360b326ff7424dc9b6a3f6614af895d">vbos</a>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="struct_mesh_1_1_mesh_info.html#a8869e5c769b3895876e32bed8252dffd">   36</a></span>&#160;        GLuint          <a class="code" href="struct_mesh_1_1_mesh_info.html#a8869e5c769b3895876e32bed8252dffd">nbVertices</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="struct_mesh_1_1_mesh_info.html#add150c6f037445254a0ebee99abf3ba9">   37</a></span>&#160;        <a class="code" href="structvec3.html">vec3</a>            <a class="code" href="struct_mesh_1_1_mesh_info.html#add150c6f037445254a0ebee99abf3ba9">minP</a>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="struct_mesh_1_1_mesh_info.html#a1a3ed73fec39d12cf5fcd1dd554c2dea">   38</a></span>&#160;        <a class="code" href="structvec3.html">vec3</a>            <a class="code" href="struct_mesh_1_1_mesh_info.html#a1a3ed73fec39d12cf5fcd1dd554c2dea">maxP</a>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="struct_mesh_1_1_mesh_info.html#a8e32fc200e5ed8af32c409cac7b17342">   39</a></span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>    <a class="code" href="struct_mesh_1_1_mesh_info.html#a8e32fc200e5ed8af32c409cac7b17342">nbReferences</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="struct_mesh_1_1_mesh_info.html#a325c495a1c63762bac63b3df9c9dfebf">   41</a></span>&#160;        GLuint          <a class="code" href="struct_mesh_1_1_mesh_info.html#a325c495a1c63762bac63b3df9c9dfebf">hitbox</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    } <a class="code" href="struct_mesh_1_1_mesh_info.html">MeshInfo</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_mesh.html#a608911b8dbff58ff769c708b8b7f2618">   44</a></span>&#160;    <a class="code" href="struct_mesh_1_1_mesh_info.html">MeshInfo</a> * <a class="code" href="class_mesh.html#a608911b8dbff58ff769c708b8b7f2618">_infos</a>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="class_mesh.html#a2af137f1571af89172b9c102302c416b">Mesh</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="class_mesh.html#a2af137f1571af89172b9c102302c416b">Mesh</a>(<span class="keyword">const</span> <a class="code" href="class_mesh.html">Mesh</a> &amp; m);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_mesh.html">Mesh</a> * <a class="code" href="class_mesh.html#a7b405216bda9e94d64aa8a308d718cb4">loadMesh</a>(<span class="keyword">const</span> aiMesh* scene);</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="struct_mesh_1_1_mesh_info.html#a8e32fc200e5ed8af32c409cac7b17342">   37</a></span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>    <a class="code" href="struct_mesh_1_1_mesh_info.html#a8e32fc200e5ed8af32c409cac7b17342">nbReferences</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    } <a class="code" href="struct_mesh_1_1_mesh_info.html">MeshInfo</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_mesh.html#a608911b8dbff58ff769c708b8b7f2618">   40</a></span>&#160;    <a class="code" href="struct_mesh_1_1_mesh_info.html">MeshInfo</a> * <a class="code" href="class_mesh.html#a608911b8dbff58ff769c708b8b7f2618">_infos</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="class_mesh.html#a2af137f1571af89172b9c102302c416b">Mesh</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="class_mesh.html#a2af137f1571af89172b9c102302c416b">Mesh</a>(<span class="keyword">const</span> <a class="code" href="class_mesh.html">Mesh</a> &amp; m);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_mesh.html">Mesh</a> * <a class="code" href="class_mesh.html#a7b405216bda9e94d64aa8a308d718cb4">loadMesh</a>(<span class="keyword">const</span> aiMesh* scene);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">~Mesh</a>();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a996a8668fa2ca7d95d6d10744c833bc8">draw</a>();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="structvec3.html">vec3</a> <a class="code" href="class_mesh.html#ab1da4db267719d533521873715b9359c">getP</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="class_mesh.html#a8e0ae90ffac8c8295027d21f5af155cc">getWidth</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="class_mesh.html#a3feeb4d65973f3dc0c0e66ae95b36971">getHeight</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="class_mesh.html#a505f44a95b363e12f6434801fe697108">getDepth</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="struct_mesh_1_1_mesh_info_html_a325c495a1c63762bac63b3df9c9dfebf"><div class="ttname"><a href="struct_mesh_1_1_mesh_info.html#a325c495a1c63762bac63b3df9c9dfebf">Mesh::MeshInfo::hitbox</a></div><div class="ttdeci">GLuint hitbox</div><div class="ttdef"><b>Definition:</b> mesh.hpp:41</div></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">~Mesh</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a996a8668fa2ca7d95d6d10744c833bc8">draw</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="class_mesh_html"><div class="ttname"><a href="class_mesh.html">Mesh</a></div><div class="ttdoc">Charge un modèle 3D. </div><div class="ttdef"><b>Definition:</b> mesh.hpp:26</div></div>
-<div class="ttc" id="class_mesh_html_a996a8668fa2ca7d95d6d10744c833bc8"><div class="ttname"><a href="class_mesh.html#a996a8668fa2ca7d95d6d10744c833bc8">Mesh::draw</a></div><div class="ttdeci">void draw()</div><div class="ttdoc">Affiche le modèle. </div><div class="ttdef"><b>Definition:</b> mesh.cpp:221</div></div>
+<div class="ttc" id="class_mesh_html_a996a8668fa2ca7d95d6d10744c833bc8"><div class="ttname"><a href="class_mesh.html#a996a8668fa2ca7d95d6d10744c833bc8">Mesh::draw</a></div><div class="ttdeci">void draw()</div><div class="ttdoc">Affiche le modèle. </div><div class="ttdef"><b>Definition:</b> mesh.cpp:152</div></div>
 <div class="ttc" id="objet_8hpp_html"><div class="ttname"><a href="objet_8hpp.html">objet.hpp</a></div></div>
 <div class="ttc" id="class_node_html"><div class="ttname"><a href="class_node.html">Node</a></div><div class="ttdoc">Contient un node de modèle 3D. </div><div class="ttdef"><b>Definition:</b> node.hpp:24</div></div>
 <div class="ttc" id="class_mesh_html_a7b405216bda9e94d64aa8a308d718cb4"><div class="ttname"><a href="class_mesh.html#a7b405216bda9e94d64aa8a308d718cb4">Mesh::loadMesh</a></div><div class="ttdeci">static Mesh * loadMesh(const aiMesh *scene)</div><div class="ttdoc">Charge un mesh. </div><div class="ttdef"><b>Definition:</b> mesh.cpp:13</div></div>
-<div class="ttc" id="structvec3_html"><div class="ttname"><a href="structvec3.html">vec3</a></div><div class="ttdef"><b>Definition:</b> helper.hpp:62</div></div>
 <div class="ttc" id="struct_mesh_1_1_mesh_info_html"><div class="ttname"><a href="struct_mesh_1_1_mesh_info.html">Mesh::MeshInfo</a></div><div class="ttdef"><b>Definition:</b> mesh.hpp:32</div></div>
-<div class="ttc" id="struct_mesh_1_1_mesh_info_html_a1a3ed73fec39d12cf5fcd1dd554c2dea"><div class="ttname"><a href="struct_mesh_1_1_mesh_info.html#a1a3ed73fec39d12cf5fcd1dd554c2dea">Mesh::MeshInfo::maxP</a></div><div class="ttdeci">vec3 maxP</div><div class="ttdef"><b>Definition:</b> mesh.hpp:38</div></div>
 <div class="ttc" id="class_mesh_html_a2af137f1571af89172b9c102302c416b"><div class="ttname"><a href="class_mesh.html#a2af137f1571af89172b9c102302c416b">Mesh::Mesh</a></div><div class="ttdeci">Mesh()</div><div class="ttdoc">Constructeur privé </div><div class="ttdef"><b>Definition:</b> mesh.cpp:4</div></div>
 <div class="ttc" id="struct_mesh_1_1_mesh_info_html_a8869e5c769b3895876e32bed8252dffd"><div class="ttname"><a href="struct_mesh_1_1_mesh_info.html#a8869e5c769b3895876e32bed8252dffd">Mesh::MeshInfo::nbVertices</a></div><div class="ttdeci">GLuint nbVertices</div><div class="ttdef"><b>Definition:</b> mesh.hpp:36</div></div>
-<div class="ttc" id="struct_mesh_1_1_mesh_info_html_a8e32fc200e5ed8af32c409cac7b17342"><div class="ttname"><a href="struct_mesh_1_1_mesh_info.html#a8e32fc200e5ed8af32c409cac7b17342">Mesh::MeshInfo::nbReferences</a></div><div class="ttdeci">unsigned int nbReferences</div><div class="ttdef"><b>Definition:</b> mesh.hpp:39</div></div>
-<div class="ttc" id="class_mesh_html_a505f44a95b363e12f6434801fe697108"><div class="ttname"><a href="class_mesh.html#a505f44a95b363e12f6434801fe697108">Mesh::getDepth</a></div><div class="ttdeci">virtual float getDepth() const </div><div class="ttdoc">renvoie la demie profondeur de la hitbox </div><div class="ttdef"><b>Definition:</b> mesh.cpp:270</div></div>
-<div class="ttc" id="class_mesh_html_a608911b8dbff58ff769c708b8b7f2618"><div class="ttname"><a href="class_mesh.html#a608911b8dbff58ff769c708b8b7f2618">Mesh::_infos</a></div><div class="ttdeci">MeshInfo * _infos</div><div class="ttdef"><b>Definition:</b> mesh.hpp:44</div></div>
-<div class="ttc" id="class_mesh_html_a5efe4da1a4c0971cfb037bd70304c303"><div class="ttname"><a href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">Mesh::~Mesh</a></div><div class="ttdeci">~Mesh()</div><div class="ttdoc">Destructeur. </div><div class="ttdef"><b>Definition:</b> mesh.cpp:204</div></div>
-<div class="ttc" id="class_mesh_html_ab1da4db267719d533521873715b9359c"><div class="ttname"><a href="class_mesh.html#ab1da4db267719d533521873715b9359c">Mesh::getP</a></div><div class="ttdeci">virtual vec3 getP() const </div><div class="ttdoc">Retourne le centre de la Hitbox. </div><div class="ttdef"><b>Definition:</b> mesh.cpp:252</div></div>
-<div class="ttc" id="struct_mesh_1_1_mesh_info_html_add150c6f037445254a0ebee99abf3ba9"><div class="ttname"><a href="struct_mesh_1_1_mesh_info.html#add150c6f037445254a0ebee99abf3ba9">Mesh::MeshInfo::minP</a></div><div class="ttdeci">vec3 minP</div><div class="ttdef"><b>Definition:</b> mesh.hpp:37</div></div>
-<div class="ttc" id="class_mesh_html_a3feeb4d65973f3dc0c0e66ae95b36971"><div class="ttname"><a href="class_mesh.html#a3feeb4d65973f3dc0c0e66ae95b36971">Mesh::getHeight</a></div><div class="ttdeci">virtual float getHeight() const </div><div class="ttdoc">renvoie la demie hauteur de la hitbox </div><div class="ttdef"><b>Definition:</b> mesh.cpp:265</div></div>
-<div class="ttc" id="class_objet_html"><div class="ttname"><a href="class_objet.html">Objet</a></div><div class="ttdoc">Classe de base affichable. </div><div class="ttdef"><b>Definition:</b> objet.hpp:14</div></div>
+<div class="ttc" id="struct_mesh_1_1_mesh_info_html_a8e32fc200e5ed8af32c409cac7b17342"><div class="ttname"><a href="struct_mesh_1_1_mesh_info.html#a8e32fc200e5ed8af32c409cac7b17342">Mesh::MeshInfo::nbReferences</a></div><div class="ttdeci">unsigned int nbReferences</div><div class="ttdef"><b>Definition:</b> mesh.hpp:37</div></div>
+<div class="ttc" id="class_mesh_html_a608911b8dbff58ff769c708b8b7f2618"><div class="ttname"><a href="class_mesh.html#a608911b8dbff58ff769c708b8b7f2618">Mesh::_infos</a></div><div class="ttdeci">MeshInfo * _infos</div><div class="ttdef"><b>Definition:</b> mesh.hpp:40</div></div>
+<div class="ttc" id="class_mesh_html_a5efe4da1a4c0971cfb037bd70304c303"><div class="ttname"><a href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">Mesh::~Mesh</a></div><div class="ttdeci">~Mesh()</div><div class="ttdoc">Destructeur. </div><div class="ttdef"><b>Definition:</b> mesh.cpp:135</div></div>
+<div class="ttc" id="class_objet_html"><div class="ttname"><a href="class_objet.html">Objet</a></div><div class="ttdoc">Classe de base affichable. </div><div class="ttdef"><b>Definition:</b> objet.hpp:13</div></div>
 <div class="ttc" id="struct_mesh_1_1_mesh_info_html_af15096e0f0aa61fff7d8a1c223e547cf"><div class="ttname"><a href="struct_mesh_1_1_mesh_info.html#af15096e0f0aa61fff7d8a1c223e547cf">Mesh::MeshInfo::vao</a></div><div class="ttdeci">GLuint vao</div><div class="ttdef"><b>Definition:</b> mesh.hpp:34</div></div>
 <div class="ttc" id="scene_8hpp_html"><div class="ttname"><a href="scene_8hpp.html">scene.hpp</a></div></div>
 <div class="ttc" id="struct_mesh_1_1_mesh_info_html_ad360b326ff7424dc9b6a3f6614af895d"><div class="ttname"><a href="struct_mesh_1_1_mesh_info.html#ad360b326ff7424dc9b6a3f6614af895d">Mesh::MeshInfo::vbos</a></div><div class="ttdeci">QList&lt; GLuint &gt; vbos</div><div class="ttdef"><b>Definition:</b> mesh.hpp:35</div></div>
-<div class="ttc" id="class_mesh_html_a8e0ae90ffac8c8295027d21f5af155cc"><div class="ttname"><a href="class_mesh.html#a8e0ae90ffac8c8295027d21f5af155cc">Mesh::getWidth</a></div><div class="ttdeci">virtual float getWidth() const </div><div class="ttdoc">renvoie la demie largeur de la hitbox </div><div class="ttdef"><b>Definition:</b> mesh.cpp:260</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 23 2014 11:00:52 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 30 2014 11:11:33 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

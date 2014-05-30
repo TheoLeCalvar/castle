@@ -40,15 +40,7 @@ void Camera::move()
         deplacement -= _haut * _vitesse;
     }
     
-    _eye += deplacement;
-
-    if(_scene && _scene->collide(*this))
-    {
-        _eye -= deplacement;
-    }
-
-    
-
+    _eye += deplacement; 
     _center = _eye + _avant;
     
 
@@ -113,39 +105,4 @@ void Camera::display()
     setViewMatrix(view);
 
 
-}
-
-vec3 Camera::getP() const
-{
-    return _center;
-}
-
-vec3 Camera::getX() const
-{
-    return _avant;
-}
-
-vec3 Camera::getY() const
-{
-    return _haut;
-}
-
-vec3 Camera::getZ() const
-{
-    return _gauche;
-}
-
-float Camera::getWidth() const
-{
-    return 0.2f;
-}
-
-float Camera::getHeight() const
-{
-    return 0.5f;
-}
-
-float Camera::getDepth() const
-{
-    return 0.2f;
 }

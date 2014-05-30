@@ -2,9 +2,13 @@ var searchData=
 [
   ['boutonajoutlumiere',['boutonajoutlumiere',['../class_main_window.html#a4f7a42439a3d1dbc5213e5d2282f5ab0',1,'MainWindow']]],
   ['boutonajoutmaterial',['boutonajoutmaterial',['../class_main_window.html#a9d0608c267dd8f7898df41de4dda0be1',1,'MainWindow']]],
+  ['boutonajoutmur',['boutonajoutmur',['../class_main_window.html#aabddd42321113fc4061c2d9364cef340',1,'MainWindow']]],
+  ['boutonajoutobjet',['boutonajoutobjet',['../class_main_window.html#a3371555c180ede0e55ea11a1ce1c9ae9',1,'MainWindow']]],
   ['boutonajoutpiece',['boutonajoutpiece',['../class_main_window.html#ad6c5d4342e58b7edad16490d493ea342',1,'MainWindow']]],
   ['boutonlisteelement',['boutonlisteelement',['../class_main_window.html#af87ab6bb1e48500cc732286cc98b990e',1,'MainWindow']]],
   ['boutonlisteelementdelete',['boutonlisteelementdelete',['../class_main_window.html#a0300f02a442c333e918e229817b27ef2',1,'MainWindow']]],
+  ['boutonpieceajoutmur',['boutonpieceajoutmur',['../class_main_window.html#ade94e2a736d49afd5634894946500126',1,'MainWindow']]],
+  ['boutonselectionobjajoutobjet',['boutonselectionobjajoutobjet',['../class_main_window.html#a15efafe52bb0d007aeedebbb9689a3af',1,'MainWindow']]],
   ['boxobjetrotationx',['boxobjetrotationx',['../class_mondock.html#accc1854d02d6d2a0b61297b351bd196a',1,'Mondock']]],
   ['boxobjetrotationy',['boxobjetrotationy',['../class_mondock.html#aeeea985e7f23ebf81696648d8e0dea40',1,'Mondock']]],
   ['boxobjetrotationz',['boxobjetrotationz',['../class_mondock.html#af722379e41c8ebc43f6068754564aa4f',1,'Mondock']]],
