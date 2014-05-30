@@ -30,6 +30,10 @@ MyOpenGLWidget::~MyOpenGLWidget()
 
     delete _timer;
 
+    glDeleteTextures(1, &_texture);
+    glDeleteRenderbuffers(1, &_renderbuffer);
+    glDeleteFramebuffers(1, &_framebuffer);
+
     for(auto * i : _postProcessPrograms)
         delete i;
 
