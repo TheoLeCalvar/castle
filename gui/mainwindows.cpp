@@ -88,6 +88,7 @@ void MainWindow::createActions()
      //aide
      about = new QMenu(tr("&A propos"), this);
         aboutqtAct = new QAction(tr("&QT"), about);
+            aboutqtAct->setIcon(QIcon("icones/qt.jpg"));
             connect(aboutqtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
         aboutassimpAct = new QAction(tr("&Assimp"), about);
             connect(aboutassimpAct, SIGNAL(triggered()), this, SLOT(aboutassimp()));
