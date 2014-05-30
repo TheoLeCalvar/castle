@@ -27,6 +27,7 @@ Mondock:: ~Mondock(){}
          //si parent = objet
          if (elementSelectionneParent.toString() == "Objet")
                      {traitementpiece();}
+
         //si grand parent = Objet
          indexgparent= indexElementSelectionne.parent();
          elementSelectionneGParent= dockmodele->data(indexgparent.parent(), Qt::DisplayRole);
@@ -156,17 +157,17 @@ Mondock:: ~Mondock(){}
 /* ************************************ */
 //          slot materiaux              //
 /* ************************************ */
-        void Mondock::emimaterialfuncx( int x )
-            {
-            }
+//        void Mondock::emimaterialfuncx( int x )
+//            {
+//            }
 
-        void Mondock::emimaterialfuncy( int x )
-            {
-            }
+//        void Mondock::emimaterialfuncy( int x )
+//            {
+//            }
 
-        void Mondock::emimaterialfuncz(int x )
-            {
-            }
+//        void Mondock::emimaterialfuncz(int x )
+//            {
+//            }
 
         void Mondock::ambmaterialfuncx( int x )
             {
@@ -683,29 +684,29 @@ Mondock:: ~Mondock(){}
             //creation 4 widget
 
             //widget1
-            tabmaterialemi = new QWidget(tabmaterial);
-                materialspinboxemix = new QSpinBox(tabmaterialemi);
-                materialspinboxemix->setPrefix("X = ");
-                materialspinboxemix->setRange(0,255);
-                connect(materialspinboxemix, SIGNAL(valueChanged(int)),this, SLOT(emimaterialfuncx(int)));
+//            tabmaterialemi = new QWidget(tabmaterial);
+//                materialspinboxemix = new QSpinBox(tabmaterialemi);
+//                materialspinboxemix->setPrefix("X = ");
+//                materialspinboxemix->setRange(0,255);
+//                connect(materialspinboxemix, SIGNAL(valueChanged(int)),this, SLOT(emimaterialfuncx(int)));
 
-                materialspinboxemiy = new QSpinBox(tabmaterialemi);
-                materialspinboxemiy->setPrefix("Y = ");
-                materialspinboxemiy->setRange(0,255);
-                connect(materialspinboxemiy, SIGNAL(valueChanged(int)),this, SLOT(emimaterialfuncy(int)));
+//                materialspinboxemiy = new QSpinBox(tabmaterialemi);
+//                materialspinboxemiy->setPrefix("Y = ");
+//                materialspinboxemiy->setRange(0,255);
+//                connect(materialspinboxemiy, SIGNAL(valueChanged(int)),this, SLOT(emimaterialfuncy(int)));
 
-                materialspinboxemiz = new QSpinBox(tabmaterialemi);
-                materialspinboxemiz->setPrefix("Z = ");
-                materialspinboxemiz->setRange(0,255);
-                connect(materialspinboxemiz, SIGNAL(valueChanged(int)),this, SLOT(emimaterialfuncz(int)));
+//                materialspinboxemiz = new QSpinBox(tabmaterialemi);
+//                materialspinboxemiz->setPrefix("Z = ");
+//                materialspinboxemiz->setRange(0,255);
+//                connect(materialspinboxemiz, SIGNAL(valueChanged(int)),this, SLOT(emimaterialfuncz(int)));
 
-                //partie layout
-                tabmaterialemilayout = new QHBoxLayout(tabmaterialemi);
-                    tabmaterialemilayout->addWidget(materialspinboxemix);
-                    tabmaterialemilayout->addWidget(materialspinboxemiy);
-                    tabmaterialemilayout->addWidget(materialspinboxemiz);
+//                //partie layout
+//                tabmaterialemilayout = new QHBoxLayout(tabmaterialemi);
+//                    tabmaterialemilayout->addWidget(materialspinboxemix);
+//                    tabmaterialemilayout->addWidget(materialspinboxemiy);
+//                    tabmaterialemilayout->addWidget(materialspinboxemiz);
 
-              tabmaterialemi->setLayout(tabmaterialemilayout);
+//              tabmaterialemi->setLayout(tabmaterialemilayout);
 
               //widget2
               tabmaterialdif = new QWidget(tabmaterial);
@@ -799,7 +800,7 @@ Mondock:: ~Mondock(){}
                     tabmaterialspe->setLayout(tabmaterialspelayout);
 
             //assosiation des 4widget au tab
-            tabmaterial->addTab(tabmaterialemi , "Emissive");
+//            tabmaterial->addTab(tabmaterialemi , "Emissive");
             tabmaterial->addTab(tabmaterialdif , "Difuse");
             tabmaterial->addTab(tabmaterialamb , "Ambiante");
             tabmaterial->addTab(tabmaterialspe , "Speculaire");

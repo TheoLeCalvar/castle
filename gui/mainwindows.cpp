@@ -872,6 +872,27 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
     }
 
     void MainWindow::ajoutlumiere(){
+        //reset des champ
+
+            //nom
+            lineeditnomajoutlumiere->setText("");
+            //position
+            spinpositionajoutlumierex->setValue(0.0);
+            spinpositionajoutlumierey->setValue(0.0);
+            spinpositionajoutlumierez->setValue(0.0);
+
+            //difuse
+            spindifajoutlumierex->setValue(0.0);
+            spindifajoutlumierey->setValue(0.0);
+            spindifajoutlumierez->setValue(0.0);
+
+            //ambiante
+            spinspeajoutlumierex->setValue(0.0);
+            spinspeajoutlumierey->setValue(0.0);
+            spinspeajoutlumierez->setValue(0.0);
+
+
+        //affiche le dock d'ajout
         dockajoutlumiere->show();
     }
 
@@ -883,7 +904,8 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             QMessageBox msgBox;
             msgBox.setText("le champ nom , ne peut etre vide");
             msgBox.exec();
-         dockajoutlumiere->close();
+
+            dockajoutlumiere->close();
         }
         else
         {
@@ -921,6 +943,28 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
     }
 
     void MainWindow::ajoutmaterial(){
+        //reset des champ
+
+            //nom
+            lineeditnomajoutmaterial->setText("");
+            //ambiante
+            spinambajoutmaterialx->setValue(0.0);
+            spinambajoutmaterialy->setValue(0.0);
+            spinambajoutmaterialz->setValue(0.0);
+
+            //difuse
+            spindifajoutmaterialx->setValue(0.0);
+            spindifajoutmaterialy->setValue(0.0);
+            spindifajoutmaterialz->setValue(0.0);
+
+            //speculaire
+            spinspeajoutmaterialx->setValue(0.0);
+            spinspeajoutmaterialy->setValue(0.0);
+            spinspeajoutmaterialz->setValue(0.0);
+
+            spinspeajoutmateriala->setValue(0.0);//shines
+
+        //affiche le dock d'ajout
         dockajoutmateriaux->show();
     }
 
@@ -940,7 +984,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                 scenetemp->addMaterial(
                     lineeditnomajoutmaterial->text(),//nom
 
-                        new Material//lumiere
+                        new Material
                             (
                                 vec3(//ambiante
                                 spinambajoutmaterialx->value(),
@@ -978,6 +1022,23 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
 
     void MainWindow::ajoutpiece()
         {
+
+
+            //reset des champ
+                //nom
+                lineeditajoutpiece->setText("");
+                //spinbox
+                ajoutpiecedimx->setValue(0);
+                ajoutpiecedimy->setValue(0);
+                ajoutpiecedimz->setValue(0);
+                //checkbox
+                checkmur1->setChecked(true);
+                checkmur2->setChecked(true);
+                checkmur3->setChecked(true);
+                checkmur4->setChecked(true);
+                checkmur5->setChecked(true);
+                checkmur6->setChecked(true);
+
             //creation model materiaux
             QStringList listtmp = widget->getScene()->getMaterialsNames();
 
@@ -1013,7 +1074,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
         {
         Scene * scenetemp = widget->getScene();
 
-        if (lineeditajoutpiece->text()==NULL)
+        if (lineeditajoutpiece->text()==NULL || lineeditajoutpiece->text()=="" )
         {
             QMessageBox msgBox;
             msgBox.setText("le champ nom , ne peut etre vide");
@@ -1430,8 +1491,13 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
 
     void MainWindow::ajoutobjet()
     {
-        //rempli la combo piece
 
+        //resete certain champ
+
+        lineeditobjajoutobj->setText("");
+        champnomajoutobjet->setText("");
+
+        //rempli la combo piece
         //vide le model si il a deja des element
         if  (modelajoutobjet!=NULL)modelajoutobjet->clear();
 
