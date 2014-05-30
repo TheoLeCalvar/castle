@@ -167,11 +167,11 @@ private:
                             QSpinBox*   materialspinboxspea;
 
                     //emisive
-                    QWidget*    tabmaterialemi;
-                        QHBoxLayout*    tabmaterialemilayout;
-                            QSpinBox*   materialspinboxemix;
-                            QSpinBox*   materialspinboxemiy;
-                            QSpinBox*   materialspinboxemiz;
+//                    QWidget*    tabmaterialemi;
+//                        QHBoxLayout*    tabmaterialemilayout;
+//                            QSpinBox*   materialspinboxemix;
+//                            QSpinBox*   materialspinboxemiy;
+//                            QSpinBox*   materialspinboxemiz;
 
 /* ******************************************************** */
                    //objet
@@ -293,9 +293,9 @@ private slots:
     void spelightfuncz( int x );
 
 //materiaux
-    void emimaterialfuncx( int x );
-    void emimaterialfuncy( int x );
-    void emimaterialfuncz( int x );
+//    void emimaterialfuncx( int x );
+//    void emimaterialfuncy( int x );
+//    void emimaterialfuncz( int x );
 
     void ambmaterialfuncx( int x );
     void ambmaterialfuncy( int x );
