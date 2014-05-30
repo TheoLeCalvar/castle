@@ -281,6 +281,14 @@ private:
 	 */
 	static vec3 readScale(const QDomElement & e);
 
+	/**
+	 * @brief Retourne un vec3 correspondant à la rotation
+	 * 
+	 * @param e élément à lire
+	 * @return vecteur de rotation
+	 */
+	static vec3 readRotation(const QDomElement & e);
+
 
 	void saveMaterials(QDomElement & root, QDomDocument & doc) const;
 

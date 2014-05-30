@@ -491,6 +491,7 @@ void 	Scene::loadPieces(const QDomElement & dom)
 		int width, height, length;
 		vec3 position;
 		vec3 scale(1.0f, 1.0f, 1.0f);
+		vec3 rotation;
 
 		QDomElement dim = piece.firstChildElement("dimension");
 		QDomElement murs = piece.firstChildElement("murs");
@@ -521,12 +522,16 @@ void 	Scene::loadPieces(const QDomElement & dom)
 		scale = readScale(piece.firstChildElement("scale"));
 		qDebug() << "Scale : " << scale;
 
+		rotation = readRotation(piece.firstChildElement("rotation"));
+		qDebug() << "Rotation : " << rotation;
+
 
 		pieceTmp = new Piece(vec3(width, height, length), vec3(), position, NULL);
 		pieceTmp->shaderId(shaderId);
 		pieceTmp->material(getMaterial(materialPiece));
 		pieceTmp->name(nom);
 		pieceTmp->scale(scale);
+		pieceTmp->rotation(rotation);
 
 		if (!murs.isNull())
 		{
@@ -652,11 +657,9 @@ void 	Scene::loadPieces(const QDomElement & dom)
 
 			while(!objet.isNull())
 			{
-				float xRot, yRot, zRot;
-				xRot = objet.attribute("Xrot", "0").toFloat();
-				yRot = objet.attribute("Yrot", "0").toFloat();
-				zRot = objet.attribute("Zrot", "0").toFloat();
-				vec3 scale = readScale(objet.firstChildElement("scale"));
+				vec3 rotation 	= readRotation(objet.firstChildElement("rotation"));
+				vec3 position 	= readPosition(objet.firstChildElement("position"));
+				vec3 scale 		= readScale(objet.firstChildElement("scale"));
 				QString modeleObjet = objet.attribute("modele");
 				QString nomObjet = objet.attribute("nom", nom + "_" + modeleObjet);
 				QString matObjet = objet.attribute("mat", "");
@@ -670,9 +673,12 @@ void 	Scene::loadPieces(const QDomElement & dom)
 					qFatal("Stop, erreur de chargement");
 				}
 
+
+
 				node->name(nomObjet);
-				node->rotation(vec3(xRot, yRot, zRot));
 				node->scale(scale);
+				node->rotation(rotation);
+				node->position(position);
 				node->parent(pieceTmp);
 
 				if (matObjet != "")
@@ -683,15 +689,6 @@ void 	Scene::loadPieces(const QDomElement & dom)
 				node->shaderId(getShader(shaderObjet));
 				
 
-
-
-				vec3 position = readPosition(objet.firstChildElement("position"));
-
-
-				node->position(position);
-
-
-				// pieceTmp->addChild(nomObjet ,node);
 
 				objet = objet.nextSiblingElement("objet");
 			}
@@ -948,6 +945,24 @@ void Scene::savePieces(QDomElement & root, QDomDocument & doc) const
 
 		piece.appendChild(positionE);
 
+		QDomElement rotationE = doc.createElement("rotation");
+		vec3 rotation = i.value()->rotation();
+
+		rotationE.setAttribute("x", rotation[0]);
+		rotationE.setAttribute("y", rotation[1]);
+		rotationE.setAttribute("z", rotation[2]);
+
+		piece.appendChild(rotationE);
+
+		QDomElement scaleE = doc.createElement("scale");
+		vec3 scale = i.value()->scale();
+
+		scaleE.setAttribute("x", scale[0]);
+		scaleE.setAttribute("y", scale[1]);
+		scaleE.setAttribute("z", scale[2]);
+
+		piece.appendChild(scaleE);
+
 
 		QDomElement mursE = doc.createElement("murs");
 		QDomElement objetsE = doc.createElement("objets");
@@ -1008,11 +1023,12 @@ void Scene::savePieces(QDomElement & root, QDomDocument & doc) const
 				objetE.setAttribute("nom", node->name());
 				objetE.setAttribute("modele", node->getModelName());
 
+				QDomElement rotationE = doc.createElement("rotation");
 				vec3 rotation = node->rotation();
 
-				objetE.setAttribute("xRot", rotation[0]);
-				objetE.setAttribute("yRot", rotation[1]);
-				objetE.setAttribute("zRot", rotation[2]);
+				rotationE.setAttribute("x", rotation[0]);
+				rotationE.setAttribute("y", rotation[1]);
+				rotationE.setAttribute("z", rotation[2]);
 
 
 				QDomElement positionE = doc.createElement("position");
@@ -1022,7 +1038,17 @@ void Scene::savePieces(QDomElement & root, QDomDocument & doc) const
 				positionE.setAttribute("y", position[1]);
 				positionE.setAttribute("z", position[2]);
 
+
+				QDomElement scaleE = doc.createElement("scale");
+				vec3 scale = node->scale();
+
+				scaleE.setAttribute("x", scale[0]);
+				scaleE.setAttribute("y", scale[1]);
+				scaleE.setAttribute("z", scale[2]);
+
 				objetE.appendChild(positionE);
+				objetE.appendChild(rotationE);
+				objetE.appendChild(scaleE);
 
 
 				objetsE.appendChild(objetE);
@@ -1081,4 +1107,15 @@ vec3 Scene::readScale(const QDomElement & e)
 	scale[2] = e.attribute("z", "1").toFloat();
 
 	return scale;
+}
+
+vec3 Scene::readRotation(const QDomElement & e)
+{
+	vec3 rotation;
+
+	rotation[0] = e.attribute("x", "0").toFloat();
+	rotation[1] = e.attribute("y", "0").toFloat();
+	rotation[2] = e.attribute("z", "0").toFloat();
+
+	return rotation;
 }

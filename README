@@ -1,13 +1,3 @@
-http://www.antongerdelan.net/opengl/vectorsandmatrices.html
+Utilisation du programme:
 
-http://www.codinglabs.net/article_world_view_projection_matrix.aspx
-
-http://en.wikibooks.org/wiki/OpenGL_Programming#Modern_OpenGL
-
-http://www.ggkf.com/opengl/difference-in-opengl-speed-between-qt-45-and-opengl-api
-
-http://stackoverflow.com/questions/10471601/opengl-vbos-drawing-a-sphere
-
-http://qt-project.org/doc/qt-5/qopengldebuglogger.html#details
-
-http://stackoverflow.com/questions/17983107/how-can-qwindow-replace-qglwidget
+	- Lancement : passer en argument le fichier xml décrivant la scène à charger

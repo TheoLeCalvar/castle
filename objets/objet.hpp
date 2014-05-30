@@ -190,15 +190,6 @@ private:
 	void 			activateShader();
 
 
-protected:
-	/**
-	 * @brief Apllique au vecteur les transformation de l'objet et de ses pères
-	 * @details vec4 pour optimisation lors des casts 
-	 * 
-	 * @param v vec4 à calculer
-	 */
-	void 			transformVector(vec4 & v) const;
-
 };
 
 #endif
