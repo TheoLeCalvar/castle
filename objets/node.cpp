@@ -186,7 +186,14 @@ Node* Node::loadModel(const QString & file, Scene * scene)
 
 
 		const aiScene* pScene = importer.ReadFile(file.right(file.size() - file.lastIndexOf("/") - 1).toStdString(), 
-				aiProcess_Triangulate | aiProcess_GenSmoothNormals );
+				aiProcess_Triangulate 				| 
+				aiProcess_GenSmoothNormals 			| 
+				aiProcess_OptimizeMeshes 			| 
+				aiProcess_FixInfacingNormals 		| 
+				aiProcess_RemoveRedundantMaterials 	| 
+				aiProcess_JoinIdenticalVertices 	| 
+				aiProcess_FindInvalidData 			| 
+				aiProcess_OptimizeGraph );
 
 		if (!pScene)
 		{

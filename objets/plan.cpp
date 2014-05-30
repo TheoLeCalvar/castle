@@ -9,7 +9,7 @@ Plan::Plan(
 		Material * mat, vec3 rotation, vec3 position
 		)
 			:	Objet("", mat, rotation, position), 
-				_vao(0), _nbVertices(0),
+				_vao(0), _nbIndices(0),
 				_minP(0.0f, 0.0f, -0.5f), _maxP(width, height, 0.5f), 
 				_fenetres(rects)
 {
@@ -70,7 +70,7 @@ Plan::Plan(
 	}
 
 
-	_nbVertices = indices.size();
+	_nbIndices = indices.size();
 
 
 	glGenBuffers(1, &_vbo_vertices);
@@ -83,7 +83,7 @@ Plan::Plan(
 
 	glGenBuffers(1, &_vbo_indices);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _vbo_indices);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, _nbVertices * sizeof(unsigned int), indices.data(), GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), indices.data(), GL_STATIC_DRAW);
 
 	glGenBuffers(1, &_vbo_texCoord);
 	glBindBuffer(GL_ARRAY_BUFFER, _vbo_texCoord);
@@ -103,8 +103,6 @@ Plan::Plan(
 	glEnableVertexAttribArray (2);
     glBindBuffer (GL_ARRAY_BUFFER, _vbo_texCoord);
     glVertexAttribPointer (2, 2, GL_FLOAT, GL_FALSE, 0, NULL);
-
-
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _vbo_indices);
 
@@ -138,7 +136,7 @@ void Plan::draw()
 
 	glBindVertexArray (_vao);
 
-	glDrawElements(GL_TRIANGLES, _nbVertices, GL_UNSIGNED_INT, 0);
+	glDrawElements(GL_TRIANGLES, _nbIndices, GL_UNSIGNED_INT, 0);
 
 	glBindVertexArray(0);	
 }

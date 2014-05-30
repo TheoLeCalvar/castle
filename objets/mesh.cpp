@@ -16,6 +16,7 @@ Mesh* Mesh::loadMesh(const aiMesh * mesh)
 	Mesh * ret = new Mesh;
 	MeshInfo * info = new MeshInfo;
 	std::vector<float> vertices;
+	std::vector<unsigned int> indices;
 	std::vector<float> normals;
 	std::vector<float> texCoord;
 
@@ -24,13 +25,14 @@ Mesh* Mesh::loadMesh(const aiMesh * mesh)
 
 	ret->_infos = info;
 
-	info->nbVertices = mesh->mNumVertices;
+	info->nbFaces = mesh->mNumFaces;
 	info->nbReferences = 1;
 
 
 
 	#ifdef DEBUG
-		qDebug() << "Nombre de vertices : " <<  info->nbVertices; 
+		qDebug() << "Nombre de vertices : " <<  mesh->mNumVertices; 
+		qDebug() << "Nombre de faces : " << mesh->mNumFaces;
 	#endif
 
 	if (mesh->HasPositions())
@@ -39,7 +41,7 @@ Mesh* Mesh::loadMesh(const aiMesh * mesh)
 			qDebug() << "Y'a des vertices !";
 		#endif
 
-		for (unsigned int i = 0; i < info->nbVertices; ++i)
+		for (unsigned int i = 0; i < mesh->mNumVertices; ++i)
 		{
 			const aiVector3D* vp = &(mesh->mVertices[i]);
 
@@ -49,13 +51,31 @@ Mesh* Mesh::loadMesh(const aiMesh * mesh)
 		}
 	}
 
+	if (mesh->HasFaces())
+	{
+		#ifdef DEBUG
+			qDebug() << "Y'a des faces !";
+		#endif
+
+		for (unsigned int i = 0; i < mesh->mNumFaces; ++i)
+		{
+			const aiFace* face = &mesh->mFaces[i];
+
+			indices.push_back(face->mIndices[0]);
+			indices.push_back(face->mIndices[1]);
+			indices.push_back(face->mIndices[2]);
+		}
+
+
+	}
+
 	if (mesh->HasNormals())	
 	{
 		#ifdef DEBUG
 			qDebug() << "Y'a des normales !";
 		#endif
 
-		for (unsigned int i = 0; i < info->nbVertices; ++i)
+		for (unsigned int i = 0; i < mesh->mNumVertices; ++i)
 		{
 			const aiVector3D* vp = &(mesh->mNormals[i]);
 
@@ -71,7 +91,7 @@ Mesh* Mesh::loadMesh(const aiMesh * mesh)
 			qDebug() << "Coordonées de textures !";
 		#endif
 
-		for (unsigned int i = 0; i < info->nbVertices; ++i)
+		for (unsigned int i = 0; i < mesh->mNumVertices; ++i)
 		{
 			aiVector3D* vp = &(mesh->mTextureCoords[0][i]);
 
@@ -97,6 +117,17 @@ Mesh* Mesh::loadMesh(const aiMesh * mesh)
 		func.glEnableVertexAttribArray(0);
 
 		info->vbos << vbo;
+	}
+
+	if (mesh->HasFaces())
+	{
+		GLuint vbo;
+
+		func.glGenBuffers(1, &vbo);
+		func.glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vbo);
+		func.glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), indices.data(), GL_STATIC_DRAW);
+
+		info->vbos << vbo;	
 	}
 
 	if (mesh->HasNormals())
@@ -166,9 +197,14 @@ void Mesh::draw()
 
 	glBindVertexArray (_infos->vao);
 
-  	glDrawArrays (GL_TRIANGLES, 0, _infos->nbVertices);
+	openGL_check_error();
+
+	if(_infos->nbFaces)
+  		glDrawElements (GL_TRIANGLES, _infos->nbFaces * 3, GL_UNSIGNED_INT, 0);
 
   	openGL_check_error();
+
+  	glBindVertexArray(0);
 
 }
 
