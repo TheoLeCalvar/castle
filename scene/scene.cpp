@@ -632,7 +632,7 @@ void 	Scene::loadPieces(const QDomElement & dom)
 				{
 					plan->name(nom + "_" + cote);
 					plan->parent(pieceTmp);
-					pieceTmp->addChild(plan);
+					// pieceTmp->addChild(plan);
 
 					plan = NULL;
 				}
@@ -670,9 +670,10 @@ void 	Scene::loadPieces(const QDomElement & dom)
 					qFatal("Stop, erreur de chargement");
 				}
 
-				node->parent(pieceTmp);
+				node->name(nomObjet);
 				node->rotation(vec3(xRot, yRot, zRot));
 				node->scale(scale);
+				node->parent(pieceTmp);
 
 				if (matObjet != "")
 				{
@@ -680,7 +681,6 @@ void 	Scene::loadPieces(const QDomElement & dom)
 				}
 
 				node->shaderId(getShader(shaderObjet));
-				node->name(nomObjet);
 				
 
 
@@ -691,7 +691,7 @@ void 	Scene::loadPieces(const QDomElement & dom)
 				node->position(position);
 
 
-				pieceTmp->addChild(nomObjet ,node);
+				// pieceTmp->addChild(nomObjet ,node);
 
 				objet = objet.nextSiblingElement("objet");
 			}
@@ -1059,20 +1059,6 @@ void Scene::orderLights()
 	{
 		_orderedLights.insert(f.result().second, f.result().first);
 	}
-}
-
-bool Scene::collide(const Hitbox & h) const
-{
-	for (Piece * i : _pieces)
-	{
-		if(i->collide(h))
-		{
-			qDebug() << "Collision avec " << i->name();
-			return true;
-		}
-	}
-
-	return false;
 }
 
 vec3 Scene::readPosition(const QDomElement & e)

@@ -183,11 +183,6 @@ void	MyOpenGLWidget::paintGL()
 
     setWindowTitle(QString("Castle | %1 fps | %2 ns").arg(1 / (time / 1000000000.0)).arg(time));
 
-    if(time / 1000000000.0f > 1/60.0f)
-    {
-        qDebug() << "Moins de 60 fps !";
-    }
-
 }
 
 void	MyOpenGLWidget::resizeGL(int width, int height)

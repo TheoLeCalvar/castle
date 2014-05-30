@@ -7,7 +7,6 @@
 
 #include "objet.hpp"
 #include "piece.hpp"
-#include "hitbox.hpp"
 
 
 #include <QOpenGLFunctions_3_2_Core>
@@ -43,7 +42,7 @@ class MyOpenGLWidget;
  * Se charge de lire le xml et de générer la scène.
  * Nécessite un context OpenGL 3.2 au minimum
  */
-class Scene: protected QOpenGLFunctions_3_2_Core, public Hitbox
+class Scene: protected QOpenGLFunctions_3_2_Core
 {
 private:
 	QMap<QString, Piece *>						_pieces; /**< Map des pièces constituant la scène, identifiées par leur nom, doit être unique */ 
@@ -228,9 +227,6 @@ public:
 	bool 		saveAsXML(const QString & fileName);
 
 
-	virtual bool collide(const Hitbox & h) const;
-
-
 private:
 	/**
 	 * @brief Charge les lumières
@@ -293,16 +289,6 @@ private:
 	void saveShaders(QDomElement & root, QDomDocument & doc) const;
 
 	void savePieces(QDomElement & root, QDomDocument & doc) const;
-
-
-
-	virtual vec3 getP() 		const{ return vec3();}
-	virtual vec3 getX() 		const{ return vec3();}
-	virtual vec3 getY() 		const{ return vec3();}
-	virtual vec3 getZ() 		const{ return vec3();}
-	virtual float getWidth() 	const{ return 0.0f;}
-	virtual float getHeight() 	const{ return 0.0f;}
-	virtual float getDepth() 	const{ return 0.0f;}
 	
 };
 

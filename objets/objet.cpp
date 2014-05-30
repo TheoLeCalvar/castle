@@ -1,4 +1,5 @@
 #include "objet.hpp"
+#include "piece.hpp"
 
 Objet::Objet(const QString & name, Material * mat, vec3 rotation, vec3 position, Objet * parent)
 		:_parent(parent), _mat(mat), _name(name), _rotation(rotation), _position(position), _scale(1.0f, 1.0f, 1.0f), _model(1), _shaderId(0), _drawHitbox(true)
@@ -41,6 +42,21 @@ void 	Objet::scale(vec3 scale)
 	updateModel();
 }
 
+void 	Objet::parent(Objet * o)
+{
+	if(dynamic_cast<Piece *>(_parent))
+	{
+		dynamic_cast<Piece *>(_parent)->removeChild(name());
+	}
+	
+	if(dynamic_cast<Piece *>(o))
+	{
+		dynamic_cast<Piece *>(o)->addChild(this);
+
+	}
+
+	_parent = o;
+}
 
 void 	Objet::applyMaterial()
 {
@@ -88,34 +104,4 @@ void 	Objet::updateModel()
 
 	_model = translate(_model, _position);
 
-}
-
-vec3 Objet::getX() const
-{
-	vec4 v(1.0f, 0.0f, 0.0f, 0.0f);
-	transformVector(v);
-
-	v.normalize();
-
-	return v;
-}
-
-vec3 Objet::getY() const
-{
-	vec4 v(0.0f, 1.0f, 0.0f, 0.0f);
-	transformVector(v);
-
-	v.normalize();
-	
-	return v;
-}
-
-vec3 Objet::getZ() const
-{
-	vec4 v(0.0f, 0.0f, 1.0f, 0.0f);
-	transformVector(v);
-
-	v.normalize();
-	
-	return v;
 }

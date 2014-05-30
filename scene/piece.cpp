@@ -59,8 +59,17 @@ void 		Piece::removeChild(const QString & name)
 
 	if(o)
 	{
-		delete o;
+		_children.remove(name);
+	}
+}
 
+void 		Piece::deleteChild(const QString & name)
+{
+	Objet * o = _children.value(name);
+
+	if(o)
+	{
+		delete _children.value(name);
 		_children.remove(name);
 	}
 }
@@ -83,27 +92,4 @@ vec3 & Piece::dimensions()
 void Piece::dimensions(const vec3 v)
 {
 	_dimensions = v;
-}
-
-bool Piece::collide(const Hitbox & h) const
-{
-	vec3 center = h.getP();
-	vec3 xAxis = h.getX(), yAxis = h.getY(), zAxis = h.getZ();
-	float width = h.getWidth(), height = h.getHeight(), depth = h.getDepth();
-
-	vec4 p1 =  vec4(_position, 0.0f);
-	vec4 p2 = p1 + vec4(_dimensions, 0.0f); 
-
-	transformVector(p1);
-	transformVector(p2);
-
-
-	for(Objet * i : _children)
-	{
-		if (i->collide(h))
-		{
-			return true;
-		}
-	}
-	return false;
 }

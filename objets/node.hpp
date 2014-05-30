@@ -133,9 +133,6 @@ public:
 	 */
 	QString getModelName() const;
 
-
-	virtual bool collide(const Hitbox & h) const;
-
 };
 
 
