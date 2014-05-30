@@ -42,8 +42,6 @@ void MainWindow::createActions()
      kiterAct = new QAction(tr("&exit"), this);
         connect( kiterAct, SIGNAL(triggered()), qApp, SLOT(quit()));
 
-     //edition
-
 
      //affichage
      grilleAct = new QAction(tr("&Grille"), this);
@@ -110,8 +108,6 @@ void MainWindow::createMenus()
         Fichier->addSeparator();
         Fichier->addAction(kiterAct);
             kiterAct->setIcon(QIcon("icones/exit.png"));
-
-    Edition = menuBar()->addMenu(tr("&Edition"));
 
     Affichage = menuBar()->addMenu(tr("&Affichage"));
         Affichage->addAction(culfaceAct);
