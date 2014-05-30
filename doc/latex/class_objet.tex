@@ -50,9 +50,9 @@ void \hyperlink{class_objet_a13f08bf7d1265bbf4ade92b755b27c1b}{shader\+Id} (G\+L
 G\+Luint \hyperlink{class_objet_a1a6a7ddf0136e2b685c07778b681c976}{shader\+Id} () const 
 \begin{DoxyCompactList}\small\item\em Retourne l'id du shader qu'utilise l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\item 
 void \hyperlink{class_objet_a3ce451437b7d7d22fdfd8cdb10b347fa}{draw\+Hitbox} (bool b)
-\begin{DoxyCompactList}\small\item\em Affiche les \hyperlink{class_hitbox}{Hitbox} des objets capables d'en afficher. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Affiche les Hitbox des objets capables d'en afficher. \end{DoxyCompactList}\item 
 bool \hyperlink{class_objet_a17afdd67513cf35ab527af241cc7f769}{draw\+Hitbox} () const 
-\begin{DoxyCompactList}\small\item\em Affiche la \hyperlink{class_hitbox}{Hitbox} de l'objet. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Affiche la Hitbox de l'objet. \end{DoxyCompactList}\item 
 \hyperlink{class_material}{Material} $\ast$ \hyperlink{class_objet_a5b8f371853435fb08bba5163cb4dbe09}{material} ()
 \begin{DoxyCompactList}\small\item\em Récupère le material de l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\item 
 void \hyperlink{class_objet_a470e028ee53141cf9d11d107317989b7}{material} (\hyperlink{class_material}{Material} $\ast$m)
@@ -69,21 +69,7 @@ void \hyperlink{class_objet_a9fcc9af481f4e13f46ab7d1b40cf91fc}{name} (const Q\+S
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_objet_a68db2971ff359da981bc0fb73a164b9f}{transform\+Vector} (\hyperlink{structvec4}{vec4} \&v) const 
-\begin{DoxyCompactList}\small\item\em Apllique au vecteur les transformation de l'objet et de ses pères. \end{DoxyCompactList}\item 
-virtual \hyperlink{structvec3}{vec3} \hyperlink{class_objet_a470565255788e83680e544631b5800ff}{get\+P} () const 
-\begin{DoxyCompactList}\small\item\em Retourne le centre de la \hyperlink{class_hitbox}{Hitbox}. \end{DoxyCompactList}\item 
-virtual \hyperlink{structvec3}{vec3} \hyperlink{class_objet_afaf96803ebfa415f7e3cbb1548bc1820}{get\+X} () const 
-\begin{DoxyCompactList}\small\item\em \hyperlink{structvec3}{vec3} unitaire X \end{DoxyCompactList}\item 
-virtual \hyperlink{structvec3}{vec3} \hyperlink{class_objet_a861ee97362660b8b4e013ac08bcacbfc}{get\+Y} () const 
-\begin{DoxyCompactList}\small\item\em \hyperlink{structvec3}{vec3} unitaire Y \end{DoxyCompactList}\item 
-virtual \hyperlink{structvec3}{vec3} \hyperlink{class_objet_ae7f55830cdd18cfc3ceb9b556f25be23}{get\+Z} () const 
-\begin{DoxyCompactList}\small\item\em \hyperlink{structvec3}{vec3} unitaire Z \end{DoxyCompactList}\item 
-virtual float \hyperlink{class_objet_ae8b213466c38b3bcaa34144cc708da65}{get\+Width} () const 
-\begin{DoxyCompactList}\small\item\em renvoie la demie largeur de la hitbox \end{DoxyCompactList}\item 
-virtual float \hyperlink{class_objet_a05bcb1a581309e6785be09058ff68450}{get\+Height} () const 
-\begin{DoxyCompactList}\small\item\em renvoie la demie hauteur de la hitbox \end{DoxyCompactList}\item 
-virtual float \hyperlink{class_objet_a27f49df80d4efc35530987cd8683dde0}{get\+Depth} () const 
-\begin{DoxyCompactList}\small\item\em renvoie la demie profondeur de la hitbox \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Apllique au vecteur les transformation de l'objet et de ses pères. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -211,7 +197,7 @@ Reimplemented in \hyperlink{class_mesh_a996a8668fa2ca7d95d6d10744c833bc8}{Mesh},
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_objet_a3ce451437b7d7d22fdfd8cdb10b347fa}
 
 
-Affiche les \hyperlink{class_hitbox}{Hitbox} des objets capables d'en afficher. 
+Affiche les Hitbox des objets capables d'en afficher. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -227,128 +213,7 @@ Affiche les \hyperlink{class_hitbox}{Hitbox} des objets capables d'en afficher.
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_objet_a17afdd67513cf35ab527af241cc7f769}
 
 
-Affiche la \hyperlink{class_hitbox}{Hitbox} de l'objet. 
-
-\hypertarget{class_objet_a27f49df80d4efc35530987cd8683dde0}{\index{Objet@{Objet}!get\+Depth@{get\+Depth}}
-\index{get\+Depth@{get\+Depth}!Objet@{Objet}}
-\subsubsection[{get\+Depth}]{\setlength{\rightskip}{0pt plus 5cm}virtual float Objet\+::get\+Depth (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_objet_a27f49df80d4efc35530987cd8683dde0}
-
-
-renvoie la demie profondeur de la hitbox 
-
-
-
-Implements \hyperlink{class_hitbox_a100e9cdbd7e85179e64c9679c28354ee}{Hitbox}.
-
-
-
-Reimplemented in \hyperlink{class_mesh_a505f44a95b363e12f6434801fe697108}{Mesh}, and \hyperlink{class_plan_a086041dcf2879904e774f34ae4ad61d7}{Plan}.
-
-\hypertarget{class_objet_a05bcb1a581309e6785be09058ff68450}{\index{Objet@{Objet}!get\+Height@{get\+Height}}
-\index{get\+Height@{get\+Height}!Objet@{Objet}}
-\subsubsection[{get\+Height}]{\setlength{\rightskip}{0pt plus 5cm}virtual float Objet\+::get\+Height (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_objet_a05bcb1a581309e6785be09058ff68450}
-
-
-renvoie la demie hauteur de la hitbox 
-
-
-
-Implements \hyperlink{class_hitbox_a2393fb817af93cbeacfb140f4f30c1a0}{Hitbox}.
-
-
-
-Reimplemented in \hyperlink{class_mesh_a3feeb4d65973f3dc0c0e66ae95b36971}{Mesh}, and \hyperlink{class_plan_a73316993ed03bbf13b38f2dff76b0ced}{Plan}.
-
-\hypertarget{class_objet_a470565255788e83680e544631b5800ff}{\index{Objet@{Objet}!get\+P@{get\+P}}
-\index{get\+P@{get\+P}!Objet@{Objet}}
-\subsubsection[{get\+P}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf vec3} Objet\+::get\+P (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_objet_a470565255788e83680e544631b5800ff}
-
-
-Retourne le centre de la \hyperlink{class_hitbox}{Hitbox}. 
-
-
-
-Implements \hyperlink{class_hitbox_a2572250e152f89c05e68f9fb0a03bf7a}{Hitbox}.
-
-
-
-Reimplemented in \hyperlink{class_mesh_ab1da4db267719d533521873715b9359c}{Mesh}, and \hyperlink{class_plan_a2561b08d2e0f333c56d7ac2b5cc72fd7}{Plan}.
-
-\hypertarget{class_objet_ae8b213466c38b3bcaa34144cc708da65}{\index{Objet@{Objet}!get\+Width@{get\+Width}}
-\index{get\+Width@{get\+Width}!Objet@{Objet}}
-\subsubsection[{get\+Width}]{\setlength{\rightskip}{0pt plus 5cm}virtual float Objet\+::get\+Width (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_objet_ae8b213466c38b3bcaa34144cc708da65}
-
-
-renvoie la demie largeur de la hitbox 
-
-
-
-Implements \hyperlink{class_hitbox_a5805a4ad2b59f303892af5dfca73a41e}{Hitbox}.
-
-
-
-Reimplemented in \hyperlink{class_mesh_a8e0ae90ffac8c8295027d21f5af155cc}{Mesh}, and \hyperlink{class_plan_aa64cc1ec4e6d1660c691592eb441e00c}{Plan}.
-
-\hypertarget{class_objet_afaf96803ebfa415f7e3cbb1548bc1820}{\index{Objet@{Objet}!get\+X@{get\+X}}
-\index{get\+X@{get\+X}!Objet@{Objet}}
-\subsubsection[{get\+X}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Objet\+::get\+X (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_objet_afaf96803ebfa415f7e3cbb1548bc1820}
-
-
-\hyperlink{structvec3}{vec3} unitaire X 
-
-
-
-Implements \hyperlink{class_hitbox_a25ee2fb5e0556399bc8012073e461411}{Hitbox}.
-
-\hypertarget{class_objet_a861ee97362660b8b4e013ac08bcacbfc}{\index{Objet@{Objet}!get\+Y@{get\+Y}}
-\index{get\+Y@{get\+Y}!Objet@{Objet}}
-\subsubsection[{get\+Y}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Objet\+::get\+Y (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_objet_a861ee97362660b8b4e013ac08bcacbfc}
-
-
-\hyperlink{structvec3}{vec3} unitaire Y 
-
-
-
-Implements \hyperlink{class_hitbox_acf6cfd480e5e1d925386a1225713ea13}{Hitbox}.
-
-\hypertarget{class_objet_ae7f55830cdd18cfc3ceb9b556f25be23}{\index{Objet@{Objet}!get\+Z@{get\+Z}}
-\index{get\+Z@{get\+Z}!Objet@{Objet}}
-\subsubsection[{get\+Z}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Objet\+::get\+Z (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_objet_ae7f55830cdd18cfc3ceb9b556f25be23}
-
-
-\hyperlink{structvec3}{vec3} unitaire Z 
-
-
-
-Implements \hyperlink{class_hitbox_a2a024cefac26e2fb8db4ecc9010251c8}{Hitbox}.
+Affiche la Hitbox de l'objet. 
 
 \hypertarget{class_objet_a5b8f371853435fb08bba5163cb4dbe09}{\index{Objet@{Objet}!material@{material}}
 \index{material@{material}!Objet@{Objet}}
@@ -416,7 +281,7 @@ Change le nom de l'\hyperlink{class_objet}{Objet}.
 \begin{DoxyParamCaption}
 \item[{{\bf Objet} $\ast$}]{o}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_objet_a95e63a98dc9dc485fe874df30f2069ee}
+)}}\label{class_objet_a95e63a98dc9dc485fe874df30f2069ee}
 
 
 Change l'\hyperlink{class_objet}{Objet} père. 

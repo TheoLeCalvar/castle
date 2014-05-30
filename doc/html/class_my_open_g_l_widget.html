@@ -84,6 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_my_open_g_l_widget-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -103,8 +104,8 @@ Inheritance diagram for MyOpenGLWidget:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abdf77aa3e6d581bbcbbc505b4c592492"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#abdf77aa3e6d581bbcbbc505b4c592492">MyOpenGLWidget</a> (const QGLFormat &amp;format, QWidget *parent=0, const QString &amp;path=&quot;scene.xml&quot;, const QGLWidget *shareWidget=0, Qt::WindowFlags f=0)</td></tr>
-<tr class="separator:abdf77aa3e6d581bbcbbc505b4c592492"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78f2284f348e8b482875ccdfbf704b34"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#a78f2284f348e8b482875ccdfbf704b34">MyOpenGLWidget</a> (const QGLFormat &amp;format, QWidget *parent=0, const QString &amp;path=&quot;&quot;, const QGLWidget *shareWidget=0, Qt::WindowFlags f=0)</td></tr>
+<tr class="separator:a78f2284f348e8b482875ccdfbf704b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9bdb4eb867d9e0bbfab210732fa5883"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#aa9bdb4eb867d9e0bbfab210732fa5883">~MyOpenGLWidget</a> ()</td></tr>
 <tr class="separator:aa9bdb4eb867d9e0bbfab210732fa5883"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a037578f8e21a015e7b2915992fbe5d"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#a4a037578f8e21a015e7b2915992fbe5d">minimumSizeHint</a> () const </td></tr>
@@ -129,6 +130,21 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a27abe02c04240317cf42c1cec1ac7e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a2e229f91bb75775bb539c85bb696ef"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#a6a2e229f91bb75775bb539c85bb696ef">mousePressEvent</a> (QMouseEvent *event)</td></tr>
 <tr class="separator:a6a2e229f91bb75775bb539c85bb696ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87b9f933f545bf6f257820395771cc8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#a87b9f933f545bf6f257820395771cc8b">useShader</a> (const QString &amp;name)</td></tr>
+<tr class="separator:a87b9f933f545bf6f257820395771cc8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1426e6f24592838e16c22a92870cf5f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#a1426e6f24592838e16c22a92870cf5f4">addShader</a> (const QString &amp;name, const QString &amp;vertex, const QString &amp;fragment)</td></tr>
+<tr class="separator:a1426e6f24592838e16c22a92870cf5f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99929e3c743d4f5793ef0e09ab61f2b2"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#a99929e3c743d4f5793ef0e09ab61f2b2">getShaderNames</a> ()</td></tr>
+<tr class="separator:a99929e3c743d4f5793ef0e09ab61f2b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7899fd91898c1ed5dc228d7d6de658e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#af7899fd91898c1ed5dc228d7d6de658e">loadShaders</a> (const QDomElement &amp;postProcess)</td></tr>
+<tr class="separator:af7899fd91898c1ed5dc228d7d6de658e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a177cfabda79d05c834b4f1a3f370a620"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#a177cfabda79d05c834b4f1a3f370a620">saveShaders</a> (QDomElement &amp;root, QDomDocument &amp;doc) const </td></tr>
+<tr class="separator:a177cfabda79d05c834b4f1a3f370a620"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ae2bcca23e0802d6f5ebf2ee3e6ed6e7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#ae2bcca23e0802d6f5ebf2ee3e6ed6e7a">initFramebuffer</a> (int width, int height)</td></tr>
+<tr class="separator:ae2bcca23e0802d6f5ebf2ee3e6ed6e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -140,9 +156,26 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a7b3d69ddf0b3509a196edbfeb78407c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26a1f259357dd7c8822d715d81591395"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_scene.html">Scene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#a26a1f259357dd7c8822d715d81591395">_scene</a></td></tr>
 <tr class="separator:a26a1f259357dd7c8822d715d81591395"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63a814817d1af6ea49036edac108183b"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#a63a814817d1af6ea49036edac108183b">_vao_quad</a></td></tr>
+<tr class="separator:a63a814817d1af6ea49036edac108183b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab39ecf367a98c1bd5e1dbeeb8b44a255"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#ab39ecf367a98c1bd5e1dbeeb8b44a255">_framebuffer</a></td></tr>
+<tr class="separator:ab39ecf367a98c1bd5e1dbeeb8b44a255"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18d7f106f5e12568f5db59d8c4a71706"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#a18d7f106f5e12568f5db59d8c4a71706">_texture</a></td></tr>
+<tr class="separator:a18d7f106f5e12568f5db59d8c4a71706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8385a49fb5113010acc3ddd67080ed1a"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#a8385a49fb5113010acc3ddd67080ed1a">_renderbuffer</a></td></tr>
+<tr class="separator:a8385a49fb5113010acc3ddd67080ed1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24571f61604a92b622b49609bc0f3f5b"><td class="memItemLeft" align="right" valign="top">QOpenGLShaderProgram *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#a24571f61604a92b622b49609bc0f3f5b">_activeProgram</a></td></tr>
+<tr class="separator:a24571f61604a92b622b49609bc0f3f5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afde13326f4f01ede3cac0ee4f389a594"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, <br class="typebreak" />
+QOpenGLShaderProgram * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#afde13326f4f01ede3cac0ee4f389a594">_postProcessPrograms</a></td></tr>
+<tr class="separator:afde13326f4f01ede3cac0ee4f389a594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab02762bc0b4cb541f7ad42fdbd7a73f7"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, QOpenGLShader * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#ab02762bc0b4cb541f7ad42fdbd7a73f7">_loadedShaders</a></td></tr>
+<tr class="separator:ab02762bc0b4cb541f7ad42fdbd7a73f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a543e9cc55491a8e07a7bb5eb54633351"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvec2.html">vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_open_g_l_widget.html#a543e9cc55491a8e07a7bb5eb54633351">_pixel_scale</a></td></tr>
+<tr class="separator:a543e9cc55491a8e07a7bb5eb54633351"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="abdf77aa3e6d581bbcbbc505b4c592492"></a>
+<a class="anchor" id="a78f2284f348e8b482875ccdfbf704b34"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -162,7 +195,7 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>path</em> = <code>&quot;scene.xml&quot;</code>, </td>
+          <td class="paramname"><em>path</em> = <code>&quot;&quot;</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -202,6 +235,38 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a1426e6f24592838e16c22a92870cf5f4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MyOpenGLWidget::addShader </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>vertex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>fragment</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ab25f238721b8e1cba36c2a0350ac57ba"></a>
 <div class="memitem">
 <div class="memproto">
@@ -213,6 +278,55 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a99929e3c743d4f5793ef0e09ab61f2b2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList MyOpenGLWidget::getShaderNames </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae2bcca23e0802d6f5ebf2ee3e6ed6e7a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MyOpenGLWidget::initFramebuffer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -284,6 +398,22 @@ Private Attributes</h2></td></tr>
 <span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af7899fd91898c1ed5dc228d7d6de658e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MyOpenGLWidget::loadShaders </td>
+          <td>(</td>
+          <td class="paramtype">const QDomElement &amp;&#160;</td>
+          <td class="paramname"><em>postProcess</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>
@@ -408,6 +538,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a177cfabda79d05c834b4f1a3f370a620"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MyOpenGLWidget::saveShaders </td>
+          <td>(</td>
+          <td class="paramtype">QDomElement &amp;&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QDomDocument &amp;&#160;</td>
+          <td class="paramname"><em>doc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aaac5737e9ce05a94006aa92afed5d403"></a>
 <div class="memitem">
 <div class="memproto">
@@ -439,7 +595,43 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a87b9f933f545bf6f257820395771cc8b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MyOpenGLWidget::useShader </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a24571f61604a92b622b49609bc0f3f5b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QOpenGLShaderProgram* MyOpenGLWidget::_activeProgram</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="af001d889fec5469aa3e67c11ae48b29d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -449,6 +641,46 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">bool MyOpenGLWidget::_captureMouse</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab39ecf367a98c1bd5e1dbeeb8b44a255"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint MyOpenGLWidget::_framebuffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab02762bc0b4cb541f7ad42fdbd7a73f7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;QString, QOpenGLShader *&gt; MyOpenGLWidget::_loadedShaders</td>
         </tr>
       </table>
   </td>
@@ -480,6 +712,66 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a543e9cc55491a8e07a7bb5eb54633351"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structvec2.html">vec2</a> MyOpenGLWidget::_pixel_scale</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afde13326f4f01ede3cac0ee4f389a594"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;QString, QOpenGLShaderProgram *&gt; MyOpenGLWidget::_postProcessPrograms</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8385a49fb5113010acc3ddd67080ed1a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint MyOpenGLWidget::_renderbuffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a26a1f259357dd7c8822d715d81591395"></a>
 <div class="memitem">
 <div class="memproto">
@@ -489,6 +781,26 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_scene.html">Scene</a>* MyOpenGLWidget::_scene</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a18d7f106f5e12568f5db59d8c4a71706"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint MyOpenGLWidget::_texture</td>
         </tr>
       </table>
   </td>
@@ -520,6 +832,26 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a63a814817d1af6ea49036edac108183b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint MyOpenGLWidget::_vao_quad</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>gui/<a class="el" href="_my_open_g_l_widget_8hpp_source.html">MyOpenGLWidget.hpp</a></li>
 <li>gui/<a class="el" href="_my_open_g_l_widget_8cpp.html">MyOpenGLWidget.cpp</a></li>
@@ -527,7 +859,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 23 2014 11:00:52 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 30 2014 11:11:33 for Castle by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

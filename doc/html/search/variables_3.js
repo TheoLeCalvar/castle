@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['champnomajoutobjet',['champnomajoutobjet',['../class_main_window.html#a7deed257fbf9b55e24313b7026170aef',1,'MainWindow']]],
   ['checkmur1',['checkmur1',['../class_main_window.html#aabce537f4ce40332b2411e31218abf37',1,'MainWindow']]],
   ['checkmur2',['checkmur2',['../class_main_window.html#a9311b2ff986d09836c8e385348acd571',1,'MainWindow']]],
   ['checkmur3',['checkmur3',['../class_main_window.html#a71169e71f8f50fc126c8cdaad981cad7',1,'MainWindow']]],
@@ -9,7 +10,10 @@ var searchData=
   ['comboajoutpiece',['comboajoutpiece',['../class_main_window.html#acb844d7f147cf7f5114e0a626c9564df',1,'MainWindow']]],
   ['comboajoutpieceshader',['comboajoutpieceshader',['../class_main_window.html#ad7c2aad3dda2062d4d26a14709e54ff1',1,'MainWindow']]],
   ['combomaterial',['combomaterial',['../class_mondock.html#ab8773b4c45e6e0e13a9bb22793e3c870',1,'Mondock']]],
+  ['combomurajoutmur',['combomurajoutmur',['../class_main_window.html#ac78b4cd273ba66ef034f739a34945574',1,'MainWindow']]],
   ['comboparent',['comboparent',['../class_mondock.html#a32ebd1f643a5f1b9749eb4f9d4940973',1,'Mondock']]],
+  ['combopieceajoutmur',['combopieceajoutmur',['../class_main_window.html#ab71c3bab35fb829f1716bf42fc96689a',1,'MainWindow']]],
+  ['combopieceajoutobjet',['combopieceajoutobjet',['../class_main_window.html#acee7fc52e6b8a7d86b363c0704e6a039',1,'MainWindow']]],
   ['culfaceact',['culfaceAct',['../class_main_window.html#acc241f6a81ac7e252fac333e8e725da3',1,'MainWindow']]],
   ['currentmodelmatrix',['currentModelMatrix',['../helper_8cpp.html#aaa18a573ae57e07955d2d2f19247653a',1,'helper.cpp']]],
   ['currentprojectionmatrix',['currentProjectionMatrix',['../helper_8cpp.html#a800127cca6b723a99cf1457a55958875',1,'helper.cpp']]],

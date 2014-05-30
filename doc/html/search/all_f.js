@@ -3,7 +3,7 @@ var searchData=
   ['paintgl',['paintGL',['../class_my_open_g_l_widget.html#af7babfe769e968c317e646c4387b357d',1,'MyOpenGLWidget']]],
   ['parent',['parent',['../class_objet.html#a95e63a98dc9dc485fe874df30f2069ee',1,'Objet::parent(Objet *o)'],['../class_objet.html#aaa3c3290e5bb742363263600fcdb3e5e',1,'Objet::parent()']]],
   ['pereobjet',['pereobjet',['../class_mondock.html#afcb87fab11d89a1a24da091153d4dbac',1,'Mondock']]],
-  ['piece',['Piece',['../class_piece.html',1,'Piece'],['../class_hitbox.html#ae6fa0350c8ef33e791f1f9a4daa5e3d1',1,'Hitbox::Piece()'],['../class_piece.html#adfc1a07bd6a58ab6cac476fedb38cb15',1,'Piece::Piece()']]],
+  ['piece',['Piece',['../class_piece.html',1,'Piece'],['../class_piece.html#adfc1a07bd6a58ab6cac476fedb38cb15',1,'Piece::Piece()']]],
   ['piece_2ecpp',['piece.cpp',['../piece_8cpp.html',1,'']]],
   ['piece_2ehpp',['piece.hpp',['../piece_8hpp.html',1,'']]],
   ['piecedimlayout',['piecedimlayout',['../class_mondock.html#af9d31eb2800c5608dc9da41dcf1ca1d0',1,'Mondock']]],

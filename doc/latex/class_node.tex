@@ -27,14 +27,16 @@ Q\+String\+List \hyperlink{class_node_af7d6e2eab0af346f6690b4a2db12d953}{get\+Ch
 \begin{DoxyCompactList}\small\item\em Retourne la liste des noms des Nodes fils. \end{DoxyCompactList}\item 
 \hyperlink{class_node}{Node} $\ast$ \hyperlink{class_node_afdc8a8f6c370f437037c85ffea5af4c1}{get\+Child} (const Q\+String \&\hyperlink{class_objet_a4a702c189bedcbf1e65da6aec72c8e44}{name})
 \begin{DoxyCompactList}\small\item\em Retourne le \hyperlink{class_node}{Node} enfant à partir de son nom. \end{DoxyCompactList}\item 
+void \hyperlink{class_node_af93b38928dc99bd2d3b1bfd982898519}{remove\+Child} (const Q\+String \&\hyperlink{class_objet_a4a702c189bedcbf1e65da6aec72c8e44}{name})
+\begin{DoxyCompactList}\small\item\em supprime un \hyperlink{class_node}{Node} fils \end{DoxyCompactList}\item 
 Q\+String\+List \hyperlink{class_node_a4a3bbcabcbd5423c297e287dd0ab7ecd}{get\+Mesh\+Names} () const 
 \begin{DoxyCompactList}\small\item\em Retourne la liste des noms des \hyperlink{class_mesh}{Mesh} de ce \hyperlink{class_node}{Node}. \end{DoxyCompactList}\item 
 \hyperlink{class_mesh}{Mesh} $\ast$ \hyperlink{class_node_a47c225bb649c6d44763661f6e3253c7c}{get\+Mesh} (const Q\+String \&\hyperlink{class_objet_a4a702c189bedcbf1e65da6aec72c8e44}{name})
 \begin{DoxyCompactList}\small\item\em Retourne le \hyperlink{class_mesh}{Mesh} ayant le nom donné \end{DoxyCompactList}\item 
+void \hyperlink{class_node_ada41b9bdf6e91579ef585e1272f66045}{remove\+Mesh} (const Q\+String \&\hyperlink{class_objet_a4a702c189bedcbf1e65da6aec72c8e44}{name})
+\begin{DoxyCompactList}\small\item\em Supprime le \hyperlink{class_mesh}{Mesh} portant le nom. \end{DoxyCompactList}\item 
 Q\+String \hyperlink{class_node_adf80c463ba15d60645252ffa171fd209}{get\+Model\+Name} () const 
-\begin{DoxyCompactList}\small\item\em Récupère le nom du modèle chargé \end{DoxyCompactList}\item 
-virtual bool \hyperlink{class_node_a07ceab8d57814d67b0a6a3c662130aa2}{collide} (const \hyperlink{class_hitbox}{Hitbox} \&h) const 
-\begin{DoxyCompactList}\small\item\em Calcule la collision des deux O\+B\+B. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Récupère le nom du modèle chargé \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -116,31 +118,6 @@ Destructeur.
 Détruit les Nodes et \hyperlink{class_mesh}{Mesh} fils 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_node_a07ceab8d57814d67b0a6a3c662130aa2}{\index{Node@{Node}!collide@{collide}}
-\index{collide@{collide}!Node@{Node}}
-\subsubsection[{collide}]{\setlength{\rightskip}{0pt plus 5cm}bool Node\+::collide (
-\begin{DoxyParamCaption}
-\item[{const {\bf Hitbox} \&}]{h}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_node_a07ceab8d57814d67b0a6a3c662130aa2}
-
-
-Calcule la collision des deux O\+B\+B. 
-
-utilise l'algorithme des S\+A\+T, plus d'info sur \href{http://goldensuneur.fr/divers/Separating%20Axis%20Theorem%20for%20Oriented%20Bounding%20Boxes.pdf}{\tt http\+://goldensuneur.\+fr/divers/\+Separating\%20\+Axis\%20\+Theorem\%20for\%20\+Oriented\%20\+Bounding\%20\+Boxes.\+pdf}
-
-
-\begin{DoxyParams}{Parameters}
-{\em h} & seconde \hyperlink{class_hitbox}{Hitbox} \\
-\hline
-\end{DoxyParams}
-\begin{DoxyWarning}{Warning}
-actuellement non fonctionnel 
-\end{DoxyWarning}
-
-
-Reimplemented from \hyperlink{class_hitbox_a10182e2ac66fd9e2ff07e9c8bf6c0a1c}{Hitbox}.
-
 \hypertarget{class_node_ab88c83ced58700a56de568f5b1e3c473}{\index{Node@{Node}!draw@{draw}}
 \index{draw@{draw}!Node@{Node}}
 \subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Node\+::draw (
@@ -312,6 +289,38 @@ Charge un ai\+Node.
 \begin{DoxyReturn}{Returns}
 \hyperlink{class_node}{Node} proprement chargé 
 \end{DoxyReturn}
+\hypertarget{class_node_af93b38928dc99bd2d3b1bfd982898519}{\index{Node@{Node}!remove\+Child@{remove\+Child}}
+\index{remove\+Child@{remove\+Child}!Node@{Node}}
+\subsubsection[{remove\+Child}]{\setlength{\rightskip}{0pt plus 5cm}void Node\+::remove\+Child (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+)}}\label{class_node_af93b38928dc99bd2d3b1bfd982898519}
+
+
+supprime un \hyperlink{class_node}{Node} fils 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & nom du \hyperlink{class_node}{Node} à supprimer \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_ada41b9bdf6e91579ef585e1272f66045}{\index{Node@{Node}!remove\+Mesh@{remove\+Mesh}}
+\index{remove\+Mesh@{remove\+Mesh}!Node@{Node}}
+\subsubsection[{remove\+Mesh}]{\setlength{\rightskip}{0pt plus 5cm}void Node\+::remove\+Mesh (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+)}}\label{class_node_ada41b9bdf6e91579ef585e1272f66045}
+
+
+Supprime le \hyperlink{class_mesh}{Mesh} portant le nom. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & nom du \hyperlink{class_mesh}{Mesh} à supprimer \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Data Documentation}

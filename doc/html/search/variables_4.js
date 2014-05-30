@@ -9,6 +9,8 @@ var searchData=
   ['dock_5fperso',['dock_perso',['../class_main_window.html#a0733647a631eeb38fc72d3cf7e01c3db',1,'MainWindow']]],
   ['dockajoutlumiere',['dockajoutlumiere',['../class_main_window.html#a391dd00592f215079a80db989f24266e',1,'MainWindow']]],
   ['dockajoutmateriaux',['dockajoutmateriaux',['../class_main_window.html#a033d7bd189e33389081c3352c3b41021',1,'MainWindow']]],
+  ['dockajoutmur',['dockajoutmur',['../class_main_window.html#a0eb8a5430ee63be81d1c931749ccb5f0',1,'MainWindow']]],
+  ['dockajoutobjet',['dockajoutobjet',['../class_main_window.html#ad94b219ae474fd89c2d7a7c237cb13c5',1,'MainWindow']]],
   ['dockajoutpiece',['dockajoutpiece',['../class_main_window.html#a6a303ea101c20af7884bb398bd3dc41f',1,'MainWindow']]],
   ['dockmodele',['dockmodele',['../class_mondock.html#a3f46e1710907a9aedf250fce4ba93076',1,'Mondock']]],
   ['dockscene',['dockscene',['../class_mondock.html#ac6fd15f2143e05b554f3f936e6f1588f',1,'Mondock']]],

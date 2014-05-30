@@ -175,7 +175,6 @@ boxfont setfont
 1 boundaspect scale
 (Objet) cw
 (QOpenGLFunctions_3_2_Core) cw
-(Hitbox) cw
 (Cube) cw
 (Donuts) cw
 (Mesh) cw
@@ -195,8 +194,7 @@ boundx scalefactor div boundy scalefactor div scale
 % ----- classes -----
 
  (Objet) 3.000000 1.000000 box
- (QOpenGLFunctions_3_2_Core) 2.500000 2.000000 box
- (Hitbox) 3.500000 2.000000 box
+ (QOpenGLFunctions_3_2_Core) 3.000000 2.000000 box
  (Cube) 0.000000 0.000000 box
  (Donuts) 1.000000 0.000000 box
  (Mesh) 2.000000 0.000000 box
@@ -207,14 +205,10 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- relations -----
 
-solid
-0 3.000000 1.000000 out
-solid
-2.500000 3.500000 2.000000 conn
 dashed
-1 2.500000 2.000000 in
-solid
-1 3.500000 2.000000 in
+0 3.000000 1.000000 out
+dashed
+1 3.000000 2.000000 in
 solid
 1 3.000000 0.250000 out
 solid
