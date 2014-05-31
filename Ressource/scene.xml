@@ -12,15 +12,15 @@
 			<diffuse r="0.4" g="0.8" b="0.8" a="1.0" />
 			<specular r="0.8" g="0.8" b="0.8" a="1.0" s="32" />
 			<emissive r="0.0" g="0.0" b="0.0" a="0.0" />
-			<texture src="textures/stonebrick.png" location="0" /> 
-			<texture src="textures/stonebrick_normal.png" location="1" />
+			<texture src="textures/stonebrick.png" type="diffuse" /> 
+			<texture src="textures/stonebrick_normal.png" type="normal" />
 		</material>
 		<material nom="Mat2">
 			<ambient r="0.2" g="0.2" b="0.2" a="1.0" />
 			<diffuse r="0.8" g="0.8" b="0.2" a="1.0" />
 			<specular r="0.8" g="0.8" b="0.8" a="1.0" s="32" />
 			<emissive r="0.0" g="0.0" b="0.0" a="0.0" /> 
-			<texture src="textures/stonebrick_mossy.png" location="0" />
+			<texture src="textures/stonebrick_mossy.png" type="diffuse" />
 		</material>
 		<material nom="Mat3">
 			<ambient r="0.2" g="0.2" b="0.2" a="1.0" />
@@ -34,8 +34,8 @@
 			<diffuse r="0.8" g="0.8" b="0.8" a="1.0" />
 			<specular r="0.8" g="0.8" b="0.8" a="1.0" s="32" />
 			<emissive r="0.0" g="0.0" b="0.0" a="0.0" />
-			<texture src="textures/Chimeny.JPG" location="0" />
-			<texture src="textures/Chimeny_N.JPG" location="1" />
+			<texture src="textures/Chimeny.JPG" type="diffuse" />
+			<texture src="textures/Chimeny_N.JPG" type="normal" />
 		</material>
 		<material nom="neutre">
 			<ambient r="0.2" g="0.2" b="0.2" a="1.0" />
@@ -98,6 +98,15 @@
 		<shader nom="bump" fragment="shaders/bump.frag" vertex="shaders/test.vert" />
 	</shaders>
 
+	<postProcess>
+		<shader nom="mosaique" vertex="shaders/quad.vert" fragment="shaders/mosaique.frag" />
+		<shader nom="sepia" vertex="shaders/base.vert" fragment="shaders/sepia.frag" />
+		<shader nom="noir et blanc" vertex="shaders/base.vert" fragment="shaders/grayScale.frag" />
+		<shader nom="flou gaussien" vertex="shaders/base.vert" fragment="shaders/gaussianBlur.frag" />
+		<shader nom="edge detection" vertex="shaders/base.vert" fragment="shaders/edgeDetect.frag" />
+		<shader nom="invert" vertex="shaders/base.vert" fragment="shaders/invertColor.frag" />
+	</postProcess>
+
 	<pieces>
 		<piece nom="pièce1" shader="test" mat="Mat1">
 			<dimension width="12" length="10" height="10" />
@@ -107,6 +116,7 @@
 						<fenetre x="2" y="3" width="1" height="2" />
 					</mur>
 					<mur cote="bas" mat="Mat2" >
+						<partage piece="piece2" cote="haut" />
 						<fenetre x="1" y="2" width="1" height="2" />
 						<fenetre x="4" y="6" width="1" height="2" />
 					</mur>
@@ -122,21 +132,23 @@
 			</murs>
 
 			<objets>
-				<objet nom="objet1" modele="modeles/bun_zipper.ply" Xrot="90" Yrot="90" Zrot="0" >
+				<objet nom="objet1" modele="modeles/bun_zipper.ply" >
 					<position x="5" y="7" z="0" />
+					<rotation x="90" y="90" z="0" />
 				</objet>
 
-				<objet nom="objet2" modele="modeles/twilight/twilight.obj" Xrot="0" Yrot="90" Zrot="0" >
+				<objet nom="objet2" modele="modeles/twilight/twilight.obj" >
 					<position x="0" y="0" z="0" />
+					<rotation x="0" y="90" z="0" />
 				</objet>
 
 				<objet nom="objet3" modele="modeles/susanne/susanne.obj" >
 					<position x="1" y="5" z="7" />
 				</objet>
 
-<!-- 				<objet nom="miku" modele="modeles/miku/mikuA.obj" >
+				<objet nom="miku" modele="modeles/miku/mikuB.obj" >
 					<position x="1" y="5" z="7" />
-				</objet> -->
+				</objet>
 
 			</objets>
 		</piece>
@@ -165,12 +177,15 @@
 					<position x="10" y="10" z="4" />
 				</objet>
 
-				<objet nom="ibjet54" modele="modeles/flutter/flutter.obj" Xrot="0" Yrot="90" Zrot="0" >
+				<objet nom="ibjet54" modele="modeles/flutter/flutter.obj" >
 					<position x="0" y="0" z="0" />
+					<rotation x="0" y="90" z="0" />
+					<scale x="1.25" y="0.8" z="1.8" />
 				</objet>
 
-				<objet nom="yolo" modele="modeles/flutter/flutter.obj" Xrot="0" Yrot="90" Zrot="0" >
+				<objet nom="yolo" modele="modeles/flutter/flutter.obj" >
 					<position x="5" y="5" z="5" />
+					<rotation x="0" y="90" z="0" />
 				</objet>
 			</objets>
 		</piece>

@@ -1,0 +1,176 @@
+<!DOCTYPE scene>
+<scene>
+ <camera>
+  <position x="40" y="15" z="0"/>
+ </camera>
+ <materiaux>
+  <material nom="Mat1">
+   <ambient g="0.2" r="0.2" b="0.2"/>
+   <diffuse g="0.8" r="0.4" b="0.8"/>
+   <specular g="0.8" r="0.8" b="0.8" s="32"/>
+   <texture src="textures/stonebrick.png" type="diffuse"/>
+   <texture src="textures/stonebrick_normal.png" type="normal"/>
+  </material>
+  <material nom="Mat2">
+   <ambient g="0.2" r="0.2" b="0.2"/>
+   <diffuse g="0.8" r="0.8" b="0.2"/>
+   <specular g="0.8" r="0.8" b="0.8" s="32"/>
+   <texture src="textures/stonebrick_mossy.png" type="diffuse"/>
+  </material>
+  <material nom="Mat3">
+   <ambient g="0.2" r="0.2" b="0.2"/>
+   <diffuse g="0.2" r="0.8" b="0.8"/>
+   <specular g="0" r="0.8" b="0.2" s="32"/>
+  </material>
+  <material nom="neutre">
+   <ambient g="0.2" r="0.2" b="0.2"/>
+   <diffuse g="0.8" r="0.8" b="0.8"/>
+   <specular g="0.8" r="0.8" b="0.8" s="32"/>
+  </material>
+  <material nom="wall">
+   <ambient g="0.2" r="0.2" b="0.2"/>
+   <diffuse g="0.8" r="0.8" b="0.8"/>
+   <specular g="0.8" r="0.8" b="0.8" s="32"/>
+   <texture src="textures/Chimeny.JPG" type="diffuse"/>
+   <texture src="textures/Chimeny_N.JPG" type="normal"/>
+  </material>
+ </materiaux>
+ <lumieres>
+  <lumiere nom="Light1">
+   <position x="1" y="10" z="4"/>
+   <ambient g="0.2" r="0.2" b="0.2"/>
+   <diffuse g="0" r="1" b="0"/>
+   <specular g="0" r="1" b="0"/>
+  </lumiere>
+  <lumiere nom="Light2">
+   <position x="14" y="8" z="22"/>
+   <ambient g="0.2" r="0.2" b="0.2"/>
+   <diffuse g="1" r="0" b="0"/>
+   <specular g="1" r="0" b="0"/>
+  </lumiere>
+  <lumiere nom="Light3">
+   <position x="5" y="7" z="7"/>
+   <ambient g="0.2" r="0.2" b="0.2"/>
+   <diffuse g="0" r="0" b="1"/>
+   <specular g="0" r="0" b="1"/>
+  </lumiere>
+  <lumiere nom="Light4">
+   <position x="15" y="6" z="4"/>
+   <ambient g="0.2" r="0.2" b="0.2"/>
+   <diffuse g="1" r="1" b="0"/>
+   <specular g="1" r="1" b="0"/>
+  </lumiere>
+  <lumiere nom="Light5">
+   <position x="-12" y="2" z="-2"/>
+   <ambient g="0.2" r="0.2" b="0.2"/>
+   <diffuse g="0" r="1" b="1"/>
+   <specular g="0" r="1" b="0"/>
+  </lumiere>
+  <lumiere nom="Light6">
+   <position x="-2" y="15" z="0"/>
+   <ambient g="0.2" r="0.2" b="0.2"/>
+   <diffuse g="1" r="0" b="1"/>
+   <specular g="1" r="0" b="1"/>
+  </lumiere>
+  <lumiere nom="Light7">
+   <position x="23" y="10" z="-12"/>
+   <ambient g="0.2" r="0.2" b="0.2"/>
+   <diffuse g="1" r="1" b="1"/>
+   <specular g="1" r="1" b="1"/>
+  </lumiere>
+ </lumieres>
+ <shaders>
+  <shader nom="bump" fragment="shaders/bump.frag" vertex="shaders/test.vert"/>
+  <shader nom="test" fragment="shaders/test.frag" vertex="shaders/test.vert"/>
+ </shaders>
+ <postProcess>
+  <shader nom="edge detection" fragment="shaders/edgeDetect.frag" vertex="shaders/base.vert"/>
+  <shader nom="flou gaussien" fragment="shaders/gaussianBlur.frag" vertex="shaders/base.vert"/>
+  <shader nom="invert" fragment="shaders/invertColor.frag" vertex="shaders/base.vert"/>
+  <shader nom="mosaique" fragment="shaders/mosaique.frag" vertex="shaders/quad.vert"/>
+  <shader nom="noir et blanc" fragment="shaders/grayScale.frag" vertex="shaders/base.vert"/>
+  <shader nom="sepia" fragment="shaders/sepia.frag" vertex="shaders/base.vert"/>
+ </postProcess>
+ <pieces>
+  <piece nom="piece2" shader="bump" mat="wall">
+   <dimension height="20" width="20" length="30"/>
+   <position x="10" y="3" z="20"/>
+   <rotation x="0" y="32" z="0"/>
+   <scale x="1" y="0.34" z="1"/>
+   <murs>
+    <mur cote="arriere"/>
+    <mur mat="Mat1" cote="avant">
+     <fenetre x="1" y="2" height="2" width="1"/>
+    </mur>
+    <mur mat="Mat1" cote="bas">
+     <fenetre x="4" y="6" height="2" width="1"/>
+    </mur>
+    <mur cote="droite"/>
+    <mur cote="gauche">
+     <fenetre x="5" y="0" height="1" width="2"/>
+    </mur>
+    <mur mat="Mat1" cote="haut">
+     <fenetre x="2" y="3" height="2" width="1"/>
+    </mur>
+   </murs>
+   <objets>
+    <objet nom="ibjet54" modele="modeles/flutter/flutter.obj">
+     <position x="0" y="0" z="0"/>
+     <rotation x="0" y="90" z="0"/>
+     <scale x="1.25" y="0.8" z="1.8"/>
+    </objet>
+    <objet nom="plante1" modele="modeles/sphere/sphere.obj">
+     <position x="10" y="10" z="4"/>
+     <rotation x="0" y="0" z="0"/>
+     <scale x="1" y="1" z="1"/>
+    </objet>
+    <objet nom="yolo" modele="modeles/flutter/flutter.obj">
+     <position x="5" y="5" z="5"/>
+     <rotation x="0" y="90" z="0"/>
+     <scale x="1" y="1" z="1"/>
+    </objet>
+   </objets>
+  </piece>
+  <piece nom="pièce1" shader="test" mat="Mat1">
+   <dimension height="10" width="12" length="10"/>
+   <position x="0" y="0" z="0"/>
+   <rotation x="0" y="0" z="0"/>
+   <scale x="1" y="1" z="1"/>
+   <murs>
+    <mur mat="Mat3" cote="arriere">
+     <fenetre x="0" y="0" height="1" width="1"/>
+    </mur>
+    <mur mat="Mat2" cote="avant">
+     <fenetre x="2" y="3" height="2" width="1"/>
+    </mur>
+    <mur mat="Mat2" cote="bas">
+     <fenetre x="1" y="2" height="2" width="1"/>
+     <fenetre x="4" y="6" height="2" width="1"/>
+     <fenetre x="2" y="3" height="2" width="1"/>
+    </mur>
+    <mur cote="droite"/>
+    <mur cote="gauche">
+     <fenetre x="5" y="0" height="1" width="2"/>
+    </mur>
+    <mur mat="Mat2" cote="haut"/>
+   </murs>
+   <objets>
+    <objet nom="objet1" modele="modeles/bun_zipper.ply">
+     <position x="5" y="7" z="0"/>
+     <rotation x="90" y="90" z="0"/>
+     <scale x="1" y="1" z="1"/>
+    </objet>
+    <objet nom="objet2" modele="modeles/twilight/twilight.obj">
+     <position x="0" y="0" z="0"/>
+     <rotation x="0" y="90" z="0"/>
+     <scale x="1" y="1" z="1"/>
+    </objet>
+    <objet nom="objet3" modele="modeles/susanne/susanne.obj">
+     <position x="1" y="5" z="7"/>
+     <rotation x="0" y="0" z="0"/>
+     <scale x="1" y="1" z="1"/>
+    </objet>
+   </objets>
+  </piece>
+ </pieces>
+</scene>
