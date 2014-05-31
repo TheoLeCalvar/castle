@@ -1519,7 +1519,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
 
    void MainWindow::selectioncheminobj()
    {
-   QString fileName = QFileDialog::getOpenFileName(this, tr("Selection obj"),"",tr("Obj (*.obj)"));
+   QString fileName = QFileDialog::getOpenFileName(this, tr("Selection obj"),"",tr("model (*.obj)"));
 
    QFileInfo fileInfo(fileName);
 
