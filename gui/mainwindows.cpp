@@ -674,6 +674,13 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
     }
 
     void MainWindow::Ouvrir(){
+        if (dock_perso->isVisible()) dock_perso->close();
+        if (dock_list_elements->isVisible()) dock_list_elements->close();
+        if(dockajoutmateriaux->isVisible())dockajoutmateriaux->close();
+        if(dockajoutlumiere->isVisible()) dockajoutlumiere->close();
+        if(dockajoutmur->isVisible()) dockajoutmur->close();
+        if(dockajoutobjet->isVisible()) dockajoutobjet->close();
+        if(dockajoutpiece->isVisible())  dockajoutpiece->close();
 
            QString fileName = QFileDialog::getOpenFileName(this,
                 tr("Open Scene"), "",
@@ -1519,7 +1526,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
 
    void MainWindow::selectioncheminobj()
    {
-   QString fileName = QFileDialog::getOpenFileName(this, tr("Selection obj"),"",tr("model (*.obj)"));
+   QString fileName = QFileDialog::getOpenFileName(this, tr("Selection obj"),"",tr("model3D (*.obj *.stl *.3ds *.dae *.blend *.ase *.x *.xml *.ase )"));
 
    QFileInfo fileInfo(fileName);
 
