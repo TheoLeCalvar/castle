@@ -915,7 +915,7 @@ Mondock:: ~Mondock(){}
                     boxobjetrotationx->setPrefix("X = ");
                     boxobjetrotationx->setSuffix("°");
                     boxobjetrotationx->setRange(-360,360);
-                    boxobjetrotationx->setValue(rotationtmp[2]);
+                    boxobjetrotationx->setValue(rotationtmp[0]);
                     connect(boxobjetrotationx, SIGNAL(valueChanged(double)),this, SLOT(rotobjectx(double)));
 
                 boxobjetrotationy = new QDoubleSpinBox(tabobjetrotation);
@@ -929,7 +929,7 @@ Mondock:: ~Mondock(){}
                     boxobjetrotationz->setPrefix("Z = ");
                     boxobjetrotationz->setSuffix("°");
                     boxobjetrotationz->setRange(-360,360);
-                    boxobjetrotationz->setValue(rotationtmp[0]);
+                    boxobjetrotationz->setValue(rotationtmp[2]);
                     connect(boxobjetrotationz, SIGNAL(valueChanged(double)),this, SLOT(rotobjectz(double)));
 
                 //layout + layout au  widget
