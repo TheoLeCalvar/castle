@@ -1,7 +1,7 @@
 <!DOCTYPE scene>
 <scene>
  <camera>
-  <position x="-17.0501" y="8.91202" z="40.3018"/>
+  <position x="20.3504" y="11.9661" z="72.4452"/>
  </camera>
  <materiaux>
   <material nom="Mat1">
@@ -22,6 +22,13 @@
    <diffuse r="0.8" b="0.8" g="0.2"/>
    <specular r="0.8" b="0.2" s="32" g="0"/>
   </material>
+  <material nom="Matsable">
+   <ambient r="0.2" b="0.2" g="0.2"/>
+   <diffuse r="0.4" b="0.8" g="0.8"/>
+   <specular r="0.8" b="0.8" s="32" g="0.8"/>
+   <texture type="diffuse" src="textures/island_sand2_d.jpg"/>
+   <texture type="normal" src="textures/island_sand_d.jpg"/>
+  </material>
   <material nom="neutre">
    <ambient r="0.2" b="0.2" g="0.2"/>
    <diffuse r="0.8" b="0.8" g="0.8"/>
@@ -36,6 +43,12 @@
   </material>
  </materiaux>
  <lumieres>
+  <lumiere nom="bleu">
+   <position x="66" y="17" z="37"/>
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0" b="1" g="0"/>
+   <specular r="0" b="1" g="0"/>
+  </lumiere>
   <lumiere nom="light1">
    <position x="33" y="11" z="10"/>
    <ambient r="0" b="0" g="0"/>
@@ -57,24 +70,36 @@
   <lumiere nom="light4">
    <position x="0" y="10" z="43"/>
    <ambient r="0" b="0" g="0"/>
-   <diffuse r="1" b="1" g="1"/>
+   <diffuse r="0.552941" b="0" g="0"/>
    <specular r="0.364706" b="0.345098" g="0.341176"/>
+  </lumiere>
+  <lumiere nom="orange">
+   <position x="66" y="17" z="76"/>
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.5" b="0" g="0.5"/>
+   <specular r="0.5" b="0" g="0.5"/>
+  </lumiere>
+  <lumiere nom="vert">
+   <position x="56" y="17" z="76"/>
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0" b="0" g="0.7"/>
+   <specular r="0" b="0" g="0.7"/>
   </lumiere>
  </lumieres>
  <shaders>
-  <shader vertex="shaders/test.vert" nom="bump" fragment="shaders/bump.frag"/>
-  <shader vertex="shaders/test.vert" nom="test" fragment="shaders/test.frag"/>
+  <shader fragment="shaders/bump.frag" nom="bump" vertex="shaders/test.vert"/>
+  <shader fragment="shaders/test.frag" nom="test" vertex="shaders/test.vert"/>
  </shaders>
  <postProcess>
-  <shader vertex="shaders/base.vert" nom="edge detection" fragment="shaders/edgeDetect.frag"/>
-  <shader vertex="shaders/base.vert" nom="flou gaussien" fragment="shaders/gaussianBlur.frag"/>
-  <shader vertex="shaders/base.vert" nom="invert" fragment="shaders/invertColor.frag"/>
-  <shader vertex="shaders/quad.vert" nom="mosaique" fragment="shaders/mosaique.frag"/>
-  <shader vertex="shaders/base.vert" nom="noir et blanc" fragment="shaders/grayScale.frag"/>
-  <shader vertex="shaders/base.vert" nom="sepia" fragment="shaders/sepia.frag"/>
+  <shader fragment="shaders/edgeDetect.frag" nom="edge detection" vertex="shaders/base.vert"/>
+  <shader fragment="shaders/gaussianBlur.frag" nom="flou gaussien" vertex="shaders/base.vert"/>
+  <shader fragment="shaders/invertColor.frag" nom="invert" vertex="shaders/base.vert"/>
+  <shader fragment="shaders/mosaique.frag" nom="mosaique" vertex="shaders/quad.vert"/>
+  <shader fragment="shaders/grayScale.frag" nom="noir et blanc" vertex="shaders/base.vert"/>
+  <shader fragment="shaders/sepia.frag" nom="sepia" vertex="shaders/base.vert"/>
  </postProcess>
  <pieces>
-  <piece mat="Mat1" nom="entrepiece23" shader="bump">
+  <piece nom="entrepiece23" mat="Mat1" shader="bump">
    <dimension height="10" length="5" width="1"/>
    <position x="-8" y="1" z="9"/>
    <rotation x="0" y="0" z="0"/>
@@ -87,7 +112,7 @@
    </murs>
    <objets/>
   </piece>
-  <piece mat="$MergedNode_0_ID104" nom="entrepiece34" shader="bump">
+  <piece nom="entrepiece34" mat="" shader="bump">
    <dimension height="10" length="1" width="5"/>
    <position x="-23" y="1" z="27"/>
    <rotation x="0" y="0" z="0"/>
@@ -100,7 +125,20 @@
    </murs>
    <objets/>
   </piece>
-  <piece mat="Mat3" nom="maison_mlp" shader="bump">
+  <piece nom="entrepiece45" mat="" shader="bump">
+   <dimension height="10" length="7" width="1"/>
+   <position x="12" y="1" z="40"/>
+   <rotation x="0" y="0" z="0"/>
+   <scale x="1" y="1" z="1.5"/>
+   <murs>
+    <mur cote="arriere"/>
+    <mur cote="avant"/>
+    <mur cote="bas"/>
+    <mur cote="haut"/>
+   </murs>
+   <objets/>
+  </piece>
+  <piece nom="maison_mlp" mat="Mat3" shader="bump">
    <dimension height="1" length="1" width="1"/>
    <position x="-19" y="5" z="46"/>
    <rotation x="0" y="0" z="0"/>
@@ -112,13 +150,13 @@
    </murs>
    <objets>
     <objet nom="poney" modele="modeles/twilight/twilight.obj">
-     <position x="0.5" y="0.3" z="0.5"/>
+     <position x="0.5" y="0.4" z="0.5"/>
      <rotation x="0" y="127" z="0"/>
      <scale x="0.1" y="0.1" z="0.1"/>
     </objet>
    </objets>
   </piece>
-  <piece mat="neutre" nom="piece1" shader="test">
+  <piece nom="piece1" mat="neutre" shader="test">
    <dimension height="20" length="30" width="30"/>
    <position x="23" y="1" z="-3"/>
    <rotation x="0" y="0" z="0"/>
@@ -139,7 +177,7 @@
     </objet>
    </objets>
   </piece>
-  <piece mat="wall" nom="piece2" shader="test">
+  <piece nom="piece2" mat="wall" shader="test">
    <dimension height="20" length="30" width="30"/>
    <position x="-7" y="1" z="-3"/>
    <rotation x="0" y="0" z="0"/>
@@ -149,7 +187,7 @@
     <mur cote="avant" mat="Mat1"/>
     <mur cote="bas" mat="wall"/>
     <mur cote="droite" mat="Mat1">
-     <fenetre height="9" x="11" y="0" width="6"/>
+     <fenetre height="9" width="6" x="11" y="0"/>
     </mur>
     <mur cote="haut" mat="neutre"/>
    </murs>
@@ -161,7 +199,7 @@
     </objet>
    </objets>
   </piece>
-  <piece mat="Mat1" nom="piece3" shader="bump">
+  <piece nom="piece3" mat="Mat1" shader="bump">
    <dimension height="20" length="30" width="30"/>
    <position x="-38" y="1" z="-3"/>
    <rotation x="0" y="0" z="0"/>
@@ -169,12 +207,12 @@
    <murs>
     <mur cote="arriere" mat="Mat1"/>
     <mur cote="avant" mat="Mat1">
-     <fenetre height="9" x="7" y="0" width="7"/>
+     <fenetre height="9" width="7" x="7" y="0"/>
     </mur>
     <mur cote="bas" mat="wall"/>
     <mur cote="droite" mat="Mat1"/>
     <mur cote="gauche" mat="Mat1">
-     <fenetre height="9" x="11" y="0" width="6"/>
+     <fenetre height="9" width="6" x="11" y="0"/>
     </mur>
     <mur cote="haut" mat="neutre"/>
    </murs>
@@ -191,17 +229,19 @@
     </objet>
    </objets>
   </piece>
-  <piece mat="Mat3" nom="piece4" shader="bump">
+  <piece nom="piece4" mat="Mat3" shader="bump">
    <dimension height="20" length="50" width="30"/>
    <position x="12" y="1" z="28"/>
    <rotation x="0" y="-90" z="0"/>
    <scale x="1" y="1" z="1"/>
    <murs>
-    <mur cote="arriere" mat="Mat3"/>
+    <mur cote="arriere" mat="Mat3">
+     <fenetre height="9" width="9" x="12" y="0"/>
+    </mur>
     <mur cote="avant" mat="Mat3"/>
     <mur cote="bas" mat="neutre"/>
     <mur cote="droite" mat="Mat3">
-     <fenetre height="9" x="13" y="0" width="7"/>
+     <fenetre height="9" width="7" x="13" y="0"/>
     </mur>
     <mur cote="gauche" mat="Mat3"/>
     <mur cote="haut" mat="neutre"/>
@@ -231,6 +271,39 @@
      <position x="25.54" y="1.4" z="5.41"/>
      <rotation x="-90" y="26" z="0"/>
      <scale x="0.08" y="0.08" z="0.08"/>
+    </objet>
+   </objets>
+  </piece>
+  <piece nom="piece5" mat="neutre" shader="test">
+   <dimension height="20" length="50" width="50"/>
+   <position x="13" y="1" z="28"/>
+   <rotation x="0" y="0" z="0"/>
+   <scale x="1" y="1" z="1"/>
+   <murs>
+    <mur cote="arriere" mat="neutre"/>
+    <mur cote="avant" mat="neutre"/>
+    <mur cote="bas" mat="wall"/>
+    <mur cote="droite" mat="neutre">
+     <fenetre height="9" width="8" x="27" y="0"/>
+    </mur>
+    <mur cote="gauche" mat="neutre"/>
+    <mur cote="haut" mat="neutre"/>
+   </murs>
+   <objets>
+    <objet nom="bureau" modele="modeles/bureau/StudentDesk.dae">
+     <position x="2" y="0" z="38"/>
+     <rotation x="-90" y="0" z="0"/>
+     <scale x="0.2" y="0.2" z="0.2"/>
+    </objet>
+    <objet nom="sofa" modele="modeles/sofa/sofa.dae">
+     <position x="20.47" y="-1" z="21.11"/>
+     <rotation x="-90" y="0" z="0"/>
+     <scale x="0.01" y="0.01" z="0.01"/>
+    </objet>
+    <objet nom="tv" modele="modeles/tv/tvstand.dae">
+     <position x="31" y="0" z="43"/>
+     <rotation x="-90" y="180" z="0"/>
+     <scale x="0.3" y="0.3" z="0.3"/>
     </objet>
    </objets>
   </piece>
