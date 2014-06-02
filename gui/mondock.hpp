@@ -270,7 +270,7 @@ private:
                 void traitementpiece();
 
 private slots:
-    void selectionlight();
+    void selectiontraitement();
     //lumiere(ambiante)
     void lumiereambiantejustx( int x );
     void lumiereambiantejusty( int x );

@@ -8,7 +8,7 @@ Mondock:: ~Mondock(){}
 //___slots___________________________________________________//
 
 
-    void Mondock::selectionlight()//trie les element en fonction de leur parent , nom a changer car ne traite bien plsu que light
+    void Mondock::selectiontraitement()//trie les element en fonction de leur parent , nom a changer car ne traite bien plsu que light
      {
          //selection et verification du parent de l'element selectioner
          selection = dockvue->selectionModel();
