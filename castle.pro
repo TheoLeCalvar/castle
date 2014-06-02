@@ -29,7 +29,6 @@ HEADERS += camera.hpp \
            gui/mainwindows.hpp \
            gui/mondock.hpp \
            gui/MyOpenGLWidget.hpp \
-           objets/hitbox.hpp \
            objets/mesh.hpp \
            objets/node.hpp \
            objets/plan.hpp \
