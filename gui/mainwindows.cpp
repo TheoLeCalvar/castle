@@ -600,6 +600,17 @@ void MainWindow::createToolBar()
     fileToolBar-> setMovable(false);
     addToolBar(Qt::TopToolBarArea, fileToolBar);
 
+    shaderpospro = new QComboBox(this);
+        shaderpospro->setMaximumWidth(100);
+        connect(shaderpospro , SIGNAL(currentIndexChanged ( const QString  )  ), this, SLOT(changeshader(const QString )));
+
+    modelshaderpostpro = new QStandardItemModel(this);
+
+    reloadshaderAct = new QAction(this);
+        reloadshaderAct->setIcon(QIcon("icones/reload.png"));
+        connect(reloadshaderAct , SIGNAL(triggered()), this, SLOT(reloadshader()));
+
+
             fileToolBar->addAction(kiterAct);
 
             fileToolBar->addSeparator();
@@ -628,6 +639,11 @@ void MainWindow::createToolBar()
 
             fileToolBar->addAction(ajoutobjetAct);
 
+            fileToolBar->addSeparator();//
+
+            fileToolBar->addWidget(shaderpospro);
+
+            fileToolBar->addAction(reloadshaderAct);
 }
 
 void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
@@ -1603,6 +1619,30 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                           "<p>Open Asset Import Library (short name: Assimp) is a portable Open Source library to import various well-known 3D model formats in a uniform manner. The most recent version also knows how to export 3d files and is therefore suitable as a general-purpose 3D model converter. See the feature list.<br/> AssimpView is a Windows-based model viewer. It loads all file formats that Assimp supports and is perfectly suited to quickly inspect 3d assets.<br/> Assimp aims to provide a full asset conversion pipeline for use in game engines / realtime rendering systems of any kind, but it is not limited to this purpose. In the past, it has been used in a wide range of applications.<br/>Written in C++, it is available under a liberal BSD license. There is a C API as well as bindings to various other languages, including C#/.net, Python and D. Assimp loads all input model formats into one straightforward data structure for further processing. This feature set is augmented by various post processing tools, including frequently-needed operations such as computing normal and tangent vectors.</p><a href=\"http://assimp.sourceforge.net/main_license.html\">License</a>" );
     }
 
+    void MainWindow::reloadshader()
+        {
+        modelshaderpostpro->clear();
+
+        QStringList tmp = widget->getShaderNames();
+
+        modelshaderpostpro->appendRow(new QStandardItem("desactivé"));
+
+        for (int i=0 ; i < tmp.size();i++)
+            {
+
+            modelshaderpostpro->appendRow(new QStandardItem(tmp.at(i)));
+
+            shaderpospro->setModel(modelshaderpostpro);
+
+            }
+        }
+
+
+        void    MainWindow::changeshader(const QString & text )
+        {
+        widget->useShader( text);
+
+        }
 
     //supression
     void MainWindow::supresionelement()

@@ -73,6 +73,8 @@ private slots:
 
         //autre
         void    supresionelement();
+        void    reloadshader();
+        void    changeshader(const QString &text);
 //fin slots menu bar
 
 
@@ -301,6 +303,11 @@ private slots:
 //               Toolbars                 //
 /* ************************************** */
        QToolBar*    fileToolBar;
+
+       QComboBox*   shaderpospro;
+       QStandardItemModel*  modelshaderpostpro;
+       QAction*     reloadshaderAct;
+
 //fin toolbars
 
 /* ************************************** */
