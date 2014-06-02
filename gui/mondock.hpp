@@ -25,6 +25,13 @@
 #include <QTabWidget>
 #include <QVBoxLayout>
 
+/**
+ * @class Mondock
+ * @brief Edite les element de la scene
+ * @details Edite les lumières, les materiaux , les pieces , les objets (murs et modeles)
+ * sous classe de QDockwidget avec en plus les attribut permettant d'intéragir avec la scene
+ *
+ */
 
 class Mondock:public QDockWidget
 {
@@ -263,13 +270,36 @@ private:
                     QDoubleSpinBox* rotspinboxy;
                     QDoubleSpinBox* rotspinboxz;
 
+/**
+* @brief Traite l'édition de la composante ambiante
+*/
                 void traitementambiante();
+
+/**
+* @brief Traite l'édition des lumieres
+*/
                 void traitementlumiere();
+
+/**
+* @brief Traite l'édition des materiaux
+*/
                 void traitementmaterial();
+
+/**
+* @brief Traite l'édition des objet
+*/
                 void traitementobjet();
+
+/**
+* @brief Traite l'édition des pieces
+*/
                 void traitementpiece();
 
 private slots:
+/**
+* @brief Selectionne l'édition adéquate
+*/
+
     void selectiontraitement();
     //lumiere(ambiante)
     void lumiereambiantejustx( int x );
