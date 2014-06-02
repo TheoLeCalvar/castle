@@ -1,4 +1,5 @@
 #include "node.hpp"
+#include <assimp/DefaultLogger.hpp>
 
 QMultiMap<QString, Node *> Node::_loadedModels;
 
@@ -174,6 +175,11 @@ Node* Node::loadModel(const QString & file, Scene * scene)
 	else
 	{
 		Assimp::Importer importer;
+		Assimp::DefaultLogger::create();
+
+		Assimp::Logger* log = Assimp::DefaultLogger::get();
+		log->attachStream(Assimp::LogStream::createDefaultStream(aiDefaultLogStream_FILE));
+
 
 		QStringList dossiers = file.split("/");
 
@@ -182,7 +188,6 @@ Node* Node::loadModel(const QString & file, Scene * scene)
 		{
 			QDir::setCurrent(*i);
 		}
-
 
 
 		const aiScene* pScene = importer.ReadFile(file.right(file.size() - file.lastIndexOf("/") - 1).toStdString(), 
@@ -197,6 +202,7 @@ Node* Node::loadModel(const QString & file, Scene * scene)
 
 		if (!pScene)
 		{
+			qDebug("Erreur d'importation : %s",importer.GetErrorString());
 			qFatal("Impossible de charger le fichier %s", file.toStdString().c_str());
 		}
 		else
