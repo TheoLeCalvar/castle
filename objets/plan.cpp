@@ -130,7 +130,7 @@ void Plan::draw()
 
 	model = model * _model;
 
-
+	glEnable(GL_CULL_FACE);
 
 	setModelMatrix(model);
 
@@ -139,5 +139,7 @@ void Plan::draw()
 	glDrawElements(GL_TRIANGLES, _nbIndices, GL_UNSIGNED_INT, 0);
 
 	glBindVertexArray(0);	
+
+	glDisable(GL_CULL_FACE);
 }
 
