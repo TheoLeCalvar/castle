@@ -1641,7 +1641,6 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
         void    MainWindow::changeshader(const QString & text )
         {
         widget->useShader( text);
-
         }
 
     //supression
