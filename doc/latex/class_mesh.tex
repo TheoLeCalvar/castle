@@ -1,4 +1,4 @@
-\hypertarget{class_mesh}{\section{Mesh Class Reference}
+\hypertarget{class_mesh}{\section{Référence de la classe Mesh}
 \label{class_mesh}\index{Mesh@{Mesh}}
 }
 
@@ -10,10 +10,24 @@ Charge un modèle 3\+D.
 
 {\ttfamily \#include $<$mesh.\+hpp$>$}
 
-Inheritance diagram for Mesh\+:\begin{figure}[H]
+
+
+Graphe d'héritage de Mesh\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.000000cm]{class_mesh}
+\includegraphics[height=550pt]{class_mesh__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Mesh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_mesh__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Classes}
@@ -21,47 +35,47 @@ Inheritance diagram for Mesh\+:\begin{figure}[H]
 \item 
 struct \hyperlink{struct_mesh_1_1_mesh_info}{Mesh\+Info}
 \end{DoxyCompactItemize}
-\subsection*{Public Member Functions}
+\subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}{$\sim$\+Mesh} ()
 \begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
 void \hyperlink{class_mesh_a996a8668fa2ca7d95d6d10744c833bc8}{draw} ()
 \begin{DoxyCompactList}\small\item\em Affiche le modèle. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
+\subsection*{Fonctions membres privées}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_mesh_a2af137f1571af89172b9c102302c416b}{Mesh} ()
 \begin{DoxyCompactList}\small\item\em Constructeur privé \end{DoxyCompactList}\item 
 \hyperlink{class_mesh_a713cb62e7078cfd627108a0b14f72c6f}{Mesh} (const \hyperlink{class_mesh}{Mesh} \&m)
 \begin{DoxyCompactList}\small\item\em Constructeur par recopie. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Private Member Functions}
+\subsection*{Fonctions membres privées statiques}
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{class_mesh}{Mesh} $\ast$ \hyperlink{class_mesh_a7b405216bda9e94d64aa8a308d718cb4}{load\+Mesh} (const ai\+Mesh $\ast$scene)
 \begin{DoxyCompactList}\small\item\em Charge un mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
+\subsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{struct_mesh_1_1_mesh_info}{Mesh\+Info} $\ast$ \hyperlink{class_mesh_a608911b8dbff58ff769c708b8b7f2618}{\+\_\+infos}
 \end{DoxyCompactItemize}
-\subsection*{Friends}
+\subsection*{Amis}
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{class_mesh_a6db9d28bd448a131448276ee03de1e6d}{Node}
 \end{DoxyCompactItemize}
-\subsection*{Additional Inherited Members}
+\subsection*{Membres hérités additionnels}
 
 
-\subsection{Detailed Description}
+\subsection{Description détaillée}
 Charge un modèle 3\+D. 
 
-Permet la lecture de fichiers contenant des modèles 3\+D \begin{DoxyWarning}{Warning}
+Permet la lecture de fichiers contenant des modèles 3\+D \begin{DoxyWarning}{Avertissement}
 Tout les formats de textures ne sont pas supportés, se référé au support de Q\+Image 
 \end{DoxyWarning}
 
 
-\subsection{Constructor \& Destructor Documentation}
+\subsection{Documentation des constructeurs et destructeur}
 \hypertarget{class_mesh_a2af137f1571af89172b9c102302c416b}{\index{Mesh@{Mesh}!Mesh@{Mesh}}
 \index{Mesh@{Mesh}!Mesh@{Mesh}}
 \subsubsection[{Mesh}]{\setlength{\rightskip}{0pt plus 5cm}Mesh\+::\+Mesh (
@@ -73,9 +87,21 @@ Tout les formats de textures ne sont pas supportés, se référé au support de 
 
 Constructeur privé 
 
-Utiliser Node\+::load(const Q\+String \& file\+Name, Scene $\ast$ scene) \begin{DoxySeeAlso}{See also}
+Utiliser Node\+::load(const Q\+String \& file\+Name, Scene $\ast$ scene) \begin{DoxySeeAlso}{Voir également}
 \hyperlink{class_node_ac2140ddf8f06f8b5620e6743c945c482}{Node\+::load\+Model()} 
 \end{DoxySeeAlso}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_a2af137f1571af89172b9c102302c416b_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mesh_a713cb62e7078cfd627108a0b14f72c6f}{\index{Mesh@{Mesh}!Mesh@{Mesh}}
 \index{Mesh@{Mesh}!Mesh@{Mesh}}
 \subsubsection[{Mesh}]{\setlength{\rightskip}{0pt plus 5cm}Mesh\+::\+Mesh (
@@ -100,7 +126,7 @@ Destructeur.
 
 
 
-\subsection{Member Function Documentation}
+\subsection{Documentation des fonctions membres}
 \hypertarget{class_mesh_a996a8668fa2ca7d95d6d10744c833bc8}{\index{Mesh@{Mesh}!draw@{draw}}
 \index{draw@{draw}!Mesh@{Mesh}}
 \subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Mesh\+::draw (
@@ -114,7 +140,19 @@ Affiche le modèle.
 
 
 
-Reimplemented from \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Objet}.
+Réimplémentée à partir de \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Objet}.
+
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_a996a8668fa2ca7d95d6d10744c833bc8_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{class_mesh_a7b405216bda9e94d64aa8a308d718cb4}{\index{Mesh@{Mesh}!load\+Mesh@{load\+Mesh}}
 \index{load\+Mesh@{load\+Mesh}!Mesh@{Mesh}}
@@ -128,28 +166,52 @@ Reimplemented from \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Obj
 Charge un mesh. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em scene} & scène générée par assimp\\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 un pointeur sur \hyperlink{class_mesh}{Mesh}, N\+U\+L\+L si erreur 
 \end{DoxyReturn}
 
 
-\subsection{Friends And Related Function Documentation}
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_mesh_a7b405216bda9e94d64aa8a308d718cb4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_a7b405216bda9e94d64aa8a308d718cb4_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Documentation des fonctions amies et associées}
 \hypertarget{class_mesh_a6db9d28bd448a131448276ee03de1e6d}{\index{Mesh@{Mesh}!Node@{Node}}
 \index{Node@{Node}!Mesh@{Mesh}}
 \subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Node}\hspace{0.3cm}{\ttfamily [friend]}}}\label{class_mesh_a6db9d28bd448a131448276ee03de1e6d}
 
 
-\subsection{Member Data Documentation}
+\subsection{Documentation des données membres}
 \hypertarget{class_mesh_a608911b8dbff58ff769c708b8b7f2618}{\index{Mesh@{Mesh}!\+\_\+infos@{\+\_\+infos}}
 \index{\+\_\+infos@{\+\_\+infos}!Mesh@{Mesh}}
 \subsubsection[{\+\_\+infos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mesh\+Info}$\ast$ Mesh\+::\+\_\+infos\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mesh_a608911b8dbff58ff769c708b8b7f2618}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 objets/\hyperlink{mesh_8hpp}{mesh.\+hpp}\item 
 objets/\hyperlink{mesh_8cpp}{mesh.\+cpp}\end{DoxyCompactItemize}

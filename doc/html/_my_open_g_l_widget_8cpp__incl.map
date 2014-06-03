@@ -1,0 +1,11 @@
+<map id="gui/MyOpenGLWidget.cpp" name="gui/MyOpenGLWidget.cpp">
+<area shape="rect" id="node2" href="$_my_open_g_l_widget_8hpp.html" title="MyOpenGLWidget.hpp" alt="" coords="789,79,945,104"/>
+<area shape="rect" id="node14" href="$helper_8hpp.html" title="helper.hpp" alt="" coords="670,592,754,617"/>
+<area shape="rect" id="node18" href="$camera_8hpp.html" title="camera.hpp" alt="" coords="821,152,913,177"/>
+<area shape="rect" id="node19" href="$scene_8hpp.html" title="scene.hpp" alt="" coords="959,225,1041,251"/>
+<area shape="rect" id="node21" href="$material_8hpp.html" title="material.hpp" alt="" coords="1358,519,1453,544"/>
+<area shape="rect" id="node20" href="$light_8hpp.html" title="light.hpp" alt="" coords="1071,519,1143,544"/>
+<area shape="rect" id="node26" href="$objet_8hpp.html" title="objet.hpp" alt="" coords="1291,445,1367,471"/>
+<area shape="rect" id="node27" href="$piece_8hpp.html" title="piece.hpp" alt="" coords="1420,299,1500,324"/>
+<area shape="rect" id="node28" href="$plan_8hpp.html" title="plan.hpp" alt="" coords="1630,372,1703,397"/>
+</map>

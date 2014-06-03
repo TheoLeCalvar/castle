@@ -1,0 +1,28 @@
+<map id="objets/objet.hpp" name="objets/objet.hpp">
+<area shape="rect" id="node2" href="$cube_8hpp.html" title="objets/cube.hpp" alt="" coords="5,79,121,104"/>
+<area shape="rect" id="node4" href="$donuts_8hpp.html" title="objets/donuts.hpp" alt="" coords="145,79,272,104"/>
+<area shape="rect" id="node6" href="$mesh_8hpp.html" title="objets/mesh.hpp" alt="" coords="275,299,395,324"/>
+<area shape="rect" id="node14" href="$objet_8cpp.html" title="objets/objet.cpp" alt="" coords="346,225,460,251"/>
+<area shape="rect" id="node15" href="$plan_8hpp.html" title="objets/plan.hpp" alt="" coords="397,79,508,104"/>
+<area shape="rect" id="node17" href="$piece_8hpp.html" title="scene/piece.hpp" alt="" coords="532,152,650,177"/>
+<area shape="rect" id="node19" href="$scene_8hpp.html" title="scene/scene.hpp" alt="" coords="626,225,748,251"/>
+<area shape="rect" id="node26" href="$sphere_8hpp.html" title="objets/sphere.hpp" alt="" coords="725,79,852,104"/>
+<area shape="rect" id="node3" href="$cube_8cpp.html" title="objets/cube.cpp" alt="" coords="6,152,120,177"/>
+<area shape="rect" id="node5" href="$donuts_8cpp.html" title="objets/donuts.cpp" alt="" coords="145,152,271,177"/>
+<area shape="rect" id="node7" href="$mesh_8cpp.html" title="objets/mesh.cpp" alt="" coords="180,372,298,397"/>
+<area shape="rect" id="node8" href="$node_8hpp.html" title="objets/node.hpp" alt="" coords="373,372,489,397"/>
+<area shape="rect" id="node13" href="$scene_8cpp.html" title="scene/scene.cpp" alt="" coords="490,445,612,471"/>
+<area shape="rect" id="node9" href="$mainwindows_8hpp.html" title="gui/mainwindows.hpp" alt="" coords="690,445,839,471"/>
+<area shape="rect" id="node12" href="$node_8cpp.html" title="objets/node.cpp" alt="" coords="351,445,466,471"/>
+<area shape="rect" id="node10" href="$mainwindows_8cpp.html" title="gui/mainwindows.cpp" alt="" coords="622,519,770,544"/>
+<area shape="rect" id="node11" href="$main_8cpp.html" title="main.cpp" alt="" coords="795,519,870,544"/>
+<area shape="rect" id="node16" href="$plan_8cpp.html" title="objets/plan.cpp" alt="" coords="397,152,508,177"/>
+<area shape="rect" id="node18" href="$piece_8cpp.html" title="scene/piece.cpp" alt="" coords="484,225,602,251"/>
+<area shape="rect" id="node20" href="$camera_8hpp.html" title="camera.hpp" alt="" coords="628,299,720,324"/>
+<area shape="rect" id="node22" href="$_my_open_g_l_widget_8hpp.html" title="gui/MyOpenGLWidget.hpp" alt="" coords="730,372,908,397"/>
+<area shape="rect" id="node24" href="$mondock_8hpp.html" title="gui/mondock.hpp" alt="" coords="884,299,1007,324"/>
+<area shape="rect" id="node21" href="$camera_8cpp.html" title="camera.cpp" alt="" coords="615,372,706,397"/>
+<area shape="rect" id="node23" href="$_my_open_g_l_widget_8cpp.html" title="gui/MyOpenGLWidget.cpp" alt="" coords="863,445,1039,471"/>
+<area shape="rect" id="node25" href="$mondock_8cpp.html" title="gui/mondock.cpp" alt="" coords="983,372,1105,397"/>
+<area shape="rect" id="node27" href="$sphere_8cpp.html" title="objets/sphere.cpp" alt="" coords="725,152,852,177"/>
+</map>

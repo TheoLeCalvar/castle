@@ -1,0 +1,11 @@
+<map id="Scene::savePieces" name="Scene::savePieces">
+<area shape="rect" id="node2" href="$class_scene.html#af00f7d191f9277b3dbad125c54677d79" title="Recheche le nom d&#39;un shader à partir de son ID OpenGL. " alt="" coords="188,5,381,31"/>
+<area shape="rect" id="node3" href="$class_scene.html#accd8407f070358c3d6744994df93a92d" title="Retourne le nom du Material passé en paramètre. " alt="" coords="200,55,368,80"/>
+<area shape="rect" id="node4" href="$class_objet.html#a5b8f371853435fb08bba5163cb4dbe09" title="Récupère le material de l&#39;Objet. " alt="" coords="230,104,338,129"/>
+<area shape="rect" id="node5" href="$class_plan.html#ac193f6297c584d43977dca3a16f18180" title="Renvoie la liste des rectangles définissant les fenêtres de la pièce. " alt="" coords="221,153,348,179"/>
+<area shape="rect" id="node6" href="$class_objet.html#a4a702c189bedcbf1e65da6aec72c8e44" title="Récupère le nom de l&#39;Objet. " alt="" coords="237,203,331,228"/>
+<area shape="rect" id="node7" href="$class_node.html#adf80c463ba15d60645252ffa171fd209" title="Récupère le nom du modèle chargé " alt="" coords="209,252,360,277"/>
+<area shape="rect" id="node8" href="$class_objet.html#ac69a1b459bcb4433099c8cfbff06b209" title="Récupère la rotation de l&#39;Objet. " alt="" coords="232,301,337,327"/>
+<area shape="rect" id="node9" href="$class_objet.html#a0e109bc790b14328202dd2546b04e2fd" title="Récupère la position de l&#39;Objet. " alt="" coords="231,351,338,376"/>
+<area shape="rect" id="node10" href="$class_objet.html#ae09962e65216c36b31ab389a5af310a3" title="Récupère les facteurs de scale de l&#39;objet. " alt="" coords="238,400,330,425"/>
+</map>

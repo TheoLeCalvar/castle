@@ -1,0 +1,4 @@
+<map id="Scene::orderLights" name="Scene::orderLights">
+<area shape="rect" id="node2" href="$class_camera.html#ad42b0114b12a48474ae6c8be1c44e7bb" title="Retourne la position de la caméra. " alt="" coords="187,5,309,31"/>
+<area shape="rect" id="node3" href="$class_light.html#ad0f5f939bc047e39c6deb2e264a5a2c1" title="Récupère la valeur d&#39;une composante de la lumière. " alt="" coords="210,55,286,80"/>
+</map>

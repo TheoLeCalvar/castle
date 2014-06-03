@@ -1,0 +1,6 @@
+<map id="MainWindow::supresionelement" name="MainWindow::supresionelement">
+<area shape="rect" id="node2" href="$class_my_open_g_l_widget.html#ab25f238721b8e1cba36c2a0350ac57ba" title="MyOpenGLWidget::getScene" alt="" coords="264,5,457,31"/>
+<area shape="rect" id="node3" href="$class_scene.html#a9cf190091b9d7658142680a7703415ef" title="supprime la Light voulu " alt="" coords="291,55,430,80"/>
+<area shape="rect" id="node4" href="$class_scene.html#a65cda5cb0a108d51f4f82eac9aca6371" title="supprime la Piece demandée " alt="" coords="288,104,433,129"/>
+<area shape="rect" id="node5" href="$class_scene.html#ae2060bd6c44231ffe7f6f0a3447325f1" title="Récupère un pointeur sur une pièce. " alt="" coords="301,153,420,179"/>
+</map>

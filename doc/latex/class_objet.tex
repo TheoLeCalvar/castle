@@ -1,4 +1,4 @@
-\hypertarget{class_objet}{\section{Objet Class Reference}
+\hypertarget{class_objet}{\section{Référence de la classe Objet}
 \label{class_objet}\index{Objet@{Objet}}
 }
 
@@ -10,13 +10,27 @@ Classe de base affichable.
 
 {\ttfamily \#include $<$objet.\+hpp$>$}
 
-Inheritance diagram for Objet\+:\begin{figure}[H]
+
+
+Graphe d'héritage de Objet\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=1.230769cm]{class_objet}
+\includegraphics[width=350pt]{class_objet__inherit__graph}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
+
+
+Graphe de collaboration de Objet\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_objet__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_objet_aea29e90dc963beb399d3028b7322039f}{Objet} (const Q\+String \&\hyperlink{class_objet_a4a702c189bedcbf1e65da6aec72c8e44}{name}=Q\+String(), \hyperlink{class_material}{Material} $\ast$mat=N\+U\+L\+L, \hyperlink{structvec3}{vec3} \hyperlink{class_objet_ac69a1b459bcb4433099c8cfbff06b209}{rotation}=\hyperlink{structvec3}{vec3}(), \hyperlink{structvec3}{vec3} \hyperlink{class_objet_a0e109bc790b14328202dd2546b04e2fd}{position}=\hyperlink{structvec3}{vec3}(), \hyperlink{class_objet}{Objet} $\ast$\hyperlink{class_objet_a95e63a98dc9dc485fe874df30f2069ee}{parent}=N\+U\+L\+L)
@@ -65,12 +79,7 @@ const Q\+String \& \hyperlink{class_objet_a4a702c189bedcbf1e65da6aec72c8e44}{nam
 \begin{DoxyCompactList}\small\item\em Récupère le nom de l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\item 
 void \hyperlink{class_objet_a9fcc9af481f4e13f46ab7d1b40cf91fc}{name} (const Q\+String \&n)
 \begin{DoxyCompactList}\small\item\em Change le nom de l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Protected Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-void \hyperlink{class_objet_a68db2971ff359da981bc0fb73a164b9f}{transform\+Vector} (\hyperlink{structvec4}{vec4} \&v) const 
-\begin{DoxyCompactList}\small\item\em Apllique au vecteur les transformation de l'objet et de ses pères. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Protected Attributes}
+\subsection*{Attributs protégés}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_objet}{Objet} $\ast$ \hyperlink{class_objet_a91c5a50011c3fe9233a645aa767a275f}{\+\_\+parent}
@@ -91,7 +100,7 @@ G\+Luint \hyperlink{class_objet_af0d545a506dbfa377c8ca5a499fdf755}{\+\_\+shader\
 \item 
 bool \hyperlink{class_objet_a953ad7ff9941575d1f18b6d256d2dcdc}{\+\_\+draw\+Hitbox}
 \end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
+\subsection*{Fonctions membres privées}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_objet_a0960722f5ddb16f2c245dca4e6584f25}{update\+Model} ()
@@ -102,10 +111,10 @@ void \hyperlink{class_objet_a995e953fb2f3d1a472aa04d2c5848f0a}{activate\+Shader}
 \begin{DoxyCompactList}\small\item\em Change le shader actif. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\subsection{Description détaillée}
 Classe de base affichable. 
 
-\subsection{Constructor \& Destructor Documentation}
+\subsection{Documentation des constructeurs et destructeur}
 \hypertarget{class_objet_aea29e90dc963beb399d3028b7322039f}{\index{Objet@{Objet}!Objet@{Objet}}
 \index{Objet@{Objet}!Objet@{Objet}}
 \subsubsection[{Objet}]{\setlength{\rightskip}{0pt plus 5cm}Objet\+::\+Objet (
@@ -121,6 +130,18 @@ Classe de base affichable.
 
 Constructeur. 
 
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_objet_aea29e90dc963beb399d3028b7322039f_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_objet_aeaf99767deb7996bd323185ba22e8ca1}{\index{Objet@{Objet}!Objet@{Objet}}
 \index{Objet@{Objet}!Objet@{Objet}}
 \subsubsection[{Objet}]{\setlength{\rightskip}{0pt plus 5cm}Objet\+::\+Objet (
@@ -133,7 +154,7 @@ Constructeur.
 Constructeur par recopie. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em o} & objet à copier \\
 \hline
 \end{DoxyParams}
@@ -150,7 +171,7 @@ Destructeur.
 
 
 
-\subsection{Member Function Documentation}
+\subsection{Documentation des fonctions membres}
 \hypertarget{class_objet_a995e953fb2f3d1a472aa04d2c5848f0a}{\index{Objet@{Objet}!activate\+Shader@{activate\+Shader}}
 \index{activate\+Shader@{activate\+Shader}!Objet@{Objet}}
 \subsubsection[{activate\+Shader}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::activate\+Shader (
@@ -162,7 +183,31 @@ Destructeur.
 
 Change le shader actif. 
 
-Active le shader de l'\hyperlink{class_objet}{Objet}, reporte les matrices de view et projection \hypertarget{class_objet_a5c21e68142ae5b7c880cbd80336fb43e}{\index{Objet@{Objet}!apply\+Material@{apply\+Material}}
+Active le shader de l'\hyperlink{class_objet}{Objet}, reporte les matrices de view et projection 
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_objet_a995e953fb2f3d1a472aa04d2c5848f0a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_objet_a995e953fb2f3d1a472aa04d2c5848f0a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_objet_a5c21e68142ae5b7c880cbd80336fb43e}{\index{Objet@{Objet}!apply\+Material@{apply\+Material}}
 \index{apply\+Material@{apply\+Material}!Objet@{Objet}}
 \subsubsection[{apply\+Material}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::apply\+Material (
 \begin{DoxyParamCaption}
@@ -173,7 +218,31 @@ Active le shader de l'\hyperlink{class_objet}{Objet}, reporte les matrices de vi
 
 Transmet les information du \hyperlink{class_material}{Material} au shader. 
 
-Si l'\hyperlink{class_objet}{Objet} ne possède pas de \hyperlink{class_material}{Material} celui de son père est appliqué, s'il ne possède pas de père le dernier \hyperlink{class_material}{Material} est utilisé \hypertarget{class_objet_a5cc323f562964e00b947b2d908e206e7}{\index{Objet@{Objet}!draw@{draw}}
+Si l'\hyperlink{class_objet}{Objet} ne possède pas de \hyperlink{class_material}{Material} celui de son père est appliqué, s'il ne possède pas de père le dernier \hyperlink{class_material}{Material} est utilisé 
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_objet_a5c21e68142ae5b7c880cbd80336fb43e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_objet_a5c21e68142ae5b7c880cbd80336fb43e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_objet_a5cc323f562964e00b947b2d908e206e7}{\index{Objet@{Objet}!draw@{draw}}
 \index{draw@{draw}!Objet@{Objet}}
 \subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::draw (
 \begin{DoxyParamCaption}
@@ -186,7 +255,31 @@ Affichage de l'\hyperlink{class_objet}{Objet}.
 
 Active le shader de l'\hyperlink{class_objet}{Objet} et applique le material 
 
-Reimplemented in \hyperlink{class_mesh_a996a8668fa2ca7d95d6d10744c833bc8}{Mesh}, \hyperlink{class_node_ab88c83ced58700a56de568f5b1e3c473}{Node}, \hyperlink{class_plan_a513c3dec0ce9043a9e1d3b5b18a6d698}{Plan}, \hyperlink{class_cube_ab26b72a81376fd5dc4fcc7f0b715b087}{Cube}, \hyperlink{class_piece_aee937e57fbfe4717aab14e1e892aed2e}{Piece}, \hyperlink{class_donuts_a5a7932c8494905ba09bb515a01e6c91d}{Donuts}, and \hyperlink{class_sphere_a34a34167b7544c95155d3ff30638d045}{Sphere}.
+Réimplémentée dans \hyperlink{class_mesh_a996a8668fa2ca7d95d6d10744c833bc8}{Mesh}, \hyperlink{class_node_ab88c83ced58700a56de568f5b1e3c473}{Node}, \hyperlink{class_plan_a513c3dec0ce9043a9e1d3b5b18a6d698}{Plan}, \hyperlink{class_cube_ab26b72a81376fd5dc4fcc7f0b715b087}{Cube}, \hyperlink{class_piece_aee937e57fbfe4717aab14e1e892aed2e}{Piece}, \hyperlink{class_donuts_a5a7932c8494905ba09bb515a01e6c91d}{Donuts}, et \hyperlink{class_sphere_a34a34167b7544c95155d3ff30638d045}{Sphere}.
+
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_objet_a5cc323f562964e00b947b2d908e206e7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{class_objet_a5cc323f562964e00b947b2d908e206e7_icgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{class_objet_a3ce451437b7d7d22fdfd8cdb10b347fa}{\index{Objet@{Objet}!draw\+Hitbox@{draw\+Hitbox}}
 \index{draw\+Hitbox@{draw\+Hitbox}!Objet@{Objet}}
@@ -200,7 +293,7 @@ Reimplemented in \hyperlink{class_mesh_a996a8668fa2ca7d95d6d10744c833bc8}{Mesh},
 Affiche les Hitbox des objets capables d'en afficher. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em b} & valeur \\
 \hline
 \end{DoxyParams}
@@ -226,9 +319,21 @@ Affiche la Hitbox de l'objet.
 
 Récupère le material de l'\hyperlink{class_objet}{Objet}. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 un pointeur valide ou N\+U\+L\+L 
 \end{DoxyReturn}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_objet_a5b8f371853435fb08bba5163cb4dbe09_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_objet_a470e028ee53141cf9d11d107317989b7}{\index{Objet@{Objet}!material@{material}}
 \index{material@{material}!Objet@{Objet}}
 \subsubsection[{material}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::material (
@@ -241,7 +346,7 @@ un pointeur valide ou N\+U\+L\+L
 Change le \hyperlink{class_material}{Material} de l'\hyperlink{class_objet}{Objet}. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em m} & pointeur sur le nouveau \hyperlink{class_material}{Material} \\
 \hline
 \end{DoxyParams}
@@ -256,9 +361,21 @@ Change le \hyperlink{class_material}{Material} de l'\hyperlink{class_objet}{Obje
 
 Récupère le nom de l'\hyperlink{class_objet}{Objet}. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 nom de l'\hyperlink{class_objet}{Objet} 
 \end{DoxyReturn}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_objet_a4a702c189bedcbf1e65da6aec72c8e44_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_objet_a9fcc9af481f4e13f46ab7d1b40cf91fc}{\index{Objet@{Objet}!name@{name}}
 \index{name@{name}!Objet@{Objet}}
 \subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::name (
@@ -271,7 +388,7 @@ nom de l'\hyperlink{class_objet}{Objet}
 Change le nom de l'\hyperlink{class_objet}{Objet}. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em n} & nouveau nom de l'\hyperlink{class_objet}{Objet} \\
 \hline
 \end{DoxyParams}
@@ -287,10 +404,34 @@ Change le nom de l'\hyperlink{class_objet}{Objet}.
 Change l'\hyperlink{class_objet}{Objet} père. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em o} & père \\
 \hline
 \end{DoxyParams}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{class_objet_a95e63a98dc9dc485fe874df30f2069ee_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_objet_a95e63a98dc9dc485fe874df30f2069ee_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_objet_aaa3c3290e5bb742363263600fcdb3e5e}{\index{Objet@{Objet}!parent@{parent}}
 \index{parent@{parent}!Objet@{Objet}}
 \subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Objet}$\ast$ Objet\+::parent (
@@ -302,7 +443,7 @@ Change l'\hyperlink{class_objet}{Objet} père.
 
 Récupère l'\hyperlink{class_objet}{Objet} père. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 \hyperlink{class_objet}{Objet} père ou N\+U\+L\+L 
 \end{DoxyReturn}
 \hypertarget{class_objet_a0e109bc790b14328202dd2546b04e2fd}{\index{Objet@{Objet}!position@{position}}
@@ -316,9 +457,21 @@ Récupère l'\hyperlink{class_objet}{Objet} père.
 
 Récupère la position de l'\hyperlink{class_objet}{Objet}. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 position de l'\hyperlink{class_objet}{Objet} 
 \end{DoxyReturn}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_objet_a0e109bc790b14328202dd2546b04e2fd_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_objet_a79051e09eb1aa72dcd338ed033e9f3f1}{\index{Objet@{Objet}!position@{position}}
 \index{position@{position}!Objet@{Objet}}
 \subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Objet\+::position (
@@ -330,7 +483,7 @@ position de l'\hyperlink{class_objet}{Objet}
 
 Récupère la position de l'\hyperlink{class_objet}{Objet}. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 position de l'\hyperlink{class_objet}{Objet} 
 \end{DoxyReturn}
 \hypertarget{class_objet_a89ed090c598f087792ee81c40ff46f75}{\index{Objet@{Objet}!position@{position}}
@@ -345,10 +498,22 @@ position de l'\hyperlink{class_objet}{Objet}
 Change la position de l'\hyperlink{class_objet}{Objet}. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em p} & nouvelle position \\
 \hline
 \end{DoxyParams}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_objet_a89ed090c598f087792ee81c40ff46f75_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_objet_ac69a1b459bcb4433099c8cfbff06b209}{\index{Objet@{Objet}!rotation@{rotation}}
 \index{rotation@{rotation}!Objet@{Objet}}
 \subsubsection[{rotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3}\& Objet\+::rotation (
@@ -360,9 +525,21 @@ Change la position de l'\hyperlink{class_objet}{Objet}.
 
 Récupère la rotation de l'\hyperlink{class_objet}{Objet}. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 rotation de l'\hyperlink{class_objet}{Objet} 
 \end{DoxyReturn}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_objet_ac69a1b459bcb4433099c8cfbff06b209_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_objet_a0325e52c600e8de17312287b4f7a3e67}{\index{Objet@{Objet}!rotation@{rotation}}
 \index{rotation@{rotation}!Objet@{Objet}}
 \subsubsection[{rotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Objet\+::rotation (
@@ -374,7 +551,7 @@ rotation de l'\hyperlink{class_objet}{Objet}
 
 Récupère la rotation de l'\hyperlink{class_objet}{Objet}. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 rotation de l'\hyperlink{class_objet}{Objet} 
 \end{DoxyReturn}
 \hypertarget{class_objet_a2d37f15368f40615a8bc58622623d991}{\index{Objet@{Objet}!rotation@{rotation}}
@@ -389,10 +566,22 @@ rotation de l'\hyperlink{class_objet}{Objet}
 Change la rotation de l'\hyperlink{class_objet}{Objet}. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em r} & nouvelle rotation de l'\hyperlink{class_objet}{Objet} \\
 \hline
 \end{DoxyParams}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_objet_a2d37f15368f40615a8bc58622623d991_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_objet_ae09962e65216c36b31ab389a5af310a3}{\index{Objet@{Objet}!scale@{scale}}
 \index{scale@{scale}!Objet@{Objet}}
 \subsubsection[{scale}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3}\& Objet\+::scale (
@@ -404,9 +593,21 @@ Change la rotation de l'\hyperlink{class_objet}{Objet}.
 
 Récupère les facteurs de scale de l'objet. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 scale de l'objet 
 \end{DoxyReturn}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_objet_ae09962e65216c36b31ab389a5af310a3_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_objet_a7e472f9f9362ecfa46e85bffcfc14e31}{\index{Objet@{Objet}!scale@{scale}}
 \index{scale@{scale}!Objet@{Objet}}
 \subsubsection[{scale}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Objet\+::scale (
@@ -418,7 +619,7 @@ scale de l'objet
 
 Récupère les facteurs de scale de l'objet. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 scale de l'objet 
 \end{DoxyReturn}
 \hypertarget{class_objet_ae4ca090d86e327ad4654a068afcf3141}{\index{Objet@{Objet}!scale@{scale}}
@@ -433,10 +634,22 @@ scale de l'objet
 Modifie le scale de l'objet. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em scale} & nouveau vecteur de scale \\
 \hline
 \end{DoxyParams}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_objet_ae4ca090d86e327ad4654a068afcf3141_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_objet_a13f08bf7d1265bbf4ade92b755b27c1b}{\index{Objet@{Objet}!shader\+Id@{shader\+Id}}
 \index{shader\+Id@{shader\+Id}!Objet@{Objet}}
 \subsubsection[{shader\+Id}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::shader\+Id (
@@ -449,10 +662,22 @@ Modifie le scale de l'objet.
 Change l'id du shader. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em s} & nouvel id du shader de l'\hyperlink{class_objet}{Objet} \\
 \hline
 \end{DoxyParams}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_objet_a13f08bf7d1265bbf4ade92b755b27c1b_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_objet_a1a6a7ddf0136e2b685c07778b681c976}{\index{Objet@{Objet}!shader\+Id@{shader\+Id}}
 \index{shader\+Id@{shader\+Id}!Objet@{Objet}}
 \subsubsection[{shader\+Id}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Objet\+::shader\+Id (
@@ -464,27 +689,9 @@ Change l'id du shader.
 
 Retourne l'id du shader qu'utilise l'\hyperlink{class_objet}{Objet}. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 identifiant Openg\+G\+L du shader 
 \end{DoxyReturn}
-\hypertarget{class_objet_a68db2971ff359da981bc0fb73a164b9f}{\index{Objet@{Objet}!transform\+Vector@{transform\+Vector}}
-\index{transform\+Vector@{transform\+Vector}!Objet@{Objet}}
-\subsubsection[{transform\+Vector}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::transform\+Vector (
-\begin{DoxyParamCaption}
-\item[{{\bf vec4} \&}]{v}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_objet_a68db2971ff359da981bc0fb73a164b9f}
-
-
-Apllique au vecteur les transformation de l'objet et de ses pères. 
-
-\hyperlink{structvec4}{vec4} pour optimisation lors des casts
-
-
-\begin{DoxyParams}{Parameters}
-{\em v} & \hyperlink{structvec4}{vec4} à calculer \\
-\hline
-\end{DoxyParams}
 \hypertarget{class_objet_a0960722f5ddb16f2c245dca4e6584f25}{\index{Objet@{Objet}!update\+Model@{update\+Model}}
 \index{update\+Model@{update\+Model}!Objet@{Objet}}
 \subsubsection[{update\+Model}]{\setlength{\rightskip}{0pt plus 5cm}void Objet\+::update\+Model (
@@ -498,7 +705,31 @@ Met à jour la matrice de model.
 
 Appellée lors d'une modification des vecteurs position ou rotation 
 
-\subsection{Member Data Documentation}
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_objet_a0960722f5ddb16f2c245dca4e6584f25_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{class_objet_a0960722f5ddb16f2c245dca4e6584f25_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Documentation des données membres}
 \hypertarget{class_objet_a953ad7ff9941575d1f18b6d256d2dcdc}{\index{Objet@{Objet}!\+\_\+draw\+Hitbox@{\+\_\+draw\+Hitbox}}
 \index{\+\_\+draw\+Hitbox@{\+\_\+draw\+Hitbox}!Objet@{Objet}}
 \subsubsection[{\+\_\+draw\+Hitbox}]{\setlength{\rightskip}{0pt plus 5cm}bool Objet\+::\+\_\+draw\+Hitbox\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_objet_a953ad7ff9941575d1f18b6d256d2dcdc}
@@ -528,7 +759,7 @@ Appellée lors d'une modification des vecteurs position ou rotation
 \subsubsection[{\+\_\+shader\+Id}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Objet\+::\+\_\+shader\+Id\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_objet_af0d545a506dbfa377c8ca5a499fdf755}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 objets/\hyperlink{objet_8hpp}{objet.\+hpp}\item 
 objets/\hyperlink{objet_8cpp}{objet.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,15 @@
+<map id="Objet::parent" name="Objet::parent">
+<area shape="rect" id="node2" href="$class_main_window.html#ada60d01c441123e1b7d4d30be1d16f8f" title="MainWindow::validajoutpiece" alt="" coords="338,5,531,31"/>
+<area shape="rect" id="node5" href="$class_main_window.html#afcd72c860bccb97abd7af324fbc50f56" title="MainWindow::validajoutmur" alt="" coords="343,56,527,81"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a8b07c3898c2bb70b8de0e4f339b1d6ed" title="MainWindow::validationajoutobjet" alt="" coords="579,107,799,132"/>
+<area shape="rect" id="node7" href="$class_mondock.html#afcb87fab11d89a1a24da091153d4dbac" title="Mondock::pereobjet" alt="" coords="152,309,290,335"/>
+<area shape="rect" id="node8" href="$class_mondock.html#aad20b3c5334d00fe5e69ac5872f76f4b" title="Mondock::traitementobjet" alt="" coords="349,284,520,309"/>
+<area shape="rect" id="node10" href="$class_node.html#a4bf5930c1238505203c3dcf6e4573bad" title="Constructeur par recopie. " alt="" coords="175,359,267,384"/>
+<area shape="rect" id="node11" href="$class_node.html#acf6db74c5840b203f4eee1239539ce31" title="Charge un aiNode. " alt="" coords="162,157,280,183"/>
+<area shape="rect" id="node13" href="$class_scene.html#aa6d40bab1b160afc7bb84841d056a07d" title="Charge les pièces. " alt="" coords="623,183,755,208"/>
+<area shape="rect" id="node3" href="$class_main_window.html#aa4907b0251d305659e403c62921ef331" title="MainWindow::createMenus" alt="" coords="847,56,1029,81"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a6d90fb41049be49da652a628191c9a1d" title="MainWindow::MainWindow" alt="" coords="1077,56,1258,81"/>
+<area shape="rect" id="node9" href="$class_mondock.html#a25391f1fac7a8a46e761f2f8c9c2fdc8" title="Mondock::selectionlight" alt="" coords="609,284,769,309"/>
+<area shape="rect" id="node12" href="$class_node.html#ac2140ddf8f06f8b5620e6743c945c482" title="Charge le modèle. " alt="" coords="374,157,496,183"/>
+<area shape="rect" id="node14" href="$class_scene.html#a2490795fc196c0e9f9196d18d4c6cfe0" title="Charge une scène à partir d&#39;un fichier xml la décrivant. " alt="" coords="886,183,990,208"/>
+</map>

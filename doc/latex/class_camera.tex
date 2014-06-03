@@ -1,4 +1,4 @@
-\hypertarget{class_camera}{\section{Camera Class Reference}
+\hypertarget{class_camera}{\section{Référence de la classe Camera}
 \label{class_camera}\index{Camera@{Camera}}
 }
 
@@ -10,7 +10,17 @@
 
 {\ttfamily \#include $<$camera.\+hpp$>$}
 
-\subsection*{Public Member Functions}
+
+
+Graphe de collaboration de Camera\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_camera__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_camera_a1a8ac754efe577c8abbc1e19cc8bca25}{Camera} (\hyperlink{class_scene}{Scene} $\ast$scene=N\+U\+L\+L, float eye\+X=0.\+0f, float eye\+Y=0.\+0f, float eye\+Z=0.\+0f)
@@ -23,7 +33,7 @@ void \hyperlink{class_camera_a22aaf20b581d402e5c3952655b830c0f}{mouse\+Move\+Eve
 \begin{DoxyCompactList}\small\item\em Fonction de déplacement de la caméra à la souris. \end{DoxyCompactList}\item 
 const \hyperlink{structvec3}{vec3} \& \hyperlink{class_camera_ad42b0114b12a48474ae6c8be1c44e7bb}{position} () const 
 \begin{DoxyCompactList}\small\item\em Retourne la position de la caméra. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Public Attributes}
+\subsection*{Attributs publics}
 \begin{DoxyCompactItemize}
 \item 
 bool \hyperlink{class_camera_a4cab15e35a96fdcb2a8599fea13a9b8f}{\+\_\+avant\+\_\+presse}
@@ -38,7 +48,7 @@ bool \hyperlink{class_camera_a43b59b53cb182906d56e6e4d2c31139c}{\+\_\+haut\+\_\+
 \item 
 bool \hyperlink{class_camera_aaba6828f97c9ef07b6b135a665bd3008}{\+\_\+bas\+\_\+presse}
 \end{DoxyCompactItemize}
-\subsection*{Protected Attributes}
+\subsection*{Attributs protégés}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{structvec3}{vec3} \hyperlink{class_camera_ad4c22c27bd247f4411c4166220ba6e82}{\+\_\+eye}
@@ -59,7 +69,7 @@ float \hyperlink{class_camera_a9062fdde515a49bf8db963ac46be9942}{\+\_\+vitesse}
 \item 
 \hyperlink{class_scene}{Scene} $\ast$ \hyperlink{class_camera_a81ffb00eedbaefbfb755b0c13d42180a}{\+\_\+scene}
 \end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
+\subsection*{Fonctions membres privées}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_camera_a8414e6d74d3f6259fa5ea1f037e9d8bd}{move} ()
@@ -70,10 +80,10 @@ void \hyperlink{class_camera_aa4e815462a964caa6b10804e33119cf2}{vector\+From\+An
 \begin{DoxyCompactList}\small\item\em Recalcul les vecteurs avant/côté pour le mouvement. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\subsection{Description détaillée}
 \hyperlink{class_camera}{Camera} pour \hyperlink{class_scene}{Scene}. 
 
-\subsection{Constructor \& Destructor Documentation}
+\subsection{Documentation des constructeurs et destructeur}
 \hypertarget{class_camera_a1a8ac754efe577c8abbc1e19cc8bca25}{\index{Camera@{Camera}!Camera@{Camera}}
 \index{Camera@{Camera}!Camera@{Camera}}
 \subsubsection[{Camera}]{\setlength{\rightskip}{0pt plus 5cm}Camera\+::\+Camera (
@@ -88,6 +98,18 @@ void \hyperlink{class_camera_aa4e815462a964caa6b10804e33119cf2}{vector\+From\+An
 
 Constructeur. 
 
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_a1a8ac754efe577c8abbc1e19cc8bca25_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_camera_ad1897942d0ccf91052386388a497349f}{\index{Camera@{Camera}!````~Camera@{$\sim$\+Camera}}
 \index{````~Camera@{$\sim$\+Camera}!Camera@{Camera}}
 \subsubsection[{$\sim$\+Camera}]{\setlength{\rightskip}{0pt plus 5cm}Camera\+::$\sim$\+Camera (
@@ -101,7 +123,7 @@ Destructeur.
 
 
 
-\subsection{Member Function Documentation}
+\subsection{Documentation des fonctions membres}
 \hypertarget{class_camera_adbfdac30f082ddea86183c1c31493946}{\index{Camera@{Camera}!display@{display}}
 \index{display@{display}!Camera@{Camera}}
 \subsubsection[{display}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::display (
@@ -113,7 +135,31 @@ Destructeur.
 
 Actualise la caméra. 
 
-Met à jour la position de la caméra en fonction des booléens de déplacement et actualise la matrice view \hypertarget{class_camera_abde0ff477fb0baea7515767dcd7a7cf7}{\index{Camera@{Camera}!go@{go}}
+Met à jour la position de la caméra en fonction des booléens de déplacement et actualise la matrice view 
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_adbfdac30f082ddea86183c1c31493946_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_adbfdac30f082ddea86183c1c31493946_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_camera_abde0ff477fb0baea7515767dcd7a7cf7}{\index{Camera@{Camera}!go@{go}}
 \index{go@{go}!Camera@{Camera}}
 \subsubsection[{go}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::go (
 \begin{DoxyParamCaption}
@@ -141,7 +187,7 @@ Déplace la caméra aux coordonnées données.
 Fonction de déplacement de la caméra à la souris. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em x} & position en X du curseur de la souris \\
 \hline
 {\em y} & position en Y du curseur de la souris \\
@@ -151,6 +197,30 @@ Fonction de déplacement de la caméra à la souris.
 {\em height} & hauteur de la fenêtre \\
 \hline
 \end{DoxyParams}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_a22aaf20b581d402e5c3952655b830c0f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_a22aaf20b581d402e5c3952655b830c0f_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_camera_a8414e6d74d3f6259fa5ea1f037e9d8bd}{\index{Camera@{Camera}!move@{move}}
 \index{move@{move}!Camera@{Camera}}
 \subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::move (
@@ -162,6 +232,18 @@ Fonction de déplacement de la caméra à la souris.
 
 Calcul le déplacement de la \hyperlink{class_camera}{Camera}. 
 
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_a8414e6d74d3f6259fa5ea1f037e9d8bd_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_camera_ad42b0114b12a48474ae6c8be1c44e7bb}{\index{Camera@{Camera}!position@{position}}
 \index{position@{position}!Camera@{Camera}}
 \subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf vec3}\& Camera\+::position (
@@ -172,6 +254,18 @@ Calcul le déplacement de la \hyperlink{class_camera}{Camera}.
 
 
 Retourne la position de la caméra. 
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_ad42b0114b12a48474ae6c8be1c44e7bb_icgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{class_camera_aa4e815462a964caa6b10804e33119cf2}{\index{Camera@{Camera}!vector\+From\+Angle@{vector\+From\+Angle}}
 \index{vector\+From\+Angle@{vector\+From\+Angle}!Camera@{Camera}}
@@ -186,7 +280,31 @@ Recalcul les vecteurs avant/côté pour le mouvement.
 
 
 
-\subsection{Member Data Documentation}
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_aa4e815462a964caa6b10804e33119cf2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_aa4e815462a964caa6b10804e33119cf2_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Documentation des données membres}
 \hypertarget{class_camera_a0ce12f74953fcd53192e48f8b4164e2e}{\index{Camera@{Camera}!\+\_\+arriere\+\_\+presse@{\+\_\+arriere\+\_\+presse}}
 \index{\+\_\+arriere\+\_\+presse@{\+\_\+arriere\+\_\+presse}!Camera@{Camera}}
 \subsubsection[{\+\_\+arriere\+\_\+presse}]{\setlength{\rightskip}{0pt plus 5cm}bool Camera\+::\+\_\+arriere\+\_\+presse}}\label{class_camera_a0ce12f74953fcd53192e48f8b4164e2e}
@@ -234,7 +352,7 @@ Indique si la caméra doit monter au prochain affichage \hypertarget{class_camer
 \subsubsection[{\+\_\+vitesse}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::\+\_\+vitesse\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_camera_a9062fdde515a49bf8db963ac46be9942}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 \hyperlink{camera_8hpp}{camera.\+hpp}\item 
 \hyperlink{camera_8cpp}{camera.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,13 @@
+<map id="scene/scene.cpp" name="scene/scene.cpp">
+<area shape="rect" id="node2" href="$scene_8hpp.html" title="scene.hpp" alt="" coords="861,225,944,251"/>
+<area shape="rect" id="node29" href="$mesh_8hpp.html" title="mesh.hpp" alt="" coords="1577,152,1657,177"/>
+<area shape="rect" id="node34" href="$node_8hpp.html" title="node.hpp" alt="" coords="1616,79,1693,104"/>
+<area shape="rect" id="node37" href="$camera_8hpp.html" title="camera.hpp" alt="" coords="758,152,850,177"/>
+<area shape="rect" id="node38" href="$_my_open_g_l_widget_8hpp.html" title="MyOpenGLWidget.hpp" alt="" coords="2123,79,2279,104"/>
+<area shape="rect" id="node3" href="$helper_8hpp.html" title="helper.hpp" alt="" coords="88,592,171,617"/>
+<area shape="rect" id="node9" href="$light_8hpp.html" title="light.hpp" alt="" coords="897,519,969,544"/>
+<area shape="rect" id="node10" href="$material_8hpp.html" title="material.hpp" alt="" coords="1297,519,1391,544"/>
+<area shape="rect" id="node15" href="$objet_8hpp.html" title="objet.hpp" alt="" coords="1162,445,1238,471"/>
+<area shape="rect" id="node16" href="$piece_8hpp.html" title="piece.hpp" alt="" coords="1079,299,1158,324"/>
+<area shape="rect" id="node17" href="$plan_8hpp.html" title="plan.hpp" alt="" coords="1082,372,1155,397"/>
+</map>

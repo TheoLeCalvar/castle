@@ -1,6 +1,7 @@
 var searchData=
 [
   ['camera',['Camera',['../class_camera.html#a1a8ac754efe577c8abbc1e19cc8bca25',1,'Camera']]],
+  ['changeshader',['changeshader',['../class_main_window.html#a64e110157eb3d3143982531ec82b4983',1,'MainWindow']]],
   ['clear',['clear',['../class_material.html#ab350dd584b850dfc3e0c52201b5699e0',1,'Material']]],
   ['createactions',['createActions',['../class_main_window.html#a62cd8712fb41a754298f6f60eead2cb0',1,'MainWindow']]],
   ['createlistedockwidget',['createListeDockwidget',['../class_main_window.html#a7b7fd06b9e7bfc83904b1d5b6503e9e9',1,'MainWindow']]],

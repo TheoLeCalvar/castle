@@ -1,0 +1,976 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}Liste des choses \IeC {\`a} faire}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Index hi\IeC {\'e}rarchique}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Hi\IeC {\'e}rarchie des classes}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}Index des classes}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Liste des classes}{5}{section.3.1}
+\contentsline {chapter}{\numberline {4}Index des fichiers}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}Liste des fichiers}{7}{section.4.1}
+\contentsline {chapter}{\numberline {5}Documentation des classes}{9}{chapter.5}
+\contentsline {section}{\numberline {5.1}R\IeC {\'e}f\IeC {\'e}rence de la classe Camera}{9}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Description d\IeC {\'e}taill\IeC {\'e}e}{11}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Documentation des constructeurs et destructeur}{11}{subsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.2.1}Camera}{11}{subsubsection.5.1.2.1}
+\contentsline {subsubsection}{\numberline {5.1.2.2}$\sim $\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Camera}{11}{subsubsection.5.1.2.2}
+\contentsline {subsection}{\numberline {5.1.3}Documentation des fonctions membres}{12}{subsection.5.1.3}
+\contentsline {subsubsection}{\numberline {5.1.3.1}display}{12}{subsubsection.5.1.3.1}
+\contentsline {subsubsection}{\numberline {5.1.3.2}go}{12}{subsubsection.5.1.3.2}
+\contentsline {subsubsection}{\numberline {5.1.3.3}mouse\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Move\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Event}{12}{subsubsection.5.1.3.3}
+\contentsline {subsubsection}{\numberline {5.1.3.4}move}{13}{subsubsection.5.1.3.4}
+\contentsline {subsubsection}{\numberline {5.1.3.5}position}{13}{subsubsection.5.1.3.5}
+\contentsline {subsubsection}{\numberline {5.1.3.6}vector\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}From\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Angle}{13}{subsubsection.5.1.3.6}
+\contentsline {subsection}{\numberline {5.1.4}Documentation des donn\IeC {\'e}es membres}{14}{subsection.5.1.4}
+\contentsline {subsubsection}{\numberline {5.1.4.1}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}arriere\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}presse}{14}{subsubsection.5.1.4.1}
+\contentsline {subsubsection}{\numberline {5.1.4.2}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}avant}{14}{subsubsection.5.1.4.2}
+\contentsline {subsubsection}{\numberline {5.1.4.3}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}avant\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}presse}{14}{subsubsection.5.1.4.3}
+\contentsline {subsubsection}{\numberline {5.1.4.4}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}bas\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}presse}{14}{subsubsection.5.1.4.4}
+\contentsline {subsubsection}{\numberline {5.1.4.5}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}center}{14}{subsubsection.5.1.4.5}
+\contentsline {subsubsection}{\numberline {5.1.4.6}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}droite\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}presse}{14}{subsubsection.5.1.4.6}
+\contentsline {subsubsection}{\numberline {5.1.4.7}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}eye}{14}{subsubsection.5.1.4.7}
+\contentsline {subsubsection}{\numberline {5.1.4.8}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}gauche}{14}{subsubsection.5.1.4.8}
+\contentsline {subsubsection}{\numberline {5.1.4.9}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}gauche\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}presse}{14}{subsubsection.5.1.4.9}
+\contentsline {subsubsection}{\numberline {5.1.4.10}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}haut}{14}{subsubsection.5.1.4.10}
+\contentsline {subsubsection}{\numberline {5.1.4.11}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}haut\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}presse}{14}{subsubsection.5.1.4.11}
+\contentsline {subsubsection}{\numberline {5.1.4.12}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}phi}{14}{subsubsection.5.1.4.12}
+\contentsline {subsubsection}{\numberline {5.1.4.13}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}scene}{14}{subsubsection.5.1.4.13}
+\contentsline {subsubsection}{\numberline {5.1.4.14}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}theta}{15}{subsubsection.5.1.4.14}
+\contentsline {subsubsection}{\numberline {5.1.4.15}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}vitesse}{15}{subsubsection.5.1.4.15}
+\contentsline {section}{\numberline {5.2}R\IeC {\'e}f\IeC {\'e}rence de la classe Cube}{15}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Description d\IeC {\'e}taill\IeC {\'e}e}{18}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Documentation des constructeurs et destructeur}{18}{subsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.2.1}Cube}{18}{subsubsection.5.2.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2.2}$\sim $\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Cube}{18}{subsubsection.5.2.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Documentation des fonctions membres}{18}{subsection.5.2.3}
+\contentsline {subsubsection}{\numberline {5.2.3.1}draw}{18}{subsubsection.5.2.3.1}
+\contentsline {subsubsection}{\numberline {5.2.3.2}gen\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Vao}{19}{subsubsection.5.2.3.2}
+\contentsline {subsection}{\numberline {5.2.4}Documentation des donn\IeC {\'e}es membres}{19}{subsection.5.2.4}
+\contentsline {subsubsection}{\numberline {5.2.4.1}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}vao}{19}{subsubsection.5.2.4.1}
+\contentsline {section}{\numberline {5.3}R\IeC {\'e}f\IeC {\'e}rence de la classe Donuts}{19}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Description d\IeC {\'e}taill\IeC {\'e}e}{22}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Documentation des constructeurs et destructeur}{22}{subsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.2.1}Donuts}{22}{subsubsection.5.3.2.1}
+\contentsline {subsubsection}{\numberline {5.3.2.2}$\sim $\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Donuts}{22}{subsubsection.5.3.2.2}
+\contentsline {subsection}{\numberline {5.3.3}Documentation des fonctions membres}{22}{subsection.5.3.3}
+\contentsline {subsubsection}{\numberline {5.3.3.1}draw}{22}{subsubsection.5.3.3.1}
+\contentsline {subsubsection}{\numberline {5.3.3.2}gen\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Vao}{23}{subsubsection.5.3.3.2}
+\contentsline {subsection}{\numberline {5.3.4}Documentation des donn\IeC {\'e}es membres}{23}{subsection.5.3.4}
+\contentsline {subsubsection}{\numberline {5.3.4.1}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}vao}{23}{subsubsection.5.3.4.1}
+\contentsline {subsubsection}{\numberline {5.3.4.2}m\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}radius}{23}{subsubsection.5.3.4.2}
+\contentsline {subsubsection}{\numberline {5.3.4.3}m\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}radius\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}donuts}{23}{subsubsection.5.3.4.3}
+\contentsline {subsubsection}{\numberline {5.3.4.4}m\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}slices}{23}{subsubsection.5.3.4.4}
+\contentsline {subsubsection}{\numberline {5.3.4.5}m\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}stacks}{23}{subsubsection.5.3.4.5}
+\contentsline {subsubsection}{\numberline {5.3.4.6}nbvertex}{23}{subsubsection.5.3.4.6}
+\contentsline {section}{\numberline {5.4}R\IeC {\'e}f\IeC {\'e}rence de la classe Light}{23}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Description d\IeC {\'e}taill\IeC {\'e}e}{26}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Documentation des constructeurs et destructeur}{26}{subsection.5.4.2}
+\contentsline {subsubsection}{\numberline {5.4.2.1}Light}{26}{subsubsection.5.4.2.1}
+\contentsline {subsubsection}{\numberline {5.4.2.2}$\sim $\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Light}{26}{subsubsection.5.4.2.2}
+\contentsline {subsection}{\numberline {5.4.3}Documentation des fonctions membres}{27}{subsection.5.4.3}
+\contentsline {subsubsection}{\numberline {5.4.3.1}ambient}{27}{subsubsection.5.4.3.1}
+\contentsline {subsubsection}{\numberline {5.4.3.2}ambient}{28}{subsubsection.5.4.3.2}
+\contentsline {subsubsection}{\numberline {5.4.3.3}disable}{28}{subsubsection.5.4.3.3}
+\contentsline {subsubsection}{\numberline {5.4.3.4}get}{28}{subsubsection.5.4.3.4}
+\contentsline {subsubsection}{\numberline {5.4.3.5}get}{29}{subsubsection.5.4.3.5}
+\contentsline {subsubsection}{\numberline {5.4.3.6}set}{29}{subsubsection.5.4.3.6}
+\contentsline {subsubsection}{\numberline {5.4.3.7}update}{30}{subsubsection.5.4.3.7}
+\contentsline {subsubsection}{\numberline {5.4.3.8}update\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Ambient}{30}{subsubsection.5.4.3.8}
+\contentsline {subsection}{\numberline {5.4.4}Documentation des donn\IeC {\'e}es membres}{31}{subsection.5.4.4}
+\contentsline {subsubsection}{\numberline {5.4.4.1}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ambient}{31}{subsubsection.5.4.4.1}
+\contentsline {subsubsection}{\numberline {5.4.4.2}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}diffuse}{31}{subsubsection.5.4.4.2}
+\contentsline {subsubsection}{\numberline {5.4.4.3}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}position}{31}{subsubsection.5.4.4.3}
+\contentsline {subsubsection}{\numberline {5.4.4.4}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}specular}{31}{subsubsection.5.4.4.4}
+\contentsline {section}{\numberline {5.5}R\IeC {\'e}f\IeC {\'e}rence de la classe Main\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Window}{31}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Documentation des constructeurs et destructeur}{36}{subsection.5.5.1}
+\contentsline {subsubsection}{\numberline {5.5.1.1}Main\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Window}{37}{subsubsection.5.5.1.1}
+\contentsline {subsubsection}{\numberline {5.5.1.2}$\sim $\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Main\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Window}{37}{subsubsection.5.5.1.2}
+\contentsline {subsection}{\numberline {5.5.2}Documentation des fonctions membres}{37}{subsection.5.5.2}
+\contentsline {subsubsection}{\numberline {5.5.2.1}aboutassimp}{37}{subsubsection.5.5.2.1}
+\contentsline {subsubsection}{\numberline {5.5.2.2}affichagerecnoderestant}{38}{subsubsection.5.5.2.2}
+\contentsline {subsubsection}{\numberline {5.5.2.3}ajoutlumiere}{38}{subsubsection.5.5.2.3}
+\contentsline {subsubsection}{\numberline {5.5.2.4}ajoutmaterial}{38}{subsubsection.5.5.2.4}
+\contentsline {subsubsection}{\numberline {5.5.2.5}ajoutmur}{39}{subsubsection.5.5.2.5}
+\contentsline {subsubsection}{\numberline {5.5.2.6}ajoutmurcreatemodelmurcombo}{39}{subsubsection.5.5.2.6}
+\contentsline {subsubsection}{\numberline {5.5.2.7}ajoutobjet}{40}{subsubsection.5.5.2.7}
+\contentsline {subsubsection}{\numberline {5.5.2.8}ajoutpiece}{40}{subsubsection.5.5.2.8}
+\contentsline {subsubsection}{\numberline {5.5.2.9}Apercut}{41}{subsubsection.5.5.2.9}
+\contentsline {subsubsection}{\numberline {5.5.2.10}changeshader}{41}{subsubsection.5.5.2.10}
+\contentsline {subsubsection}{\numberline {5.5.2.11}create\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Actions}{42}{subsubsection.5.5.2.11}
+\contentsline {subsubsection}{\numberline {5.5.2.12}create\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Liste\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dockwidget}{42}{subsubsection.5.5.2.12}
+\contentsline {subsubsection}{\numberline {5.5.2.13}create\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Menus}{43}{subsubsection.5.5.2.13}
+\contentsline {subsubsection}{\numberline {5.5.2.14}create\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tool\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Bar}{43}{subsubsection.5.5.2.14}
+\contentsline {subsubsection}{\numberline {5.5.2.15}Culface}{44}{subsubsection.5.5.2.15}
+\contentsline {subsubsection}{\numberline {5.5.2.16}Enregistrer}{44}{subsubsection.5.5.2.16}
+\contentsline {subsubsection}{\numberline {5.5.2.17}Grille}{45}{subsubsection.5.5.2.17}
+\contentsline {subsubsection}{\numberline {5.5.2.18}Importation3\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D}{45}{subsubsection.5.5.2.18}
+\contentsline {subsubsection}{\numberline {5.5.2.19}Nouveau}{46}{subsubsection.5.5.2.19}
+\contentsline {subsubsection}{\numberline {5.5.2.20}Ouvrir}{46}{subsubsection.5.5.2.20}
+\contentsline {subsubsection}{\numberline {5.5.2.21}reloadshader}{46}{subsubsection.5.5.2.21}
+\contentsline {subsubsection}{\numberline {5.5.2.22}selectioncheminobj}{47}{subsubsection.5.5.2.22}
+\contentsline {subsubsection}{\numberline {5.5.2.23}supresionelement}{47}{subsubsection.5.5.2.23}
+\contentsline {subsubsection}{\numberline {5.5.2.24}validajoutlumiere}{47}{subsubsection.5.5.2.24}
+\contentsline {subsubsection}{\numberline {5.5.2.25}validajoutmaterial}{48}{subsubsection.5.5.2.25}
+\contentsline {subsubsection}{\numberline {5.5.2.26}validajoutmur}{48}{subsubsection.5.5.2.26}
+\contentsline {subsubsection}{\numberline {5.5.2.27}validajoutpiece}{49}{subsubsection.5.5.2.27}
+\contentsline {subsubsection}{\numberline {5.5.2.28}validationajoutobjet}{50}{subsubsection.5.5.2.28}
+\contentsline {subsection}{\numberline {5.5.3}Documentation des donn\IeC {\'e}es membres}{50}{subsection.5.5.3}
+\contentsline {subsubsection}{\numberline {5.5.3.1}about}{50}{subsubsection.5.5.3.1}
+\contentsline {subsubsection}{\numberline {5.5.3.2}aboutassimp\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Act}{50}{subsubsection.5.5.3.2}
+\contentsline {subsubsection}{\numberline {5.5.3.3}aboutqt\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Act}{50}{subsubsection.5.5.3.3}
+\contentsline {subsubsection}{\numberline {5.5.3.4}Affichage}{50}{subsubsection.5.5.3.4}
+\contentsline {subsubsection}{\numberline {5.5.3.5}Aide}{50}{subsubsection.5.5.3.5}
+\contentsline {subsubsection}{\numberline {5.5.3.6}ajoutelement}{50}{subsubsection.5.5.3.6}
+\contentsline {subsubsection}{\numberline {5.5.3.7}ajoutlumier\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Act}{50}{subsubsection.5.5.3.7}
+\contentsline {subsubsection}{\numberline {5.5.3.8}ajoutmaterial\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Act}{50}{subsubsection.5.5.3.8}
+\contentsline {subsubsection}{\numberline {5.5.3.9}ajoutmur\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Act}{50}{subsubsection.5.5.3.9}
+\contentsline {subsubsection}{\numberline {5.5.3.10}ajoutobjet\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Act}{50}{subsubsection.5.5.3.10}
+\contentsline {subsubsection}{\numberline {5.5.3.11}ajoutpiece\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Act}{51}{subsubsection.5.5.3.11}
+\contentsline {subsubsection}{\numberline {5.5.3.12}ajoutpiecedimx}{51}{subsubsection.5.5.3.12}
+\contentsline {subsubsection}{\numberline {5.5.3.13}ajoutpiecedimy}{51}{subsubsection.5.5.3.13}
+\contentsline {subsubsection}{\numberline {5.5.3.14}ajoutpiecedimz}{51}{subsubsection.5.5.3.14}
+\contentsline {subsubsection}{\numberline {5.5.3.15}ajoutpiecelabelmure}{51}{subsubsection.5.5.3.15}
+\contentsline {subsubsection}{\numberline {5.5.3.16}ajoutpiecelayoutcombo}{51}{subsubsection.5.5.3.16}
+\contentsline {subsubsection}{\numberline {5.5.3.17}ajoutpiecelayoutdim}{51}{subsubsection.5.5.3.17}
+\contentsline {subsubsection}{\numberline {5.5.3.18}ajoutpiecelayoutnom}{51}{subsubsection.5.5.3.18}
+\contentsline {subsubsection}{\numberline {5.5.3.19}ajoutpiecepiecer1}{51}{subsubsection.5.5.3.19}
+\contentsline {subsubsection}{\numberline {5.5.3.20}ajoutpiecepiecer2}{51}{subsubsection.5.5.3.20}
+\contentsline {subsubsection}{\numberline {5.5.3.21}ajoutpiecepiecer3}{51}{subsubsection.5.5.3.21}
+\contentsline {subsubsection}{\numberline {5.5.3.22}ajoutpieceshaderlayout}{51}{subsubsection.5.5.3.22}
+\contentsline {subsubsection}{\numberline {5.5.3.23}ambajoutmaterial}{51}{subsubsection.5.5.3.23}
+\contentsline {subsubsection}{\numberline {5.5.3.24}apercut\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Act}{51}{subsubsection.5.5.3.24}
+\contentsline {subsubsection}{\numberline {5.5.3.25}boutonajoutlumiere}{51}{subsubsection.5.5.3.25}
+\contentsline {subsubsection}{\numberline {5.5.3.26}boutonajoutmaterial}{51}{subsubsection.5.5.3.26}
+\contentsline {subsubsection}{\numberline {5.5.3.27}boutonajoutmur}{51}{subsubsection.5.5.3.27}
+\contentsline {subsubsection}{\numberline {5.5.3.28}boutonajoutobjet}{51}{subsubsection.5.5.3.28}
+\contentsline {subsubsection}{\numberline {5.5.3.29}boutonajoutpiece}{51}{subsubsection.5.5.3.29}
+\contentsline {subsubsection}{\numberline {5.5.3.30}boutonlisteelement}{51}{subsubsection.5.5.3.30}
+\contentsline {subsubsection}{\numberline {5.5.3.31}boutonlisteelementdelete}{51}{subsubsection.5.5.3.31}
+\contentsline {subsubsection}{\numberline {5.5.3.32}boutonpieceajoutmur}{51}{subsubsection.5.5.3.32}
+\contentsline {subsubsection}{\numberline {5.5.3.33}boutonselectionobjajoutobjet}{51}{subsubsection.5.5.3.33}
+\contentsline {subsubsection}{\numberline {5.5.3.34}champnomajoutobjet}{51}{subsubsection.5.5.3.34}
+\contentsline {subsubsection}{\numberline {5.5.3.35}checkmur1}{51}{subsubsection.5.5.3.35}
+\contentsline {subsubsection}{\numberline {5.5.3.36}checkmur2}{51}{subsubsection.5.5.3.36}
+\contentsline {subsubsection}{\numberline {5.5.3.37}checkmur3}{51}{subsubsection.5.5.3.37}
+\contentsline {subsubsection}{\numberline {5.5.3.38}checkmur4}{51}{subsubsection.5.5.3.38}
+\contentsline {subsubsection}{\numberline {5.5.3.39}checkmur5}{52}{subsubsection.5.5.3.39}
+\contentsline {subsubsection}{\numberline {5.5.3.40}checkmur6}{52}{subsubsection.5.5.3.40}
+\contentsline {subsubsection}{\numberline {5.5.3.41}comboajoutpiece}{52}{subsubsection.5.5.3.41}
+\contentsline {subsubsection}{\numberline {5.5.3.42}comboajoutpieceshader}{52}{subsubsection.5.5.3.42}
+\contentsline {subsubsection}{\numberline {5.5.3.43}combomurajoutmur}{52}{subsubsection.5.5.3.43}
+\contentsline {subsubsection}{\numberline {5.5.3.44}combopieceajoutmur}{52}{subsubsection.5.5.3.44}
+\contentsline {subsubsection}{\numberline {5.5.3.45}combopieceajoutobjet}{52}{subsubsection.5.5.3.45}
+\contentsline {subsubsection}{\numberline {5.5.3.46}culface\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Act}{52}{subsubsection.5.5.3.46}
+\contentsline {subsubsection}{\numberline {5.5.3.47}difajoutlumiere}{52}{subsubsection.5.5.3.47}
+\contentsline {subsubsection}{\numberline {5.5.3.48}difajoutmaterial}{52}{subsubsection.5.5.3.48}
+\contentsline {subsubsection}{\numberline {5.5.3.49}dock\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}list\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}elements}{52}{subsubsection.5.5.3.49}
+\contentsline {subsubsection}{\numberline {5.5.3.50}dock\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}perso}{52}{subsubsection.5.5.3.50}
+\contentsline {subsubsection}{\numberline {5.5.3.51}dockajoutlumiere}{52}{subsubsection.5.5.3.51}
+\contentsline {subsubsection}{\numberline {5.5.3.52}dockajoutmateriaux}{52}{subsubsection.5.5.3.52}
+\contentsline {subsubsection}{\numberline {5.5.3.53}dockajoutmur}{52}{subsubsection.5.5.3.53}
+\contentsline {subsubsection}{\numberline {5.5.3.54}dockajoutobjet}{52}{subsubsection.5.5.3.54}
+\contentsline {subsubsection}{\numberline {5.5.3.55}dockajoutpiece}{52}{subsubsection.5.5.3.55}
+\contentsline {subsubsection}{\numberline {5.5.3.56}Edition}{52}{subsubsection.5.5.3.56}
+\contentsline {subsubsection}{\numberline {5.5.3.57}enregistrer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Act}{52}{subsubsection.5.5.3.57}
+\contentsline {subsubsection}{\numberline {5.5.3.58}Fichier}{52}{subsubsection.5.5.3.58}
+\contentsline {subsubsection}{\numberline {5.5.3.59}file\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tool\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Bar}{52}{subsubsection.5.5.3.59}
+\contentsline {subsubsection}{\numberline {5.5.3.60}grille\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Act}{52}{subsubsection.5.5.3.60}
+\contentsline {subsubsection}{\numberline {5.5.3.61}importation3\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Act}{52}{subsubsection.5.5.3.61}
+\contentsline {subsubsection}{\numberline {5.5.3.62}item}{52}{subsubsection.5.5.3.62}
+\contentsline {subsubsection}{\numberline {5.5.3.63}kiter\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Act}{52}{subsubsection.5.5.3.63}
+\contentsline {subsubsection}{\numberline {5.5.3.64}labelajoutpieceshader}{52}{subsubsection.5.5.3.64}
+\contentsline {subsubsection}{\numberline {5.5.3.65}labelcheminobjajoutobj}{52}{subsubsection.5.5.3.65}
+\contentsline {subsubsection}{\numberline {5.5.3.66}labelcomboajoutpiece}{52}{subsubsection.5.5.3.66}
+\contentsline {subsubsection}{\numberline {5.5.3.67}labeldimajoutpiece}{53}{subsubsection.5.5.3.67}
+\contentsline {subsubsection}{\numberline {5.5.3.68}labelmur1}{53}{subsubsection.5.5.3.68}
+\contentsline {subsubsection}{\numberline {5.5.3.69}labelmur2}{53}{subsubsection.5.5.3.69}
+\contentsline {subsubsection}{\numberline {5.5.3.70}labelmur3}{53}{subsubsection.5.5.3.70}
+\contentsline {subsubsection}{\numberline {5.5.3.71}labelmur4}{53}{subsubsection.5.5.3.71}
+\contentsline {subsubsection}{\numberline {5.5.3.72}labelmur5}{53}{subsubsection.5.5.3.72}
+\contentsline {subsubsection}{\numberline {5.5.3.73}labelmur6}{53}{subsubsection.5.5.3.73}
+\contentsline {subsubsection}{\numberline {5.5.3.74}labelmurajoutpiece}{53}{subsubsection.5.5.3.74}
+\contentsline {subsubsection}{\numberline {5.5.3.75}labelmurcomboajoutmur}{53}{subsubsection.5.5.3.75}
+\contentsline {subsubsection}{\numberline {5.5.3.76}labelnomajoutobjet}{53}{subsubsection.5.5.3.76}
+\contentsline {subsubsection}{\numberline {5.5.3.77}labelnomajoutpiece}{53}{subsubsection.5.5.3.77}
+\contentsline {subsubsection}{\numberline {5.5.3.78}labelpieceajoutobjet}{53}{subsubsection.5.5.3.78}
+\contentsline {subsubsection}{\numberline {5.5.3.79}labelpiececomboajoutmur}{53}{subsubsection.5.5.3.79}
+\contentsline {subsubsection}{\numberline {5.5.3.80}layoutajoutlumiere}{53}{subsubsection.5.5.3.80}
+\contentsline {subsubsection}{\numberline {5.5.3.81}layoutajoutmaterial}{53}{subsubsection.5.5.3.81}
+\contentsline {subsubsection}{\numberline {5.5.3.82}layoutajoutobjetnom}{53}{subsubsection.5.5.3.82}
+\contentsline {subsubsection}{\numberline {5.5.3.83}layoutajoutobjetpiece}{53}{subsubsection.5.5.3.83}
+\contentsline {subsubsection}{\numberline {5.5.3.84}layoutambajoutmaterial}{53}{subsubsection.5.5.3.84}
+\contentsline {subsubsection}{\numberline {5.5.3.85}layoutcheminajoutobjet}{53}{subsubsection.5.5.3.85}
+\contentsline {subsubsection}{\numberline {5.5.3.86}layoutcombotnommurajoutmur}{53}{subsubsection.5.5.3.86}
+\contentsline {subsubsection}{\numberline {5.5.3.87}layoutcombotnompieceajoutmur}{53}{subsubsection.5.5.3.87}
+\contentsline {subsubsection}{\numberline {5.5.3.88}layoutdifajoutlumiere}{53}{subsubsection.5.5.3.88}
+\contentsline {subsubsection}{\numberline {5.5.3.89}layoutdifajoutmaterial}{53}{subsubsection.5.5.3.89}
+\contentsline {subsubsection}{\numberline {5.5.3.90}layoutlistescene}{53}{subsubsection.5.5.3.90}
+\contentsline {subsubsection}{\numberline {5.5.3.91}layoutnomajoutlumiere}{53}{subsubsection.5.5.3.91}
+\contentsline {subsubsection}{\numberline {5.5.3.92}layoutnomajoutmaterial}{53}{subsubsection.5.5.3.92}
+\contentsline {subsubsection}{\numberline {5.5.3.93}layoutposajoutlumiere}{53}{subsubsection.5.5.3.93}
+\contentsline {subsubsection}{\numberline {5.5.3.94}layoutspeajoutlumiere}{53}{subsubsection.5.5.3.94}
+\contentsline {subsubsection}{\numberline {5.5.3.95}layoutspeajoutmaterial}{54}{subsubsection.5.5.3.95}
+\contentsline {subsubsection}{\numberline {5.5.3.96}light}{54}{subsubsection.5.5.3.96}
+\contentsline {subsubsection}{\numberline {5.5.3.97}lineeditajoutpiece}{54}{subsubsection.5.5.3.97}
+\contentsline {subsubsection}{\numberline {5.5.3.98}lineeditnomajoutlumiere}{54}{subsubsection.5.5.3.98}
+\contentsline {subsubsection}{\numberline {5.5.3.99}lineeditnomajoutmaterial}{54}{subsubsection.5.5.3.99}
+\contentsline {subsubsection}{\numberline {5.5.3.100}lineeditobjajoutobj}{54}{subsubsection.5.5.3.100}
+\contentsline {subsubsection}{\numberline {5.5.3.101}listtemplight}{54}{subsubsection.5.5.3.101}
+\contentsline {subsubsection}{\numberline {5.5.3.102}listtempmaterial}{54}{subsubsection.5.5.3.102}
+\contentsline {subsubsection}{\numberline {5.5.3.103}listtempobjet}{54}{subsubsection.5.5.3.103}
+\contentsline {subsubsection}{\numberline {5.5.3.104}listtemshader}{54}{subsubsection.5.5.3.104}
+\contentsline {subsubsection}{\numberline {5.5.3.105}mainlayoutajoutmur}{54}{subsubsection.5.5.3.105}
+\contentsline {subsubsection}{\numberline {5.5.3.106}mainlayoutajoutobjet}{54}{subsubsection.5.5.3.106}
+\contentsline {subsubsection}{\numberline {5.5.3.107}mainlayoutajoutpiece}{54}{subsubsection.5.5.3.107}
+\contentsline {subsubsection}{\numberline {5.5.3.108}material}{54}{subsubsection.5.5.3.108}
+\contentsline {subsubsection}{\numberline {5.5.3.109}modelajoutmurmur}{54}{subsubsection.5.5.3.109}
+\contentsline {subsubsection}{\numberline {5.5.3.110}modelajoutmurpiece}{54}{subsubsection.5.5.3.110}
+\contentsline {subsubsection}{\numberline {5.5.3.111}modelajoutobjet}{54}{subsubsection.5.5.3.111}
+\contentsline {subsubsection}{\numberline {5.5.3.112}modele}{54}{subsubsection.5.5.3.112}
+\contentsline {subsubsection}{\numberline {5.5.3.113}modelemateriaupiece}{54}{subsubsection.5.5.3.113}
+\contentsline {subsubsection}{\numberline {5.5.3.114}modelepieceshader}{54}{subsubsection.5.5.3.114}
+\contentsline {subsubsection}{\numberline {5.5.3.115}modelshaderpostpro}{54}{subsubsection.5.5.3.115}
+\contentsline {subsubsection}{\numberline {5.5.3.116}nomajoutlumiere}{54}{subsubsection.5.5.3.116}
+\contentsline {subsubsection}{\numberline {5.5.3.117}nomajoutmaterial}{54}{subsubsection.5.5.3.117}
+\contentsline {subsubsection}{\numberline {5.5.3.118}nouveau\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Act}{54}{subsubsection.5.5.3.118}
+\contentsline {subsubsection}{\numberline {5.5.3.119}objet}{54}{subsubsection.5.5.3.119}
+\contentsline {subsubsection}{\numberline {5.5.3.120}Outil}{54}{subsubsection.5.5.3.120}
+\contentsline {subsubsection}{\numberline {5.5.3.121}ouvrir\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Act}{54}{subsubsection.5.5.3.121}
+\contentsline {subsubsection}{\numberline {5.5.3.122}positionajoutlumiere}{54}{subsubsection.5.5.3.122}
+\contentsline {subsubsection}{\numberline {5.5.3.123}reloadshader\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Act}{55}{subsubsection.5.5.3.123}
+\contentsline {subsubsection}{\numberline {5.5.3.124}scenetemp}{55}{subsubsection.5.5.3.124}
+\contentsline {subsubsection}{\numberline {5.5.3.125}shader}{55}{subsubsection.5.5.3.125}
+\contentsline {subsubsection}{\numberline {5.5.3.126}shaderpospro}{55}{subsubsection.5.5.3.126}
+\contentsline {subsubsection}{\numberline {5.5.3.127}speajoutlumiere}{55}{subsubsection.5.5.3.127}
+\contentsline {subsubsection}{\numberline {5.5.3.128}speajoutmaterial}{55}{subsubsection.5.5.3.128}
+\contentsline {subsubsection}{\numberline {5.5.3.129}spinambajoutmaterialx}{55}{subsubsection.5.5.3.129}
+\contentsline {subsubsection}{\numberline {5.5.3.130}spinambajoutmaterialy}{55}{subsubsection.5.5.3.130}
+\contentsline {subsubsection}{\numberline {5.5.3.131}spinambajoutmaterialz}{55}{subsubsection.5.5.3.131}
+\contentsline {subsubsection}{\numberline {5.5.3.132}spindifajoutlumierex}{55}{subsubsection.5.5.3.132}
+\contentsline {subsubsection}{\numberline {5.5.3.133}spindifajoutlumierey}{55}{subsubsection.5.5.3.133}
+\contentsline {subsubsection}{\numberline {5.5.3.134}spindifajoutlumierez}{55}{subsubsection.5.5.3.134}
+\contentsline {subsubsection}{\numberline {5.5.3.135}spindifajoutmaterialx}{55}{subsubsection.5.5.3.135}
+\contentsline {subsubsection}{\numberline {5.5.3.136}spindifajoutmaterialy}{55}{subsubsection.5.5.3.136}
+\contentsline {subsubsection}{\numberline {5.5.3.137}spindifajoutmaterialz}{55}{subsubsection.5.5.3.137}
+\contentsline {subsubsection}{\numberline {5.5.3.138}spinpositionajoutlumierex}{55}{subsubsection.5.5.3.138}
+\contentsline {subsubsection}{\numberline {5.5.3.139}spinpositionajoutlumierey}{55}{subsubsection.5.5.3.139}
+\contentsline {subsubsection}{\numberline {5.5.3.140}spinpositionajoutlumierez}{55}{subsubsection.5.5.3.140}
+\contentsline {subsubsection}{\numberline {5.5.3.141}spinspeajoutlumierex}{55}{subsubsection.5.5.3.141}
+\contentsline {subsubsection}{\numberline {5.5.3.142}spinspeajoutlumierey}{55}{subsubsection.5.5.3.142}
+\contentsline {subsubsection}{\numberline {5.5.3.143}spinspeajoutlumierez}{55}{subsubsection.5.5.3.143}
+\contentsline {subsubsection}{\numberline {5.5.3.144}spinspeajoutmateriala}{55}{subsubsection.5.5.3.144}
+\contentsline {subsubsection}{\numberline {5.5.3.145}spinspeajoutmaterialx}{55}{subsubsection.5.5.3.145}
+\contentsline {subsubsection}{\numberline {5.5.3.146}spinspeajoutmaterialy}{55}{subsubsection.5.5.3.146}
+\contentsline {subsubsection}{\numberline {5.5.3.147}spinspeajoutmaterialz}{55}{subsubsection.5.5.3.147}
+\contentsline {subsubsection}{\numberline {5.5.3.148}vue}{55}{subsubsection.5.5.3.148}
+\contentsline {subsubsection}{\numberline {5.5.3.149}widget}{55}{subsubsection.5.5.3.149}
+\contentsline {subsubsection}{\numberline {5.5.3.150}widgetajoutlumiere}{55}{subsubsection.5.5.3.150}
+\contentsline {subsubsection}{\numberline {5.5.3.151}widgetajoutmaterial}{56}{subsubsection.5.5.3.151}
+\contentsline {subsubsection}{\numberline {5.5.3.152}widgetajoutmur}{56}{subsubsection.5.5.3.152}
+\contentsline {subsubsection}{\numberline {5.5.3.153}widgetajoutobjet}{56}{subsubsection.5.5.3.153}
+\contentsline {subsubsection}{\numberline {5.5.3.154}widgetajoutpiece}{56}{subsubsection.5.5.3.154}
+\contentsline {subsubsection}{\numberline {5.5.3.155}widgetdocklistscene}{56}{subsubsection.5.5.3.155}
+\contentsline {section}{\numberline {5.6}R\IeC {\'e}f\IeC {\'e}rence de la structure mat3}{56}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Documentation des constructeurs et destructeur}{57}{subsection.5.6.1}
+\contentsline {subsubsection}{\numberline {5.6.1.1}mat3}{57}{subsubsection.5.6.1.1}
+\contentsline {subsubsection}{\numberline {5.6.1.2}mat3}{57}{subsubsection.5.6.1.2}
+\contentsline {subsubsection}{\numberline {5.6.1.3}mat3}{57}{subsubsection.5.6.1.3}
+\contentsline {subsubsection}{\numberline {5.6.1.4}mat3}{57}{subsubsection.5.6.1.4}
+\contentsline {subsection}{\numberline {5.6.2}Documentation des fonctions membres}{57}{subsection.5.6.2}
+\contentsline {subsubsection}{\numberline {5.6.2.1}operator$\ast $}{57}{subsubsection.5.6.2.1}
+\contentsline {subsubsection}{\numberline {5.6.2.2}operator$\ast $}{58}{subsubsection.5.6.2.2}
+\contentsline {subsubsection}{\numberline {5.6.2.3}operator$\ast $}{58}{subsubsection.5.6.2.3}
+\contentsline {subsubsection}{\numberline {5.6.2.4}operator$\ast $=}{58}{subsubsection.5.6.2.4}
+\contentsline {subsubsection}{\numberline {5.6.2.5}operator+}{58}{subsubsection.5.6.2.5}
+\contentsline {subsubsection}{\numberline {5.6.2.6}operator+=}{58}{subsubsection.5.6.2.6}
+\contentsline {subsubsection}{\numberline {5.6.2.7}operator-\/}{58}{subsubsection.5.6.2.7}
+\contentsline {subsubsection}{\numberline {5.6.2.8}operator-\/=}{58}{subsubsection.5.6.2.8}
+\contentsline {subsubsection}{\numberline {5.6.2.9}operator=}{58}{subsubsection.5.6.2.9}
+\contentsline {subsubsection}{\numberline {5.6.2.10}operator[]}{59}{subsubsection.5.6.2.10}
+\contentsline {subsubsection}{\numberline {5.6.2.11}operator[]}{59}{subsubsection.5.6.2.11}
+\contentsline {subsection}{\numberline {5.6.3}Documentation des donn\IeC {\'e}es membres}{59}{subsection.5.6.3}
+\contentsline {subsubsection}{\numberline {5.6.3.1}m}{59}{subsubsection.5.6.3.1}
+\contentsline {section}{\numberline {5.7}R\IeC {\'e}f\IeC {\'e}rence de la structure mat4}{59}{section.5.7}
+\contentsline {subsection}{\numberline {5.7.1}Documentation des constructeurs et destructeur}{60}{subsection.5.7.1}
+\contentsline {subsubsection}{\numberline {5.7.1.1}mat4}{60}{subsubsection.5.7.1.1}
+\contentsline {subsubsection}{\numberline {5.7.1.2}mat4}{60}{subsubsection.5.7.1.2}
+\contentsline {subsubsection}{\numberline {5.7.1.3}mat4}{60}{subsubsection.5.7.1.3}
+\contentsline {subsubsection}{\numberline {5.7.1.4}mat4}{60}{subsubsection.5.7.1.4}
+\contentsline {subsubsection}{\numberline {5.7.1.5}mat4}{60}{subsubsection.5.7.1.5}
+\contentsline {subsection}{\numberline {5.7.2}Documentation des fonctions membres}{60}{subsection.5.7.2}
+\contentsline {subsubsection}{\numberline {5.7.2.1}det}{60}{subsubsection.5.7.2.1}
+\contentsline {subsubsection}{\numberline {5.7.2.2}inverse}{61}{subsubsection.5.7.2.2}
+\contentsline {subsubsection}{\numberline {5.7.2.3}operator$\ast $}{61}{subsubsection.5.7.2.3}
+\contentsline {subsubsection}{\numberline {5.7.2.4}operator$\ast $}{61}{subsubsection.5.7.2.4}
+\contentsline {subsubsection}{\numberline {5.7.2.5}operator$\ast $}{61}{subsubsection.5.7.2.5}
+\contentsline {subsubsection}{\numberline {5.7.2.6}operator$\ast $=}{61}{subsubsection.5.7.2.6}
+\contentsline {subsubsection}{\numberline {5.7.2.7}operator$\ast $=}{61}{subsubsection.5.7.2.7}
+\contentsline {subsubsection}{\numberline {5.7.2.8}operator+}{62}{subsubsection.5.7.2.8}
+\contentsline {subsubsection}{\numberline {5.7.2.9}operator+=}{62}{subsubsection.5.7.2.9}
+\contentsline {subsubsection}{\numberline {5.7.2.10}operator-\/}{62}{subsubsection.5.7.2.10}
+\contentsline {subsubsection}{\numberline {5.7.2.11}operator-\/=}{62}{subsubsection.5.7.2.11}
+\contentsline {subsubsection}{\numberline {5.7.2.12}operator=}{62}{subsubsection.5.7.2.12}
+\contentsline {subsubsection}{\numberline {5.7.2.13}operator[]}{62}{subsubsection.5.7.2.13}
+\contentsline {subsubsection}{\numberline {5.7.2.14}operator[]}{62}{subsubsection.5.7.2.14}
+\contentsline {subsubsection}{\numberline {5.7.2.15}transpose}{62}{subsubsection.5.7.2.15}
+\contentsline {subsection}{\numberline {5.7.3}Documentation des donn\IeC {\'e}es membres}{63}{subsection.5.7.3}
+\contentsline {subsubsection}{\numberline {5.7.3.1}m}{63}{subsubsection.5.7.3.1}
+\contentsline {section}{\numberline {5.8}R\IeC {\'e}f\IeC {\'e}rence de la classe Material}{63}{section.5.8}
+\contentsline {subsection}{\numberline {5.8.1}Description d\IeC {\'e}taill\IeC {\'e}e}{66}{subsection.5.8.1}
+\contentsline {subsection}{\numberline {5.8.2}Documentation des constructeurs et destructeur}{66}{subsection.5.8.2}
+\contentsline {subsubsection}{\numberline {5.8.2.1}Material}{67}{subsubsection.5.8.2.1}
+\contentsline {subsubsection}{\numberline {5.8.2.2}$\sim $\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Material}{67}{subsubsection.5.8.2.2}
+\contentsline {subsection}{\numberline {5.8.3}Documentation des fonctions membres}{67}{subsection.5.8.3}
+\contentsline {subsubsection}{\numberline {5.8.3.1}add\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Texture}{67}{subsubsection.5.8.3.1}
+\contentsline {subsubsection}{\numberline {5.8.3.2}clear}{67}{subsubsection.5.8.3.2}
+\contentsline {subsubsection}{\numberline {5.8.3.3}from\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}X\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}M\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L}{68}{subsubsection.5.8.3.3}
+\contentsline {subsubsection}{\numberline {5.8.3.4}get}{68}{subsubsection.5.8.3.4}
+\contentsline {subsubsection}{\numberline {5.8.3.5}get}{68}{subsubsection.5.8.3.5}
+\contentsline {subsubsection}{\numberline {5.8.3.6}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Diffuse\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Texture\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Name}{69}{subsubsection.5.8.3.6}
+\contentsline {subsubsection}{\numberline {5.8.3.7}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Normal\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Texture\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Name}{69}{subsubsection.5.8.3.7}
+\contentsline {subsubsection}{\numberline {5.8.3.8}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Specular\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Texture\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Name}{69}{subsubsection.5.8.3.8}
+\contentsline {subsubsection}{\numberline {5.8.3.9}has\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Diffuse\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Texture}{69}{subsubsection.5.8.3.9}
+\contentsline {subsubsection}{\numberline {5.8.3.10}has\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Normal\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Texture}{70}{subsubsection.5.8.3.10}
+\contentsline {subsubsection}{\numberline {5.8.3.11}has\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Specular\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Texture}{70}{subsubsection.5.8.3.11}
+\contentsline {subsubsection}{\numberline {5.8.3.12}has\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Texture}{70}{subsubsection.5.8.3.12}
+\contentsline {subsubsection}{\numberline {5.8.3.13}is\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}From\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}X\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}M\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L}{70}{subsubsection.5.8.3.13}
+\contentsline {subsubsection}{\numberline {5.8.3.14}set}{70}{subsubsection.5.8.3.14}
+\contentsline {subsubsection}{\numberline {5.8.3.15}set}{71}{subsubsection.5.8.3.15}
+\contentsline {subsubsection}{\numberline {5.8.3.16}shininess}{71}{subsubsection.5.8.3.16}
+\contentsline {subsubsection}{\numberline {5.8.3.17}update}{71}{subsubsection.5.8.3.17}
+\contentsline {subsection}{\numberline {5.8.4}Documentation des fonctions amies et associ\IeC {\'e}es}{72}{subsection.5.8.4}
+\contentsline {subsubsection}{\numberline {5.8.4.1}operator$<$$<$}{72}{subsubsection.5.8.4.1}
+\contentsline {subsection}{\numberline {5.8.5}Documentation des donn\IeC {\'e}es membres}{72}{subsection.5.8.5}
+\contentsline {subsubsection}{\numberline {5.8.5.1}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ambient}{72}{subsubsection.5.8.5.1}
+\contentsline {subsubsection}{\numberline {5.8.5.2}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}diffuse}{72}{subsubsection.5.8.5.2}
+\contentsline {subsubsection}{\numberline {5.8.5.3}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}diffuse\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}texture}{72}{subsubsection.5.8.5.3}
+\contentsline {subsubsection}{\numberline {5.8.5.4}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}emissive}{72}{subsubsection.5.8.5.4}
+\contentsline {subsubsection}{\numberline {5.8.5.5}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}from\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}X\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}M\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L}{72}{subsubsection.5.8.5.5}
+\contentsline {subsubsection}{\numberline {5.8.5.6}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}normal\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}texture}{73}{subsubsection.5.8.5.6}
+\contentsline {subsubsection}{\numberline {5.8.5.7}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}shininess}{73}{subsubsection.5.8.5.7}
+\contentsline {subsubsection}{\numberline {5.8.5.8}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}specular}{73}{subsubsection.5.8.5.8}
+\contentsline {subsubsection}{\numberline {5.8.5.9}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}specular\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}texture}{73}{subsubsection.5.8.5.9}
+\contentsline {subsubsection}{\numberline {5.8.5.10}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}textures\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Loaded}{73}{subsubsection.5.8.5.10}
+\contentsline {section}{\numberline {5.9}R\IeC {\'e}f\IeC {\'e}rence de la classe Mesh}{73}{section.5.9}
+\contentsline {subsection}{\numberline {5.9.1}Description d\IeC {\'e}taill\IeC {\'e}e}{76}{subsection.5.9.1}
+\contentsline {subsection}{\numberline {5.9.2}Documentation des constructeurs et destructeur}{76}{subsection.5.9.2}
+\contentsline {subsubsection}{\numberline {5.9.2.1}Mesh}{76}{subsubsection.5.9.2.1}
+\contentsline {subsubsection}{\numberline {5.9.2.2}Mesh}{77}{subsubsection.5.9.2.2}
+\contentsline {subsubsection}{\numberline {5.9.2.3}$\sim $\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Mesh}{77}{subsubsection.5.9.2.3}
+\contentsline {subsection}{\numberline {5.9.3}Documentation des fonctions membres}{77}{subsection.5.9.3}
+\contentsline {subsubsection}{\numberline {5.9.3.1}draw}{77}{subsubsection.5.9.3.1}
+\contentsline {subsubsection}{\numberline {5.9.3.2}load\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Mesh}{77}{subsubsection.5.9.3.2}
+\contentsline {subsection}{\numberline {5.9.4}Documentation des fonctions amies et associ\IeC {\'e}es}{78}{subsection.5.9.4}
+\contentsline {subsubsection}{\numberline {5.9.4.1}Node}{78}{subsubsection.5.9.4.1}
+\contentsline {subsection}{\numberline {5.9.5}Documentation des donn\IeC {\'e}es membres}{78}{subsection.5.9.5}
+\contentsline {subsubsection}{\numberline {5.9.5.1}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}infos}{78}{subsubsection.5.9.5.1}
+\contentsline {section}{\numberline {5.10}R\IeC {\'e}f\IeC {\'e}rence de la structure Mesh\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}:\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}:Mesh\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Info}{78}{section.5.10}
+\contentsline {subsection}{\numberline {5.10.1}Documentation des donn\IeC {\'e}es membres}{78}{subsection.5.10.1}
+\contentsline {subsubsection}{\numberline {5.10.1.1}nb\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Faces}{78}{subsubsection.5.10.1.1}
+\contentsline {subsubsection}{\numberline {5.10.1.2}nb\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}References}{78}{subsubsection.5.10.1.2}
+\contentsline {subsubsection}{\numberline {5.10.1.3}vao}{78}{subsubsection.5.10.1.3}
+\contentsline {subsubsection}{\numberline {5.10.1.4}vbos}{79}{subsubsection.5.10.1.4}
+\contentsline {section}{\numberline {5.11}R\IeC {\'e}f\IeC {\'e}rence de la classe Mondock}{79}{section.5.11}
+\contentsline {subsection}{\numberline {5.11.1}Documentation des constructeurs et destructeur}{84}{subsection.5.11.1}
+\contentsline {subsubsection}{\numberline {5.11.1.1}Mondock}{84}{subsubsection.5.11.1.1}
+\contentsline {subsubsection}{\numberline {5.11.1.2}$\sim $\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Mondock}{84}{subsubsection.5.11.1.2}
+\contentsline {subsection}{\numberline {5.11.2}Documentation des fonctions membres}{84}{subsection.5.11.2}
+\contentsline {subsubsection}{\numberline {5.11.2.1}amblightfuncx}{85}{subsubsection.5.11.2.1}
+\contentsline {subsubsection}{\numberline {5.11.2.2}amblightfuncy}{85}{subsubsection.5.11.2.2}
+\contentsline {subsubsection}{\numberline {5.11.2.3}amblightfuncz}{86}{subsubsection.5.11.2.3}
+\contentsline {subsubsection}{\numberline {5.11.2.4}ambmaterialfuncx}{86}{subsubsection.5.11.2.4}
+\contentsline {subsubsection}{\numberline {5.11.2.5}ambmaterialfuncy}{87}{subsubsection.5.11.2.5}
+\contentsline {subsubsection}{\numberline {5.11.2.6}ambmaterialfuncz}{87}{subsubsection.5.11.2.6}
+\contentsline {subsubsection}{\numberline {5.11.2.7}diflightfuncx}{88}{subsubsection.5.11.2.7}
+\contentsline {subsubsection}{\numberline {5.11.2.8}diflightfuncy}{88}{subsubsection.5.11.2.8}
+\contentsline {subsubsection}{\numberline {5.11.2.9}diflightfuncz}{89}{subsubsection.5.11.2.9}
+\contentsline {subsubsection}{\numberline {5.11.2.10}difmaterialfuncx}{89}{subsubsection.5.11.2.10}
+\contentsline {subsubsection}{\numberline {5.11.2.11}difmaterialfuncy}{90}{subsubsection.5.11.2.11}
+\contentsline {subsubsection}{\numberline {5.11.2.12}difmaterialfuncz}{90}{subsubsection.5.11.2.12}
+\contentsline {subsubsection}{\numberline {5.11.2.13}lumiereambiantejustx}{91}{subsubsection.5.11.2.13}
+\contentsline {subsubsection}{\numberline {5.11.2.14}lumiereambiantejusty}{91}{subsubsection.5.11.2.14}
+\contentsline {subsubsection}{\numberline {5.11.2.15}lumiereambiantejustz}{92}{subsubsection.5.11.2.15}
+\contentsline {subsubsection}{\numberline {5.11.2.16}matobjet}{92}{subsubsection.5.11.2.16}
+\contentsline {subsubsection}{\numberline {5.11.2.17}pereobjet}{93}{subsubsection.5.11.2.17}
+\contentsline {subsubsection}{\numberline {5.11.2.18}poslightfuncx}{93}{subsubsection.5.11.2.18}
+\contentsline {subsubsection}{\numberline {5.11.2.19}poslightfuncy}{94}{subsubsection.5.11.2.19}
+\contentsline {subsubsection}{\numberline {5.11.2.20}poslightfuncz}{94}{subsubsection.5.11.2.20}
+\contentsline {subsubsection}{\numberline {5.11.2.21}rotobjectx}{95}{subsubsection.5.11.2.21}
+\contentsline {subsubsection}{\numberline {5.11.2.22}rotobjecty}{95}{subsubsection.5.11.2.22}
+\contentsline {subsubsection}{\numberline {5.11.2.23}rotobjectz}{96}{subsubsection.5.11.2.23}
+\contentsline {subsubsection}{\numberline {5.11.2.24}rotpiecex}{96}{subsubsection.5.11.2.24}
+\contentsline {subsubsection}{\numberline {5.11.2.25}rotpiecey}{97}{subsubsection.5.11.2.25}
+\contentsline {subsubsection}{\numberline {5.11.2.26}rotpiecez}{97}{subsubsection.5.11.2.26}
+\contentsline {subsubsection}{\numberline {5.11.2.27}scaleobjectx}{98}{subsubsection.5.11.2.27}
+\contentsline {subsubsection}{\numberline {5.11.2.28}scaleobjecty}{98}{subsubsection.5.11.2.28}
+\contentsline {subsubsection}{\numberline {5.11.2.29}scaleobjectz}{99}{subsubsection.5.11.2.29}
+\contentsline {subsubsection}{\numberline {5.11.2.30}scalepiecex}{99}{subsubsection.5.11.2.30}
+\contentsline {subsubsection}{\numberline {5.11.2.31}scalepiecey}{100}{subsubsection.5.11.2.31}
+\contentsline {subsubsection}{\numberline {5.11.2.32}scalepiecez}{100}{subsubsection.5.11.2.32}
+\contentsline {subsubsection}{\numberline {5.11.2.33}scalesliderobject}{101}{subsubsection.5.11.2.33}
+\contentsline {subsubsection}{\numberline {5.11.2.34}scalesliderpiece}{101}{subsubsection.5.11.2.34}
+\contentsline {subsubsection}{\numberline {5.11.2.35}selectionlight}{102}{subsubsection.5.11.2.35}
+\contentsline {subsubsection}{\numberline {5.11.2.36}slotpositionpiecex}{103}{subsubsection.5.11.2.36}
+\contentsline {subsubsection}{\numberline {5.11.2.37}slotpositionpiecey}{103}{subsubsection.5.11.2.37}
+\contentsline {subsubsection}{\numberline {5.11.2.38}slotpositionpiecez}{104}{subsubsection.5.11.2.38}
+\contentsline {subsubsection}{\numberline {5.11.2.39}spelightfuncx}{104}{subsubsection.5.11.2.39}
+\contentsline {subsubsection}{\numberline {5.11.2.40}spelightfuncy}{105}{subsubsection.5.11.2.40}
+\contentsline {subsubsection}{\numberline {5.11.2.41}spelightfuncz}{105}{subsubsection.5.11.2.41}
+\contentsline {subsubsection}{\numberline {5.11.2.42}spematerialfuncx}{106}{subsubsection.5.11.2.42}
+\contentsline {subsubsection}{\numberline {5.11.2.43}spematerialfuncy}{106}{subsubsection.5.11.2.43}
+\contentsline {subsubsection}{\numberline {5.11.2.44}spematerialfuncz}{107}{subsubsection.5.11.2.44}
+\contentsline {subsubsection}{\numberline {5.11.2.45}spematerialtfunca}{107}{subsubsection.5.11.2.45}
+\contentsline {subsubsection}{\numberline {5.11.2.46}traitementambiante}{108}{subsubsection.5.11.2.46}
+\contentsline {subsubsection}{\numberline {5.11.2.47}traitementlumiere}{109}{subsubsection.5.11.2.47}
+\contentsline {subsubsection}{\numberline {5.11.2.48}traitementmaterial}{110}{subsubsection.5.11.2.48}
+\contentsline {subsubsection}{\numberline {5.11.2.49}traitementobjet}{111}{subsubsection.5.11.2.49}
+\contentsline {subsubsection}{\numberline {5.11.2.50}traitementpiece}{112}{subsubsection.5.11.2.50}
+\contentsline {subsubsection}{\numberline {5.11.2.51}transobjectx}{113}{subsubsection.5.11.2.51}
+\contentsline {subsubsection}{\numberline {5.11.2.52}transobjecty}{113}{subsubsection.5.11.2.52}
+\contentsline {subsubsection}{\numberline {5.11.2.53}transobjectz}{114}{subsubsection.5.11.2.53}
+\contentsline {subsection}{\numberline {5.11.3}Documentation des donn\IeC {\'e}es membres}{114}{subsection.5.11.3}
+\contentsline {subsubsection}{\numberline {5.11.3.1}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}itemmaterial}{114}{subsubsection.5.11.3.1}
+\contentsline {subsubsection}{\numberline {5.11.3.2}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}itempiece}{114}{subsubsection.5.11.3.2}
+\contentsline {subsubsection}{\numberline {5.11.3.3}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}light}{114}{subsubsection.5.11.3.3}
+\contentsline {subsubsection}{\numberline {5.11.3.4}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}materiaux}{114}{subsubsection.5.11.3.4}
+\contentsline {subsubsection}{\numberline {5.11.3.5}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}objet}{114}{subsubsection.5.11.3.5}
+\contentsline {subsubsection}{\numberline {5.11.3.6}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}piece}{114}{subsubsection.5.11.3.6}
+\contentsline {subsubsection}{\numberline {5.11.3.7}boxobjetrotationx}{114}{subsubsection.5.11.3.7}
+\contentsline {subsubsection}{\numberline {5.11.3.8}boxobjetrotationy}{114}{subsubsection.5.11.3.8}
+\contentsline {subsubsection}{\numberline {5.11.3.9}boxobjetrotationz}{114}{subsubsection.5.11.3.9}
+\contentsline {subsubsection}{\numberline {5.11.3.10}boxobjetscalex}{114}{subsubsection.5.11.3.10}
+\contentsline {subsubsection}{\numberline {5.11.3.11}boxobjetscaley}{114}{subsubsection.5.11.3.11}
+\contentsline {subsubsection}{\numberline {5.11.3.12}boxobjetscalez}{114}{subsubsection.5.11.3.12}
+\contentsline {subsubsection}{\numberline {5.11.3.13}boxobjettransx}{114}{subsubsection.5.11.3.13}
+\contentsline {subsubsection}{\numberline {5.11.3.14}boxobjettransy}{114}{subsubsection.5.11.3.14}
+\contentsline {subsubsection}{\numberline {5.11.3.15}boxobjettransz}{114}{subsubsection.5.11.3.15}
+\contentsline {subsubsection}{\numberline {5.11.3.16}combomaterial}{115}{subsubsection.5.11.3.16}
+\contentsline {subsubsection}{\numberline {5.11.3.17}comboparent}{115}{subsubsection.5.11.3.17}
+\contentsline {subsubsection}{\numberline {5.11.3.18}dimentionpiecex}{115}{subsubsection.5.11.3.18}
+\contentsline {subsubsection}{\numberline {5.11.3.19}dimentionpiecey}{115}{subsubsection.5.11.3.19}
+\contentsline {subsubsection}{\numberline {5.11.3.20}dimentionpiecez}{115}{subsubsection.5.11.3.20}
+\contentsline {subsubsection}{\numberline {5.11.3.21}dockmodele}{115}{subsubsection.5.11.3.21}
+\contentsline {subsubsection}{\numberline {5.11.3.22}dockscene}{115}{subsubsection.5.11.3.22}
+\contentsline {subsubsection}{\numberline {5.11.3.23}dockvue}{115}{subsubsection.5.11.3.23}
+\contentsline {subsubsection}{\numberline {5.11.3.24}editionambiante}{115}{subsubsection.5.11.3.24}
+\contentsline {subsubsection}{\numberline {5.11.3.25}element\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Selectionne\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}G\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Parent}{115}{subsubsection.5.11.3.25}
+\contentsline {subsubsection}{\numberline {5.11.3.26}element\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Selectionne\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Parent}{115}{subsubsection.5.11.3.26}
+\contentsline {subsubsection}{\numberline {5.11.3.27}index\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Element\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Selectionne}{115}{subsubsection.5.11.3.27}
+\contentsline {subsubsection}{\numberline {5.11.3.28}indexgparent}{115}{subsubsection.5.11.3.28}
+\contentsline {subsubsection}{\numberline {5.11.3.29}indexlight\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Selectionne}{115}{subsubsection.5.11.3.29}
+\contentsline {subsubsection}{\numberline {5.11.3.30}indexmaterial\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Selectionne}{115}{subsubsection.5.11.3.30}
+\contentsline {subsubsection}{\numberline {5.11.3.31}indexobjetl\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Selectionne}{115}{subsubsection.5.11.3.31}
+\contentsline {subsubsection}{\numberline {5.11.3.32}indexpiece\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Selectionne}{115}{subsubsection.5.11.3.32}
+\contentsline {subsubsection}{\numberline {5.11.3.33}labelamblayout}{115}{subsubsection.5.11.3.33}
+\contentsline {subsubsection}{\numberline {5.11.3.34}labelambx}{115}{subsubsection.5.11.3.34}
+\contentsline {subsubsection}{\numberline {5.11.3.35}labelamby}{115}{subsubsection.5.11.3.35}
+\contentsline {subsubsection}{\numberline {5.11.3.36}labelambz}{115}{subsubsection.5.11.3.36}
+\contentsline {subsubsection}{\numberline {5.11.3.37}labeldiflayout}{115}{subsubsection.5.11.3.37}
+\contentsline {subsubsection}{\numberline {5.11.3.38}labeldifx}{115}{subsubsection.5.11.3.38}
+\contentsline {subsubsection}{\numberline {5.11.3.39}labeldify}{115}{subsubsection.5.11.3.39}
+\contentsline {subsubsection}{\numberline {5.11.3.40}labeldifz}{115}{subsubsection.5.11.3.40}
+\contentsline {subsubsection}{\numberline {5.11.3.41}labelobjetproprmaterial}{115}{subsubsection.5.11.3.41}
+\contentsline {subsubsection}{\numberline {5.11.3.42}labelobjetproprparent}{115}{subsubsection.5.11.3.42}
+\contentsline {subsubsection}{\numberline {5.11.3.43}labelsliderobjetscale}{115}{subsubsection.5.11.3.43}
+\contentsline {subsubsection}{\numberline {5.11.3.44}labelspelayout}{116}{subsubsection.5.11.3.44}
+\contentsline {subsubsection}{\numberline {5.11.3.45}labelspex}{116}{subsubsection.5.11.3.45}
+\contentsline {subsubsection}{\numberline {5.11.3.46}labelspey}{116}{subsubsection.5.11.3.46}
+\contentsline {subsubsection}{\numberline {5.11.3.47}labelspez}{116}{subsubsection.5.11.3.47}
+\contentsline {subsubsection}{\numberline {5.11.3.48}layouteditionlighamb}{116}{subsubsection.5.11.3.48}
+\contentsline {subsubsection}{\numberline {5.11.3.49}layoutglobalscaleobjet}{116}{subsubsection.5.11.3.49}
+\contentsline {subsubsection}{\numberline {5.11.3.50}layoutobjetscaleall}{116}{subsubsection.5.11.3.50}
+\contentsline {subsubsection}{\numberline {5.11.3.51}layouttabobjetpropr}{116}{subsubsection.5.11.3.51}
+\contentsline {subsubsection}{\numberline {5.11.3.52}layouttabobjetproprcombo}{116}{subsubsection.5.11.3.52}
+\contentsline {subsubsection}{\numberline {5.11.3.53}layouttabobjetproprlabel}{116}{subsubsection.5.11.3.53}
+\contentsline {subsubsection}{\numberline {5.11.3.54}layouttabobjetrotation}{116}{subsubsection.5.11.3.54}
+\contentsline {subsubsection}{\numberline {5.11.3.55}layouttabobjetscale}{116}{subsubsection.5.11.3.55}
+\contentsline {subsubsection}{\numberline {5.11.3.56}layouttabobjettrans}{116}{subsubsection.5.11.3.56}
+\contentsline {subsubsection}{\numberline {5.11.3.57}lightamblayout}{116}{subsubsection.5.11.3.57}
+\contentsline {subsubsection}{\numberline {5.11.3.58}lightdiflayout}{116}{subsubsection.5.11.3.58}
+\contentsline {subsubsection}{\numberline {5.11.3.59}lightdoublespinboxx}{116}{subsubsection.5.11.3.59}
+\contentsline {subsubsection}{\numberline {5.11.3.60}lightdoublespinboxy}{116}{subsubsection.5.11.3.60}
+\contentsline {subsubsection}{\numberline {5.11.3.61}lightdoublespinboxz}{116}{subsubsection.5.11.3.61}
+\contentsline {subsubsection}{\numberline {5.11.3.62}lightselectioner}{116}{subsubsection.5.11.3.62}
+\contentsline {subsubsection}{\numberline {5.11.3.63}lightspelayout}{116}{subsubsection.5.11.3.63}
+\contentsline {subsubsection}{\numberline {5.11.3.64}materialselectioner}{116}{subsubsection.5.11.3.64}
+\contentsline {subsubsection}{\numberline {5.11.3.65}materialspinboxambx}{116}{subsubsection.5.11.3.65}
+\contentsline {subsubsection}{\numberline {5.11.3.66}materialspinboxamby}{116}{subsubsection.5.11.3.66}
+\contentsline {subsubsection}{\numberline {5.11.3.67}materialspinboxambz}{116}{subsubsection.5.11.3.67}
+\contentsline {subsubsection}{\numberline {5.11.3.68}materialspinboxdifx}{116}{subsubsection.5.11.3.68}
+\contentsline {subsubsection}{\numberline {5.11.3.69}materialspinboxdify}{116}{subsubsection.5.11.3.69}
+\contentsline {subsubsection}{\numberline {5.11.3.70}materialspinboxdifz}{116}{subsubsection.5.11.3.70}
+\contentsline {subsubsection}{\numberline {5.11.3.71}materialspinboxspea}{116}{subsubsection.5.11.3.71}
+\contentsline {subsubsection}{\numberline {5.11.3.72}materialspinboxspex}{117}{subsubsection.5.11.3.72}
+\contentsline {subsubsection}{\numberline {5.11.3.73}materialspinboxspey}{117}{subsubsection.5.11.3.73}
+\contentsline {subsubsection}{\numberline {5.11.3.74}materialspinboxspez}{117}{subsubsection.5.11.3.74}
+\contentsline {subsubsection}{\numberline {5.11.3.75}modelmaterial}{117}{subsubsection.5.11.3.75}
+\contentsline {subsubsection}{\numberline {5.11.3.76}modelpiece}{117}{subsubsection.5.11.3.76}
+\contentsline {subsubsection}{\numberline {5.11.3.77}objetselectioner}{117}{subsubsection.5.11.3.77}
+\contentsline {subsubsection}{\numberline {5.11.3.78}piecedimlayout}{117}{subsubsection.5.11.3.78}
+\contentsline {subsubsection}{\numberline {5.11.3.79}pieceposilayout}{117}{subsubsection.5.11.3.79}
+\contentsline {subsubsection}{\numberline {5.11.3.80}piecerotatelayout}{117}{subsubsection.5.11.3.80}
+\contentsline {subsubsection}{\numberline {5.11.3.81}piecescalelayout}{117}{subsubsection.5.11.3.81}
+\contentsline {subsubsection}{\numberline {5.11.3.82}pieceselectioner}{117}{subsubsection.5.11.3.82}
+\contentsline {subsubsection}{\numberline {5.11.3.83}positionpiecex}{117}{subsubsection.5.11.3.83}
+\contentsline {subsubsection}{\numberline {5.11.3.84}positionpiecey}{117}{subsubsection.5.11.3.84}
+\contentsline {subsubsection}{\numberline {5.11.3.85}positionpiecez}{117}{subsubsection.5.11.3.85}
+\contentsline {subsubsection}{\numberline {5.11.3.86}rotspinboxx}{117}{subsubsection.5.11.3.86}
+\contentsline {subsubsection}{\numberline {5.11.3.87}rotspinboxy}{117}{subsubsection.5.11.3.87}
+\contentsline {subsubsection}{\numberline {5.11.3.88}rotspinboxz}{117}{subsubsection.5.11.3.88}
+\contentsline {subsubsection}{\numberline {5.11.3.89}scalelabel}{117}{subsubsection.5.11.3.89}
+\contentsline {subsubsection}{\numberline {5.11.3.90}scaleslider}{117}{subsubsection.5.11.3.90}
+\contentsline {subsubsection}{\numberline {5.11.3.91}scalesliderlayout}{117}{subsubsection.5.11.3.91}
+\contentsline {subsubsection}{\numberline {5.11.3.92}scalespinboxlayout}{117}{subsubsection.5.11.3.92}
+\contentsline {subsubsection}{\numberline {5.11.3.93}scalespinboxx}{117}{subsubsection.5.11.3.93}
+\contentsline {subsubsection}{\numberline {5.11.3.94}scalespinboxy}{117}{subsubsection.5.11.3.94}
+\contentsline {subsubsection}{\numberline {5.11.3.95}scalespinboxz}{117}{subsubsection.5.11.3.95}
+\contentsline {subsubsection}{\numberline {5.11.3.96}selection}{117}{subsubsection.5.11.3.96}
+\contentsline {subsubsection}{\numberline {5.11.3.97}sliderambx}{117}{subsubsection.5.11.3.97}
+\contentsline {subsubsection}{\numberline {5.11.3.98}slideramby}{117}{subsubsection.5.11.3.98}
+\contentsline {subsubsection}{\numberline {5.11.3.99}sliderambz}{117}{subsubsection.5.11.3.99}
+\contentsline {subsubsection}{\numberline {5.11.3.100}sliderdifx}{118}{subsubsection.5.11.3.100}
+\contentsline {subsubsection}{\numberline {5.11.3.101}sliderdify}{118}{subsubsection.5.11.3.101}
+\contentsline {subsubsection}{\numberline {5.11.3.102}sliderdifz}{118}{subsubsection.5.11.3.102}
+\contentsline {subsubsection}{\numberline {5.11.3.103}sliderobjetscale}{118}{subsubsection.5.11.3.103}
+\contentsline {subsubsection}{\numberline {5.11.3.104}sliderspex}{118}{subsubsection.5.11.3.104}
+\contentsline {subsubsection}{\numberline {5.11.3.105}sliderspey}{118}{subsubsection.5.11.3.105}
+\contentsline {subsubsection}{\numberline {5.11.3.106}sliderspez}{118}{subsubsection.5.11.3.106}
+\contentsline {subsubsection}{\numberline {5.11.3.107}spinboxlumiereambiantex}{118}{subsubsection.5.11.3.107}
+\contentsline {subsubsection}{\numberline {5.11.3.108}spinboxlumiereambiantey}{118}{subsubsection.5.11.3.108}
+\contentsline {subsubsection}{\numberline {5.11.3.109}spinboxlumiereambiantez}{118}{subsubsection.5.11.3.109}
+\contentsline {subsubsection}{\numberline {5.11.3.110}tabamblayout}{118}{subsubsection.5.11.3.110}
+\contentsline {subsubsection}{\numberline {5.11.3.111}tabdiflayout}{118}{subsubsection.5.11.3.111}
+\contentsline {subsubsection}{\numberline {5.11.3.112}tablight}{118}{subsubsection.5.11.3.112}
+\contentsline {subsubsection}{\numberline {5.11.3.113}tablightamb}{118}{subsubsection.5.11.3.113}
+\contentsline {subsubsection}{\numberline {5.11.3.114}tablightdif}{118}{subsubsection.5.11.3.114}
+\contentsline {subsubsection}{\numberline {5.11.3.115}tablightpos}{118}{subsubsection.5.11.3.115}
+\contentsline {subsubsection}{\numberline {5.11.3.116}tablightposlayout}{118}{subsubsection.5.11.3.116}
+\contentsline {subsubsection}{\numberline {5.11.3.117}tablightspe}{118}{subsubsection.5.11.3.117}
+\contentsline {subsubsection}{\numberline {5.11.3.118}tabmaterial}{118}{subsubsection.5.11.3.118}
+\contentsline {subsubsection}{\numberline {5.11.3.119}tabmaterialamb}{118}{subsubsection.5.11.3.119}
+\contentsline {subsubsection}{\numberline {5.11.3.120}tabmaterialamblayout}{118}{subsubsection.5.11.3.120}
+\contentsline {subsubsection}{\numberline {5.11.3.121}tabmaterialdif}{118}{subsubsection.5.11.3.121}
+\contentsline {subsubsection}{\numberline {5.11.3.122}tabmaterialdiflayout}{118}{subsubsection.5.11.3.122}
+\contentsline {subsubsection}{\numberline {5.11.3.123}tabmaterialspe}{118}{subsubsection.5.11.3.123}
+\contentsline {subsubsection}{\numberline {5.11.3.124}tabmaterialspelayout}{118}{subsubsection.5.11.3.124}
+\contentsline {subsubsection}{\numberline {5.11.3.125}tabobjet}{118}{subsubsection.5.11.3.125}
+\contentsline {subsubsection}{\numberline {5.11.3.126}tabobjetpropr}{118}{subsubsection.5.11.3.126}
+\contentsline {subsubsection}{\numberline {5.11.3.127}tabobjetrotation}{118}{subsubsection.5.11.3.127}
+\contentsline {subsubsection}{\numberline {5.11.3.128}tabobjetscale}{119}{subsubsection.5.11.3.128}
+\contentsline {subsubsection}{\numberline {5.11.3.129}tabobjettrans}{119}{subsubsection.5.11.3.129}
+\contentsline {subsubsection}{\numberline {5.11.3.130}tabpiece}{119}{subsubsection.5.11.3.130}
+\contentsline {subsubsection}{\numberline {5.11.3.131}tabspelayout}{119}{subsubsection.5.11.3.131}
+\contentsline {subsubsection}{\numberline {5.11.3.132}widgetpiecedim}{119}{subsubsection.5.11.3.132}
+\contentsline {subsubsection}{\numberline {5.11.3.133}widgetpieceposi}{119}{subsubsection.5.11.3.133}
+\contentsline {subsubsection}{\numberline {5.11.3.134}widgetpiecerotate}{119}{subsubsection.5.11.3.134}
+\contentsline {subsubsection}{\numberline {5.11.3.135}widgetpiecescale}{119}{subsubsection.5.11.3.135}
+\contentsline {section}{\numberline {5.12}R\IeC {\'e}f\IeC {\'e}rence de la classe My\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Open\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}G\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Widget}{119}{section.5.12}
+\contentsline {subsection}{\numberline {5.12.1}Documentation des constructeurs et destructeur}{122}{subsection.5.12.1}
+\contentsline {subsubsection}{\numberline {5.12.1.1}My\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Open\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}G\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Widget}{122}{subsubsection.5.12.1.1}
+\contentsline {subsubsection}{\numberline {5.12.1.2}$\sim $\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}My\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Open\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}G\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Widget}{122}{subsubsection.5.12.1.2}
+\contentsline {subsection}{\numberline {5.12.2}Documentation des fonctions membres}{122}{subsection.5.12.2}
+\contentsline {subsubsection}{\numberline {5.12.2.1}add\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shader}{122}{subsubsection.5.12.2.1}
+\contentsline {subsubsection}{\numberline {5.12.2.2}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Scene}{123}{subsubsection.5.12.2.2}
+\contentsline {subsubsection}{\numberline {5.12.2.3}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shader\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Names}{123}{subsubsection.5.12.2.3}
+\contentsline {subsubsection}{\numberline {5.12.2.4}init\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Framebuffer}{123}{subsubsection.5.12.2.4}
+\contentsline {subsubsection}{\numberline {5.12.2.5}initialize\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}G\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L}{123}{subsubsection.5.12.2.5}
+\contentsline {subsubsection}{\numberline {5.12.2.6}key\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Press\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Event}{124}{subsubsection.5.12.2.6}
+\contentsline {subsubsection}{\numberline {5.12.2.7}key\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Release\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Event}{124}{subsubsection.5.12.2.7}
+\contentsline {subsubsection}{\numberline {5.12.2.8}load\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shaders}{124}{subsubsection.5.12.2.8}
+\contentsline {subsubsection}{\numberline {5.12.2.9}minimum\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Size\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Hint}{124}{subsubsection.5.12.2.9}
+\contentsline {subsubsection}{\numberline {5.12.2.10}mouse\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Move\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Event}{124}{subsubsection.5.12.2.10}
+\contentsline {subsubsection}{\numberline {5.12.2.11}mouse\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Press\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Event}{125}{subsubsection.5.12.2.11}
+\contentsline {subsubsection}{\numberline {5.12.2.12}paint\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}G\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L}{125}{subsubsection.5.12.2.12}
+\contentsline {subsubsection}{\numberline {5.12.2.13}resize\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}G\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L}{125}{subsubsection.5.12.2.13}
+\contentsline {subsubsection}{\numberline {5.12.2.14}save\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shaders}{125}{subsubsection.5.12.2.14}
+\contentsline {subsubsection}{\numberline {5.12.2.15}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Scene}{125}{subsubsection.5.12.2.15}
+\contentsline {subsubsection}{\numberline {5.12.2.16}size\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Hint}{125}{subsubsection.5.12.2.16}
+\contentsline {subsubsection}{\numberline {5.12.2.17}use\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shader}{126}{subsubsection.5.12.2.17}
+\contentsline {subsection}{\numberline {5.12.3}Documentation des donn\IeC {\'e}es membres}{126}{subsection.5.12.3}
+\contentsline {subsubsection}{\numberline {5.12.3.1}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}active\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Program}{126}{subsubsection.5.12.3.1}
+\contentsline {subsubsection}{\numberline {5.12.3.2}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}capture\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Mouse}{126}{subsubsection.5.12.3.2}
+\contentsline {subsubsection}{\numberline {5.12.3.3}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}framebuffer}{126}{subsubsection.5.12.3.3}
+\contentsline {subsubsection}{\numberline {5.12.3.4}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}loaded\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shaders}{126}{subsubsection.5.12.3.4}
+\contentsline {subsubsection}{\numberline {5.12.3.5}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}path}{126}{subsubsection.5.12.3.5}
+\contentsline {subsubsection}{\numberline {5.12.3.6}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}pixel\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}scale}{126}{subsubsection.5.12.3.6}
+\contentsline {subsubsection}{\numberline {5.12.3.7}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}post\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Process\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Programs}{126}{subsubsection.5.12.3.7}
+\contentsline {subsubsection}{\numberline {5.12.3.8}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}renderbuffer}{126}{subsubsection.5.12.3.8}
+\contentsline {subsubsection}{\numberline {5.12.3.9}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}scene}{126}{subsubsection.5.12.3.9}
+\contentsline {subsubsection}{\numberline {5.12.3.10}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}texture}{126}{subsubsection.5.12.3.10}
+\contentsline {subsubsection}{\numberline {5.12.3.11}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}timer}{126}{subsubsection.5.12.3.11}
+\contentsline {subsubsection}{\numberline {5.12.3.12}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}vao\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}quad}{126}{subsubsection.5.12.3.12}
+\contentsline {section}{\numberline {5.13}R\IeC {\'e}f\IeC {\'e}rence de la classe Node}{126}{section.5.13}
+\contentsline {subsection}{\numberline {5.13.1}Description d\IeC {\'e}taill\IeC {\'e}e}{129}{subsection.5.13.1}
+\contentsline {subsection}{\numberline {5.13.2}Documentation des constructeurs et destructeur}{129}{subsection.5.13.2}
+\contentsline {subsubsection}{\numberline {5.13.2.1}Node}{129}{subsubsection.5.13.2.1}
+\contentsline {subsubsection}{\numberline {5.13.2.2}Node}{130}{subsubsection.5.13.2.2}
+\contentsline {subsubsection}{\numberline {5.13.2.3}$\sim $\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Node}{130}{subsubsection.5.13.2.3}
+\contentsline {subsection}{\numberline {5.13.3}Documentation des fonctions membres}{130}{subsection.5.13.3}
+\contentsline {subsubsection}{\numberline {5.13.3.1}draw}{130}{subsubsection.5.13.3.1}
+\contentsline {subsubsection}{\numberline {5.13.3.2}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Child}{131}{subsubsection.5.13.3.2}
+\contentsline {subsubsection}{\numberline {5.13.3.3}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Children\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Names}{131}{subsubsection.5.13.3.3}
+\contentsline {subsubsection}{\numberline {5.13.3.4}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Mesh}{131}{subsubsection.5.13.3.4}
+\contentsline {subsubsection}{\numberline {5.13.3.5}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Mesh\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Names}{132}{subsubsection.5.13.3.5}
+\contentsline {subsubsection}{\numberline {5.13.3.6}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Model\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Name}{132}{subsubsection.5.13.3.6}
+\contentsline {subsubsection}{\numberline {5.13.3.7}load\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Material}{132}{subsubsection.5.13.3.7}
+\contentsline {subsubsection}{\numberline {5.13.3.8}load\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Model}{133}{subsubsection.5.13.3.8}
+\contentsline {subsubsection}{\numberline {5.13.3.9}load\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Node}{134}{subsubsection.5.13.3.9}
+\contentsline {subsubsection}{\numberline {5.13.3.10}remove\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Child}{135}{subsubsection.5.13.3.10}
+\contentsline {subsubsection}{\numberline {5.13.3.11}remove\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Mesh}{135}{subsubsection.5.13.3.11}
+\contentsline {subsection}{\numberline {5.13.4}Documentation des donn\IeC {\'e}es membres}{136}{subsection.5.13.4}
+\contentsline {subsubsection}{\numberline {5.13.4.1}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}children}{136}{subsubsection.5.13.4.1}
+\contentsline {subsubsection}{\numberline {5.13.4.2}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}loaded\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Models}{136}{subsubsection.5.13.4.2}
+\contentsline {subsubsection}{\numberline {5.13.4.3}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}meshs}{136}{subsubsection.5.13.4.3}
+\contentsline {section}{\numberline {5.14}R\IeC {\'e}f\IeC {\'e}rence de la classe Objet}{136}{section.5.14}
+\contentsline {subsection}{\numberline {5.14.1}Description d\IeC {\'e}taill\IeC {\'e}e}{139}{subsection.5.14.1}
+\contentsline {subsection}{\numberline {5.14.2}Documentation des constructeurs et destructeur}{140}{subsection.5.14.2}
+\contentsline {subsubsection}{\numberline {5.14.2.1}Objet}{140}{subsubsection.5.14.2.1}
+\contentsline {subsubsection}{\numberline {5.14.2.2}Objet}{140}{subsubsection.5.14.2.2}
+\contentsline {subsubsection}{\numberline {5.14.2.3}$\sim $\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Objet}{140}{subsubsection.5.14.2.3}
+\contentsline {subsection}{\numberline {5.14.3}Documentation des fonctions membres}{140}{subsection.5.14.3}
+\contentsline {subsubsection}{\numberline {5.14.3.1}activate\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shader}{140}{subsubsection.5.14.3.1}
+\contentsline {subsubsection}{\numberline {5.14.3.2}apply\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Material}{141}{subsubsection.5.14.3.2}
+\contentsline {subsubsection}{\numberline {5.14.3.3}draw}{142}{subsubsection.5.14.3.3}
+\contentsline {subsubsection}{\numberline {5.14.3.4}draw\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Hitbox}{143}{subsubsection.5.14.3.4}
+\contentsline {subsubsection}{\numberline {5.14.3.5}draw\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Hitbox}{143}{subsubsection.5.14.3.5}
+\contentsline {subsubsection}{\numberline {5.14.3.6}material}{144}{subsubsection.5.14.3.6}
+\contentsline {subsubsection}{\numberline {5.14.3.7}material}{144}{subsubsection.5.14.3.7}
+\contentsline {subsubsection}{\numberline {5.14.3.8}name}{144}{subsubsection.5.14.3.8}
+\contentsline {subsubsection}{\numberline {5.14.3.9}name}{144}{subsubsection.5.14.3.9}
+\contentsline {subsubsection}{\numberline {5.14.3.10}parent}{145}{subsubsection.5.14.3.10}
+\contentsline {subsubsection}{\numberline {5.14.3.11}parent}{145}{subsubsection.5.14.3.11}
+\contentsline {subsubsection}{\numberline {5.14.3.12}position}{145}{subsubsection.5.14.3.12}
+\contentsline {subsubsection}{\numberline {5.14.3.13}position}{146}{subsubsection.5.14.3.13}
+\contentsline {subsubsection}{\numberline {5.14.3.14}position}{146}{subsubsection.5.14.3.14}
+\contentsline {subsubsection}{\numberline {5.14.3.15}rotation}{146}{subsubsection.5.14.3.15}
+\contentsline {subsubsection}{\numberline {5.14.3.16}rotation}{147}{subsubsection.5.14.3.16}
+\contentsline {subsubsection}{\numberline {5.14.3.17}rotation}{147}{subsubsection.5.14.3.17}
+\contentsline {subsubsection}{\numberline {5.14.3.18}scale}{147}{subsubsection.5.14.3.18}
+\contentsline {subsubsection}{\numberline {5.14.3.19}scale}{148}{subsubsection.5.14.3.19}
+\contentsline {subsubsection}{\numberline {5.14.3.20}scale}{148}{subsubsection.5.14.3.20}
+\contentsline {subsubsection}{\numberline {5.14.3.21}shader\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Id}{149}{subsubsection.5.14.3.21}
+\contentsline {subsubsection}{\numberline {5.14.3.22}shader\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Id}{150}{subsubsection.5.14.3.22}
+\contentsline {subsubsection}{\numberline {5.14.3.23}update\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Model}{150}{subsubsection.5.14.3.23}
+\contentsline {subsection}{\numberline {5.14.4}Documentation des donn\IeC {\'e}es membres}{151}{subsection.5.14.4}
+\contentsline {subsubsection}{\numberline {5.14.4.1}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}draw\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Hitbox}{151}{subsubsection.5.14.4.1}
+\contentsline {subsubsection}{\numberline {5.14.4.2}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}mat}{151}{subsubsection.5.14.4.2}
+\contentsline {subsubsection}{\numberline {5.14.4.3}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}model}{151}{subsubsection.5.14.4.3}
+\contentsline {subsubsection}{\numberline {5.14.4.4}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}name}{151}{subsubsection.5.14.4.4}
+\contentsline {subsubsection}{\numberline {5.14.4.5}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}parent}{151}{subsubsection.5.14.4.5}
+\contentsline {subsubsection}{\numberline {5.14.4.6}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}position}{151}{subsubsection.5.14.4.6}
+\contentsline {subsubsection}{\numberline {5.14.4.7}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}rotation}{151}{subsubsection.5.14.4.7}
+\contentsline {subsubsection}{\numberline {5.14.4.8}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}scale}{151}{subsubsection.5.14.4.8}
+\contentsline {subsubsection}{\numberline {5.14.4.9}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}shader\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Id}{151}{subsubsection.5.14.4.9}
+\contentsline {section}{\numberline {5.15}R\IeC {\'e}f\IeC {\'e}rence de la classe Piece}{151}{section.5.15}
+\contentsline {subsection}{\numberline {5.15.1}Description d\IeC {\'e}taill\IeC {\'e}e}{154}{subsection.5.15.1}
+\contentsline {subsection}{\numberline {5.15.2}Documentation des constructeurs et destructeur}{154}{subsection.5.15.2}
+\contentsline {subsubsection}{\numberline {5.15.2.1}Piece}{154}{subsubsection.5.15.2.1}
+\contentsline {subsubsection}{\numberline {5.15.2.2}$\sim $\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Piece}{154}{subsubsection.5.15.2.2}
+\contentsline {subsection}{\numberline {5.15.3}Documentation des fonctions membres}{154}{subsection.5.15.3}
+\contentsline {subsubsection}{\numberline {5.15.3.1}add\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Child}{154}{subsubsection.5.15.3.1}
+\contentsline {subsubsection}{\numberline {5.15.3.2}add\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Child}{155}{subsubsection.5.15.3.2}
+\contentsline {subsubsection}{\numberline {5.15.3.3}delete\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Child}{155}{subsubsection.5.15.3.3}
+\contentsline {subsubsection}{\numberline {5.15.3.4}dimensions}{155}{subsubsection.5.15.3.4}
+\contentsline {subsubsection}{\numberline {5.15.3.5}dimensions}{155}{subsubsection.5.15.3.5}
+\contentsline {subsubsection}{\numberline {5.15.3.6}dimensions}{156}{subsubsection.5.15.3.6}
+\contentsline {subsubsection}{\numberline {5.15.3.7}draw}{156}{subsubsection.5.15.3.7}
+\contentsline {subsubsection}{\numberline {5.15.3.8}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Child}{156}{subsubsection.5.15.3.8}
+\contentsline {subsubsection}{\numberline {5.15.3.9}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Children}{157}{subsubsection.5.15.3.9}
+\contentsline {subsubsection}{\numberline {5.15.3.10}remove\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Child}{157}{subsubsection.5.15.3.10}
+\contentsline {subsection}{\numberline {5.15.4}Documentation des donn\IeC {\'e}es membres}{157}{subsection.5.15.4}
+\contentsline {subsubsection}{\numberline {5.15.4.1}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}children}{157}{subsubsection.5.15.4.1}
+\contentsline {subsubsection}{\numberline {5.15.4.2}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}dimensions}{157}{subsubsection.5.15.4.2}
+\contentsline {section}{\numberline {5.16}R\IeC {\'e}f\IeC {\'e}rence de la classe Plan}{157}{section.5.16}
+\contentsline {subsection}{\numberline {5.16.1}Description d\IeC {\'e}taill\IeC {\'e}e}{160}{subsection.5.16.1}
+\contentsline {subsection}{\numberline {5.16.2}Documentation des constructeurs et destructeur}{160}{subsection.5.16.2}
+\contentsline {subsubsection}{\numberline {5.16.2.1}Plan}{160}{subsubsection.5.16.2.1}
+\contentsline {subsubsection}{\numberline {5.16.2.2}$\sim $\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Plan}{160}{subsubsection.5.16.2.2}
+\contentsline {subsection}{\numberline {5.16.3}Documentation des fonctions membres}{160}{subsection.5.16.3}
+\contentsline {subsubsection}{\numberline {5.16.3.1}draw}{160}{subsubsection.5.16.3.1}
+\contentsline {subsubsection}{\numberline {5.16.3.2}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Fenetres}{161}{subsubsection.5.16.3.2}
+\contentsline {subsection}{\numberline {5.16.4}Documentation des donn\IeC {\'e}es membres}{161}{subsection.5.16.4}
+\contentsline {subsubsection}{\numberline {5.16.4.1}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}fenetres}{161}{subsubsection.5.16.4.1}
+\contentsline {subsubsection}{\numberline {5.16.4.2}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}max\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}P}{161}{subsubsection.5.16.4.2}
+\contentsline {subsubsection}{\numberline {5.16.4.3}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}min\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}P}{161}{subsubsection.5.16.4.3}
+\contentsline {subsubsection}{\numberline {5.16.4.4}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}nb\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Indices}{161}{subsubsection.5.16.4.4}
+\contentsline {subsubsection}{\numberline {5.16.4.5}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}vao}{161}{subsubsection.5.16.4.5}
+\contentsline {subsubsection}{\numberline {5.16.4.6}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}vbo\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}indices}{161}{subsubsection.5.16.4.6}
+\contentsline {subsubsection}{\numberline {5.16.4.7}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}vbo\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}normals}{161}{subsubsection.5.16.4.7}
+\contentsline {subsubsection}{\numberline {5.16.4.8}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}vbo\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}tex\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Coord}{161}{subsubsection.5.16.4.8}
+\contentsline {subsubsection}{\numberline {5.16.4.9}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}vbo\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}vertices}{161}{subsubsection.5.16.4.9}
+\contentsline {section}{\numberline {5.17}R\IeC {\'e}f\IeC {\'e}rence de la classe Scene}{161}{section.5.17}
+\contentsline {subsection}{\numberline {5.17.1}Description d\IeC {\'e}taill\IeC {\'e}e}{165}{subsection.5.17.1}
+\contentsline {subsection}{\numberline {5.17.2}Documentation des constructeurs et destructeur}{165}{subsection.5.17.2}
+\contentsline {subsubsection}{\numberline {5.17.2.1}Scene}{165}{subsubsection.5.17.2.1}
+\contentsline {subsubsection}{\numberline {5.17.2.2}Scene}{165}{subsubsection.5.17.2.2}
+\contentsline {subsubsection}{\numberline {5.17.2.3}$\sim $\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Scene}{166}{subsubsection.5.17.2.3}
+\contentsline {subsection}{\numberline {5.17.3}Documentation des fonctions membres}{166}{subsection.5.17.3}
+\contentsline {subsubsection}{\numberline {5.17.3.1}add\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Light}{166}{subsubsection.5.17.3.1}
+\contentsline {subsubsection}{\numberline {5.17.3.2}add\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Material}{167}{subsubsection.5.17.3.2}
+\contentsline {subsubsection}{\numberline {5.17.3.3}add\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Piece}{167}{subsubsection.5.17.3.3}
+\contentsline {subsubsection}{\numberline {5.17.3.4}add\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shader}{168}{subsubsection.5.17.3.4}
+\contentsline {subsubsection}{\numberline {5.17.3.5}draw}{168}{subsubsection.5.17.3.5}
+\contentsline {subsubsection}{\numberline {5.17.3.6}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Light}{169}{subsubsection.5.17.3.6}
+\contentsline {subsubsection}{\numberline {5.17.3.7}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Lights\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Names}{170}{subsubsection.5.17.3.7}
+\contentsline {subsubsection}{\numberline {5.17.3.8}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Material}{170}{subsubsection.5.17.3.8}
+\contentsline {subsubsection}{\numberline {5.17.3.9}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Material\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Name}{171}{subsubsection.5.17.3.9}
+\contentsline {subsubsection}{\numberline {5.17.3.10}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Materials\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Names}{172}{subsubsection.5.17.3.10}
+\contentsline {subsubsection}{\numberline {5.17.3.11}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Piece}{172}{subsubsection.5.17.3.11}
+\contentsline {subsubsection}{\numberline {5.17.3.12}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Pieces\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Name}{173}{subsubsection.5.17.3.12}
+\contentsline {subsubsection}{\numberline {5.17.3.13}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shader}{173}{subsubsection.5.17.3.13}
+\contentsline {subsubsection}{\numberline {5.17.3.14}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shader\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Name\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}By\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D}{173}{subsubsection.5.17.3.14}
+\contentsline {subsubsection}{\numberline {5.17.3.15}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shaders\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Names}{174}{subsubsection.5.17.3.15}
+\contentsline {subsubsection}{\numberline {5.17.3.16}load\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Lights}{174}{subsubsection.5.17.3.16}
+\contentsline {subsubsection}{\numberline {5.17.3.17}load\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Materials}{175}{subsubsection.5.17.3.17}
+\contentsline {subsubsection}{\numberline {5.17.3.18}load\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Pieces}{175}{subsubsection.5.17.3.18}
+\contentsline {subsubsection}{\numberline {5.17.3.19}load\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shaders}{176}{subsubsection.5.17.3.19}
+\contentsline {subsubsection}{\numberline {5.17.3.20}order\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Lights}{177}{subsubsection.5.17.3.20}
+\contentsline {subsubsection}{\numberline {5.17.3.21}read\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Position}{178}{subsubsection.5.17.3.21}
+\contentsline {subsubsection}{\numberline {5.17.3.22}read\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Rotation}{179}{subsubsection.5.17.3.22}
+\contentsline {subsubsection}{\numberline {5.17.3.23}read\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Scale}{179}{subsubsection.5.17.3.23}
+\contentsline {subsubsection}{\numberline {5.17.3.24}remove\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Light}{180}{subsubsection.5.17.3.24}
+\contentsline {subsubsection}{\numberline {5.17.3.25}remove\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Piece}{180}{subsubsection.5.17.3.25}
+\contentsline {subsubsection}{\numberline {5.17.3.26}save\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}As\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}X\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}M\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L}{180}{subsubsection.5.17.3.26}
+\contentsline {subsubsection}{\numberline {5.17.3.27}save\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Lights}{181}{subsubsection.5.17.3.27}
+\contentsline {subsubsection}{\numberline {5.17.3.28}save\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Materials}{181}{subsubsection.5.17.3.28}
+\contentsline {subsubsection}{\numberline {5.17.3.29}save\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Pieces}{182}{subsubsection.5.17.3.29}
+\contentsline {subsubsection}{\numberline {5.17.3.30}save\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shaders}{182}{subsubsection.5.17.3.30}
+\contentsline {subsection}{\numberline {5.17.4}Documentation des donn\IeC {\'e}es membres}{183}{subsection.5.17.4}
+\contentsline {subsubsection}{\numberline {5.17.4.1}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}camera}{183}{subsubsection.5.17.4.1}
+\contentsline {subsubsection}{\numberline {5.17.4.2}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}lights}{183}{subsubsection.5.17.4.2}
+\contentsline {subsubsection}{\numberline {5.17.4.3}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}loaded\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shaders}{183}{subsubsection.5.17.4.3}
+\contentsline {subsubsection}{\numberline {5.17.4.4}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}materials}{183}{subsubsection.5.17.4.4}
+\contentsline {subsubsection}{\numberline {5.17.4.5}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ordered\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Lights}{183}{subsubsection.5.17.4.5}
+\contentsline {subsubsection}{\numberline {5.17.4.6}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}parent}{183}{subsubsection.5.17.4.6}
+\contentsline {subsubsection}{\numberline {5.17.4.7}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}pieces}{183}{subsubsection.5.17.4.7}
+\contentsline {subsubsection}{\numberline {5.17.4.8}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}projection\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{183}{subsubsection.5.17.4.8}
+\contentsline {subsubsection}{\numberline {5.17.4.9}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}shaders}{183}{subsubsection.5.17.4.9}
+\contentsline {section}{\numberline {5.18}R\IeC {\'e}f\IeC {\'e}rence de la classe Sphere}{183}{section.5.18}
+\contentsline {subsection}{\numberline {5.18.1}Description d\IeC {\'e}taill\IeC {\'e}e}{186}{subsection.5.18.1}
+\contentsline {subsection}{\numberline {5.18.2}Documentation des constructeurs et destructeur}{186}{subsection.5.18.2}
+\contentsline {subsubsection}{\numberline {5.18.2.1}Sphere}{186}{subsubsection.5.18.2.1}
+\contentsline {subsubsection}{\numberline {5.18.2.2}$\sim $\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Sphere}{186}{subsubsection.5.18.2.2}
+\contentsline {subsection}{\numberline {5.18.3}Documentation des fonctions membres}{186}{subsection.5.18.3}
+\contentsline {subsubsection}{\numberline {5.18.3.1}draw}{186}{subsubsection.5.18.3.1}
+\contentsline {subsubsection}{\numberline {5.18.3.2}gen\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Vao}{187}{subsubsection.5.18.3.2}
+\contentsline {subsection}{\numberline {5.18.4}Documentation des donn\IeC {\'e}es membres}{187}{subsection.5.18.4}
+\contentsline {subsubsection}{\numberline {5.18.4.1}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}vao}{187}{subsubsection.5.18.4.1}
+\contentsline {subsubsection}{\numberline {5.18.4.2}m\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}radius}{187}{subsubsection.5.18.4.2}
+\contentsline {subsubsection}{\numberline {5.18.4.3}m\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}radius2}{187}{subsubsection.5.18.4.3}
+\contentsline {subsubsection}{\numberline {5.18.4.4}m\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}slices}{187}{subsubsection.5.18.4.4}
+\contentsline {subsubsection}{\numberline {5.18.4.5}m\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}stacks}{187}{subsubsection.5.18.4.5}
+\contentsline {subsubsection}{\numberline {5.18.4.6}nbvertex}{187}{subsubsection.5.18.4.6}
+\contentsline {section}{\numberline {5.19}R\IeC {\'e}f\IeC {\'e}rence de la structure vec2}{187}{section.5.19}
+\contentsline {subsection}{\numberline {5.19.1}Documentation des constructeurs et destructeur}{188}{subsection.5.19.1}
+\contentsline {subsubsection}{\numberline {5.19.1.1}vec2}{188}{subsubsection.5.19.1.1}
+\contentsline {subsubsection}{\numberline {5.19.1.2}vec2}{188}{subsubsection.5.19.1.2}
+\contentsline {subsubsection}{\numberline {5.19.1.3}vec2}{188}{subsubsection.5.19.1.3}
+\contentsline {subsubsection}{\numberline {5.19.1.4}vec2}{188}{subsubsection.5.19.1.4}
+\contentsline {subsubsection}{\numberline {5.19.1.5}vec2}{189}{subsubsection.5.19.1.5}
+\contentsline {subsection}{\numberline {5.19.2}Documentation des fonctions membres}{189}{subsection.5.19.2}
+\contentsline {subsubsection}{\numberline {5.19.2.1}length}{189}{subsubsection.5.19.2.1}
+\contentsline {subsubsection}{\numberline {5.19.2.2}normalize}{189}{subsubsection.5.19.2.2}
+\contentsline {subsubsection}{\numberline {5.19.2.3}operator()}{190}{subsubsection.5.19.2.3}
+\contentsline {subsubsection}{\numberline {5.19.2.4}operator()}{190}{subsubsection.5.19.2.4}
+\contentsline {subsubsection}{\numberline {5.19.2.5}operator$\ast $}{190}{subsubsection.5.19.2.5}
+\contentsline {subsubsection}{\numberline {5.19.2.6}operator$\ast $=}{190}{subsubsection.5.19.2.6}
+\contentsline {subsubsection}{\numberline {5.19.2.7}operator+}{190}{subsubsection.5.19.2.7}
+\contentsline {subsubsection}{\numberline {5.19.2.8}operator+=}{190}{subsubsection.5.19.2.8}
+\contentsline {subsubsection}{\numberline {5.19.2.9}operator-\/}{190}{subsubsection.5.19.2.9}
+\contentsline {subsubsection}{\numberline {5.19.2.10}operator-\/}{191}{subsubsection.5.19.2.10}
+\contentsline {subsubsection}{\numberline {5.19.2.11}operator-\/=}{191}{subsubsection.5.19.2.11}
+\contentsline {subsubsection}{\numberline {5.19.2.12}operator/}{191}{subsubsection.5.19.2.12}
+\contentsline {subsubsection}{\numberline {5.19.2.13}operator/=}{191}{subsubsection.5.19.2.13}
+\contentsline {subsubsection}{\numberline {5.19.2.14}operator=}{191}{subsubsection.5.19.2.14}
+\contentsline {subsubsection}{\numberline {5.19.2.15}operator[]}{191}{subsubsection.5.19.2.15}
+\contentsline {subsubsection}{\numberline {5.19.2.16}operator[]}{191}{subsubsection.5.19.2.16}
+\contentsline {subsection}{\numberline {5.19.3}Documentation des donn\IeC {\'e}es membres}{191}{subsection.5.19.3}
+\contentsline {subsubsection}{\numberline {5.19.3.1}v}{191}{subsubsection.5.19.3.1}
+\contentsline {section}{\numberline {5.20}R\IeC {\'e}f\IeC {\'e}rence de la structure vec3}{191}{section.5.20}
+\contentsline {subsection}{\numberline {5.20.1}Documentation des constructeurs et destructeur}{192}{subsection.5.20.1}
+\contentsline {subsubsection}{\numberline {5.20.1.1}vec3}{192}{subsubsection.5.20.1.1}
+\contentsline {subsubsection}{\numberline {5.20.1.2}vec3}{192}{subsubsection.5.20.1.2}
+\contentsline {subsubsection}{\numberline {5.20.1.3}vec3}{192}{subsubsection.5.20.1.3}
+\contentsline {subsubsection}{\numberline {5.20.1.4}vec3}{193}{subsubsection.5.20.1.4}
+\contentsline {subsubsection}{\numberline {5.20.1.5}vec3}{193}{subsubsection.5.20.1.5}
+\contentsline {subsection}{\numberline {5.20.2}Documentation des fonctions membres}{193}{subsection.5.20.2}
+\contentsline {subsubsection}{\numberline {5.20.2.1}length}{193}{subsubsection.5.20.2.1}
+\contentsline {subsubsection}{\numberline {5.20.2.2}normalize}{193}{subsubsection.5.20.2.2}
+\contentsline {subsubsection}{\numberline {5.20.2.3}operator()}{194}{subsubsection.5.20.2.3}
+\contentsline {subsubsection}{\numberline {5.20.2.4}operator()}{194}{subsubsection.5.20.2.4}
+\contentsline {subsubsection}{\numberline {5.20.2.5}operator$\ast $}{194}{subsubsection.5.20.2.5}
+\contentsline {subsubsection}{\numberline {5.20.2.6}operator$\ast $}{194}{subsubsection.5.20.2.6}
+\contentsline {subsubsection}{\numberline {5.20.2.7}operator$\ast $=}{194}{subsubsection.5.20.2.7}
+\contentsline {subsubsection}{\numberline {5.20.2.8}operator+}{194}{subsubsection.5.20.2.8}
+\contentsline {subsubsection}{\numberline {5.20.2.9}operator+=}{194}{subsubsection.5.20.2.9}
+\contentsline {subsubsection}{\numberline {5.20.2.10}operator-\/}{195}{subsubsection.5.20.2.10}
+\contentsline {subsubsection}{\numberline {5.20.2.11}operator-\/}{195}{subsubsection.5.20.2.11}
+\contentsline {subsubsection}{\numberline {5.20.2.12}operator-\/=}{195}{subsubsection.5.20.2.12}
+\contentsline {subsubsection}{\numberline {5.20.2.13}operator/}{195}{subsubsection.5.20.2.13}
+\contentsline {subsubsection}{\numberline {5.20.2.14}operator/=}{195}{subsubsection.5.20.2.14}
+\contentsline {subsubsection}{\numberline {5.20.2.15}operator=}{195}{subsubsection.5.20.2.15}
+\contentsline {subsubsection}{\numberline {5.20.2.16}operator[]}{195}{subsubsection.5.20.2.16}
+\contentsline {subsubsection}{\numberline {5.20.2.17}operator[]}{195}{subsubsection.5.20.2.17}
+\contentsline {subsubsection}{\numberline {5.20.2.18}operator$^\wedge $}{196}{subsubsection.5.20.2.18}
+\contentsline {subsection}{\numberline {5.20.3}Documentation des donn\IeC {\'e}es membres}{196}{subsection.5.20.3}
+\contentsline {subsubsection}{\numberline {5.20.3.1}v}{196}{subsubsection.5.20.3.1}
+\contentsline {section}{\numberline {5.21}R\IeC {\'e}f\IeC {\'e}rence de la structure vec4}{196}{section.5.21}
+\contentsline {subsection}{\numberline {5.21.1}Documentation des constructeurs et destructeur}{197}{subsection.5.21.1}
+\contentsline {subsubsection}{\numberline {5.21.1.1}vec4}{197}{subsubsection.5.21.1.1}
+\contentsline {subsubsection}{\numberline {5.21.1.2}vec4}{197}{subsubsection.5.21.1.2}
+\contentsline {subsubsection}{\numberline {5.21.1.3}vec4}{197}{subsubsection.5.21.1.3}
+\contentsline {subsubsection}{\numberline {5.21.1.4}vec4}{197}{subsubsection.5.21.1.4}
+\contentsline {subsubsection}{\numberline {5.21.1.5}vec4}{197}{subsubsection.5.21.1.5}
+\contentsline {subsection}{\numberline {5.21.2}Documentation des fonctions membres}{197}{subsection.5.21.2}
+\contentsline {subsubsection}{\numberline {5.21.2.1}length}{198}{subsubsection.5.21.2.1}
+\contentsline {subsubsection}{\numberline {5.21.2.2}normalize}{198}{subsubsection.5.21.2.2}
+\contentsline {subsubsection}{\numberline {5.21.2.3}operator()}{198}{subsubsection.5.21.2.3}
+\contentsline {subsubsection}{\numberline {5.21.2.4}operator()}{198}{subsubsection.5.21.2.4}
+\contentsline {subsubsection}{\numberline {5.21.2.5}operator$\ast $}{198}{subsubsection.5.21.2.5}
+\contentsline {subsubsection}{\numberline {5.21.2.6}operator$\ast $=}{198}{subsubsection.5.21.2.6}
+\contentsline {subsubsection}{\numberline {5.21.2.7}operator+}{199}{subsubsection.5.21.2.7}
+\contentsline {subsubsection}{\numberline {5.21.2.8}operator+=}{199}{subsubsection.5.21.2.8}
+\contentsline {subsubsection}{\numberline {5.21.2.9}operator-\/}{199}{subsubsection.5.21.2.9}
+\contentsline {subsubsection}{\numberline {5.21.2.10}operator-\/}{199}{subsubsection.5.21.2.10}
+\contentsline {subsubsection}{\numberline {5.21.2.11}operator-\/=}{199}{subsubsection.5.21.2.11}
+\contentsline {subsubsection}{\numberline {5.21.2.12}operator/}{200}{subsubsection.5.21.2.12}
+\contentsline {subsubsection}{\numberline {5.21.2.13}operator/=}{200}{subsubsection.5.21.2.13}
+\contentsline {subsubsection}{\numberline {5.21.2.14}operator[]}{200}{subsubsection.5.21.2.14}
+\contentsline {subsubsection}{\numberline {5.21.2.15}operator[]}{200}{subsubsection.5.21.2.15}
+\contentsline {subsection}{\numberline {5.21.3}Documentation des donn\IeC {\'e}es membres}{200}{subsection.5.21.3}
+\contentsline {subsubsection}{\numberline {5.21.3.1}v}{200}{subsubsection.5.21.3.1}
+\contentsline {chapter}{\numberline {6}Documentation des fichiers}{201}{chapter.6}
+\contentsline {section}{\numberline {6.1}R\IeC {\'e}f\IeC {\'e}rence du fichier camera.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}cpp}{201}{section.6.1}
+\contentsline {section}{\numberline {6.2}R\IeC {\'e}f\IeC {\'e}rence du fichier camera.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}hpp}{201}{section.6.2}
+\contentsline {section}{\numberline {6.3}R\IeC {\'e}f\IeC {\'e}rence du fichier gui/mainwindows.cpp}{202}{section.6.3}
+\contentsline {section}{\numberline {6.4}R\IeC {\'e}f\IeC {\'e}rence du fichier gui/mainwindows.hpp}{202}{section.6.4}
+\contentsline {section}{\numberline {6.5}R\IeC {\'e}f\IeC {\'e}rence du fichier gui/mondock.cpp}{204}{section.6.5}
+\contentsline {section}{\numberline {6.6}R\IeC {\'e}f\IeC {\'e}rence du fichier gui/mondock.hpp}{204}{section.6.6}
+\contentsline {section}{\numberline {6.7}R\IeC {\'e}f\IeC {\'e}rence du fichier gui/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}My\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Open\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}G\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Widget.cpp}{205}{section.6.7}
+\contentsline {section}{\numberline {6.8}R\IeC {\'e}f\IeC {\'e}rence du fichier gui/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}My\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Open\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}G\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Widget.hpp}{205}{section.6.8}
+\contentsline {section}{\numberline {6.9}R\IeC {\'e}f\IeC {\'e}rence du fichier helper.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}cpp}{206}{section.6.9}
+\contentsline {subsection}{\numberline {6.9.1}Documentation des fonctions}{208}{subsection.6.9.1}
+\contentsline {subsubsection}{\numberline {6.9.1.1}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}open\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}G\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}check\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}error}{208}{subsubsection.6.9.1.1}
+\contentsline {subsubsection}{\numberline {6.9.1.2}current\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{208}{subsubsection.6.9.1.2}
+\contentsline {subsubsection}{\numberline {6.9.1.3}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Active\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shader}{209}{subsubsection.6.9.1.3}
+\contentsline {subsubsection}{\numberline {6.9.1.4}operator$<$$<$}{209}{subsubsection.6.9.1.4}
+\contentsline {subsubsection}{\numberline {6.9.1.5}operator$<$$<$}{209}{subsubsection.6.9.1.5}
+\contentsline {subsubsection}{\numberline {6.9.1.6}operator$<$$<$}{209}{subsubsection.6.9.1.6}
+\contentsline {subsubsection}{\numberline {6.9.1.7}operator$<$$<$}{209}{subsubsection.6.9.1.7}
+\contentsline {subsubsection}{\numberline {6.9.1.8}operator$<$$<$}{209}{subsubsection.6.9.1.8}
+\contentsline {subsubsection}{\numberline {6.9.1.9}operator$<$$<$}{209}{subsubsection.6.9.1.9}
+\contentsline {subsubsection}{\numberline {6.9.1.10}operator$<$$<$}{209}{subsubsection.6.9.1.10}
+\contentsline {subsubsection}{\numberline {6.9.1.11}operator$<$$<$}{209}{subsubsection.6.9.1.11}
+\contentsline {subsubsection}{\numberline {6.9.1.12}operator$<$$<$}{209}{subsubsection.6.9.1.12}
+\contentsline {subsubsection}{\numberline {6.9.1.13}operator$<$$<$}{209}{subsubsection.6.9.1.13}
+\contentsline {subsubsection}{\numberline {6.9.1.14}pop\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{210}{subsubsection.6.9.1.14}
+\contentsline {subsubsection}{\numberline {6.9.1.15}print}{210}{subsubsection.6.9.1.15}
+\contentsline {subsubsection}{\numberline {6.9.1.16}print}{210}{subsubsection.6.9.1.16}
+\contentsline {subsubsection}{\numberline {6.9.1.17}print}{210}{subsubsection.6.9.1.17}
+\contentsline {subsubsection}{\numberline {6.9.1.18}print}{210}{subsubsection.6.9.1.18}
+\contentsline {subsubsection}{\numberline {6.9.1.19}print}{210}{subsubsection.6.9.1.19}
+\contentsline {subsubsection}{\numberline {6.9.1.20}projection\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{210}{subsubsection.6.9.1.20}
+\contentsline {subsubsection}{\numberline {6.9.1.21}push\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{211}{subsubsection.6.9.1.21}
+\contentsline {subsubsection}{\numberline {6.9.1.22}scale\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{211}{subsubsection.6.9.1.22}
+\contentsline {subsubsection}{\numberline {6.9.1.23}scale\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{211}{subsubsection.6.9.1.23}
+\contentsline {subsubsection}{\numberline {6.9.1.24}scales}{211}{subsubsection.6.9.1.24}
+\contentsline {subsubsection}{\numberline {6.9.1.25}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Active\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shader}{212}{subsubsection.6.9.1.25}
+\contentsline {subsubsection}{\numberline {6.9.1.26}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Model\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{212}{subsubsection.6.9.1.26}
+\contentsline {subsubsection}{\numberline {6.9.1.27}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Projection\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{213}{subsubsection.6.9.1.27}
+\contentsline {subsubsection}{\numberline {6.9.1.28}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}View\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{213}{subsubsection.6.9.1.28}
+\contentsline {subsubsection}{\numberline {6.9.1.29}translate}{213}{subsubsection.6.9.1.29}
+\contentsline {subsubsection}{\numberline {6.9.1.30}translation\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{214}{subsubsection.6.9.1.30}
+\contentsline {subsubsection}{\numberline {6.9.1.31}translation\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{214}{subsubsection.6.9.1.31}
+\contentsline {subsubsection}{\numberline {6.9.1.32}view\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{214}{subsubsection.6.9.1.32}
+\contentsline {subsubsection}{\numberline {6.9.1.33}Xrotate}{215}{subsubsection.6.9.1.33}
+\contentsline {subsubsection}{\numberline {6.9.1.34}Xrotation\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{216}{subsubsection.6.9.1.34}
+\contentsline {subsubsection}{\numberline {6.9.1.35}Yrotate}{216}{subsubsection.6.9.1.35}
+\contentsline {subsubsection}{\numberline {6.9.1.36}Yrotation\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{217}{subsubsection.6.9.1.36}
+\contentsline {subsubsection}{\numberline {6.9.1.37}Zrotate}{217}{subsubsection.6.9.1.37}
+\contentsline {subsubsection}{\numberline {6.9.1.38}Zrotation\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{218}{subsubsection.6.9.1.38}
+\contentsline {subsection}{\numberline {6.9.2}Documentation des variables}{218}{subsection.6.9.2}
+\contentsline {subsubsection}{\numberline {6.9.2.1}active\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shader}{218}{subsubsection.6.9.2.1}
+\contentsline {subsubsection}{\numberline {6.9.2.2}current\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Model\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{218}{subsubsection.6.9.2.2}
+\contentsline {subsubsection}{\numberline {6.9.2.3}current\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Projection\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{218}{subsubsection.6.9.2.3}
+\contentsline {subsubsection}{\numberline {6.9.2.4}current\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}View\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{218}{subsubsection.6.9.2.4}
+\contentsline {subsubsection}{\numberline {6.9.2.5}matrix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}stack}{218}{subsubsection.6.9.2.5}
+\contentsline {section}{\numberline {6.10}R\IeC {\'e}f\IeC {\'e}rence du fichier helper.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}hpp}{218}{section.6.10}
+\contentsline {subsection}{\numberline {6.10.1}Documentation des macros}{220}{subsection.6.10.1}
+\contentsline {subsubsection}{\numberline {6.10.1.1}M\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}P\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}I}{220}{subsubsection.6.10.1.1}
+\contentsline {subsubsection}{\numberline {6.10.1.2}open\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}G\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}check\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}error}{220}{subsubsection.6.10.1.2}
+\contentsline {subsubsection}{\numberline {6.10.1.3}to\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}rad}{220}{subsubsection.6.10.1.3}
+\contentsline {subsection}{\numberline {6.10.2}Documentation des d\IeC {\'e}finitions de type}{220}{subsection.6.10.2}
+\contentsline {subsubsection}{\numberline {6.10.2.1}mat3}{220}{subsubsection.6.10.2.1}
+\contentsline {subsubsection}{\numberline {6.10.2.2}mat4}{220}{subsubsection.6.10.2.2}
+\contentsline {subsubsection}{\numberline {6.10.2.3}vec2}{220}{subsubsection.6.10.2.3}
+\contentsline {subsubsection}{\numberline {6.10.2.4}vec3}{220}{subsubsection.6.10.2.4}
+\contentsline {subsubsection}{\numberline {6.10.2.5}vec4}{220}{subsubsection.6.10.2.5}
+\contentsline {subsection}{\numberline {6.10.3}Documentation des fonctions}{220}{subsection.6.10.3}
+\contentsline {subsubsection}{\numberline {6.10.3.1}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}open\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}G\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}check\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}error}{220}{subsubsection.6.10.3.1}
+\contentsline {subsubsection}{\numberline {6.10.3.2}current\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{221}{subsubsection.6.10.3.2}
+\contentsline {subsubsection}{\numberline {6.10.3.3}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Active\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shader}{221}{subsubsection.6.10.3.3}
+\contentsline {subsubsection}{\numberline {6.10.3.4}operator$<$$<$}{221}{subsubsection.6.10.3.4}
+\contentsline {subsubsection}{\numberline {6.10.3.5}operator$<$$<$}{221}{subsubsection.6.10.3.5}
+\contentsline {subsubsection}{\numberline {6.10.3.6}operator$<$$<$}{222}{subsubsection.6.10.3.6}
+\contentsline {subsubsection}{\numberline {6.10.3.7}operator$<$$<$}{222}{subsubsection.6.10.3.7}
+\contentsline {subsubsection}{\numberline {6.10.3.8}operator$<$$<$}{222}{subsubsection.6.10.3.8}
+\contentsline {subsubsection}{\numberline {6.10.3.9}operator$<$$<$}{222}{subsubsection.6.10.3.9}
+\contentsline {subsubsection}{\numberline {6.10.3.10}operator$<$$<$}{222}{subsubsection.6.10.3.10}
+\contentsline {subsubsection}{\numberline {6.10.3.11}operator$<$$<$}{222}{subsubsection.6.10.3.11}
+\contentsline {subsubsection}{\numberline {6.10.3.12}operator$<$$<$}{222}{subsubsection.6.10.3.12}
+\contentsline {subsubsection}{\numberline {6.10.3.13}operator$<$$<$}{222}{subsubsection.6.10.3.13}
+\contentsline {subsubsection}{\numberline {6.10.3.14}pop\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{222}{subsubsection.6.10.3.14}
+\contentsline {subsubsection}{\numberline {6.10.3.15}print}{222}{subsubsection.6.10.3.15}
+\contentsline {subsubsection}{\numberline {6.10.3.16}print}{222}{subsubsection.6.10.3.16}
+\contentsline {subsubsection}{\numberline {6.10.3.17}print}{222}{subsubsection.6.10.3.17}
+\contentsline {subsubsection}{\numberline {6.10.3.18}print}{222}{subsubsection.6.10.3.18}
+\contentsline {subsubsection}{\numberline {6.10.3.19}print}{222}{subsubsection.6.10.3.19}
+\contentsline {subsubsection}{\numberline {6.10.3.20}projection\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{223}{subsubsection.6.10.3.20}
+\contentsline {subsubsection}{\numberline {6.10.3.21}push\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{223}{subsubsection.6.10.3.21}
+\contentsline {subsubsection}{\numberline {6.10.3.22}scale\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{223}{subsubsection.6.10.3.22}
+\contentsline {subsubsection}{\numberline {6.10.3.23}scale\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{224}{subsubsection.6.10.3.23}
+\contentsline {subsubsection}{\numberline {6.10.3.24}scales}{224}{subsubsection.6.10.3.24}
+\contentsline {subsubsection}{\numberline {6.10.3.25}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Active\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Shader}{224}{subsubsection.6.10.3.25}
+\contentsline {subsubsection}{\numberline {6.10.3.26}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Model\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{225}{subsubsection.6.10.3.26}
+\contentsline {subsubsection}{\numberline {6.10.3.27}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Projection\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{225}{subsubsection.6.10.3.27}
+\contentsline {subsubsection}{\numberline {6.10.3.28}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}View\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{225}{subsubsection.6.10.3.28}
+\contentsline {subsubsection}{\numberline {6.10.3.29}translate}{226}{subsubsection.6.10.3.29}
+\contentsline {subsubsection}{\numberline {6.10.3.30}translation\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{226}{subsubsection.6.10.3.30}
+\contentsline {subsubsection}{\numberline {6.10.3.31}translation\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{226}{subsubsection.6.10.3.31}
+\contentsline {subsubsection}{\numberline {6.10.3.32}view\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{227}{subsubsection.6.10.3.32}
+\contentsline {subsubsection}{\numberline {6.10.3.33}Xrotate}{227}{subsubsection.6.10.3.33}
+\contentsline {subsubsection}{\numberline {6.10.3.34}Xrotation\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{228}{subsubsection.6.10.3.34}
+\contentsline {subsubsection}{\numberline {6.10.3.35}Yrotate}{228}{subsubsection.6.10.3.35}
+\contentsline {subsubsection}{\numberline {6.10.3.36}Yrotation\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{229}{subsubsection.6.10.3.36}
+\contentsline {subsubsection}{\numberline {6.10.3.37}Zrotate}{229}{subsubsection.6.10.3.37}
+\contentsline {subsubsection}{\numberline {6.10.3.38}Zrotation\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matrix}{230}{subsubsection.6.10.3.38}
+\contentsline {section}{\numberline {6.11}R\IeC {\'e}f\IeC {\'e}rence du fichier main.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}cpp}{230}{section.6.11}
+\contentsline {subsection}{\numberline {6.11.1}Documentation des fonctions}{231}{subsection.6.11.1}
+\contentsline {subsubsection}{\numberline {6.11.1.1}main}{231}{subsubsection.6.11.1.1}
+\contentsline {section}{\numberline {6.12}R\IeC {\'e}f\IeC {\'e}rence du fichier objets/cube.cpp}{231}{section.6.12}
+\contentsline {section}{\numberline {6.13}R\IeC {\'e}f\IeC {\'e}rence du fichier objets/cube.hpp}{232}{section.6.13}
+\contentsline {section}{\numberline {6.14}R\IeC {\'e}f\IeC {\'e}rence du fichier objets/donuts.cpp}{232}{section.6.14}
+\contentsline {section}{\numberline {6.15}R\IeC {\'e}f\IeC {\'e}rence du fichier objets/donuts.hpp}{233}{section.6.15}
+\contentsline {section}{\numberline {6.16}R\IeC {\'e}f\IeC {\'e}rence du fichier objets/mesh.cpp}{234}{section.6.16}
+\contentsline {section}{\numberline {6.17}R\IeC {\'e}f\IeC {\'e}rence du fichier objets/mesh.hpp}{234}{section.6.17}
+\contentsline {section}{\numberline {6.18}R\IeC {\'e}f\IeC {\'e}rence du fichier objets/node.cpp}{235}{section.6.18}
+\contentsline {section}{\numberline {6.19}R\IeC {\'e}f\IeC {\'e}rence du fichier objets/node.hpp}{236}{section.6.19}
+\contentsline {section}{\numberline {6.20}R\IeC {\'e}f\IeC {\'e}rence du fichier objets/objet.cpp}{237}{section.6.20}
+\contentsline {section}{\numberline {6.21}R\IeC {\'e}f\IeC {\'e}rence du fichier objets/objet.hpp}{237}{section.6.21}
+\contentsline {section}{\numberline {6.22}R\IeC {\'e}f\IeC {\'e}rence du fichier objets/plan.cpp}{238}{section.6.22}
+\contentsline {section}{\numberline {6.23}R\IeC {\'e}f\IeC {\'e}rence du fichier objets/plan.hpp}{239}{section.6.23}
+\contentsline {section}{\numberline {6.24}R\IeC {\'e}f\IeC {\'e}rence du fichier objets/sphere.cpp}{240}{section.6.24}
+\contentsline {section}{\numberline {6.25}R\IeC {\'e}f\IeC {\'e}rence du fichier objets/sphere.hpp}{241}{section.6.25}
+\contentsline {section}{\numberline {6.26}R\IeC {\'e}f\IeC {\'e}rence du fichier scene/light.cpp}{241}{section.6.26}
+\contentsline {section}{\numberline {6.27}R\IeC {\'e}f\IeC {\'e}rence du fichier scene/light.hpp}{242}{section.6.27}
+\contentsline {section}{\numberline {6.28}R\IeC {\'e}f\IeC {\'e}rence du fichier scene/material.cpp}{243}{section.6.28}
+\contentsline {subsection}{\numberline {6.28.1}Documentation des fonctions}{243}{subsection.6.28.1}
+\contentsline {subsubsection}{\numberline {6.28.1.1}operator$<$$<$}{243}{subsubsection.6.28.1.1}
+\contentsline {section}{\numberline {6.29}R\IeC {\'e}f\IeC {\'e}rence du fichier scene/material.hpp}{244}{section.6.29}
+\contentsline {subsection}{\numberline {6.29.1}Documentation des fonctions}{244}{subsection.6.29.1}
+\contentsline {subsubsection}{\numberline {6.29.1.1}operator$<$$<$}{245}{subsubsection.6.29.1.1}
+\contentsline {section}{\numberline {6.30}R\IeC {\'e}f\IeC {\'e}rence du fichier scene/piece.cpp}{245}{section.6.30}
+\contentsline {section}{\numberline {6.31}R\IeC {\'e}f\IeC {\'e}rence du fichier scene/piece.hpp}{245}{section.6.31}
+\contentsline {section}{\numberline {6.32}R\IeC {\'e}f\IeC {\'e}rence du fichier scene/scene.cpp}{246}{section.6.32}
+\contentsline {section}{\numberline {6.33}R\IeC {\'e}f\IeC {\'e}rence du fichier scene/scene.hpp}{247}{section.6.33}
+\contentsline {subsection}{\numberline {6.33.1}Documentation des macros}{248}{subsection.6.33.1}
+\contentsline {subsubsection}{\numberline {6.33.1.1}M\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}X\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}G\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}H\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}T}{248}{subsubsection.6.33.1.1}
+\contentsline {chapter}{Index}{249}{section*.103}

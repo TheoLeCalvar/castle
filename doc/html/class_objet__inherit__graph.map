@@ -1,0 +1,9 @@
+<map id="Objet" name="Objet">
+<area shape="rect" id="node3" href="$class_cube.html" title="Primitive cube. " alt="" coords="5,621,89,735"/>
+<area shape="rect" id="node4" href="$class_donuts.html" title="Primitive tore. " alt="" coords="113,588,245,768"/>
+<area shape="rect" id="node5" href="$class_mesh.html" title="Charge un modèle 3D. " alt="" coords="268,615,364,741"/>
+<area shape="rect" id="node6" href="$class_node.html" title="Contient un node de modèle 3D. " alt="" coords="388,541,540,815"/>
+<area shape="rect" id="node7" href="$class_piece.html" title="Pièce, contient un ensemble d&#39;objet qu&#39;elle contient. " alt="" coords="565,561,681,795"/>
+<area shape="rect" id="node8" href="$class_plan.html" title="Plan utilisé par la Piece. " alt="" coords="706,568,826,788"/>
+<area shape="rect" id="node9" href="$class_sphere.html" title="Primitive tore. " alt="" coords="850,588,943,768"/>
+</map>

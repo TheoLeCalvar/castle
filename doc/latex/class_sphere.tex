@@ -1,4 +1,4 @@
-\hypertarget{class_sphere}{\section{Sphere Class Reference}
+\hypertarget{class_sphere}{\section{Référence de la classe Sphere}
 \label{class_sphere}\index{Sphere@{Sphere}}
 }
 
@@ -10,13 +10,27 @@ Primitive tore.
 
 {\ttfamily \#include $<$sphere.\+hpp$>$}
 
-Inheritance diagram for Sphere\+:\begin{figure}[H]
+
+
+Graphe d'héritage de Sphere\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.000000cm]{class_sphere}
+\includegraphics[height=550pt]{class_sphere__inherit__graph}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
+
+
+Graphe de collaboration de Sphere\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_sphere__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_sphere_ae6811ba8643126e4f3a7443d752c49b0}{Sphere} (G\+Ldouble \hyperlink{class_sphere_a4b019bb4bf74ac28ab56d5ae2c9ca6ea}{m\+\_\+radius}=1, G\+Ldouble \hyperlink{class_sphere_aa3ec1c07df539131c0fb886fe9c619fd}{m\+\_\+radius2}=1, G\+Lint \hyperlink{class_sphere_a6ddad99936fa616fa04862aa92e20105}{m\+\_\+slices}=1, G\+Lint \hyperlink{class_sphere_aef79b7beb9d008e8dcc0849fbe691072}{m\+\_\+stacks}=1, \hyperlink{class_material}{Material} $\ast$mat=N\+U\+L\+L, \hyperlink{structvec3}{vec3} \hyperlink{class_objet_ac69a1b459bcb4433099c8cfbff06b209}{rotation}=\hyperlink{structvec3}{vec3}(), \hyperlink{structvec3}{vec3} \hyperlink{class_objet_a0e109bc790b14328202dd2546b04e2fd}{position}=\hyperlink{structvec3}{vec3}())
@@ -25,12 +39,12 @@ Inheritance diagram for Sphere\+:\begin{figure}[H]
 \item 
 void \hyperlink{class_sphere_a34a34167b7544c95155d3ff30638d045}{draw} ()
 \begin{DoxyCompactList}\small\item\em Affichage de l'\hyperlink{class_objet}{Objet}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
+\subsection*{Fonctions membres privées}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_sphere_aacaf4cf9d7810dffd8c81c8c8298a95b}{gen\+Vao} ()
 \end{DoxyCompactItemize}
-\subsection*{Private Attributes}
+\subsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
 G\+Luint \hyperlink{class_sphere_a18d31b1d011d5c5e452b9b9b6f54b10f}{\+\_\+vao}
@@ -45,21 +59,21 @@ G\+Lint \hyperlink{class_sphere_aef79b7beb9d008e8dcc0849fbe691072}{m\+\_\+stacks
 \item 
 G\+Lsizei \hyperlink{class_sphere_a4e8e9f5ba889e700b7244bc70232a271}{nbvertex}
 \end{DoxyCompactItemize}
-\subsection*{Additional Inherited Members}
+\subsection*{Membres hérités additionnels}
 
 
-\subsection{Detailed Description}
+\subsection{Description détaillée}
 Primitive tore. 
 
-\begin{DoxyWarning}{Warning}
+\begin{DoxyWarning}{Avertissement}
 Peut être plus utilisable 
 \end{DoxyWarning}
-\begin{DoxySeeAlso}{See also}
+\begin{DoxySeeAlso}{Voir également}
 \hyperlink{class_cube}{Cube} 
 \end{DoxySeeAlso}
 
 
-\subsection{Constructor \& Destructor Documentation}
+\subsection{Documentation des constructeurs et destructeur}
 \hypertarget{class_sphere_ae6811ba8643126e4f3a7443d752c49b0}{\index{Sphere@{Sphere}!Sphere@{Sphere}}
 \index{Sphere@{Sphere}!Sphere@{Sphere}}
 \subsubsection[{Sphere}]{\setlength{\rightskip}{0pt plus 5cm}Sphere\+::\+Sphere (
@@ -73,6 +87,18 @@ Peut être plus utilisable
 \item[{{\bf vec3}}]{position = {\ttfamily {\bf vec3}()}}
 \end{DoxyParamCaption}
 )}}\label{class_sphere_ae6811ba8643126e4f3a7443d752c49b0}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{class_sphere_ae6811ba8643126e4f3a7443d752c49b0_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_sphere_a569c071e50a3e11f678630ee1a17737e}{\index{Sphere@{Sphere}!````~Sphere@{$\sim$\+Sphere}}
 \index{````~Sphere@{$\sim$\+Sphere}!Sphere@{Sphere}}
 \subsubsection[{$\sim$\+Sphere}]{\setlength{\rightskip}{0pt plus 5cm}Sphere\+::$\sim$\+Sphere (
@@ -82,7 +108,7 @@ Peut être plus utilisable
 )}}\label{class_sphere_a569c071e50a3e11f678630ee1a17737e}
 
 
-\subsection{Member Function Documentation}
+\subsection{Documentation des fonctions membres}
 \hypertarget{class_sphere_a34a34167b7544c95155d3ff30638d045}{\index{Sphere@{Sphere}!draw@{draw}}
 \index{draw@{draw}!Sphere@{Sphere}}
 \subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Sphere\+::draw (
@@ -96,7 +122,19 @@ Affichage de l'\hyperlink{class_objet}{Objet}.
 
 Active le shader de l'\hyperlink{class_objet}{Objet} et applique le material 
 
-Reimplemented from \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Objet}.
+Réimplémentée à partir de \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Objet}.
+
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sphere_a34a34167b7544c95155d3ff30638d045_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{class_sphere_aacaf4cf9d7810dffd8c81c8c8298a95b}{\index{Sphere@{Sphere}!gen\+Vao@{gen\+Vao}}
 \index{gen\+Vao@{gen\+Vao}!Sphere@{Sphere}}
@@ -107,7 +145,19 @@ Reimplemented from \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Obj
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{class_sphere_aacaf4cf9d7810dffd8c81c8c8298a95b}
 
 
-\subsection{Member Data Documentation}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{class_sphere_aacaf4cf9d7810dffd8c81c8c8298a95b_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Documentation des données membres}
 \hypertarget{class_sphere_a18d31b1d011d5c5e452b9b9b6f54b10f}{\index{Sphere@{Sphere}!\+\_\+vao@{\+\_\+vao}}
 \index{\+\_\+vao@{\+\_\+vao}!Sphere@{Sphere}}
 \subsubsection[{\+\_\+vao}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Sphere\+::\+\_\+vao\hspace{0.3cm}{\ttfamily [private]}}}\label{class_sphere_a18d31b1d011d5c5e452b9b9b6f54b10f}
@@ -128,7 +178,7 @@ Reimplemented from \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Obj
 \subsubsection[{nbvertex}]{\setlength{\rightskip}{0pt plus 5cm}G\+Lsizei Sphere\+::nbvertex\hspace{0.3cm}{\ttfamily [private]}}}\label{class_sphere_a4e8e9f5ba889e700b7244bc70232a271}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 objets/\hyperlink{sphere_8hpp}{sphere.\+hpp}\item 
 objets/\hyperlink{sphere_8cpp}{sphere.\+cpp}\end{DoxyCompactItemize}

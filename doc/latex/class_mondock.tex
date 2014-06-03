@@ -1,24 +1,38 @@
-\hypertarget{class_mondock}{\section{Mondock Class Reference}
+\hypertarget{class_mondock}{\section{Référence de la classe Mondock}
 \label{class_mondock}\index{Mondock@{Mondock}}
 }
 
 
 {\ttfamily \#include $<$mondock.\+hpp$>$}
 
-Inheritance diagram for Mondock\+:\begin{figure}[H]
+
+
+Graphe d'héritage de Mondock\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_mondock}
+\includegraphics[height=550pt]{class_mondock__inherit__graph}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
+
+
+Graphe de collaboration de Mondock\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_mondock__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_mondock_a31297333af7c87f4f9773728db845d7f}{Mondock} (const Q\+String \&title, Q\+Widget $\ast$parent=0, Qt\+::\+Window\+Flags flags=0)
 \item 
 \hyperlink{class_mondock_a33aa83a1e0de9cf10380c1a5237eec7e}{$\sim$\+Mondock} ()
 \end{DoxyCompactItemize}
-\subsection*{Public Attributes}
+\subsection*{Attributs publics}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_scene}{Scene} $\ast$ \hyperlink{class_mondock_ac6fd15f2143e05b554f3f936e6f1588f}{dockscene}
@@ -41,7 +55,7 @@ Q\+Standard\+Item $\ast$ \hyperlink{class_mondock_a3de76b6bfaee199ee945f04c3c2f4
 \item 
 Q\+Standard\+Item\+Model $\ast$ \hyperlink{class_mondock_aceda9fef8d2c8b9c88672bacbeac7988}{modelmaterial}
 \end{DoxyCompactItemize}
-\subsection*{Private Slots}
+\subsection*{Connecteurs privés}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_mondock_a25391f1fac7a8a46e761f2f8c9c2fdc8}{selectionlight} ()
@@ -75,12 +89,6 @@ void \hyperlink{class_mondock_ad12c449ba7b08f8430353e5fb7687e6a}{spelightfuncx} 
 void \hyperlink{class_mondock_ac2c735aede2c4c621f08f9c34d6a4c9c}{spelightfuncy} (int x)
 \item 
 void \hyperlink{class_mondock_ad626e2142ce5065af9a3bd891c825a5a}{spelightfuncz} (int x)
-\item 
-void \hyperlink{class_mondock_a8eefc5e5056a10e66d69e3d8cfb21941}{emimaterialfuncx} (int x)
-\item 
-void \hyperlink{class_mondock_a1d7a5a172040878b370a2fa56de8774b}{emimaterialfuncy} (int x)
-\item 
-void \hyperlink{class_mondock_ab69c246125f45077904e519c7f0e397c}{emimaterialfuncz} (int x)
 \item 
 void \hyperlink{class_mondock_a8311bcb6b47314eba3966861c6cfe53a}{ambmaterialfuncx} (int x)
 \item 
@@ -146,7 +154,7 @@ void \hyperlink{class_mondock_a2e657947e69adddb4ee8527063377a31}{rotpiecey} (dou
 \item 
 void \hyperlink{class_mondock_a8f94fe729819688c88de6025642463c9}{rotpiecez} (double x)
 \end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
+\subsection*{Fonctions membres privées}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_mondock_ae228ac3c0273c3f275fb88842d9c8899}{traitementambiante} ()
@@ -159,7 +167,7 @@ void \hyperlink{class_mondock_aad20b3c5334d00fe5e69ac5872f76f4b}{traitementobjet
 \item 
 void \hyperlink{class_mondock_a8f0d8c5f390853f482b38bbcf943447a}{traitementpiece} ()
 \end{DoxyCompactItemize}
-\subsection*{Private Attributes}
+\subsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
 Q\+Item\+Selection\+Model $\ast$ \hyperlink{class_mondock_aa0a94c4bfce0d7d4f2547da10d365275}{selection}
@@ -306,16 +314,6 @@ Q\+Spin\+Box $\ast$ \hyperlink{class_mondock_ab5e93ab98c43f314fa48b84be8098beb}{
 \item 
 Q\+Spin\+Box $\ast$ \hyperlink{class_mondock_a62de223ddabe875e9406fd43b892a8a0}{materialspinboxspea}
 \item 
-Q\+Widget $\ast$ \hyperlink{class_mondock_af4e2b3e87db243b8813a3e71cbf9dd7d}{tabmaterialemi}
-\item 
-Q\+H\+Box\+Layout $\ast$ \hyperlink{class_mondock_afc37221d5733642eeeeaf93042d72dcb}{tabmaterialemilayout}
-\item 
-Q\+Spin\+Box $\ast$ \hyperlink{class_mondock_a003c7eff97a356c6dc6d7f892719e91f}{materialspinboxemix}
-\item 
-Q\+Spin\+Box $\ast$ \hyperlink{class_mondock_a92982a92a14d612a49dd027cb68b6d73}{materialspinboxemiy}
-\item 
-Q\+Spin\+Box $\ast$ \hyperlink{class_mondock_ab95fca34ebe4db052bab4109eaf5afd1}{materialspinboxemiz}
-\item 
 Q\+Tab\+Widget $\ast$ \hyperlink{class_mondock_a3f12af44327a1739e8818ee91649ebbf}{tabobjet}
 \item 
 Q\+Widget $\ast$ \hyperlink{class_mondock_adc331c4d8373b45e636757e12a2bd5a0}{tabobjetpropr}
@@ -424,7 +422,7 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \end{DoxyCompactItemize}
 
 
-\subsection{Constructor \& Destructor Documentation}
+\subsection{Documentation des constructeurs et destructeur}
 \hypertarget{class_mondock_a31297333af7c87f4f9773728db845d7f}{\index{Mondock@{Mondock}!Mondock@{Mondock}}
 \index{Mondock@{Mondock}!Mondock@{Mondock}}
 \subsubsection[{Mondock}]{\setlength{\rightskip}{0pt plus 5cm}Mondock\+::\+Mondock (
@@ -443,7 +441,7 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 )}}\label{class_mondock_a33aa83a1e0de9cf10380c1a5237eec7e}
 
 
-\subsection{Member Function Documentation}
+\subsection{Documentation des fonctions membres}
 \hypertarget{class_mondock_a07685bc7db5c3346c1813e84abf8aa2f}{\index{Mondock@{Mondock}!amblightfuncx@{amblightfuncx}}
 \index{amblightfuncx@{amblightfuncx}!Mondock@{Mondock}}
 \subsubsection[{amblightfuncx}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::amblightfuncx (
@@ -451,6 +449,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a07685bc7db5c3346c1813e84abf8aa2f}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{class_mondock_a07685bc7db5c3346c1813e84abf8aa2f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a07685bc7db5c3346c1813e84abf8aa2f_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a2397e94ee9af0a37c12b1443d70c17b6}{\index{Mondock@{Mondock}!amblightfuncy@{amblightfuncy}}
 \index{amblightfuncy@{amblightfuncy}!Mondock@{Mondock}}
 \subsubsection[{amblightfuncy}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::amblightfuncy (
@@ -458,6 +480,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a2397e94ee9af0a37c12b1443d70c17b6}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{class_mondock_a2397e94ee9af0a37c12b1443d70c17b6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a2397e94ee9af0a37c12b1443d70c17b6_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a727e012b9b0df615ea2d585f98b00fb9}{\index{Mondock@{Mondock}!amblightfuncz@{amblightfuncz}}
 \index{amblightfuncz@{amblightfuncz}!Mondock@{Mondock}}
 \subsubsection[{amblightfuncz}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::amblightfuncz (
@@ -465,6 +511,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a727e012b9b0df615ea2d585f98b00fb9}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{class_mondock_a727e012b9b0df615ea2d585f98b00fb9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a727e012b9b0df615ea2d585f98b00fb9_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a8311bcb6b47314eba3966861c6cfe53a}{\index{Mondock@{Mondock}!ambmaterialfuncx@{ambmaterialfuncx}}
 \index{ambmaterialfuncx@{ambmaterialfuncx}!Mondock@{Mondock}}
 \subsubsection[{ambmaterialfuncx}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::ambmaterialfuncx (
@@ -472,6 +542,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a8311bcb6b47314eba3966861c6cfe53a}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_mondock_a8311bcb6b47314eba3966861c6cfe53a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a8311bcb6b47314eba3966861c6cfe53a_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_abab8b7116db8f4d8a45f97bbccfea28a}{\index{Mondock@{Mondock}!ambmaterialfuncy@{ambmaterialfuncy}}
 \index{ambmaterialfuncy@{ambmaterialfuncy}!Mondock@{Mondock}}
 \subsubsection[{ambmaterialfuncy}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::ambmaterialfuncy (
@@ -479,6 +573,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_abab8b7116db8f4d8a45f97bbccfea28a}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_mondock_abab8b7116db8f4d8a45f97bbccfea28a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_abab8b7116db8f4d8a45f97bbccfea28a_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_aef75cf8b1bb4a9cf7e6f6a04ac9a6e53}{\index{Mondock@{Mondock}!ambmaterialfuncz@{ambmaterialfuncz}}
 \index{ambmaterialfuncz@{ambmaterialfuncz}!Mondock@{Mondock}}
 \subsubsection[{ambmaterialfuncz}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::ambmaterialfuncz (
@@ -486,6 +604,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_aef75cf8b1bb4a9cf7e6f6a04ac9a6e53}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_mondock_aef75cf8b1bb4a9cf7e6f6a04ac9a6e53_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_aef75cf8b1bb4a9cf7e6f6a04ac9a6e53_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_ad475a793b9d77352f2e844b22315612e}{\index{Mondock@{Mondock}!diflightfuncx@{diflightfuncx}}
 \index{diflightfuncx@{diflightfuncx}!Mondock@{Mondock}}
 \subsubsection[{diflightfuncx}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::diflightfuncx (
@@ -493,6 +635,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_ad475a793b9d77352f2e844b22315612e}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_mondock_ad475a793b9d77352f2e844b22315612e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_ad475a793b9d77352f2e844b22315612e_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a5e60c8e141570f171d420de6f6e9af54}{\index{Mondock@{Mondock}!diflightfuncy@{diflightfuncy}}
 \index{diflightfuncy@{diflightfuncy}!Mondock@{Mondock}}
 \subsubsection[{diflightfuncy}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::diflightfuncy (
@@ -500,6 +666,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a5e60c8e141570f171d420de6f6e9af54}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_mondock_a5e60c8e141570f171d420de6f6e9af54_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a5e60c8e141570f171d420de6f6e9af54_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a4fd34f4035885b71a4d914ff85496715}{\index{Mondock@{Mondock}!diflightfuncz@{diflightfuncz}}
 \index{diflightfuncz@{diflightfuncz}!Mondock@{Mondock}}
 \subsubsection[{diflightfuncz}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::diflightfuncz (
@@ -507,6 +697,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a4fd34f4035885b71a4d914ff85496715}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_mondock_a4fd34f4035885b71a4d914ff85496715_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a4fd34f4035885b71a4d914ff85496715_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_ab52fa4e602f9dd7686b4beaee1ae78a7}{\index{Mondock@{Mondock}!difmaterialfuncx@{difmaterialfuncx}}
 \index{difmaterialfuncx@{difmaterialfuncx}!Mondock@{Mondock}}
 \subsubsection[{difmaterialfuncx}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::difmaterialfuncx (
@@ -514,6 +728,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_ab52fa4e602f9dd7686b4beaee1ae78a7}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{class_mondock_ab52fa4e602f9dd7686b4beaee1ae78a7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_ab52fa4e602f9dd7686b4beaee1ae78a7_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_acb6ef6ce35644055c6782614193c0abf}{\index{Mondock@{Mondock}!difmaterialfuncy@{difmaterialfuncy}}
 \index{difmaterialfuncy@{difmaterialfuncy}!Mondock@{Mondock}}
 \subsubsection[{difmaterialfuncy}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::difmaterialfuncy (
@@ -521,6 +759,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_acb6ef6ce35644055c6782614193c0abf}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{class_mondock_acb6ef6ce35644055c6782614193c0abf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_acb6ef6ce35644055c6782614193c0abf_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a8ff74685d0e326198673395786ca80d4}{\index{Mondock@{Mondock}!difmaterialfuncz@{difmaterialfuncz}}
 \index{difmaterialfuncz@{difmaterialfuncz}!Mondock@{Mondock}}
 \subsubsection[{difmaterialfuncz}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::difmaterialfuncz (
@@ -528,27 +790,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a8ff74685d0e326198673395786ca80d4}
-\hypertarget{class_mondock_a8eefc5e5056a10e66d69e3d8cfb21941}{\index{Mondock@{Mondock}!emimaterialfuncx@{emimaterialfuncx}}
-\index{emimaterialfuncx@{emimaterialfuncx}!Mondock@{Mondock}}
-\subsubsection[{emimaterialfuncx}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::emimaterialfuncx (
-\begin{DoxyParamCaption}
-\item[{int}]{x}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a8eefc5e5056a10e66d69e3d8cfb21941}
-\hypertarget{class_mondock_a1d7a5a172040878b370a2fa56de8774b}{\index{Mondock@{Mondock}!emimaterialfuncy@{emimaterialfuncy}}
-\index{emimaterialfuncy@{emimaterialfuncy}!Mondock@{Mondock}}
-\subsubsection[{emimaterialfuncy}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::emimaterialfuncy (
-\begin{DoxyParamCaption}
-\item[{int}]{x}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a1d7a5a172040878b370a2fa56de8774b}
-\hypertarget{class_mondock_ab69c246125f45077904e519c7f0e397c}{\index{Mondock@{Mondock}!emimaterialfuncz@{emimaterialfuncz}}
-\index{emimaterialfuncz@{emimaterialfuncz}!Mondock@{Mondock}}
-\subsubsection[{emimaterialfuncz}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::emimaterialfuncz (
-\begin{DoxyParamCaption}
-\item[{int}]{x}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_ab69c246125f45077904e519c7f0e397c}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{class_mondock_a8ff74685d0e326198673395786ca80d4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a8ff74685d0e326198673395786ca80d4_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a1cdbe11296a3fe24d88992bf7d2236f4}{\index{Mondock@{Mondock}!lumiereambiantejustx@{lumiereambiantejustx}}
 \index{lumiereambiantejustx@{lumiereambiantejustx}!Mondock@{Mondock}}
 \subsubsection[{lumiereambiantejustx}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::lumiereambiantejustx (
@@ -556,6 +821,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a1cdbe11296a3fe24d88992bf7d2236f4}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a1cdbe11296a3fe24d88992bf7d2236f4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a1cdbe11296a3fe24d88992bf7d2236f4_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_ae989829f726237ddcacbe9b1ae79ab62}{\index{Mondock@{Mondock}!lumiereambiantejusty@{lumiereambiantejusty}}
 \index{lumiereambiantejusty@{lumiereambiantejusty}!Mondock@{Mondock}}
 \subsubsection[{lumiereambiantejusty}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::lumiereambiantejusty (
@@ -563,6 +852,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_ae989829f726237ddcacbe9b1ae79ab62}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_ae989829f726237ddcacbe9b1ae79ab62_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_ae989829f726237ddcacbe9b1ae79ab62_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a824b5c728f21b3ef7d47d322cd0a07ee}{\index{Mondock@{Mondock}!lumiereambiantejustz@{lumiereambiantejustz}}
 \index{lumiereambiantejustz@{lumiereambiantejustz}!Mondock@{Mondock}}
 \subsubsection[{lumiereambiantejustz}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::lumiereambiantejustz (
@@ -570,6 +883,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a824b5c728f21b3ef7d47d322cd0a07ee}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a824b5c728f21b3ef7d47d322cd0a07ee_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a824b5c728f21b3ef7d47d322cd0a07ee_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_ae7cba6de97474c812bf5f6e1f5372540}{\index{Mondock@{Mondock}!matobjet@{matobjet}}
 \index{matobjet@{matobjet}!Mondock@{Mondock}}
 \subsubsection[{matobjet}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::matobjet (
@@ -577,6 +914,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{const Q\+String \&}]{text}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_ae7cba6de97474c812bf5f6e1f5372540}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{class_mondock_ae7cba6de97474c812bf5f6e1f5372540_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_ae7cba6de97474c812bf5f6e1f5372540_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_afcb87fab11d89a1a24da091153d4dbac}{\index{Mondock@{Mondock}!pereobjet@{pereobjet}}
 \index{pereobjet@{pereobjet}!Mondock@{Mondock}}
 \subsubsection[{pereobjet}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::pereobjet (
@@ -584,6 +945,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{const Q\+String \&}]{text}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_afcb87fab11d89a1a24da091153d4dbac}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_afcb87fab11d89a1a24da091153d4dbac_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_afcb87fab11d89a1a24da091153d4dbac_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a05ec25870c70f2eeba2ccdc1da44e7ca}{\index{Mondock@{Mondock}!poslightfuncx@{poslightfuncx}}
 \index{poslightfuncx@{poslightfuncx}!Mondock@{Mondock}}
 \subsubsection[{poslightfuncx}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::poslightfuncx (
@@ -591,6 +976,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{double}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a05ec25870c70f2eeba2ccdc1da44e7ca}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_mondock_a05ec25870c70f2eeba2ccdc1da44e7ca_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a05ec25870c70f2eeba2ccdc1da44e7ca_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_ae8593b3cbc4c42badf600599a2e01dce}{\index{Mondock@{Mondock}!poslightfuncy@{poslightfuncy}}
 \index{poslightfuncy@{poslightfuncy}!Mondock@{Mondock}}
 \subsubsection[{poslightfuncy}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::poslightfuncy (
@@ -598,6 +1007,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{double}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_ae8593b3cbc4c42badf600599a2e01dce}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_mondock_ae8593b3cbc4c42badf600599a2e01dce_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_ae8593b3cbc4c42badf600599a2e01dce_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_aa5ec8a8453515216ffd85961c868108f}{\index{Mondock@{Mondock}!poslightfuncz@{poslightfuncz}}
 \index{poslightfuncz@{poslightfuncz}!Mondock@{Mondock}}
 \subsubsection[{poslightfuncz}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::poslightfuncz (
@@ -605,6 +1038,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{double}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_aa5ec8a8453515216ffd85961c868108f}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_mondock_aa5ec8a8453515216ffd85961c868108f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_aa5ec8a8453515216ffd85961c868108f_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a7543dea413bcfc6c79847373e99f75fc}{\index{Mondock@{Mondock}!rotobjectx@{rotobjectx}}
 \index{rotobjectx@{rotobjectx}!Mondock@{Mondock}}
 \subsubsection[{rotobjectx}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::rotobjectx (
@@ -612,6 +1069,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{double}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a7543dea413bcfc6c79847373e99f75fc}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_mondock_a7543dea413bcfc6c79847373e99f75fc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a7543dea413bcfc6c79847373e99f75fc_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_ad182d69edf7f245ade47b574813357d0}{\index{Mondock@{Mondock}!rotobjecty@{rotobjecty}}
 \index{rotobjecty@{rotobjecty}!Mondock@{Mondock}}
 \subsubsection[{rotobjecty}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::rotobjecty (
@@ -619,6 +1100,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{double}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_ad182d69edf7f245ade47b574813357d0}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_mondock_ad182d69edf7f245ade47b574813357d0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_ad182d69edf7f245ade47b574813357d0_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a90dd35e5da95e3b29a44104f8527605b}{\index{Mondock@{Mondock}!rotobjectz@{rotobjectz}}
 \index{rotobjectz@{rotobjectz}!Mondock@{Mondock}}
 \subsubsection[{rotobjectz}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::rotobjectz (
@@ -626,6 +1131,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{double}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a90dd35e5da95e3b29a44104f8527605b}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_mondock_a90dd35e5da95e3b29a44104f8527605b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a90dd35e5da95e3b29a44104f8527605b_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a124312bbc80f593e1868bf0219cf0056}{\index{Mondock@{Mondock}!rotpiecex@{rotpiecex}}
 \index{rotpiecex@{rotpiecex}!Mondock@{Mondock}}
 \subsubsection[{rotpiecex}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::rotpiecex (
@@ -633,6 +1162,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{double}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a124312bbc80f593e1868bf0219cf0056}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{class_mondock_a124312bbc80f593e1868bf0219cf0056_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a124312bbc80f593e1868bf0219cf0056_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a2e657947e69adddb4ee8527063377a31}{\index{Mondock@{Mondock}!rotpiecey@{rotpiecey}}
 \index{rotpiecey@{rotpiecey}!Mondock@{Mondock}}
 \subsubsection[{rotpiecey}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::rotpiecey (
@@ -640,6 +1193,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{double}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a2e657947e69adddb4ee8527063377a31}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{class_mondock_a2e657947e69adddb4ee8527063377a31_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a2e657947e69adddb4ee8527063377a31_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a8f94fe729819688c88de6025642463c9}{\index{Mondock@{Mondock}!rotpiecez@{rotpiecez}}
 \index{rotpiecez@{rotpiecez}!Mondock@{Mondock}}
 \subsubsection[{rotpiecez}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::rotpiecez (
@@ -647,6 +1224,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{double}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a8f94fe729819688c88de6025642463c9}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{class_mondock_a8f94fe729819688c88de6025642463c9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a8f94fe729819688c88de6025642463c9_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a6978ac0641ff991c971ddbb571a8e8fd}{\index{Mondock@{Mondock}!scaleobjectx@{scaleobjectx}}
 \index{scaleobjectx@{scaleobjectx}!Mondock@{Mondock}}
 \subsubsection[{scaleobjectx}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::scaleobjectx (
@@ -654,6 +1255,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{double}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a6978ac0641ff991c971ddbb571a8e8fd}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{class_mondock_a6978ac0641ff991c971ddbb571a8e8fd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a6978ac0641ff991c971ddbb571a8e8fd_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a5d96ddec02aefd94fe519bcb9d973e4f}{\index{Mondock@{Mondock}!scaleobjecty@{scaleobjecty}}
 \index{scaleobjecty@{scaleobjecty}!Mondock@{Mondock}}
 \subsubsection[{scaleobjecty}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::scaleobjecty (
@@ -661,6 +1286,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{double}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a5d96ddec02aefd94fe519bcb9d973e4f}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{class_mondock_a5d96ddec02aefd94fe519bcb9d973e4f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a5d96ddec02aefd94fe519bcb9d973e4f_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a1f5430731565a79314d90de605741e75}{\index{Mondock@{Mondock}!scaleobjectz@{scaleobjectz}}
 \index{scaleobjectz@{scaleobjectz}!Mondock@{Mondock}}
 \subsubsection[{scaleobjectz}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::scaleobjectz (
@@ -668,6 +1317,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{double}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a1f5430731565a79314d90de605741e75}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{class_mondock_a1f5430731565a79314d90de605741e75_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a1f5430731565a79314d90de605741e75_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a9f2a071406501e4fccde215bc38d8df9}{\index{Mondock@{Mondock}!scalepiecex@{scalepiecex}}
 \index{scalepiecex@{scalepiecex}!Mondock@{Mondock}}
 \subsubsection[{scalepiecex}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::scalepiecex (
@@ -675,6 +1348,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{double}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a9f2a071406501e4fccde215bc38d8df9}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{class_mondock_a9f2a071406501e4fccde215bc38d8df9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a9f2a071406501e4fccde215bc38d8df9_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a4ac3bc0b53096e41379ac7ef64de9d2d}{\index{Mondock@{Mondock}!scalepiecey@{scalepiecey}}
 \index{scalepiecey@{scalepiecey}!Mondock@{Mondock}}
 \subsubsection[{scalepiecey}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::scalepiecey (
@@ -682,6 +1379,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{double}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a4ac3bc0b53096e41379ac7ef64de9d2d}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{class_mondock_a4ac3bc0b53096e41379ac7ef64de9d2d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a4ac3bc0b53096e41379ac7ef64de9d2d_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_afd3ea421e6df4deac7930ed476556aa4}{\index{Mondock@{Mondock}!scalepiecez@{scalepiecez}}
 \index{scalepiecez@{scalepiecez}!Mondock@{Mondock}}
 \subsubsection[{scalepiecez}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::scalepiecez (
@@ -689,6 +1410,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{double}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_afd3ea421e6df4deac7930ed476556aa4}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{class_mondock_afd3ea421e6df4deac7930ed476556aa4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_afd3ea421e6df4deac7930ed476556aa4_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a0b0dfd777e3a4ee9f4ac65ab44b02fca}{\index{Mondock@{Mondock}!scalesliderobject@{scalesliderobject}}
 \index{scalesliderobject@{scalesliderobject}!Mondock@{Mondock}}
 \subsubsection[{scalesliderobject}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::scalesliderobject (
@@ -696,6 +1441,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a0b0dfd777e3a4ee9f4ac65ab44b02fca}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_mondock_a0b0dfd777e3a4ee9f4ac65ab44b02fca_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a0b0dfd777e3a4ee9f4ac65ab44b02fca_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_aa2174033ee4e3798b0c800a2c92f958f}{\index{Mondock@{Mondock}!scalesliderpiece@{scalesliderpiece}}
 \index{scalesliderpiece@{scalesliderpiece}!Mondock@{Mondock}}
 \subsubsection[{scalesliderpiece}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::scalesliderpiece (
@@ -703,6 +1472,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_aa2174033ee4e3798b0c800a2c92f958f}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_mondock_aa2174033ee4e3798b0c800a2c92f958f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_aa2174033ee4e3798b0c800a2c92f958f_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a25391f1fac7a8a46e761f2f8c9c2fdc8}{\index{Mondock@{Mondock}!selectionlight@{selectionlight}}
 \index{selectionlight@{selectionlight}!Mondock@{Mondock}}
 \subsubsection[{selectionlight}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::selectionlight (
@@ -710,6 +1503,18 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a25391f1fac7a8a46e761f2f8c9c2fdc8}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_mondock_a25391f1fac7a8a46e761f2f8c9c2fdc8_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_aab1b5fe42325904c90cb7ea01d20dda3}{\index{Mondock@{Mondock}!slotpositionpiecex@{slotpositionpiecex}}
 \index{slotpositionpiecex@{slotpositionpiecex}!Mondock@{Mondock}}
 \subsubsection[{slotpositionpiecex}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::slotpositionpiecex (
@@ -717,6 +1522,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_aab1b5fe42325904c90cb7ea01d20dda3}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_mondock_aab1b5fe42325904c90cb7ea01d20dda3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_aab1b5fe42325904c90cb7ea01d20dda3_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_aa9b2f07da91515f13c0dc217d24357ba}{\index{Mondock@{Mondock}!slotpositionpiecey@{slotpositionpiecey}}
 \index{slotpositionpiecey@{slotpositionpiecey}!Mondock@{Mondock}}
 \subsubsection[{slotpositionpiecey}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::slotpositionpiecey (
@@ -724,6 +1553,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_aa9b2f07da91515f13c0dc217d24357ba}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_mondock_aa9b2f07da91515f13c0dc217d24357ba_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_aa9b2f07da91515f13c0dc217d24357ba_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a655881c708869d768f1488d6fa066dc6}{\index{Mondock@{Mondock}!slotpositionpiecez@{slotpositionpiecez}}
 \index{slotpositionpiecez@{slotpositionpiecez}!Mondock@{Mondock}}
 \subsubsection[{slotpositionpiecez}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::slotpositionpiecez (
@@ -731,6 +1584,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a655881c708869d768f1488d6fa066dc6}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_mondock_a655881c708869d768f1488d6fa066dc6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a655881c708869d768f1488d6fa066dc6_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_ad12c449ba7b08f8430353e5fb7687e6a}{\index{Mondock@{Mondock}!spelightfuncx@{spelightfuncx}}
 \index{spelightfuncx@{spelightfuncx}!Mondock@{Mondock}}
 \subsubsection[{spelightfuncx}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::spelightfuncx (
@@ -738,6 +1615,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_ad12c449ba7b08f8430353e5fb7687e6a}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_mondock_ad12c449ba7b08f8430353e5fb7687e6a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_ad12c449ba7b08f8430353e5fb7687e6a_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_ac2c735aede2c4c621f08f9c34d6a4c9c}{\index{Mondock@{Mondock}!spelightfuncy@{spelightfuncy}}
 \index{spelightfuncy@{spelightfuncy}!Mondock@{Mondock}}
 \subsubsection[{spelightfuncy}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::spelightfuncy (
@@ -745,6 +1646,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_ac2c735aede2c4c621f08f9c34d6a4c9c}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_mondock_ac2c735aede2c4c621f08f9c34d6a4c9c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_ac2c735aede2c4c621f08f9c34d6a4c9c_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_ad626e2142ce5065af9a3bd891c825a5a}{\index{Mondock@{Mondock}!spelightfuncz@{spelightfuncz}}
 \index{spelightfuncz@{spelightfuncz}!Mondock@{Mondock}}
 \subsubsection[{spelightfuncz}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::spelightfuncz (
@@ -752,6 +1677,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_ad626e2142ce5065af9a3bd891c825a5a}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_mondock_ad626e2142ce5065af9a3bd891c825a5a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_ad626e2142ce5065af9a3bd891c825a5a_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_ad62497d70cea045864c6f6dfa63f0a4c}{\index{Mondock@{Mondock}!spematerialfuncx@{spematerialfuncx}}
 \index{spematerialfuncx@{spematerialfuncx}!Mondock@{Mondock}}
 \subsubsection[{spematerialfuncx}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::spematerialfuncx (
@@ -759,6 +1708,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_ad62497d70cea045864c6f6dfa63f0a4c}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_mondock_ad62497d70cea045864c6f6dfa63f0a4c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_ad62497d70cea045864c6f6dfa63f0a4c_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_ada51acb02b3cb5d32e3982e93e2b2951}{\index{Mondock@{Mondock}!spematerialfuncy@{spematerialfuncy}}
 \index{spematerialfuncy@{spematerialfuncy}!Mondock@{Mondock}}
 \subsubsection[{spematerialfuncy}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::spematerialfuncy (
@@ -766,6 +1739,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_ada51acb02b3cb5d32e3982e93e2b2951}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_mondock_ada51acb02b3cb5d32e3982e93e2b2951_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_ada51acb02b3cb5d32e3982e93e2b2951_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_aebe3927b8d0b1c6a703580cf69284405}{\index{Mondock@{Mondock}!spematerialfuncz@{spematerialfuncz}}
 \index{spematerialfuncz@{spematerialfuncz}!Mondock@{Mondock}}
 \subsubsection[{spematerialfuncz}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::spematerialfuncz (
@@ -773,6 +1770,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_aebe3927b8d0b1c6a703580cf69284405}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_mondock_aebe3927b8d0b1c6a703580cf69284405_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_aebe3927b8d0b1c6a703580cf69284405_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_acfe377696276e313ee29188412cdefc5}{\index{Mondock@{Mondock}!spematerialtfunca@{spematerialtfunca}}
 \index{spematerialtfunca@{spematerialtfunca}!Mondock@{Mondock}}
 \subsubsection[{spematerialtfunca}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::spematerialtfunca (
@@ -780,6 +1801,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{int}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_acfe377696276e313ee29188412cdefc5}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_mondock_acfe377696276e313ee29188412cdefc5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_acfe377696276e313ee29188412cdefc5_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_ae228ac3c0273c3f275fb88842d9c8899}{\index{Mondock@{Mondock}!traitementambiante@{traitementambiante}}
 \index{traitementambiante@{traitementambiante}!Mondock@{Mondock}}
 \subsubsection[{traitementambiante}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::traitementambiante (
@@ -787,6 +1832,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_ae228ac3c0273c3f275fb88842d9c8899}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_ae228ac3c0273c3f275fb88842d9c8899_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_ae228ac3c0273c3f275fb88842d9c8899_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_aea9fc6ea30f9958ac3a747552ecbed17}{\index{Mondock@{Mondock}!traitementlumiere@{traitementlumiere}}
 \index{traitementlumiere@{traitementlumiere}!Mondock@{Mondock}}
 \subsubsection[{traitementlumiere}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::traitementlumiere (
@@ -794,6 +1863,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_aea9fc6ea30f9958ac3a747552ecbed17}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_aea9fc6ea30f9958ac3a747552ecbed17_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_aea9fc6ea30f9958ac3a747552ecbed17_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_ab482a04624f22351da70e316fe9c8d4e}{\index{Mondock@{Mondock}!traitementmaterial@{traitementmaterial}}
 \index{traitementmaterial@{traitementmaterial}!Mondock@{Mondock}}
 \subsubsection[{traitementmaterial}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::traitementmaterial (
@@ -801,6 +1894,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_ab482a04624f22351da70e316fe9c8d4e}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_ab482a04624f22351da70e316fe9c8d4e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_ab482a04624f22351da70e316fe9c8d4e_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_aad20b3c5334d00fe5e69ac5872f76f4b}{\index{Mondock@{Mondock}!traitementobjet@{traitementobjet}}
 \index{traitementobjet@{traitementobjet}!Mondock@{Mondock}}
 \subsubsection[{traitementobjet}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::traitementobjet (
@@ -808,6 +1925,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_aad20b3c5334d00fe5e69ac5872f76f4b}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_aad20b3c5334d00fe5e69ac5872f76f4b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_aad20b3c5334d00fe5e69ac5872f76f4b_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a8f0d8c5f390853f482b38bbcf943447a}{\index{Mondock@{Mondock}!traitementpiece@{traitementpiece}}
 \index{traitementpiece@{traitementpiece}!Mondock@{Mondock}}
 \subsubsection[{traitementpiece}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::traitementpiece (
@@ -815,6 +1956,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_a8f0d8c5f390853f482b38bbcf943447a}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a8f0d8c5f390853f482b38bbcf943447a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a8f0d8c5f390853f482b38bbcf943447a_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a68ab5d84182366c7231014333055d12d}{\index{Mondock@{Mondock}!transobjectx@{transobjectx}}
 \index{transobjectx@{transobjectx}!Mondock@{Mondock}}
 \subsubsection[{transobjectx}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::transobjectx (
@@ -822,6 +1987,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{double}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a68ab5d84182366c7231014333055d12d}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_mondock_a68ab5d84182366c7231014333055d12d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a68ab5d84182366c7231014333055d12d_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_ac6fba22518497d0b8ed04c976dd98ef3}{\index{Mondock@{Mondock}!transobjecty@{transobjecty}}
 \index{transobjecty@{transobjecty}!Mondock@{Mondock}}
 \subsubsection[{transobjecty}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::transobjecty (
@@ -829,6 +2018,30 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \item[{double}]{x}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_ac6fba22518497d0b8ed04c976dd98ef3}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_mondock_ac6fba22518497d0b8ed04c976dd98ef3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_ac6fba22518497d0b8ed04c976dd98ef3_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_mondock_a4577b03f35f3e2eaa7d1826b1a9f0ebe}{\index{Mondock@{Mondock}!transobjectz@{transobjectz}}
 \index{transobjectz@{transobjectz}!Mondock@{Mondock}}
 \subsubsection[{transobjectz}]{\setlength{\rightskip}{0pt plus 5cm}void Mondock\+::transobjectz (
@@ -838,7 +2051,31 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_mondock_a4577b03f35f3e2eaa7d1826b1a9f0ebe}
 
 
-\subsection{Member Data Documentation}
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_mondock_a4577b03f35f3e2eaa7d1826b1a9f0ebe_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mondock_a4577b03f35f3e2eaa7d1826b1a9f0ebe_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Documentation des données membres}
 \hypertarget{class_mondock_ab873f19cf3a771dcb0f32480e3ea2c69}{\index{Mondock@{Mondock}!\+\_\+itemmaterial@{\+\_\+itemmaterial}}
 \index{\+\_\+itemmaterial@{\+\_\+itemmaterial}!Mondock@{Mondock}}
 \subsubsection[{\+\_\+itemmaterial}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Standard\+Item$\ast$ Mondock\+::\+\_\+itemmaterial}}\label{class_mondock_ab873f19cf3a771dcb0f32480e3ea2c69}
@@ -1049,15 +2286,6 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \hypertarget{class_mondock_abaa05027f2871448e35b82516e0559b8}{\index{Mondock@{Mondock}!materialspinboxdifz@{materialspinboxdifz}}
 \index{materialspinboxdifz@{materialspinboxdifz}!Mondock@{Mondock}}
 \subsubsection[{materialspinboxdifz}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ Mondock\+::materialspinboxdifz\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_abaa05027f2871448e35b82516e0559b8}
-\hypertarget{class_mondock_a003c7eff97a356c6dc6d7f892719e91f}{\index{Mondock@{Mondock}!materialspinboxemix@{materialspinboxemix}}
-\index{materialspinboxemix@{materialspinboxemix}!Mondock@{Mondock}}
-\subsubsection[{materialspinboxemix}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ Mondock\+::materialspinboxemix\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_a003c7eff97a356c6dc6d7f892719e91f}
-\hypertarget{class_mondock_a92982a92a14d612a49dd027cb68b6d73}{\index{Mondock@{Mondock}!materialspinboxemiy@{materialspinboxemiy}}
-\index{materialspinboxemiy@{materialspinboxemiy}!Mondock@{Mondock}}
-\subsubsection[{materialspinboxemiy}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ Mondock\+::materialspinboxemiy\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_a92982a92a14d612a49dd027cb68b6d73}
-\hypertarget{class_mondock_ab95fca34ebe4db052bab4109eaf5afd1}{\index{Mondock@{Mondock}!materialspinboxemiz@{materialspinboxemiz}}
-\index{materialspinboxemiz@{materialspinboxemiz}!Mondock@{Mondock}}
-\subsubsection[{materialspinboxemiz}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ Mondock\+::materialspinboxemiz\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_ab95fca34ebe4db052bab4109eaf5afd1}
 \hypertarget{class_mondock_a62de223ddabe875e9406fd43b892a8a0}{\index{Mondock@{Mondock}!materialspinboxspea@{materialspinboxspea}}
 \index{materialspinboxspea@{materialspinboxspea}!Mondock@{Mondock}}
 \subsubsection[{materialspinboxspea}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ Mondock\+::materialspinboxspea\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_a62de223ddabe875e9406fd43b892a8a0}
@@ -1214,12 +2442,6 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \hypertarget{class_mondock_a346764281a416f9221d71a96cf9ce4fc}{\index{Mondock@{Mondock}!tabmaterialdiflayout@{tabmaterialdiflayout}}
 \index{tabmaterialdiflayout@{tabmaterialdiflayout}!Mondock@{Mondock}}
 \subsubsection[{tabmaterialdiflayout}]{\setlength{\rightskip}{0pt plus 5cm}Q\+H\+Box\+Layout$\ast$ Mondock\+::tabmaterialdiflayout\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_a346764281a416f9221d71a96cf9ce4fc}
-\hypertarget{class_mondock_af4e2b3e87db243b8813a3e71cbf9dd7d}{\index{Mondock@{Mondock}!tabmaterialemi@{tabmaterialemi}}
-\index{tabmaterialemi@{tabmaterialemi}!Mondock@{Mondock}}
-\subsubsection[{tabmaterialemi}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ Mondock\+::tabmaterialemi\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_af4e2b3e87db243b8813a3e71cbf9dd7d}
-\hypertarget{class_mondock_afc37221d5733642eeeeaf93042d72dcb}{\index{Mondock@{Mondock}!tabmaterialemilayout@{tabmaterialemilayout}}
-\index{tabmaterialemilayout@{tabmaterialemilayout}!Mondock@{Mondock}}
-\subsubsection[{tabmaterialemilayout}]{\setlength{\rightskip}{0pt plus 5cm}Q\+H\+Box\+Layout$\ast$ Mondock\+::tabmaterialemilayout\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_afc37221d5733642eeeeaf93042d72dcb}
 \hypertarget{class_mondock_a7f99e6c98995aa1e236e44be190e0fa6}{\index{Mondock@{Mondock}!tabmaterialspe@{tabmaterialspe}}
 \index{tabmaterialspe@{tabmaterialspe}!Mondock@{Mondock}}
 \subsubsection[{tabmaterialspe}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ Mondock\+::tabmaterialspe\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_a7f99e6c98995aa1e236e44be190e0fa6}
@@ -1261,7 +2483,7 @@ Q\+Double\+Spin\+Box $\ast$ \hyperlink{class_mondock_a0e78f599b45d731f0882942891
 \subsubsection[{widgetpiecescale}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ Mondock\+::widgetpiecescale\hspace{0.3cm}{\ttfamily [private]}}}\label{class_mondock_ac94f8cc2fda714079ee5a9ae363fe052}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 gui/\hyperlink{mondock_8hpp}{mondock.\+hpp}\item 
 gui/\hyperlink{mondock_8cpp}{mondock.\+cpp}\end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
-\hypertarget{class_node}{\section{Node Class Reference}
+\hypertarget{class_node}{\section{Référence de la classe Node}
 \label{class_node}\index{Node@{Node}}
 }
 
@@ -10,13 +10,27 @@ Contient un node de modèle 3\+D.
 
 {\ttfamily \#include $<$node.\+hpp$>$}
 
-Inheritance diagram for Node\+:\begin{figure}[H]
+
+
+Graphe d'héritage de Node\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.000000cm]{class_node}
+\includegraphics[height=550pt]{class_node__inherit__graph}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
+
+
+Graphe de collaboration de Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_node__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_node_aa0840c3cb5c7159be6d992adecd2097c}{$\sim$\+Node} ()
@@ -37,46 +51,46 @@ void \hyperlink{class_node_ada41b9bdf6e91579ef585e1272f66045}{remove\+Mesh} (con
 \begin{DoxyCompactList}\small\item\em Supprime le \hyperlink{class_mesh}{Mesh} portant le nom. \end{DoxyCompactList}\item 
 Q\+String \hyperlink{class_node_adf80c463ba15d60645252ffa171fd209}{get\+Model\+Name} () const 
 \begin{DoxyCompactList}\small\item\em Récupère le nom du modèle chargé \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Public Member Functions}
+\subsection*{Fonctions membres publiques statiques}
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{class_node}{Node} $\ast$ \hyperlink{class_node_ac2140ddf8f06f8b5620e6743c945c482}{load\+Model} (const Q\+String \&path, \hyperlink{class_scene}{Scene} $\ast$scene)
 \begin{DoxyCompactList}\small\item\em Charge le modèle. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
+\subsection*{Fonctions membres privées}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_node_ad7a34779cad45d997bfd6d3d8043c75f}{Node} ()
 \begin{DoxyCompactList}\small\item\em Constructeur par défaut. \end{DoxyCompactList}\item 
 \hyperlink{class_node_a4bf5930c1238505203c3dcf6e4573bad}{Node} (const \hyperlink{class_node}{Node} \&node)
 \begin{DoxyCompactList}\small\item\em Constructeur par recopie. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Private Member Functions}
+\subsection*{Fonctions membres privées statiques}
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{class_material}{Material} $\ast$ \hyperlink{class_node_a0684a35524cc1e276bfefdd28cd452cf}{load\+Material} (const ai\+Material $\ast$mtl)
 \begin{DoxyCompactList}\small\item\em Charge un \hyperlink{class_material}{Material} depuis une ai\+Material d'A\+S\+S\+I\+M\+P. \end{DoxyCompactList}\item 
 static \hyperlink{class_node}{Node} $\ast$ \hyperlink{class_node_acf6db74c5840b203f4eee1239539ce31}{load\+Node} (const ai\+Node $\ast$node, const ai\+Scene $\ast$p\+Scene, \hyperlink{class_scene}{Scene} $\ast$scene)
 \begin{DoxyCompactList}\small\item\em Charge un ai\+Node. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
+\subsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
 Q\+List$<$ \hyperlink{class_mesh}{Mesh} $\ast$ $>$ \hyperlink{class_node_aad5e459a1ed03d6e09ad7054f2014f5a}{\+\_\+meshs}
 \item 
 Q\+Map$<$ Q\+String, \hyperlink{class_node}{Node} $\ast$ $>$ \hyperlink{class_node_aac0c3b4b1f41b26ec5a22d77f067ec5b}{\+\_\+children}
 \end{DoxyCompactItemize}
-\subsection*{Static Private Attributes}
+\subsection*{Attributs privés statiques}
 \begin{DoxyCompactItemize}
 \item 
 static Q\+Multi\+Map$<$ Q\+String, \hyperlink{class_node}{Node} $\ast$ $>$ \hyperlink{class_node_a2e510fe62f9ef864668e32ef9269543c}{\+\_\+loaded\+Models}
 \end{DoxyCompactItemize}
-\subsection*{Additional Inherited Members}
+\subsection*{Membres hérités additionnels}
 
 
-\subsection{Detailed Description}
+\subsection{Description détaillée}
 Contient un node de modèle 3\+D. 
 
 Un node possède un ensemble de meshes et de \hyperlink{class_node}{Node} fils 
 
-\subsection{Constructor \& Destructor Documentation}
+\subsection{Documentation des constructeurs et destructeur}
 \hypertarget{class_node_ad7a34779cad45d997bfd6d3d8043c75f}{\index{Node@{Node}!Node@{Node}}
 \index{Node@{Node}!Node@{Node}}
 \subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}Node\+::\+Node (
@@ -87,6 +101,18 @@ Un node possède un ensemble de meshes et de \hyperlink{class_node}{Node} fils
 
 
 Constructeur par défaut. 
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_node_ad7a34779cad45d997bfd6d3d8043c75f_icgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{class_node_a4bf5930c1238505203c3dcf6e4573bad}{\index{Node@{Node}!Node@{Node}}
 \index{Node@{Node}!Node@{Node}}
@@ -100,10 +126,22 @@ Constructeur par défaut.
 Constructeur par recopie. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em node} & \hyperlink{class_node}{Node} à recopier \\
 \hline
 \end{DoxyParams}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_node_a4bf5930c1238505203c3dcf6e4573bad_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_node_aa0840c3cb5c7159be6d992adecd2097c}{\index{Node@{Node}!````~Node@{$\sim$\+Node}}
 \index{````~Node@{$\sim$\+Node}!Node@{Node}}
 \subsubsection[{$\sim$\+Node}]{\setlength{\rightskip}{0pt plus 5cm}Node\+::$\sim$\+Node (
@@ -117,7 +155,7 @@ Destructeur.
 
 Détruit les Nodes et \hyperlink{class_mesh}{Mesh} fils 
 
-\subsection{Member Function Documentation}
+\subsection{Documentation des fonctions membres}
 \hypertarget{class_node_ab88c83ced58700a56de568f5b1e3c473}{\index{Node@{Node}!draw@{draw}}
 \index{draw@{draw}!Node@{Node}}
 \subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Node\+::draw (
@@ -131,7 +169,19 @@ Affichage de l'\hyperlink{class_objet}{Objet}.
 
 Active le shader de l'\hyperlink{class_objet}{Objet} et applique le material 
 
-Reimplemented from \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Objet}.
+Réimplémentée à partir de \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Objet}.
+
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_node_ab88c83ced58700a56de568f5b1e3c473_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{class_node_afdc8a8f6c370f437037c85ffea5af4c1}{\index{Node@{Node}!get\+Child@{get\+Child}}
 \index{get\+Child@{get\+Child}!Node@{Node}}
@@ -145,13 +195,25 @@ Reimplemented from \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Obj
 Retourne le \hyperlink{class_node}{Node} enfant à partir de son nom. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em name} & nom du \hyperlink{class_node}{Node} enfant \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 retourne N\+U\+L\+L si aucun enfant n'existe avec ce nom 
 \end{DoxyReturn}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_node_afdc8a8f6c370f437037c85ffea5af4c1_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_node_af7d6e2eab0af346f6690b4a2db12d953}{\index{Node@{Node}!get\+Children\+Names@{get\+Children\+Names}}
 \index{get\+Children\+Names@{get\+Children\+Names}!Node@{Node}}
 \subsubsection[{get\+Children\+Names}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List Node\+::get\+Children\+Names (
@@ -163,9 +225,21 @@ retourne N\+U\+L\+L si aucun enfant n'existe avec ce nom
 
 Retourne la liste des noms des Nodes fils. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 liste des noms des Nodes fils 
 \end{DoxyReturn}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_node_af7d6e2eab0af346f6690b4a2db12d953_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_node_a47c225bb649c6d44763661f6e3253c7c}{\index{Node@{Node}!get\+Mesh@{get\+Mesh}}
 \index{get\+Mesh@{get\+Mesh}!Node@{Node}}
 \subsubsection[{get\+Mesh}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mesh} $\ast$ Node\+::get\+Mesh (
@@ -178,13 +252,25 @@ liste des noms des Nodes fils
 Retourne le \hyperlink{class_mesh}{Mesh} ayant le nom donné 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em name} & nom du \hyperlink{class_mesh}{Mesh} \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 N\+U\+L\+L si le \hyperlink{class_mesh}{Mesh} n'appartient pas à ce \hyperlink{class_node}{Node} 
 \end{DoxyReturn}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{class_node_a47c225bb649c6d44763661f6e3253c7c_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_node_a4a3bbcabcbd5423c297e287dd0ab7ecd}{\index{Node@{Node}!get\+Mesh\+Names@{get\+Mesh\+Names}}
 \index{get\+Mesh\+Names@{get\+Mesh\+Names}!Node@{Node}}
 \subsubsection[{get\+Mesh\+Names}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List Node\+::get\+Mesh\+Names (
@@ -196,7 +282,7 @@ N\+U\+L\+L si le \hyperlink{class_mesh}{Mesh} n'appartient pas à ce \hyperlink{
 
 Retourne la liste des noms des \hyperlink{class_mesh}{Mesh} de ce \hyperlink{class_node}{Node}. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 liste des noms des \hyperlink{class_mesh}{Mesh} 
 \end{DoxyReturn}
 \hypertarget{class_node_adf80c463ba15d60645252ffa171fd209}{\index{Node@{Node}!get\+Model\+Name@{get\+Model\+Name}}
@@ -211,16 +297,28 @@ liste des noms des \hyperlink{class_mesh}{Mesh}
 Récupère le nom du modèle chargé 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em node} & \hyperlink{class_node}{Node} dont on veut le nom du modèle \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 nom du fichier charger 
 \end{DoxyReturn}
-\begin{DoxyWarning}{Warning}
+\begin{DoxyWarning}{Avertissement}
 Ne fonctionne que pour les \hyperlink{class_node}{Node} racines 
 \end{DoxyWarning}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_node_adf80c463ba15d60645252ffa171fd209_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_node_a0684a35524cc1e276bfefdd28cd452cf}{\index{Node@{Node}!load\+Material@{load\+Material}}
 \index{load\+Material@{load\+Material}!Node@{Node}}
 \subsubsection[{load\+Material}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Material} $\ast$ Node\+::load\+Material (
@@ -233,13 +331,37 @@ Ne fonctionne que pour les \hyperlink{class_node}{Node} racines
 Charge un \hyperlink{class_material}{Material} depuis une ai\+Material d'A\+S\+S\+I\+M\+P. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em mtl} & material à charger \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 \hyperlink{class_material}{Material} créé 
 \end{DoxyReturn}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{class_node_a0684a35524cc1e276bfefdd28cd452cf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_node_a0684a35524cc1e276bfefdd28cd452cf_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_node_ac2140ddf8f06f8b5620e6743c945c482}{\index{Node@{Node}!load\+Model@{load\+Model}}
 \index{load\+Model@{load\+Model}!Node@{Node}}
 \subsubsection[{load\+Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node} $\ast$ Node\+::load\+Model (
@@ -255,15 +377,39 @@ Charge le modèle.
 Retourne le \hyperlink{class_node}{Node} racine représentant le modèle et ajoute les matériaux à la scène
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em path} & nom du fichier à charger \\
 \hline
 {\em scene} & \hyperlink{class_scene}{Scene} qui recevra les matériaux chargés\\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 \hyperlink{class_node}{Node} racine du modèle 
 \end{DoxyReturn}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_node_ac2140ddf8f06f8b5620e6743c945c482_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_node_ac2140ddf8f06f8b5620e6743c945c482_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_node_acf6db74c5840b203f4eee1239539ce31}{\index{Node@{Node}!load\+Node@{load\+Node}}
 \index{load\+Node@{load\+Node}!Node@{Node}}
 \subsubsection[{load\+Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node} $\ast$ Node\+::load\+Node (
@@ -278,7 +424,7 @@ Retourne le \hyperlink{class_node}{Node} racine représentant le modèle et ajou
 Charge un ai\+Node. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em node} & ai\+Node à charger \\
 \hline
 {\em p\+Scene} & ai\+Scene contenant les textures, matériaux et mesh \\
@@ -286,9 +432,33 @@ Charge un ai\+Node.
 {\em scene} & \hyperlink{class_scene}{Scene} à laquelle ajouter les matériaux chargés \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 \hyperlink{class_node}{Node} proprement chargé 
 \end{DoxyReturn}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_node_acf6db74c5840b203f4eee1239539ce31_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_node_acf6db74c5840b203f4eee1239539ce31_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_node_af93b38928dc99bd2d3b1bfd982898519}{\index{Node@{Node}!remove\+Child@{remove\+Child}}
 \index{remove\+Child@{remove\+Child}!Node@{Node}}
 \subsubsection[{remove\+Child}]{\setlength{\rightskip}{0pt plus 5cm}void Node\+::remove\+Child (
@@ -301,7 +471,7 @@ Charge un ai\+Node.
 supprime un \hyperlink{class_node}{Node} fils 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em name} & nom du \hyperlink{class_node}{Node} à supprimer \\
 \hline
 \end{DoxyParams}
@@ -317,13 +487,25 @@ supprime un \hyperlink{class_node}{Node} fils
 Supprime le \hyperlink{class_mesh}{Mesh} portant le nom. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em name} & nom du \hyperlink{class_mesh}{Mesh} à supprimer \\
 \hline
 \end{DoxyParams}
 
 
-\subsection{Member Data Documentation}
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{class_node_ada41b9bdf6e91579ef585e1272f66045_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Documentation des données membres}
 \hypertarget{class_node_aac0c3b4b1f41b26ec5a22d77f067ec5b}{\index{Node@{Node}!\+\_\+children@{\+\_\+children}}
 \index{\+\_\+children@{\+\_\+children}!Node@{Node}}
 \subsubsection[{\+\_\+children}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Map$<$Q\+String, {\bf Node} $\ast$$>$ Node\+::\+\_\+children\hspace{0.3cm}{\ttfamily [private]}}}\label{class_node_aac0c3b4b1f41b26ec5a22d77f067ec5b}
@@ -335,7 +517,7 @@ Modèles déjà chargés, recnstruit un ensemble de \hyperlink{class_node}{Node}
 \subsubsection[{\+\_\+meshs}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<${\bf Mesh} $\ast$$>$ Node\+::\+\_\+meshs\hspace{0.3cm}{\ttfamily [private]}}}\label{class_node_aad5e459a1ed03d6e09ad7054f2014f5a}
 Liste des \hyperlink{class_mesh}{Mesh} de ce node 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 objets/\hyperlink{node_8hpp}{node.\+hpp}\item 
 objets/\hyperlink{node_8cpp}{node.\+cpp}\end{DoxyCompactItemize}

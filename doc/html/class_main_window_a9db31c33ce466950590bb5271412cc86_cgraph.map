@@ -1,0 +1,4 @@
+<map id="MainWindow::affichagerecnoderestant" name="MainWindow::affichagerecnoderestant">
+<area shape="rect" id="node2" href="$class_node.html#af7d6e2eab0af346f6690b4a2db12d953" title="Retourne la liste des noms des Nodes fils. " alt="" coords="301,5,472,31"/>
+<area shape="rect" id="node3" href="$class_node.html#afdc8a8f6c370f437037c85ffea5af4c1" title="Retourne le Node enfant à partir de son nom. " alt="" coords="332,55,442,80"/>
+</map>

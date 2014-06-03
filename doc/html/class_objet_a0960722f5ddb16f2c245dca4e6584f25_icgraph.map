@@ -1,0 +1,6 @@
+<map id="Objet::updateModel" name="Objet::updateModel">
+<area shape="rect" id="node2" href="$class_objet.html#aea29e90dc963beb399d3028b7322039f" title="Constructeur. " alt="" coords="198,5,291,31"/>
+<area shape="rect" id="node3" href="$class_objet.html#a89ed090c598f087792ee81c40ff46f75" title="Change la position de l&#39;Objet. " alt="" coords="191,55,298,80"/>
+<area shape="rect" id="node4" href="$class_objet.html#a2d37f15368f40615a8bc58622623d991" title="Change la rotation de l&#39;Objet. " alt="" coords="192,104,297,129"/>
+<area shape="rect" id="node5" href="$class_objet.html#ae4ca090d86e327ad4654a068afcf3141" title="Modifie le scale de l&#39;objet. " alt="" coords="198,153,290,179"/>
+</map>

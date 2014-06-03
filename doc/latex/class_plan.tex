@@ -1,4 +1,4 @@
-\hypertarget{class_plan}{\section{Plan Class Reference}
+\hypertarget{class_plan}{\section{Référence de la classe Plan}
 \label{class_plan}\index{Plan@{Plan}}
 }
 
@@ -10,13 +10,27 @@
 
 {\ttfamily \#include $<$plan.\+hpp$>$}
 
-Inheritance diagram for Plan\+:\begin{figure}[H]
+
+
+Graphe d'héritage de Plan\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.000000cm]{class_plan}
+\includegraphics[height=550pt]{class_plan__inherit__graph}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
+
+
+Graphe de collaboration de Plan\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_plan__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_plan_ab74eeb948e40ade24bd54a60a4ece8c6}{Plan} (int width=1, int height=1, int width\+Division=1, int height\+Division=1, const Q\+List$<$ Q\+Rect\+F $>$ rects=Q\+List$<$ Q\+Rect\+F $>$(), \hyperlink{class_material}{Material} $\ast$mat=N\+U\+L\+L, \hyperlink{structvec3}{vec3} \hyperlink{class_objet_ac69a1b459bcb4433099c8cfbff06b209}{rotation}=\hyperlink{structvec3}{vec3}(), \hyperlink{structvec3}{vec3} \hyperlink{class_objet_a0e109bc790b14328202dd2546b04e2fd}{position}=\hyperlink{structvec3}{vec3}())
@@ -27,18 +41,7 @@ void \hyperlink{class_plan_a513c3dec0ce9043a9e1d3b5b18a6d698}{draw} ()
 \begin{DoxyCompactList}\small\item\em Affiche le plan. \end{DoxyCompactList}\item 
 const Q\+List$<$ Q\+Rect\+F $>$ \& \hyperlink{class_plan_ac193f6297c584d43977dca3a16f18180}{get\+Fenetres} () const 
 \begin{DoxyCompactList}\small\item\em Renvoie la liste des rectangles définissant les fenêtres de la pièce. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Protected Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-virtual \hyperlink{structvec3}{vec3} \hyperlink{class_plan_a2561b08d2e0f333c56d7ac2b5cc72fd7}{get\+P} () const 
-\item 
-virtual float \hyperlink{class_plan_aa64cc1ec4e6d1660c691592eb441e00c}{get\+Width} () const 
-\item 
-virtual float \hyperlink{class_plan_a73316993ed03bbf13b38f2dff76b0ced}{get\+Height} () const 
-\item 
-virtual float \hyperlink{class_plan_a086041dcf2879904e774f34ae4ad61d7}{get\+Depth} () const 
-\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
+\subsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
 G\+Luint \hyperlink{class_plan_ab4efe8532b73dd0efca80000afb0027d}{\+\_\+vao}
@@ -51,7 +54,7 @@ G\+Luint \hyperlink{class_plan_ad8791ad67d66ac1b24792dc72ec00c64}{\+\_\+vbo\+\_\
 \item 
 G\+Luint \hyperlink{class_plan_a3c16becd29f35260b79af8b9cb6fa892}{\+\_\+vbo\+\_\+tex\+Coord}
 \item 
-unsigned int \hyperlink{class_plan_af3d9228c1b7dc91c0cb00d4c8fa5a550}{\+\_\+nb\+Vertices}
+unsigned int \hyperlink{class_plan_a7f9ccd3bc05e2d3682ecc26326bde71f}{\+\_\+nb\+Indices}
 \item 
 \hyperlink{structvec3}{vec3} \hyperlink{class_plan_aad9837a269e87fa5d7a4a5fc90abf3e7}{\+\_\+min\+P}
 \item 
@@ -59,15 +62,15 @@ unsigned int \hyperlink{class_plan_af3d9228c1b7dc91c0cb00d4c8fa5a550}{\+\_\+nb\+
 \item 
 Q\+List$<$ Q\+Rect\+F $>$ \hyperlink{class_plan_aa9fdbf8efac3f80ffd8bb2f789e7f4f2}{\+\_\+fenetres}
 \end{DoxyCompactItemize}
-\subsection*{Additional Inherited Members}
+\subsection*{Membres hérités additionnels}
 
 
-\subsection{Detailed Description}
+\subsection{Description détaillée}
 \hyperlink{class_plan}{Plan} utilisé par la \hyperlink{class_piece}{Piece}. 
 
 Gère un plan, avec des trous pour les fenêtres 
 
-\subsection{Constructor \& Destructor Documentation}
+\subsection{Documentation des constructeurs et destructeur}
 \hypertarget{class_plan_ab74eeb948e40ade24bd54a60a4ece8c6}{\index{Plan@{Plan}!Plan@{Plan}}
 \index{Plan@{Plan}!Plan@{Plan}}
 \subsubsection[{Plan}]{\setlength{\rightskip}{0pt plus 5cm}Plan\+::\+Plan (
@@ -87,7 +90,7 @@ Gère un plan, avec des trous pour les fenêtres
 Constructeur. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em width} & largeur du plan \\
 \hline
 {\em height} & hauteur du plan \\
@@ -118,7 +121,7 @@ Destructeur.
 
 Détruit le plan et libère les vbo/vba 
 
-\subsection{Member Function Documentation}
+\subsection{Documentation des fonctions membres}
 \hypertarget{class_plan_a513c3dec0ce9043a9e1d3b5b18a6d698}{\index{Plan@{Plan}!draw@{draw}}
 \index{draw@{draw}!Plan@{Plan}}
 \subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Plan\+::draw (
@@ -132,15 +135,20 @@ Affiche le plan.
 
 
 
-Reimplemented from \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Objet}.
+Réimplémentée à partir de \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Objet}.
 
-\hypertarget{class_plan_a086041dcf2879904e774f34ae4ad61d7}{\index{Plan@{Plan}!get\+Depth@{get\+Depth}}
-\index{get\+Depth@{get\+Depth}!Plan@{Plan}}
-\subsubsection[{get\+Depth}]{\setlength{\rightskip}{0pt plus 5cm}float Plan\+::get\+Depth (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_plan_a086041dcf2879904e774f34ae4ad61d7}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plan_a513c3dec0ce9043a9e1d3b5b18a6d698_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_plan_ac193f6297c584d43977dca3a16f18180}{\index{Plan@{Plan}!get\+Fenetres@{get\+Fenetres}}
 \index{get\+Fenetres@{get\+Fenetres}!Plan@{Plan}}
 \subsubsection[{get\+Fenetres}]{\setlength{\rightskip}{0pt plus 5cm}const Q\+List$<$Q\+Rect\+F$>$\& Plan\+::get\+Fenetres (
@@ -152,33 +160,24 @@ Reimplemented from \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Obj
 
 Renvoie la liste des rectangles définissant les fenêtres de la pièce. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 liste des fenêtres 
 \end{DoxyReturn}
-\hypertarget{class_plan_a73316993ed03bbf13b38f2dff76b0ced}{\index{Plan@{Plan}!get\+Height@{get\+Height}}
-\index{get\+Height@{get\+Height}!Plan@{Plan}}
-\subsubsection[{get\+Height}]{\setlength{\rightskip}{0pt plus 5cm}float Plan\+::get\+Height (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_plan_a73316993ed03bbf13b38f2dff76b0ced}
-\hypertarget{class_plan_a2561b08d2e0f333c56d7ac2b5cc72fd7}{\index{Plan@{Plan}!get\+P@{get\+P}}
-\index{get\+P@{get\+P}!Plan@{Plan}}
-\subsubsection[{get\+P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Plan\+::get\+P (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_plan_a2561b08d2e0f333c56d7ac2b5cc72fd7}
-\hypertarget{class_plan_aa64cc1ec4e6d1660c691592eb441e00c}{\index{Plan@{Plan}!get\+Width@{get\+Width}}
-\index{get\+Width@{get\+Width}!Plan@{Plan}}
-\subsubsection[{get\+Width}]{\setlength{\rightskip}{0pt plus 5cm}float Plan\+::get\+Width (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_plan_aa64cc1ec4e6d1660c691592eb441e00c}
 
 
-\subsection{Member Data Documentation}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plan_ac193f6297c584d43977dca3a16f18180_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Documentation des données membres}
 \hypertarget{class_plan_aa9fdbf8efac3f80ffd8bb2f789e7f4f2}{\index{Plan@{Plan}!\+\_\+fenetres@{\+\_\+fenetres}}
 \index{\+\_\+fenetres@{\+\_\+fenetres}!Plan@{Plan}}
 \subsubsection[{\+\_\+fenetres}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$Q\+Rect\+F$>$ Plan\+::\+\_\+fenetres\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plan_aa9fdbf8efac3f80ffd8bb2f789e7f4f2}
@@ -188,9 +187,9 @@ liste des fenêtres
 \hypertarget{class_plan_aad9837a269e87fa5d7a4a5fc90abf3e7}{\index{Plan@{Plan}!\+\_\+min\+P@{\+\_\+min\+P}}
 \index{\+\_\+min\+P@{\+\_\+min\+P}!Plan@{Plan}}
 \subsubsection[{\+\_\+min\+P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Plan\+::\+\_\+min\+P\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plan_aad9837a269e87fa5d7a4a5fc90abf3e7}
-\hypertarget{class_plan_af3d9228c1b7dc91c0cb00d4c8fa5a550}{\index{Plan@{Plan}!\+\_\+nb\+Vertices@{\+\_\+nb\+Vertices}}
-\index{\+\_\+nb\+Vertices@{\+\_\+nb\+Vertices}!Plan@{Plan}}
-\subsubsection[{\+\_\+nb\+Vertices}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Plan\+::\+\_\+nb\+Vertices\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plan_af3d9228c1b7dc91c0cb00d4c8fa5a550}
+\hypertarget{class_plan_a7f9ccd3bc05e2d3682ecc26326bde71f}{\index{Plan@{Plan}!\+\_\+nb\+Indices@{\+\_\+nb\+Indices}}
+\index{\+\_\+nb\+Indices@{\+\_\+nb\+Indices}!Plan@{Plan}}
+\subsubsection[{\+\_\+nb\+Indices}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Plan\+::\+\_\+nb\+Indices\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plan_a7f9ccd3bc05e2d3682ecc26326bde71f}
 \hypertarget{class_plan_ab4efe8532b73dd0efca80000afb0027d}{\index{Plan@{Plan}!\+\_\+vao@{\+\_\+vao}}
 \index{\+\_\+vao@{\+\_\+vao}!Plan@{Plan}}
 \subsubsection[{\+\_\+vao}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Plan\+::\+\_\+vao\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plan_ab4efe8532b73dd0efca80000afb0027d}
@@ -208,7 +207,7 @@ liste des fenêtres
 \subsubsection[{\+\_\+vbo\+\_\+vertices}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Plan\+::\+\_\+vbo\+\_\+vertices\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plan_a7b203dc36964da663836cf7614fe711a}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 objets/\hyperlink{plan_8hpp}{plan.\+hpp}\item 
 objets/\hyperlink{plan_8cpp}{plan.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<map id="MyOpenGLWidget::mouseMoveEvent" name="MyOpenGLWidget::mouseMoveEvent">
+<area shape="rect" id="node2" href="$class_camera.html#a22aaf20b581d402e5c3952655b830c0f" title="Fonction de déplacement de la caméra à la souris. " alt="" coords="263,12,446,37"/>
+<area shape="rect" id="node3" href="$class_camera.html#aa4e815462a964caa6b10804e33119cf2" title="Recalcul les vecteurs avant/côté pour le mouvement. " alt="" coords="494,12,672,37"/>
+<area shape="rect" id="node4" href="$structvec3.html#ae3cc67c1a7a21bd1aa051a30943332c5" title="vec3::normalize" alt="" coords="720,12,835,37"/>
+<area shape="rect" id="node5" href="$structvec3.html#ad622150f0a08c548b062775dd5d76a41" title="vec3::length" alt="" coords="883,12,976,37"/>
+</map>

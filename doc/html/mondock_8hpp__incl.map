@@ -1,0 +1,9 @@
+<map id="gui/mondock.hpp" name="gui/mondock.hpp">
+<area shape="rect" id="node2" href="$scene_8hpp.html" title="scene.hpp" alt="" coords="780,79,863,104"/>
+<area shape="rect" id="node3" href="$helper_8hpp.html" title="helper.hpp" alt="" coords="714,445,798,471"/>
+<area shape="rect" id="node9" href="$light_8hpp.html" title="light.hpp" alt="" coords="91,372,163,397"/>
+<area shape="rect" id="node10" href="$material_8hpp.html" title="material.hpp" alt="" coords="430,372,525,397"/>
+<area shape="rect" id="node15" href="$objet_8hpp.html" title="objet.hpp" alt="" coords="182,299,258,324"/>
+<area shape="rect" id="node16" href="$piece_8hpp.html" title="piece.hpp" alt="" coords="195,152,274,177"/>
+<area shape="rect" id="node17" href="$plan_8hpp.html" title="plan.hpp" alt="" coords="260,225,332,251"/>
+</map>

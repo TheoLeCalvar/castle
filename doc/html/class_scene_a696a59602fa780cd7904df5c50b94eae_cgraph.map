@@ -1,0 +1,17 @@
+<map id="Scene::saveAsXML" name="Scene::saveAsXML">
+<area shape="rect" id="node2" href="$class_camera.html#ad42b0114b12a48474ae6c8be1c44e7bb" title="Retourne la position de la caméra. " alt="" coords="238,5,360,31"/>
+<area shape="rect" id="node3" href="$class_scene.html#a23faaec79e3e47ab7827411f23dd79d9" title="Scene::saveMaterials" alt="" coords="224,55,373,80"/>
+<area shape="rect" id="node4" href="$class_scene.html#a13dc69fb963cd556e3029e7ffc55180b" title="Scene::saveLights" alt="" coords="234,104,364,129"/>
+<area shape="rect" id="node5" href="$class_scene.html#abaec7f89a0a039c5a770ce06e80d96cd" title="Scene::saveShaders" alt="" coords="226,153,371,179"/>
+<area shape="rect" id="node6" href="$class_my_open_g_l_widget.html#a177cfabda79d05c834b4f1a3f370a620" title="MyOpenGLWidget::saveShaders" alt="" coords="191,203,406,228"/>
+<area shape="rect" id="node7" href="$class_scene.html#ab51c69ad1faae20cf5375c3f02b6e7fc" title="Scene::savePieces" alt="" coords="231,252,366,277"/>
+<area shape="rect" id="node8" href="$class_scene.html#af00f7d191f9277b3dbad125c54677d79" title="Recheche le nom d&#39;un shader à partir de son ID OpenGL. " alt="" coords="454,55,647,80"/>
+<area shape="rect" id="node9" href="$class_scene.html#accd8407f070358c3d6744994df93a92d" title="Retourne le nom du Material passé en paramètre. " alt="" coords="467,104,635,129"/>
+<area shape="rect" id="node10" href="$class_objet.html#a5b8f371853435fb08bba5163cb4dbe09" title="Récupère le material de l&#39;Objet. " alt="" coords="497,153,605,179"/>
+<area shape="rect" id="node11" href="$class_plan.html#ac193f6297c584d43977dca3a16f18180" title="Renvoie la liste des rectangles définissant les fenêtres de la pièce. " alt="" coords="487,203,614,228"/>
+<area shape="rect" id="node12" href="$class_objet.html#a4a702c189bedcbf1e65da6aec72c8e44" title="Récupère le nom de l&#39;Objet. " alt="" coords="504,252,598,277"/>
+<area shape="rect" id="node13" href="$class_node.html#adf80c463ba15d60645252ffa171fd209" title="Récupère le nom du modèle chargé " alt="" coords="475,301,626,327"/>
+<area shape="rect" id="node14" href="$class_objet.html#ac69a1b459bcb4433099c8cfbff06b209" title="Récupère la rotation de l&#39;Objet. " alt="" coords="498,351,603,376"/>
+<area shape="rect" id="node15" href="$class_objet.html#a0e109bc790b14328202dd2546b04e2fd" title="Récupère la position de l&#39;Objet. " alt="" coords="497,400,604,425"/>
+<area shape="rect" id="node16" href="$class_objet.html#ae09962e65216c36b31ab389a5af310a3" title="Récupère les facteurs de scale de l&#39;objet. " alt="" coords="505,449,596,475"/>
+</map>

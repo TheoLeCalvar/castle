@@ -1,0 +1,16 @@
+<map id="Scene::draw" name="Scene::draw">
+<area shape="rect" id="node2" href="$class_scene.html#ae6fc45f015d96191dbf775d54d6e4437" title="Ordonne les Light en fonction de la distance à la caméra. " alt="" coords="156,55,289,80"/>
+<area shape="rect" id="node5" href="$class_camera.html#adbfdac30f082ddea86183c1c31493946" title="Actualise la caméra. " alt="" coords="164,128,281,153"/>
+<area shape="rect" id="node12" href="$helper_8cpp.html#a28ba5b22ef41a9bb69e40ad84904e46e" title="setActiveShader" alt="" coords="163,177,282,203"/>
+<area shape="rect" id="node13" href="$class_light.html#a33a43afc95ed75a8970f523cb3f800fa" title="Désactive la lumière dans le shader. " alt="" coords="173,227,272,252"/>
+<area shape="rect" id="node15" href="$class_light.html#a53ce58fd783207da18aa7dc3465841ac" title="Met à jour la lumière ambient. " alt="" coords="149,276,296,301"/>
+<area shape="rect" id="node3" href="$class_camera.html#ad42b0114b12a48474ae6c8be1c44e7bb" title="Retourne la position de la caméra. " alt="" coords="344,5,466,31"/>
+<area shape="rect" id="node4" href="$class_light.html#ad0f5f939bc047e39c6deb2e264a5a2c1" title="Récupère la valeur d&#39;une composante de la lumière. " alt="" coords="367,55,443,80"/>
+<area shape="rect" id="node6" href="$class_camera.html#a8414e6d74d3f6259fa5ea1f037e9d8bd" title="Calcul le déplacement de la Camera. " alt="" coords="351,104,460,129"/>
+<area shape="rect" id="node7" href="$helper_8cpp.html#a29a535bb9eaac8bc5e1efd8fb024311d" title="viewMatrix" alt="" coords="363,153,447,179"/>
+<area shape="rect" id="node11" href="$helper_8cpp.html#ae4e404231dce9792fd3c590492270369" title="setViewMatrix" alt="" coords="353,203,457,228"/>
+<area shape="rect" id="node8" href="$helper_8cpp.html#aa5f3d65bee579aa91a4719ad0785915b" title="translationMatrix" alt="" coords="514,129,633,155"/>
+<area shape="rect" id="node9" href="$structvec3.html#ae3cc67c1a7a21bd1aa051a30943332c5" title="vec3::normalize" alt="" coords="516,179,631,204"/>
+<area shape="rect" id="node10" href="$structvec3.html#ad622150f0a08c548b062775dd5d76a41" title="vec3::length" alt="" coords="681,179,775,204"/>
+<area shape="rect" id="node14" href="$helper_8cpp.html#a9fec7631dd6ac8589e51d4d04ff4a272" title="getActiveShader" alt="" coords="346,252,465,277"/>
+</map>

@@ -6,10 +6,8 @@ var searchData=
   ['getchild',['getChild',['../class_node.html#afdc8a8f6c370f437037c85ffea5af4c1',1,'Node::getChild()'],['../class_piece.html#aa77dc9ed8493cc22d1455c3eb2bec013',1,'Piece::getChild()']]],
   ['getchildren',['getChildren',['../class_piece.html#a029823aa5135b356a9e4da14578db4e8',1,'Piece']]],
   ['getchildrennames',['getChildrenNames',['../class_node.html#af7d6e2eab0af346f6690b4a2db12d953',1,'Node']]],
-  ['getdepth',['getDepth',['../class_plan.html#a086041dcf2879904e774f34ae4ad61d7',1,'Plan']]],
   ['getdiffusetexturename',['getDiffuseTextureName',['../class_material.html#a9305ced3fea7ab22cd25877e14cfb53c',1,'Material']]],
   ['getfenetres',['getFenetres',['../class_plan.html#ac193f6297c584d43977dca3a16f18180',1,'Plan']]],
-  ['getheight',['getHeight',['../class_plan.html#a73316993ed03bbf13b38f2dff76b0ced',1,'Plan']]],
   ['getlight',['getLight',['../class_scene.html#a4f35ca9d308ef5563d9f205904eedbb8',1,'Scene']]],
   ['getlightsnames',['getLightsNames',['../class_scene.html#a215d616b6132f30a6bfc66ea4a3cfb95',1,'Scene']]],
   ['getmaterial',['getMaterial',['../class_scene.html#afb93862254b6869533d7487c56133adb',1,'Scene']]],
@@ -19,7 +17,6 @@ var searchData=
   ['getmeshnames',['getMeshNames',['../class_node.html#a4a3bbcabcbd5423c297e287dd0ab7ecd',1,'Node']]],
   ['getmodelname',['getModelName',['../class_node.html#adf80c463ba15d60645252ffa171fd209',1,'Node']]],
   ['getnormaltexturename',['getNormalTextureName',['../class_material.html#ae72d423e9f07b3cc0388854e0ad2c1ca',1,'Material']]],
-  ['getp',['getP',['../class_plan.html#a2561b08d2e0f333c56d7ac2b5cc72fd7',1,'Plan']]],
   ['getpiece',['getPiece',['../class_scene.html#ae2060bd6c44231ffe7f6f0a3447325f1',1,'Scene']]],
   ['getpiecesname',['getPiecesName',['../class_scene.html#a2ea5207a5d9ec6e4081f12896b01d9d5',1,'Scene']]],
   ['getscene',['getScene',['../class_my_open_g_l_widget.html#ab25f238721b8e1cba36c2a0350ac57ba',1,'MyOpenGLWidget']]],
@@ -28,7 +25,6 @@ var searchData=
   ['getshadernames',['getShaderNames',['../class_my_open_g_l_widget.html#a99929e3c743d4f5793ef0e09ab61f2b2',1,'MyOpenGLWidget']]],
   ['getshadersnames',['getShadersNames',['../class_scene.html#ae8045c3444b367c070988b30d69e5a36',1,'Scene']]],
   ['getspeculartexturename',['getSpecularTextureName',['../class_material.html#a0f33deb2e971506b9382d1ece4ff2fa6',1,'Material']]],
-  ['getwidth',['getWidth',['../class_plan.html#aa64cc1ec4e6d1660c691592eb441e00c',1,'Plan']]],
   ['go',['go',['../class_camera.html#abde0ff477fb0baea7515767dcd7a7cf7',1,'Camera']]],
   ['grille',['Grille',['../class_main_window.html#a9a4d5849cf40a3ce50941e56cfa0be35',1,'MainWindow']]]
 ];

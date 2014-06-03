@@ -1,4 +1,4 @@
-\hypertarget{class_cube}{\section{Cube Class Reference}
+\hypertarget{class_cube}{\section{Référence de la classe Cube}
 \label{class_cube}\index{Cube@{Cube}}
 }
 
@@ -10,13 +10,27 @@ Primitive cube.
 
 {\ttfamily \#include $<$cube.\+hpp$>$}
 
-Inheritance diagram for Cube\+:\begin{figure}[H]
+
+
+Graphe d'héritage de Cube\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.000000cm]{class_cube}
+\includegraphics[height=550pt]{class_cube__inherit__graph}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
+
+
+Graphe de collaboration de Cube\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_cube__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_cube_a6d016e01f3fee45cff97be27ff7175d8}{Cube} (\hyperlink{class_material}{Material} $\ast$mat=N\+U\+L\+L, \hyperlink{structvec3}{vec3} \hyperlink{class_objet_ac69a1b459bcb4433099c8cfbff06b209}{rotation}=\hyperlink{structvec3}{vec3}(), \hyperlink{structvec3}{vec3} \hyperlink{class_objet_a0e109bc790b14328202dd2546b04e2fd}{position}=\hyperlink{structvec3}{vec3}())
@@ -25,28 +39,28 @@ Inheritance diagram for Cube\+:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Destructeur du cube. \end{DoxyCompactList}\item 
 void \hyperlink{class_cube_ab26b72a81376fd5dc4fcc7f0b715b087}{draw} ()
 \begin{DoxyCompactList}\small\item\em Affiche le cube. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
+\subsection*{Fonctions membres privées}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_cube_a06f4c8632c223f8d8c34971e55a2dafc}{gen\+Vao} ()
 \begin{DoxyCompactList}\small\item\em Génère les vbo et le vao pour l'affichage du cube. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Private Attributes}
+\subsection*{Attributs privés statiques}
 \begin{DoxyCompactItemize}
 \item 
 static G\+Luint \hyperlink{class_cube_ae474ca8293842dd9ac83a8c606991eac}{\+\_\+vao} = 0
 \end{DoxyCompactItemize}
-\subsection*{Additional Inherited Members}
+\subsection*{Membres hérités additionnels}
 
 
-\subsection{Detailed Description}
+\subsection{Description détaillée}
 Primitive cube. 
 
-\begin{DoxyWarning}{Warning}
+\begin{DoxyWarning}{Avertissement}
 Peut être plus utilisable 
 \end{DoxyWarning}
 
 
-\subsection{Constructor \& Destructor Documentation}
+\subsection{Documentation des constructeurs et destructeur}
 \hypertarget{class_cube_a6d016e01f3fee45cff97be27ff7175d8}{\index{Cube@{Cube}!Cube@{Cube}}
 \index{Cube@{Cube}!Cube@{Cube}}
 \subsubsection[{Cube}]{\setlength{\rightskip}{0pt plus 5cm}Cube\+::\+Cube (
@@ -60,7 +74,19 @@ Peut être plus utilisable
 
 Constructeur du cube. 
 
-Génère le vao et les vbo s'ils n'ont pas déjà été générés \hypertarget{class_cube_aa814e979cecb8c451fdb332ded2cea1e}{\index{Cube@{Cube}!````~Cube@{$\sim$\+Cube}}
+Génère le vao et les vbo s'ils n'ont pas déjà été générés 
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{class_cube_a6d016e01f3fee45cff97be27ff7175d8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_cube_aa814e979cecb8c451fdb332ded2cea1e}{\index{Cube@{Cube}!````~Cube@{$\sim$\+Cube}}
 \index{````~Cube@{$\sim$\+Cube}!Cube@{Cube}}
 \subsubsection[{$\sim$\+Cube}]{\setlength{\rightskip}{0pt plus 5cm}Cube\+::$\sim$\+Cube (
 \begin{DoxyParamCaption}
@@ -73,7 +99,7 @@ Destructeur du cube.
 
 
 
-\subsection{Member Function Documentation}
+\subsection{Documentation des fonctions membres}
 \hypertarget{class_cube_ab26b72a81376fd5dc4fcc7f0b715b087}{\index{Cube@{Cube}!draw@{draw}}
 \index{draw@{draw}!Cube@{Cube}}
 \subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Cube\+::draw (
@@ -87,7 +113,19 @@ Affiche le cube.
 
 
 
-Reimplemented from \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Objet}.
+Réimplémentée à partir de \hyperlink{class_objet_a5cc323f562964e00b947b2d908e206e7}{Objet}.
+
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cube_ab26b72a81376fd5dc4fcc7f0b715b087_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{class_cube_a06f4c8632c223f8d8c34971e55a2dafc}{\index{Cube@{Cube}!gen\+Vao@{gen\+Vao}}
 \index{gen\+Vao@{gen\+Vao}!Cube@{Cube}}
@@ -102,13 +140,25 @@ Génère les vbo et le vao pour l'affichage du cube.
 
 
 
-\subsection{Member Data Documentation}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{class_cube_a06f4c8632c223f8d8c34971e55a2dafc_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Documentation des données membres}
 \hypertarget{class_cube_ae474ca8293842dd9ac83a8c606991eac}{\index{Cube@{Cube}!\+\_\+vao@{\+\_\+vao}}
 \index{\+\_\+vao@{\+\_\+vao}!Cube@{Cube}}
 \subsubsection[{\+\_\+vao}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Cube\+::\+\_\+vao = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{class_cube_ae474ca8293842dd9ac83a8c606991eac}
 $<$ Id du Vao du cube 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 objets/\hyperlink{cube_8hpp}{cube.\+hpp}\item 
 objets/\hyperlink{cube_8cpp}{cube.\+cpp}\end{DoxyCompactItemize}

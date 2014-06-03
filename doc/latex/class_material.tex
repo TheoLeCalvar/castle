@@ -1,4 +1,4 @@
-\hypertarget{class_material}{\section{Material Class Reference}
+\hypertarget{class_material}{\section{Référence de la classe Material}
 \label{class_material}\index{Material@{Material}}
 }
 
@@ -10,13 +10,27 @@ Matériaux pour la \hyperlink{class_scene}{Scene}.
 
 {\ttfamily \#include $<$material.\+hpp$>$}
 
-Inheritance diagram for Material\+:\begin{figure}[H]
+
+
+Graphe d'héritage de Material\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_material}
+\includegraphics[width=196pt]{class_material__inherit__graph}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
+
+
+Graphe de collaboration de Material\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{class_material__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_material_a1692495b8e704a0ab17701365eb34b0f}{Material} (\hyperlink{structvec3}{vec3} ambient=\hyperlink{structvec3}{vec3}(0.\+2, 0.\+2, 0.\+2), \hyperlink{structvec3}{vec3} diffuse=\hyperlink{structvec3}{vec3}(0.\+8, 0.\+8, 0.\+8), \hyperlink{structvec3}{vec3} specular=\hyperlink{structvec3}{vec3}(0.\+8, 0.\+8, 0.\+8), float \hyperlink{class_material_a9a938aa96f0d5a5dc4d17d43cfd4b42b}{shininess}=0.\+0f, vec3 emissive=vec3(0.\+0, 0.\+0, 0.\+0))
@@ -55,12 +69,12 @@ bool \hyperlink{class_material_a3641da3931be722a809b13f882e2a703}{is\+From\+X\+M
 \begin{DoxyCompactList}\small\item\em Indique si le \hyperlink{class_material}{Material} a été chargé depuis le X\+M\+L ou pas. \end{DoxyCompactList}\item 
 void \hyperlink{class_material_a806be90008bdccd18e0d657ac75ef61c}{from\+X\+M\+L} (bool b)
 \begin{DoxyCompactList}\small\item\em Indique si le \hyperlink{class_material}{Material} est issu ou non du X\+M\+L. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Public Member Functions}
+\subsection*{Fonctions membres publiques statiques}
 \begin{DoxyCompactItemize}
 \item 
 static void \hyperlink{class_material_ab350dd584b850dfc3e0c52201b5699e0}{clear} ()
 \begin{DoxyCompactList}\small\item\em Libère les textures chargées. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
+\subsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{structvec3}{vec3} \hyperlink{class_material_a4c29044a3f7e8008eb3a0666c4ce09b9}{\+\_\+ambient}
@@ -81,25 +95,25 @@ Q\+Open\+G\+L\+Texture $\ast$ \hyperlink{class_material_add78622071d92485dd37dbd
 \item 
 bool \hyperlink{class_material_a3a262cfbb40e19f79b29c61386e76f95}{\+\_\+from\+X\+M\+L}
 \end{DoxyCompactItemize}
-\subsection*{Static Private Attributes}
+\subsection*{Attributs privés statiques}
 \begin{DoxyCompactItemize}
 \item 
 static Q\+Map$<$ Q\+String, \\*
 Q\+Open\+G\+L\+Texture $\ast$ $>$ \hyperlink{class_material_a9f91b9fda835fed049df5c6959043623}{\+\_\+textures\+Loaded}
 \end{DoxyCompactItemize}
-\subsection*{Friends}
+\subsection*{Amis}
 \begin{DoxyCompactItemize}
 \item 
 Q\+Debug \hyperlink{class_material_a6796ee577479f67459444fcd552e6c05}{operator$<$$<$} (Q\+Debug dbg, const \hyperlink{class_material}{Material} \&m)
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\subsection{Description détaillée}
 Matériaux pour la \hyperlink{class_scene}{Scene}. 
 
 Contient les informations nécessaire à la gestion d'un material pour la scène 
 
-\subsection{Constructor \& Destructor Documentation}
+\subsection{Documentation des constructeurs et destructeur}
 \hypertarget{class_material_a1692495b8e704a0ab17701365eb34b0f}{\index{Material@{Material}!Material@{Material}}
 \index{Material@{Material}!Material@{Material}}
 \subsubsection[{Material}]{\setlength{\rightskip}{0pt plus 5cm}Material\+::\+Material (
@@ -115,7 +129,7 @@ Contient les informations nécessaire à la gestion d'un material pour la scène
 
 Constructeur. 
 
-\begin{DoxyWarning}{Warning}
+\begin{DoxyWarning}{Avertissement}
 composante emissive pas encore gérée 
 \end{DoxyWarning}
 \hypertarget{class_material_a2c19452d71f54075df8f5405b03129f4}{\index{Material@{Material}!````~Material@{$\sim$\+Material}}
@@ -129,11 +143,11 @@ composante emissive pas encore gérée
 
 Destructeur. 
 
-\begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000003}{Todo}]Gérer libération de la texture quand plus utilisée \end{DoxyRefDesc}
+\begin{DoxyRefDesc}{A faire}
+\item[\hyperlink{todo__todo000003}{A faire}]Gérer libération de la texture quand plus utilisée \end{DoxyRefDesc}
 
 
-\subsection{Member Function Documentation}
+\subsection{Documentation des fonctions membres}
 \hypertarget{class_material_a4f2227a6fb3f12c8618e399f93ab492c}{\index{Material@{Material}!add\+Texture@{add\+Texture}}
 \index{add\+Texture@{add\+Texture}!Material@{Material}}
 \subsubsection[{add\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}void Material\+::add\+Texture (
@@ -149,15 +163,27 @@ Charge une texture et l'associe à un slot.
 Charge une texture et l'associe à un slot pour le passage au shader
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em tex\+File} & fichier de texture à charger \\
 \hline
 {\em int} & indice que la texture doit occuper \\
 \hline
 \end{DoxyParams}
-\begin{DoxyWarning}{Warning}
+\begin{DoxyWarning}{Avertissement}
 Ecrase la texture à l'indice choisie 
 \end{DoxyWarning}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_material_a4f2227a6fb3f12c8618e399f93ab492c_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_material_ab350dd584b850dfc3e0c52201b5699e0}{\index{Material@{Material}!clear@{clear}}
 \index{clear@{clear}!Material@{Material}}
 \subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void Material\+::clear (
@@ -169,6 +195,18 @@ Ecrase la texture à l'indice choisie
 
 Libère les textures chargées. 
 
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{class_material_ab350dd584b850dfc3e0c52201b5699e0_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_material_a806be90008bdccd18e0d657ac75ef61c}{\index{Material@{Material}!from\+X\+M\+L@{from\+X\+M\+L}}
 \index{from\+X\+M\+L@{from\+X\+M\+L}!Material@{Material}}
 \subsubsection[{from\+X\+M\+L}]{\setlength{\rightskip}{0pt plus 5cm}void Material\+::from\+X\+M\+L (
@@ -179,6 +217,18 @@ Libère les textures chargées.
 
 
 Indique si le \hyperlink{class_material}{Material} est issu ou non du X\+M\+L. 
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_material_a806be90008bdccd18e0d657ac75ef61c_icgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{class_material_a6b4b32cf23cbba3988becd840471a51c}{\index{Material@{Material}!get@{get}}
 \index{get@{get}!Material@{Material}}
@@ -192,13 +242,25 @@ Indique si le \hyperlink{class_material}{Material} est issu ou non du X\+M\+L.
 Récupère la valeur d'un champ. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em type} & doit être parmis G\+L\+\_\+\+A\+M\+B\+I\+E\+N\+T, G\+L\+\_\+\+D\+I\+F\+F\+U\+S\+E, G\+L\+\_\+\+S\+P\+E\+C\+U\+L\+A\+R \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 dans le cas de G\+L\+\_\+\+A\+M\+B\+I\+E\+N\+T, G\+L\+\_\+\+D\+I\+F\+F\+U\+S\+E, G\+L\+\_\+\+S\+P\+E\+C\+U\+L\+A\+R retourne un \hyperlink{structvec3}{vec3} correspondant à la composante, retourne \hyperlink{helper_8hpp_a8d45e9fbe94ddf3c3291116b8fce15c5}{vec4()} autrement 
 \end{DoxyReturn}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_material_a6b4b32cf23cbba3988becd840471a51c_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_material_a229d118ec5602033bafbc1212a7b72ce}{\index{Material@{Material}!get@{get}}
 \index{get@{get}!Material@{Material}}
 \subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} \& Material\+::get (
@@ -211,11 +273,11 @@ dans le cas de G\+L\+\_\+\+A\+M\+B\+I\+E\+N\+T, G\+L\+\_\+\+D\+I\+F\+F\+U\+S\+E,
 Récupère la valeur d'un champ. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em type} & doit être parmis G\+L\+\_\+\+A\+M\+B\+I\+E\+N\+T, G\+L\+\_\+\+D\+I\+F\+F\+U\+S\+E, G\+L\+\_\+\+S\+P\+E\+C\+U\+L\+A\+R \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 dans le cas de G\+L\+\_\+\+A\+M\+B\+I\+E\+N\+T, G\+L\+\_\+\+D\+I\+F\+F\+U\+S\+E, G\+L\+\_\+\+S\+P\+E\+C\+U\+L\+A\+R retourne un \hyperlink{structvec3}{vec3} correspondant à la composante, retourne \hyperlink{helper_8hpp_a8d45e9fbe94ddf3c3291116b8fce15c5}{vec4()} autrement 
 \end{DoxyReturn}
 \hypertarget{class_material_a9305ced3fea7ab22cd25877e14cfb53c}{\index{Material@{Material}!get\+Diffuse\+Texture\+Name@{get\+Diffuse\+Texture\+Name}}
@@ -229,7 +291,7 @@ dans le cas de G\+L\+\_\+\+A\+M\+B\+I\+E\+N\+T, G\+L\+\_\+\+D\+I\+F\+F\+U\+S\+E,
 
 Retourne le path de la texture diffuse. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 nom de la texture diffuse 
 \end{DoxyReturn}
 \hypertarget{class_material_ae72d423e9f07b3cc0388854e0ad2c1ca}{\index{Material@{Material}!get\+Normal\+Texture\+Name@{get\+Normal\+Texture\+Name}}
@@ -243,7 +305,7 @@ nom de la texture diffuse
 
 Retourne le path de la normal map. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 nom de la normal map 
 \end{DoxyReturn}
 \hypertarget{class_material_a0f33deb2e971506b9382d1ece4ff2fa6}{\index{Material@{Material}!get\+Specular\+Texture\+Name@{get\+Specular\+Texture\+Name}}
@@ -257,7 +319,7 @@ nom de la normal map
 
 Retourne le path de la texture spéculaire. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 nom de la texture spéculaire 
 \end{DoxyReturn}
 \hypertarget{class_material_aa07bc322b6904dd4ccf61620a0eb703c}{\index{Material@{Material}!has\+Diffuse\+Texture@{has\+Diffuse\+Texture}}
@@ -267,6 +329,18 @@ nom de la texture spéculaire
 {}
 \end{DoxyParamCaption}
 ) const}}\label{class_material_aa07bc322b6904dd4ccf61620a0eb703c}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_material_aa07bc322b6904dd4ccf61620a0eb703c_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_material_a9bfe6c055d9af6f3ef029b62cc57e6a1}{\index{Material@{Material}!has\+Normal\+Texture@{has\+Normal\+Texture}}
 \index{has\+Normal\+Texture@{has\+Normal\+Texture}!Material@{Material}}
 \subsubsection[{has\+Normal\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}bool Material\+::has\+Normal\+Texture (
@@ -274,6 +348,18 @@ nom de la texture spéculaire
 {}
 \end{DoxyParamCaption}
 ) const}}\label{class_material_a9bfe6c055d9af6f3ef029b62cc57e6a1}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_material_a9bfe6c055d9af6f3ef029b62cc57e6a1_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_material_ab1d0beef91e6149c0ebfc6c82b977889}{\index{Material@{Material}!has\+Specular\+Texture@{has\+Specular\+Texture}}
 \index{has\+Specular\+Texture@{has\+Specular\+Texture}!Material@{Material}}
 \subsubsection[{has\+Specular\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}bool Material\+::has\+Specular\+Texture (
@@ -281,6 +367,18 @@ nom de la texture spéculaire
 {}
 \end{DoxyParamCaption}
 ) const}}\label{class_material_ab1d0beef91e6149c0ebfc6c82b977889}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_material_ab1d0beef91e6149c0ebfc6c82b977889_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_material_a5a489f2fa09381b917c6bc3244e02877}{\index{Material@{Material}!has\+Texture@{has\+Texture}}
 \index{has\+Texture@{has\+Texture}!Material@{Material}}
 \subsubsection[{has\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}bool Material\+::has\+Texture (
@@ -312,12 +410,24 @@ Indique si le \hyperlink{class_material}{Material} a été chargé depuis le X\+
 Met à jour la composante du matériaux. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em type} & la composante qui sera mise à jour, doit être parmis G\+L\+\_\+\+A\+M\+B\+I\+E\+N\+T, G\+L\+\_\+\+D\+I\+F\+F\+U\+S\+E, G\+L\+\_\+\+S\+P\+E\+C\+U\+L\+A\+R, G\+L\+\_\+\+E\+M\+I\+S\+S\+I\+O\+N \\
 \hline
 {\em value} & valeur \\
 \hline
 \end{DoxyParams}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_material_a2ab92e03d9c90294cd28fff9b6a8cde0_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_material_a3de47a95f13dc6f6306493516814762c}{\index{Material@{Material}!set@{set}}
 \index{set@{set}!Material@{Material}}
 \subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void Material\+::set (
@@ -330,10 +440,22 @@ Met à jour la composante du matériaux.
 Met à jour la shniness du \hyperlink{class_material}{Material}. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em shininess} & valeur \\
 \hline
 \end{DoxyParams}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{class_material_a3de47a95f13dc6f6306493516814762c_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_material_a9a938aa96f0d5a5dc4d17d43cfd4b42b}{\index{Material@{Material}!shininess@{shininess}}
 \index{shininess@{shininess}!Material@{Material}}
 \subsubsection[{shininess}]{\setlength{\rightskip}{0pt plus 5cm}float Material\+::shininess (
@@ -345,9 +467,21 @@ Met à jour la shniness du \hyperlink{class_material}{Material}.
 
 Valeur du shininess. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 valeur du G\+L\+\_\+\+S\+H\+I\+N\+I\+N\+E\+S\+S 
 \end{DoxyReturn}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{class_material_a9a938aa96f0d5a5dc4d17d43cfd4b42b_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_material_a3f43fe7bcfa721fd8156adb151adf45c}{\index{Material@{Material}!update@{update}}
 \index{update@{update}!Material@{Material}}
 \subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Material\+::update (
@@ -361,7 +495,31 @@ Met à jour le \hyperlink{class_material}{Material} courant dans le shader actif
 
 
 
-\subsection{Friends And Related Function Documentation}
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{class_material_a3f43fe7bcfa721fd8156adb151adf45c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_material_a3f43fe7bcfa721fd8156adb151adf45c_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Documentation des fonctions amies et associées}
 \hypertarget{class_material_a6796ee577479f67459444fcd552e6c05}{\index{Material@{Material}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!Material@{Material}}
 \subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Debug operator$<$$<$ (
@@ -372,7 +530,7 @@ Met à jour le \hyperlink{class_material}{Material} courant dans le shader actif
 )\hspace{0.3cm}{\ttfamily [friend]}}}\label{class_material_a6796ee577479f67459444fcd552e6c05}
 
 
-\subsection{Member Data Documentation}
+\subsection{Documentation des données membres}
 \hypertarget{class_material_a4c29044a3f7e8008eb3a0666c4ce09b9}{\index{Material@{Material}!\+\_\+ambient@{\+\_\+ambient}}
 \index{\+\_\+ambient@{\+\_\+ambient}!Material@{Material}}
 \subsubsection[{\+\_\+ambient}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} Material\+::\+\_\+ambient\hspace{0.3cm}{\ttfamily [private]}}}\label{class_material_a4c29044a3f7e8008eb3a0666c4ce09b9}
@@ -405,7 +563,7 @@ Met à jour le \hyperlink{class_material}{Material} courant dans le shader actif
 \subsubsection[{\+\_\+textures\+Loaded}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Map$<$ Q\+String, Q\+Open\+G\+L\+Texture $\ast$ $>$ Material\+::\+\_\+textures\+Loaded\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{class_material_a9f91b9fda835fed049df5c6959043623}
 Ensemble des textures déjà chargées pour réutilisation 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 scene/\hyperlink{material_8hpp}{material.\+hpp}\item 
 scene/\hyperlink{material_8cpp}{material.\+cpp}\end{DoxyCompactItemize}

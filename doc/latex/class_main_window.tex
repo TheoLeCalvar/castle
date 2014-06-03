@@ -1,24 +1,38 @@
-\hypertarget{class_main_window}{\section{Main\+Window Class Reference}
+\hypertarget{class_main_window}{\section{Référence de la classe Main\+Window}
 \label{class_main_window}\index{Main\+Window@{Main\+Window}}
 }
 
 
 {\ttfamily \#include $<$mainwindows.\+hpp$>$}
 
-Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+
+
+Graphe d'héritage de Main\+Window\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_main_window}
+\includegraphics[width=216pt]{class_main_window__inherit__graph}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
+
+
+Graphe de collaboration de Main\+Window\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_main_window__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_main_window_a6d90fb41049be49da652a628191c9a1d}{Main\+Window} (const Q\+String \&path=\char`\"{}\char`\"{})
 \item 
 \hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window} ()
 \end{DoxyCompactItemize}
-\subsection*{Private Slots}
+\subsection*{Connecteurs privés}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_main_window_a6f837f331c40d27e47fbb0d6a73b040e}{Nouveau} ()
@@ -26,10 +40,6 @@ void \hyperlink{class_main_window_a6f837f331c40d27e47fbb0d6a73b040e}{Nouveau} ()
 void \hyperlink{class_main_window_adbc60f34a13a49cc015dc4a124a588a1}{Ouvrir} ()
 \item 
 void \hyperlink{class_main_window_a8c07d91b87178ac0a1b88aabc45c6ddb}{Enregistrer} ()
-\item 
-void \hyperlink{class_main_window_a5277087cb1c0b01722b7a4ff436070ba}{Annuler} ()
-\item 
-void \hyperlink{class_main_window_ab2ff5da91852950471811fa93028dc0c}{Retablir} ()
 \item 
 void \hyperlink{class_main_window_a019328eaf07af3c9b8850e3db14fdf30}{Apercut} ()
 \item 
@@ -63,11 +73,15 @@ void \hyperlink{class_main_window_a8ba990d0c3e19d63dbcff0328a85358b}{selectionch
 \item 
 void \hyperlink{class_main_window_a8b07c3898c2bb70b8de0e4f339b1d6ed}{validationajoutobjet} ()
 \item 
-void \hyperlink{class_main_window_abd2acb261445354d2fd680c9b48bad77}{Racourcit} ()
+void \hyperlink{class_main_window_aa1e4aa5c16ca9ddc7342e9ad7c162303}{aboutassimp} ()
 \item 
 void \hyperlink{class_main_window_a19a5bbb5908cda1ecfdf5ecd99ef0c4c}{supresionelement} ()
+\item 
+void \hyperlink{class_main_window_a3f652333009c5cfea551a193a3e6b350}{reloadshader} ()
+\item 
+void \hyperlink{class_main_window_a64e110157eb3d3143982531ec82b4983}{changeshader} (const Q\+String \&text)
 \end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
+\subsection*{Fonctions membres privées}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_main_window_a62cd8712fb41a754298f6f60eead2cb0}{create\+Actions} ()
@@ -80,7 +94,7 @@ void \hyperlink{class_main_window_aeb57235ebc08860e680132db167c09b4}{create\+Too
 \item 
 void \hyperlink{class_main_window_a9db31c33ce466950590bb5271412cc86}{affichagerecnoderestant} (\hyperlink{class_node}{Node} $\ast$a, Q\+Standard\+Item $\ast$b)
 \end{DoxyCompactItemize}
-\subsection*{Private Attributes}
+\subsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
 Q\+Menu $\ast$ \hyperlink{class_main_window_ac5ad5607ac4e015f5b594aa73ca6703a}{Fichier}
@@ -100,10 +114,6 @@ Q\+Action $\ast$ \hyperlink{class_main_window_ac02355cedb6a7337d9ee55d91dd9a4c0}
 Q\+Action $\ast$ \hyperlink{class_main_window_aaf23ba5444a4264c5c53fec9b729b2ba}{enregistrer\+Act}
 \item 
 Q\+Action $\ast$ \hyperlink{class_main_window_ac1517849e119e00fbbebe90570eabade}{kiter\+Act}
-\item 
-Q\+Action $\ast$ \hyperlink{class_main_window_ace04c15ff28b4931c15f823d0d2ed23b}{annuler\+Act}
-\item 
-Q\+Action $\ast$ \hyperlink{class_main_window_ab36e19495a8fe7e099772ea3ba4669c1}{retablir\+Act}
 \item 
 Q\+Action $\ast$ \hyperlink{class_main_window_a26d7fbeaa5d928206325ccccc9ed82c9}{apercut\+Act}
 \item 
@@ -345,9 +355,19 @@ Q\+Push\+Button $\ast$ \hyperlink{class_main_window_a15efafe52bb0d007aeedebbb968
 \item 
 Q\+Push\+Button $\ast$ \hyperlink{class_main_window_a3371555c180ede0e55ea11a1ce1c9ae9}{boutonajoutobjet}
 \item 
-Q\+Action $\ast$ \hyperlink{class_main_window_a5abf7bab9a2c85168545220c9984fdfe}{racourcit\+Act}
+Q\+Menu $\ast$ \hyperlink{class_main_window_ab3854d1b008ad18b7d392b767202c802}{about}
+\item 
+Q\+Action $\ast$ \hyperlink{class_main_window_aa6c9616af83a5c7fa1bcf44204ffb96f}{aboutqt\+Act}
+\item 
+Q\+Action $\ast$ \hyperlink{class_main_window_afb5ca498bd0c6b89552843980174becd}{aboutassimp\+Act}
 \item 
 Q\+Tool\+Bar $\ast$ \hyperlink{class_main_window_a0a352c6d66b7a080fcf558874a7e51d4}{file\+Tool\+Bar}
+\item 
+Q\+Combo\+Box $\ast$ \hyperlink{class_main_window_aeb7af7c08f3408e939c153edc9213ce7}{shaderpospro}
+\item 
+Q\+Standard\+Item\+Model $\ast$ \hyperlink{class_main_window_abe8e6602c96035cc908b094c3afd70b8}{modelshaderpostpro}
+\item 
+Q\+Action $\ast$ \hyperlink{class_main_window_af256a212829b94d64480b2e564049577}{reloadshader\+Act}
 \item 
 Q\+Dock\+Widget $\ast$ \hyperlink{class_main_window_ab0e654c3c8f22ae05433da58c112f155}{dock\+\_\+list\+\_\+elements}
 \item 
@@ -389,7 +409,7 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 \end{DoxyCompactItemize}
 
 
-\subsection{Constructor \& Destructor Documentation}
+\subsection{Documentation des constructeurs et destructeur}
 \hypertarget{class_main_window_a6d90fb41049be49da652a628191c9a1d}{\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
 \index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
 \subsubsection[{Main\+Window}]{\setlength{\rightskip}{0pt plus 5cm}Main\+Window\+::\+Main\+Window (
@@ -397,6 +417,18 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 \item[{const Q\+String \&}]{path = {\ttfamily \char`\"{}\char`\"{}}}
 \end{DoxyParamCaption}
 )}}\label{class_main_window_a6d90fb41049be49da652a628191c9a1d}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a6d90fb41049be49da652a628191c9a1d_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\index{Main\+Window@{Main\+Window}!````~Main\+Window@{$\sim$\+Main\+Window}}
 \index{````~Main\+Window@{$\sim$\+Main\+Window}!Main\+Window@{Main\+Window}}
 \subsubsection[{$\sim$\+Main\+Window}]{\setlength{\rightskip}{0pt plus 5cm}Main\+Window\+::$\sim$\+Main\+Window (
@@ -406,7 +438,26 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 )}}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}
 
 
-\subsection{Member Function Documentation}
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_main_window_aa1e4aa5c16ca9ddc7342e9ad7c162303}{\index{Main\+Window@{Main\+Window}!aboutassimp@{aboutassimp}}
+\index{aboutassimp@{aboutassimp}!Main\+Window@{Main\+Window}}
+\subsubsection[{aboutassimp}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::aboutassimp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_aa1e4aa5c16ca9ddc7342e9ad7c162303}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_aa1e4aa5c16ca9ddc7342e9ad7c162303_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_a9db31c33ce466950590bb5271412cc86}{\index{Main\+Window@{Main\+Window}!affichagerecnoderestant@{affichagerecnoderestant}}
 \index{affichagerecnoderestant@{affichagerecnoderestant}!Main\+Window@{Main\+Window}}
 \subsubsection[{affichagerecnoderestant}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::affichagerecnoderestant (
@@ -415,6 +466,30 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 \item[{Q\+Standard\+Item $\ast$}]{b}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a9db31c33ce466950590bb5271412cc86}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a9db31c33ce466950590bb5271412cc86_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a9db31c33ce466950590bb5271412cc86_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_a42d29fe9a2657a5c5563b3f1235a28e4}{\index{Main\+Window@{Main\+Window}!ajoutlumiere@{ajoutlumiere}}
 \index{ajoutlumiere@{ajoutlumiere}!Main\+Window@{Main\+Window}}
 \subsubsection[{ajoutlumiere}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::ajoutlumiere (
@@ -422,6 +497,18 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a42d29fe9a2657a5c5563b3f1235a28e4}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a42d29fe9a2657a5c5563b3f1235a28e4_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_a3a599353265f9c01a8780529aa5fed75}{\index{Main\+Window@{Main\+Window}!ajoutmaterial@{ajoutmaterial}}
 \index{ajoutmaterial@{ajoutmaterial}!Main\+Window@{Main\+Window}}
 \subsubsection[{ajoutmaterial}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::ajoutmaterial (
@@ -429,6 +516,18 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a3a599353265f9c01a8780529aa5fed75}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a3a599353265f9c01a8780529aa5fed75_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_a3d19fc185c807148a627777459737754}{\index{Main\+Window@{Main\+Window}!ajoutmur@{ajoutmur}}
 \index{ajoutmur@{ajoutmur}!Main\+Window@{Main\+Window}}
 \subsubsection[{ajoutmur}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::ajoutmur (
@@ -436,6 +535,30 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a3d19fc185c807148a627777459737754}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a3d19fc185c807148a627777459737754_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a3d19fc185c807148a627777459737754_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_a282b0371fa087fba28044fd05f38301b}{\index{Main\+Window@{Main\+Window}!ajoutmurcreatemodelmurcombo@{ajoutmurcreatemodelmurcombo}}
 \index{ajoutmurcreatemodelmurcombo@{ajoutmurcreatemodelmurcombo}!Main\+Window@{Main\+Window}}
 \subsubsection[{ajoutmurcreatemodelmurcombo}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::ajoutmurcreatemodelmurcombo (
@@ -443,6 +566,30 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a282b0371fa087fba28044fd05f38301b}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a282b0371fa087fba28044fd05f38301b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a282b0371fa087fba28044fd05f38301b_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_a54645636f58b920914895b422a00ed85}{\index{Main\+Window@{Main\+Window}!ajoutobjet@{ajoutobjet}}
 \index{ajoutobjet@{ajoutobjet}!Main\+Window@{Main\+Window}}
 \subsubsection[{ajoutobjet}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::ajoutobjet (
@@ -450,6 +597,30 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a54645636f58b920914895b422a00ed85}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a54645636f58b920914895b422a00ed85_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a54645636f58b920914895b422a00ed85_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_a6661770cd92877aa3b1c0dae91513a50}{\index{Main\+Window@{Main\+Window}!ajoutpiece@{ajoutpiece}}
 \index{ajoutpiece@{ajoutpiece}!Main\+Window@{Main\+Window}}
 \subsubsection[{ajoutpiece}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::ajoutpiece (
@@ -457,13 +628,30 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a6661770cd92877aa3b1c0dae91513a50}
-\hypertarget{class_main_window_a5277087cb1c0b01722b7a4ff436070ba}{\index{Main\+Window@{Main\+Window}!Annuler@{Annuler}}
-\index{Annuler@{Annuler}!Main\+Window@{Main\+Window}}
-\subsubsection[{Annuler}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::\+Annuler (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a5277087cb1c0b01722b7a4ff436070ba}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a6661770cd92877aa3b1c0dae91513a50_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a6661770cd92877aa3b1c0dae91513a50_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_a019328eaf07af3c9b8850e3db14fdf30}{\index{Main\+Window@{Main\+Window}!Apercut@{Apercut}}
 \index{Apercut@{Apercut}!Main\+Window@{Main\+Window}}
 \subsubsection[{Apercut}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::\+Apercut (
@@ -471,6 +659,49 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a019328eaf07af3c9b8850e3db14fdf30}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a019328eaf07af3c9b8850e3db14fdf30_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_main_window_a64e110157eb3d3143982531ec82b4983}{\index{Main\+Window@{Main\+Window}!changeshader@{changeshader}}
+\index{changeshader@{changeshader}!Main\+Window@{Main\+Window}}
+\subsubsection[{changeshader}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::changeshader (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a64e110157eb3d3143982531ec82b4983}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a64e110157eb3d3143982531ec82b4983_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a64e110157eb3d3143982531ec82b4983_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_a62cd8712fb41a754298f6f60eead2cb0}{\index{Main\+Window@{Main\+Window}!create\+Actions@{create\+Actions}}
 \index{create\+Actions@{create\+Actions}!Main\+Window@{Main\+Window}}
 \subsubsection[{create\+Actions}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::create\+Actions (
@@ -478,6 +709,30 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a62cd8712fb41a754298f6f60eead2cb0}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a62cd8712fb41a754298f6f60eead2cb0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a62cd8712fb41a754298f6f60eead2cb0_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_a7b7fd06b9e7bfc83904b1d5b6503e9e9}{\index{Main\+Window@{Main\+Window}!create\+Liste\+Dockwidget@{create\+Liste\+Dockwidget}}
 \index{create\+Liste\+Dockwidget@{create\+Liste\+Dockwidget}!Main\+Window@{Main\+Window}}
 \subsubsection[{create\+Liste\+Dockwidget}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::create\+Liste\+Dockwidget (
@@ -485,6 +740,18 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a7b7fd06b9e7bfc83904b1d5b6503e9e9}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a7b7fd06b9e7bfc83904b1d5b6503e9e9_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_aa4907b0251d305659e403c62921ef331}{\index{Main\+Window@{Main\+Window}!create\+Menus@{create\+Menus}}
 \index{create\+Menus@{create\+Menus}!Main\+Window@{Main\+Window}}
 \subsubsection[{create\+Menus}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::create\+Menus (
@@ -492,6 +759,30 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_aa4907b0251d305659e403c62921ef331}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_aa4907b0251d305659e403c62921ef331_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_aa4907b0251d305659e403c62921ef331_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_aeb57235ebc08860e680132db167c09b4}{\index{Main\+Window@{Main\+Window}!create\+Tool\+Bar@{create\+Tool\+Bar}}
 \index{create\+Tool\+Bar@{create\+Tool\+Bar}!Main\+Window@{Main\+Window}}
 \subsubsection[{create\+Tool\+Bar}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::create\+Tool\+Bar (
@@ -499,6 +790,30 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_aeb57235ebc08860e680132db167c09b4}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_aeb57235ebc08860e680132db167c09b4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_aeb57235ebc08860e680132db167c09b4_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_a0b391dfd82e868b6f8badbc9717d6f49}{\index{Main\+Window@{Main\+Window}!Culface@{Culface}}
 \index{Culface@{Culface}!Main\+Window@{Main\+Window}}
 \subsubsection[{Culface}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::\+Culface (
@@ -506,6 +821,18 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a0b391dfd82e868b6f8badbc9717d6f49}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a0b391dfd82e868b6f8badbc9717d6f49_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_a8c07d91b87178ac0a1b88aabc45c6ddb}{\index{Main\+Window@{Main\+Window}!Enregistrer@{Enregistrer}}
 \index{Enregistrer@{Enregistrer}!Main\+Window@{Main\+Window}}
 \subsubsection[{Enregistrer}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::\+Enregistrer (
@@ -513,6 +840,30 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a8c07d91b87178ac0a1b88aabc45c6ddb}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a8c07d91b87178ac0a1b88aabc45c6ddb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a8c07d91b87178ac0a1b88aabc45c6ddb_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_a9a4d5849cf40a3ce50941e56cfa0be35}{\index{Main\+Window@{Main\+Window}!Grille@{Grille}}
 \index{Grille@{Grille}!Main\+Window@{Main\+Window}}
 \subsubsection[{Grille}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::\+Grille (
@@ -520,6 +871,18 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a9a4d5849cf40a3ce50941e56cfa0be35}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a9a4d5849cf40a3ce50941e56cfa0be35_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_af26018b1d699cbf0a3f62048472cc489}{\index{Main\+Window@{Main\+Window}!Importation3\+D@{Importation3\+D}}
 \index{Importation3\+D@{Importation3\+D}!Main\+Window@{Main\+Window}}
 \subsubsection[{Importation3\+D}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::\+Importation3\+D (
@@ -527,6 +890,30 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_af26018b1d699cbf0a3f62048472cc489}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_af26018b1d699cbf0a3f62048472cc489_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_af26018b1d699cbf0a3f62048472cc489_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_a6f837f331c40d27e47fbb0d6a73b040e}{\index{Main\+Window@{Main\+Window}!Nouveau@{Nouveau}}
 \index{Nouveau@{Nouveau}!Main\+Window@{Main\+Window}}
 \subsubsection[{Nouveau}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::\+Nouveau (
@@ -534,6 +921,18 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a6f837f331c40d27e47fbb0d6a73b040e}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a6f837f331c40d27e47fbb0d6a73b040e_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_adbc60f34a13a49cc015dc4a124a588a1}{\index{Main\+Window@{Main\+Window}!Ouvrir@{Ouvrir}}
 \index{Ouvrir@{Ouvrir}!Main\+Window@{Main\+Window}}
 \subsubsection[{Ouvrir}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::\+Ouvrir (
@@ -541,20 +940,49 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_adbc60f34a13a49cc015dc4a124a588a1}
-\hypertarget{class_main_window_abd2acb261445354d2fd680c9b48bad77}{\index{Main\+Window@{Main\+Window}!Racourcit@{Racourcit}}
-\index{Racourcit@{Racourcit}!Main\+Window@{Main\+Window}}
-\subsubsection[{Racourcit}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::\+Racourcit (
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_adbc60f34a13a49cc015dc4a124a588a1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_main_window_a3f652333009c5cfea551a193a3e6b350}{\index{Main\+Window@{Main\+Window}!reloadshader@{reloadshader}}
+\index{reloadshader@{reloadshader}!Main\+Window@{Main\+Window}}
+\subsubsection[{reloadshader}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::reloadshader (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_abd2acb261445354d2fd680c9b48bad77}
-\hypertarget{class_main_window_ab2ff5da91852950471811fa93028dc0c}{\index{Main\+Window@{Main\+Window}!Retablir@{Retablir}}
-\index{Retablir@{Retablir}!Main\+Window@{Main\+Window}}
-\subsubsection[{Retablir}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::\+Retablir (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_ab2ff5da91852950471811fa93028dc0c}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a3f652333009c5cfea551a193a3e6b350}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a3f652333009c5cfea551a193a3e6b350_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a3f652333009c5cfea551a193a3e6b350_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_a8ba990d0c3e19d63dbcff0328a85358b}{\index{Main\+Window@{Main\+Window}!selectioncheminobj@{selectioncheminobj}}
 \index{selectioncheminobj@{selectioncheminobj}!Main\+Window@{Main\+Window}}
 \subsubsection[{selectioncheminobj}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::selectioncheminobj (
@@ -562,6 +990,18 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a8ba990d0c3e19d63dbcff0328a85358b}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a8ba990d0c3e19d63dbcff0328a85358b_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_a19a5bbb5908cda1ecfdf5ecd99ef0c4c}{\index{Main\+Window@{Main\+Window}!supresionelement@{supresionelement}}
 \index{supresionelement@{supresionelement}!Main\+Window@{Main\+Window}}
 \subsubsection[{supresionelement}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::supresionelement (
@@ -569,6 +1009,30 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a19a5bbb5908cda1ecfdf5ecd99ef0c4c}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a19a5bbb5908cda1ecfdf5ecd99ef0c4c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a19a5bbb5908cda1ecfdf5ecd99ef0c4c_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_a56f65a459f0caca9f71251663b200431}{\index{Main\+Window@{Main\+Window}!validajoutlumiere@{validajoutlumiere}}
 \index{validajoutlumiere@{validajoutlumiere}!Main\+Window@{Main\+Window}}
 \subsubsection[{validajoutlumiere}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::validajoutlumiere (
@@ -576,6 +1040,30 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a56f65a459f0caca9f71251663b200431}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a56f65a459f0caca9f71251663b200431_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a56f65a459f0caca9f71251663b200431_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_a2d8cee622b78ccdeed758c51b9fb5b0e}{\index{Main\+Window@{Main\+Window}!validajoutmaterial@{validajoutmaterial}}
 \index{validajoutmaterial@{validajoutmaterial}!Main\+Window@{Main\+Window}}
 \subsubsection[{validajoutmaterial}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::validajoutmaterial (
@@ -583,6 +1071,30 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a2d8cee622b78ccdeed758c51b9fb5b0e}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a2d8cee622b78ccdeed758c51b9fb5b0e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a2d8cee622b78ccdeed758c51b9fb5b0e_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_afcd72c860bccb97abd7af324fbc50f56}{\index{Main\+Window@{Main\+Window}!validajoutmur@{validajoutmur}}
 \index{validajoutmur@{validajoutmur}!Main\+Window@{Main\+Window}}
 \subsubsection[{validajoutmur}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::validajoutmur (
@@ -590,6 +1102,30 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_afcd72c860bccb97abd7af324fbc50f56}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_afcd72c860bccb97abd7af324fbc50f56_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_afcd72c860bccb97abd7af324fbc50f56_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_ada60d01c441123e1b7d4d30be1d16f8f}{\index{Main\+Window@{Main\+Window}!validajoutpiece@{validajoutpiece}}
 \index{validajoutpiece@{validajoutpiece}!Main\+Window@{Main\+Window}}
 \subsubsection[{validajoutpiece}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::validajoutpiece (
@@ -597,6 +1133,30 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_ada60d01c441123e1b7d4d30be1d16f8f}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_ada60d01c441123e1b7d4d30be1d16f8f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_ada60d01c441123e1b7d4d30be1d16f8f_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_main_window_a8b07c3898c2bb70b8de0e4f339b1d6ed}{\index{Main\+Window@{Main\+Window}!validationajoutobjet@{validationajoutobjet}}
 \index{validationajoutobjet@{validationajoutobjet}!Main\+Window@{Main\+Window}}
 \subsubsection[{validationajoutobjet}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::validationajoutobjet (
@@ -606,7 +1166,40 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{class_main_window_a8b07c3898c2bb70b8de0e4f339b1d6ed}
 
 
-\subsection{Member Data Documentation}
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a8b07c3898c2bb70b8de0e4f339b1d6ed_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a8b07c3898c2bb70b8de0e4f339b1d6ed_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Documentation des données membres}
+\hypertarget{class_main_window_ab3854d1b008ad18b7d392b767202c802}{\index{Main\+Window@{Main\+Window}!about@{about}}
+\index{about@{about}!Main\+Window@{Main\+Window}}
+\subsubsection[{about}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Menu$\ast$ Main\+Window\+::about\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_ab3854d1b008ad18b7d392b767202c802}
+\hypertarget{class_main_window_afb5ca498bd0c6b89552843980174becd}{\index{Main\+Window@{Main\+Window}!aboutassimp\+Act@{aboutassimp\+Act}}
+\index{aboutassimp\+Act@{aboutassimp\+Act}!Main\+Window@{Main\+Window}}
+\subsubsection[{aboutassimp\+Act}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ Main\+Window\+::aboutassimp\+Act\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_afb5ca498bd0c6b89552843980174becd}
+\hypertarget{class_main_window_aa6c9616af83a5c7fa1bcf44204ffb96f}{\index{Main\+Window@{Main\+Window}!aboutqt\+Act@{aboutqt\+Act}}
+\index{aboutqt\+Act@{aboutqt\+Act}!Main\+Window@{Main\+Window}}
+\subsubsection[{aboutqt\+Act}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ Main\+Window\+::aboutqt\+Act\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_aa6c9616af83a5c7fa1bcf44204ffb96f}
 \hypertarget{class_main_window_a77f24d5ff1220ea72f7730d20672911c}{\index{Main\+Window@{Main\+Window}!Affichage@{Affichage}}
 \index{Affichage@{Affichage}!Main\+Window@{Main\+Window}}
 \subsubsection[{Affichage}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Menu$\ast$ Main\+Window\+::\+Affichage\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a77f24d5ff1220ea72f7730d20672911c}
@@ -667,9 +1260,6 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 \hypertarget{class_main_window_aea5950c7b756106a6a68c766352676bb}{\index{Main\+Window@{Main\+Window}!ambajoutmaterial@{ambajoutmaterial}}
 \index{ambajoutmaterial@{ambajoutmaterial}!Main\+Window@{Main\+Window}}
 \subsubsection[{ambajoutmaterial}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Main\+Window\+::ambajoutmaterial\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_aea5950c7b756106a6a68c766352676bb}
-\hypertarget{class_main_window_ace04c15ff28b4931c15f823d0d2ed23b}{\index{Main\+Window@{Main\+Window}!annuler\+Act@{annuler\+Act}}
-\index{annuler\+Act@{annuler\+Act}!Main\+Window@{Main\+Window}}
-\subsubsection[{annuler\+Act}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ Main\+Window\+::annuler\+Act\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_ace04c15ff28b4931c15f823d0d2ed23b}
 \hypertarget{class_main_window_a26d7fbeaa5d928206325ccccc9ed82c9}{\index{Main\+Window@{Main\+Window}!apercut\+Act@{apercut\+Act}}
 \index{apercut\+Act@{apercut\+Act}!Main\+Window@{Main\+Window}}
 \subsubsection[{apercut\+Act}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ Main\+Window\+::apercut\+Act\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a26d7fbeaa5d928206325ccccc9ed82c9}
@@ -943,6 +1533,9 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 \hypertarget{class_main_window_a6be7cafd28d97201c3df69a7b144f456}{\index{Main\+Window@{Main\+Window}!modelepieceshader@{modelepieceshader}}
 \index{modelepieceshader@{modelepieceshader}!Main\+Window@{Main\+Window}}
 \subsubsection[{modelepieceshader}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Standard\+Item\+Model$\ast$ Main\+Window\+::modelepieceshader\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a6be7cafd28d97201c3df69a7b144f456}
+\hypertarget{class_main_window_abe8e6602c96035cc908b094c3afd70b8}{\index{Main\+Window@{Main\+Window}!modelshaderpostpro@{modelshaderpostpro}}
+\index{modelshaderpostpro@{modelshaderpostpro}!Main\+Window@{Main\+Window}}
+\subsubsection[{modelshaderpostpro}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Standard\+Item\+Model$\ast$ Main\+Window\+::modelshaderpostpro\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_abe8e6602c96035cc908b094c3afd70b8}
 \hypertarget{class_main_window_ad38c142eee23820d2d4c87217ea3558a}{\index{Main\+Window@{Main\+Window}!nomajoutlumiere@{nomajoutlumiere}}
 \index{nomajoutlumiere@{nomajoutlumiere}!Main\+Window@{Main\+Window}}
 \subsubsection[{nomajoutlumiere}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Main\+Window\+::nomajoutlumiere\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_ad38c142eee23820d2d4c87217ea3558a}
@@ -964,18 +1557,18 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 \hypertarget{class_main_window_a3c50fe103c1d0f1278737bced7e2e452}{\index{Main\+Window@{Main\+Window}!positionajoutlumiere@{positionajoutlumiere}}
 \index{positionajoutlumiere@{positionajoutlumiere}!Main\+Window@{Main\+Window}}
 \subsubsection[{positionajoutlumiere}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Main\+Window\+::positionajoutlumiere\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a3c50fe103c1d0f1278737bced7e2e452}
-\hypertarget{class_main_window_a5abf7bab9a2c85168545220c9984fdfe}{\index{Main\+Window@{Main\+Window}!racourcit\+Act@{racourcit\+Act}}
-\index{racourcit\+Act@{racourcit\+Act}!Main\+Window@{Main\+Window}}
-\subsubsection[{racourcit\+Act}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ Main\+Window\+::racourcit\+Act\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a5abf7bab9a2c85168545220c9984fdfe}
-\hypertarget{class_main_window_ab36e19495a8fe7e099772ea3ba4669c1}{\index{Main\+Window@{Main\+Window}!retablir\+Act@{retablir\+Act}}
-\index{retablir\+Act@{retablir\+Act}!Main\+Window@{Main\+Window}}
-\subsubsection[{retablir\+Act}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ Main\+Window\+::retablir\+Act\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_ab36e19495a8fe7e099772ea3ba4669c1}
+\hypertarget{class_main_window_af256a212829b94d64480b2e564049577}{\index{Main\+Window@{Main\+Window}!reloadshader\+Act@{reloadshader\+Act}}
+\index{reloadshader\+Act@{reloadshader\+Act}!Main\+Window@{Main\+Window}}
+\subsubsection[{reloadshader\+Act}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ Main\+Window\+::reloadshader\+Act\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_af256a212829b94d64480b2e564049577}
 \hypertarget{class_main_window_ab3b59f5d30eaedb1281da2b817c17fdf}{\index{Main\+Window@{Main\+Window}!scenetemp@{scenetemp}}
 \index{scenetemp@{scenetemp}!Main\+Window@{Main\+Window}}
 \subsubsection[{scenetemp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Scene}$\ast$ Main\+Window\+::scenetemp\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_ab3b59f5d30eaedb1281da2b817c17fdf}
 \hypertarget{class_main_window_a8e49ee04eabb719ac4be13ba8cd3fe38}{\index{Main\+Window@{Main\+Window}!shader@{shader}}
 \index{shader@{shader}!Main\+Window@{Main\+Window}}
 \subsubsection[{shader}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Standard\+Item$\ast$ Main\+Window\+::shader\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a8e49ee04eabb719ac4be13ba8cd3fe38}
+\hypertarget{class_main_window_aeb7af7c08f3408e939c153edc9213ce7}{\index{Main\+Window@{Main\+Window}!shaderpospro@{shaderpospro}}
+\index{shaderpospro@{shaderpospro}!Main\+Window@{Main\+Window}}
+\subsubsection[{shaderpospro}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Combo\+Box$\ast$ Main\+Window\+::shaderpospro\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_aeb7af7c08f3408e939c153edc9213ce7}
 \hypertarget{class_main_window_a549c42dd7554a4414ca34fc253457889}{\index{Main\+Window@{Main\+Window}!speajoutlumiere@{speajoutlumiere}}
 \index{speajoutlumiere@{speajoutlumiere}!Main\+Window@{Main\+Window}}
 \subsubsection[{speajoutlumiere}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Main\+Window\+::speajoutlumiere\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a549c42dd7554a4414ca34fc253457889}
@@ -1065,7 +1658,7 @@ Q\+Widget $\ast$ \hyperlink{class_main_window_a38d553a96a3898e65b500c639673b8de}
 \subsubsection[{widgetdocklistscene}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ Main\+Window\+::widgetdocklistscene\hspace{0.3cm}{\ttfamily [private]}}}\label{class_main_window_a38d553a96a3898e65b500c639673b8de}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 gui/\hyperlink{mainwindows_8hpp}{mainwindows.\+hpp}\item 
 gui/\hyperlink{mainwindows_8cpp}{mainwindows.\+cpp}\end{DoxyCompactItemize}
