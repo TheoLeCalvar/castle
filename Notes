@@ -16,7 +16,7 @@ jeudi 10 avril:
 	choix de la librairie pour l'interface graphique, Qt, simple, permet des interfaces complexes et propose un module de l'ecture/écriture de fichiers XML
 
 vendredi 11 avril
-	Parsage parciel du XML, lecture des matériaux
+	Parsage partiel du XML, lecture des matériaux
 	Découverte Qt OpenGL
 
 lundi 14 avril
@@ -114,7 +114,7 @@ mardi 27 mai
 	partage sommaire des fenêtres entre les murs, revoir structure des murs 
 	
 vendredi 30 mai
-	correction changmeent de parent
+	correction changement de parent
 	
 Amélioration à faire
 	Collision
