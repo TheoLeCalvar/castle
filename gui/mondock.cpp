@@ -653,8 +653,8 @@ Mondock:: ~Mondock(){}
 
         //assosiation des 4widget au tab
         tablight->addTab(tablightpos , "Position");
-        tablight->addTab(tablightdif, "Difuse" );
-        tablight->addTab(tablightspe, "Speculaire");
+        tablight->addTab(tablightdif, "Diffuse" );
+        tablight->addTab(tablightspe, "Spéculaire");
         tablight->addTab(tablightamb, "Ambiante" );
 
         //fixe de widget et afiche le dockwidget
@@ -801,9 +801,9 @@ Mondock:: ~Mondock(){}
 
             //assosiation des 4widget au tab
 //            tabmaterial->addTab(tabmaterialemi , "Emissive");
-            tabmaterial->addTab(tabmaterialdif , "Difuse");
+            tabmaterial->addTab(tabmaterialdif , "Diffuse");
             tabmaterial->addTab(tabmaterialamb , "Ambiante");
-            tabmaterial->addTab(tabmaterialspe , "Speculaire");
+            tabmaterial->addTab(tabmaterialspe , "Spéculaire");
 
             //fixe de widget et afiche le dockwidget
             this->setWidget(tabmaterial);

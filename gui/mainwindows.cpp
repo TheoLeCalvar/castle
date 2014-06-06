@@ -39,7 +39,7 @@ void MainWindow::createActions()
      enregistrerAct = new QAction(tr("&Enregistrer"), this);
         connect( enregistrerAct, SIGNAL(triggered()), this, SLOT(Enregistrer()));
 
-     kiterAct = new QAction(tr("&exit"), this);
+     kiterAct = new QAction(tr("&Quitter"), this);
         connect( kiterAct, SIGNAL(triggered()), qApp, SLOT(quit()));
 
 
@@ -48,34 +48,34 @@ void MainWindow::createActions()
          connect( grilleAct, SIGNAL(triggered()), this, SLOT(Grille()));
          grilleAct->setCheckable(true);
 
-     apercutAct = new QAction(tr("&fullscreen"), this);
+     apercutAct = new QAction(tr("&Plein écran"), this);
          connect(apercutAct, SIGNAL(triggered()), this, SLOT(Apercut()));
          apercutAct->setCheckable(true);
 
-     culfaceAct = new QAction(tr("&Culface"), this);
+     culfaceAct = new QAction(tr("&Cullface"), this);
          connect(culfaceAct, SIGNAL(triggered()), this, SLOT(Culface()));
          culfaceAct->setCheckable(true);
 
      //outil
-     importation3DAct = new QAction(tr("&Liste elements"), this);
+     importation3DAct = new QAction(tr("&Liste éléments"), this);
          connect( importation3DAct, SIGNAL(triggered()), this, SLOT(Importation3D()));
          importation3DAct->setCheckable(true);
 
      ajoutelement = new QMenu(tr("&Ajout"));
 
-        ajoutlumierAct = new QAction(tr("&Lumiere"),this);
+        ajoutlumierAct = new QAction(tr("&Lumières"),this);
             ajoutlumierAct->setIcon(QIcon("icones/light.jpg"));
             connect(ajoutlumierAct,SIGNAL(triggered()),this , SLOT(ajoutlumiere()));
 
-        ajoutmaterialAct = new QAction(tr("&Materiaux"),this);
+        ajoutmaterialAct = new QAction(tr("&Matériaux"),this);
             ajoutmaterialAct->setIcon(QIcon("icones/material.jpg"));
             connect(ajoutmaterialAct,SIGNAL(triggered()),this , SLOT(ajoutmaterial()));
 
-        ajoutpieceAct = new QAction(tr("&Piece"),this);
+        ajoutpieceAct = new QAction(tr("&Pièces"),this);
             ajoutpieceAct->setIcon(QIcon("icones/room.png"));
             connect(ajoutpieceAct,SIGNAL(triggered()),this , SLOT(ajoutpiece()));
 
-        ajoutmurAct = new QAction(tr("&Mur"),this);
+        ajoutmurAct = new QAction(tr("&Murs"),this);
             ajoutmurAct->setIcon(QIcon("icones/wall.png"));
             connect(ajoutmurAct,SIGNAL(triggered()),this , SLOT(ajoutmur()));
 
@@ -120,7 +120,7 @@ void MainWindow::createMenus()
             apercutAct->setIcon(QIcon("icones/fullscreen.png"));
             apercutAct->setShortcut(QKeySequence(Qt::Key_F3));
 
-    Outil = menuBar()->addMenu(tr("&Outil"));
+    Outil = menuBar()->addMenu(tr("&Outils"));
         Outil->addAction(importation3DAct);
             importation3DAct->setIcon(QIcon("icones/value_list.png"));
         Outil->addMenu(ajoutelement);
@@ -200,7 +200,7 @@ void MainWindow::createMenus()
 
             //bouton
              boutonajoutlumiere = new QPushButton(widgetajoutlumiere);
-                boutonajoutlumiere->setText("Ajouter: ");
+                boutonajoutlumiere->setText("Ajouter");
              connect(boutonajoutlumiere,SIGNAL(clicked()), this ,SLOT(validajoutlumiere()));
 
              layoutajoutlumiere=new QVBoxLayout();
@@ -254,7 +254,7 @@ void MainWindow::createMenus()
 
             //difuse
             difajoutmaterial = new QLabel(widgetajoutmaterial);
-                difajoutmaterial->setText("Difuse: ");
+                difajoutmaterial->setText("Diffuse: ");
             spindifajoutmaterialx = new QDoubleSpinBox(widgetajoutmaterial);
                 spindifajoutmaterialx->setRange(0 , 1);
                 spindifajoutmaterialx->setSingleStep(0.01);
@@ -276,7 +276,7 @@ void MainWindow::createMenus()
 
              //speculaire
              speajoutmaterial = new QLabel(widgetajoutmaterial);
-                speajoutmaterial->setText("Speculaire: ");
+                speajoutmaterial->setText("Spéculaire: ");
              spinspeajoutmaterialx = new QDoubleSpinBox(widgetajoutmaterial);
                 spinspeajoutmaterialx->setRange(0 , 1);
                 spinspeajoutmaterialx->setSingleStep(0.01);
@@ -302,7 +302,7 @@ void MainWindow::createMenus()
 
             //bouton
              boutonajoutmaterial = new QPushButton(widgetajoutmaterial);
-                boutonajoutmaterial->setText("ajouter");
+                boutonajoutmaterial->setText("Ajouter");
              connect(boutonajoutmaterial,SIGNAL(clicked()), this ,SLOT(validajoutmaterial()));
 
              layoutajoutmaterial = new QVBoxLayout();
@@ -334,13 +334,13 @@ void MainWindow::createMenus()
                 modelemateriaupiece = new QStandardItemModel(widgetajoutpiece);
 
                 labelcomboajoutpiece = new QLabel(widgetajoutpiece);
-                    labelcomboajoutpiece->setText("Materiaux: ");
+                    labelcomboajoutpiece->setText("Matériau: ");
                 comboajoutpiece = new QComboBox(widgetajoutpiece);
                     comboajoutpiece->setMaximumWidth(200);
 
                 //dimention
                 labeldimajoutpiece = new QLabel(widgetajoutpiece);
-                    labeldimajoutpiece->setText("Dimention: ");
+                    labeldimajoutpiece->setText("Dimension: ");
 
                 ajoutpiecedimx = new QSpinBox(widgetajoutpiece);
                     ajoutpiecedimx->setPrefix("X= ");
@@ -361,7 +361,7 @@ void MainWindow::createMenus()
 
                 //bouton
                 boutonajoutpiece = new QPushButton(widgetajoutpiece);
-                    boutonajoutpiece->setText("ajouter");
+                    boutonajoutpiece->setText("Ajouter");
                 connect(boutonajoutpiece,SIGNAL(clicked()), this ,SLOT(validajoutpiece()));
 
                 //murs
@@ -370,17 +370,17 @@ void MainWindow::createMenus()
 
                     //label des mur
                     labelmur1 = new QLabel(widgetajoutpiece);
-                        labelmur1->setText("bas:");
+                        labelmur1->setText("Bas:");
                     labelmur2 = new QLabel(widgetajoutpiece);
-                        labelmur2->setText("haut:");
+                        labelmur2->setText("Haut:");
                     labelmur3 = new QLabel(widgetajoutpiece);
-                        labelmur3->setText("arriere:");
+                        labelmur3->setText("Arrière:");
                     labelmur4 = new QLabel(widgetajoutpiece);
-                        labelmur4->setText("avant:");
+                        labelmur4->setText("Avant:");
                     labelmur5 = new QLabel(widgetajoutpiece);
-                        labelmur5->setText("gauche:");
+                        labelmur5->setText("Gauche:");
                     labelmur6 = new QLabel(widgetajoutpiece);
-                        labelmur6->setText("droite:");
+                        labelmur6->setText("Droite:");
                     //checkbox mur
                     checkmur1 = new QCheckBox(widgetajoutpiece);
                     checkmur2 = new QCheckBox(widgetajoutpiece);
@@ -449,7 +449,7 @@ void MainWindow::createMenus()
 
              //declaration contenu
              labelpiececomboajoutmur = new QLabel(widgetajoutmur);
-                labelpiececomboajoutmur->setText("nom piece :");
+                labelpiececomboajoutmur->setText("Pièce :");
              combopieceajoutmur = new QComboBox(widgetajoutmur);
              combopieceajoutmur->setMaximumWidth(200);
              boutonpieceajoutmur = new QPushButton(widgetajoutmur);
@@ -457,12 +457,12 @@ void MainWindow::createMenus()
                 connect(boutonpieceajoutmur , SIGNAL(clicked()), this ,SLOT(ajoutmurcreatemodelmurcombo()) );
 
              labelmurcomboajoutmur = new QLabel(widgetajoutmur);
-                labelmurcomboajoutmur->setText("nom mur :");
+                labelmurcomboajoutmur->setText("Mur :");
              combomurajoutmur = new QComboBox(widgetajoutmur);
              combomurajoutmur->setMaximumWidth(200);
 
              boutonajoutmur = new QPushButton(widgetajoutmur);
-                boutonajoutmur->setText("ok");
+                boutonajoutmur->setText("Ajouter");
                 connect(boutonajoutmur , SIGNAL(clicked()), this ,SLOT(validajoutmur()) );
 
              //creation du model de la liste des piece
@@ -506,13 +506,13 @@ void MainWindow::createMenus()
              champnomajoutobjet = new QLineEdit(widgetajoutobjet);
 
              labelpieceajoutobjet = new QLabel(widgetajoutobjet);
-                labelpieceajoutobjet->setText("Piece: ");
+                labelpieceajoutobjet->setText("Pièce: ");
              combopieceajoutobjet = new QComboBox(widgetajoutobjet);
                 combopieceajoutobjet->setMaximumWidth(200);
 
 
              labelcheminobjajoutobj = new QLabel(widgetajoutobjet);
-                labelcheminobjajoutobj->setText("path: ");
+                labelcheminobjajoutobj->setText("Chemin: ");
              lineeditobjajoutobj = new QLineEdit(widgetajoutobjet);
              boutonselectionobjajoutobjet = new QPushButton(widgetajoutobjet);
                 boutonselectionobjajoutobjet->setText("+");
@@ -869,7 +869,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             //creation widget a fixer dans le dockwidget
 
             boutonlisteelement = new QPushButton("Editer");
-            boutonlisteelementdelete = new QPushButton("Suprimer");
+            boutonlisteelementdelete = new QPushButton("Supprimer");
 
             layoutlistescene = new QVBoxLayout();
                 layoutlistescene->addWidget(vue);
@@ -1547,7 +1547,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
 
    void MainWindow::selectioncheminobj()
    {
-   QString fileName = QFileDialog::getOpenFileName(this, tr("Selection obj"),"",tr("model3D (*.obj *.stl *.3ds *.dae *.blend *.ase *.x *.xml *.ase )"));
+   QString fileName = QFileDialog::getOpenFileName(this, tr("Selection modèle"),"",tr("model3D (*.obj *.stl *.3ds *.dae *.blend *.ase *.x *.xml *.ase )"));
 
    QFileInfo fileInfo(fileName);
 
