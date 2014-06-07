@@ -232,6 +232,14 @@ private:
                     //piece
 /* ******************************************************** */
                 QTabWidget* tabpiece;
+                    //propietés
+                    QWidget*     widgetpieceprop;
+                    QHBoxLayout*    pieceproplayout;
+                    QLabel* piecelabelprop;
+                    QComboBox*  piececomboprop;
+                    QStandardItemModel* modelpieceprop;
+
+
                     //position
                     QWidget*    widgetpiecedim;
                     QHBoxLayout*    piecedimlayout;
@@ -244,9 +252,9 @@ private:
                     QWidget*    widgetpieceposi;
                     QHBoxLayout*    pieceposilayout;
 
-                    QSpinBox*   positionpiecex;
-                    QSpinBox*   positionpiecey;
-                    QSpinBox*   positionpiecez;
+                    QSpinBox*       positionpiecex;
+                    QSpinBox*       positionpiecey;
+                    QSpinBox*       positionpiecez;
 
                     //scale
                     QWidget*    widgetpiecescale;
@@ -357,6 +365,8 @@ private slots:
     void scaleobjectz( double x );
     void scalesliderobject( int x );
 //piece
+    void slotshaderpiece( const QString & text);
+
     void slotpositionpiecex( int x );
     void slotpositionpiecey( int x );
     void slotpositionpiecez( int x );
