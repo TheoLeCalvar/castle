@@ -1080,6 +1080,9 @@ Mondock:: ~Mondock(){}
 
             QStringList listtmp = dockscene->getShadersNames();
 
+            //fixe l'element par defaut avec le shader actuelement utilisé
+            QString nomshaderactuel = dockscene->getShaderNameByID(_piece->shaderId());
+
             for ( int i = 0 ; i < listtmp.size() ; i++)
                 {
                 modelpieceprop->appendRow( new QStandardItem(listtmp.at(i)));
@@ -1087,11 +1090,7 @@ Mondock:: ~Mondock(){}
 
             piececomboprop->setModel(modelpieceprop);
 
-            //fixe l'element par defaut avec le shader actuelement utilisé
-            QString nomshaderactuel = dockscene->getShaderNameByID(_piece->shaderId());
-
-std::cout<< nomshaderactuel.toStdString() <<std::endl;
-
+            //parcour pour fixer l'index en fonction du shader actuel
             for ( int i = 0 ; i < listtmp.size() ; i++)
                 {
                 if (listtmp.at(i) == nomshaderactuel) piececomboprop->setCurrentIndex(i);
