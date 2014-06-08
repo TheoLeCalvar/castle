@@ -130,8 +130,9 @@ Material * Node::loadMaterial(const aiMaterial * mtl)
 	AI_MATKEY_SHININESS 
 	aiTextureType_DIFFUSE 
 	aiTextureType_SPECULAR
-	aiTextureType_NORMAL 
+	aiTextureType_NORMALS 
 	*/
+	
 	if(AI_SUCCESS == mtl->Get(AI_MATKEY_COLOR_AMBIENT, color)){
 		mat->set(GL_AMBIENT, vec4(color.r, color.g, color.b, color.a));
 	}
@@ -144,8 +145,9 @@ Material * Node::loadMaterial(const aiMaterial * mtl)
 		mat->set(GL_SPECULAR, vec4(color.r, color.g, color.b, color.a));
 	}
 
-	if(AI_SUCCESS == mtl->Get(AI_MATKEY_COLOR_EMISSIVE, color))
+	if(AI_SUCCESS == mtl->Get(AI_MATKEY_COLOR_EMISSIVE, color)){
 		mat->set(GL_EMISSION, vec4(color.r, color.g, color.b, color.a));
+	}
 
 	if (AI_SUCCESS == mtl->Get(AI_MATKEY_SHININESS, shininess)){
 		mat->set(shininess);
@@ -154,6 +156,16 @@ Material * Node::loadMaterial(const aiMaterial * mtl)
 	if (AI_SUCCESS == mtl->GetTexture(aiTextureType_DIFFUSE, 0, &path))
 	{
 		mat->addTexture(QString::fromUtf8(path.C_Str()), "diffuse");
+	}
+
+	if (AI_SUCCESS == mtl->GetTexture(aiTextureType_SPECULAR, 0, &path))
+	{
+		mat->addTexture(QString::fromUtf8(path.C_Str()), "specular");
+	}
+
+	if (AI_SUCCESS == mtl->GetTexture(aiTextureType_NORMALS, 0, &path))
+	{
+		mat->addTexture(QString::fromUtf8(path.C_Str()), "normal");
 	}
 
 	mat->fromXML(false);
