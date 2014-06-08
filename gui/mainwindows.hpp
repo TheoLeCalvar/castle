@@ -320,6 +320,7 @@ private slots:
               QPushButton*          boutonfragajoutshader;
 
               QPushButton*          boutonajoutshader;
+              QCheckBox*            choixajoutshader;
 
         //aide
         QMenu*    about;

@@ -2,7 +2,7 @@
 #include <iostream>
 #include "light.hpp"
 
-MainWindow::MainWindow(const QString & path):light(NULL),material(NULL),objet(NULL)
+MainWindow::MainWindow(const QString & path):light(NULL),material(NULL),objet(NULL),shader(NULL)
 {
 /* ************************************** */
 //          Central  Widget               //
@@ -583,6 +583,8 @@ void MainWindow::createMenus()
                 boutonajoutshader->setText("Ajouter");
                 connect(boutonajoutshader, SIGNAL(clicked()), this ,SLOT(validajoutshader()));
 
+             choixajoutshader = new QCheckBox("Post processing", widgetajoutshader);
+
              //positionement
                 mainlayoutajoutshader = new QVBoxLayout();
                  layoutnomajoutshader = new QHBoxLayout();
@@ -601,6 +603,7 @@ void MainWindow::createMenus()
                 mainlayoutajoutshader->addLayout(layoutvertajoutshader);
                 mainlayoutajoutshader->addLayout(layoutfragajoutshader);
                 mainlayoutajoutshader->addWidget(boutonajoutshader);
+                mainlayoutajoutshader->addWidget(choixajoutshader);
 
                 widgetajoutshader->setLayout(mainlayoutajoutshader);
 
@@ -1800,26 +1803,21 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
 
         else
             {
-            widget->getScene()->addShader(lineeditnomajoutshader->text(),lineeditvertajoutshader->text(),lineeditfragajoutshader->text());
+            if (choixajoutshader->isChecked()) widget->addShader(lineeditnomajoutshader->text(),lineeditvertajoutshader->text(),lineeditfragajoutshader->text());
+            else widget->getScene()->addShader(lineeditnomajoutshader->text(),lineeditvertajoutshader->text(),lineeditfragajoutshader->text());
             }
-
         //verifie si le shader a été ajouter
-        bool a = false;
-        QStringList listtmp = widget->getScene()->getShadersNames();
+        if (!choixajoutshader->isChecked() )
+        {
+            QStringList listtmp = widget->getScene()->getShadersNames();
 
-                for (int i = 0 ; i< listtmp.size(); i++)
-                {
-                 if (listtmp.at(i)==lineeditnomajoutshader->text())    a=true;
-                }
-        if (a==true)
-            {
-            if(shader)
+            for (int i = 0 ; i< listtmp.size(); i++)
                     {
-                     shader->appendRow(new QStandardItem(lineeditnomajoutshader->text()));
-                                 dockajoutshader->close();
+                     if (listtmp.at(i)==lineeditnomajoutshader->text())  if (shader) shader->appendRow(new QStandardItem(lineeditnomajoutshader->text()));
                     }
-            }
-        else   dockajoutshader->close();
+        }
+        dockajoutshader->close();
+
         }
 
     //supression

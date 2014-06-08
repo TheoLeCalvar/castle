@@ -1,21 +1,21 @@
 <!DOCTYPE scene>
 <scene>
  <camera>
-  <position x="20.3504" y="11.9661" z="72.4452"/>
+  <position x="-14.1057" y="10.305" z="87.2702"/>
  </camera>
  <materiaux>
   <material nom="Mat1">
    <ambient r="0.2" b="0.2" g="0.2"/>
    <diffuse r="0.4" b="0.8" g="0.8"/>
    <specular r="0.8" b="0.8" s="32" g="0.8"/>
-   <texture type="diffuse" src="textures/stonebrick.png"/>
-   <texture type="normal" src="textures/stonebrick_normal.png"/>
+   <texture src="textures/stonebrick.png" type="diffuse"/>
+   <texture src="textures/stonebrick_normal.png" type="normal"/>
   </material>
   <material nom="Mat2">
    <ambient r="0.2" b="0.2" g="0.2"/>
    <diffuse r="0.8" b="0.2" g="0.8"/>
    <specular r="0.8" b="0.8" s="32" g="0.8"/>
-   <texture type="diffuse" src="textures/stonebrick_mossy.png"/>
+   <texture src="textures/stonebrick_mossy.png" type="diffuse"/>
   </material>
   <material nom="Mat3">
    <ambient r="0.2" b="0.2" g="0.2"/>
@@ -31,8 +31,16 @@
    <ambient r="0.2" b="0.2" g="0.2"/>
    <diffuse r="0.8" b="0.8" g="0.8"/>
    <specular r="0.8" b="0.8" s="32" g="0.8"/>
-   <texture type="diffuse" src="textures/Chimeny.JPG"/>
-   <texture type="normal" src="textures/Chimeny_N.JPG"/>
+   <texture src="textures/Chimeny.JPG" type="diffuse"/>
+   <texture src="textures/Chimeny_N.JPG" type="normal"/>
+  </material>
+  <material nom="willwall">
+   <ambient r="0.2" b="0.2" g="0.2"/>
+   <diffuse r="0.8" b="0.8" g="0.8"/>
+   <specular r="0.8" b="0.8" s="32" g="0.8"/>
+   <texture src="textures/william_wall_01_D.png" type="diffuse"/>
+   <texture src="textures/william_wall_01_S.png" type="specular"/>
+   <texture src="textures/william_wall_01_N.png" type="normal"/>
   </material>
  </materiaux>
  <lumieres>
@@ -66,6 +74,12 @@
    <diffuse r="0.552941" b="0" g="0"/>
    <specular r="0.364706" b="0.345098" g="0.341176"/>
   </lumiere>
+  <lumiere nom="lightcuisine">
+   <position x="-3" y="12" z="94"/>
+   <ambient r="0" b="0" g="0"/>
+   <diffuse r="0.564706" b="0.454902" g="0.631373"/>
+   <specular r="0.435294" b="0.188235" g="0.2"/>
+  </lumiere>
   <lumiere nom="orange">
    <position x="66" y="17" z="76"/>
    <ambient r="0" b="0" g="0"/>
@@ -92,8 +106,31 @@
   <shader fragment="shaders/sepia.frag" nom="sepia" vertex="shaders/base.vert"/>
  </postProcess>
  <pieces>
+  <piece nom="cuisine" mat="neutre" shader="bump">
+   <dimension width="30" height="20" length="45"/>
+   <position x="-18" y="1" z="63"/>
+   <rotation x="0" y="0" z="0"/>
+   <scale x="1" y="1" z="1"/>
+   <murs>
+    <mur cote="arriere" mat="neutre"/>
+    <mur cote="avant" mat="neutre"/>
+    <mur cote="bas" mat="neutre"/>
+    <mur cote="droite" mat="neutre"/>
+    <mur cote="gauche" mat="neutre">
+     <fenetre width="8" x="0" height="9" y="0"/>
+    </mur>
+    <mur cote="haut" mat="neutre"/>
+   </murs>
+   <objets>
+    <objet nom="meublecuisine" modele="modeles/cuisine1/cuisine2.dae">
+     <position x="22.91" y="4" z="16.31"/>
+     <rotation x="0" y="0" z="-90"/>
+     <scale x="0.18" y="0.25" z="0.26"/>
+    </objet>
+   </objets>
+  </piece>
   <piece nom="entrepiece23" mat="Mat1" shader="bump">
-   <dimension height="10" length="5" width="1"/>
+   <dimension width="1" height="10" length="5"/>
    <position x="-8" y="1" z="9"/>
    <rotation x="0" y="0" z="0"/>
    <scale x="1" y="1" z="1.2"/>
@@ -106,7 +143,7 @@
    <objets/>
   </piece>
   <piece nom="entrepiece34" mat="" shader="bump">
-   <dimension height="10" length="1" width="5"/>
+   <dimension width="5" height="10" length="1"/>
    <position x="-23" y="1" z="27"/>
    <rotation x="0" y="0" z="0"/>
    <scale x="1.5" y="1" z="1"/>
@@ -119,7 +156,7 @@
    <objets/>
   </piece>
   <piece nom="entrepiece45" mat="" shader="bump">
-   <dimension height="10" length="7" width="1"/>
+   <dimension width="1" height="10" length="7"/>
    <position x="12" y="1" z="40"/>
    <rotation x="0" y="0" z="0"/>
    <scale x="1" y="1" z="1.5"/>
@@ -131,8 +168,21 @@
    </murs>
    <objets/>
   </piece>
+  <piece nom="entrepiece5cuis" mat="neutre" shader="bump">
+   <dimension width="1" height="10" length="7"/>
+   <position x="12" y="1" z="63"/>
+   <rotation x="0" y="0" z="0"/>
+   <scale x="1" y="1" z="1.43"/>
+   <murs>
+    <mur cote="arriere" mat="neutre"/>
+    <mur cote="avant" mat="neutre"/>
+    <mur cote="bas" mat="neutre"/>
+    <mur cote="haut" mat="neutre"/>
+   </murs>
+   <objets/>
+  </piece>
   <piece nom="maison_mlp" mat="Mat3" shader="bump">
-   <dimension height="1" length="1" width="1"/>
+   <dimension width="1" height="1" length="1"/>
    <position x="-19" y="5" z="46"/>
    <rotation x="0" y="0" z="0"/>
    <scale x="1.7" y="1.7" z="1.7"/>
@@ -150,7 +200,7 @@
    </objets>
   </piece>
   <piece nom="piece1" mat="neutre" shader="test">
-   <dimension height="20" length="30" width="30"/>
+   <dimension width="30" height="20" length="30"/>
    <position x="23" y="1" z="-3"/>
    <rotation x="0" y="0" z="0"/>
    <scale x="1" y="1" z="1"/>
@@ -171,16 +221,16 @@
    </objets>
   </piece>
   <piece nom="piece2" mat="wall" shader="test">
-   <dimension height="20" length="30" width="30"/>
+   <dimension width="30" height="20" length="30"/>
    <position x="-7" y="1" z="-3"/>
    <rotation x="0" y="0" z="0"/>
    <scale x="1" y="1" z="1"/>
    <murs>
-    <mur cote="arriere" mat="Mat1"/>
+    <mur cote="arriere" mat="willwall"/>
     <mur cote="avant" mat="Mat1"/>
     <mur cote="bas" mat="wall"/>
     <mur cote="droite" mat="Mat1">
-     <fenetre height="9" width="6" x="11" y="0"/>
+     <fenetre width="6" x="11" height="9" y="0"/>
     </mur>
     <mur cote="haut" mat="neutre"/>
    </murs>
@@ -193,19 +243,19 @@
    </objets>
   </piece>
   <piece nom="piece3" mat="Mat1" shader="bump">
-   <dimension height="20" length="30" width="30"/>
+   <dimension width="30" height="20" length="30"/>
    <position x="-38" y="1" z="-3"/>
    <rotation x="0" y="0" z="0"/>
    <scale x="1" y="1" z="1"/>
    <murs>
-    <mur cote="arriere" mat="Mat1"/>
+    <mur cote="arriere" mat="willwall"/>
     <mur cote="avant" mat="Mat1">
-     <fenetre height="9" width="7" x="7" y="0"/>
+     <fenetre width="7" x="7" height="9" y="0"/>
     </mur>
     <mur cote="bas" mat="wall"/>
     <mur cote="droite" mat="Mat1"/>
     <mur cote="gauche" mat="Mat1">
-     <fenetre height="9" width="6" x="11" y="0"/>
+     <fenetre width="6" x="11" height="9" y="0"/>
     </mur>
     <mur cote="haut" mat="neutre"/>
    </murs>
@@ -223,18 +273,18 @@
    </objets>
   </piece>
   <piece nom="piece4" mat="Mat3" shader="bump">
-   <dimension height="20" length="50" width="30"/>
+   <dimension width="30" height="20" length="50"/>
    <position x="12" y="1" z="28"/>
    <rotation x="0" y="-90" z="0"/>
    <scale x="1" y="1" z="1"/>
    <murs>
     <mur cote="arriere" mat="Mat3">
-     <fenetre height="9" width="9" x="12" y="0"/>
+     <fenetre width="9" x="12" height="9" y="0"/>
     </mur>
     <mur cote="avant" mat="Mat3"/>
     <mur cote="bas" mat="neutre"/>
     <mur cote="droite" mat="Mat3">
-     <fenetre height="9" width="7" x="13" y="0"/>
+     <fenetre width="7" x="13" height="9" y="0"/>
     </mur>
     <mur cote="gauche" mat="Mat3"/>
     <mur cote="haut" mat="neutre"/>
@@ -253,7 +303,7 @@
     <objet nom="tableenfant" modele="modeles/table/coffee_table.dae">
      <position x="15.11" y="-0.5" z="37.93"/>
      <rotation x="-90" y="0" z="0"/>
-     <scale x="0.4" y="0.2" z="0.2"/>
+     <scale x="0.4" y="0.2" z="0.21"/>
     </objet>
     <objet nom="tapis" modele="modeles/tapis/Tapismarelle.3ds">
      <position x="10" y="0.01" z="10"/>
@@ -268,7 +318,7 @@
    </objets>
   </piece>
   <piece nom="piece5" mat="neutre" shader="test">
-   <dimension height="20" length="50" width="50"/>
+   <dimension width="50" height="20" length="50"/>
    <position x="13" y="1" z="28"/>
    <rotation x="0" y="0" z="0"/>
    <scale x="1" y="1" z="1"/>
@@ -277,14 +327,15 @@
     <mur cote="avant" mat="neutre"/>
     <mur cote="bas" mat="wall"/>
     <mur cote="droite" mat="neutre">
-     <fenetre height="9" width="8" x="27" y="0"/>
+     <fenetre width="8" x="27" height="9" y="0"/>
+     <fenetre width="8" x="5" height="9" y="0"/>
     </mur>
     <mur cote="gauche" mat="neutre"/>
     <mur cote="haut" mat="neutre"/>
    </murs>
    <objets>
     <objet nom="bureau" modele="modeles/bureau/StudentDesk.dae">
-     <position x="2" y="0" z="38"/>
+     <position x="1" y="0" z="33"/>
      <rotation x="-90" y="0" z="0"/>
      <scale x="0.2" y="0.2" z="0.2"/>
     </objet>
@@ -294,7 +345,7 @@
      <scale x="0.01" y="0.01" z="0.01"/>
     </objet>
     <objet nom="tv" modele="modeles/tv/tvstand.dae">
-     <position x="31" y="0" z="43"/>
+     <position x="30" y="0" z="42"/>
      <rotation x="-90" y="180" z="0"/>
      <scale x="0.3" y="0.3" z="0.3"/>
     </objet>
