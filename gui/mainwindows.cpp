@@ -39,7 +39,7 @@ void MainWindow::createActions()
      enregistrerAct = new QAction(tr("&Enregistrer"), this);
         connect( enregistrerAct, SIGNAL(triggered()), this, SLOT(Enregistrer()));
 
-     kiterAct = new QAction(tr("&exit"), this);
+     kiterAct = new QAction(tr("&Quitter"), this);
         connect( kiterAct, SIGNAL(triggered()), qApp, SLOT(quit()));
 
 
@@ -48,40 +48,44 @@ void MainWindow::createActions()
          connect( grilleAct, SIGNAL(triggered()), this, SLOT(Grille()));
          grilleAct->setCheckable(true);
 
-     apercutAct = new QAction(tr("&fullscreen"), this);
+     apercutAct = new QAction(tr("&Plein écran"), this);
          connect(apercutAct, SIGNAL(triggered()), this, SLOT(Apercut()));
          apercutAct->setCheckable(true);
 
-     culfaceAct = new QAction(tr("&Culface"), this);
+     culfaceAct = new QAction(tr("&Cullface"), this);
          connect(culfaceAct, SIGNAL(triggered()), this, SLOT(Culface()));
          culfaceAct->setCheckable(true);
 
      //outil
-     importation3DAct = new QAction(tr("&Liste elements"), this);
+     importation3DAct = new QAction(tr("&Liste éléments"), this);
          connect( importation3DAct, SIGNAL(triggered()), this, SLOT(Importation3D()));
          importation3DAct->setCheckable(true);
 
      ajoutelement = new QMenu(tr("&Ajout"));
 
-        ajoutlumierAct = new QAction(tr("&Lumiere"),this);
+        ajoutlumierAct = new QAction(tr("&Lumières"),this);
             ajoutlumierAct->setIcon(QIcon("icones/light.jpg"));
             connect(ajoutlumierAct,SIGNAL(triggered()),this , SLOT(ajoutlumiere()));
 
-        ajoutmaterialAct = new QAction(tr("&Materiaux"),this);
+        ajoutmaterialAct = new QAction(tr("&Matériaux"),this);
             ajoutmaterialAct->setIcon(QIcon("icones/material.jpg"));
             connect(ajoutmaterialAct,SIGNAL(triggered()),this , SLOT(ajoutmaterial()));
 
-        ajoutpieceAct = new QAction(tr("&Piece"),this);
+        ajoutpieceAct = new QAction(tr("&Pièces"),this);
             ajoutpieceAct->setIcon(QIcon("icones/room.png"));
             connect(ajoutpieceAct,SIGNAL(triggered()),this , SLOT(ajoutpiece()));
 
-        ajoutmurAct = new QAction(tr("&Mur"),this);
+        ajoutmurAct = new QAction(tr("&Murs"),this);
             ajoutmurAct->setIcon(QIcon("icones/wall.png"));
             connect(ajoutmurAct,SIGNAL(triggered()),this , SLOT(ajoutmur()));
 
         ajoutobjetAct = new QAction(tr("&Objet"),this);
-         ajoutobjetAct->setIcon(QIcon("icones/objects.png"));
-         connect(ajoutobjetAct, SIGNAL(triggered()), this, SLOT(ajoutobjet()));
+            ajoutobjetAct->setIcon(QIcon("icones/objects.png"));
+            connect(ajoutobjetAct, SIGNAL(triggered()), this, SLOT(ajoutobjet()));
+
+        ajoutshaderAct = new QAction(tr("&Shader"),this);
+            ajoutshaderAct->setIcon(QIcon("icones/shader.png"));
+            connect(ajoutshaderAct, SIGNAL(triggered()), this, SLOT(ajoutshader()));
 
      //aide
      about = new QMenu(tr("&A propos"), this);
@@ -120,7 +124,7 @@ void MainWindow::createMenus()
             apercutAct->setIcon(QIcon("icones/fullscreen.png"));
             apercutAct->setShortcut(QKeySequence(Qt::Key_F3));
 
-    Outil = menuBar()->addMenu(tr("&Outil"));
+    Outil = menuBar()->addMenu(tr("&Outils"));
         Outil->addAction(importation3DAct);
             importation3DAct->setIcon(QIcon("icones/value_list.png"));
         Outil->addMenu(ajoutelement);
@@ -200,7 +204,7 @@ void MainWindow::createMenus()
 
             //bouton
              boutonajoutlumiere = new QPushButton(widgetajoutlumiere);
-                boutonajoutlumiere->setText("Ajouter: ");
+                boutonajoutlumiere->setText("Ajouter");
              connect(boutonajoutlumiere,SIGNAL(clicked()), this ,SLOT(validajoutlumiere()));
 
              layoutajoutlumiere=new QVBoxLayout();
@@ -254,7 +258,7 @@ void MainWindow::createMenus()
 
             //difuse
             difajoutmaterial = new QLabel(widgetajoutmaterial);
-                difajoutmaterial->setText("Difuse: ");
+                difajoutmaterial->setText("Diffuse: ");
             spindifajoutmaterialx = new QDoubleSpinBox(widgetajoutmaterial);
                 spindifajoutmaterialx->setRange(0 , 1);
                 spindifajoutmaterialx->setSingleStep(0.01);
@@ -276,7 +280,7 @@ void MainWindow::createMenus()
 
              //speculaire
              speajoutmaterial = new QLabel(widgetajoutmaterial);
-                speajoutmaterial->setText("Speculaire: ");
+                speajoutmaterial->setText("Spéculaire: ");
              spinspeajoutmaterialx = new QDoubleSpinBox(widgetajoutmaterial);
                 spinspeajoutmaterialx->setRange(0 , 1);
                 spinspeajoutmaterialx->setSingleStep(0.01);
@@ -302,7 +306,7 @@ void MainWindow::createMenus()
 
             //bouton
              boutonajoutmaterial = new QPushButton(widgetajoutmaterial);
-                boutonajoutmaterial->setText("ajouter");
+                boutonajoutmaterial->setText("Ajouter");
              connect(boutonajoutmaterial,SIGNAL(clicked()), this ,SLOT(validajoutmaterial()));
 
              layoutajoutmaterial = new QVBoxLayout();
@@ -334,13 +338,13 @@ void MainWindow::createMenus()
                 modelemateriaupiece = new QStandardItemModel(widgetajoutpiece);
 
                 labelcomboajoutpiece = new QLabel(widgetajoutpiece);
-                    labelcomboajoutpiece->setText("Materiaux: ");
+                    labelcomboajoutpiece->setText("Matériau: ");
                 comboajoutpiece = new QComboBox(widgetajoutpiece);
                     comboajoutpiece->setMaximumWidth(200);
 
                 //dimention
                 labeldimajoutpiece = new QLabel(widgetajoutpiece);
-                    labeldimajoutpiece->setText("Dimention: ");
+                    labeldimajoutpiece->setText("Dimension: ");
 
                 ajoutpiecedimx = new QSpinBox(widgetajoutpiece);
                     ajoutpiecedimx->setPrefix("X= ");
@@ -361,7 +365,7 @@ void MainWindow::createMenus()
 
                 //bouton
                 boutonajoutpiece = new QPushButton(widgetajoutpiece);
-                    boutonajoutpiece->setText("ajouter");
+                    boutonajoutpiece->setText("Ajouter");
                 connect(boutonajoutpiece,SIGNAL(clicked()), this ,SLOT(validajoutpiece()));
 
                 //murs
@@ -370,17 +374,17 @@ void MainWindow::createMenus()
 
                     //label des mur
                     labelmur1 = new QLabel(widgetajoutpiece);
-                        labelmur1->setText("bas:");
+                        labelmur1->setText("Bas:");
                     labelmur2 = new QLabel(widgetajoutpiece);
-                        labelmur2->setText("haut:");
+                        labelmur2->setText("Haut:");
                     labelmur3 = new QLabel(widgetajoutpiece);
-                        labelmur3->setText("arriere:");
+                        labelmur3->setText("Arrière:");
                     labelmur4 = new QLabel(widgetajoutpiece);
-                        labelmur4->setText("avant:");
+                        labelmur4->setText("Avant:");
                     labelmur5 = new QLabel(widgetajoutpiece);
-                        labelmur5->setText("gauche:");
+                        labelmur5->setText("Gauche:");
                     labelmur6 = new QLabel(widgetajoutpiece);
-                        labelmur6->setText("droite:");
+                        labelmur6->setText("Droite:");
                     //checkbox mur
                     checkmur1 = new QCheckBox(widgetajoutpiece);
                     checkmur2 = new QCheckBox(widgetajoutpiece);
@@ -449,7 +453,7 @@ void MainWindow::createMenus()
 
              //declaration contenu
              labelpiececomboajoutmur = new QLabel(widgetajoutmur);
-                labelpiececomboajoutmur->setText("nom piece :");
+                labelpiececomboajoutmur->setText("Pièce :");
              combopieceajoutmur = new QComboBox(widgetajoutmur);
              combopieceajoutmur->setMaximumWidth(200);
              boutonpieceajoutmur = new QPushButton(widgetajoutmur);
@@ -457,12 +461,12 @@ void MainWindow::createMenus()
                 connect(boutonpieceajoutmur , SIGNAL(clicked()), this ,SLOT(ajoutmurcreatemodelmurcombo()) );
 
              labelmurcomboajoutmur = new QLabel(widgetajoutmur);
-                labelmurcomboajoutmur->setText("nom mur :");
+                labelmurcomboajoutmur->setText("Mur :");
              combomurajoutmur = new QComboBox(widgetajoutmur);
              combomurajoutmur->setMaximumWidth(200);
 
              boutonajoutmur = new QPushButton(widgetajoutmur);
-                boutonajoutmur->setText("ok");
+                boutonajoutmur->setText("Ajouter");
                 connect(boutonajoutmur , SIGNAL(clicked()), this ,SLOT(validajoutmur()) );
 
              //creation du model de la liste des piece
@@ -506,13 +510,13 @@ void MainWindow::createMenus()
              champnomajoutobjet = new QLineEdit(widgetajoutobjet);
 
              labelpieceajoutobjet = new QLabel(widgetajoutobjet);
-                labelpieceajoutobjet->setText("Piece: ");
+                labelpieceajoutobjet->setText("Pièce: ");
              combopieceajoutobjet = new QComboBox(widgetajoutobjet);
                 combopieceajoutobjet->setMaximumWidth(200);
 
 
              labelcheminobjajoutobj = new QLabel(widgetajoutobjet);
-                labelcheminobjajoutobj->setText("path: ");
+                labelcheminobjajoutobj->setText("Chemin: ");
              lineeditobjajoutobj = new QLineEdit(widgetajoutobjet);
              boutonselectionobjajoutobjet = new QPushButton(widgetajoutobjet);
                 boutonselectionobjajoutobjet->setText("+");
@@ -546,6 +550,65 @@ void MainWindow::createMenus()
 
              //ajout au dock
              dockajoutobjet->setWidget(widgetajoutobjet);
+
+/* ************************************** */
+//          ajout Shader                  //
+/* ************************************** */
+
+             ajoutelement->addAction(ajoutshaderAct);
+
+             //decalration widget
+             widgetajoutshader = new QWidget(dockajoutshader);
+
+             //declaration contenu
+             labelnomajoutshader = new QLabel(widgetajoutshader);
+                labelnomajoutshader->setText("Nom :");
+             lineeditnomajoutshader = new QLineEdit(widgetajoutshader);
+
+             labelvertajoutshader = new QLabel(widgetajoutshader);
+                labelvertajoutshader->setText("Chemin du .vert :");
+             lineeditvertajoutshader = new QLineEdit(widgetajoutshader);
+             boutonvertajoutshader = new QPushButton(widgetajoutshader);
+                boutonvertajoutshader->setText("+");
+                connect(boutonvertajoutshader, SIGNAL(clicked()), this ,SLOT(selectioncheminvert()));
+
+             labelfragtajoutshader = new QLabel(widgetajoutshader);
+                labelfragtajoutshader->setText("Chemin du .frag :");
+             lineeditfragajoutshader = new QLineEdit(widgetajoutshader);
+             boutonfragajoutshader = new QPushButton(widgetajoutshader);
+                boutonfragajoutshader->setText("+");
+                connect(boutonfragajoutshader, SIGNAL(clicked()), this ,SLOT(selectioncheminfrag()));
+
+             boutonajoutshader = new QPushButton(widgetajoutshader);
+                boutonajoutshader->setText("Ajouter");
+                connect(boutonajoutshader, SIGNAL(clicked()), this ,SLOT(validajoutshader()));
+
+             //positionement
+                mainlayoutajoutshader = new QVBoxLayout();
+                 layoutnomajoutshader = new QHBoxLayout();
+                    layoutnomajoutshader->addWidget(labelnomajoutshader);
+                    layoutnomajoutshader->addWidget(lineeditnomajoutshader);
+                 layoutvertajoutshader = new QHBoxLayout();
+                    layoutvertajoutshader->addWidget(labelvertajoutshader);
+                    layoutvertajoutshader->addWidget(lineeditvertajoutshader);
+                    layoutvertajoutshader->addWidget(boutonvertajoutshader);
+                 layoutfragajoutshader = new QHBoxLayout();
+                     layoutfragajoutshader->addWidget(labelfragtajoutshader);
+                     layoutfragajoutshader->addWidget(lineeditfragajoutshader);
+                     layoutfragajoutshader->addWidget(boutonfragajoutshader);
+
+                mainlayoutajoutshader->addLayout(layoutnomajoutshader);
+                mainlayoutajoutshader->addLayout(layoutvertajoutshader);
+                mainlayoutajoutshader->addLayout(layoutfragajoutshader);
+                mainlayoutajoutshader->addWidget(boutonajoutshader);
+
+                widgetajoutshader->setLayout(mainlayoutajoutshader);
+
+             //ajout au dock
+             dockajoutshader->setWidget(widgetajoutshader);
+
+//fin ajout element
+
 
     //aide
     Aide = menuBar()->addMenu(tr("&Aide"));
@@ -591,6 +654,11 @@ void MainWindow::createListeDockwidget()
              dockajoutobjet->setAllowedAreas(Qt::LeftDockWidgetArea);
              addDockWidget(Qt::LeftDockWidgetArea,  dockajoutobjet);
              dockajoutobjet->hide();
+
+        dockajoutshader= new QDockWidget(tr("Ajout d'un shader "), this);
+             dockajoutshader->setAllowedAreas(Qt::LeftDockWidgetArea);
+             addDockWidget(Qt::LeftDockWidgetArea,  dockajoutshader);
+             dockajoutshader->hide();
 }
 
 void MainWindow::createToolBar()
@@ -638,6 +706,8 @@ void MainWindow::createToolBar()
             fileToolBar->addAction(ajoutmurAct);
 
             fileToolBar->addAction(ajoutobjetAct);
+
+            fileToolBar->addAction(ajoutshaderAct);
 
             fileToolBar->addSeparator();//
 
@@ -869,7 +939,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             //creation widget a fixer dans le dockwidget
 
             boutonlisteelement = new QPushButton("Editer");
-            boutonlisteelementdelete = new QPushButton("Suprimer");
+            boutonlisteelementdelete = new QPushButton("Supprimer");
 
             layoutlistescene = new QVBoxLayout();
                 layoutlistescene->addWidget(vue);
@@ -889,7 +959,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             dock_perso->dockmodele= modele;
             dock_perso->dockvue = vue;
             dock_perso->dockscene= scenetemp;
-            connect(boutonlisteelement, SIGNAL(clicked()), dock_perso, SLOT(selectionlight()));
+            connect(boutonlisteelement, SIGNAL(clicked()), dock_perso, SLOT(selectiontraitement()));
             connect(boutonlisteelementdelete, SIGNAL(clicked()), this, SLOT(supresionelement()));
 
            }//fin else
@@ -926,7 +996,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
         if (lineeditnomajoutlumiere->text()==NULL)
         {
             QMessageBox msgBox;
-            msgBox.setText("le champ nom , ne peut etre vide");
+            msgBox.setText("Le champ nom, ne peut etre vide");
             msgBox.exec();
 
             dockajoutlumiere->close();
@@ -999,7 +1069,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             if (lineeditnomajoutmaterial->text()==NULL)
             {
                 QMessageBox msgBox;
-                msgBox.setText("le champ nom , ne peut etre vide");
+                msgBox.setText("Le champ nom, ne peut etre vide");
                 msgBox.exec();
              dockajoutmateriaux->close();
             }
@@ -1101,7 +1171,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
         if (lineeditajoutpiece->text()==NULL || lineeditajoutpiece->text()=="" )
         {
             QMessageBox msgBox;
-            msgBox.setText("le champ nom , ne peut etre vide");
+            msgBox.setText("Le champ nom, ne peut etre vide");
             msgBox.exec();
          dockajoutpiece->close();
         }
@@ -1334,13 +1404,14 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                             bool a = false;
 
                             if (objet->child(i)->text()== combopieceajoutmur->currentText())//si on est dans la bonne piece
-
+                            {
                                     for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
                                     {
                                     if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_bas")
                                         a=true;
                                     }
                             if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_bas"));
+                            }
                             }
                      }
                 }
@@ -1369,13 +1440,14 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                                 bool a = false;
 
                                 if (objet->child(i)->text()== combopieceajoutmur->currentText())//si on est dans la bonne piece
-
+                                 {
                                         for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
                                         {
                                         if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_haut")
                                             a=true;
                                         }
                                 if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_haut"));
+                                }
                                 }
                         }
                 }
@@ -1400,13 +1472,14 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                             bool a = false;
 
                             if (objet->child(i)->text()== combopieceajoutmur->currentText())//si on est dans la bonne piece
-
+                            {
                                     for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
                                     {
                                     if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_arriere")
                                         a=true;
                                     }
                             if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_arriere"));
+                            }
                             }
                     }
                 }
@@ -1433,13 +1506,14 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                             bool a = false;
 
                             if (objet->child(i)->text()== combopieceajoutmur->currentText())//si on est dans la bonne piece
-
+                            {
                                     for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
-                                    {
-                                    if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_avant")
-                                        a=true;
-                                    }
-                            if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_avant"));
+                                        {
+                                            if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_avant")
+                                                a=true;
+                                        }
+                                    if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_avant"));
+                            }
                             }
                   }
                 }
@@ -1467,13 +1541,14 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                             bool a = false;
 
                             if (objet->child(i)->text()== combopieceajoutmur->currentText())//si on est dans la bonne piece
-
-                                    for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
-                                    {
-                                    if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_gauche")
-                                        a=true;
-                                    }
-                            if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_gauche"));
+                                {
+                                        for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
+                                        {
+                                        if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_gauche")
+                                            a=true;
+                                        }
+                                    if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_gauche"));
+                                }
                             }
                     }
                 }
@@ -1498,15 +1573,15 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                         for(int i = 0 ; i < objet->rowCount() ; i++)
                             {
                             bool a = false;
-
                             if (objet->child(i)->text()== combopieceajoutmur->currentText())//si on est dans la bonne piece
-
+                            {
                                     for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
-                                    {
-                                    if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_droite")
-                                        a=true;
-                                    }
-                            if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_droite"));
+                                        {
+                                        if (objet->child(i)->child(j)->text()==combopieceajoutmur->currentText()+"_droite")
+                                            a=true;
+                                        }
+                                    if (a==false) objet->child(i)->appendRow(new QStandardItem(combopieceajoutmur->currentText()+"_droite"));
+                            }
                             }
                   }
                 }
@@ -1542,7 +1617,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
 
    void MainWindow::selectioncheminobj()
    {
-   QString fileName = QFileDialog::getOpenFileName(this, tr("Selection obj"),"",tr("model3D (*.obj *.stl *.3ds *.dae *.blend *.ase *.x *.xml *.ase )"));
+   QString fileName = QFileDialog::getOpenFileName(this, tr("Selection modèle"),"",tr("model3D (*.obj *.stl *.3ds *.dae *.blend *.ase *.x *.xml *.ase )"));
 
    QFileInfo fileInfo(fileName);
 
@@ -1593,15 +1668,16 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
                     for(int i = 0 ; i < objet->rowCount() ; i++)
                         {
                         bool a = false;
+                        if (objet->child(i)->text() == combopieceajoutobjet->currentText())//si on est dans la bonne piece
+                            {
+                                    for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
+                                    {
+                                    if (objet->child(i)->child(j)->text()==champnomajoutobjet->text())
+                                        a=true;
+                                    }
 
-                        if (objet->child(i)->text()== combopieceajoutobjet->currentText())//si on est dans la bonne piece
-
-                                for (int j = 0 ; j < (objet->child(i)->rowCount()) ; j++)//si l'item n'existe pas deja
-                                {
-                                if (objet->child(i)->child(j)->text()==champnomajoutobjet->text())
-                                    a=true;
-                                }
-                        if (a==false) objet->child(i)->appendRow(new QStandardItem(champnomajoutobjet->text()));
+                                    if (a==false) objet->child(i)->appendRow(new QStandardItem(champnomajoutobjet->text()));
+                            }
                         }
                  }
 
@@ -1641,6 +1717,109 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
         void    MainWindow::changeshader(const QString & text )
         {
         widget->useShader( text);
+        }
+
+
+        void MainWindow::ajoutshader()
+        {
+
+            //resete certain champ
+            lineeditnomajoutshader->clear();
+            lineeditvertajoutshader->clear();
+            lineeditfragajoutshader->clear();
+
+            //afiche le dock
+            dockajoutshader->show();
+        }
+
+        void    MainWindow::selectioncheminvert()
+        {
+            QString fileName = QFileDialog::getOpenFileName(this, tr("Selection .vert"),"",tr("vertex shader (*.vert)"));
+
+            QFileInfo fileInfo(fileName);
+
+            QString dirPath = fileInfo.filePath();
+
+            QDir::current().relativeFilePath(dirPath);
+
+
+            if (fileName!=NULL)
+                         {
+                         lineeditvertajoutshader->setText(QDir::current().relativeFilePath(dirPath));
+                         }
+        }
+
+        void    MainWindow::selectioncheminfrag()
+        {
+            QString fileName = QFileDialog::getOpenFileName(this, tr("Selection .frag"),"",tr("fragment shader (*.frag)"));
+
+            QFileInfo fileInfo(fileName);
+
+            QString dirPath = fileInfo.filePath();
+
+            QDir::current().relativeFilePath(dirPath);
+
+
+            if (fileName!=NULL)
+                         {
+                         lineeditfragajoutshader->setText(QDir::current().relativeFilePath(dirPath));
+                         }
+        }
+
+        void    MainWindow::validajoutshader()
+        {
+        if ( (lineeditnomajoutshader->text().isNull()) || (lineeditnomajoutshader->text()=="") )
+            {
+            QMessageBox msgBox;
+            msgBox.setText("Le champ nom, ne peut etre vide");
+            msgBox.exec();
+
+            dockajoutshader->close();
+
+            }
+
+        else if( (lineeditvertajoutshader->text().isNull()) || (lineeditvertajoutshader->text()=="") )
+            {
+            QMessageBox msgBox;
+            msgBox.setText("Le champ .vert, ne peut etre vide");
+            msgBox.exec();
+
+            dockajoutshader->close();
+
+            }
+
+        else if( (lineeditfragajoutshader->text().isNull()) || (lineeditfragajoutshader->text()=="") )
+            {
+            QMessageBox msgBox;
+            msgBox.setText("Le champ .frag, ne peut etre vide");
+            msgBox.exec();
+
+            dockajoutshader->close();
+
+            }
+
+        else
+            {
+            widget->getScene()->addShader(lineeditnomajoutshader->text(),lineeditvertajoutshader->text(),lineeditfragajoutshader->text());
+            }
+
+        //verifie si le shader a été ajouter
+        bool a = false;
+        QStringList listtmp = widget->getScene()->getShadersNames();
+
+                for (int i = 0 ; i< listtmp.size(); i++)
+                {
+                 if (listtmp.at(i)==lineeditnomajoutshader->text())    a=true;
+                }
+        if (a==true)
+            {
+            if(shader)
+                    {
+                     shader->appendRow(new QStandardItem(lineeditnomajoutshader->text()));
+                                 dockajoutshader->close();
+                    }
+            }
+        else   dockajoutshader->close();
         }
 
     //supression

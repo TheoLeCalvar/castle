@@ -25,6 +25,13 @@
 #include <QTabWidget>
 #include <QVBoxLayout>
 
+/**
+ * @class Mondock
+ * @brief Edite les element de la scene
+ * @details Edite les lumières, les materiaux , les pieces , les objets (murs et modeles)
+ * sous classe de QDockwidget avec en plus les attribut permettant d'intéragir avec la scene
+ *
+ */
 
 class Mondock:public QDockWidget
 {
@@ -225,6 +232,14 @@ private:
                     //piece
 /* ******************************************************** */
                 QTabWidget* tabpiece;
+                    //propietés
+                    QWidget*     widgetpieceprop;
+                    QHBoxLayout*    pieceproplayout;
+                    QLabel* piecelabelprop;
+                    QComboBox*  piececomboprop;
+                    QStandardItemModel* modelpieceprop;
+
+
                     //position
                     QWidget*    widgetpiecedim;
                     QHBoxLayout*    piecedimlayout;
@@ -237,9 +252,9 @@ private:
                     QWidget*    widgetpieceposi;
                     QHBoxLayout*    pieceposilayout;
 
-                    QSpinBox*   positionpiecex;
-                    QSpinBox*   positionpiecey;
-                    QSpinBox*   positionpiecez;
+                    QSpinBox*       positionpiecex;
+                    QSpinBox*       positionpiecey;
+                    QSpinBox*       positionpiecez;
 
                     //scale
                     QWidget*    widgetpiecescale;
@@ -263,14 +278,37 @@ private:
                     QDoubleSpinBox* rotspinboxy;
                     QDoubleSpinBox* rotspinboxz;
 
+/**
+* @brief Traite l'édition de la composante ambiante
+*/
                 void traitementambiante();
+
+/**
+* @brief Traite l'édition des lumieres
+*/
                 void traitementlumiere();
+
+/**
+* @brief Traite l'édition des materiaux
+*/
                 void traitementmaterial();
+
+/**
+* @brief Traite l'édition des objet
+*/
                 void traitementobjet();
+
+/**
+* @brief Traite l'édition des pieces
+*/
                 void traitementpiece();
 
 private slots:
-    void selectionlight();
+/**
+* @brief Selectionne l'édition adéquate
+*/
+
+    void selectiontraitement();
     //lumiere(ambiante)
     void lumiereambiantejustx( int x );
     void lumiereambiantejusty( int x );
@@ -327,6 +365,8 @@ private slots:
     void scaleobjectz( double x );
     void scalesliderobject( int x );
 //piece
+    void slotshaderpiece( const QString & text);
+
     void slotpositionpiecex( int x );
     void slotpositionpiecey( int x );
     void slotpositionpiecez( int x );

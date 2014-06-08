@@ -8,7 +8,7 @@ Mondock:: ~Mondock(){}
 //___slots___________________________________________________//
 
 
-    void Mondock::selectionlight()//trie les element en fonction de leur parent , nom a changer car ne traite bien plsu que light
+    void Mondock::selectiontraitement()//trie les element en fonction de leur parent , nom a changer car ne traite bien plsu que light
      {
          //selection et verification du parent de l'element selectioner
          selection = dockvue->selectionModel();
@@ -251,7 +251,7 @@ Mondock:: ~Mondock(){}
             _objet->rotation(vec3(vectmp[0],vectmp[1],x));
             }
 
-        void Mondock::transobjectx( double x )
+        void Mondock::transobjectz( double x )
             {
             vec3 vectmp = _objet->position();
             _objet->position(vec3(x,vectmp[1],vectmp[2]));
@@ -263,7 +263,7 @@ Mondock:: ~Mondock(){}
             _objet->position(vec3(vectmp[0],x,vectmp[2]));
             }
 
-        void Mondock::transobjectz( double x )
+        void Mondock::transobjectx( double x )
             {
             vec3 vectmp = _objet->position();
             _objet->position(vec3(vectmp[0],vectmp[1],x));
@@ -301,6 +301,12 @@ Mondock:: ~Mondock(){}
 /* ************************************ */
 //               slot piece             //
 /* ************************************ */
+
+        void Mondock::slotshaderpiece(const QString &text )
+            {
+             _piece->shaderId(dockscene->getShader(text));
+             }
+
         void Mondock::slotpositionpiecex( int x )
             {
             vec3 vectmp = _piece->position();
@@ -653,8 +659,8 @@ Mondock:: ~Mondock(){}
 
         //assosiation des 4widget au tab
         tablight->addTab(tablightpos , "Position");
-        tablight->addTab(tablightdif, "Difuse" );
-        tablight->addTab(tablightspe, "Speculaire");
+        tablight->addTab(tablightdif, "Diffuse" );
+        tablight->addTab(tablightspe, "Spéculaire");
         tablight->addTab(tablightamb, "Ambiante" );
 
         //fixe de widget et afiche le dockwidget
@@ -800,10 +806,10 @@ Mondock:: ~Mondock(){}
                     tabmaterialspe->setLayout(tabmaterialspelayout);
 
             //assosiation des 4widget au tab
-//            tabmaterial->addTab(tabmaterialemi , "Emissive");
-            tabmaterial->addTab(tabmaterialdif , "Difuse");
+//          tabmaterial->addTab(tabmaterialemi , "Emissive");
+            tabmaterial->addTab(tabmaterialdif , "Diffuse");
             tabmaterial->addTab(tabmaterialamb , "Ambiante");
-            tabmaterial->addTab(tabmaterialspe , "Speculaire");
+            tabmaterial->addTab(tabmaterialspe , "Spéculaire");
 
             //fixe de widget et afiche le dockwidget
             this->setWidget(tabmaterial);
@@ -915,7 +921,7 @@ Mondock:: ~Mondock(){}
                     boxobjetrotationx->setPrefix("X = ");
                     boxobjetrotationx->setSuffix("°");
                     boxobjetrotationx->setRange(-360,360);
-                    boxobjetrotationx->setValue(rotationtmp[2]);
+                    boxobjetrotationx->setValue(rotationtmp[0]);
                     connect(boxobjetrotationx, SIGNAL(valueChanged(double)),this, SLOT(rotobjectx(double)));
 
                 boxobjetrotationy = new QDoubleSpinBox(tabobjetrotation);
@@ -929,7 +935,7 @@ Mondock:: ~Mondock(){}
                     boxobjetrotationz->setPrefix("Z = ");
                     boxobjetrotationz->setSuffix("°");
                     boxobjetrotationz->setRange(-360,360);
-                    boxobjetrotationz->setValue(rotationtmp[0]);
+                    boxobjetrotationz->setValue(rotationtmp[2]);
                     connect(boxobjetrotationz, SIGNAL(valueChanged(double)),this, SLOT(rotobjectz(double)));
 
                 //layout + layout au  widget
@@ -1055,6 +1061,47 @@ Mondock:: ~Mondock(){}
         //definition du qtab
         tabpiece = new QTabWidget(this);
 
+        //propriété
+        widgetpieceprop = new QWidget(tabpiece);
+            pieceproplayout = new QHBoxLayout(widgetpieceprop);
+
+            piecelabelprop = new QLabel(widgetpieceprop);
+                piecelabelprop->setText("Shader :");
+
+            piececomboprop = new QComboBox(widgetpieceprop);
+                piececomboprop->setMaximumWidth(200);
+
+            connect(piececomboprop, SIGNAL(currentIndexChanged ( const QString ) ),this, SLOT(slotshaderpiece( const QString )));
+
+            modelpieceprop = new QStandardItemModel(widgetpieceprop);
+
+            //on construit le model
+            modelpieceprop->clear();
+
+            QStringList listtmp = dockscene->getShadersNames();
+
+            //fixe l'element par defaut avec le shader actuelement utilisé
+            QString nomshaderactuel = dockscene->getShaderNameByID(_piece->shaderId());
+
+            for ( int i = 0 ; i < listtmp.size() ; i++)
+                {
+                modelpieceprop->appendRow( new QStandardItem(listtmp.at(i)));
+                }
+
+            piececomboprop->setModel(modelpieceprop);
+
+            //parcour pour fixer l'index en fonction du shader actuel
+            for ( int i = 0 ; i < listtmp.size() ; i++)
+                {
+                if (listtmp.at(i) == nomshaderactuel) piececomboprop->setCurrentIndex(i);
+                }
+
+            //layout
+            pieceproplayout->addWidget(piecelabelprop);
+            pieceproplayout->addWidget(piececomboprop);
+
+            widgetpieceprop->setLayout(pieceproplayout);
+
 
         //position
         widgetpieceposi = new QWidget(tabpiece);
@@ -1174,6 +1221,7 @@ Mondock:: ~Mondock(){}
             widgetpiecescale->setLayout(piecescalelayout);
 
             //assosiation des 4widget au tab
+            tabpiece->addTab(widgetpieceprop , "Propriétés");
             tabpiece->addTab(widgetpieceposi , "Position");
             tabpiece->addTab(widgetpiecescale, "Scale");
             tabpiece->addTab(widgetpiecerotate, "Rotation");
