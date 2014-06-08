@@ -2,7 +2,7 @@
 #include <iostream>
 #include "light.hpp"
 
-MainWindow::MainWindow(const QString & path):light(NULL),material(NULL),objet(NULL)
+MainWindow::MainWindow(const QString & path):light(NULL),material(NULL),objet(NULL),shader(NULL)
 {
 /* ************************************** */
 //          Central  Widget               //
@@ -1804,22 +1804,17 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             }
 
         //verifie si le shader a été ajouter
-        bool a = false;
+
+
         QStringList listtmp = widget->getScene()->getShadersNames();
 
-                for (int i = 0 ; i< listtmp.size(); i++)
+        for (int i = 0 ; i< listtmp.size(); i++)
                 {
-                 if (listtmp.at(i)==lineeditnomajoutshader->text())    a=true;
+                 if (listtmp.at(i)==lineeditnomajoutshader->text())  if (shader) shader->appendRow(new QStandardItem(lineeditnomajoutshader->text()));
                 }
-        if (a==true)
-            {
-            if(shader)
-                    {
-                     shader->appendRow(new QStandardItem(lineeditnomajoutshader->text()));
-                                 dockajoutshader->close();
-                    }
-            }
-        else   dockajoutshader->close();
+
+        dockajoutshader->close();
+
         }
 
     //supression
