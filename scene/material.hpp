@@ -47,7 +47,7 @@ public:
 		vec3 	ambient = vec3(0.2, 0.2, 0.2),
 		vec3 	diffuse = vec3(0.8, 0.8, 0.8),
 		vec3 	specular = vec3(0.8, 0.8, 0.8),
-		float 	shininess = 0.0f,
+		float 	shininess = 32.0f,
 		vec3 	emissive = vec3(0.0, 0.0, 0.0)
 	);
 
