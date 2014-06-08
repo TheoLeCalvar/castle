@@ -1,0 +1,8 @@
+<map id="Objet::draw" name="Objet::draw">
+<area shape="rect" id="node2" href="$class_cube.html#ab26b72a81376fd5dc4fcc7f0b715b087" title="Affiche le cube. " alt="" coords="148,5,238,31"/>
+<area shape="rect" id="node3" href="$class_donuts.html#a5a7932c8494905ba09bb515a01e6c91d" title="Affichage de l&#39;Objet. " alt="" coords="143,55,243,80"/>
+<area shape="rect" id="node4" href="$class_mesh.html#a996a8668fa2ca7d95d6d10744c833bc8" title="Affiche le modèle. " alt="" coords="148,104,238,129"/>
+<area shape="rect" id="node5" href="$class_node.html#ab88c83ced58700a56de568f5b1e3c473" title="Affichage de l&#39;Objet. " alt="" coords="148,153,238,179"/>
+<area shape="rect" id="node6" href="$class_plan.html#a513c3dec0ce9043a9e1d3b5b18a6d698" title="Affiche le plan. " alt="" coords="151,203,235,228"/>
+<area shape="rect" id="node7" href="$class_sphere.html#a34a34167b7544c95155d3ff30638d045" title="Affichage de l&#39;Objet. " alt="" coords="143,252,243,277"/>
+</map>

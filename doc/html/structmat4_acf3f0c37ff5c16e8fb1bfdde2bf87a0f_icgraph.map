@@ -1,0 +1,7 @@
+<map id="mat4::mat4" name="mat4::mat4">
+<area shape="rect" id="node2" href="$structmat4.html#a1e09ab23f48d22eacf7480be5a6cea87" title="mat4::operator+" alt="" coords="142,5,258,31"/>
+<area shape="rect" id="node3" href="$structmat4.html#a2ad7a60d812142642531b0ac06bf1c8e" title="mat4::operator&#45;" alt="" coords="144,55,256,80"/>
+<area shape="rect" id="node4" href="$structmat4.html#adfe86534dfda83be41334feaff6a9584" title="mat4::operator*" alt="" coords="143,104,256,129"/>
+<area shape="rect" id="node5" href="$structmat4.html#aab816366c2233c95eac70b2eab11e8e2" title="mat4::transpose" alt="" coords="141,153,258,179"/>
+<area shape="rect" id="node6" href="$structmat4.html#a90efa7f6bcd321d1433629c8e6c09af3" title="mat4::inverse" alt="" coords="306,153,408,179"/>
+</map>

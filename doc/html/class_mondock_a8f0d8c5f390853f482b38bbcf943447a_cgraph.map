@@ -1,0 +1,16 @@
+<map id="Mondock::traitementpiece" name="Mondock::traitementpiece">
+<area shape="rect" id="node2" href="$class_scene.html#ae2060bd6c44231ffe7f6f0a3447325f1" title="Récupère un pointeur sur une pièce. " alt="" coords="262,5,381,31"/>
+<area shape="rect" id="node3" href="$class_mondock.html#aab1b5fe42325904c90cb7ea01d20dda3" title="Mondock::slotpositionpiecex" alt="" coords="227,55,415,80"/>
+<area shape="rect" id="node5" href="$class_mondock.html#aa9b2f07da91515f13c0dc217d24357ba" title="Mondock::slotpositionpiecey" alt="" coords="227,104,415,129"/>
+<area shape="rect" id="node6" href="$class_mondock.html#a655881c708869d768f1488d6fa066dc6" title="Mondock::slotpositionpiecez" alt="" coords="227,153,415,179"/>
+<area shape="rect" id="node7" href="$class_mondock.html#a124312bbc80f593e1868bf0219cf0056" title="Mondock::rotpiecex" alt="" coords="253,203,390,228"/>
+<area shape="rect" id="node9" href="$class_mondock.html#a2e657947e69adddb4ee8527063377a31" title="Mondock::rotpiecey" alt="" coords="253,252,390,277"/>
+<area shape="rect" id="node10" href="$class_mondock.html#a8f94fe729819688c88de6025642463c9" title="Mondock::rotpiecez" alt="" coords="253,301,390,327"/>
+<area shape="rect" id="node11" href="$class_mondock.html#a9f2a071406501e4fccde215bc38d8df9" title="Mondock::scalepiecex" alt="" coords="245,351,398,376"/>
+<area shape="rect" id="node13" href="$class_mondock.html#a4ac3bc0b53096e41379ac7ef64de9d2d" title="Mondock::scalepiecey" alt="" coords="245,400,398,425"/>
+<area shape="rect" id="node14" href="$class_mondock.html#afd3ea421e6df4deac7930ed476556aa4" title="Mondock::scalepiecez" alt="" coords="245,449,398,475"/>
+<area shape="rect" id="node15" href="$class_mondock.html#aa2174033ee4e3798b0c800a2c92f958f" title="Mondock::scalesliderpiece" alt="" coords="233,499,410,524"/>
+<area shape="rect" id="node4" href="$class_objet.html#a0e109bc790b14328202dd2546b04e2fd" title="Récupère la position de l&#39;Objet. " alt="" coords="463,104,570,129"/>
+<area shape="rect" id="node8" href="$class_objet.html#ac69a1b459bcb4433099c8cfbff06b209" title="Récupère la rotation de l&#39;Objet. " alt="" coords="464,252,569,277"/>
+<area shape="rect" id="node12" href="$class_objet.html#ae09962e65216c36b31ab389a5af310a3" title="Récupère les facteurs de scale de l&#39;objet. " alt="" coords="471,425,563,451"/>
+</map>

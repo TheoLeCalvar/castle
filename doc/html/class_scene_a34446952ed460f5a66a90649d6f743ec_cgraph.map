@@ -1,0 +1,5 @@
+<map id="Scene::loadLights" name="Scene::loadLights">
+<area shape="rect" id="node2" href="$class_light.html#a9fcc4b3ffdeedbe214ee8384c7d311b9" title="Met à jour une composante de la lumière. " alt="" coords="202,5,277,31"/>
+<area shape="rect" id="node3" href="$class_material.html#a6b4b32cf23cbba3988becd840471a51c" title="Récupère la valeur d&#39;un champ. " alt="" coords="192,55,287,80"/>
+<area shape="rect" id="node4" href="$class_scene.html#aedf1b6729e0feda58666662c349ffed1" title="Ajoute une lumière à la scène. " alt="" coords="181,104,298,129"/>
+</map>

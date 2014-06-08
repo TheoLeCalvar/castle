@@ -1,0 +1,14 @@
+<map id="gui/mainwindows.hpp" name="gui/mainwindows.hpp">
+<area shape="rect" id="node2" href="$mondock_8hpp.html" title="mondock.hpp" alt="" coords="3232,79,3333,104"/>
+<area shape="rect" id="node47" href="$node_8hpp.html" title="node.hpp" alt="" coords="479,79,556,104"/>
+<area shape="rect" id="node55" href="$_my_open_g_l_widget_8hpp.html" title="MyOpenGLWidget.hpp" alt="" coords="1399,79,1555,104"/>
+<area shape="rect" id="node3" href="$scene_8hpp.html" title="scene.hpp" alt="" coords="1812,225,1895,251"/>
+<area shape="rect" id="node4" href="$helper_8hpp.html" title="helper.hpp" alt="" coords="2300,592,2383,617"/>
+<area shape="rect" id="node10" href="$light_8hpp.html" title="light.hpp" alt="" coords="2379,519,2451,544"/>
+<area shape="rect" id="node11" href="$material_8hpp.html" title="material.hpp" alt="" coords="1257,519,1351,544"/>
+<area shape="rect" id="node16" href="$objet_8hpp.html" title="objet.hpp" alt="" coords="1615,445,1691,471"/>
+<area shape="rect" id="node17" href="$piece_8hpp.html" title="piece.hpp" alt="" coords="1704,299,1784,324"/>
+<area shape="rect" id="node18" href="$plan_8hpp.html" title="plan.hpp" alt="" coords="1452,372,1524,397"/>
+<area shape="rect" id="node48" href="$mesh_8hpp.html" title="mesh.hpp" alt="" coords="371,152,451,177"/>
+<area shape="rect" id="node63" href="$camera_8hpp.html" title="camera.hpp" alt="" coords="1959,152,2051,177"/>
+</map>

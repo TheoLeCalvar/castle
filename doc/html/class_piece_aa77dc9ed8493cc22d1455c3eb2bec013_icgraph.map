@@ -1,0 +1,7 @@
+<map id="Piece::getChild" name="Piece::getChild">
+<area shape="rect" id="node2" href="$class_main_window.html#af26018b1d699cbf0a3f62048472cc489" title="MainWindow::Importation3D" alt="" coords="164,5,353,31"/>
+<area shape="rect" id="node5" href="$class_mondock.html#aad20b3c5334d00fe5e69ac5872f76f4b" title="Mondock::traitementobjet" alt="" coords="173,55,344,80"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a62cd8712fb41a754298f6f60eead2cb0" title="MainWindow::createActions" alt="" coords="401,5,587,31"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a6d90fb41049be49da652a628191c9a1d" title="MainWindow::MainWindow" alt="" coords="635,5,816,31"/>
+<area shape="rect" id="node6" href="$class_mondock.html#a25391f1fac7a8a46e761f2f8c9c2fdc8" title="Mondock::selectionlight" alt="" coords="414,55,574,80"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Mondock::traitementambiante" name="Mondock::traitementambiante">
+<area shape="rect" id="node2" href="$class_light.html#a4f9a64ec04c9854d02a67cd2ceb6760c" title="retourne le vecteur des composantes ambient " alt="" coords="507,58,612,83"/>
+<area shape="rect" id="node3" href="$class_mondock.html#a1cdbe11296a3fe24d88992bf7d2236f4" title="Mondock::lumiereambiantejustx" alt="" coords="250,32,459,58"/>
+<area shape="rect" id="node4" href="$class_mondock.html#ae989829f726237ddcacbe9b1ae79ab62" title="Mondock::lumiereambiantejusty" alt="" coords="250,82,459,107"/>
+<area shape="rect" id="node5" href="$class_mondock.html#a824b5c728f21b3ef7d47d322cd0a07ee" title="Mondock::lumiereambiantejustz" alt="" coords="250,131,459,156"/>
+</map>

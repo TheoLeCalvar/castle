@@ -1,0 +1,6 @@
+<map id="Scene::savePieces" name="Scene::savePieces">
+<area shape="rect" id="node2" href="$class_scene.html#a696a59602fa780cd7904df5c50b94eae" title="Sauvegarde de la scène au format xml. " alt="" coords="188,5,326,31"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a8c07d91b87178ac0a1b88aabc45c6ddb" title="MainWindow::Enregistrer" alt="" coords="374,5,544,31"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a62cd8712fb41a754298f6f60eead2cb0" title="MainWindow::createActions" alt="" coords="592,5,778,31"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a6d90fb41049be49da652a628191c9a1d" title="MainWindow::MainWindow" alt="" coords="826,5,1007,31"/>
+</map>

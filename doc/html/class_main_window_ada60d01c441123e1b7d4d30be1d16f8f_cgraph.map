@@ -1,0 +1,9 @@
+<map id="MainWindow::validajoutpiece" name="MainWindow::validajoutpiece">
+<area shape="rect" id="node2" href="$class_my_open_g_l_widget.html#ab25f238721b8e1cba36c2a0350ac57ba" title="MyOpenGLWidget::getScene" alt="" coords="247,5,440,31"/>
+<area shape="rect" id="node3" href="$class_scene.html#afb93862254b6869533d7487c56133adb" title="Récupère un pointeur sur un material. " alt="" coords="277,55,410,80"/>
+<area shape="rect" id="node4" href="$class_objet.html#a13f08bf7d1265bbf4ade92b755b27c1b" title="Change l&#39;id du shader. " alt="" coords="287,104,400,129"/>
+<area shape="rect" id="node5" href="$class_scene.html#a957a47245453a8868a417396abf9adce" title="Récupère l&#39;id d&#39;un shader. " alt="" coords="279,153,408,179"/>
+<area shape="rect" id="node6" href="$class_scene.html#a6c40a38ef472e73ddee697f813b8e587" title="Ajoute une pièce à la scène. " alt="" coords="282,203,405,228"/>
+<area shape="rect" id="node7" href="$class_objet.html#a4a702c189bedcbf1e65da6aec72c8e44" title="Récupère le nom de l&#39;Objet. " alt="" coords="488,279,582,304"/>
+<area shape="rect" id="node8" href="$class_objet.html#a95e63a98dc9dc485fe874df30f2069ee" title="Change l&#39;Objet père. " alt="" coords="294,304,393,329"/>
+</map>

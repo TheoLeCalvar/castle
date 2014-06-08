@@ -1,0 +1,7 @@
+<map id="Scene" name="Scene">
+<area shape="rect" id="node3" href="$class_my_open_g_l_widget.html" title="{MyOpenGLWidget\n|&#45; _captureMouse\l&#45; _timer\l&#45; _path\l&#45; _vao_quad\l&#45; _framebuffer\l&#45; _texture\l&#45; _renderbuffer\l&#45; _activeProgram\l&#45; _postProcessPrograms\l&#45; _loadedShaders\l|+ MyOpenGLWidget()\l+ ~MyOpenGLWidget()\l+ minimumSizeHint()\l+ sizeHint()\l+ getScene()\l+ setScene()\l+ initializeGL()\l+ paintGL()\l+ resizeGL()\l+ keyPressEvent()\let 8 de plus...\l&#45; initFramebuffer()\l}" alt="" coords="77,821,245,1161"/>
+<area shape="rect" id="node6" href="$class_camera.html" title="Camera pour Scene. " alt="" coords="449,855,598,1128"/>
+<area shape="rect" id="node5" href="$structvec2.html" title="{vec2\n|+ v\l|+ vec2()\l+ vec2()\l+ vec2()\l+ vec2()\l+ vec2()\l+ operator()()\l+ operator()()\l+ operator+()\l+ operator&#45;()\l+ operator+=()\let 11 de plus...\l}" alt="" coords="163,387,271,593"/>
+<area shape="rect" id="node7" href="$structvec3.html" title="{vec3\n|+ v\l|+ vec3()\l+ vec3()\l+ vec3()\l+ vec3()\l+ vec3()\l+ operator()()\l+ operator()()\l+ operator+()\l+ operator&#45;()\l+ operator+=()\let 13 de plus...\l}" alt="" coords="564,387,672,593"/>
+<area shape="rect" id="node8" href="$structmat4.html" title="{mat4\n|+ m\l|+ mat4()\l+ mat4()\l+ mat4()\l+ mat4()\l+ mat4()\l+ operator+()\l+ operator+=()\l+ operator&#45;()\l+ operator&#45;=()\l+ operator*()\let 10 de plus...\l}" alt="" coords="324,5,432,212"/>
+</map>

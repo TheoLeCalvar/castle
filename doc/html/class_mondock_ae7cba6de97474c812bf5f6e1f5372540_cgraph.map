@@ -1,0 +1,4 @@
+<map id="Mondock::matobjet" name="Mondock::matobjet">
+<area shape="rect" id="node2" href="$class_objet.html#a5b8f371853435fb08bba5163cb4dbe09" title="Récupère le material de l&#39;Objet. " alt="" coords="200,5,308,31"/>
+<area shape="rect" id="node3" href="$class_scene.html#afb93862254b6869533d7487c56133adb" title="Récupère un pointeur sur un material. " alt="" coords="187,55,320,80"/>
+</map>

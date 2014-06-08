@@ -1,0 +1,9 @@
+<map id="currentMatrix" name="currentMatrix">
+<area shape="rect" id="node2" href="$class_cube.html#ab26b72a81376fd5dc4fcc7f0b715b087" title="Affiche le cube. " alt="" coords="158,5,248,31"/>
+<area shape="rect" id="node3" href="$class_donuts.html#a5a7932c8494905ba09bb515a01e6c91d" title="Affichage de l&#39;Objet. " alt="" coords="153,55,253,80"/>
+<area shape="rect" id="node4" href="$class_mesh.html#a996a8668fa2ca7d95d6d10744c833bc8" title="Affiche le modèle. " alt="" coords="158,104,248,129"/>
+<area shape="rect" id="node5" href="$class_node.html#ab88c83ced58700a56de568f5b1e3c473" title="Affichage de l&#39;Objet. " alt="" coords="158,153,248,179"/>
+<area shape="rect" id="node6" href="$class_plan.html#a513c3dec0ce9043a9e1d3b5b18a6d698" title="Affiche le plan. " alt="" coords="161,203,245,228"/>
+<area shape="rect" id="node7" href="$class_sphere.html#a34a34167b7544c95155d3ff30638d045" title="Affichage de l&#39;Objet. " alt="" coords="152,252,253,277"/>
+<area shape="rect" id="node8" href="$class_piece.html#aee937e57fbfe4717aab14e1e892aed2e" title="Affiche l&#39;ensemble des fils. " alt="" coords="157,301,248,327"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Scene::getPiecesName" name="Scene::getPiecesName">
+<area shape="rect" id="node2" href="$class_main_window.html#af26018b1d699cbf0a3f62048472cc489" title="MainWindow::Importation3D" alt="" coords="214,5,403,31"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a3d19fc185c807148a627777459737754" title="MainWindow::ajoutmur" alt="" coords="230,55,387,80"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a54645636f58b920914895b422a00ed85" title="MainWindow::ajoutobjet" alt="" coords="227,104,390,129"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a62cd8712fb41a754298f6f60eead2cb0" title="MainWindow::createActions" alt="" coords="451,55,637,80"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a6d90fb41049be49da652a628191c9a1d" title="MainWindow::MainWindow" alt="" coords="685,55,866,80"/>
+</map>

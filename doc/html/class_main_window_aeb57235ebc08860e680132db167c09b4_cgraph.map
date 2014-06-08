@@ -1,0 +1,6 @@
+<map id="MainWindow::createToolBar" name="MainWindow::createToolBar">
+<area shape="rect" id="node2" href="$class_main_window.html#a64e110157eb3d3143982531ec82b4983" title="MainWindow::changeshader" alt="" coords="241,8,430,33"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a3f652333009c5cfea551a193a3e6b350" title="MainWindow::reloadshader" alt="" coords="244,59,427,84"/>
+<area shape="rect" id="node3" href="$class_my_open_g_l_widget.html#a87b9f933f545bf6f257820395771cc8b" title="MyOpenGLWidget::useShader" alt="" coords="478,5,680,31"/>
+<area shape="rect" id="node5" href="$class_my_open_g_l_widget.html#a99929e3c743d4f5793ef0e09ab61f2b2" title="MyOpenGLWidget::getShader\lNames" alt="" coords="480,55,679,93"/>
+</map>

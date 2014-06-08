@@ -57,7 +57,7 @@ var searchData=
   ['layouttabobjetscale',['layouttabobjetscale',['../class_mondock.html#a7337ba165d8f7543e3469a2a25f3f062',1,'Mondock']]],
   ['layouttabobjettrans',['layouttabobjettrans',['../class_mondock.html#a1776a6148557d83c98a8a05368c08eef',1,'Mondock']]],
   ['length',['length',['../structvec2.html#a0858db6efbcc16f47e09de36711988ba',1,'vec2::length()'],['../structvec3.html#ad622150f0a08c548b062775dd5d76a41',1,'vec3::length()'],['../structvec4.html#aa1c5dd86c8fbde45d6b6beabe45487e2',1,'vec4::length()']]],
-  ['light',['Light',['../class_light.html',1,'Light'],['../class_light.html#aa7bcc37dee068f7266f86e07a3dfe4f0',1,'Light::Light()'],['../class_main_window.html#a36a5d988881c1ce38d0692ed500067e1',1,'MainWindow::light()']]],
+  ['light',['Light',['../class_light.html',1,'Light'],['../class_main_window.html#a36a5d988881c1ce38d0692ed500067e1',1,'MainWindow::light()'],['../class_light.html#aa7bcc37dee068f7266f86e07a3dfe4f0',1,'Light::Light()']]],
   ['light_2ecpp',['light.cpp',['../light_8cpp.html',1,'']]],
   ['light_2ehpp',['light.hpp',['../light_8hpp.html',1,'']]],
   ['lightamblayout',['lightamblayout',['../class_mondock.html#ada46a57b4e681dc6f9420ae74f46fefc',1,'Mondock']]],
@@ -85,5 +85,6 @@ var searchData=
   ['loadshaders',['loadShaders',['../class_my_open_g_l_widget.html#af7899fd91898c1ed5dc228d7d6de658e',1,'MyOpenGLWidget::loadShaders()'],['../class_scene.html#a1deb5bb022836f4b585c8580246b26cb',1,'Scene::loadShaders()']]],
   ['lumiereambiantejustx',['lumiereambiantejustx',['../class_mondock.html#a1cdbe11296a3fe24d88992bf7d2236f4',1,'Mondock']]],
   ['lumiereambiantejusty',['lumiereambiantejusty',['../class_mondock.html#ae989829f726237ddcacbe9b1ae79ab62',1,'Mondock']]],
-  ['lumiereambiantejustz',['lumiereambiantejustz',['../class_mondock.html#a824b5c728f21b3ef7d47d322cd0a07ee',1,'Mondock']]]
+  ['lumiereambiantejustz',['lumiereambiantejustz',['../class_mondock.html#a824b5c728f21b3ef7d47d322cd0a07ee',1,'Mondock']]],
+  ['liste_20des_20choses_20à_20faire',['Liste des choses à faire',['../todo.html',1,'']]]
 ];

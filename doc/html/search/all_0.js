@@ -40,7 +40,7 @@ var searchData=
   ['_5fminp',['_minP',['../class_plan.html#aad9837a269e87fa5d7a4a5fc90abf3e7',1,'Plan']]],
   ['_5fmodel',['_model',['../class_objet.html#a1963cca59f62c7a6f69a9c2c461ad9ea',1,'Objet']]],
   ['_5fname',['_name',['../class_objet.html#ac19f568a794dd9387386ee71914a868e',1,'Objet']]],
-  ['_5fnbvertices',['_nbVertices',['../class_plan.html#af3d9228c1b7dc91c0cb00d4c8fa5a550',1,'Plan']]],
+  ['_5fnbindices',['_nbIndices',['../class_plan.html#a7f9ccd3bc05e2d3682ecc26326bde71f',1,'Plan']]],
   ['_5fnormal_5ftexture',['_normal_texture',['../class_material.html#add78622071d92485dd37dbd1934453b3',1,'Material']]],
   ['_5fobjet',['_objet',['../class_mondock.html#a6325a3fb92643c99815b1a8025f7d401',1,'Mondock']]],
   ['_5forderedlights',['_orderedLights',['../class_scene.html#a5fae715ba6bdde7c382f9d779095a718',1,'Scene']]],

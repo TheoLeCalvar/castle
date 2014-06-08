@@ -1,0 +1,12 @@
+<map id="setActiveShader" name="setActiveShader">
+<area shape="rect" id="node2" href="$class_my_open_g_l_widget.html#af7babfe769e968c317e646c4387b357d" title="MyOpenGLWidget::paintGL" alt="" coords="369,31,553,56"/>
+<area shape="rect" id="node3" href="$class_objet.html#a995e953fb2f3d1a472aa04d2c5848f0a" title="Change le shader actif. " alt="" coords="172,129,321,155"/>
+<area shape="rect" id="node11" href="$class_scene.html#ac0e3d2c98ba6063a086467fb2c19142f" title="Affiche la scène. " alt="" coords="199,56,294,81"/>
+<area shape="rect" id="node4" href="$class_objet.html#a5cc323f562964e00b947b2d908e206e7" title="Affichage de l&#39;Objet. " alt="" coords="417,129,506,155"/>
+<area shape="rect" id="node5" href="$class_cube.html#ab26b72a81376fd5dc4fcc7f0b715b087" title="Affiche le cube. " alt="" coords="607,5,697,31"/>
+<area shape="rect" id="node6" href="$class_donuts.html#a5a7932c8494905ba09bb515a01e6c91d" title="Affichage de l&#39;Objet. " alt="" coords="602,55,702,80"/>
+<area shape="rect" id="node7" href="$class_mesh.html#a996a8668fa2ca7d95d6d10744c833bc8" title="Affiche le modèle. " alt="" coords="607,104,697,129"/>
+<area shape="rect" id="node8" href="$class_node.html#ab88c83ced58700a56de568f5b1e3c473" title="Affichage de l&#39;Objet. " alt="" coords="607,153,697,179"/>
+<area shape="rect" id="node9" href="$class_plan.html#a513c3dec0ce9043a9e1d3b5b18a6d698" title="Affiche le plan. " alt="" coords="610,203,694,228"/>
+<area shape="rect" id="node10" href="$class_sphere.html#a34a34167b7544c95155d3ff30638d045" title="Affichage de l&#39;Objet. " alt="" coords="601,252,702,277"/>
+</map>

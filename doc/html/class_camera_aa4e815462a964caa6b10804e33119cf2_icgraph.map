@@ -1,0 +1,5 @@
+<map id="Camera::vectorFromAngle" name="Camera::vectorFromAngle">
+<area shape="rect" id="node2" href="$class_camera.html#a1a8ac754efe577c8abbc1e19cc8bca25" title="Constructeur. " alt="" coords="261,5,384,31"/>
+<area shape="rect" id="node3" href="$class_camera.html#a22aaf20b581d402e5c3952655b830c0f" title="Fonction de déplacement de la caméra à la souris. " alt="" coords="231,55,414,80"/>
+<area shape="rect" id="node4" href="$class_my_open_g_l_widget.html#a27abe02c04240317cf42c1cec1ac7e25" title="MyOpenGLWidget::mouseMove\lEvent" alt="" coords="462,48,672,87"/>
+</map>

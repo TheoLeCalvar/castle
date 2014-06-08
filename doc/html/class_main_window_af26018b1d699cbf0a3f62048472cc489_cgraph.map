@@ -1,0 +1,16 @@
+<map id="MainWindow::Importation3D" name="MainWindow::Importation3D">
+<area shape="rect" id="node2" href="$class_my_open_g_l_widget.html#ab25f238721b8e1cba36c2a0350ac57ba" title="MyOpenGLWidget::getScene" alt="" coords="538,11,732,36"/>
+<area shape="rect" id="node3" href="$class_scene.html#a2ea5207a5d9ec6e4081f12896b01d9d5" title="Retourne la liste des noms des pièces dans la scène. " alt="" coords="286,160,447,186"/>
+<area shape="rect" id="node4" href="$class_scene.html#a215d616b6132f30a6bfc66ea4a3cfb95" title="Retourne la liste des noms des lumières dans la scène. " alt="" coords="285,210,448,235"/>
+<area shape="rect" id="node5" href="$class_scene.html#a481bf791889936bf3521c849bc4c7c2f" title="Retourne la liste des noms des matériaux dans la scène. " alt="" coords="276,259,457,284"/>
+<area shape="rect" id="node6" href="$class_scene.html#ae8045c3444b367c070988b30d69e5a36" title="Retourne la liste des noms des shaders dans la scène. " alt="" coords="278,308,455,334"/>
+<area shape="rect" id="node7" href="$class_scene.html#ae2060bd6c44231ffe7f6f0a3447325f1" title="Récupère un pointeur sur une pièce. " alt="" coords="576,62,694,87"/>
+<area shape="rect" id="node8" href="$class_piece.html#a029823aa5135b356a9e4da14578db4e8" title="Récupère la liste des noms des objets fils. " alt="" coords="301,358,431,383"/>
+<area shape="rect" id="node9" href="$class_piece.html#aa77dc9ed8493cc22d1455c3eb2bec013" title="Renvoie un pointeur sur un objet fils. " alt="" coords="311,407,422,432"/>
+<area shape="rect" id="node10" href="$class_node.html#af7d6e2eab0af346f6690b4a2db12d953" title="Retourne la liste des noms des Nodes fils. " alt="" coords="550,484,721,510"/>
+<area shape="rect" id="node11" href="$class_main_window.html#a9db31c33ce466950590bb5271412cc86" title="MainWindow::affichagerecnoderestant" alt="" coords="242,508,490,534"/>
+<area shape="rect" id="node12" href="$class_node.html#afdc8a8f6c370f437037c85ffea5af4c1" title="Retourne le Node enfant à partir de son nom. " alt="" coords="580,534,690,559"/>
+<area shape="rect" id="node13" href="$class_main_window.html#a19a5bbb5908cda1ecfdf5ecd99ef0c4c" title="MainWindow::supresionelement" alt="" coords="261,111,471,136"/>
+<area shape="rect" id="node14" href="$class_scene.html#a9cf190091b9d7658142680a7703415ef" title="supprime la Light voulu " alt="" coords="565,111,705,136"/>
+<area shape="rect" id="node15" href="$class_scene.html#a65cda5cb0a108d51f4f82eac9aca6371" title="supprime la Piece demandée " alt="" coords="563,160,707,186"/>
+</map>

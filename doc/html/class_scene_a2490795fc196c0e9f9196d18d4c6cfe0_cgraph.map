@@ -1,0 +1,35 @@
+<map id="Scene::Scene" name="Scene::Scene">
+<area shape="rect" id="node2" href="$class_scene.html#a8fe39b5221775362f28c78129292e162" title="Charge les materials. " alt="" coords="669,299,815,324"/>
+<area shape="rect" id="node6" href="$class_scene.html#a34446952ed460f5a66a90649d6f743ec" title="Charge les lumières. " alt="" coords="200,147,328,172"/>
+<area shape="rect" id="node10" href="$class_scene.html#a1deb5bb022836f4b585c8580246b26cb" title="Charge les shaders. " alt="" coords="193,220,335,245"/>
+<area shape="rect" id="node12" href="$class_my_open_g_l_widget.html#af7899fd91898c1ed5dc228d7d6de658e" title="MyOpenGLWidget::loadShaders" alt="" coords="158,269,370,295"/>
+<area shape="rect" id="node14" href="$class_scene.html#aa6d40bab1b160afc7bb84841d056a07d" title="Charge les pièces. " alt="" coords="198,620,330,645"/>
+<area shape="rect" id="node3" href="$class_material.html#a2ab92e03d9c90294cd28fff9b6a8cde0" title="Met à jour la composante du matériaux. " alt="" coords="1071,336,1165,361"/>
+<area shape="rect" id="node4" href="$class_material.html#a4f2227a6fb3f12c8618e399f93ab492c" title="Charge une texture et l&#39;associe à un slot. " alt="" coords="1047,448,1189,473"/>
+<area shape="rect" id="node5" href="$class_scene.html#a68761479fea650973d31e2d9565f8aca" title="Ajoute un material à la scène. " alt="" coords="863,375,999,400"/>
+<area shape="rect" id="node7" href="$class_light.html#a9fcc4b3ffdeedbe214ee8384c7d311b9" title="Met à jour une composante de la lumière. " alt="" coords="482,121,557,147"/>
+<area shape="rect" id="node8" href="$class_material.html#a6b4b32cf23cbba3988becd840471a51c" title="Récupère la valeur d&#39;un champ. " alt="" coords="472,171,567,196"/>
+<area shape="rect" id="node9" href="$class_scene.html#aedf1b6729e0feda58666662c349ffed1" title="Ajoute une lumière à la scène. " alt="" coords="460,72,578,97"/>
+<area shape="rect" id="node11" href="$class_scene.html#ad15253a331423b1e3c3fb2484b10509c" title="Ajoute un shadder à la scène. " alt="" coords="453,220,585,245"/>
+<area shape="rect" id="node13" href="$class_my_open_g_l_widget.html#a1426e6f24592838e16c22a92870cf5f4" title="MyOpenGLWidget::addShader" alt="" coords="418,269,621,295"/>
+<area shape="rect" id="node15" href="$class_scene.html#a957a47245453a8868a417396abf9adce" title="Récupère l&#39;id d&#39;un shader. " alt="" coords="455,965,583,991"/>
+<area shape="rect" id="node16" href="$class_scene.html#a98d11f40f1ac651eae91827ae9ef3d5c" title="Retourne un vec3 correspondant au vecteur position lu. " alt="" coords="449,1015,590,1040"/>
+<area shape="rect" id="node17" href="$class_scene.html#a2ea5cfec3f9be76fe110cba255621d7e" title="Retourne un vec3 correspondant au scale lu. " alt="" coords="456,319,583,344"/>
+<area shape="rect" id="node18" href="$class_scene.html#a387122d207270b78fc4b1a7714d19614" title="Retourne un vec3 correspondant à la rotation. " alt="" coords="448,368,591,393"/>
+<area shape="rect" id="node19" href="$class_objet.html#a13f08bf7d1265bbf4ade92b755b27c1b" title="Change l&#39;id du shader. " alt="" coords="463,417,576,443"/>
+<area shape="rect" id="node20" href="$class_objet.html#a5b8f371853435fb08bba5163cb4dbe09" title="Récupère le material de l&#39;Objet. " alt="" coords="877,473,985,499"/>
+<area shape="rect" id="node21" href="$class_scene.html#afb93862254b6869533d7487c56133adb" title="Récupère un pointeur sur un material. " alt="" coords="864,523,997,548"/>
+<area shape="rect" id="node22" href="$class_objet.html#a4a702c189bedcbf1e65da6aec72c8e44" title="Récupère le nom de l&#39;Objet. " alt="" coords="1071,821,1165,847"/>
+<area shape="rect" id="node23" href="$class_objet.html#ae09962e65216c36b31ab389a5af310a3" title="Récupère les facteurs de scale de l&#39;objet. " alt="" coords="885,572,976,597"/>
+<area shape="rect" id="node24" href="$class_objet.html#ac69a1b459bcb4433099c8cfbff06b209" title="Récupère la rotation de l&#39;Objet. " alt="" coords="467,671,572,696"/>
+<area shape="rect" id="node25" href="$class_objet.html#a95e63a98dc9dc485fe874df30f2069ee" title="Change l&#39;Objet père. " alt="" coords="881,821,980,847"/>
+<area shape="rect" id="node26" href="$class_node.html#ac2140ddf8f06f8b5620e6743c945c482" title="Charge le modèle. " alt="" coords="458,720,580,745"/>
+<area shape="rect" id="node29" href="$class_objet.html#a0e109bc790b14328202dd2546b04e2fd" title="Récupère la position de l&#39;Objet. " alt="" coords="877,424,984,449"/>
+<area shape="rect" id="node34" href="$class_scene.html#a6c40a38ef472e73ddee697f813b8e587" title="Ajoute une pièce à la scène. " alt="" coords="458,916,580,941"/>
+<area shape="rect" id="node27" href="$class_node.html#ad7a34779cad45d997bfd6d3d8043c75f" title="Constructeur par défaut. " alt="" coords="884,772,977,797"/>
+<area shape="rect" id="node28" href="$class_node.html#acf6db74c5840b203f4eee1239539ce31" title="Charge un aiNode. " alt="" coords="683,671,800,696"/>
+<area shape="rect" id="node30" href="$class_mesh.html#a7b405216bda9e94d64aa8a308d718cb4" title="Charge un mesh. " alt="" coords="871,671,990,696"/>
+<area shape="rect" id="node32" href="$class_node.html#a0684a35524cc1e276bfefdd28cd452cf" title="Charge un Material depuis une aiMaterial d&#39;ASSIMP. " alt="" coords="864,621,997,647"/>
+<area shape="rect" id="node31" href="$class_mesh.html#a2af137f1571af89172b9c102302c416b" title="Constructeur privé " alt="" coords="1071,671,1165,696"/>
+<area shape="rect" id="node33" href="$class_material.html#a806be90008bdccd18e0d657ac75ef61c" title="Indique si le Material est issu ou non du XML. " alt="" coords="1053,621,1183,647"/>
+</map>

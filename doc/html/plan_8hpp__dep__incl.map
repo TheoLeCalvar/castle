@@ -1,0 +1,21 @@
+<map id="objets/plan.hpp" name="objets/plan.hpp">
+<area shape="rect" id="node2" href="$plan_8cpp.html" title="objets/plan.cpp" alt="" coords="17,79,128,104"/>
+<area shape="rect" id="node3" href="$piece_8hpp.html" title="scene/piece.hpp" alt="" coords="152,79,270,104"/>
+<area shape="rect" id="node4" href="$objet_8cpp.html" title="objets/objet.cpp" alt="" coords="14,152,128,177"/>
+<area shape="rect" id="node5" href="$piece_8cpp.html" title="scene/piece.cpp" alt="" coords="152,152,270,177"/>
+<area shape="rect" id="node6" href="$scene_8hpp.html" title="scene/scene.hpp" alt="" coords="294,152,416,177"/>
+<area shape="rect" id="node7" href="$camera_8hpp.html" title="camera.hpp" alt="" coords="81,225,173,251"/>
+<area shape="rect" id="node9" href="$_my_open_g_l_widget_8hpp.html" title="gui/MyOpenGLWidget.hpp" alt="" coords="140,299,317,324"/>
+<area shape="rect" id="node14" href="$scene_8cpp.html" title="scene/scene.cpp" alt="" coords="318,372,440,397"/>
+<area shape="rect" id="node15" href="$mondock_8hpp.html" title="gui/mondock.hpp" alt="" coords="678,225,801,251"/>
+<area shape="rect" id="node17" href="$mesh_8hpp.html" title="objets/mesh.hpp" alt="" coords="417,225,536,251"/>
+<area shape="rect" id="node8" href="$camera_8cpp.html" title="camera.cpp" alt="" coords="24,299,115,324"/>
+<area shape="rect" id="node10" href="$mainwindows_8hpp.html" title="gui/mainwindows.hpp" alt="" coords="515,372,664,397"/>
+<area shape="rect" id="node13" href="$_my_open_g_l_widget_8cpp.html" title="gui/MyOpenGLWidget.cpp" alt="" coords="117,372,294,397"/>
+<area shape="rect" id="node11" href="$mainwindows_8cpp.html" title="gui/mainwindows.cpp" alt="" coords="448,445,596,471"/>
+<area shape="rect" id="node12" href="$main_8cpp.html" title="main.cpp" alt="" coords="620,445,696,471"/>
+<area shape="rect" id="node16" href="$mondock_8cpp.html" title="gui/mondock.cpp" alt="" coords="777,299,899,324"/>
+<area shape="rect" id="node18" href="$mesh_8cpp.html" title="objets/mesh.cpp" alt="" coords="443,299,561,324"/>
+<area shape="rect" id="node19" href="$node_8hpp.html" title="objets/node.hpp" alt="" coords="585,299,701,324"/>
+<area shape="rect" id="node20" href="$node_8cpp.html" title="objets/node.cpp" alt="" coords="688,372,804,397"/>
+</map>

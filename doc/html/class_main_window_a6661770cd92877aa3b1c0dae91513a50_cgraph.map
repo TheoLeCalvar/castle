@@ -1,0 +1,5 @@
+<map id="MainWindow::ajoutpiece" name="MainWindow::ajoutpiece">
+<area shape="rect" id="node2" href="$class_my_open_g_l_widget.html#ab25f238721b8e1cba36c2a0350ac57ba" title="MyOpenGLWidget::getScene" alt="" coords="219,5,413,31"/>
+<area shape="rect" id="node3" href="$class_scene.html#a481bf791889936bf3521c849bc4c7c2f" title="Retourne la liste des noms des matériaux dans la scène. " alt="" coords="225,55,407,80"/>
+<area shape="rect" id="node4" href="$class_scene.html#ae8045c3444b367c070988b30d69e5a36" title="Retourne la liste des noms des shaders dans la scène. " alt="" coords="228,104,405,129"/>
+</map>

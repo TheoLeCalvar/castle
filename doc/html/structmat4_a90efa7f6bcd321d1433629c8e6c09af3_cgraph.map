@@ -1,0 +1,5 @@
+<map id="mat4::inverse" name="mat4::inverse">
+<area shape="rect" id="node2" href="$structmat4.html#aab816366c2233c95eac70b2eab11e8e2" title="mat4::transpose" alt="" coords="155,5,272,31"/>
+<area shape="rect" id="node4" href="$structmat4.html#a80b3a218af52e2cdcc5a216bfaa064b7" title="mat4::det" alt="" coords="175,55,252,80"/>
+<area shape="rect" id="node3" href="$structmat4.html#acf3f0c37ff5c16e8fb1bfdde2bf87a0f" title="mat4::mat4" alt="" coords="320,5,408,31"/>
+</map>

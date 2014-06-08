@@ -1,0 +1,5 @@
+<map id="Scene::loadMaterials" name="Scene::loadMaterials">
+<area shape="rect" id="node2" href="$class_material.html#a2ab92e03d9c90294cd28fff9b6a8cde0" title="Met à jour la composante du matériaux. " alt="" coords="223,5,317,31"/>
+<area shape="rect" id="node3" href="$class_material.html#a4f2227a6fb3f12c8618e399f93ab492c" title="Charge une texture et l&#39;associe à un slot. " alt="" coords="199,55,341,80"/>
+<area shape="rect" id="node4" href="$class_scene.html#a68761479fea650973d31e2d9565f8aca" title="Ajoute un material à la scène. " alt="" coords="202,104,338,129"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="MyOpenGLWidget" name="MyOpenGLWidget">
+<area shape="rect" id="node5" href="$class_scene.html" title="Classe principale. " alt="" coords="149,675,317,1108"/>
+<area shape="rect" id="node4" href="$structvec2.html" title="{vec2\n|+ v\l|+ vec2()\l+ vec2()\l+ vec2()\l+ vec2()\l+ vec2()\l+ operator()()\l+ operator()()\l+ operator+()\l+ operator&#45;()\l+ operator+=()\let 11 de plus...\l}" alt="" coords="308,5,416,212"/>
+<area shape="rect" id="node6" href="$class_camera.html" title="Camera pour Scene. " alt="" coords="75,1223,223,1496"/>
+<area shape="rect" id="node7" href="$structvec3.html" title="{vec3\n|+ v\l|+ vec3()\l+ vec3()\l+ vec3()\l+ vec3()\l+ vec3()\l+ operator()()\l+ operator()()\l+ operator+()\l+ operator&#45;()\l+ operator+=()\let 13 de plus...\l}" alt="" coords="5,788,114,995"/>
+<area shape="rect" id="node8" href="$structmat4.html" title="{mat4\n|+ m\l|+ mat4()\l+ mat4()\l+ mat4()\l+ mat4()\l+ mat4()\l+ operator+()\l+ operator+=()\l+ operator&#45;()\l+ operator&#45;=()\l+ operator*()\let 10 de plus...\l}" alt="" coords="341,340,450,547"/>
+</map>
