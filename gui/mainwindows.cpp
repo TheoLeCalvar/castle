@@ -1800,7 +1800,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
 
         else
             {
-            //widget->getScene()->addShader(lineeditnomajoutshader->text(),lineeditvertajoutshader->text(),lineeditfragajoutshader->text());
+            widget->getScene()->addShader(lineeditnomajoutshader->text(),lineeditvertajoutshader->text(),lineeditfragajoutshader->text());
             }
 
         //verifie si le shader a été ajouter
