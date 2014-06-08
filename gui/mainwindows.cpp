@@ -80,8 +80,12 @@ void MainWindow::createActions()
             connect(ajoutmurAct,SIGNAL(triggered()),this , SLOT(ajoutmur()));
 
         ajoutobjetAct = new QAction(tr("&Objet"),this);
-         ajoutobjetAct->setIcon(QIcon("icones/objects.png"));
-         connect(ajoutobjetAct, SIGNAL(triggered()), this, SLOT(ajoutobjet()));
+            ajoutobjetAct->setIcon(QIcon("icones/objects.png"));
+            connect(ajoutobjetAct, SIGNAL(triggered()), this, SLOT(ajoutobjet()));
+
+        ajoutshaderAct = new QAction(tr("&Shader"),this);
+            ajoutshaderAct->setIcon(QIcon("icones/shader.png"));
+            connect(ajoutshaderAct, SIGNAL(triggered()), this, SLOT(ajoutshader()));
 
      //aide
      about = new QMenu(tr("&A propos"), this);
@@ -547,6 +551,65 @@ void MainWindow::createMenus()
              //ajout au dock
              dockajoutobjet->setWidget(widgetajoutobjet);
 
+/* ************************************** */
+//          ajout Shader                  //
+/* ************************************** */
+
+             ajoutelement->addAction(ajoutshaderAct);
+
+             //decalration widget
+             widgetajoutshader = new QWidget(dockajoutshader);
+
+             //declaration contenu
+             labelnomajoutshader = new QLabel(widgetajoutshader);
+                labelnomajoutshader->setText("Nom :");
+             lineeditnomajoutshader = new QLineEdit(widgetajoutshader);
+
+             labelvertajoutshader = new QLabel(widgetajoutshader);
+                labelvertajoutshader->setText("Chemin du .vert :");
+             lineeditvertajoutshader = new QLineEdit(widgetajoutshader);
+             boutonvertajoutshader = new QPushButton(widgetajoutshader);
+                boutonvertajoutshader->setText("+");
+                connect(boutonvertajoutshader, SIGNAL(clicked()), this ,SLOT(selectioncheminvert()));
+
+             labelfragtajoutshader = new QLabel(widgetajoutshader);
+                labelfragtajoutshader->setText("Chemin du .frag :");
+             lineeditfragajoutshader = new QLineEdit(widgetajoutshader);
+             boutonfragajoutshader = new QPushButton(widgetajoutshader);
+                boutonfragajoutshader->setText("+");
+                connect(boutonfragajoutshader, SIGNAL(clicked()), this ,SLOT(selectioncheminfrag()));
+
+             boutonajoutshader = new QPushButton(widgetajoutshader);
+                boutonajoutshader->setText("Ajouter");
+                connect(boutonajoutshader, SIGNAL(clicked()), this ,SLOT(validajoutshader()));
+
+             //positionement
+                mainlayoutajoutshader = new QVBoxLayout();
+                 layoutnomajoutshader = new QHBoxLayout();
+                    layoutnomajoutshader->addWidget(labelnomajoutshader);
+                    layoutnomajoutshader->addWidget(lineeditnomajoutshader);
+                 layoutvertajoutshader = new QHBoxLayout();
+                    layoutvertajoutshader->addWidget(labelvertajoutshader);
+                    layoutvertajoutshader->addWidget(lineeditvertajoutshader);
+                    layoutvertajoutshader->addWidget(boutonvertajoutshader);
+                 layoutfragajoutshader = new QHBoxLayout();
+                     layoutfragajoutshader->addWidget(labelfragtajoutshader);
+                     layoutfragajoutshader->addWidget(lineeditfragajoutshader);
+                     layoutfragajoutshader->addWidget(boutonfragajoutshader);
+
+                mainlayoutajoutshader->addLayout(layoutnomajoutshader);
+                mainlayoutajoutshader->addLayout(layoutvertajoutshader);
+                mainlayoutajoutshader->addLayout(layoutfragajoutshader);
+                mainlayoutajoutshader->addWidget(boutonajoutshader);
+
+                widgetajoutshader->setLayout(mainlayoutajoutshader);
+
+             //ajout au dock
+             dockajoutshader->setWidget(widgetajoutshader);
+
+//fin ajout element
+
+
     //aide
     Aide = menuBar()->addMenu(tr("&Aide"));
         Aide->addMenu(about);
@@ -591,6 +654,11 @@ void MainWindow::createListeDockwidget()
              dockajoutobjet->setAllowedAreas(Qt::LeftDockWidgetArea);
              addDockWidget(Qt::LeftDockWidgetArea,  dockajoutobjet);
              dockajoutobjet->hide();
+
+        dockajoutshader= new QDockWidget(tr("Ajout d'un shader "), this);
+             dockajoutshader->setAllowedAreas(Qt::LeftDockWidgetArea);
+             addDockWidget(Qt::LeftDockWidgetArea,  dockajoutshader);
+             dockajoutshader->hide();
 }
 
 void MainWindow::createToolBar()
@@ -638,6 +706,8 @@ void MainWindow::createToolBar()
             fileToolBar->addAction(ajoutmurAct);
 
             fileToolBar->addAction(ajoutobjetAct);
+
+            fileToolBar->addAction(ajoutshaderAct);
 
             fileToolBar->addSeparator();//
 
@@ -926,7 +996,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
         if (lineeditnomajoutlumiere->text()==NULL)
         {
             QMessageBox msgBox;
-            msgBox.setText("le champ nom , ne peut etre vide");
+            msgBox.setText("Le champ nom, ne peut etre vide");
             msgBox.exec();
 
             dockajoutlumiere->close();
@@ -999,7 +1069,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
             if (lineeditnomajoutmaterial->text()==NULL)
             {
                 QMessageBox msgBox;
-                msgBox.setText("le champ nom , ne peut etre vide");
+                msgBox.setText("Le champ nom, ne peut etre vide");
                 msgBox.exec();
              dockajoutmateriaux->close();
             }
@@ -1101,7 +1171,7 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
         if (lineeditajoutpiece->text()==NULL || lineeditajoutpiece->text()=="" )
         {
             QMessageBox msgBox;
-            msgBox.setText("le champ nom , ne peut etre vide");
+            msgBox.setText("Le champ nom, ne peut etre vide");
             msgBox.exec();
          dockajoutpiece->close();
         }
@@ -1647,6 +1717,109 @@ void MainWindow::affichagerecnoderestant(Node *a ,QStandardItem *b )
         void    MainWindow::changeshader(const QString & text )
         {
         widget->useShader( text);
+        }
+
+
+        void MainWindow::ajoutshader()
+        {
+
+            //resete certain champ
+            lineeditnomajoutshader->clear();
+            lineeditvertajoutshader->clear();
+            lineeditfragajoutshader->clear();
+
+            //afiche le dock
+            dockajoutshader->show();
+        }
+
+        void    MainWindow::selectioncheminvert()
+        {
+            QString fileName = QFileDialog::getOpenFileName(this, tr("Selection .vert"),"",tr("vertex shader (*.vert)"));
+
+            QFileInfo fileInfo(fileName);
+
+            QString dirPath = fileInfo.filePath();
+
+            QDir::current().relativeFilePath(dirPath);
+
+
+            if (fileName!=NULL)
+                         {
+                         lineeditvertajoutshader->setText(QDir::current().relativeFilePath(dirPath));
+                         }
+        }
+
+        void    MainWindow::selectioncheminfrag()
+        {
+            QString fileName = QFileDialog::getOpenFileName(this, tr("Selection .frag"),"",tr("fragment shader (*.frag)"));
+
+            QFileInfo fileInfo(fileName);
+
+            QString dirPath = fileInfo.filePath();
+
+            QDir::current().relativeFilePath(dirPath);
+
+
+            if (fileName!=NULL)
+                         {
+                         lineeditfragajoutshader->setText(QDir::current().relativeFilePath(dirPath));
+                         }
+        }
+
+        void    MainWindow::validajoutshader()
+        {
+        if ( (lineeditnomajoutshader->text().isNull()) || (lineeditnomajoutshader->text()=="") )
+            {
+            QMessageBox msgBox;
+            msgBox.setText("Le champ nom, ne peut etre vide");
+            msgBox.exec();
+
+            dockajoutshader->close();
+
+            }
+
+        else if( (lineeditvertajoutshader->text().isNull()) || (lineeditvertajoutshader->text()=="") )
+            {
+            QMessageBox msgBox;
+            msgBox.setText("Le champ .vert, ne peut etre vide");
+            msgBox.exec();
+
+            dockajoutshader->close();
+
+            }
+
+        else if( (lineeditfragajoutshader->text().isNull()) || (lineeditfragajoutshader->text()=="") )
+            {
+            QMessageBox msgBox;
+            msgBox.setText("Le champ .frag, ne peut etre vide");
+            msgBox.exec();
+
+            dockajoutshader->close();
+
+            }
+
+        else
+            {
+            //widget->getScene()->addShader(lineeditnomajoutshader->text(),lineeditvertajoutshader->text(),lineeditfragajoutshader->text());
+            }
+
+        //verifie si le shader a été ajouter
+        bool a = false;
+        QStringList listtmp = widget->getScene()->getShadersNames();
+
+                for (int i = 0 ; i< listtmp.size(); i++)
+                {
+                 if (listtmp.at(i)==lineeditnomajoutshader->text())    a=true;
+                }
+        if (a==true)
+            {
+            if(shader)
+                    {
+                     shader->appendRow(new QStandardItem(lineeditnomajoutshader->text()));
+                                 dockajoutshader->close();
+                    }
+            }
+        else   dockajoutshader->close();
         }
 
     //supression

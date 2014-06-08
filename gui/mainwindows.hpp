@@ -67,6 +67,10 @@ private slots:
         void    ajoutobjet();
         void    selectioncheminobj();
         void    validationajoutobjet();
+        void    ajoutshader();
+        void    selectioncheminvert();
+        void    selectioncheminfrag();
+        void    validajoutshader();
 
         //aide
         void    aboutassimp();
@@ -120,6 +124,7 @@ private slots:
             QAction*    ajoutpieceAct;
             QAction*    ajoutmurAct;
             QAction*    ajoutobjetAct;
+            QAction*    ajoutshaderAct;
 
 /* ************************************** */
 //              ajout d'element           //
@@ -291,6 +296,30 @@ private slots:
            QPushButton*             boutonselectionobjajoutobjet;
 
            QPushButton*             boutonajoutobjet;
+
+        //ajout shader
+           QDockWidget*             dockajoutshader;
+               QWidget*             widgetajoutshader;
+
+               //layout
+               QVBoxLayout*         mainlayoutajoutshader;
+                QHBoxLayout*        layoutnomajoutshader;
+                QHBoxLayout*        layoutvertajoutshader;
+                QHBoxLayout*        layoutfragajoutshader;
+
+              //contenu ajout shader
+              QLabel*               labelnomajoutshader;
+              QLineEdit*            lineeditnomajoutshader;
+
+              QLabel*               labelvertajoutshader;
+              QLineEdit*            lineeditvertajoutshader;
+              QPushButton*          boutonvertajoutshader;
+
+              QLabel*               labelfragtajoutshader;
+              QLineEdit*            lineeditfragajoutshader;
+              QPushButton*          boutonfragajoutshader;
+
+              QPushButton*          boutonajoutshader;
 
         //aide
         QMenu*    about;
