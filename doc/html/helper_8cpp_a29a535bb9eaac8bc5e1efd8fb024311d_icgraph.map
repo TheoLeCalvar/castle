@@ -1,5 +1,0 @@
-<map id="viewMatrix" name="viewMatrix">
-<area shape="rect" id="node2" href="$class_camera.html#adbfdac30f082ddea86183c1c31493946" title="Actualise la caméra. " alt="" coords="138,5,255,31"/>
-<area shape="rect" id="node3" href="$class_scene.html#ac0e3d2c98ba6063a086467fb2c19142f" title="Affiche la scène. " alt="" coords="303,5,399,31"/>
-<area shape="rect" id="node4" href="$class_my_open_g_l_widget.html#af7babfe769e968c317e646c4387b357d" title="MyOpenGLWidget::paintGL" alt="" coords="447,5,631,31"/>
-</map>

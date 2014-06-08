@@ -219,6 +219,16 @@ public:
 	void 		addShader(const QString & name, QOpenGLShaderProgram * s);
 
 	/**
+	 * @brief Ajoute un shader à la scène
+	 * 
+	 * @param name nom du shader
+	 * @vertex path vers le fichier de vertex
+	 * @fragment path vers le fichier de fragment
+	 */ 
+	void 		addShader(const QString & name, const QString & vertex, const QString & fragment);
+
+
+	/**
 	 * @brief Sauvegarde de la scène au format xml
 	 * 
 	 * @param fileName nom du fichier dans lequel sauvegarde

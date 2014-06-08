@@ -1,6 +1,0 @@
-<map id="vec2::vec2" name="vec2::vec2">
-<area shape="rect" id="node2" href="$structvec2.html#af87b31cf8030bc55527b1107452ee5e9" title="vec2::operator+" alt="" coords="138,5,253,31"/>
-<area shape="rect" id="node3" href="$structvec2.html#a68164358471bdcb3417869db193552bf" title="vec2::operator&#45;" alt="" coords="140,55,251,80"/>
-<area shape="rect" id="node4" href="$structvec2.html#a92e02c3c972fadef2442cd8dcdfe422d" title="vec2::operator*" alt="" coords="140,104,251,129"/>
-<area shape="rect" id="node5" href="$structvec2.html#a47810ee0188ae05307e8b73f9164448f" title="vec2::operator/" alt="" coords="140,153,251,179"/>
-</map>

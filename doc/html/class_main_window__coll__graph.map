@@ -1,7 +1,7 @@
 <map id="MainWindow" name="MainWindow">
 <area shape="rect" id="node3" href="$class_my_open_g_l_widget.html" title="{MyOpenGLWidget\n|&#45; _captureMouse\l&#45; _timer\l&#45; _path\l&#45; _vao_quad\l&#45; _framebuffer\l&#45; _texture\l&#45; _renderbuffer\l&#45; _activeProgram\l&#45; _postProcessPrograms\l&#45; _loadedShaders\l|+ MyOpenGLWidget()\l+ ~MyOpenGLWidget()\l+ minimumSizeHint()\l+ sizeHint()\l+ getScene()\l+ setScene()\l+ initializeGL()\l+ paintGL()\l+ resizeGL()\l+ keyPressEvent()\let 8 de plus...\l&#45; initFramebuffer()\l}" alt="" coords="793,313,961,653"/>
 <area shape="rect" id="node7" href="$class_scene.html" title="Classe principale. " alt="" coords="704,768,871,1201"/>
-<area shape="rect" id="node13" href="$class_objet.html" title="Classe de base affichable. " alt="" coords="304,848,431,1121"/>
+<area shape="rect" id="node13" href="$class_objet.html" title="Classe de base affichable. " alt="" coords="304,855,431,1115"/>
 <area shape="rect" id="node14" href="$class_material.html" title="Matériaux pour la Scene. " alt="" coords="312,340,460,627"/>
 <area shape="rect" id="node15" href="$class_light.html" title="Lumière pour la Scene. " alt="" coords="44,387,176,580"/>
 <area shape="rect" id="node6" href="$structvec2.html" title="{vec2\n|+ v\l|+ vec2()\l+ vec2()\l+ vec2()\l+ vec2()\l+ vec2()\l+ operator()()\l+ operator()()\l+ operator+()\l+ operator&#45;()\l+ operator+=()\let 11 de plus...\l}" alt="" coords="928,5,1036,212"/>

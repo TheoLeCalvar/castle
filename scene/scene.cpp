@@ -265,6 +265,55 @@ void 	Scene::addShader(const QString & name, QOpenGLShaderProgram * v)
 	}
 }
 
+void     Scene::addShader(const QString & name, const QString & vertex, const QString & fragment)
+{
+	qDebug() << "Ajout shader " << name << "vertex = " << vertex << "fragment = " << fragment; 
+
+	if (_shaders.contains(name))
+	{
+		qWarning() << "Shader deja present";
+	}
+	else
+	{
+		QOpenGLShaderProgram *p = new QOpenGLShaderProgram();
+
+		QOpenGLShader *shader = new QOpenGLShader(QOpenGLShader::Vertex);
+
+	    if(!shader->compileSourceFile(vertex))
+	    {
+	        qDebug() << "Erreur de chargement du vertex" << shader->log();
+	    }
+	    else
+	    {
+	    	p->addShader(shader);
+	    }
+		
+
+
+
+		shader = new QOpenGLShader(QOpenGLShader::Fragment);
+
+	    if(!shader->compileSourceFile(fragment))
+	    {
+	        qDebug() << "Erreur de chargement du fragment" << shader->log();
+	    }
+	    else
+	    {
+	    	p->addShader(shader);
+	    }
+
+
+	    if(!p->link())
+	    {
+	        qDebug() << "Erreur de linkage !";
+	    }
+	    else
+	    {
+			_shaders[name] = p;
+	    }
+	}
+}
+
 void 	Scene::loadMaterials(const QDomElement & dom)
 {
 	QDomElement material = dom.firstChildElement("material");

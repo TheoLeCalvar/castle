@@ -1,7 +1,0 @@
-<map id="vec3::vec3" name="vec3::vec3">
-<area shape="rect" id="node2" href="$structvec3.html#a3d8a20b779705b215e7cdcba780c8e70" title="vec3::operator+" alt="" coords="138,5,253,31"/>
-<area shape="rect" id="node3" href="$structvec3.html#a3bd4baa92fdd2e08e0852eb1bbc80e58" title="vec3::operator&#45;" alt="" coords="140,55,251,80"/>
-<area shape="rect" id="node4" href="$structvec3.html#a1ed5889d7f706e1dd8111546e19e5171" title="vec3::operator*" alt="" coords="140,104,251,129"/>
-<area shape="rect" id="node5" href="$structvec3.html#a3f506aaaea420b751e6928e2d080fa2d" title="vec3::operator/" alt="" coords="140,153,251,179"/>
-<area shape="rect" id="node6" href="$structvec3.html#af10f17f6dcf4cb0b63827ac5d6afa168" title="vec3::operator^" alt="" coords="139,203,252,228"/>
-</map>

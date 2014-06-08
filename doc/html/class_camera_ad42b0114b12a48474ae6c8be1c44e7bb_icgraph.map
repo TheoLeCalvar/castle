@@ -1,9 +1,0 @@
-<map id="Camera::position" name="Camera::position">
-<area shape="rect" id="node2" href="$class_scene.html#a696a59602fa780cd7904df5c50b94eae" title="Sauvegarde de la scène au format xml. " alt="" coords="175,5,313,31"/>
-<area shape="rect" id="node6" href="$class_scene.html#ae6fc45f015d96191dbf775d54d6e4437" title="Ordonne les Light en fonction de la distance à la caméra. " alt="" coords="178,55,311,80"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a8c07d91b87178ac0a1b88aabc45c6ddb" title="MainWindow::Enregistrer" alt="" coords="361,5,531,31"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a62cd8712fb41a754298f6f60eead2cb0" title="MainWindow::createActions" alt="" coords="579,5,765,31"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a6d90fb41049be49da652a628191c9a1d" title="MainWindow::MainWindow" alt="" coords="813,5,995,31"/>
-<area shape="rect" id="node7" href="$class_scene.html#ac0e3d2c98ba6063a086467fb2c19142f" title="Affiche la scène. " alt="" coords="399,55,494,80"/>
-<area shape="rect" id="node8" href="$class_my_open_g_l_widget.html#af7babfe769e968c317e646c4387b357d" title="MyOpenGLWidget::paintGL" alt="" coords="580,55,764,80"/>
-</map>

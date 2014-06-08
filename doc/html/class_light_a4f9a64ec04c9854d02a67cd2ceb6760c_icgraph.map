@@ -1,7 +1,0 @@
-<map id="Light::ambient" name="Light::ambient">
-<area shape="rect" id="node2" href="$class_mondock.html#a1cdbe11296a3fe24d88992bf7d2236f4" title="Mondock::lumiereambiantejustx" alt="" coords="158,5,367,31"/>
-<area shape="rect" id="node3" href="$class_mondock.html#ae228ac3c0273c3f275fb88842d9c8899" title="Mondock::traitementambiante" alt="" coords="415,81,612,107"/>
-<area shape="rect" id="node5" href="$class_mondock.html#ae989829f726237ddcacbe9b1ae79ab62" title="Mondock::lumiereambiantejusty" alt="" coords="158,107,367,132"/>
-<area shape="rect" id="node6" href="$class_mondock.html#a824b5c728f21b3ef7d47d322cd0a07ee" title="Mondock::lumiereambiantejustz" alt="" coords="158,156,367,181"/>
-<area shape="rect" id="node4" href="$class_mondock.html#a25391f1fac7a8a46e761f2f8c9c2fdc8" title="Mondock::selectionlight" alt="" coords="660,81,820,107"/>
-</map>
