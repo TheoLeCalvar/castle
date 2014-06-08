@@ -1,7 +1,0 @@
-<map id="translate" name="translate">
-<area shape="rect" id="node2" href="$class_objet.html#a0960722f5ddb16f2c245dca4e6584f25" title="Met à jour la matrice de model. " alt="" coords="126,80,264,105"/>
-<area shape="rect" id="node3" href="$class_objet.html#aea29e90dc963beb399d3028b7322039f" title="Constructeur. " alt="" coords="319,5,411,31"/>
-<area shape="rect" id="node4" href="$class_objet.html#a89ed090c598f087792ee81c40ff46f75" title="Change la position de l&#39;Objet. " alt="" coords="312,55,418,80"/>
-<area shape="rect" id="node5" href="$class_objet.html#a2d37f15368f40615a8bc58622623d991" title="Change la rotation de l&#39;Objet. " alt="" coords="312,104,417,129"/>
-<area shape="rect" id="node6" href="$class_objet.html#ae4ca090d86e327ad4654a068afcf3141" title="Modifie le scale de l&#39;objet. " alt="" coords="319,153,411,179"/>
-</map>

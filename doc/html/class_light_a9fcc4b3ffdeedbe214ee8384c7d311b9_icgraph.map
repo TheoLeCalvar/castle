@@ -1,4 +1,0 @@
-<map id="Light::set" name="Light::set">
-<area shape="rect" id="node2" href="$class_scene.html#a34446952ed460f5a66a90649d6f743ec" title="Charge les lumières. " alt="" coords="129,5,256,31"/>
-<area shape="rect" id="node3" href="$class_scene.html#a2490795fc196c0e9f9196d18d4c6cfe0" title="Charge une scène à partir d&#39;un fichier xml la décrivant. " alt="" coords="304,5,408,31"/>
-</map>

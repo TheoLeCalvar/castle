@@ -1,5 +1,0 @@
-<map id="Piece::draw" name="Piece::draw">
-<area shape="rect" id="node2" href="$helper_8cpp.html#a257c43f4a3485c6c6525f14f5a5abea1" title="pushMatrix" alt="" coords="151,5,237,31"/>
-<area shape="rect" id="node3" href="$helper_8cpp.html#ac7513ce98a6d57126ee5b96aaaf01c5f" title="currentMatrix" alt="" coords="144,55,243,80"/>
-<area shape="rect" id="node4" href="$helper_8cpp.html#a89162c73545bb184c781c825dd72f082" title="popMatrix" alt="" coords="154,104,234,129"/>
-</map>

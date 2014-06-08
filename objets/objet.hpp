@@ -23,8 +23,6 @@ protected:
 
 	GLuint 		_shaderId;
 
-	bool 		_drawHitbox;
-
 public:
 	/**
 	 * @brief Constructeur
@@ -116,18 +114,6 @@ public:
 	 * @return identifiant OpengGL du shader
 	 */
 	GLuint 			shaderId() const{return _shaderId;}
-
-	/**
-	 * @brief Affiche les Hitbox des objets capables d'en afficher
-	 * 
-	 * @param b valeur
-	 */
-	void 			drawHitbox(bool b){_drawHitbox = b;}
-
-	/**
-	 * @brief Affiche la Hitbox de l'objet
-	 */
-	bool 			drawHitbox() const{return _drawHitbox;}
 
 	/**
 	 * @brief Récupère le material de l'Objet

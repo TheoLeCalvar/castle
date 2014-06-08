@@ -1,6 +1,0 @@
-<map id="MainWindow::validajoutmur" name="MainWindow::validajoutmur">
-<area shape="rect" id="node2" href="$class_my_open_g_l_widget.html#ab25f238721b8e1cba36c2a0350ac57ba" title="MyOpenGLWidget::getScene" alt="" coords="238,5,431,31"/>
-<area shape="rect" id="node3" href="$class_scene.html#ae2060bd6c44231ffe7f6f0a3447325f1" title="Récupère un pointeur sur une pièce. " alt="" coords="275,55,394,80"/>
-<area shape="rect" id="node4" href="$class_objet.html#a4a702c189bedcbf1e65da6aec72c8e44" title="Récupère le nom de l&#39;Objet. " alt="" coords="479,131,573,156"/>
-<area shape="rect" id="node5" href="$class_objet.html#a95e63a98dc9dc485fe874df30f2069ee" title="Change l&#39;Objet père. " alt="" coords="285,156,384,181"/>
-</map>

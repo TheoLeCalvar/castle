@@ -13,7 +13,6 @@ var searchData=
   ['_5fdiffuse',['_diffuse',['../class_light.html#a32445f2054766ef532c29eb514b2599d',1,'Light::_diffuse()'],['../class_material.html#a402005729d7d5a147d51dfcd691d2ffa',1,'Material::_diffuse()']]],
   ['_5fdiffuse_5ftexture',['_diffuse_texture',['../class_material.html#a522d07896a1363e987d09d8e4b66c156',1,'Material']]],
   ['_5fdimensions',['_dimensions',['../class_piece.html#a47a3458694b894041bd95a1666c9bf3d',1,'Piece']]],
-  ['_5fdrawhitbox',['_drawHitbox',['../class_objet.html#a953ad7ff9941575d1f18b6d256d2dcdc',1,'Objet']]],
   ['_5fdroite_5fpresse',['_droite_presse',['../class_camera.html#a61b2e438537b99ba1f0a97e5586b7f45',1,'Camera']]],
   ['_5femissive',['_emissive',['../class_material.html#a7c2eb5e499b3f46ec6e9d62f02653879',1,'Material']]],
   ['_5feye',['_eye',['../class_camera.html#ad4c22c27bd247f4411c4166220ba6e82',1,'Camera']]],

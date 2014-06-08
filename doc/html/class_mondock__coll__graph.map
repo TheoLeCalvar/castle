@@ -1,5 +1,5 @@
 <map id="Mondock" name="Mondock">
-<area shape="rect" id="node3" href="$class_objet.html" title="Classe de base affichable. " alt="" coords="384,755,511,1028"/>
+<area shape="rect" id="node3" href="$class_objet.html" title="Classe de base affichable. " alt="" coords="384,761,511,1021"/>
 <area shape="rect" id="node14" href="$class_piece.html" title="Pièce, contient un ensemble d&#39;objet qu&#39;elle contient. " alt="" coords="192,1229,309,1449"/>
 <area shape="rect" id="node6" href="$class_material.html" title="Matériaux pour la Scene. " alt="" coords="366,327,514,613"/>
 <area shape="rect" id="node8" href="$class_light.html" title="Lumière pour la Scene. " alt="" coords="42,373,173,567"/>
