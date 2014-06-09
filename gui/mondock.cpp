@@ -392,19 +392,19 @@ Mondock:: ~Mondock(){}
 
         spinboxlumiereambiantex = new QSpinBox(editionambiante);
             spinboxlumiereambiantex->setRange(0,255);
-            spinboxlumiereambiantex->setPrefix("X = ");
+            spinboxlumiereambiantex->setPrefix("R = ");
             spinboxlumiereambiantex->setValue(vectmp[0]*255);
             connect(spinboxlumiereambiantex, SIGNAL(valueChanged(int)),this, SLOT(lumiereambiantejustx(int)));
 
         spinboxlumiereambiantey = new QSpinBox(editionambiante);
             spinboxlumiereambiantey->setRange(0,255);
-            spinboxlumiereambiantey->setPrefix("Y = ");
+            spinboxlumiereambiantey->setPrefix("G = ");
             spinboxlumiereambiantey->setValue(vectmp[1]*255);
             connect(spinboxlumiereambiantey, SIGNAL(valueChanged(int)),this, SLOT(lumiereambiantejusty(int)));
 
         spinboxlumiereambiantez = new QSpinBox(editionambiante);
             spinboxlumiereambiantez->setRange(0,255);
-            spinboxlumiereambiantez->setPrefix("Z = ");
+            spinboxlumiereambiantez->setPrefix("B = ");
             spinboxlumiereambiantez->setValue(vectmp[2]*255);
             connect(spinboxlumiereambiantez, SIGNAL(valueChanged(int)),this, SLOT(lumiereambiantejustz(int)));
 
@@ -791,7 +791,7 @@ Mondock:: ~Mondock(){}
                       connect(materialspinboxspez, SIGNAL(valueChanged(int)),this, SLOT(spematerialfuncz(int)));
 
                       materialspinboxspea = new QSpinBox(tabmaterialspe);
-                      materialspinboxspea->setPrefix("a = ");
+                      materialspinboxspea->setPrefix("s = ");
                       materialspinboxspea->setRange(0,255);
                       materialspinboxspea->setValue(this->_materiaux->shininess());
                       connect(materialspinboxspea, SIGNAL(valueChanged(int)),this, SLOT(spematerialtfunca(int)));
