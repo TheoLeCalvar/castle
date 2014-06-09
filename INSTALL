@@ -10,5 +10,8 @@ Requière :
 
 Compilation:
 	
-	- qmake
-	- make
+	- utiliser qmake pour générer le makefile puis compiler de façon classique
+
+Lancement:
+	- peut se lancer depuis l'explorateur de fichier par un simple double click, une scène vide est alors créée
+	- peut se lancer depuis un terminal avec comme argument le chemin vers un fichier xml décrivant la scène
