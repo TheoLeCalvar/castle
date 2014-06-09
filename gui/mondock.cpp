@@ -64,7 +64,7 @@ Mondock:: ~Mondock(){}
 
             QString tmp = QString::number((double)x);
 
-            labelambx->setText(" X = " + tmp);
+            labelambx->setText(" R = " + tmp);
             }
 
     void Mondock::amblightfuncy( int x )
@@ -73,7 +73,7 @@ Mondock:: ~Mondock(){}
 
             QString tmp = QString::number((double)x);
 
-            labelamby->setText(" Y = " + tmp);
+            labelamby->setText(" G = " + tmp);
             }
 
     void Mondock::amblightfuncz( int x )
@@ -82,7 +82,7 @@ Mondock:: ~Mondock(){}
 
             QString tmp = QString::number((double)x);
 
-            labelambz->setText(" Z = " + tmp);
+            labelambz->setText(" B = " + tmp);
             }
 
     void Mondock::diflightfuncx( int x )
@@ -91,7 +91,7 @@ Mondock:: ~Mondock(){}
 
             QString tmp = QString::number((double)x);
 
-            labeldifx->setText(" X = " + tmp);
+            labeldifx->setText(" R = " + tmp);
             }
 
     void Mondock::diflightfuncy( int x )
@@ -100,7 +100,7 @@ Mondock:: ~Mondock(){}
 
             QString tmp = QString::number((double)x);
 
-            labeldify->setText(" Y = " + tmp);
+            labeldify->setText(" G = " + tmp);
             }
 
     void Mondock::diflightfuncz( int x )
@@ -109,7 +109,7 @@ Mondock:: ~Mondock(){}
 
             QString tmp = QString::number((double)x);
 
-            labeldifz->setText(" Z = " + tmp);
+            labeldifz->setText(" B = " + tmp);
             }
 
     void Mondock::spelightfuncx( int x )
@@ -118,7 +118,7 @@ Mondock:: ~Mondock(){}
 
             QString tmp = QString::number((double)x);
 
-            labelspex->setText(" X = " + tmp);
+            labelspex->setText(" R = " + tmp);
             }
 
     void Mondock::spelightfuncy( int x )
@@ -127,7 +127,7 @@ Mondock:: ~Mondock(){}
 
             QString tmp = QString::number((double)x);
 
-            labelspey->setText(" Y = " + tmp);
+            labelspey->setText(" G = " + tmp);
             }
 
     void Mondock::spelightfuncz (int x )
@@ -136,7 +136,7 @@ Mondock:: ~Mondock(){}
 
              QString tmp = QString::number((double)x);
 
-             labelspez->setText(" Z = " + tmp);
+             labelspez->setText(" B = " + tmp);
             }
 
     void Mondock::poslightfuncx( double x )
@@ -516,9 +516,9 @@ Mondock:: ~Mondock(){}
 
 
 
-                 labeldifx->setText(" X = " + sxtmp);
-                 labeldify->setText(" Y = " + sytmp);
-                 labeldifz->setText(" Z = " + sztmp);
+                 labeldifx->setText(" R = " + sxtmp);
+                 labeldify->setText(" G = " + sytmp);
+                 labeldifz->setText(" B = " + sztmp);
 
              //partie layout
                  tabdiflayout= new QVBoxLayout(tablightdif);
@@ -575,9 +575,9 @@ Mondock:: ~Mondock(){}
                   sztmp = QString::number(ztmp);
 
 
-                  labelspex->setText(" X = " + sxtmp);
-                  labelspey->setText(" Y = " + sytmp);
-                  labelspez->setText(" Z = " + sztmp);
+                  labelspex->setText(" R = " + sxtmp);
+                  labelspey->setText(" G = " + sytmp);
+                  labelspez->setText(" B = " + sztmp);
 
               //partie layout
                   tabspelayout= new QVBoxLayout(tablightspe);
@@ -633,9 +633,9 @@ Mondock:: ~Mondock(){}
 
 
 
-                  labelambx->setText(" X = " + sxtmp);
-                  labelamby->setText(" Y = " + sytmp);
-                  labelambz->setText(" Z = " + sztmp);
+                  labelambx->setText(" R = " + sxtmp);
+                  labelamby->setText(" G = " + sytmp);
+                  labelambz->setText(" B = " + sztmp);
 
               //partie layout
               tabamblayout= new QVBoxLayout(tablightamb);
@@ -717,19 +717,19 @@ Mondock:: ~Mondock(){}
               //widget2
               tabmaterialdif = new QWidget(tabmaterial);
                   materialspinboxdifx = new QSpinBox(tabmaterialdif);
-                  materialspinboxdifx->setPrefix("X = ");
+                  materialspinboxdifx->setPrefix("R = ");
                   materialspinboxdifx->setRange(0,255);
                   materialspinboxdifx->setValue(this->_materiaux->get(GL_DIFFUSE)[0]*255);
                   connect(materialspinboxdifx, SIGNAL(valueChanged(int)),this, SLOT(difmaterialfuncx(int)));
 
                   materialspinboxdify = new QSpinBox(tabmaterialdif);
-                  materialspinboxdify->setPrefix("Y = ");
+                  materialspinboxdify->setPrefix("G = ");
                   materialspinboxdify->setRange(0,255);
                   materialspinboxdify->setValue(this->_materiaux->get(GL_DIFFUSE)[1]*255);
                   connect(materialspinboxdify, SIGNAL(valueChanged(int)),this, SLOT(difmaterialfuncy(int)));
 
                   materialspinboxdifz = new QSpinBox(tabmaterialdif);
-                  materialspinboxdifz->setPrefix("Z = ");
+                  materialspinboxdifz->setPrefix("B = ");
                   materialspinboxdifz->setRange(0,255);
                   materialspinboxdifz->setValue(this->_materiaux->get(GL_DIFFUSE)[3]*255);
                   connect(materialspinboxdifz, SIGNAL(valueChanged(int)),this, SLOT(difmaterialfuncz(int)));
@@ -745,19 +745,19 @@ Mondock:: ~Mondock(){}
                 //widget3
                 tabmaterialamb = new QWidget(tabmaterial);
                     materialspinboxambx = new QSpinBox(tabmaterialamb);
-                    materialspinboxambx->setPrefix("X = ");
+                    materialspinboxambx->setPrefix("R = ");
                     materialspinboxambx->setRange(0,255);
                     materialspinboxambx->setValue(this->_materiaux->get(GL_AMBIENT)[0]*255);
                     connect(materialspinboxambx, SIGNAL(valueChanged(int)),this, SLOT(ambmaterialfuncx(int)));
 
                     materialspinboxamby = new QSpinBox(tabmaterialamb);
-                    materialspinboxamby->setPrefix("Y = ");
+                    materialspinboxamby->setPrefix("G = ");
                     materialspinboxamby->setRange(0,255);
                     materialspinboxamby->setValue(this->_materiaux->get(GL_AMBIENT)[1]*255);
                     connect(materialspinboxamby, SIGNAL(valueChanged(int)),this, SLOT(ambmaterialfuncy(int)));
 
                     materialspinboxambz = new QSpinBox(tabmaterialamb);
-                    materialspinboxambz->setPrefix("Z = ");
+                    materialspinboxambz->setPrefix("B = ");
                     materialspinboxambz->setRange(0,255);
                     materialspinboxambz->setValue(this->_materiaux->get(GL_AMBIENT)[2]*255);
                     connect(materialspinboxambz, SIGNAL(valueChanged(int)),this, SLOT(ambmaterialfuncz(int)));
@@ -773,19 +773,19 @@ Mondock:: ~Mondock(){}
                   //widget4
                   tabmaterialspe = new QWidget(tabmaterial);
                       materialspinboxspex = new QSpinBox(tabmaterialspe);
-                      materialspinboxspex->setPrefix("X = ");
+                      materialspinboxspex->setPrefix("R = ");
                       materialspinboxspex->setRange(0,255);
                       materialspinboxspex->setValue(this->_materiaux->get(GL_SPECULAR)[0]*255);
                       connect(materialspinboxspex, SIGNAL(valueChanged(int)),this, SLOT(spematerialfuncx(int)));
 
                       materialspinboxspey = new QSpinBox(tabmaterialspe);
-                      materialspinboxspey->setPrefix("Y = ");
+                      materialspinboxspey->setPrefix("G = ");
                       materialspinboxspey->setRange(0,255);
                       materialspinboxspey->setValue(this->_materiaux->get(GL_SPECULAR)[1]*255);
                       connect(materialspinboxspey, SIGNAL(valueChanged(int)),this, SLOT(spematerialfuncy(int)));
 
                       materialspinboxspez = new QSpinBox(tabmaterialspe);
-                      materialspinboxspez->setPrefix("Z = ");
+                      materialspinboxspez->setPrefix("B = ");
                       materialspinboxspez->setRange(0,255);
                       materialspinboxspez->setValue(this->_materiaux->get(GL_SPECULAR)[2]*255);
                       connect(materialspinboxspez, SIGNAL(valueChanged(int)),this, SLOT(spematerialfuncz(int)));
