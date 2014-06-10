@@ -11,3 +11,6 @@ build
 Ressources
 castle.pro.user
 doc/xml
+Notes
+Doxyfile
+.qmake.stash
