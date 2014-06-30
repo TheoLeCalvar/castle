@@ -10,7 +10,7 @@
  * @details Gère une lumière pour la scène
  * 
  * @warning seul les lumières positionnelles sont gérées pour l'instant
- * @todo attenuation de la lumière par lumière et plus globale
+ * @todo attenuation de la lumière par lumière et non plus globale
  */
 class Light: protected QOpenGLFunctions_3_2_Core
 {
@@ -30,7 +30,6 @@ public:
 	 * @param specular composante spéculaire de la lumière
 	 * @param number correspond au slot de la lumière qui sera utilisé dans le shader
 	 * 
-	 * @warning number doit appartenir à [0,7]
      */
 	Light(
 		vec3 position = vec3(0.0, 0.0, 0.0), 

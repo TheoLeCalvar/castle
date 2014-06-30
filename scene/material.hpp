@@ -72,7 +72,6 @@ public:
 	 * 
 	 * @param texFile fichier de texture à charger
 	 * @param int indice que la texture doit occuper
-	 * @warning Ecrase la texture à l'indice choisie
 	 */
 	void addTexture(const QString & texFile, const QString & type);
 

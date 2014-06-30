@@ -175,6 +175,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:ad15253a331423b1e3c3fb2484b10509c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ad15253a331423b1e3c3fb2484b10509c">addShader</a> (const QString &amp;name, QOpenGLShaderProgram *s)</td></tr>
 <tr class="memdesc:ad15253a331423b1e3c3fb2484b10509c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un shadder à la scène.  <a href="#ad15253a331423b1e3c3fb2484b10509c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ad15253a331423b1e3c3fb2484b10509c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab83bd2e1ac695d59aecee7a3cca65089"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ab83bd2e1ac695d59aecee7a3cca65089">addShader</a> (const QString &amp;name, const QString &amp;vertex, const QString &amp;fragment)</td></tr>
+<tr class="memdesc:ab83bd2e1ac695d59aecee7a3cca65089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un shader à la scène.  <a href="#ab83bd2e1ac695d59aecee7a3cca65089">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab83bd2e1ac695d59aecee7a3cca65089"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a696a59602fa780cd7904df5c50b94eae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a696a59602fa780cd7904df5c50b94eae">saveAsXML</a> (const QString &amp;fileName)</td></tr>
 <tr class="memdesc:a696a59602fa780cd7904df5c50b94eae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde de la scène au format xml.  <a href="#a696a59602fa780cd7904df5c50b94eae">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a696a59602fa780cd7904df5c50b94eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -457,6 +460,46 @@ QOpenGLShaderProgram * &gt;&#160;</td><td class="memItemRight" valign="bottom"><
   <table class="params">
     <tr><td class="paramname">name</td><td>nom du shader à ajouter </td></tr>
     <tr><td class="paramname">s</td><td>id du shader </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab83bd2e1ac695d59aecee7a3cca65089"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::addShader </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>vertex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>fragment</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute un shader à la scène. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>nom du shader  path vers le fichier de vertex  path vers le fichier de fragment </td></tr>
   </table>
   </dd>
 </dl>
@@ -1355,7 +1398,7 @@ QOpenGLShaderProgram * &gt;&#160;</td><td class="memItemRight" valign="bottom"><
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 4 Juin 2014 11:30:36 pour Castle par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mardi 10 Juin 2014 23:23:39 pour Castle par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

@@ -12,6 +12,7 @@ var searchData=
   ['dockajoutmur',['dockajoutmur',['../class_main_window.html#a0eb8a5430ee63be81d1c931749ccb5f0',1,'MainWindow']]],
   ['dockajoutobjet',['dockajoutobjet',['../class_main_window.html#ad94b219ae474fd89c2d7a7c237cb13c5',1,'MainWindow']]],
   ['dockajoutpiece',['dockajoutpiece',['../class_main_window.html#a6a303ea101c20af7884bb398bd3dc41f',1,'MainWindow']]],
+  ['dockajoutshader',['dockajoutshader',['../class_main_window.html#a63efb31916675f17cd2435986c74b01f',1,'MainWindow']]],
   ['dockmodele',['dockmodele',['../class_mondock.html#a3f46e1710907a9aedf250fce4ba93076',1,'Mondock']]],
   ['dockscene',['dockscene',['../class_mondock.html#ac6fd15f2143e05b554f3f936e6f1588f',1,'Mondock']]],
   ['dockvue',['dockvue',['../class_mondock.html#a32e24e3ef7312fbd292740e19c3d3dcd',1,'Mondock']]]
