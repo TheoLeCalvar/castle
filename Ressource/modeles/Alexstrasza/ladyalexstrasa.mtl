@@ -1,0 +1,100 @@
+#
+# ladyalexstrasa.mtl
+#
+
+newmtl LadyAlexstrasaSkin1
+illum 1
+Kd 0.000 0.000 0.000
+Ka 0.500 0.500 0.500
+Ks 0.000 0.000 0.000
+Ns 1.0
+map_Kd LadyAlexstrasaSkin1.png
+
+newmtl LadyAlexstrasaSkin1
+illum 1
+Kd 0.000 0.000 0.000
+Ka 0.500 0.500 0.500
+Ks 0.000 0.000 0.000
+Ns 1.0
+map_Kd LadyAlexstrasaSkin1.png
+
+newmtl LadyAlexstrasaSkin1
+illum 1
+Kd 0.000 0.000 0.000
+Ka 0.500 0.500 0.500
+Ks 0.000 0.000 0.000
+Ns 1.0
+map_Kd LadyAlexstrasaSkin1.png
+
+newmtl LadyAlexstrasaSkin1
+illum 1
+Kd 0.000 0.000 0.000
+Ka 0.500 0.500 0.500
+Ks 0.000 0.000 0.000
+Ns 1.0
+map_Kd LadyAlexstrasaSkin1.png
+
+newmtl LadyAlexstrasaGlow_Lum
+illum 1
+Kd 0.000 0.000 0.000
+Ka 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+Ns 1.0
+map_Kd LadyAlexstrasaGlow.png
+
+newmtl LadyAlexstrasaGlow_Lum
+illum 1
+Kd 0.000 0.000 0.000
+Ka 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+Ns 1.0
+map_Kd LadyAlexstrasaGlow.png
+
+newmtl LadyAlexstrasaSkin2
+illum 1
+Kd 0.000 0.000 0.000
+Ka 0.500 0.500 0.500
+Ks 0.000 0.000 0.000
+Ns 1.0
+map_Kd LadyAlexstrasaSkin2.png
+
+newmtl LadyAlexstrasaSkin2
+illum 1
+Kd 0.000 0.000 0.000
+Ka 0.500 0.500 0.500
+Ks 0.000 0.000 0.000
+Ns 1.0
+map_Kd LadyAlexstrasaSkin2.png
+
+newmtl LadyAlexstrasaSkin2
+illum 1
+Kd 0.000 0.000 0.000
+Ka 0.500 0.500 0.500
+Ks 0.000 0.000 0.000
+Ns 1.0
+map_Kd LadyAlexstrasaSkin2.png
+
+newmtl LadyAlexstrasaSkin2_Lum
+illum 1
+Kd 0.000 0.000 0.000
+Ka 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+Ns 1.0
+map_Kd LadyAlexstrasaSkin2.png
+
+newmtl LadyAlexstrasaSkin1_Lum
+illum 1
+Kd 0.000 0.000 0.000
+Ka 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+Ns 1.0
+map_Kd LadyAlexstrasaSkin1.png
+
+newmtl LadyAlexstrasaSkin2
+illum 1
+Kd 0.000 0.000 0.000
+Ka 0.500 0.500 0.500
+Ks 0.000 0.000 0.000
+Ns 1.0
+map_Kd LadyAlexstrasaSkin2.png
+
